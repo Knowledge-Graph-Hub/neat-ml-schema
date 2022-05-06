@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "neat_schema"
+version = "0.1.0"
+description = ""
+authors = ["Harshad Hegde <hegdehb@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+mypy = "^0.950"
+linkml = "^1.2.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
