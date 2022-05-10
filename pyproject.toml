@@ -5,7 +5,7 @@ description = ""
 authors = ["Harshad Hegde <hegdehb@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 black = "^22.3.0"
 flake8 = "^4.0.1"
 mypy = "^0.950"
