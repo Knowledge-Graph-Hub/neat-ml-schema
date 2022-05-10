@@ -1,9 +1,7 @@
 """Tests."""
 import os
 from unittest import TestCase
-from jsonschema import SchemaError
 
-# from linkml_runtime.utils.schemaview import SchemaView
 import yaml
 from linkml.generators.pythongen import PythonGenerator
 from linkml.validators.jsonschemavalidator import JsonSchemaDataValidator
@@ -48,7 +46,6 @@ class TestSchema(TestCase):
 
     def test_schema_validation_pass(self):
         """Test validation of all classes of good YAML as per schema."""
-
         with open(self.good_yaml, "r") as gy:
             test_file = yaml.safe_load(gy)
 
@@ -62,7 +59,6 @@ class TestSchema(TestCase):
 
     def test_schema_validation_fail(self):
         """Test validation of a bad YAML as per schema."""
-
         with open(self.bad_yaml, "r") as gy:
             test_file = yaml.safe_load(gy)
 
