@@ -1,2 +1,3 @@
 .tox/*
 .vscode/*
+*/__pycache__/*
