@@ -8,13 +8,6 @@ imports:
   linkml:types
 default_range: string
 
-# id: https://w3id.org/linkml/examples/personinfo
-# name: personinfo
-# prefixes:
-#   linkml: https://w3id.org/linkml/
-# imports:
-#   - linkml:types
-
 # #==================================
 # # Classes #
 # #==================================
@@ -22,7 +15,6 @@ default_range: string
 # # but leaving them to be the default (str) for now.
 classes:
   Ensmallen:
-    name: Ensmallen
     description: All params used by ensmallen's csv_reader
     attributes:
       node_type_path:
