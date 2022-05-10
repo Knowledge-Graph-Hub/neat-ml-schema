@@ -164,7 +164,7 @@ classes:
         range: boolean
       directed:
         range: boolean
-      # name:
+      name: {}
 
 
 # #==================================
