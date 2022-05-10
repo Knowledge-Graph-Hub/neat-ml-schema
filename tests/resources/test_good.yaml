@@ -1,5 +1,6 @@
-node_type_path: "abc"
-node_type_list_separator: "\n"
-node_types_column_number: 2
-directed: True
-name: "NEAT!"
+Ensmallen:
+  node_type_path: "abc"
+  node_type_list_separator: "\n"
+  node_types_column_number: 2
+  directed: True
+  name: "NEAT!"
