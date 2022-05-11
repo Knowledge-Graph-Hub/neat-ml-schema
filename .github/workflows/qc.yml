@@ -63,4 +63,4 @@ jobs:
     - name: Test with MyPy
       run: poetry run tox -e mypy
     - name: Test with pytest
-      run: poetry run tox -e py
+      run: poetry run pytest
