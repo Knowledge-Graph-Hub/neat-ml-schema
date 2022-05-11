@@ -37,8 +37,52 @@ classes:
   PosNegData:
   # Strings for now. These are actually paths/urls(maybe?)
     attributes:
-      pos_data:
-      neg_data:
+      pos_data_filepath:
+      neg_data_filepath:
+
+  EmbeddingsConfig:
+    attributes:
+      filename:
+      history_filename:
+      node_embeddings_params:
+        range: NodeEmbeddingsParamsConfig
+      tsne_filename:
+  
+  NodeEmbeddingsParamsConfig:
+    attributes:
+      method_name:
+        range: node_embed_method_enum
+      walk_length:
+        range: integer
+      batch_size:
+        range: integer
+      window_size:
+        range: integer
+      return_weight:
+        range: float
+      explore_weight:
+        range: float
+      iterations:
+        range: integer
+
+  Classifier:
+    description: ML classifiers to be trained-tested-validated and applied for predictions.
+    attributes:
+      id:
+      type:
+      edge_method:
+        range: edge_method_enum
+      outfile:
+      parameters:
+        range: ClassifierParams
+    
+  ClassifierParams:
+    description: Parameters needed to define a classifier.
+    attributes:
+      random_state:
+        range: integer
+      max_iter:
+        range: integer
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
@@ -186,8 +230,44 @@ classes:
 
 
 #==================================
-# Slots                           #
+# Enums                           #
 #==================================
+enums:
+  node_embed_method_enum:
+    permissible_values:
+      SkipGram:
+        description: ##NEED DESCRIPTION
+      CBOW:
+        description: ##NEED DESCRIPTION
+      GloVe:
+        description: ##NEED DESCRIPTION
+      Siamese:
+        description: ##NEED DESCRIPTION
+      TransE:
+        description: ##NEED DESCRIPTION
+      SimplE:
+        description: ##NEED DESCRIPTION
+      TransH:
+        description: ##NEED DESCRIPTION
+      TransR:
+        description: ##NEED DESCRIPTION
+
+  edge_method_enum:
+    permissible_values:
+      Average:
+        description: ##NEED DESCRIPTION
+      Hadamard:
+        description: ##NEED DESCRIPTION
+      Sum:
+        description: ##NEED DESCRIPTION
+      L1:
+        description: ##NEED DESCRIPTION
+      L2:
+        description: ##NEED DESCRIPTION
+      AbsoluteL1:
+        description: ##NEED DESCRIPTION
+
+
 
   # NamedThing:
   #   slots:
@@ -203,14 +283,6 @@ classes:
   #     type_column
   #     source_column
   #     destination_column
-
-  # Classifier:
-  #   description: ML classifiers to be trained-tested-validated and applied for predictions.
-  #   slots:
-  #     id:
-  #     type:
-  #     edge_method:
-  #     model:
 
   # File:
   #   input:

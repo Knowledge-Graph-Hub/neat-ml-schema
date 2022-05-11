@@ -50,12 +50,14 @@ class TestSchema(TestCase):
             test_file = yaml.safe_load(gy)
 
         for target_class in self.class_list:
-            py_target_class = self.python_module.__dict__[target_class]
-            obj = self.loader.load(
-                source=test_file[target_class], target_class=py_target_class
-            )
-            result = self.validator.validate_object(obj, py_target_class)
-            self.assertIsNone(result)
+            if target_class in test_file.keys():
+                py_target_class = self.python_module.__dict__[target_class]
+                obj = self.loader.load(
+                    source=test_file[target_class],
+                    target_class=py_target_class,
+                )
+                result = self.validator.validate_object(obj, py_target_class)
+                self.assertIsNone(result)
 
     def test_schema_validation_fail(self):
         """Test validation of a bad YAML as per schema."""
@@ -63,11 +65,12 @@ class TestSchema(TestCase):
             test_file = yaml.safe_load(gy)
 
         for target_class in self.class_list:
-            py_target_class = self.python_module.__dict__[target_class]
-            self.assertRaises(
-                ValueError,
-                lambda: self.loader.load(
-                    source=test_file[target_class],
-                    target_class=py_target_class,
-                ),
-            )
+            if target_class in test_file.keys():
+                py_target_class = self.python_module.__dict__[target_class]
+                self.assertRaises(
+                    ValueError,
+                    lambda: self.loader.load(
+                        source=test_file[target_class],
+                        target_class=py_target_class,
+                    ),
+                )
