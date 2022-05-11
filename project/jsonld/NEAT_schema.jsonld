@@ -2606,7 +2606,7 @@
   "source_file": "NEAT_schema.yaml",
   "source_file_date": "2022-05-11T17:17:09",
   "source_file_size": 7847,
-  "generation_date": "2022-05-11T17:26:34",
+  "generation_date": "2022-05-11T17:38:32",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",
