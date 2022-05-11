@@ -1,0 +1,31 @@
+site_name: "NEAT Schema"
+theme:
+  name: material
+  analytics:
+    gtag: G-2SYBSJVZ23
+#  palette:
+#    scheme: slate
+#    primary: cyan
+  features:
+    - content.tabs.link
+plugins:
+  - search
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+nav:
+#  - Home: home.md
+  - Index: index.md
+  - About: about.md
+site_url: https://knowledge-graph-hub.github.io/NEAT_schema/
+repo_url: https://github.com/Knowledge-Graph-Hub/NEAT_schema

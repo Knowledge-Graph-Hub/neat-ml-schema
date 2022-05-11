@@ -1,0 +1,3 @@
+name: NEAT_schema
+description: Schema for driving NEAT
+source_schema_path: src/linkml/NEAT_schema.yaml

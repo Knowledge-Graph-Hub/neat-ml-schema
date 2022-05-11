@@ -1,0 +1,18 @@
+
+# Class: NeatConfiguration
+
+
+
+
+URI: [https://w3id.org/neat_schema/NeatConfiguration](https://w3id.org/neat_schema/NeatConfiguration)
+
+
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GraphDataConfiguration]<graph_data%200..1-++[NeatConfiguration],[GraphDataConfiguration])](https://yuml.me/diagram/nofunky;dir:TB/class/[GraphDataConfiguration]<graph_data%200..1-++[NeatConfiguration],[GraphDataConfiguration])
+
+## Attributes
+
+
+### Own
+
+ * [➞graph_data](neatConfiguration__graph_data.md)  <sub>0..1</sub>
+     * Range: [GraphDataConfiguration](GraphDataConfiguration.md)

@@ -1,0 +1,182 @@
+type ApplyTrainedModel
+  {
+    modelId: String
+    nodeTypes: NodeType
+    cutoff: String
+    outfile: String
+  }
+
+type ApplyTrainedModelsContainer
+  {
+    models: [ApplyTrainedModel]
+  }
+
+type Classifier
+  {
+    classifierId: String
+    classifierName: String
+    classifierType: String
+    edgeMethod: EdgeMethodEnum
+    outfile: String
+    parameters: ClassifierParams
+  }
+
+type ClassifierContainer
+  {
+    classifiers: [Classifier]
+  }
+
+type ClassifierParams
+  {
+    randomState: Integer
+    maxIter: Integer
+  }
+
+type EmbeddingsConfig
+  {
+    filename: String
+    historyFilename: String
+    nodeEmbeddingsParams: NodeEmbeddingsParamsConfig
+    tsneFilename: String
+  }
+
+type EnsmallenRunConfig
+  {
+    nodeTypePath: String
+    nodeTypeListSeparator: String
+    nodeTypesColumnNumber: Integer
+    nodeTypesColumn: String
+    nodeTypesIdsColumnNumber: Integer
+    nodeTypesIdsColumn: String
+    nodeTypesNumber: Integer
+    numericNodeTypeIds: Boolean
+    minimumNodeTypeId: Integer
+    nodeTypeListHeader: Boolean
+    nodeTypeListRowsToSkip: Integer
+    nodeTypeListIsCorrect: Boolean
+    nodeTypeListMaxRowsNumber: Integer
+    nodeTypeListCommentSymbol: String
+    loadNodeTypeListInParallel: Boolean
+    nodePath: String
+    nodeListSeparator: String
+    nodeListHeader: Boolean
+    nodeListRowsToSkip: Integer
+    nodeListIsCorrect: Boolean
+    nodeListMaxRowsNumber: Integer
+    nodeListCommentSymbol: String
+    defaultNodeType: String
+    nodesColumnNumber: Integer
+    nodesColumn: String
+    nodeTypesSeparator: String
+    nodeListNodeTypesColumnNumber: Integer
+    nodeListNodeTypesColumn: String
+    nodeIdsColumn: String
+    nodeIdsColumnNumber: Integer
+    nodesNumber: Integer
+    minimumNodeId: Integer
+    numericNodeIds: Boolean
+    nodeListNumericNodeTypeIds: Boolean
+    skipNodeTypesIfUnavailable: Boolean
+    loadNodeListInParallel: Boolean
+    edgeTypePath: String
+    edgeTypesColumnNumber: Integer
+    edgeTypesColumn: String
+    edgeTypesIdsColumnNumber: Integer
+    edgeTypesIdsColumn: String
+    edgeTypesNumber: Integer
+    numericEdgeTypeIds: Boolean
+    minimumEdgeTypeId: Integer
+    edgeTypeListSeparator: String
+    edgeTypeListHeader: Boolean
+    edgeTypeListRowsToSkip: Integer
+    edgeTypeListIsCorrect: Boolean
+    edgeTypeListMaxRowsNumber: Integer
+    edgeTypeListCommentSymbol: String
+    loadEdgeTypeListInParallel: Boolean
+    edgePath: String
+    edgeListSeparator: String
+    edgeListHeader: Boolean
+    edgeListRowsToSkip: Integer
+    sourcesColumnNumber: Integer
+    sourcesColumn: String
+    destinationsColumnNumber: Integer
+    destinationsColumn: String
+    edgeListEdgeTypesColumnNumber: Integer
+    edgeListEdgeTypesColumn: String
+    defaultEdgeType: String
+    weightsColumnNumber: Integer
+    weightsColumn: String
+    defaultWeight: Float
+    edgeIdsColumn: String
+    edgeIdsColumnNumber: Integer
+    edgeListNumericEdgeTypeIds: Boolean
+    edgeListNumericNodeIds: Boolean
+    skipWeightsIfUnavailable: Boolean
+    skipEdgeTypesIfUnavailable: Boolean
+    edgeListIsComplete: Boolean
+    edgeListMayContainDuplicates: Boolean
+    edgeListIsSorted: Boolean
+    edgeListIsCorrect: Boolean
+    edgeListMaxRowsNumber: Integer
+    edgeListCommentSymbol: String
+    edgesNumber: Integer
+    loadEdgeListInParallel: Boolean
+    verbose: Boolean
+    mayHaveSingletons: Boolean
+    mayHaveSingletonWithSelfloops: Boolean
+    directed: Boolean
+    name: String
+  }
+
+type GraphDataConfiguration
+  {
+    graph: EnsmallenRunConfig
+    data: TrainValidData
+  }
+
+type NeatConfiguration
+  {
+    graphData: GraphDataConfiguration
+  }
+
+type NodeEmbeddingsParamsConfig
+  {
+    methodName: NodeEmbedMethodEnum
+    walkLength: Integer
+    batchSize: Integer
+    windowSize: Integer
+    returnWeight: Float
+    exploreWeight: Float
+    iterations: Integer
+  }
+
+type NodeType
+  {
+    source: [String]
+    destination: [String]
+  }
+
+type PosNegData
+  {
+    posEdgeFilepath: String
+    negEdgeFilepath: String
+  }
+
+type Target
+  {
+    targetPath: String
+  }
+
+type TrainValidData
+  {
+    trainData: PosNegData
+    validData: PosNegData
+  }
+
+type Upload
+  {
+    s3Bucket: String
+    s3BucketDir: String
+    extraArgs: [String]
+  }
+
