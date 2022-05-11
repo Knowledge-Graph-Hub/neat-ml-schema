@@ -126,7 +126,7 @@ classes:
       s3_bucket_dir:
       extra_args:
         multivalued: true
-        inlined_as_list: true
+        inlined_as_list: false
 
   Target:
     description: Path for output to be saved.

@@ -150,5 +150,5 @@ Upload:
   s3_bucket: some_bucket
   s3_bucket_dir: some/remote/directory/
   extra_args:
-    - "ACL": "public-read"
-    - "BCL": "private-read"
+    "ACL": "public-read"
+    "BCL": "private-read"
