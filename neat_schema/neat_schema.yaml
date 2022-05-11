@@ -14,7 +14,33 @@ default_range: string
 # # Params node_type and edge_type attributes could have range: uriorcurie
 # # but leaving them to be the default (str) for now.
 classes:
-  Ensmallen:
+  NeatConfiguration:
+    tree_root: true
+    attributes:
+      graph_data:
+        range: GraphDataConfiguration
+
+  GraphDataConfiguration:
+    attributes:
+      graph:
+        range: EnsmallenRunConfig
+      data:
+        range: TrainValidData
+    
+  TrainValidData:
+    attributes:
+      train_data:
+        range: PosNegData
+      valid_data:
+        range: PosNegData
+
+  PosNegData:
+  # Strings for now. These are actually paths/urls(maybe?)
+    attributes:
+      pos_data:
+      neg_data:
+
+  EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
     attributes:
       node_type_path:
@@ -159,45 +185,45 @@ classes:
       name: {}
 
 
-# #==================================
-# # Slots                           #
-# #==================================
+#==================================
+# Slots                           #
+#==================================
 
-#   # NamedThing:
-#   #   slots:
-#   #     id
-#   #     name
-#   #     description
+  # NamedThing:
+  #   slots:
+  #     id
+  #     name
+  #     description
 
-#   # Node:
-#   #   is_a: NamedThing
-#   #   slots:
-#   #     default_type
-#   #     primary_column
-#   #     type_column
-#   #     source_column
-#   #     destination_column
+  # Node:
+  #   is_a: NamedThing
+  #   slots:
+  #     default_type
+  #     primary_column
+  #     type_column
+  #     source_column
+  #     destination_column
 
-#   # Classifier:
-#   #   description: ML classifiers to be trained-tested-validated and applied for predictions.
-#   #   slots:
-#   #     id:
-#   #     type:
-#   #     edge_method:
-#   #     model:
+  # Classifier:
+  #   description: ML classifiers to be trained-tested-validated and applied for predictions.
+  #   slots:
+  #     id:
+  #     type:
+  #     edge_method:
+  #     model:
 
-#   # File:
-#   #   input:
-#   #   ouput:
-#   #   input_format:
-#   #   output_format:
+  # File:
+  #   input:
+  #   ouput:
+  #   input_format:
+  #   output_format:
 
-#   # Node:
-#   #   description: Node
-#   #   slots:
-#   #     id
-#   #     default_type
-#   #     type_column
-#   #     source_column
-#   #     destination_column
+  # Node:
+  #   description: Node
+  #   slots:
+  #     id
+  #     default_type
+  #     type_column
+  #     source_column
+  #     destination_column
   
