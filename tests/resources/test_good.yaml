@@ -1,0 +1,154 @@
+# output_directory: tests/resources/test_output_data_dir/
+Target:
+  target_path: tests/resources/test_output_data_dir/
+# graph_data:
+#   graph:
+#     directed: False
+#     node_path: tests/resources/test_graphs/pos_train_nodes.tsv
+#     edge_path: tests/resources/test_graphs/pos_train_edges.tsv
+#     verbose: True
+#     nodes_column: 'id'
+#     node_list_node_types_column: 'category'
+#     default_node_type: 'biolink:NamedThing'
+#     sources_column: 'subject'
+#     destinations_column: 'object'
+#     default_edge_type: 'biolink:related_to'
+
+GraphDataConfiguration:
+  graph:
+    directed: False
+    node_path: tests/resources/test_graphs/pos_train_nodes.tsv
+    edge_path: tests/resources/test_graphs/pos_train_edges.tsv
+    verbose: True
+    nodes_column: "id"
+    node_list_node_types_column: "category"
+    default_node_type: "biolink:NamedThing"
+    sources_column: "subject"
+    destinations_column: "object"
+    default_edge_type: "biolink:related_to"
+
+  # pos_validation:
+  #   edge_path: tests/resources/test_graphs/pos_valid_edges.tsv
+  # neg_training:
+  #   edge_path: tests/resources/test_graphs/neg_train_edges.tsv
+  # neg_validation:
+  #   edge_path: tests/resources/test_graphs/neg_valid_edges.tsv
+  data:
+    valid_data:
+      pos_edge_filepath: tests/resources/test_graphs/pos_valid_edges.tsv
+      neg_edge_filepath: tests/resources/test_graphs/neg_valid_edges.tsv
+    train_data:
+      neg_edge_filepath: tests/resources/test_graphs/neg_train_edges.tsv
+
+  # embeddings:
+  #   embedding_file_name: test_embeddings_test_yaml.csv
+  #   embedding_history_file_name: embedding_history.json
+  #   node_embedding_params:
+  #     node_embedding_method_name: SkipGram
+  #     walk_length: 10 # typically 100 or so
+  #     batch_size: 128 # typically 512? or more
+  #     window_size: 4
+  #     return_weight: 1.0  # 1/p
+  #     explore_weight: 1.0  # 1/q
+  #     iterations: 5 # typically 20
+  #     tsne:
+  #       tsne_file_name: tsne.png
+EmbeddingsConfig:
+  filename: test_embeddings_test_yaml.csv
+  history_filename: embedding_history.json
+  node_embeddings_params:
+    method_name: SkipGram
+    walk_length: 10 # typically 100 or so
+    batch_size: 128 # typically 512? or more
+    window_size: 4
+    return_weight: 1.0  # 1/p
+    explore_weight: 1.0  # 1/q
+    iterations: 5 # typically 20
+  tsne_filename: tsne.png
+
+# classifiers:
+#   -
+#     classifier_id: lr_0
+#     type: Logistic Regression
+#     edge_method: Average # one of EdgeTransformer.methods: Hadamard, Sum, Average, L1, AbsoluteL1, L2, or alternatively a lambda
+#     model:
+#       outfile: "model_lr_test_yaml.h5"
+#       type: sklearn.linear_model.LogisticRegression
+#       parameters:
+#         random_state: 42
+#         max_iter: 100
+#   -
+#     classifier_id: lr_1
+#     type: Logistic Regression
+#     edge_method: Average # one of EdgeTransformer.methods: Hadamard, Sum, Average, L1, AbsoluteL1, L2, or alternatively a lambda
+#     model:
+#       outfile: "model_lr1_test_yaml.h5"
+#       type: sklearn.linear_model.LogisticRegression
+#       parameters:
+#         random_state: 24
+#         max_iter: 200
+
+ClassifierContainer:
+  classifiers:
+    - classifier_id: lr_0
+      classifier_name: Logistic Regression
+      classifier_type: sklearn.linear_model.LogisticRegression
+      edge_method: Average
+      outfile: "model_lr0_test_yaml.h5"
+      parameters:
+        random_state: 42
+        max_iter: 100
+
+
+    - classifier_id: lr_1
+      classifier_name: Logistic Regression
+      classifier_type: sklearn.linear_model.LogisticRegression
+      edge_method: Average
+      outfile: "model_lr1_test_yaml.h5"
+      parameters:
+        random_state: 24
+        max_iter: 100
+
+# apply_trained_classifier:
+#   -
+#     classifier_model_id: lr_0
+#     link_node_types:
+#       source:
+#           - "biolink:Protein"
+#       destination:
+#           - "biolink:Protein"
+#     cutoff: 0.9
+#     outfile: lr_classifier_predictions_kgx.tsv
+
+ApplyTrainedModelsContainer:
+  models:
+    - model_id: lr_0
+      node_types:
+        source:
+          - "biolink:Protein"
+        destination:
+          - "biolink:Protein"
+      cutoff: 0.9
+      outfile: lr_protein_predictions_kgx.tsv
+
+    - model_id: lr_1
+      node_types:
+        source:
+          - "biolink:Drug"
+        destination:
+          - "biolink:Drug"
+      cutoff: 0.8
+      outfile: lr_drug_predictions_kgx.tsv
+
+# upload:
+#   s3_bucket: some_bucket
+#   s3_bucket_dir: some/remote/directory/
+#   extra_args:
+#     "ACL": "public-read"
+
+Upload:
+  s3_bucket: some_bucket
+  s3_bucket_dir: some/remote/directory/
+  extra_args:
+    "ACL": "public-read"
+    "BCL": "private-read"
