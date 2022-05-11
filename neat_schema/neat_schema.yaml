@@ -37,8 +37,8 @@ classes:
   PosNegData:
   # Strings for now. These are actually paths/urls(maybe?)
     attributes:
-      pos_data_filepath:
-      neg_data_filepath:
+      pos_edge_filepath:
+      neg_edge_filepath:
 
   EmbeddingsConfig:
     attributes:
@@ -65,11 +65,20 @@ classes:
       iterations:
         range: integer
 
+  ClassifierContainer:
+    description: A container with multiple classifiers in it.
+    attributes:
+      classifiers:
+        multivalued: true
+        inlined_as_list: true
+        range: Classifier
+
   Classifier:
     description: ML classifiers to be trained-tested-validated and applied for predictions.
     attributes:
-      id:
-      type:
+      classifier_id:
+      classifier_name:
+      classifier_type:
       edge_method:
         range: edge_method_enum
       outfile:
@@ -83,6 +92,46 @@ classes:
         range: integer
       max_iter:
         range: integer
+
+  ApplyTrainedModelsContainer:
+    description: A container with multiple classifiers in it.
+    attributes:
+      models:
+        multivalued: true
+        inlined_as_list: true
+        range: ApplyTrainedModel
+
+  ApplyTrainedModel:
+    description: Trained model used for prediction.
+    attributes:
+      model_id:
+      node_types:
+        range: NodeType
+      cutoff:
+      outfile:
+
+  NodeType:
+    attributes:
+      source:
+        multivalued: true
+        inlined_as_list: true
+      destination:
+        source:
+        multivalued: true
+        inlined_as_list: true
+      
+  Upload:
+    attributes:
+      s3_bucket:
+      s3_bucket_dir:
+      extra_args:
+        multivalued: true
+        inlined_as_list: true
+
+  Target:
+    description: Path for output to be saved.
+    attributes:
+      target_path:
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
@@ -267,35 +316,4 @@ enums:
       AbsoluteL1:
         description: ##NEED DESCRIPTION
 
-
-
-  # NamedThing:
-  #   slots:
-  #     id
-  #     name
-  #     description
-
-  # Node:
-  #   is_a: NamedThing
-  #   slots:
-  #     default_type
-  #     primary_column
-  #     type_column
-  #     source_column
-  #     destination_column
-
-  # File:
-  #   input:
-  #   ouput:
-  #   input_format:
-  #   output_format:
-
-  # Node:
-  #   description: Node
-  #   slots:
-  #     id
-  #     default_type
-  #     type_column
-  #     source_column
-  #     destination_column
   
