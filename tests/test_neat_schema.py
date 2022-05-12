@@ -14,16 +14,17 @@ class TestSchema(TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        """Declare initial setup."""
-        cwd = os.path.dirname(__file__)
-        cls.project_dir = os.path.join(os.getcwd(), "neat_schema")
-        cls.resource_dir = os.path.join(cwd, "resources")
-        cls.GOOD_YAML_FILENAME = "test_good.yaml"
-        cls.BAD_YAML_FILENAME = "test_bad.yaml"
-        cls.SCHEMA_FILENAME = "neat_schema.yaml"
+        """Class setup."""
+        return super().setUpClass()
 
     def setUp(self) -> None:
         """More setup."""
+        cwd = os.path.dirname(__file__)
+        self.project_dir = os.path.join(os.getcwd(), "src/linkml/")
+        self.resource_dir = os.path.join(cwd, "resources")
+        self.GOOD_YAML_FILENAME = "test_good.yaml"
+        self.BAD_YAML_FILENAME = "test_bad.yaml"
+        self.SCHEMA_FILENAME = "NEAT_schema.yaml"
         self.schema_path = os.path.join(self.project_dir, self.SCHEMA_FILENAME)
         self.good_yaml = os.path.join(
             self.resource_dir, self.GOOD_YAML_FILENAME

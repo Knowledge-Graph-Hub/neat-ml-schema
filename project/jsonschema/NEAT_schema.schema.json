@@ -1,0 +1,561 @@
+{
+   "$defs": {
+      "ApplyTrainedModel": {
+         "additionalProperties": false,
+         "description": "Trained model used for prediction.",
+         "properties": {
+            "cutoff": {
+               "type": "string"
+            },
+            "model_id": {
+               "type": "string"
+            },
+            "node_types": {
+               "$ref": "#/$defs/NodeType"
+            },
+            "outfile": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ApplyTrainedModel",
+         "type": "object"
+      },
+      "ApplyTrainedModelsContainer": {
+         "additionalProperties": false,
+         "description": "A container with multiple classifiers in it.",
+         "properties": {
+            "models": {
+               "items": {
+                  "$ref": "#/$defs/ApplyTrainedModel"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ApplyTrainedModelsContainer",
+         "type": "object"
+      },
+      "Classifier": {
+         "additionalProperties": false,
+         "description": "ML classifiers to be trained-tested-validated and applied for predictions.",
+         "properties": {
+            "classifier_id": {
+               "type": "string"
+            },
+            "classifier_name": {
+               "type": "string"
+            },
+            "classifier_type": {
+               "type": "string"
+            },
+            "edge_method": {
+               "$ref": "#/$defs/EdgeMethodEnum"
+            },
+            "outfile": {
+               "type": "string"
+            },
+            "parameters": {
+               "$ref": "#/$defs/ClassifierParams"
+            }
+         },
+         "required": [],
+         "title": "Classifier",
+         "type": "object"
+      },
+      "ClassifierContainer": {
+         "additionalProperties": false,
+         "description": "A container with multiple classifiers in it.",
+         "properties": {
+            "classifiers": {
+               "items": {
+                  "$ref": "#/$defs/Classifier"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassifierContainer",
+         "type": "object"
+      },
+      "ClassifierParams": {
+         "additionalProperties": false,
+         "description": "Parameters needed to define a classifier.",
+         "properties": {
+            "max_iter": {
+               "type": "integer"
+            },
+            "random_state": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ClassifierParams",
+         "type": "object"
+      },
+      "EdgeMethodEnum": {
+         "description": "",
+         "enum": [
+            "Average",
+            "Hadamard",
+            "Sum",
+            "L1",
+            "L2",
+            "AbsoluteL1"
+         ],
+         "title": "EdgeMethodEnum",
+         "type": "string"
+      },
+      "EmbeddingsConfig": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "filename": {
+               "type": "string"
+            },
+            "history_filename": {
+               "type": "string"
+            },
+            "node_embeddings_params": {
+               "$ref": "#/$defs/NodeEmbeddingsParamsConfig"
+            },
+            "tsne_filename": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "EmbeddingsConfig",
+         "type": "object"
+      },
+      "EnsmallenRunConfig": {
+         "additionalProperties": false,
+         "description": "All params used by ensmallen's csv_reader",
+         "properties": {
+            "default_edge_type": {
+               "type": "string"
+            },
+            "default_node_type": {
+               "type": "string"
+            },
+            "default_weight": {
+               "type": "number"
+            },
+            "destinations_column": {
+               "type": "string"
+            },
+            "destinations_column_number": {
+               "type": "integer"
+            },
+            "directed": {
+               "type": "boolean"
+            },
+            "edge_ids_column": {
+               "type": "string"
+            },
+            "edge_ids_column_number": {
+               "type": "integer"
+            },
+            "edge_list_comment_symbol": {
+               "type": "string"
+            },
+            "edge_list_edge_types_column": {
+               "type": "string"
+            },
+            "edge_list_edge_types_column_number": {
+               "type": "integer"
+            },
+            "edge_list_header": {
+               "type": "boolean"
+            },
+            "edge_list_is_complete": {
+               "type": "boolean"
+            },
+            "edge_list_is_correct": {
+               "type": "boolean"
+            },
+            "edge_list_is_sorted": {
+               "type": "boolean"
+            },
+            "edge_list_max_rows_number": {
+               "type": "integer"
+            },
+            "edge_list_may_contain_duplicates": {
+               "type": "boolean"
+            },
+            "edge_list_numeric_edge_type_ids": {
+               "type": "boolean"
+            },
+            "edge_list_numeric_node_ids": {
+               "type": "boolean"
+            },
+            "edge_list_rows_to_skip": {
+               "type": "integer"
+            },
+            "edge_list_separator": {
+               "type": "string"
+            },
+            "edge_path": {
+               "type": "string"
+            },
+            "edge_type_list_comment_symbol": {
+               "type": "string"
+            },
+            "edge_type_list_header": {
+               "type": "boolean"
+            },
+            "edge_type_list_is_correct": {
+               "type": "boolean"
+            },
+            "edge_type_list_max_rows_number": {
+               "type": "integer"
+            },
+            "edge_type_list_rows_to_skip": {
+               "type": "integer"
+            },
+            "edge_type_list_separator": {
+               "type": "string"
+            },
+            "edge_type_path": {
+               "type": "string"
+            },
+            "edge_types_column": {
+               "type": "string"
+            },
+            "edge_types_column_number": {
+               "type": "integer"
+            },
+            "edge_types_ids_column": {
+               "type": "string"
+            },
+            "edge_types_ids_column_number": {
+               "type": "integer"
+            },
+            "edge_types_number": {
+               "type": "integer"
+            },
+            "edges_number": {
+               "type": "integer"
+            },
+            "load_edge_list_in_parallel": {
+               "type": "boolean"
+            },
+            "load_edge_type_list_in_parallel": {
+               "type": "boolean"
+            },
+            "load_node_list_in_parallel": {
+               "type": "boolean"
+            },
+            "load_node_type_list_in_parallel": {
+               "type": "boolean"
+            },
+            "may_have_singleton_with_selfloops": {
+               "type": "boolean"
+            },
+            "may_have_singletons": {
+               "type": "boolean"
+            },
+            "minimum_edge_type_id": {
+               "type": "integer"
+            },
+            "minimum_node_id": {
+               "type": "integer"
+            },
+            "minimum_node_type_id": {
+               "type": "integer"
+            },
+            "name": {
+               "type": "string"
+            },
+            "node_ids_column": {
+               "type": "string"
+            },
+            "node_ids_column_number": {
+               "type": "integer"
+            },
+            "node_list_comment_symbol": {
+               "type": "string"
+            },
+            "node_list_header": {
+               "type": "boolean"
+            },
+            "node_list_is_correct": {
+               "type": "boolean"
+            },
+            "node_list_max_rows_number": {
+               "type": "integer"
+            },
+            "node_list_node_types_column": {
+               "type": "string"
+            },
+            "node_list_node_types_column_number": {
+               "type": "integer"
+            },
+            "node_list_numeric_node_type_ids": {
+               "type": "boolean"
+            },
+            "node_list_rows_to_skip": {
+               "type": "integer"
+            },
+            "node_list_separator": {
+               "type": "string"
+            },
+            "node_path": {
+               "type": "string"
+            },
+            "node_type_list_comment_symbol": {
+               "type": "string"
+            },
+            "node_type_list_header": {
+               "type": "boolean"
+            },
+            "node_type_list_is_correct": {
+               "type": "boolean"
+            },
+            "node_type_list_max_rows_number": {
+               "type": "integer"
+            },
+            "node_type_list_rows_to_skip": {
+               "type": "integer"
+            },
+            "node_type_list_separator": {
+               "type": "string"
+            },
+            "node_type_path": {
+               "type": "string"
+            },
+            "node_types_column": {
+               "type": "string"
+            },
+            "node_types_column_number": {
+               "type": "integer"
+            },
+            "node_types_ids_column": {
+               "type": "string"
+            },
+            "node_types_ids_column_number": {
+               "type": "integer"
+            },
+            "node_types_number": {
+               "type": "integer"
+            },
+            "node_types_separator": {
+               "type": "string"
+            },
+            "nodes_column": {
+               "type": "string"
+            },
+            "nodes_column_number": {
+               "type": "integer"
+            },
+            "nodes_number": {
+               "type": "integer"
+            },
+            "numeric_edge_type_ids": {
+               "type": "boolean"
+            },
+            "numeric_node_ids": {
+               "type": "boolean"
+            },
+            "numeric_node_type_ids": {
+               "type": "boolean"
+            },
+            "skip_edge_types_if_unavailable": {
+               "type": "boolean"
+            },
+            "skip_node_types_if_unavailable": {
+               "type": "boolean"
+            },
+            "skip_weights_if_unavailable": {
+               "type": "boolean"
+            },
+            "sources_column": {
+               "type": "string"
+            },
+            "sources_column_number": {
+               "type": "integer"
+            },
+            "verbose": {
+               "type": "boolean"
+            },
+            "weights_column": {
+               "type": "string"
+            },
+            "weights_column_number": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "EnsmallenRunConfig",
+         "type": "object"
+      },
+      "GraphDataConfiguration": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "data": {
+               "$ref": "#/$defs/TrainValidData"
+            },
+            "graph": {
+               "$ref": "#/$defs/EnsmallenRunConfig"
+            }
+         },
+         "required": [],
+         "title": "GraphDataConfiguration",
+         "type": "object"
+      },
+      "NeatConfiguration": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "graph_data": {
+               "$ref": "#/$defs/GraphDataConfiguration"
+            }
+         },
+         "required": [],
+         "title": "NeatConfiguration",
+         "type": "object"
+      },
+      "NodeEmbedMethodEnum": {
+         "description": "",
+         "enum": [
+            "SkipGram",
+            "CBOW",
+            "GloVe",
+            "Siamese",
+            "TransE",
+            "SimplE",
+            "TransH",
+            "TransR"
+         ],
+         "title": "NodeEmbedMethodEnum",
+         "type": "string"
+      },
+      "NodeEmbeddingsParamsConfig": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "batch_size": {
+               "type": "integer"
+            },
+            "explore_weight": {
+               "type": "number"
+            },
+            "iterations": {
+               "type": "integer"
+            },
+            "method_name": {
+               "$ref": "#/$defs/NodeEmbedMethodEnum"
+            },
+            "return_weight": {
+               "type": "number"
+            },
+            "walk_length": {
+               "type": "integer"
+            },
+            "window_size": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "NodeEmbeddingsParamsConfig",
+         "type": "object"
+      },
+      "NodeType": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "destination": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "NodeType",
+         "type": "object"
+      },
+      "PosNegData": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "neg_edge_filepath": {
+               "type": "string"
+            },
+            "pos_edge_filepath": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PosNegData",
+         "type": "object"
+      },
+      "Target": {
+         "additionalProperties": false,
+         "description": "Path for output to be saved.",
+         "properties": {
+            "target_path": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Target",
+         "type": "object"
+      },
+      "TrainValidData": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "train_data": {
+               "$ref": "#/$defs/PosNegData"
+            },
+            "valid_data": {
+               "$ref": "#/$defs/PosNegData"
+            }
+         },
+         "required": [],
+         "title": "TrainValidData",
+         "type": "object"
+      },
+      "Upload": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "extra_args": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "s3_bucket": {
+               "type": "string"
+            },
+            "s3_bucket_dir": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Upload",
+         "type": "object"
+      }
+   },
+   "$id": "https://w3id.org/neat_schema",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {
+      "graph_data": {
+         "$ref": "#/$defs/GraphDataConfiguration"
+      }
+   },
+   "required": [],
+   "title": "NEAT_schema",
+   "type": "object",
+   "version": null
+}

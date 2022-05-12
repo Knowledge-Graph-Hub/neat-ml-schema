@@ -1,0 +1,22 @@
+
+# Slot: max_iter
+
+
+
+
+URI: [https://w3id.org/neat_schema/classifierParams__max_iter](https://w3id.org/neat_schema/classifierParams__max_iter)
+
+
+## Domain and Range
+
+None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+
+## Parents
+
+
+## Children
+
+
+## Used by
+
+ * [ClassifierParams](ClassifierParams.md)

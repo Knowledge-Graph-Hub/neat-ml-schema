@@ -1,0 +1,174 @@
+// Trained model used for prediction.
+message ApplyTrainedModel
+ {
+  optional modelId String = 1
+  optional nodeTypes NodeType = 2
+  optional cutoff String = 3
+  optional outfile String = 4
+ }
+// A container with multiple classifiers in it.
+message ApplyTrainedModelsContainer
+ {
+  repeated models ApplyTrainedModel = 1
+ }
+// ML classifiers to be trained-tested-validated and applied for predictions.
+message Classifier
+ {
+  optional classifierId String = 1
+  optional classifierName String = 2
+  optional classifierType String = 3
+  optional edgeMethod EdgeMethodEnum = 4
+  optional outfile String = 5
+  optional parameters ClassifierParams = 6
+ }
+// A container with multiple classifiers in it.
+message ClassifierContainer
+ {
+  repeated classifiers Classifier = 1
+ }
+// Parameters needed to define a classifier.
+message ClassifierParams
+ {
+  optional randomState Integer = 1
+  optional maxIter Integer = 2
+ }
+message EmbeddingsConfig
+ {
+  optional filename String = 1
+  optional historyFilename String = 2
+  optional nodeEmbeddingsParams NodeEmbeddingsParamsConfig = 3
+  optional tsneFilename String = 4
+ }
+// All params used by ensmallen's csv_reader
+message EnsmallenRunConfig
+ {
+  optional nodeTypePath String = 1
+  optional nodeTypeListSeparator String = 2
+  optional nodeTypesColumnNumber Integer = 3
+  optional nodeTypesColumn String = 4
+  optional nodeTypesIdsColumnNumber Integer = 5
+  optional nodeTypesIdsColumn String = 6
+  optional nodeTypesNumber Integer = 7
+  optional numericNodeTypeIds Boolean = 8
+  optional minimumNodeTypeId Integer = 9
+  optional nodeTypeListHeader Boolean = 10
+  optional nodeTypeListRowsToSkip Integer = 11
+  optional nodeTypeListIsCorrect Boolean = 12
+  optional nodeTypeListMaxRowsNumber Integer = 13
+  optional nodeTypeListCommentSymbol String = 14
+  optional loadNodeTypeListInParallel Boolean = 15
+  optional nodePath String = 16
+  optional nodeListSeparator String = 17
+  optional nodeListHeader Boolean = 18
+  optional nodeListRowsToSkip Integer = 19
+  optional nodeListIsCorrect Boolean = 20
+  optional nodeListMaxRowsNumber Integer = 21
+  optional nodeListCommentSymbol String = 22
+  optional defaultNodeType String = 23
+  optional nodesColumnNumber Integer = 24
+  optional nodesColumn String = 25
+  optional nodeTypesSeparator String = 26
+  optional nodeListNodeTypesColumnNumber Integer = 27
+  optional nodeListNodeTypesColumn String = 28
+  optional nodeIdsColumn String = 29
+  optional nodeIdsColumnNumber Integer = 30
+  optional nodesNumber Integer = 31
+  optional minimumNodeId Integer = 32
+  optional numericNodeIds Boolean = 33
+  optional nodeListNumericNodeTypeIds Boolean = 34
+  optional skipNodeTypesIfUnavailable Boolean = 35
+  optional loadNodeListInParallel Boolean = 36
+  optional edgeTypePath String = 37
+  optional edgeTypesColumnNumber Integer = 38
+  optional edgeTypesColumn String = 39
+  optional edgeTypesIdsColumnNumber Integer = 40
+  optional edgeTypesIdsColumn String = 41
+  optional edgeTypesNumber Integer = 42
+  optional numericEdgeTypeIds Boolean = 43
+  optional minimumEdgeTypeId Integer = 44
+  optional edgeTypeListSeparator String = 45
+  optional edgeTypeListHeader Boolean = 46
+  optional edgeTypeListRowsToSkip Integer = 47
+  optional edgeTypeListIsCorrect Boolean = 48
+  optional edgeTypeListMaxRowsNumber Integer = 49
+  optional edgeTypeListCommentSymbol String = 50
+  optional loadEdgeTypeListInParallel Boolean = 51
+  optional edgePath String = 52
+  optional edgeListSeparator String = 53
+  optional edgeListHeader Boolean = 54
+  optional edgeListRowsToSkip Integer = 55
+  optional sourcesColumnNumber Integer = 56
+  optional sourcesColumn String = 57
+  optional destinationsColumnNumber Integer = 58
+  optional destinationsColumn String = 59
+  optional edgeListEdgeTypesColumnNumber Integer = 60
+  optional edgeListEdgeTypesColumn String = 61
+  optional defaultEdgeType String = 62
+  optional weightsColumnNumber Integer = 63
+  optional weightsColumn String = 64
+  optional defaultWeight Float = 65
+  optional edgeIdsColumn String = 66
+  optional edgeIdsColumnNumber Integer = 67
+  optional edgeListNumericEdgeTypeIds Boolean = 68
+  optional edgeListNumericNodeIds Boolean = 69
+  optional skipWeightsIfUnavailable Boolean = 70
+  optional skipEdgeTypesIfUnavailable Boolean = 71
+  optional edgeListIsComplete Boolean = 72
+  optional edgeListMayContainDuplicates Boolean = 73
+  optional edgeListIsSorted Boolean = 74
+  optional edgeListIsCorrect Boolean = 75
+  optional edgeListMaxRowsNumber Integer = 76
+  optional edgeListCommentSymbol String = 77
+  optional edgesNumber Integer = 78
+  optional loadEdgeListInParallel Boolean = 79
+  optional verbose Boolean = 80
+  optional mayHaveSingletons Boolean = 81
+  optional mayHaveSingletonWithSelfloops Boolean = 82
+  optional directed Boolean = 83
+  optional name String = 84
+ }
+message GraphDataConfiguration
+ {
+  optional graph EnsmallenRunConfig = 1
+  optional data TrainValidData = 2
+ }
+message NeatConfiguration
+ {
+  optional graphData GraphDataConfiguration = 1
+ }
+message NodeEmbeddingsParamsConfig
+ {
+  optional methodName NodeEmbedMethodEnum = 1
+  optional walkLength Integer = 2
+  optional batchSize Integer = 3
+  optional windowSize Integer = 4
+  optional returnWeight Float = 5
+  optional exploreWeight Float = 6
+  optional iterations Integer = 7
+ }
+message NodeType
+ {
+  repeated source String = 1
+  repeated destination String = 2
+ }
+message PosNegData
+ {
+  optional posEdgeFilepath String = 1
+  optional negEdgeFilepath String = 2
+ }
+// Path for output to be saved.
+message Target
+ {
+  optional targetPath String = 1
+ }
+message TrainValidData
+ {
+  optional trainData PosNegData = 1
+  optional validData PosNegData = 2
+ }
+message Upload
+ {
+  optional s3Bucket String = 1
+  optional s3BucketDir String = 2
+  repeated extraArgs String = 3
+ }

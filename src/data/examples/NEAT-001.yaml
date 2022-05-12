@@ -1,0 +1,83 @@
+
+Target:
+  target_path: tests/resources/test_output_data_dir/
+
+GraphDataConfiguration:
+  graph:
+    directed: False
+    node_path: tests/resources/test_graphs/pos_train_nodes.tsv
+    edge_path: tests/resources/test_graphs/pos_train_edges.tsv
+    verbose: True
+    nodes_column: "id"
+    node_list_node_types_column: "category"
+    default_node_type: "biolink:NamedThing"
+    sources_column: "subject"
+    destinations_column: "object"
+    default_edge_type: "biolink:related_to"
+
+  data:
+    valid_data:
+      pos_edge_filepath: tests/resources/test_graphs/pos_valid_edges.tsv
+      neg_edge_filepath: tests/resources/test_graphs/neg_valid_edges.tsv
+    train_data:
+      neg_edge_filepath: tests/resources/test_graphs/neg_train_edges.tsv
+
+EmbeddingsConfig:
+  filename: test_embeddings_test_yaml.csv
+  history_filename: embedding_history.json
+  node_embeddings_params:
+    method_name: SkipGram
+    walk_length: 10 # typically 100 or so
+    batch_size: 128 # typically 512? or more
+    window_size: 4
+    return_weight: 1.0  # 1/p
+    explore_weight: 1.0  # 1/q
+    iterations: 5 # typically 20
+  tsne_filename: tsne.png
+
+ClassifierContainer:
+  classifiers:
+    - classifier_id: lr_0
+      classifier_name: Logistic Regression
+      classifier_type: sklearn.linear_model.LogisticRegression
+      edge_method: Average
+      outfile: "model_lr0_test_yaml.h5"
+      parameters:
+        random_state: 42
+        max_iter: 100
+
+    - classifier_id: lr_1
+      classifier_name: Logistic Regression
+      classifier_type: sklearn.linear_model.LogisticRegression
+      edge_method: Average
+      outfile: "model_lr1_test_yaml.h5"
+      parameters:
+        random_state: 24
+        max_iter: 100
+
+ApplyTrainedModelsContainer:
+  models:
+    - model_id: lr_0
+      node_types:
+        source:
+          - "biolink:Protein"
+        destination:
+          - "biolink:Protein"
+      cutoff: 0.9
+      outfile: lr_protein_predictions_kgx.tsv
+
+    - model_id: lr_1
+      node_types:
+        source:
+          - "biolink:Drug"
+        destination:
+          - "biolink:Drug"
+      cutoff: 0.8
+      outfile: lr_drug_predictions_kgx.tsv
+
+Upload:
+  s3_bucket: some_bucket
+  s3_bucket_dir: some/remote/directory/
+  extra_args:
+    "ACL": "public-read"
+    "BCL": "private-read"

@@ -1,0 +1,48 @@
+{
+   "linkml": "https://w3id.org/linkml/",
+   "ApplyTrainedModel": {
+      "@id": "https://w3id.org/neat_schema/ApplyTrainedModel"
+   },
+   "ApplyTrainedModelsContainer": {
+      "@id": "https://w3id.org/neat_schema/ApplyTrainedModelsContainer"
+   },
+   "Classifier": {
+      "@id": "https://w3id.org/neat_schema/Classifier"
+   },
+   "ClassifierContainer": {
+      "@id": "https://w3id.org/neat_schema/ClassifierContainer"
+   },
+   "ClassifierParams": {
+      "@id": "https://w3id.org/neat_schema/ClassifierParams"
+   },
+   "EmbeddingsConfig": {
+      "@id": "https://w3id.org/neat_schema/EmbeddingsConfig"
+   },
+   "EnsmallenRunConfig": {
+      "@id": "https://w3id.org/neat_schema/EnsmallenRunConfig"
+   },
+   "GraphDataConfiguration": {
+      "@id": "https://w3id.org/neat_schema/GraphDataConfiguration"
+   },
+   "NeatConfiguration": {
+      "@id": "https://w3id.org/neat_schema/NeatConfiguration"
+   },
+   "NodeEmbeddingsParamsConfig": {
+      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig"
+   },
+   "NodeType": {
+      "@id": "https://w3id.org/neat_schema/NodeType"
+   },
+   "PosNegData": {
+      "@id": "https://w3id.org/neat_schema/PosNegData"
+   },
+   "Target": {
+      "@id": "https://w3id.org/neat_schema/Target"
+   },
+   "TrainValidData": {
+      "@id": "https://w3id.org/neat_schema/TrainValidData"
+   },
+   "Upload": {
+      "@id": "https://w3id.org/neat_schema/Upload"
+   }
+}

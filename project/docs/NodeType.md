@@ -1,0 +1,24 @@
+
+# Class: NodeType
+
+
+
+
+URI: [https://w3id.org/neat_schema/NodeType](https://w3id.org/neat_schema/NodeType)
+
+
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]++-%20node_types%200..1>[NodeType&#124;source:string%20*;destination:string%20*],[ApplyTrainedModel])](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]++-%20node_types%200..1>[NodeType&#124;source:string%20*;destination:string%20*],[ApplyTrainedModel])
+
+## Referenced by Class
+
+ *  **None** *[➞node_types](applyTrainedModel__node_types.md)*  <sub>0..1</sub>  **[NodeType](NodeType.md)**
+
+## Attributes
+
+
+### Own
+
+ * [➞source](nodeType__source.md)  <sub>0..\*</sub>
+     * Range: [String](types/String.md)
+ * [➞destination](nodeType__destination.md)  <sub>0..\*</sub>
+     * Range: [String](types/String.md)
