@@ -1280,10 +1280,13 @@ python-versions = ">=3.7"
 docs = ["sphinx", "jaraco.packaging (>=9)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
 
+[extras]
+docs = ["linkml"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "e5636918050bbb88bed6083478d55e969d75a260c1d28503684e636b23eed37f"
+content-hash = "cbca2a8c561d78fabee2f4d1eb1338d5c5bfe0a1b3a4c1329f07d8f68bf91f1e"
 
 [metadata.files]
 alabaster = [
