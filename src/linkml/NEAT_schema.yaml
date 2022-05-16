@@ -116,7 +116,6 @@ classes:
         multivalued: true
         inlined_as_list: true
       destination:
-        source:
         multivalued: true
         inlined_as_list: true
 
