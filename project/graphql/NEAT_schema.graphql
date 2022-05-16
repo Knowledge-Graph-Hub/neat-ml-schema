@@ -21,6 +21,8 @@ type Classifier
     historyFilename: String
     parameters: ClassifierParams
     layers: LayerContainer
+    metrics: MetricContainer
+    optimizer: OptimizerEnum
   }
 
 type ClassifierContainer
@@ -151,6 +153,18 @@ type LayerParams
   {
     units: Integer
     activation: ActivationEnum
+  }
+
+type Metric
+  {
+    metricName: String
+    type: String
+    curve: String
+  }
+
+type MetricContainer
+  {
+    metrics: Metric
   }
 
 type NeatConfiguration

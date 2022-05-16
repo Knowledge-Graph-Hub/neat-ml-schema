@@ -22,6 +22,8 @@ message Classifier
   optional historyFilename String = 6
   optional parameters ClassifierParams = 7
   optional layers LayerContainer = 8
+  optional metrics MetricContainer = 9
+  optional optimizer OptimizerEnum = 10
  }
 // A container with multiple classifiers in it.
 message ClassifierContainer
@@ -150,6 +152,18 @@ message LayerParams
  {
   optional units Integer = 1
   optional activation ActivationEnum = 2
+ }
+// Metrics of a trained classifier.
+message Metric
+ {
+  optional metricName String = 1
+  optional type String = 2
+  optional curve String = 3
+ }
+// A container of metrics for a trained classifier.
+message MetricContainer
+ {
+  optional metrics Metric = 1
  }
 message NeatConfiguration
  {

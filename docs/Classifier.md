@@ -25,6 +25,8 @@ URI: [https://w3id.org/neat_schema/:Classifier](https://w3id.org/neat_schema/:Cl
 | [history_filename](history_filename.md) | [string](string.md) | 0..1 | None  | . |
 | [parameters](parameters.md) | [ClassifierParams](ClassifierParams.md) | 0..1 | None  | . |
 | [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
+| [metrics](metrics.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
+| [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -85,6 +87,14 @@ attributes:
     name: layers
     from_schema: https://w3id.org/neat_schema
     range: LayerContainer
+  metrics:
+    name: metrics
+    from_schema: https://w3id.org/neat_schema
+    range: MetricContainer
+  optimizer:
+    name: optimizer
+    from_schema: https://w3id.org/neat_schema
+    range: optimizer_enum
 
 ```
 </details>
@@ -145,6 +155,18 @@ attributes:
     alias: layers
     owner: Classifier
     range: LayerContainer
+  metrics:
+    name: metrics
+    from_schema: https://w3id.org/neat_schema
+    alias: metrics
+    owner: Classifier
+    range: MetricContainer
+  optimizer:
+    name: optimizer
+    from_schema: https://w3id.org/neat_schema
+    alias: optimizer
+    owner: Classifier
+    range: optimizer_enum
 
 ```
 </details>

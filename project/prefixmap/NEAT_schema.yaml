@@ -33,6 +33,12 @@
    "LayerParams": {
       "@id": "https://w3id.org/neat_schema/LayerParams"
    },
+   "Metric": {
+      "@id": "https://w3id.org/neat_schema/Metric"
+   },
+   "MetricContainer": {
+      "@id": "https://w3id.org/neat_schema/MetricContainer"
+   },
    "NeatConfiguration": {
       "@id": "https://w3id.org/neat_schema/NeatConfiguration"
    },

@@ -56,7 +56,9 @@ linkml:Nodeidentifier NONLITERAL
           <outfile> @linkml:String ? ;
           <history_filename> @linkml:String ? ;
           <parameters> @<ClassifierParams> ? ;
-          <layers> @<LayerContainer> ?
+          <layers> @<LayerContainer> ? ;
+          <metrics> @<MetricContainer> ? ;
+          <optimizer> @<OptimizerEnum> ?
        ) ;
        rdf:type [ <Classifier> ] ?
     )
@@ -203,6 +205,21 @@ linkml:Nodeidentifier NONLITERAL
           <activation> @<ActivationEnum> ?
        ) ;
        rdf:type [ <LayerParams> ] ?
+    )
+}
+
+<Metric> CLOSED {
+    (  $<Metric_tes> (  <metric_name> @linkml:String ? ;
+          <type> @linkml:String ? ;
+          <curve> @linkml:String ?
+       ) ;
+       rdf:type [ <Metric> ] ?
+    )
+}
+
+<MetricContainer> CLOSED {
+    (  $<MetricContainer_tes> <metrics> @<Metric> ? ;
+       rdf:type [ <MetricContainer> ] ?
     )
 }
 

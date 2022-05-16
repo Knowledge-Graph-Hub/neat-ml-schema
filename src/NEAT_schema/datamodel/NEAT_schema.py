@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T18:07:46
+# Generation date: 2022-05-16T18:35:46
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -240,6 +240,8 @@ class Classifier(YAMLRoot):
     history_filename: Optional[str] = None
     parameters: Optional[Union[dict, "ClassifierParams"]] = None
     layers: Optional[Union[dict, "LayerContainer"]] = None
+    metrics: Optional[Union[dict, "MetricContainer"]] = None
+    optimizer: Optional[Union[str, "OptimizerEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.classifier_id is not None and not isinstance(self.classifier_id, str):
@@ -265,6 +267,12 @@ class Classifier(YAMLRoot):
 
         if self.layers is not None and not isinstance(self.layers, LayerContainer):
             self.layers = LayerContainer(**as_dict(self.layers))
+
+        if self.metrics is not None and not isinstance(self.metrics, MetricContainer):
+            self.metrics = MetricContainer(**as_dict(self.metrics))
+
+        if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
+            self.optimizer = OptimizerEnum(self.optimizer)
 
         super().__post_init__(**kwargs)
 
@@ -362,6 +370,56 @@ class LayerParams(YAMLRoot):
 
         if self.activation is not None and not isinstance(self.activation, ActivationEnum):
             self.activation = ActivationEnum(self.activation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetricContainer(YAMLRoot):
+    """
+    A container of metrics for a trained classifier.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/MetricContainer")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "MetricContainer"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/MetricContainer")
+
+    metrics: Optional[Union[dict, "Metric"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.metrics is not None and not isinstance(self.metrics, Metric):
+            self.metrics = Metric(**as_dict(self.metrics))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Metric(YAMLRoot):
+    """
+    Metrics of a trained classifier.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Metric")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "Metric"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Metric")
+
+    metric_name: Optional[str] = None
+    type: Optional[str] = None
+    curve: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.metric_name is not None and not isinstance(self.metric_name, str):
+            self.metric_name = str(self.metric_name)
+
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
+
+        if self.curve is not None and not isinstance(self.curve, str):
+            self.curve = str(self.curve)
 
         super().__post_init__(**kwargs)
 
@@ -892,6 +950,26 @@ class ActivationEnum(EnumDefinitionImpl):
         name="ActivationEnum",
     )
 
+class OptimizerEnum(EnumDefinitionImpl):
+    """
+    Optimizers that can be implemented in the neural network.
+    """
+    Adagrad = PermissibleValue(text="Adagrad",
+                                     description="Optimizer that implements the Adagrad algorithm.")
+    Adam = PermissibleValue(text="Adam",
+                               description="Optimizer that implements the Adam algorithm.")
+    Adamax = PermissibleValue(text="Adamax",
+                                   description="Optimizer that implements the Adamax algorithm.")
+    Nadam = PermissibleValue(text="Nadam",
+                                 description="Optimizer that implements the NAdam algorithm.")
+    SGD = PermissibleValue(text="SGD",
+                             description="Stochastic gradient descent (with momentum) optimizer.")
+
+    _defn = EnumDefinition(
+        name="OptimizerEnum",
+        description="Optimizers that can be implemented in the neural network.",
+    )
+
 # Slots
 class slots:
     pass
@@ -977,6 +1055,12 @@ slots.classifier__parameters = Slot(uri=DEFAULT_.parameters, name="classifier__p
 slots.classifier__layers = Slot(uri=DEFAULT_.layers, name="classifier__layers", curie=DEFAULT_.curie('layers'),
                    model_uri=DEFAULT_.classifier__layers, domain=None, range=Optional[Union[dict, LayerContainer]])
 
+slots.classifier__metrics = Slot(uri=DEFAULT_.metrics, name="classifier__metrics", curie=DEFAULT_.curie('metrics'),
+                   model_uri=DEFAULT_.classifier__metrics, domain=None, range=Optional[Union[dict, MetricContainer]])
+
+slots.classifier__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifier__optimizer", curie=DEFAULT_.curie('optimizer'),
+                   model_uri=DEFAULT_.classifier__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
+
 slots.classifierParams__random_state = Slot(uri=DEFAULT_.random_state, name="classifierParams__random_state", curie=DEFAULT_.curie('random_state'),
                    model_uri=DEFAULT_.classifierParams__random_state, domain=None, range=Optional[int])
 
@@ -997,6 +1081,18 @@ slots.layerParams__units = Slot(uri=DEFAULT_.units, name="layerParams__units", c
 
 slots.layerParams__activation = Slot(uri=DEFAULT_.activation, name="layerParams__activation", curie=DEFAULT_.curie('activation'),
                    model_uri=DEFAULT_.layerParams__activation, domain=None, range=Optional[Union[str, "ActivationEnum"]])
+
+slots.metricContainer__metrics = Slot(uri=DEFAULT_.metrics, name="metricContainer__metrics", curie=DEFAULT_.curie('metrics'),
+                   model_uri=DEFAULT_.metricContainer__metrics, domain=None, range=Optional[Union[dict, Metric]])
+
+slots.metric__metric_name = Slot(uri=DEFAULT_.metric_name, name="metric__metric_name", curie=DEFAULT_.curie('metric_name'),
+                   model_uri=DEFAULT_.metric__metric_name, domain=None, range=Optional[str])
+
+slots.metric__type = Slot(uri=DEFAULT_.type, name="metric__type", curie=DEFAULT_.curie('type'),
+                   model_uri=DEFAULT_.metric__type, domain=None, range=Optional[str])
+
+slots.metric__curve = Slot(uri=DEFAULT_.curve, name="metric__curve", curie=DEFAULT_.curie('curve'),
+                   model_uri=DEFAULT_.metric__curve, domain=None, range=Optional[str])
 
 slots.applyTrainedModelsContainer__models = Slot(uri=DEFAULT_.models, name="applyTrainedModelsContainer__models", curie=DEFAULT_.curie('models'),
                    model_uri=DEFAULT_.applyTrainedModelsContainer__models, domain=None, range=Optional[Union[Union[dict, ApplyTrainedModel], List[Union[dict, ApplyTrainedModel]]]])

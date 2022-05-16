@@ -257,6 +257,34 @@
           "description": "Softmax (or softargmax) function."
         }
       ]
+    },
+    {
+      "name": "optimizer_enum",
+      "definition_uri": "https://w3id.org/neat_schema/OptimizerEnum",
+      "description": "Optimizers that can be implemented in the neural network.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "permissible_values": [
+        {
+          "text": "Adagrad",
+          "description": "Optimizer that implements the Adagrad algorithm."
+        },
+        {
+          "text": "Adam",
+          "description": "Optimizer that implements the Adam algorithm."
+        },
+        {
+          "text": "Adamax",
+          "description": "Optimizer that implements the Adamax algorithm."
+        },
+        {
+          "text": "Nadam",
+          "description": "Optimizer that implements the NAdam algorithm."
+        },
+        {
+          "text": "SGD",
+          "description": "Stochastic gradient descent (with momentum) optimizer."
+        }
+      ]
     }
   ],
   "slots": [
@@ -596,6 +624,31 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "classifier__metrics",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/metrics",
+      "alias": "metrics",
+      "owner": "Classifier",
+      "domain_of": [
+        "Classifier"
+      ],
+      "range": "MetricContainer",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifier__optimizer",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/optimizer",
+      "alias": "optimizer",
+      "owner": "Classifier",
+      "domain_of": [
+        "Classifier"
+      ],
+      "range": "optimizer_enum",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "classifierParams__random_state",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/random_state",
@@ -681,6 +734,55 @@
         "LayerParams"
       ],
       "range": "activation_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metricContainer__metrics",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/metrics",
+      "alias": "metrics",
+      "owner": "MetricContainer",
+      "domain_of": [
+        "MetricContainer"
+      ],
+      "range": "Metric",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__metric_name",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/metric_name",
+      "alias": "metric_name",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__type",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/type",
+      "alias": "type",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__curve",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/curve",
+      "alias": "curve",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -2044,7 +2146,9 @@
         "classifier__outfile",
         "classifier__history_filename",
         "classifier__parameters",
-        "classifier__layers"
+        "classifier__layers",
+        "classifier__metrics",
+        "classifier__optimizer"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2081,6 +2185,16 @@
         {
           "name": "layers",
           "range": "LayerContainer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "metrics",
+          "range": "MetricContainer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "optimizer",
+          "range": "optimizer_enum",
           "@type": "SlotDefinition"
         }
       ],
@@ -2180,6 +2294,53 @@
         }
       ],
       "class_uri": "https://w3id.org/neat_schema/LayerParams",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetricContainer",
+      "definition_uri": "https://w3id.org/neat_schema/MetricContainer",
+      "description": "A container of metrics for a trained classifier.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "metricContainer__metrics"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "metrics",
+          "range": "Metric",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/MetricContainer",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Metric",
+      "definition_uri": "https://w3id.org/neat_schema/Metric",
+      "description": "Metrics of a trained classifier.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "metric__metric_name",
+        "metric__type",
+        "metric__curve"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "metric_name",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "type",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "curve",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/Metric",
       "@type": "ClassDefinition"
     },
     {
@@ -2801,9 +2962,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-16T17:49:49",
-  "source_file_size": 8736,
-  "generation_date": "2022-05-16T18:07:40",
+  "source_file_date": "2022-05-16T18:33:34",
+  "source_file_size": 9626,
+  "generation_date": "2022-05-16T18:35:39",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

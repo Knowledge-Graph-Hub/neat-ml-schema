@@ -70,6 +70,12 @@
             "layers": {
                "$ref": "#/$defs/LayerContainer"
             },
+            "metrics": {
+               "$ref": "#/$defs/MetricContainer"
+            },
+            "optimizer": {
+               "$ref": "#/$defs/OptimizerEnum"
+            },
             "outfile": {
                "type": "string"
             },
@@ -466,6 +472,36 @@
          "title": "LayerParams",
          "type": "object"
       },
+      "Metric": {
+         "additionalProperties": false,
+         "description": "Metrics of a trained classifier.",
+         "properties": {
+            "curve": {
+               "type": "string"
+            },
+            "metric_name": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Metric",
+         "type": "object"
+      },
+      "MetricContainer": {
+         "additionalProperties": false,
+         "description": "A container of metrics for a trained classifier.",
+         "properties": {
+            "metrics": {
+               "$ref": "#/$defs/Metric"
+            }
+         },
+         "required": [],
+         "title": "MetricContainer",
+         "type": "object"
+      },
       "NeatConfiguration": {
          "additionalProperties": false,
          "description": "",
@@ -543,6 +579,18 @@
          "required": [],
          "title": "NodeType",
          "type": "object"
+      },
+      "OptimizerEnum": {
+         "description": "Optimizers that can be implemented in the neural network.",
+         "enum": [
+            "Adagrad",
+            "Adam",
+            "Adamax",
+            "Nadam",
+            "SGD"
+         ],
+         "title": "OptimizerEnum",
+         "type": "string"
       },
       "PosNegData": {
          "additionalProperties": false,

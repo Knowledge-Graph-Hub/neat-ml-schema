@@ -22,7 +22,9 @@ CREATE TABLE "Classifier" (
 	history_filename TEXT, 
 	parameters TEXT, 
 	layers TEXT, 
-	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers)
+	metrics TEXT, 
+	optimizer VARCHAR(7), 
+	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers, metrics, optimizer)
 );
 
 CREATE TABLE "ClassifierContainer" (
@@ -153,6 +155,18 @@ CREATE TABLE "LayerParams" (
 	units INTEGER, 
 	activation VARCHAR(7), 
 	PRIMARY KEY (units, activation)
+);
+
+CREATE TABLE "Metric" (
+	metric_name TEXT, 
+	type TEXT, 
+	curve TEXT, 
+	PRIMARY KEY (metric_name, type, curve)
+);
+
+CREATE TABLE "MetricContainer" (
+	metrics TEXT, 
+	PRIMARY KEY (metrics)
 );
 
 CREATE TABLE "NeatConfiguration" (

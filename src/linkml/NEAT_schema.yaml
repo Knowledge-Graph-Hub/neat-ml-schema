@@ -87,6 +87,11 @@ classes:
         range: ClassifierParams
       layers:
         range: LayerContainer
+      metrics:
+        range: MetricContainer
+      optimizer:
+        range: optimizer_enum
+
 
   ClassifierParams:
     description: Parameters needed to define a classifier.
@@ -119,6 +124,19 @@ classes:
         range: integer
       activation:
         range: activation_enum
+
+  MetricContainer:
+    description: A container of metrics for a trained classifier.
+    attributes:
+      metrics:
+        range: Metric
+  
+  Metric:
+    description: Metrics of a trained classifier.
+    attributes:
+      metric_name:
+      type:
+      curve:
 
   ApplyTrainedModelsContainer:
     description: A container with multiple classifiers in it.
@@ -354,5 +372,20 @@ enums:
         description: The tanh function.
       softmax:
         description: Softmax (or softargmax) function.
+
+  optimizer_enum:
+    description: Optimizers that can be implemented in the neural network.
+    permissible_values:
+      Adagrad:
+        description: Optimizer that implements the Adagrad algorithm.
+      Adam:
+        description: Optimizer that implements the Adam algorithm.
+      Adamax:
+        description: Optimizer that implements the Adamax algorithm.
+      Nadam:
+        description: Optimizer that implements the NAdam algorithm.
+      SGD:
+        description: Stochastic gradient descent (with momentum) optimizer.
+
 
   
