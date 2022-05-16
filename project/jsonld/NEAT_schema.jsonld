@@ -230,6 +230,33 @@
           "text": "AbsoluteL1"
         }
       ]
+    },
+    {
+      "name": "activation_enum",
+      "definition_uri": "https://w3id.org/neat_schema/ActivationEnum",
+      "from_schema": "https://w3id.org/neat_schema",
+      "permissible_values": [
+        {
+          "text": "linear",
+          "description": "Linear function."
+        },
+        {
+          "text": "relu",
+          "description": "Rectified Linear Unit (ReLU)"
+        },
+        {
+          "text": "sigmoid",
+          "description": "Sigmoid activation function."
+        },
+        {
+          "text": "tanh",
+          "description": "The tanh function."
+        },
+        {
+          "text": "softmax",
+          "description": "Softmax (or softargmax) function."
+        }
+      ]
     }
   ],
   "slots": [
@@ -237,65 +264,65 @@
       "name": "neatConfiguration__graph_data",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/graph_data",
-      "inlined": true,
       "alias": "graph_data",
       "owner": "NeatConfiguration",
       "domain_of": [
         "NeatConfiguration"
       ],
       "range": "GraphDataConfiguration",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "graphDataConfiguration__graph",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/graph",
-      "inlined": true,
       "alias": "graph",
       "owner": "GraphDataConfiguration",
       "domain_of": [
         "GraphDataConfiguration"
       ],
       "range": "EnsmallenRunConfig",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "graphDataConfiguration__data",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/data",
-      "inlined": true,
       "alias": "data",
       "owner": "GraphDataConfiguration",
       "domain_of": [
         "GraphDataConfiguration"
       ],
       "range": "TrainValidData",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "trainValidData__train_data",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/train_data",
-      "inlined": true,
       "alias": "train_data",
       "owner": "TrainValidData",
       "domain_of": [
         "TrainValidData"
       ],
       "range": "PosNegData",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "trainValidData__valid_data",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/valid_data",
-      "inlined": true,
       "alias": "valid_data",
       "owner": "TrainValidData",
       "domain_of": [
         "TrainValidData"
       ],
       "range": "PosNegData",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -350,13 +377,13 @@
       "name": "embeddingsConfig__node_embeddings_params",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_embeddings_params",
-      "inlined": true,
       "alias": "node_embeddings_params",
       "owner": "EmbeddingsConfig",
       "domain_of": [
         "EmbeddingsConfig"
       ],
       "range": "NodeEmbeddingsParamsConfig",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -460,14 +487,14 @@
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/classifiers",
       "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "alias": "classifiers",
       "owner": "ClassifierContainer",
       "domain_of": [
         "ClassifierContainer"
       ],
       "range": "Classifier",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -531,16 +558,41 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "classifier__history_filename",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/history_filename",
+      "alias": "history_filename",
+      "owner": "Classifier",
+      "domain_of": [
+        "Classifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "classifier__parameters",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/parameters",
-      "inlined": true,
       "alias": "parameters",
       "owner": "Classifier",
       "domain_of": [
         "Classifier"
       ],
       "range": "ClassifierParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifier__layers",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/layers",
+      "alias": "layers",
+      "owner": "Classifier",
+      "domain_of": [
+        "Classifier"
+      ],
+      "range": "LayerContainer",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -568,18 +620,82 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "layerContainer__layers",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/layers",
+      "multivalued": true,
+      "alias": "layers",
+      "owner": "LayerContainer",
+      "domain_of": [
+        "LayerContainer"
+      ],
+      "range": "Layer",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "layer__type",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/type",
+      "alias": "type",
+      "owner": "Layer",
+      "domain_of": [
+        "Layer"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "layer__parameters",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/parameters",
+      "alias": "parameters",
+      "owner": "Layer",
+      "domain_of": [
+        "Layer"
+      ],
+      "range": "LayerParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "layerParams__units",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/units",
+      "alias": "units",
+      "owner": "LayerParams",
+      "domain_of": [
+        "LayerParams"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "layerParams__activation",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/activation",
+      "alias": "activation",
+      "owner": "LayerParams",
+      "domain_of": [
+        "LayerParams"
+      ],
+      "range": "activation_enum",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "applyTrainedModelsContainer__models",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/models",
       "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "alias": "models",
       "owner": "ApplyTrainedModelsContainer",
       "domain_of": [
         "ApplyTrainedModelsContainer"
       ],
       "range": "ApplyTrainedModel",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -598,13 +714,13 @@
       "name": "applyTrainedModel__node_types",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types",
-      "inlined": true,
       "alias": "node_types",
       "owner": "ApplyTrainedModel",
       "domain_of": [
         "ApplyTrainedModel"
       ],
       "range": "NodeType",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -636,13 +752,13 @@
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/source",
       "multivalued": true,
-      "inlined_as_list": true,
       "alias": "source",
       "owner": "NodeType",
       "domain_of": [
         "NodeType"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -650,13 +766,13 @@
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/destination",
       "multivalued": true,
-      "inlined_as_list": true,
       "alias": "destination",
       "owner": "NodeType",
       "domain_of": [
         "NodeType"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1907,8 +2023,8 @@
         {
           "name": "classifiers",
           "multivalued": true,
-          "inlined_as_list": true,
           "range": "Classifier",
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -1926,7 +2042,9 @@
         "classifier__classifier_type",
         "classifier__edge_method",
         "classifier__outfile",
-        "classifier__parameters"
+        "classifier__history_filename",
+        "classifier__parameters",
+        "classifier__layers"
       ],
       "slot_usage": {},
       "attributes": [
@@ -1952,8 +2070,17 @@
           "@type": "SlotDefinition"
         },
         {
+          "name": "history_filename",
+          "@type": "SlotDefinition"
+        },
+        {
           "name": "parameters",
           "range": "ClassifierParams",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "layers",
+          "range": "LayerContainer",
           "@type": "SlotDefinition"
         }
       ],
@@ -1986,6 +2113,76 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "LayerContainer",
+      "definition_uri": "https://w3id.org/neat_schema/LayerContainer",
+      "description": "A container of neural network layers.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "layerContainer__layers"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "layers",
+          "multivalued": true,
+          "range": "Layer",
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/LayerContainer",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Layer",
+      "definition_uri": "https://w3id.org/neat_schema/Layer",
+      "description": "Layers for a neural network.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "layer__type",
+        "layer__parameters"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "type",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "parameters",
+          "range": "LayerParams",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/Layer",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LayerParams",
+      "definition_uri": "https://w3id.org/neat_schema/LayerParams",
+      "description": "Parameters for each layer of a neural network.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "layerParams__units",
+        "layerParams__activation"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "units",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "activation",
+          "range": "activation_enum",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/LayerParams",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ApplyTrainedModelsContainer",
       "definition_uri": "https://w3id.org/neat_schema/ApplyTrainedModelsContainer",
       "description": "A container with multiple classifiers in it.",
@@ -1998,8 +2195,8 @@
         {
           "name": "models",
           "multivalued": true,
-          "inlined_as_list": true,
           "range": "ApplyTrainedModel",
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -2604,9 +2801,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-11T17:17:09",
-  "source_file_size": 7847,
-  "generation_date": "2022-05-11T17:38:32",
+  "source_file_date": "2022-05-16T17:49:49",
+  "source_file_size": 8736,
+  "generation_date": "2022-05-16T17:59:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

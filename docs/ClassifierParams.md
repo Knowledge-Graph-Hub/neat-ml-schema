@@ -27,6 +27,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierParams](https://w3id.org/neat_sche
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Classifier](Classifier.md) | [parameters](parameters.md) | range | ClassifierParams |
+| [Layer](Layer.md) | [parameters](parameters.md) | range | ClassifierParams |
 
 
 

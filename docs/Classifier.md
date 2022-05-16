@@ -22,7 +22,9 @@ URI: [https://w3id.org/neat_schema/:Classifier](https://w3id.org/neat_schema/:Cl
 | [classifier_type](classifier_type.md) | [string](string.md) | 0..1 | None  | . |
 | [edge_method](edge_method.md) | [EdgeMethodEnum](EdgeMethodEnum.md) | 0..1 | None  | . |
 | [outfile](outfile.md) | [string](string.md) | 0..1 | None  | . |
+| [history_filename](history_filename.md) | [string](string.md) | 0..1 | None  | . |
 | [parameters](parameters.md) | [ClassifierParams](ClassifierParams.md) | 0..1 | None  | . |
+| [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -72,10 +74,17 @@ attributes:
   outfile:
     name: outfile
     from_schema: https://w3id.org/neat_schema
+  history_filename:
+    name: history_filename
+    from_schema: https://w3id.org/neat_schema
   parameters:
     name: parameters
     from_schema: https://w3id.org/neat_schema
     range: ClassifierParams
+  layers:
+    name: layers
+    from_schema: https://w3id.org/neat_schema
+    range: LayerContainer
 
 ```
 </details>
@@ -118,12 +127,24 @@ attributes:
     alias: outfile
     owner: Classifier
     range: string
+  history_filename:
+    name: history_filename
+    from_schema: https://w3id.org/neat_schema
+    alias: history_filename
+    owner: Classifier
+    range: string
   parameters:
     name: parameters
     from_schema: https://w3id.org/neat_schema
     alias: parameters
     owner: Classifier
     range: ClassifierParams
+  layers:
+    name: layers
+    from_schema: https://w3id.org/neat_schema
+    alias: layers
+    owner: Classifier
+    range: LayerContainer
 
 ```
 </details>

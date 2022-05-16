@@ -76,20 +76,20 @@ attributes:
     name: source
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    inlined: true
-    inlined_as_list: true
     alias: source
     owner: NodeType
     range: string
+    inlined: true
+    inlined_as_list: true
   destination:
     name: destination
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    inlined: true
-    inlined_as_list: true
     alias: destination
     owner: NodeType
     range: string
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>

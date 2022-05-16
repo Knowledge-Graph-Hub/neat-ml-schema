@@ -19,7 +19,9 @@ message Classifier
   optional classifierType String = 3
   optional edgeMethod EdgeMethodEnum = 4
   optional outfile String = 5
-  optional parameters ClassifierParams = 6
+  optional historyFilename String = 6
+  optional parameters ClassifierParams = 7
+  optional layers LayerContainer = 8
  }
 // A container with multiple classifiers in it.
 message ClassifierContainer
@@ -131,6 +133,23 @@ message GraphDataConfiguration
  {
   optional graph EnsmallenRunConfig = 1
   optional data TrainValidData = 2
+ }
+// Layers for a neural network.
+message Layer
+ {
+  optional type String = 1
+  optional parameters LayerParams = 2
+ }
+// A container of neural network layers.
+message LayerContainer
+ {
+  repeated layers Layer = 1
+ }
+// Parameters for each layer of a neural network.
+message LayerParams
+ {
+  optional units Integer = 1
+  optional activation ActivationEnum = 2
  }
 message NeatConfiguration
  {

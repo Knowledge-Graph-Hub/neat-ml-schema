@@ -24,6 +24,15 @@
    "GraphDataConfiguration": {
       "@id": "https://w3id.org/neat_schema/GraphDataConfiguration"
    },
+   "Layer": {
+      "@id": "https://w3id.org/neat_schema/Layer"
+   },
+   "LayerContainer": {
+      "@id": "https://w3id.org/neat_schema/LayerContainer"
+   },
+   "LayerParams": {
+      "@id": "https://w3id.org/neat_schema/LayerParams"
+   },
    "NeatConfiguration": {
       "@id": "https://w3id.org/neat_schema/NeatConfiguration"
    },

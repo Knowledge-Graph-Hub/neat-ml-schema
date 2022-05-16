@@ -82,8 +82,11 @@ classes:
       edge_method:
         range: edge_method_enum
       outfile:
+      history_filename:
       parameters:
         range: ClassifierParams
+      layers:
+        range: LayerContainer
 
   ClassifierParams:
     description: Parameters needed to define a classifier.
@@ -92,6 +95,30 @@ classes:
         range: integer
       max_iter:
         range: integer
+
+  LayerContainer:
+    description: A container of neural network layers.
+    attributes:
+      layers:
+        multivalued: true
+        inlined_as_list: true
+        range: Layer
+
+
+  Layer:
+    description: Layers for a neural network.
+    attributes:
+      type:
+      parameters:
+        range: LayerParams
+
+  LayerParams:
+    description: Parameters for each layer of a neural network.
+    attributes:
+      units:
+        range: integer
+      activation:
+        range: activation_enum
 
   ApplyTrainedModelsContainer:
     description: A container with multiple classifiers in it.
@@ -314,5 +341,18 @@ enums:
         description: ##NEED DESCRIPTION
       AbsoluteL1:
         description: ##NEED DESCRIPTION
+
+  activation_enum:
+    permissible_values:
+      linear:
+        description: Linear function.
+      relu:
+        description: Rectified Linear Unit (ReLU)
+      sigmoid:
+        description: Sigmoid activation function.
+      tanh:
+        description: The tanh function.
+      softmax:
+        description: Softmax (or softargmax) function.
 
   

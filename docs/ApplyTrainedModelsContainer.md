@@ -50,9 +50,9 @@ attributes:
     name: models
     from_schema: https://w3id.org/neat_schema
     multivalued: true
+    range: ApplyTrainedModel
     inlined: true
     inlined_as_list: true
-    range: ApplyTrainedModel
 
 ```
 </details>
@@ -69,11 +69,11 @@ attributes:
     name: models
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    inlined: true
-    inlined_as_list: true
     alias: models
     owner: ApplyTrainedModelsContainer
     range: ApplyTrainedModel
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>

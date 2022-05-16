@@ -50,9 +50,9 @@ attributes:
     name: classifiers
     from_schema: https://w3id.org/neat_schema
     multivalued: true
+    range: Classifier
     inlined: true
     inlined_as_list: true
-    range: Classifier
 
 ```
 </details>
@@ -69,11 +69,11 @@ attributes:
     name: classifiers
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    inlined: true
-    inlined_as_list: true
     alias: classifiers
     owner: ClassifierContainer
     range: Classifier
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>

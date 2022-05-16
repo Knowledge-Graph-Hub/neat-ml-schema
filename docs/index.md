@@ -17,6 +17,9 @@ URI: https://w3id.org/neat_schema
 | [ClassifierContainer](ClassifierContainer.md) | A container with multiple classifiers in it. | 
 | [Classifier](Classifier.md) | ML classifiers to be trained-tested-validated and applied for predictions. | 
 | [ClassifierParams](ClassifierParams.md) | Parameters needed to define a classifier. | 
+| [LayerContainer](LayerContainer.md) | A container of neural network layers. | 
+| [Layer](Layer.md) | Layers for a neural network. | 
+| [LayerParams](LayerParams.md) | Parameters for each layer of a neural network. | 
 | [ApplyTrainedModelsContainer](ApplyTrainedModelsContainer.md) | A container with multiple classifiers in it. | 
 | [ApplyTrainedModel](ApplyTrainedModel.md) | Trained model used for prediction. | 
 | [NodeType](NodeType.md) | None | 
@@ -54,8 +57,12 @@ URI: https://w3id.org/neat_schema
 | [edge_method](edge_method.md) | None | 
 | [outfile](outfile.md) | None | 
 | [parameters](parameters.md) | None | 
+| [layers](layers.md) | None | 
 | [random_state](random_state.md) | None | 
 | [max_iter](max_iter.md) | None | 
+| [type](type.md) | None | 
+| [units](units.md) | None | 
+| [activation](activation.md) | None | 
 | [models](models.md) | None | 
 | [model_id](model_id.md) | None | 
 | [node_types](node_types.md) | None | 
@@ -158,4 +165,5 @@ URI: https://w3id.org/neat_schema
 | --- | --- |
 | [NodeEmbedMethodEnum](NodeEmbedMethodEnum.md) | None | 
 | [EdgeMethodEnum](EdgeMethodEnum.md) | None | 
+| [ActivationEnum](ActivationEnum.md) | None | 
 

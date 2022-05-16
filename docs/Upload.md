@@ -83,10 +83,10 @@ attributes:
     name: extra_args
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    inlined_as_list: false
     alias: extra_args
     owner: Upload
     range: string
+    inlined_as_list: false
 
 ```
 </details>

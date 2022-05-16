@@ -54,7 +54,9 @@ linkml:Nodeidentifier NONLITERAL
           <classifier_type> @linkml:String ? ;
           <edge_method> @<EdgeMethodEnum> ? ;
           <outfile> @linkml:String ? ;
-          <parameters> @<ClassifierParams> ?
+          <history_filename> @linkml:String ? ;
+          <parameters> @<ClassifierParams> ? ;
+          <layers> @<LayerContainer> ?
        ) ;
        rdf:type [ <Classifier> ] ?
     )
@@ -179,6 +181,28 @@ linkml:Nodeidentifier NONLITERAL
           <data> @<TrainValidData> ?
        ) ;
        rdf:type [ <GraphDataConfiguration> ] ?
+    )
+}
+
+<Layer> CLOSED {
+    (  $<Layer_tes> (  <type> @linkml:String ? ;
+          <parameters> @<LayerParams> ?
+       ) ;
+       rdf:type [ <Layer> ] ?
+    )
+}
+
+<LayerContainer> CLOSED {
+    (  $<LayerContainer_tes> <layers> @<Layer> * ;
+       rdf:type [ <LayerContainer> ] ?
+    )
+}
+
+<LayerParams> CLOSED {
+    (  $<LayerParams_tes> (  <units> @linkml:Integer ? ;
+          <activation> @<ActivationEnum> ?
+       ) ;
+       rdf:type [ <LayerParams> ] ?
     )
 }
 

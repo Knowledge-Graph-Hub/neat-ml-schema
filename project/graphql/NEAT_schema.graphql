@@ -18,7 +18,9 @@ type Classifier
     classifierType: String
     edgeMethod: EdgeMethodEnum
     outfile: String
+    historyFilename: String
     parameters: ClassifierParams
+    layers: LayerContainer
   }
 
 type ClassifierContainer
@@ -132,6 +134,23 @@ type GraphDataConfiguration
   {
     graph: EnsmallenRunConfig
     data: TrainValidData
+  }
+
+type Layer
+  {
+    type: String
+    parameters: LayerParams
+  }
+
+type LayerContainer
+  {
+    layers: [Layer]
+  }
+
+type LayerParams
+  {
+    units: Integer
+    activation: ActivationEnum
   }
 
 type NeatConfiguration

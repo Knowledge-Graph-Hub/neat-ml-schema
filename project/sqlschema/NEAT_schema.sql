@@ -19,8 +19,10 @@ CREATE TABLE "Classifier" (
 	classifier_type TEXT, 
 	edge_method VARCHAR(10), 
 	outfile TEXT, 
+	history_filename TEXT, 
 	parameters TEXT, 
-	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, parameters)
+	layers TEXT, 
+	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers)
 );
 
 CREATE TABLE "ClassifierContainer" (
@@ -134,6 +136,23 @@ CREATE TABLE "GraphDataConfiguration" (
 	graph TEXT, 
 	data TEXT, 
 	PRIMARY KEY (graph, data)
+);
+
+CREATE TABLE "Layer" (
+	type TEXT, 
+	parameters TEXT, 
+	PRIMARY KEY (type, parameters)
+);
+
+CREATE TABLE "LayerContainer" (
+	layers TEXT, 
+	PRIMARY KEY (layers)
+);
+
+CREATE TABLE "LayerParams" (
+	units INTEGER, 
+	activation VARCHAR(7), 
+	PRIMARY KEY (units, activation)
 );
 
 CREATE TABLE "NeatConfiguration" (

@@ -1,5 +1,17 @@
 {
    "$defs": {
+      "ActivationEnum": {
+         "description": "",
+         "enum": [
+            "linear",
+            "relu",
+            "sigmoid",
+            "tanh",
+            "softmax"
+         ],
+         "title": "ActivationEnum",
+         "type": "string"
+      },
       "ApplyTrainedModel": {
          "additionalProperties": false,
          "description": "Trained model used for prediction.",
@@ -51,6 +63,12 @@
             },
             "edge_method": {
                "$ref": "#/$defs/EdgeMethodEnum"
+            },
+            "history_filename": {
+               "type": "string"
+            },
+            "layers": {
+               "$ref": "#/$defs/LayerContainer"
             },
             "outfile": {
                "type": "string"
@@ -401,6 +419,51 @@
          },
          "required": [],
          "title": "GraphDataConfiguration",
+         "type": "object"
+      },
+      "Layer": {
+         "additionalProperties": false,
+         "description": "Layers for a neural network.",
+         "properties": {
+            "parameters": {
+               "$ref": "#/$defs/LayerParams"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Layer",
+         "type": "object"
+      },
+      "LayerContainer": {
+         "additionalProperties": false,
+         "description": "A container of neural network layers.",
+         "properties": {
+            "layers": {
+               "items": {
+                  "$ref": "#/$defs/Layer"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "LayerContainer",
+         "type": "object"
+      },
+      "LayerParams": {
+         "additionalProperties": false,
+         "description": "Parameters for each layer of a neural network.",
+         "properties": {
+            "activation": {
+               "$ref": "#/$defs/ActivationEnum"
+            },
+            "units": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "LayerParams",
          "type": "object"
       },
       "NeatConfiguration": {
