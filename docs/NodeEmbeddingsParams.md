@@ -1,9 +1,9 @@
-# Class: NodeEmbeddingsParamsConfig
+# Class: NodeEmbeddingsParams
 
 
 
 
-URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParamsConfig](https://w3id.org/neat_schema/:NodeEmbeddingsParamsConfig)
+URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParams](https://w3id.org/neat_schema/:NodeEmbeddingsParams)
 
 
 
@@ -29,7 +29,7 @@ URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParamsConfig](https://w3id.org
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [EmbeddingsConfig](EmbeddingsConfig.md) | [node_embeddings_params](node_embeddings_params.md) | range | NodeEmbeddingsParamsConfig |
+| [EmbeddingsConfig](EmbeddingsConfig.md) | [node_embeddings_params](node_embeddings_params.md) | range | NodeEmbeddingsParams |
 
 
 
@@ -51,7 +51,7 @@ URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParamsConfig](https://w3id.org
 
 <details>
 ```yaml
-name: NodeEmbeddingsParamsConfig
+name: NodeEmbeddingsParams
 from_schema: https://w3id.org/neat_schema
 attributes:
   method_name:
@@ -90,50 +90,50 @@ attributes:
 
 <details>
 ```yaml
-name: NodeEmbeddingsParamsConfig
+name: NodeEmbeddingsParams
 from_schema: https://w3id.org/neat_schema
 attributes:
   method_name:
     name: method_name
     from_schema: https://w3id.org/neat_schema
     alias: method_name
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: node_embed_method_enum
   walk_length:
     name: walk_length
     from_schema: https://w3id.org/neat_schema
     alias: walk_length
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: integer
   batch_size:
     name: batch_size
     from_schema: https://w3id.org/neat_schema
     alias: batch_size
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: integer
   window_size:
     name: window_size
     from_schema: https://w3id.org/neat_schema
     alias: window_size
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: integer
   return_weight:
     name: return_weight
     from_schema: https://w3id.org/neat_schema
     alias: return_weight
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: float
   explore_weight:
     name: explore_weight
     from_schema: https://w3id.org/neat_schema
     alias: explore_weight
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: float
   iterations:
     name: iterations
     from_schema: https://w3id.org/neat_schema
     alias: iterations
-    owner: NodeEmbeddingsParamsConfig
+    owner: NodeEmbeddingsParams
     range: integer
 
 ```
