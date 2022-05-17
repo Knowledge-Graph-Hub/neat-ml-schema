@@ -7,7 +7,7 @@ Parameters needed to define a classifier.
 URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schema/ClassifierParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer],[LayerContainer],[ClassifierFitParams]<fit%200..1-++[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics%200..1-++[ClassifierParams],[LayerContainer]<layers%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[ClassifierFitParams],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer],[LayerContainer],[ClassifierFitParams]<fit%200..1-++[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics%200..1-++[ClassifierParams],[LayerContainer]<layers%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[ClassifierFitParams],[Classifier])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer],[LayerContainer],[ClassifierFitParams]<fit_config%200..1-++[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics_config%200..1-++[ClassifierParams],[LayerContainer]<layers_config%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[ClassifierFitParams],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer],[LayerContainer],[ClassifierFitParams]<fit_config%200..1-++[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics_config%200..1-++[ClassifierParams],[LayerContainer]<layers_config%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[ClassifierFitParams],[Classifier])
 
 ## Referenced by Class
 
@@ -22,11 +22,11 @@ URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schem
      * Range: [Integer](types/Integer.md)
  * [➞max_iter](classifierParams__max_iter.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
- * [➞layers](classifierParams__layers.md)  <sub>0..1</sub>
+ * [➞layers_config](classifierParams__layers_config.md)  <sub>0..1</sub>
      * Range: [LayerContainer](LayerContainer.md)
- * [➞metrics](classifierParams__metrics.md)  <sub>0..1</sub>
+ * [➞metrics_config](classifierParams__metrics_config.md)  <sub>0..1</sub>
      * Range: [MetricContainer](MetricContainer.md)
  * [➞optimizer](classifierParams__optimizer.md)  <sub>0..1</sub>
      * Range: [optimizer_enum](optimizer_enum.md)
- * [➞fit](classifierParams__fit.md)  <sub>0..1</sub>
+ * [➞fit_config](classifierParams__fit_config.md)  <sub>0..1</sub>
      * Range: [ClassifierFitParams](ClassifierFitParams.md)

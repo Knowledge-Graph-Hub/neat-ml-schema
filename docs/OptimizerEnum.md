@@ -8,11 +8,11 @@ URI: OptimizerEnum
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Adagrad | None | Optimizer that implements the Adagrad algorithm. | |
-| Adam | None | Optimizer that implements the Adam algorithm. | |
-| Adamax | None | Optimizer that implements the Adamax algorithm. | |
-| Nadam | None | Optimizer that implements the NAdam algorithm. | |
-| SGD | None | Stochastic gradient descent (with momentum) optimizer. | |
+| adagrad | None | Optimizer that implements the Adagrad algorithm. | |
+| adam | None | Optimizer that implements the Adam algorithm. | |
+| adamax | None | Optimizer that implements the Adamax algorithm. | |
+| nadam | None | Optimizer that implements the NAdam algorithm. | |
+| sgd | None | Stochastic gradient descent (with momentum) optimizer. | |
 
 
 ## Identifier and Mapping Information

@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [metrics](metrics.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
+| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | None  | . |
 
 
 ## Usages
@@ -25,8 +25,7 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierParams](ClassifierParams.md) | [metrics](metrics.md) | range | MetricContainer |
-| [MetricContainer](MetricContainer.md) | [metrics](metrics.md) | range | MetricContainer |
+| [ClassifierParams](ClassifierParams.md) | [metrics_config](metrics_config.md) | range | MetricContainer |
 
 
 
@@ -55,7 +54,10 @@ attributes:
   metrics:
     name: metrics
     from_schema: https://w3id.org/neat_schema
+    multivalued: true
     range: Metric
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>
@@ -71,9 +73,12 @@ attributes:
   metrics:
     name: metrics
     from_schema: https://w3id.org/neat_schema
+    multivalued: true
     alias: metrics
     owner: MetricContainer
-    range: MetricContainer
+    range: Metric
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>

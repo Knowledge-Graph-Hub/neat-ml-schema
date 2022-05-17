@@ -34,7 +34,7 @@ type ClassifierCallback
 
 type ClassifierCallbackContainer
   {
-    classbacks: [ClassifierCallback]
+    callbacks: [ClassifierCallback]
   }
 
 type ClassifierContainer
@@ -46,17 +46,17 @@ type ClassifierFitParams
   {
     batchSize: Integer
     epochs: Integer
-    callbacks: ClassifierCallbackContainer
+    callbacksList: ClassifierCallbackContainer
   }
 
 type ClassifierParams
   {
     randomState: Integer
     maxIter: Integer
-    layers: LayerContainer
-    metrics: MetricContainer
+    layersConfig: LayerContainer
+    metricsConfig: MetricContainer
     optimizer: OptimizerEnum
-    fit: ClassifierFitParams
+    fitConfig: ClassifierFitParams
   }
 
 type EmbeddingsConfig
@@ -176,18 +176,19 @@ type LayerParams
   {
     units: Integer
     activation: ActivationEnum
+    rate: Float
   }
 
 type Metric
   {
-    metricName: String
+    name: String
     type: String
     curve: String
   }
 
 type MetricContainer
   {
-    metrics: Metric
+    metrics: [Metric]
   }
 
 type NeatConfiguration

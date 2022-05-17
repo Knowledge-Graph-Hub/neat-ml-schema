@@ -1,10 +1,10 @@
 
-# Slot: fit
+# Slot: fit_config
 
 
 
 
-URI: [https://w3id.org/neat_schema/classifierParams__fit](https://w3id.org/neat_schema/classifierParams__fit)
+URI: [https://w3id.org/neat_schema/classifierParams__fit_config](https://w3id.org/neat_schema/classifierParams__fit_config)
 
 
 ## Domain and Range

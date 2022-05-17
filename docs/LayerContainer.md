@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..* | None  | . |
+| [layers](layers.md) | [Layer](Layer.md) | 0..* | None  | . |
 
 
 ## Usages
@@ -25,8 +25,7 @@ URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierParams](ClassifierParams.md) | [layers](layers.md) | range | LayerContainer |
-| [LayerContainer](LayerContainer.md) | [layers](layers.md) | range | LayerContainer |
+| [ClassifierParams](ClassifierParams.md) | [layers_config](layers_config.md) | range | LayerContainer |
 
 
 
@@ -77,7 +76,7 @@ attributes:
     multivalued: true
     alias: layers
     owner: LayerContainer
-    range: LayerContainer
+    range: Layer
     inlined: true
     inlined_as_list: true
 

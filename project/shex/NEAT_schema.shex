@@ -74,7 +74,7 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ClassifierCallbackContainer> CLOSED {
-    (  $<ClassifierCallbackContainer_tes> <classbacks> @<ClassifierCallback> * ;
+    (  $<ClassifierCallbackContainer_tes> <callbacks> @<ClassifierCallback> * ;
        rdf:type [ <ClassifierCallbackContainer> ] ?
     )
 }
@@ -88,7 +88,7 @@ linkml:Nodeidentifier NONLITERAL
 <ClassifierFitParams> CLOSED {
     (  $<ClassifierFitParams_tes> (  <batch_size> @linkml:Integer ? ;
           <epochs> @linkml:Integer ? ;
-          <callbacks> @<ClassifierCallbackContainer> ?
+          <callbacks_list> @<ClassifierCallbackContainer> ?
        ) ;
        rdf:type [ <ClassifierFitParams> ] ?
     )
@@ -97,10 +97,10 @@ linkml:Nodeidentifier NONLITERAL
 <ClassifierParams> CLOSED {
     (  $<ClassifierParams_tes> (  <random_state> @linkml:Integer ? ;
           <max_iter> @linkml:Integer ? ;
-          <layers> @<LayerContainer> ? ;
-          <metrics> @<MetricContainer> ? ;
+          <layers_config> @<LayerContainer> ? ;
+          <metrics_config> @<MetricContainer> ? ;
           <optimizer> @<OptimizerEnum> ? ;
-          <fit> @<ClassifierFitParams> ?
+          <fit_config> @<ClassifierFitParams> ?
        ) ;
        rdf:type [ <ClassifierParams> ] ?
     )
@@ -230,14 +230,15 @@ linkml:Nodeidentifier NONLITERAL
 
 <LayerParams> CLOSED {
     (  $<LayerParams_tes> (  <units> @linkml:Integer ? ;
-          <activation> @<ActivationEnum> ?
+          <activation> @<ActivationEnum> ? ;
+          <rate> @linkml:Float ?
        ) ;
        rdf:type [ <LayerParams> ] ?
     )
 }
 
 <Metric> CLOSED {
-    (  $<Metric_tes> (  <metric_name> @linkml:String ? ;
+    (  $<Metric_tes> (  <name> @linkml:String ? ;
           <type> @linkml:String ? ;
           <curve> @linkml:String ?
        ) ;
@@ -246,7 +247,7 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <MetricContainer> CLOSED {
-    (  $<MetricContainer_tes> <metrics> @<Metric> ? ;
+    (  $<MetricContainer_tes> <metrics> @<Metric> * ;
        rdf:type [ <MetricContainer> ] ?
     )
 }

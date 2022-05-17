@@ -64,18 +64,21 @@ URI: https://w3id.org/neat_schema
 | [parameters](parameters.md) | None | 
 | [random_state](random_state.md) | None | 
 | [max_iter](max_iter.md) | None | 
-| [layers](layers.md) | None | 
-| [metrics](metrics.md) | None | 
+| [layers_config](layers_config.md) | None | 
+| [metrics_config](metrics_config.md) | None | 
 | [optimizer](optimizer.md) | None | 
-| [fit](fit.md) | None | 
+| [fit_config](fit_config.md) | None | 
+| [layers](layers.md) | None | 
 | [type](type.md) | None | 
 | [units](units.md) | None | 
 | [activation](activation.md) | None | 
-| [metric_name](metric_name.md) | None | 
+| [rate](rate.md) | None | 
+| [metrics](metrics.md) | None | 
+| [name](name.md) | None | 
 | [curve](curve.md) | None | 
 | [epochs](epochs.md) | None | 
+| [callbacks_list](callbacks_list.md) | None | 
 | [callbacks](callbacks.md) | None | 
-| [classbacks](classbacks.md) | None | 
 | [monitor](monitor.md) | None | 
 | [patience](patience.md) | None | 
 | [min_delta](min_delta.md) | None | 
@@ -173,7 +176,6 @@ URI: https://w3id.org/neat_schema
 | [may_have_singletons](may_have_singletons.md) | None | 
 | [may_have_singleton_with_selfloops](may_have_singleton_with_selfloops.md) | None | 
 | [directed](directed.md) | None | 
-| [name](name.md) | None | 
 
 
 ## Enums

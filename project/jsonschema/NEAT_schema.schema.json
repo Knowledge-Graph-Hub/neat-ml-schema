@@ -109,7 +109,7 @@
          "additionalProperties": false,
          "description": "A container of classifier callbacks.",
          "properties": {
-            "classbacks": {
+            "callbacks": {
                "items": {
                   "$ref": "#/$defs/ClassifierCallback"
                },
@@ -152,7 +152,7 @@
             "batch_size": {
                "type": "integer"
             },
-            "callbacks": {
+            "callbacks_list": {
                "$ref": "#/$defs/ClassifierCallbackContainer"
             },
             "epochs": {
@@ -167,16 +167,16 @@
          "additionalProperties": false,
          "description": "Parameters needed to define a classifier.",
          "properties": {
-            "fit": {
+            "fit_config": {
                "$ref": "#/$defs/ClassifierFitParams"
             },
-            "layers": {
+            "layers_config": {
                "$ref": "#/$defs/LayerContainer"
             },
             "max_iter": {
                "type": "integer"
             },
-            "metrics": {
+            "metrics_config": {
                "$ref": "#/$defs/MetricContainer"
             },
             "optimizer": {
@@ -537,6 +537,9 @@
             "activation": {
                "$ref": "#/$defs/ActivationEnum"
             },
+            "rate": {
+               "type": "number"
+            },
             "units": {
                "type": "integer"
             }
@@ -552,7 +555,7 @@
             "curve": {
                "type": "string"
             },
-            "metric_name": {
+            "name": {
                "type": "string"
             },
             "type": {
@@ -568,7 +571,10 @@
          "description": "A container of metrics for a trained classifier.",
          "properties": {
             "metrics": {
-               "$ref": "#/$defs/Metric"
+               "items": {
+                  "$ref": "#/$defs/Metric"
+               },
+               "type": "array"
             }
          },
          "required": [],
@@ -656,11 +662,11 @@
       "OptimizerEnum": {
          "description": "Optimizers that can be implemented in the neural network.",
          "enum": [
-            "Adagrad",
-            "Adam",
-            "Adamax",
-            "Nadam",
-            "SGD"
+            "adagrad",
+            "adam",
+            "adamax",
+            "nadam",
+            "sgd"
          ],
          "title": "OptimizerEnum",
          "type": "string"

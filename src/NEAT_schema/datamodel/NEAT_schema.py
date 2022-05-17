@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T19:23:00
+# Generation date: 2022-05-16T20:34:51
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -279,10 +279,10 @@ class ClassifierParams(YAMLRoot):
 
     random_state: Optional[int] = None
     max_iter: Optional[int] = None
-    layers: Optional[Union[dict, "LayerContainer"]] = None
-    metrics: Optional[Union[dict, "MetricContainer"]] = None
+    layers_config: Optional[Union[dict, "LayerContainer"]] = None
+    metrics_config: Optional[Union[dict, "MetricContainer"]] = None
     optimizer: Optional[Union[str, "OptimizerEnum"]] = None
-    fit: Optional[Union[dict, "ClassifierFitParams"]] = None
+    fit_config: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.random_state is not None and not isinstance(self.random_state, int):
@@ -291,17 +291,17 @@ class ClassifierParams(YAMLRoot):
         if self.max_iter is not None and not isinstance(self.max_iter, int):
             self.max_iter = int(self.max_iter)
 
-        if self.layers is not None and not isinstance(self.layers, LayerContainer):
-            self.layers = LayerContainer(**as_dict(self.layers))
+        if self.layers_config is not None and not isinstance(self.layers_config, LayerContainer):
+            self.layers_config = LayerContainer(**as_dict(self.layers_config))
 
-        if self.metrics is not None and not isinstance(self.metrics, MetricContainer):
-            self.metrics = MetricContainer(**as_dict(self.metrics))
+        if self.metrics_config is not None and not isinstance(self.metrics_config, MetricContainer):
+            self.metrics_config = MetricContainer(**as_dict(self.metrics_config))
 
         if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
             self.optimizer = OptimizerEnum(self.optimizer)
 
-        if self.fit is not None and not isinstance(self.fit, ClassifierFitParams):
-            self.fit = ClassifierFitParams(**as_dict(self.fit))
+        if self.fit_config is not None and not isinstance(self.fit_config, ClassifierFitParams):
+            self.fit_config = ClassifierFitParams(**as_dict(self.fit_config))
 
         super().__post_init__(**kwargs)
 
@@ -367,6 +367,7 @@ class LayerParams(YAMLRoot):
 
     units: Optional[int] = None
     activation: Optional[Union[str, "ActivationEnum"]] = None
+    rate: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.units is not None and not isinstance(self.units, int):
@@ -374,6 +375,9 @@ class LayerParams(YAMLRoot):
 
         if self.activation is not None and not isinstance(self.activation, ActivationEnum):
             self.activation = ActivationEnum(self.activation)
+
+        if self.rate is not None and not isinstance(self.rate, float):
+            self.rate = float(self.rate)
 
         super().__post_init__(**kwargs)
 
@@ -390,11 +394,12 @@ class MetricContainer(YAMLRoot):
     class_name: ClassVar[str] = "MetricContainer"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/MetricContainer")
 
-    metrics: Optional[Union[dict, "Metric"]] = None
+    metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.metrics is not None and not isinstance(self.metrics, Metric):
-            self.metrics = Metric(**as_dict(self.metrics))
+        if not isinstance(self.metrics, list):
+            self.metrics = [self.metrics] if self.metrics is not None else []
+        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
 
         super().__post_init__(**kwargs)
 
@@ -411,13 +416,13 @@ class Metric(YAMLRoot):
     class_name: ClassVar[str] = "Metric"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Metric")
 
-    metric_name: Optional[str] = None
+    name: Optional[str] = None
     type: Optional[str] = None
     curve: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.metric_name is not None and not isinstance(self.metric_name, str):
-            self.metric_name = str(self.metric_name)
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -442,7 +447,7 @@ class ClassifierFitParams(YAMLRoot):
 
     batch_size: Optional[int] = None
     epochs: Optional[int] = None
-    callbacks: Optional[Union[dict, "ClassifierCallbackContainer"]] = None
+    callbacks_list: Optional[Union[dict, "ClassifierCallbackContainer"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.batch_size is not None and not isinstance(self.batch_size, int):
@@ -451,8 +456,8 @@ class ClassifierFitParams(YAMLRoot):
         if self.epochs is not None and not isinstance(self.epochs, int):
             self.epochs = int(self.epochs)
 
-        if self.callbacks is not None and not isinstance(self.callbacks, ClassifierCallbackContainer):
-            self.callbacks = ClassifierCallbackContainer(**as_dict(self.callbacks))
+        if self.callbacks_list is not None and not isinstance(self.callbacks_list, ClassifierCallbackContainer):
+            self.callbacks_list = ClassifierCallbackContainer(**as_dict(self.callbacks_list))
 
         super().__post_init__(**kwargs)
 
@@ -469,12 +474,12 @@ class ClassifierCallbackContainer(YAMLRoot):
     class_name: ClassVar[str] = "ClassifierCallbackContainer"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallbackContainer")
 
-    classbacks: Optional[Union[Union[dict, "ClassifierCallback"], List[Union[dict, "ClassifierCallback"]]]] = empty_list()
+    callbacks: Optional[Union[Union[dict, "ClassifierCallback"], List[Union[dict, "ClassifierCallback"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.classbacks, list):
-            self.classbacks = [self.classbacks] if self.classbacks is not None else []
-        self.classbacks = [v if isinstance(v, ClassifierCallback) else ClassifierCallback(**as_dict(v)) for v in self.classbacks]
+        if not isinstance(self.callbacks, list):
+            self.callbacks = [self.callbacks] if self.callbacks is not None else []
+        self.callbacks = [v if isinstance(v, ClassifierCallback) else ClassifierCallback(**as_dict(v)) for v in self.callbacks]
 
         super().__post_init__(**kwargs)
 
@@ -1050,15 +1055,15 @@ class OptimizerEnum(EnumDefinitionImpl):
     """
     Optimizers that can be implemented in the neural network.
     """
-    Adagrad = PermissibleValue(text="Adagrad",
+    adagrad = PermissibleValue(text="adagrad",
                                      description="Optimizer that implements the Adagrad algorithm.")
-    Adam = PermissibleValue(text="Adam",
+    adam = PermissibleValue(text="adam",
                                description="Optimizer that implements the Adam algorithm.")
-    Adamax = PermissibleValue(text="Adamax",
+    adamax = PermissibleValue(text="adamax",
                                    description="Optimizer that implements the Adamax algorithm.")
-    Nadam = PermissibleValue(text="Nadam",
+    nadam = PermissibleValue(text="nadam",
                                  description="Optimizer that implements the NAdam algorithm.")
-    SGD = PermissibleValue(text="SGD",
+    sgd = PermissibleValue(text="sgd",
                              description="Stochastic gradient descent (with momentum) optimizer.")
 
     _defn = EnumDefinition(
@@ -1170,17 +1175,17 @@ slots.classifierParams__random_state = Slot(uri=DEFAULT_.random_state, name="cla
 slots.classifierParams__max_iter = Slot(uri=DEFAULT_.max_iter, name="classifierParams__max_iter", curie=DEFAULT_.curie('max_iter'),
                    model_uri=DEFAULT_.classifierParams__max_iter, domain=None, range=Optional[int])
 
-slots.classifierParams__layers = Slot(uri=DEFAULT_.layers, name="classifierParams__layers", curie=DEFAULT_.curie('layers'),
-                   model_uri=DEFAULT_.classifierParams__layers, domain=None, range=Optional[Union[dict, LayerContainer]])
+slots.classifierParams__layers_config = Slot(uri=DEFAULT_.layers_config, name="classifierParams__layers_config", curie=DEFAULT_.curie('layers_config'),
+                   model_uri=DEFAULT_.classifierParams__layers_config, domain=None, range=Optional[Union[dict, LayerContainer]])
 
-slots.classifierParams__metrics = Slot(uri=DEFAULT_.metrics, name="classifierParams__metrics", curie=DEFAULT_.curie('metrics'),
-                   model_uri=DEFAULT_.classifierParams__metrics, domain=None, range=Optional[Union[dict, MetricContainer]])
+slots.classifierParams__metrics_config = Slot(uri=DEFAULT_.metrics_config, name="classifierParams__metrics_config", curie=DEFAULT_.curie('metrics_config'),
+                   model_uri=DEFAULT_.classifierParams__metrics_config, domain=None, range=Optional[Union[dict, MetricContainer]])
 
 slots.classifierParams__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifierParams__optimizer", curie=DEFAULT_.curie('optimizer'),
                    model_uri=DEFAULT_.classifierParams__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
 
-slots.classifierParams__fit = Slot(uri=DEFAULT_.fit, name="classifierParams__fit", curie=DEFAULT_.curie('fit'),
-                   model_uri=DEFAULT_.classifierParams__fit, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
+slots.classifierParams__fit_config = Slot(uri=DEFAULT_.fit_config, name="classifierParams__fit_config", curie=DEFAULT_.curie('fit_config'),
+                   model_uri=DEFAULT_.classifierParams__fit_config, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
 
 slots.layerContainer__layers = Slot(uri=DEFAULT_.layers, name="layerContainer__layers", curie=DEFAULT_.curie('layers'),
                    model_uri=DEFAULT_.layerContainer__layers, domain=None, range=Optional[Union[Union[dict, Layer], List[Union[dict, Layer]]]])
@@ -1197,11 +1202,14 @@ slots.layerParams__units = Slot(uri=DEFAULT_.units, name="layerParams__units", c
 slots.layerParams__activation = Slot(uri=DEFAULT_.activation, name="layerParams__activation", curie=DEFAULT_.curie('activation'),
                    model_uri=DEFAULT_.layerParams__activation, domain=None, range=Optional[Union[str, "ActivationEnum"]])
 
-slots.metricContainer__metrics = Slot(uri=DEFAULT_.metrics, name="metricContainer__metrics", curie=DEFAULT_.curie('metrics'),
-                   model_uri=DEFAULT_.metricContainer__metrics, domain=None, range=Optional[Union[dict, Metric]])
+slots.layerParams__rate = Slot(uri=DEFAULT_.rate, name="layerParams__rate", curie=DEFAULT_.curie('rate'),
+                   model_uri=DEFAULT_.layerParams__rate, domain=None, range=Optional[float])
 
-slots.metric__metric_name = Slot(uri=DEFAULT_.metric_name, name="metric__metric_name", curie=DEFAULT_.curie('metric_name'),
-                   model_uri=DEFAULT_.metric__metric_name, domain=None, range=Optional[str])
+slots.metricContainer__metrics = Slot(uri=DEFAULT_.metrics, name="metricContainer__metrics", curie=DEFAULT_.curie('metrics'),
+                   model_uri=DEFAULT_.metricContainer__metrics, domain=None, range=Optional[Union[Union[dict, Metric], List[Union[dict, Metric]]]])
+
+slots.metric__name = Slot(uri=DEFAULT_.name, name="metric__name", curie=DEFAULT_.curie('name'),
+                   model_uri=DEFAULT_.metric__name, domain=None, range=Optional[str])
 
 slots.metric__type = Slot(uri=DEFAULT_.type, name="metric__type", curie=DEFAULT_.curie('type'),
                    model_uri=DEFAULT_.metric__type, domain=None, range=Optional[str])
@@ -1215,11 +1223,11 @@ slots.classifierFitParams__batch_size = Slot(uri=DEFAULT_.batch_size, name="clas
 slots.classifierFitParams__epochs = Slot(uri=DEFAULT_.epochs, name="classifierFitParams__epochs", curie=DEFAULT_.curie('epochs'),
                    model_uri=DEFAULT_.classifierFitParams__epochs, domain=None, range=Optional[int])
 
-slots.classifierFitParams__callbacks = Slot(uri=DEFAULT_.callbacks, name="classifierFitParams__callbacks", curie=DEFAULT_.curie('callbacks'),
-                   model_uri=DEFAULT_.classifierFitParams__callbacks, domain=None, range=Optional[Union[dict, ClassifierCallbackContainer]])
+slots.classifierFitParams__callbacks_list = Slot(uri=DEFAULT_.callbacks_list, name="classifierFitParams__callbacks_list", curie=DEFAULT_.curie('callbacks_list'),
+                   model_uri=DEFAULT_.classifierFitParams__callbacks_list, domain=None, range=Optional[Union[dict, ClassifierCallbackContainer]])
 
-slots.classifierCallbackContainer__classbacks = Slot(uri=DEFAULT_.classbacks, name="classifierCallbackContainer__classbacks", curie=DEFAULT_.curie('classbacks'),
-                   model_uri=DEFAULT_.classifierCallbackContainer__classbacks, domain=None, range=Optional[Union[Union[dict, ClassifierCallback], List[Union[dict, ClassifierCallback]]]])
+slots.classifierCallbackContainer__callbacks = Slot(uri=DEFAULT_.callbacks, name="classifierCallbackContainer__callbacks", curie=DEFAULT_.curie('callbacks'),
+                   model_uri=DEFAULT_.classifierCallbackContainer__callbacks, domain=None, range=Optional[Union[Union[dict, ClassifierCallback], List[Union[dict, ClassifierCallback]]]])
 
 slots.classifierCallback__type = Slot(uri=DEFAULT_.type, name="classifierCallback__type", curie=DEFAULT_.curie('type'),
                    model_uri=DEFAULT_.classifierCallback__type, domain=None, range=Optional[str])

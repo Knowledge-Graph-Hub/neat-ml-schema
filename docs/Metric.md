@@ -17,12 +17,17 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [metric_name](metric_name.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [string](string.md) | 0..1 | None  | . |
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [curve](curve.md) | [string](string.md) | 0..1 | None  | . |
 
 
 ## Usages
+
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [MetricContainer](MetricContainer.md) | [metrics](metrics.md) | range | Metric |
 
 
 
@@ -48,8 +53,8 @@ name: Metric
 description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
-  metric_name:
-    name: metric_name
+  name:
+    name: name
     from_schema: https://w3id.org/neat_schema
   type:
     name: type
@@ -69,10 +74,10 @@ name: Metric
 description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
-  metric_name:
-    name: metric_name
+  name:
+    name: name
     from_schema: https://w3id.org/neat_schema
-    alias: metric_name
+    alias: name
     owner: Metric
     range: string
   type:

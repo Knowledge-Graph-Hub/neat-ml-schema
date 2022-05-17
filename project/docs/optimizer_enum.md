@@ -16,9 +16,9 @@ URI: [https://w3id.org/neat_schema/optimizer_enum](https://w3id.org/neat_schema/
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Adagrad | Optimizer that implements the Adagrad algorithm. |  |  |
-| Adam | Optimizer that implements the Adam algorithm. |  |  |
-| Adamax | Optimizer that implements the Adamax algorithm. |  |  |
-| Nadam | Optimizer that implements the NAdam algorithm. |  |  |
-| SGD | Stochastic gradient descent (with momentum) optimizer. |  |  |
+| adagrad | Optimizer that implements the Adagrad algorithm. |  |  |
+| adam | Optimizer that implements the Adam algorithm. |  |  |
+| adamax | Optimizer that implements the Adamax algorithm. |  |  |
+| nadam | Optimizer that implements the NAdam algorithm. |  |  |
+| sgd | Stochastic gradient descent (with momentum) optimizer. |  |  |
 

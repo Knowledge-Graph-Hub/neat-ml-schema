@@ -1,6 +1,6 @@
-# Slot: fit
+# Slot: fit_config
 
-URI: [https://w3id.org/neat_schema/:fit](https://w3id.org/neat_schema/:fit)
+URI: [https://w3id.org/neat_schema/:fit_config](https://w3id.org/neat_schema/:fit_config)
 
 
 

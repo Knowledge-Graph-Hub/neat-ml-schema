@@ -19,6 +19,7 @@ URI: [https://w3id.org/neat_schema/:LayerParams](https://w3id.org/neat_schema/:L
 | ---  | --- | --- | --- | --- |
 | [units](units.md) | [integer](integer.md) | 0..1 | None  | . |
 | [activation](activation.md) | [ActivationEnum](ActivationEnum.md) | 0..1 | None  | . |
+| [rate](rate.md) | [float](float.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -55,6 +56,10 @@ attributes:
     name: activation
     from_schema: https://w3id.org/neat_schema
     range: activation_enum
+  rate:
+    name: rate
+    from_schema: https://w3id.org/neat_schema
+    range: float
 
 ```
 </details>
@@ -79,6 +84,12 @@ attributes:
     alias: activation
     owner: LayerParams
     range: activation_enum
+  rate:
+    name: rate
+    from_schema: https://w3id.org/neat_schema
+    alias: rate
+    owner: LayerParams
+    range: float
 
 ```
 </details>

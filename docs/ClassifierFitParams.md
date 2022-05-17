@@ -19,7 +19,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 | ---  | --- | --- | --- | --- |
 | [batch_size](batch_size.md) | [integer](integer.md) | 0..1 | None  | . |
 | [epochs](epochs.md) | [integer](integer.md) | 0..1 | None  | . |
-| [callbacks](callbacks.md) | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | 0..1 | None  | . |
+| [callbacks_list](callbacks_list.md) | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -27,7 +27,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierParams](ClassifierParams.md) | [fit](fit.md) | range | ClassifierFitParams |
+| [ClassifierParams](ClassifierParams.md) | [fit_config](fit_config.md) | range | ClassifierFitParams |
 
 
 
@@ -61,8 +61,8 @@ attributes:
     name: epochs
     from_schema: https://w3id.org/neat_schema
     range: integer
-  callbacks:
-    name: callbacks
+  callbacks_list:
+    name: callbacks_list
     from_schema: https://w3id.org/neat_schema
     range: ClassifierCallbackContainer
 
@@ -89,10 +89,10 @@ attributes:
     alias: epochs
     owner: ClassifierFitParams
     range: integer
-  callbacks:
-    name: callbacks
+  callbacks_list:
+    name: callbacks_list
     from_schema: https://w3id.org/neat_schema
-    alias: callbacks
+    alias: callbacks_list
     owner: ClassifierFitParams
     range: ClassifierCallbackContainer
 

@@ -1,10 +1,10 @@
 
-# Slot: metric_name
+# Slot: name
 
 
 
 
-URI: [https://w3id.org/neat_schema/metric__metric_name](https://w3id.org/neat_schema/metric__metric_name)
+URI: [https://w3id.org/neat_schema/metric__name](https://w3id.org/neat_schema/metric__name)
 
 
 ## Domain and Range

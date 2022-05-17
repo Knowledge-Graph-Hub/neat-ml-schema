@@ -1,10 +1,10 @@
 
-# Slot: metrics
+# Slot: metrics_config
 
 
 
 
-URI: [https://w3id.org/neat_schema/classifierParams__metrics](https://w3id.org/neat_schema/classifierParams__metrics)
+URI: [https://w3id.org/neat_schema/classifierParams__metrics_config](https://w3id.org/neat_schema/classifierParams__metrics_config)
 
 
 ## Domain and Range

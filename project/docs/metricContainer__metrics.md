@@ -9,7 +9,7 @@ URI: [https://w3id.org/neat_schema/metricContainer__metrics](https://w3id.org/ne
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Metric](Metric.md)
+None &#8594;  <sub>0..\*</sub> [Metric](Metric.md)
 
 ## Parents
 

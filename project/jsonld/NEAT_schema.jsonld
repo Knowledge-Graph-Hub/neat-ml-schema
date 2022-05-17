@@ -265,23 +265,23 @@
       "from_schema": "https://w3id.org/neat_schema",
       "permissible_values": [
         {
-          "text": "Adagrad",
+          "text": "adagrad",
           "description": "Optimizer that implements the Adagrad algorithm."
         },
         {
-          "text": "Adam",
+          "text": "adam",
           "description": "Optimizer that implements the Adam algorithm."
         },
         {
-          "text": "Adamax",
+          "text": "adamax",
           "description": "Optimizer that implements the Adamax algorithm."
         },
         {
-          "text": "Nadam",
+          "text": "nadam",
           "description": "Optimizer that implements the NAdam algorithm."
         },
         {
-          "text": "SGD",
+          "text": "sgd",
           "description": "Stochastic gradient descent (with momentum) optimizer."
         }
       ]
@@ -655,10 +655,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__layers",
+      "name": "classifierParams__layers_config",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/layers",
-      "alias": "layers",
+      "slot_uri": "https://w3id.org/neat_schema/layers_config",
+      "alias": "layers_config",
       "owner": "ClassifierParams",
       "domain_of": [
         "ClassifierParams"
@@ -668,10 +668,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__metrics",
+      "name": "classifierParams__metrics_config",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/metrics",
-      "alias": "metrics",
+      "slot_uri": "https://w3id.org/neat_schema/metrics_config",
+      "alias": "metrics_config",
       "owner": "ClassifierParams",
       "domain_of": [
         "ClassifierParams"
@@ -693,10 +693,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__fit",
+      "name": "classifierParams__fit_config",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/fit",
-      "alias": "fit",
+      "slot_uri": "https://w3id.org/neat_schema/fit_config",
+      "alias": "fit_config",
       "owner": "ClassifierParams",
       "domain_of": [
         "ClassifierParams"
@@ -770,9 +770,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "layerParams__rate",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/rate",
+      "alias": "rate",
+      "owner": "LayerParams",
+      "domain_of": [
+        "LayerParams"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "metricContainer__metrics",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/metrics",
+      "multivalued": true,
       "alias": "metrics",
       "owner": "MetricContainer",
       "domain_of": [
@@ -780,13 +793,14 @@
       ],
       "range": "Metric",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "metric__metric_name",
+      "name": "metric__name",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/metric_name",
-      "alias": "metric_name",
+      "slot_uri": "https://w3id.org/neat_schema/name",
+      "alias": "name",
       "owner": "Metric",
       "domain_of": [
         "Metric"
@@ -843,10 +857,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierFitParams__callbacks",
+      "name": "classifierFitParams__callbacks_list",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/callbacks",
-      "alias": "callbacks",
+      "slot_uri": "https://w3id.org/neat_schema/callbacks_list",
+      "alias": "callbacks_list",
       "owner": "ClassifierFitParams",
       "domain_of": [
         "ClassifierFitParams"
@@ -856,11 +870,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierCallbackContainer__classbacks",
+      "name": "classifierCallbackContainer__callbacks",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/classbacks",
+      "slot_uri": "https://w3id.org/neat_schema/callbacks",
       "multivalued": true,
-      "alias": "classbacks",
+      "alias": "callbacks",
       "owner": "ClassifierCallbackContainer",
       "domain_of": [
         "ClassifierCallbackContainer"
@@ -2348,10 +2362,10 @@
       "slots": [
         "classifierParams__random_state",
         "classifierParams__max_iter",
-        "classifierParams__layers",
-        "classifierParams__metrics",
+        "classifierParams__layers_config",
+        "classifierParams__metrics_config",
         "classifierParams__optimizer",
-        "classifierParams__fit"
+        "classifierParams__fit_config"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2366,12 +2380,12 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "layers",
+          "name": "layers_config",
           "range": "LayerContainer",
           "@type": "SlotDefinition"
         },
         {
-          "name": "metrics",
+          "name": "metrics_config",
           "range": "MetricContainer",
           "@type": "SlotDefinition"
         },
@@ -2381,7 +2395,7 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "fit",
+          "name": "fit_config",
           "range": "ClassifierFitParams",
           "@type": "SlotDefinition"
         }
@@ -2441,7 +2455,8 @@
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "layerParams__units",
-        "layerParams__activation"
+        "layerParams__activation",
+        "layerParams__rate"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2453,6 +2468,11 @@
         {
           "name": "activation",
           "range": "activation_enum",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "rate",
+          "range": "float",
           "@type": "SlotDefinition"
         }
       ],
@@ -2471,7 +2491,9 @@
       "attributes": [
         {
           "name": "metrics",
+          "multivalued": true,
           "range": "Metric",
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -2484,14 +2506,14 @@
       "description": "Metrics of a trained classifier (model).",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
-        "metric__metric_name",
+        "metric__name",
         "metric__type",
         "metric__curve"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "metric_name",
+          "name": "name",
           "@type": "SlotDefinition"
         },
         {
@@ -2514,7 +2536,7 @@
       "slots": [
         "classifierFitParams__batch_size",
         "classifierFitParams__epochs",
-        "classifierFitParams__callbacks"
+        "classifierFitParams__callbacks_list"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2529,7 +2551,7 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "callbacks",
+          "name": "callbacks_list",
           "range": "ClassifierCallbackContainer",
           "@type": "SlotDefinition"
         }
@@ -2543,12 +2565,12 @@
       "description": "A container of classifier callbacks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
-        "classifierCallbackContainer__classbacks"
+        "classifierCallbackContainer__callbacks"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "classbacks",
+          "name": "callbacks",
           "multivalued": true,
           "range": "ClassifierCallback",
           "inlined_as_list": true,
@@ -3224,9 +3246,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-16T19:21:49",
-  "source_file_size": 10913,
-  "generation_date": "2022-05-16T19:22:53",
+  "source_file_date": "2022-05-16T20:32:27",
+  "source_file_size": 11023,
+  "generation_date": "2022-05-16T20:34:44",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

@@ -30,7 +30,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_sc
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | [classbacks](classbacks.md) | range | ClassifierCallback |
+| [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | [callbacks](callbacks.md) | range | ClassifierCallback |
 
 
 

@@ -1,10 +1,10 @@
 
-# Slot: layers
+# Slot: layers_config
 
 
 
 
-URI: [https://w3id.org/neat_schema/classifierParams__layers](https://w3id.org/neat_schema/classifierParams__layers)
+URI: [https://w3id.org/neat_schema/classifierParams__layers_config](https://w3id.org/neat_schema/classifierParams__layers_config)
 
 
 ## Domain and Range

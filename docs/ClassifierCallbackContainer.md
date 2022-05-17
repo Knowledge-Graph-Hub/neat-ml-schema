@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallbackContainer](https://w3id.or
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [classbacks](classbacks.md) | [ClassifierCallback](ClassifierCallback.md) | 0..* | None  | . |
+| [callbacks](callbacks.md) | [ClassifierCallback](ClassifierCallback.md) | 0..* | None  | . |
 
 
 ## Usages
@@ -25,7 +25,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallbackContainer](https://w3id.or
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierFitParams](ClassifierFitParams.md) | [callbacks](callbacks.md) | range | ClassifierCallbackContainer |
+| [ClassifierFitParams](ClassifierFitParams.md) | [callbacks_list](callbacks_list.md) | range | ClassifierCallbackContainer |
 
 
 
@@ -51,8 +51,8 @@ name: ClassifierCallbackContainer
 description: A container of classifier callbacks.
 from_schema: https://w3id.org/neat_schema
 attributes:
-  classbacks:
-    name: classbacks
+  callbacks:
+    name: callbacks
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     range: ClassifierCallback
@@ -70,11 +70,11 @@ name: ClassifierCallbackContainer
 description: A container of classifier callbacks.
 from_schema: https://w3id.org/neat_schema
 attributes:
-  classbacks:
-    name: classbacks
+  callbacks:
+    name: callbacks
     from_schema: https://w3id.org/neat_schema
     multivalued: true
-    alias: classbacks
+    alias: callbacks
     owner: ClassifierCallbackContainer
     range: ClassifierCallback
     inlined: true

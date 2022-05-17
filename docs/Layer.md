@@ -24,6 +24,11 @@ URI: [https://w3id.org/neat_schema/:Layer](https://w3id.org/neat_schema/:Layer)
 ## Usages
 
 
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [LayerContainer](LayerContainer.md) | [layers](layers.md) | range | Layer |
+
+
 
 ## Identifier and Mapping Information
 

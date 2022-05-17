@@ -35,7 +35,7 @@ message ClassifierCallback
 // A container of classifier callbacks.
 message ClassifierCallbackContainer
  {
-  repeated classbacks ClassifierCallback = 1
+  repeated callbacks ClassifierCallback = 1
  }
 // A container with multiple classifiers in it.
 message ClassifierContainer
@@ -47,17 +47,17 @@ message ClassifierFitParams
  {
   optional batchSize Integer = 1
   optional epochs Integer = 2
-  optional callbacks ClassifierCallbackContainer = 3
+  optional callbacksList ClassifierCallbackContainer = 3
  }
 // Parameters needed to define a classifier.
 message ClassifierParams
  {
   optional randomState Integer = 1
   optional maxIter Integer = 2
-  optional layers LayerContainer = 3
-  optional metrics MetricContainer = 4
+  optional layersConfig LayerContainer = 3
+  optional metricsConfig MetricContainer = 4
   optional optimizer OptimizerEnum = 5
-  optional fit ClassifierFitParams = 6
+  optional fitConfig ClassifierFitParams = 6
  }
 message EmbeddingsConfig
  {
@@ -175,18 +175,19 @@ message LayerParams
  {
   optional units Integer = 1
   optional activation ActivationEnum = 2
+  optional rate Float = 3
  }
 // Metrics of a trained classifier (model).
 message Metric
  {
-  optional metricName String = 1
+  optional name String = 1
   optional type String = 2
   optional curve String = 3
  }
 // A container of metrics for a trained classifier.
 message MetricContainer
  {
-  optional metrics Metric = 1
+  repeated metrics Metric = 1
  }
 message NeatConfiguration
  {

@@ -7,11 +7,11 @@ Paramters for fitting a classifier.
 URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_schema/ClassifierFitParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit_config%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit_config%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])
 
 ## Referenced by Class
 
- *  **None** *[➞fit](classifierParams__fit.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
+ *  **None** *[➞fit_config](classifierParams__fit_config.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
 
 ## Attributes
 
@@ -22,5 +22,5 @@ URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_sc
      * Range: [Integer](types/Integer.md)
  * [➞epochs](classifierFitParams__epochs.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
- * [➞callbacks](classifierFitParams__callbacks.md)  <sub>0..1</sub>
+ * [➞callbacks_list](classifierFitParams__callbacks_list.md)  <sub>0..1</sub>
      * Range: [ClassifierCallbackContainer](ClassifierCallbackContainer.md)

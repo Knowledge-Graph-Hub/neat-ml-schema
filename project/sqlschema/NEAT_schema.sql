@@ -35,8 +35,8 @@ CREATE TABLE "ClassifierCallback" (
 );
 
 CREATE TABLE "ClassifierCallbackContainer" (
-	classbacks TEXT, 
-	PRIMARY KEY (classbacks)
+	callbacks TEXT, 
+	PRIMARY KEY (callbacks)
 );
 
 CREATE TABLE "ClassifierContainer" (
@@ -47,18 +47,18 @@ CREATE TABLE "ClassifierContainer" (
 CREATE TABLE "ClassifierFitParams" (
 	batch_size INTEGER, 
 	epochs INTEGER, 
-	callbacks TEXT, 
-	PRIMARY KEY (batch_size, epochs, callbacks)
+	callbacks_list TEXT, 
+	PRIMARY KEY (batch_size, epochs, callbacks_list)
 );
 
 CREATE TABLE "ClassifierParams" (
 	random_state INTEGER, 
 	max_iter INTEGER, 
-	layers TEXT, 
-	metrics TEXT, 
+	layers_config TEXT, 
+	metrics_config TEXT, 
 	optimizer VARCHAR(7), 
-	fit TEXT, 
-	PRIMARY KEY (random_state, max_iter, layers, metrics, optimizer, fit)
+	fit_config TEXT, 
+	PRIMARY KEY (random_state, max_iter, layers_config, metrics_config, optimizer, fit_config)
 );
 
 CREATE TABLE "EmbeddingsConfig" (
@@ -177,14 +177,15 @@ CREATE TABLE "LayerContainer" (
 CREATE TABLE "LayerParams" (
 	units INTEGER, 
 	activation VARCHAR(7), 
-	PRIMARY KEY (units, activation)
+	rate FLOAT, 
+	PRIMARY KEY (units, activation, rate)
 );
 
 CREATE TABLE "Metric" (
-	metric_name TEXT, 
+	name TEXT, 
 	type TEXT, 
 	curve TEXT, 
-	PRIMARY KEY (metric_name, type, curve)
+	PRIMARY KEY (name, type, curve)
 );
 
 CREATE TABLE "MetricContainer" (

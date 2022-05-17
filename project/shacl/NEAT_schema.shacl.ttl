@@ -25,12 +25,7 @@
 <https://w3id.org/neat_schema/:EmbeddingsConfig> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://w3id.org/neat_schema/:NodeEmbeddingsParams> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:node_embeddings_params> ],
-        [ sh:maxCount 1 ;
+    sh:property [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <https://w3id.org/neat_schema/:filename> ],
         [ sh:maxCount 1 ;
@@ -38,28 +33,22 @@
             sh:path <https://w3id.org/neat_schema/:tsne_filename> ],
         [ sh:maxCount 1 ;
             sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:history_filename> ] ;
-    sh:targetClass <https://w3id.org/neat_schema/:EmbeddingsConfig> .
-
-<https://w3id.org/neat_schema/:Layer> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Layers for a neural network." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:type> ],
-        [ sh:class <https://w3id.org/neat_schema/:ClassifierParams> ;
+            sh:path <https://w3id.org/neat_schema/:history_filename> ],
+        [ sh:class <https://w3id.org/neat_schema/:NodeEmbeddingsParams> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:parameters> ] ;
-    sh:targetClass <https://w3id.org/neat_schema/:Layer> .
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:node_embeddings_params> ] ;
+    sh:targetClass <https://w3id.org/neat_schema/:EmbeddingsConfig> .
 
 <https://w3id.org/neat_schema/:LayerParams> a sh:NodeShape ;
     sh:closed true ;
     sh:description "Parameters for each layer of a neural network." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:rate> ],
+        [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <https://w3id.org/neat_schema/:units> ],
         [ sh:in ( "linear" "relu" "sigmoid" "tanh" "softmax" ) ;
@@ -67,21 +56,6 @@
             sh:order 1 ;
             sh:path <https://w3id.org/neat_schema/:activation> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:LayerParams> .
-
-<https://w3id.org/neat_schema/:Metric> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Metrics of a trained classifier (model)." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:type> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:metric_name> ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:curve> ] ;
-    sh:targetClass <https://w3id.org/neat_schema/:Metric> .
 
 <https://w3id.org/neat_schema/:NeatConfiguration> a sh:NodeShape ;
     sh:closed true ;
@@ -106,11 +80,11 @@
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:s3_bucket> ],
-        [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path <https://w3id.org/neat_schema/:s3_bucket_dir> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:s3_bucket> ],
         [ sh:order 2 ;
             sh:path <https://w3id.org/neat_schema/:extra_args> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:Upload> .
@@ -120,19 +94,19 @@
     sh:description "Trained model used for prediction." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:model_id> ],
-        [ sh:maxCount 1 ;
             sh:order 2 ;
             sh:path <https://w3id.org/neat_schema/:cutoff> ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/neat_schema/:outfile> ],
         [ sh:class <https://w3id.org/neat_schema/:NodeType> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:node_types> ] ;
+            sh:path <https://w3id.org/neat_schema/:node_types> ],
+        [ sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat_schema/:outfile> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:model_id> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:ApplyTrainedModel> .
 
 <https://w3id.org/neat_schema/:Classifier> a sh:NodeShape ;
@@ -140,26 +114,26 @@
     sh:description "ML classifiers to be trained-tested-validated and applied for predictions." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:classifier_type> ],
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:classifier_name> ],
         [ sh:in ( "Average" "Hadamard" "Sum" "L1" "L2" "AbsoluteL1" ) ;
             sh:maxCount 1 ;
             sh:order 3 ;
             sh:path <https://w3id.org/neat_schema/:edge_method> ],
         [ sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat_schema/:outfile> ],
+        [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <https://w3id.org/neat_schema/:classifier_id> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:classifier_type> ],
         [ sh:class <https://w3id.org/neat_schema/:ClassifierParams> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 6 ;
             sh:path <https://w3id.org/neat_schema/:parameters> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:classifier_name> ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/neat_schema/:outfile> ],
         [ sh:maxCount 1 ;
             sh:order 5 ;
             sh:path <https://w3id.org/neat_schema/:history_filename> ] ;
@@ -170,14 +144,11 @@
     sh:description "Callbacks for a classifier." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/neat_schema/:verbose> ],
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:type> ],
         [ sh:maxCount 1 ;
             sh:order 3 ;
             sh:path <https://w3id.org/neat_schema/:min_delta> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:type> ],
         [ sh:in ( "auto" "min" "max" ) ;
             sh:maxCount 1 ;
             sh:order 5 ;
@@ -185,6 +156,9 @@
         [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path <https://w3id.org/neat_schema/:monitor> ],
+        [ sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat_schema/:verbose> ],
         [ sh:maxCount 1 ;
             sh:order 2 ;
             sh:path <https://w3id.org/neat_schema/:patience> ] ;
@@ -197,7 +171,7 @@
     sh:property [ sh:class <https://w3id.org/neat_schema/:ClassifierCallback> ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:classbacks> ] ;
+            sh:path <https://w3id.org/neat_schema/:callbacks> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:ClassifierCallbackContainer> .
 
 <https://w3id.org/neat_schema/:ClassifierFitParams> a sh:NodeShape ;
@@ -205,16 +179,16 @@
     sh:description "Paramters for fitting a classifier." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:epochs> ],
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:batch_size> ],
         [ sh:class <https://w3id.org/neat_schema/:ClassifierCallbackContainer> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:callbacks> ],
+            sh:path <https://w3id.org/neat_schema/:callbacks_list> ],
         [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:batch_size> ] ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:epochs> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:ClassifierFitParams> .
 
 <https://w3id.org/neat_schema/:EnsmallenRunConfig> a sh:NodeShape ;
@@ -222,257 +196,257 @@
     sh:description "All params used by ensmallen's csv_reader" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 66 ;
-            sh:path <https://w3id.org/neat_schema/:edge_ids_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_separator> ],
-        [ sh:maxCount 1 ;
-            sh:order 74 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_is_correct> ],
-        [ sh:maxCount 1 ;
-            sh:order 29 ;
-            sh:path <https://w3id.org/neat_schema/:node_ids_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 80 ;
-            sh:path <https://w3id.org/neat_schema/:may_have_singletons> ],
-        [ sh:maxCount 1 ;
             sh:order 58 ;
             sh:path <https://w3id.org/neat_schema/:destinations_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 21 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_comment_symbol> ],
-        [ sh:maxCount 1 ;
-            sh:order 64 ;
-            sh:path <https://w3id.org/neat_schema/:default_weight> ],
-        [ sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_is_correct> ],
-        [ sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 79 ;
-            sh:path <https://w3id.org/neat_schema/:verbose> ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_path> ],
-        [ sh:maxCount 1 ;
-            sh:order 75 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_max_rows_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 55 ;
-            sh:path <https://w3id.org/neat_schema/:sources_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 65 ;
-            sh:path <https://w3id.org/neat_schema/:edge_ids_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 83 ;
-            sh:path <https://w3id.org/neat_schema/:name> ],
-        [ sh:maxCount 1 ;
-            sh:order 43 ;
-            sh:path <https://w3id.org/neat_schema/:minimum_edge_type_id> ],
-        [ sh:maxCount 1 ;
-            sh:order 19 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_is_correct> ],
-        [ sh:maxCount 1 ;
-            sh:order 60 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_edge_types_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 47 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_is_correct> ],
-        [ sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/neat_schema/:minimum_node_type_id> ],
-        [ sh:maxCount 1 ;
-            sh:order 73 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_is_sorted> ],
-        [ sh:maxCount 1 ;
-            sh:order 61 ;
-            sh:path <https://w3id.org/neat_schema/:default_edge_type> ],
-        [ sh:maxCount 1 ;
-            sh:order 56 ;
-            sh:path <https://w3id.org/neat_schema/:sources_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 28 ;
-            sh:path <https://w3id.org/neat_schema/:node_ids_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 35 ;
-            sh:path <https://w3id.org/neat_schema/:load_node_list_in_parallel> ],
-        [ sh:maxCount 1 ;
-            sh:order 76 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_comment_symbol> ],
-        [ sh:maxCount 1 ;
-            sh:order 57 ;
-            sh:path <https://w3id.org/neat_schema/:destinations_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 67 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_numeric_edge_type_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 72 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_may_contain_duplicates> ],
-        [ sh:maxCount 1 ;
-            sh:order 20 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_max_rows_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 27 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_node_types_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 77 ;
-            sh:path <https://w3id.org/neat_schema/:edges_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 68 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_numeric_node_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 38 ;
-            sh:path <https://w3id.org/neat_schema/:edge_types_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 78 ;
-            sh:path <https://w3id.org/neat_schema/:load_edge_list_in_parallel> ],
-        [ sh:maxCount 1 ;
-            sh:order 39 ;
-            sh:path <https://w3id.org/neat_schema/:edge_types_ids_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 13 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_comment_symbol> ],
-        [ sh:maxCount 1 ;
-            sh:order 69 ;
-            sh:path <https://w3id.org/neat_schema/:skip_weights_if_unavailable> ],
-        [ sh:maxCount 1 ;
-            sh:order 30 ;
-            sh:path <https://w3id.org/neat_schema/:nodes_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 51 ;
-            sh:path <https://w3id.org/neat_schema/:edge_path> ],
-        [ sh:maxCount 1 ;
-            sh:order 46 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_rows_to_skip> ],
-        [ sh:maxCount 1 ;
-            sh:order 26 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_node_types_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 54 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_rows_to_skip> ],
-        [ sh:maxCount 1 ;
-            sh:order 25 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_separator> ],
-        [ sh:maxCount 1 ;
-            sh:order 32 ;
-            sh:path <https://w3id.org/neat_schema/:numeric_node_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 23 ;
-            sh:path <https://w3id.org/neat_schema/:nodes_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 36 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_path> ],
-        [ sh:maxCount 1 ;
-            sh:order 81 ;
-            sh:path <https://w3id.org/neat_schema/:may_have_singleton_with_selfloops> ],
-        [ sh:maxCount 1 ;
-            sh:order 24 ;
-            sh:path <https://w3id.org/neat_schema/:nodes_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 50 ;
-            sh:path <https://w3id.org/neat_schema/:load_edge_type_list_in_parallel> ],
-        [ sh:maxCount 1 ;
-            sh:order 70 ;
-            sh:path <https://w3id.org/neat_schema/:skip_edge_types_if_unavailable> ],
-        [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_ids_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/neat_schema/:numeric_node_type_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_ids_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 44 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_separator> ],
-        [ sh:maxCount 1 ;
-            sh:order 49 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_comment_symbol> ],
-        [ sh:maxCount 1 ;
-            sh:order 42 ;
-            sh:path <https://w3id.org/neat_schema/:numeric_edge_type_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_header> ],
-        [ sh:maxCount 1 ;
-            sh:order 18 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_rows_to_skip> ],
-        [ sh:maxCount 1 ;
-            sh:order 12 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_max_rows_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 34 ;
-            sh:path <https://w3id.org/neat_schema/:skip_node_types_if_unavailable> ],
-        [ sh:maxCount 1 ;
-            sh:order 63 ;
-            sh:path <https://w3id.org/neat_schema/:weights_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:node_types_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 59 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_edge_types_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 48 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_max_rows_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 37 ;
-            sh:path <https://w3id.org/neat_schema/:edge_types_column_number> ],
-        [ sh:maxCount 1 ;
-            sh:order 40 ;
-            sh:path <https://w3id.org/neat_schema/:edge_types_ids_column> ],
-        [ sh:maxCount 1 ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/neat_schema/:node_type_list_rows_to_skip> ],
-        [ sh:maxCount 1 ;
-            sh:order 33 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_numeric_node_type_ids> ],
-        [ sh:maxCount 1 ;
-            sh:order 45 ;
-            sh:path <https://w3id.org/neat_schema/:edge_type_list_header> ],
         [ sh:maxCount 1 ;
             sh:order 41 ;
             sh:path <https://w3id.org/neat_schema/:edge_types_number> ],
         [ sh:maxCount 1 ;
-            sh:order 52 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_separator> ],
+            sh:order 78 ;
+            sh:path <https://w3id.org/neat_schema/:load_edge_list_in_parallel> ],
         [ sh:maxCount 1 ;
-            sh:order 71 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_is_complete> ],
+            sh:order 48 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_max_rows_number> ],
         [ sh:maxCount 1 ;
-            sh:order 62 ;
-            sh:path <https://w3id.org/neat_schema/:weights_column_number> ],
+            sh:order 56 ;
+            sh:path <https://w3id.org/neat_schema/:sources_column> ],
         [ sh:maxCount 1 ;
-            sh:order 17 ;
-            sh:path <https://w3id.org/neat_schema/:node_list_header> ],
+            sh:order 45 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_header> ],
         [ sh:maxCount 1 ;
-            sh:order 53 ;
-            sh:path <https://w3id.org/neat_schema/:edge_list_header> ],
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_ids_column_number> ],
         [ sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path <https://w3id.org/neat_schema/:load_node_type_list_in_parallel> ],
-        [ sh:maxCount 1 ;
-            sh:order 31 ;
-            sh:path <https://w3id.org/neat_schema/:minimum_node_id> ],
+            sh:order 21 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_comment_symbol> ],
         [ sh:maxCount 1 ;
             sh:order 15 ;
             sh:path <https://w3id.org/neat_schema/:node_path> ],
         [ sh:maxCount 1 ;
-            sh:order 82 ;
-            sh:path <https://w3id.org/neat_schema/:directed> ],
+            sh:order 29 ;
+            sh:path <https://w3id.org/neat_schema/:node_ids_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 64 ;
+            sh:path <https://w3id.org/neat_schema/:default_weight> ],
+        [ sh:maxCount 1 ;
+            sh:order 53 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_header> ],
+        [ sh:maxCount 1 ;
+            sh:order 38 ;
+            sh:path <https://w3id.org/neat_schema/:edge_types_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 31 ;
+            sh:path <https://w3id.org/neat_schema/:minimum_node_id> ],
+        [ sh:maxCount 1 ;
+            sh:order 76 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_comment_symbol> ],
+        [ sh:maxCount 1 ;
+            sh:order 73 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_is_sorted> ],
+        [ sh:maxCount 1 ;
+            sh:order 39 ;
+            sh:path <https://w3id.org/neat_schema/:edge_types_ids_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 44 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_separator> ],
+        [ sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/neat_schema/:minimum_node_type_id> ],
+        [ sh:maxCount 1 ;
+            sh:order 28 ;
+            sh:path <https://w3id.org/neat_schema/:node_ids_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 60 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_edge_types_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 18 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_rows_to_skip> ],
+        [ sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_header> ],
+        [ sh:maxCount 1 ;
+            sh:order 24 ;
+            sh:path <https://w3id.org/neat_schema/:nodes_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 51 ;
+            sh:path <https://w3id.org/neat_schema/:edge_path> ],
+        [ sh:maxCount 1 ;
+            sh:order 71 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_is_complete> ],
+        [ sh:maxCount 1 ;
+            sh:order 30 ;
+            sh:path <https://w3id.org/neat_schema/:nodes_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 55 ;
+            sh:path <https://w3id.org/neat_schema/:sources_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 63 ;
+            sh:path <https://w3id.org/neat_schema/:weights_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 49 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_comment_symbol> ],
+        [ sh:maxCount 1 ;
+            sh:order 46 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_rows_to_skip> ],
+        [ sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/neat_schema/:numeric_node_type_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 68 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_numeric_node_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_max_rows_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 67 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_numeric_edge_type_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 80 ;
+            sh:path <https://w3id.org/neat_schema/:may_have_singletons> ],
+        [ sh:maxCount 1 ;
+            sh:order 83 ;
+            sh:path <https://w3id.org/neat_schema/:name> ],
+        [ sh:maxCount 1 ;
+            sh:order 26 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_node_types_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:path <https://w3id.org/neat_schema/:load_node_type_list_in_parallel> ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_ids_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 54 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_rows_to_skip> ],
         [ sh:maxCount 1 ;
             sh:order 16 ;
             sh:path <https://w3id.org/neat_schema/:node_list_separator> ],
         [ sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_rows_to_skip> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_path> ],
+        [ sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_max_rows_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 35 ;
+            sh:path <https://w3id.org/neat_schema/:load_node_list_in_parallel> ],
+        [ sh:maxCount 1 ;
+            sh:order 82 ;
+            sh:path <https://w3id.org/neat_schema/:directed> ],
+        [ sh:maxCount 1 ;
+            sh:order 25 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_separator> ],
+        [ sh:maxCount 1 ;
+            sh:order 37 ;
+            sh:path <https://w3id.org/neat_schema/:edge_types_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 81 ;
+            sh:path <https://w3id.org/neat_schema/:may_have_singleton_with_selfloops> ],
+        [ sh:maxCount 1 ;
+            sh:order 57 ;
+            sh:path <https://w3id.org/neat_schema/:destinations_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 62 ;
+            sh:path <https://w3id.org/neat_schema/:weights_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 65 ;
+            sh:path <https://w3id.org/neat_schema/:edge_ids_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 75 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_max_rows_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_separator> ],
+        [ sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_is_correct> ],
+        [ sh:maxCount 1 ;
+            sh:order 42 ;
+            sh:path <https://w3id.org/neat_schema/:numeric_edge_type_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 77 ;
+            sh:path <https://w3id.org/neat_schema/:edges_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_header> ],
+        [ sh:maxCount 1 ;
+            sh:order 32 ;
+            sh:path <https://w3id.org/neat_schema/:numeric_node_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 27 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_node_types_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 36 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_path> ],
+        [ sh:maxCount 1 ;
+            sh:order 33 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_numeric_node_type_ids> ],
+        [ sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path <https://w3id.org/neat_schema/:node_list_is_correct> ],
+        [ sh:maxCount 1 ;
+            sh:order 59 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_edge_types_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 66 ;
+            sh:path <https://w3id.org/neat_schema/:edge_ids_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 40 ;
+            sh:path <https://w3id.org/neat_schema/:edge_types_ids_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_column> ],
+        [ sh:maxCount 1 ;
+            sh:order 74 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_is_correct> ],
+        [ sh:maxCount 1 ;
+            sh:order 52 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_separator> ],
+        [ sh:maxCount 1 ;
+            sh:order 70 ;
+            sh:path <https://w3id.org/neat_schema/:skip_edge_types_if_unavailable> ],
+        [ sh:maxCount 1 ;
+            sh:order 69 ;
+            sh:path <https://w3id.org/neat_schema/:skip_weights_if_unavailable> ],
+        [ sh:maxCount 1 ;
+            sh:order 23 ;
+            sh:path <https://w3id.org/neat_schema/:nodes_column_number> ],
+        [ sh:maxCount 1 ;
+            sh:order 47 ;
+            sh:path <https://w3id.org/neat_schema/:edge_type_list_is_correct> ],
+        [ sh:maxCount 1 ;
+            sh:order 50 ;
+            sh:path <https://w3id.org/neat_schema/:load_edge_type_list_in_parallel> ],
+        [ sh:maxCount 1 ;
+            sh:order 43 ;
+            sh:path <https://w3id.org/neat_schema/:minimum_edge_type_id> ],
+        [ sh:maxCount 1 ;
+            sh:order 34 ;
+            sh:path <https://w3id.org/neat_schema/:skip_node_types_if_unavailable> ],
+        [ sh:maxCount 1 ;
+            sh:order 61 ;
+            sh:path <https://w3id.org/neat_schema/:default_edge_type> ],
+        [ sh:maxCount 1 ;
+            sh:order 72 ;
+            sh:path <https://w3id.org/neat_schema/:edge_list_may_contain_duplicates> ],
+        [ sh:maxCount 1 ;
             sh:order 22 ;
-            sh:path <https://w3id.org/neat_schema/:default_node_type> ] ;
+            sh:path <https://w3id.org/neat_schema/:default_node_type> ],
+        [ sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path <https://w3id.org/neat_schema/:node_type_list_comment_symbol> ],
+        [ sh:maxCount 1 ;
+            sh:order 79 ;
+            sh:path <https://w3id.org/neat_schema/:verbose> ],
+        [ sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/neat_schema/:node_types_number> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:EnsmallenRunConfig> .
 
 <https://w3id.org/neat_schema/:GraphDataConfiguration> a sh:NodeShape ;
@@ -490,31 +464,80 @@
             sh:path <https://w3id.org/neat_schema/:graph> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:GraphDataConfiguration> .
 
+<https://w3id.org/neat_schema/:Layer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Layers for a neural network." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat_schema/:ClassifierParams> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:parameters> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:type> ] ;
+    sh:targetClass <https://w3id.org/neat_schema/:Layer> .
+
+<https://w3id.org/neat_schema/:LayerContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container of neural network layers." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat_schema/:Layer> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:layers> ] ;
+    sh:targetClass <https://w3id.org/neat_schema/:LayerContainer> .
+
+<https://w3id.org/neat_schema/:Metric> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Metrics of a trained classifier (model)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:name> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:type> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:curve> ] ;
+    sh:targetClass <https://w3id.org/neat_schema/:Metric> .
+
+<https://w3id.org/neat_schema/:MetricContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container of metrics for a trained classifier." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat_schema/:Metric> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat_schema/:metrics> ] ;
+    sh:targetClass <https://w3id.org/neat_schema/:MetricContainer> .
+
 <https://w3id.org/neat_schema/:NodeEmbeddingsParams> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/neat_schema/:explore_weight> ],
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat_schema/:return_weight> ],
         [ sh:maxCount 1 ;
             sh:order 3 ;
             sh:path <https://w3id.org/neat_schema/:window_size> ],
-        [ sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:batch_size> ],
         [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path <https://w3id.org/neat_schema/:walk_length> ],
         [ sh:maxCount 1 ;
             sh:order 6 ;
             sh:path <https://w3id.org/neat_schema/:iterations> ],
-        [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/neat_schema/:return_weight> ],
         [ sh:in ( "SkipGram" "CBOW" "GloVe" "Siamese" "TransE" "SimplE" "TransH" "TransR" ) ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:method_name> ] ;
+            sh:path <https://w3id.org/neat_schema/:method_name> ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat_schema/:explore_weight> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat_schema/:batch_size> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:NodeEmbeddingsParams> .
 
 <https://w3id.org/neat_schema/:NodeType> a sh:NodeShape ;
@@ -545,11 +568,14 @@
     sh:closed true ;
     sh:description "Parameters needed to define a classifier." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://w3id.org/neat_schema/:MetricContainer> ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat_schema/:max_iter> ],
+        [ sh:class <https://w3id.org/neat_schema/:MetricContainer> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 3 ;
-            sh:path <https://w3id.org/neat_schema/:metrics> ],
+            sh:path <https://w3id.org/neat_schema/:metrics_config> ],
         [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path <https://w3id.org/neat_schema/:random_state> ],
@@ -557,41 +583,17 @@
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 5 ;
-            sh:path <https://w3id.org/neat_schema/:fit> ],
+            sh:path <https://w3id.org/neat_schema/:fit_config> ],
+        [ sh:in ( "adagrad" "adam" "adamax" "nadam" "sgd" ) ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat_schema/:optimizer> ],
         [ sh:class <https://w3id.org/neat_schema/:LayerContainer> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 2 ;
-            sh:path <https://w3id.org/neat_schema/:layers> ],
-        [ sh:in ( "Adagrad" "Adam" "Adamax" "Nadam" "SGD" ) ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/neat_schema/:optimizer> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/neat_schema/:max_iter> ] ;
+            sh:path <https://w3id.org/neat_schema/:layers_config> ] ;
     sh:targetClass <https://w3id.org/neat_schema/:ClassifierParams> .
-
-<https://w3id.org/neat_schema/:LayerContainer> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A container of neural network layers." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://w3id.org/neat_schema/:LayerContainer> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:layers> ] ;
-    sh:targetClass <https://w3id.org/neat_schema/:LayerContainer> .
-
-<https://w3id.org/neat_schema/:MetricContainer> a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A container of metrics for a trained classifier." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://w3id.org/neat_schema/:MetricContainer> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/neat_schema/:metrics> ] ;
-    sh:targetClass <https://w3id.org/neat_schema/:MetricContainer> .
 
 <https://w3id.org/neat_schema/:PosNegData> a sh:NodeShape ;
     sh:closed true ;

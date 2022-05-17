@@ -9,7 +9,7 @@ URI: [https://w3id.org/neat_schema/:callbacks](https://w3id.org/neat_schema/:cal
 
 ## Properties
 
- * Range: ClassifierCallbackContainer
+ * Range: ClassifierCallback
 
 
 

@@ -9,7 +9,7 @@ URI: [https://w3id.org/neat_schema/:metrics](https://w3id.org/neat_schema/:metri
 
 ## Properties
 
- * Range: MetricContainer
+ * Range: Metric
 
 
 
