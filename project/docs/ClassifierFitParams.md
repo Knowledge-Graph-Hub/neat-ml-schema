@@ -7,11 +7,11 @@ Paramters for fitting a classifier.
 URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_schema/ClassifierFitParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[Classifier]++-%20fit%200..1>[ClassifierFitParams],[ClassifierCallbackContainer],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[Classifier]++-%20fit%200..1>[ClassifierFitParams],[ClassifierCallbackContainer],[Classifier])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])
 
 ## Referenced by Class
 
- *  **None** *[➞fit](classifier__fit.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
+ *  **None** *[➞fit](classifierParams__fit.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
 
 ## Attributes
 

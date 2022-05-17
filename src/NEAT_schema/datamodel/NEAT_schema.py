@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T19:13:02
+# Generation date: 2022-05-16T19:23:00
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -239,10 +239,6 @@ class Classifier(YAMLRoot):
     outfile: Optional[str] = None
     history_filename: Optional[str] = None
     parameters: Optional[Union[dict, "ClassifierParams"]] = None
-    layers: Optional[Union[dict, "LayerContainer"]] = None
-    metrics: Optional[Union[dict, "MetricContainer"]] = None
-    optimizer: Optional[Union[str, "OptimizerEnum"]] = None
-    fit: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.classifier_id is not None and not isinstance(self.classifier_id, str):
@@ -266,18 +262,6 @@ class Classifier(YAMLRoot):
         if self.parameters is not None and not isinstance(self.parameters, ClassifierParams):
             self.parameters = ClassifierParams(**as_dict(self.parameters))
 
-        if self.layers is not None and not isinstance(self.layers, LayerContainer):
-            self.layers = LayerContainer(**as_dict(self.layers))
-
-        if self.metrics is not None and not isinstance(self.metrics, MetricContainer):
-            self.metrics = MetricContainer(**as_dict(self.metrics))
-
-        if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
-            self.optimizer = OptimizerEnum(self.optimizer)
-
-        if self.fit is not None and not isinstance(self.fit, ClassifierFitParams):
-            self.fit = ClassifierFitParams(**as_dict(self.fit))
-
         super().__post_init__(**kwargs)
 
 
@@ -295,6 +279,10 @@ class ClassifierParams(YAMLRoot):
 
     random_state: Optional[int] = None
     max_iter: Optional[int] = None
+    layers: Optional[Union[dict, "LayerContainer"]] = None
+    metrics: Optional[Union[dict, "MetricContainer"]] = None
+    optimizer: Optional[Union[str, "OptimizerEnum"]] = None
+    fit: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.random_state is not None and not isinstance(self.random_state, int):
@@ -302,6 +290,18 @@ class ClassifierParams(YAMLRoot):
 
         if self.max_iter is not None and not isinstance(self.max_iter, int):
             self.max_iter = int(self.max_iter)
+
+        if self.layers is not None and not isinstance(self.layers, LayerContainer):
+            self.layers = LayerContainer(**as_dict(self.layers))
+
+        if self.metrics is not None and not isinstance(self.metrics, MetricContainer):
+            self.metrics = MetricContainer(**as_dict(self.metrics))
+
+        if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
+            self.optimizer = OptimizerEnum(self.optimizer)
+
+        if self.fit is not None and not isinstance(self.fit, ClassifierFitParams):
+            self.fit = ClassifierFitParams(**as_dict(self.fit))
 
         super().__post_init__(**kwargs)
 
@@ -1164,23 +1164,23 @@ slots.classifier__history_filename = Slot(uri=DEFAULT_.history_filename, name="c
 slots.classifier__parameters = Slot(uri=DEFAULT_.parameters, name="classifier__parameters", curie=DEFAULT_.curie('parameters'),
                    model_uri=DEFAULT_.classifier__parameters, domain=None, range=Optional[Union[dict, ClassifierParams]])
 
-slots.classifier__layers = Slot(uri=DEFAULT_.layers, name="classifier__layers", curie=DEFAULT_.curie('layers'),
-                   model_uri=DEFAULT_.classifier__layers, domain=None, range=Optional[Union[dict, LayerContainer]])
-
-slots.classifier__metrics = Slot(uri=DEFAULT_.metrics, name="classifier__metrics", curie=DEFAULT_.curie('metrics'),
-                   model_uri=DEFAULT_.classifier__metrics, domain=None, range=Optional[Union[dict, MetricContainer]])
-
-slots.classifier__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifier__optimizer", curie=DEFAULT_.curie('optimizer'),
-                   model_uri=DEFAULT_.classifier__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
-
-slots.classifier__fit = Slot(uri=DEFAULT_.fit, name="classifier__fit", curie=DEFAULT_.curie('fit'),
-                   model_uri=DEFAULT_.classifier__fit, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
-
 slots.classifierParams__random_state = Slot(uri=DEFAULT_.random_state, name="classifierParams__random_state", curie=DEFAULT_.curie('random_state'),
                    model_uri=DEFAULT_.classifierParams__random_state, domain=None, range=Optional[int])
 
 slots.classifierParams__max_iter = Slot(uri=DEFAULT_.max_iter, name="classifierParams__max_iter", curie=DEFAULT_.curie('max_iter'),
                    model_uri=DEFAULT_.classifierParams__max_iter, domain=None, range=Optional[int])
+
+slots.classifierParams__layers = Slot(uri=DEFAULT_.layers, name="classifierParams__layers", curie=DEFAULT_.curie('layers'),
+                   model_uri=DEFAULT_.classifierParams__layers, domain=None, range=Optional[Union[dict, LayerContainer]])
+
+slots.classifierParams__metrics = Slot(uri=DEFAULT_.metrics, name="classifierParams__metrics", curie=DEFAULT_.curie('metrics'),
+                   model_uri=DEFAULT_.classifierParams__metrics, domain=None, range=Optional[Union[dict, MetricContainer]])
+
+slots.classifierParams__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifierParams__optimizer", curie=DEFAULT_.curie('optimizer'),
+                   model_uri=DEFAULT_.classifierParams__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
+
+slots.classifierParams__fit = Slot(uri=DEFAULT_.fit, name="classifierParams__fit", curie=DEFAULT_.curie('fit'),
+                   model_uri=DEFAULT_.classifierParams__fit, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
 
 slots.layerContainer__layers = Slot(uri=DEFAULT_.layers, name="layerContainer__layers", curie=DEFAULT_.curie('layers'),
                    model_uri=DEFAULT_.layerContainer__layers, domain=None, range=Optional[Union[Union[dict, Layer], List[Union[dict, Layer]]]])

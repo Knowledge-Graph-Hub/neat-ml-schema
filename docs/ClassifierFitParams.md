@@ -27,7 +27,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Classifier](Classifier.md) | [fit](fit.md) | range | ClassifierFitParams |
+| [ClassifierParams](ClassifierParams.md) | [fit](fit.md) | range | ClassifierFitParams |
 
 
 

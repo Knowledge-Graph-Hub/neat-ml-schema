@@ -25,7 +25,7 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Classifier](Classifier.md) | [metrics](metrics.md) | range | MetricContainer |
+| [ClassifierParams](ClassifierParams.md) | [metrics](metrics.md) | range | MetricContainer |
 | [MetricContainer](MetricContainer.md) | [metrics](metrics.md) | range | MetricContainer |
 
 

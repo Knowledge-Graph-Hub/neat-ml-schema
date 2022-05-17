@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/classifier__fit](https://w3id.org/neat_schema/classifier__fit)
+URI: [https://w3id.org/neat_schema/classifierParams__fit](https://w3id.org/neat_schema/classifierParams__fit)
 
 
 ## Domain and Range
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [ClassifierFitParams](ClassifierFitParams.md)
 
 ## Used by
 
- * [Classifier](Classifier.md)
+ * [ClassifierParams](ClassifierParams.md)

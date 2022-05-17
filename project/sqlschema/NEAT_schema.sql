@@ -21,11 +21,7 @@ CREATE TABLE "Classifier" (
 	outfile TEXT, 
 	history_filename TEXT, 
 	parameters TEXT, 
-	layers TEXT, 
-	metrics TEXT, 
-	optimizer VARCHAR(7), 
-	fit TEXT, 
-	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers, metrics, optimizer, fit)
+	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters)
 );
 
 CREATE TABLE "ClassifierCallback" (
@@ -58,7 +54,11 @@ CREATE TABLE "ClassifierFitParams" (
 CREATE TABLE "ClassifierParams" (
 	random_state INTEGER, 
 	max_iter INTEGER, 
-	PRIMARY KEY (random_state, max_iter)
+	layers TEXT, 
+	metrics TEXT, 
+	optimizer VARCHAR(7), 
+	fit TEXT, 
+	PRIMARY KEY (random_state, max_iter, layers, metrics, optimizer, fit)
 );
 
 CREATE TABLE "EmbeddingsConfig" (

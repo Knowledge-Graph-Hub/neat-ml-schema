@@ -21,10 +21,6 @@ message Classifier
   optional outfile String = 5
   optional historyFilename String = 6
   optional parameters ClassifierParams = 7
-  optional layers LayerContainer = 8
-  optional metrics MetricContainer = 9
-  optional optimizer OptimizerEnum = 10
-  optional fit ClassifierFitParams = 11
  }
 // Callbacks for a classifier.
 message ClassifierCallback
@@ -58,6 +54,10 @@ message ClassifierParams
  {
   optional randomState Integer = 1
   optional maxIter Integer = 2
+  optional layers LayerContainer = 3
+  optional metrics MetricContainer = 4
+  optional optimizer OptimizerEnum = 5
+  optional fit ClassifierFitParams = 6
  }
 message EmbeddingsConfig
  {

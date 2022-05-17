@@ -25,7 +25,7 @@ URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Classifier](Classifier.md) | [layers](layers.md) | range | LayerContainer |
+| [ClassifierParams](ClassifierParams.md) | [layers](layers.md) | range | LayerContainer |
 | [LayerContainer](LayerContainer.md) | [layers](layers.md) | range | LayerContainer |
 
 

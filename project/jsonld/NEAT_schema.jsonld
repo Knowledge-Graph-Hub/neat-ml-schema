@@ -631,57 +631,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifier__layers",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/layers",
-      "alias": "layers",
-      "owner": "Classifier",
-      "domain_of": [
-        "Classifier"
-      ],
-      "range": "LayerContainer",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "classifier__metrics",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/metrics",
-      "alias": "metrics",
-      "owner": "Classifier",
-      "domain_of": [
-        "Classifier"
-      ],
-      "range": "MetricContainer",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "classifier__optimizer",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/optimizer",
-      "alias": "optimizer",
-      "owner": "Classifier",
-      "domain_of": [
-        "Classifier"
-      ],
-      "range": "optimizer_enum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "classifier__fit",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/fit",
-      "alias": "fit",
-      "owner": "Classifier",
-      "domain_of": [
-        "Classifier"
-      ],
-      "range": "ClassifierFitParams",
-      "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "classifierParams__random_state",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/random_state",
@@ -703,6 +652,57 @@
         "ClassifierParams"
       ],
       "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifierParams__layers",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/layers",
+      "alias": "layers",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "LayerContainer",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifierParams__metrics",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/metrics",
+      "alias": "metrics",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "MetricContainer",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifierParams__optimizer",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/optimizer",
+      "alias": "optimizer",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "optimizer_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifierParams__fit",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/fit",
+      "alias": "fit",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "ClassifierFitParams",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2302,11 +2302,7 @@
         "classifier__edge_method",
         "classifier__outfile",
         "classifier__history_filename",
-        "classifier__parameters",
-        "classifier__layers",
-        "classifier__metrics",
-        "classifier__optimizer",
-        "classifier__fit"
+        "classifier__parameters"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2339,6 +2335,35 @@
           "name": "parameters",
           "range": "ClassifierParams",
           "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/Classifier",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ClassifierParams",
+      "definition_uri": "https://w3id.org/neat_schema/ClassifierParams",
+      "description": "Parameters needed to define a classifier.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "classifierParams__random_state",
+        "classifierParams__max_iter",
+        "classifierParams__layers",
+        "classifierParams__metrics",
+        "classifierParams__optimizer",
+        "classifierParams__fit"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "random_state",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "max_iter",
+          "range": "integer",
+          "@type": "SlotDefinition"
         },
         {
           "name": "layers",
@@ -2358,31 +2383,6 @@
         {
           "name": "fit",
           "range": "ClassifierFitParams",
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://w3id.org/neat_schema/Classifier",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ClassifierParams",
-      "definition_uri": "https://w3id.org/neat_schema/ClassifierParams",
-      "description": "Parameters needed to define a classifier.",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slots": [
-        "classifierParams__random_state",
-        "classifierParams__max_iter"
-      ],
-      "slot_usage": {},
-      "attributes": [
-        {
-          "name": "random_state",
-          "range": "integer",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "max_iter",
-          "range": "integer",
           "@type": "SlotDefinition"
         }
       ],
@@ -3224,9 +3224,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-16T19:06:47",
+  "source_file_date": "2022-05-16T19:21:49",
   "source_file_size": 10913,
-  "generation_date": "2022-05-16T19:12:55",
+  "generation_date": "2022-05-16T19:22:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

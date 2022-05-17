@@ -64,20 +64,8 @@
             "edge_method": {
                "$ref": "#/$defs/EdgeMethodEnum"
             },
-            "fit": {
-               "$ref": "#/$defs/ClassifierFitParams"
-            },
             "history_filename": {
                "type": "string"
-            },
-            "layers": {
-               "$ref": "#/$defs/LayerContainer"
-            },
-            "metrics": {
-               "$ref": "#/$defs/MetricContainer"
-            },
-            "optimizer": {
-               "$ref": "#/$defs/OptimizerEnum"
             },
             "outfile": {
                "type": "string"
@@ -179,8 +167,20 @@
          "additionalProperties": false,
          "description": "Parameters needed to define a classifier.",
          "properties": {
+            "fit": {
+               "$ref": "#/$defs/ClassifierFitParams"
+            },
+            "layers": {
+               "$ref": "#/$defs/LayerContainer"
+            },
             "max_iter": {
                "type": "integer"
+            },
+            "metrics": {
+               "$ref": "#/$defs/MetricContainer"
+            },
+            "optimizer": {
+               "$ref": "#/$defs/OptimizerEnum"
             },
             "random_state": {
                "type": "integer"

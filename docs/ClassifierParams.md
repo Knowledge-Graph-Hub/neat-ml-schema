@@ -19,6 +19,10 @@ URI: [https://w3id.org/neat_schema/:ClassifierParams](https://w3id.org/neat_sche
 | ---  | --- | --- | --- | --- |
 | [random_state](random_state.md) | [integer](integer.md) | 0..1 | None  | . |
 | [max_iter](max_iter.md) | [integer](integer.md) | 0..1 | None  | . |
+| [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
+| [metrics](metrics.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
+| [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | None  | . |
+| [fit](fit.md) | [ClassifierFitParams](ClassifierFitParams.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -61,6 +65,22 @@ attributes:
     name: max_iter
     from_schema: https://w3id.org/neat_schema
     range: integer
+  layers:
+    name: layers
+    from_schema: https://w3id.org/neat_schema
+    range: LayerContainer
+  metrics:
+    name: metrics
+    from_schema: https://w3id.org/neat_schema
+    range: MetricContainer
+  optimizer:
+    name: optimizer
+    from_schema: https://w3id.org/neat_schema
+    range: optimizer_enum
+  fit:
+    name: fit
+    from_schema: https://w3id.org/neat_schema
+    range: ClassifierFitParams
 
 ```
 </details>
@@ -85,6 +105,30 @@ attributes:
     alias: max_iter
     owner: ClassifierParams
     range: integer
+  layers:
+    name: layers
+    from_schema: https://w3id.org/neat_schema
+    alias: layers
+    owner: ClassifierParams
+    range: LayerContainer
+  metrics:
+    name: metrics
+    from_schema: https://w3id.org/neat_schema
+    alias: metrics
+    owner: ClassifierParams
+    range: MetricContainer
+  optimizer:
+    name: optimizer
+    from_schema: https://w3id.org/neat_schema
+    alias: optimizer
+    owner: ClassifierParams
+    range: optimizer_enum
+  fit:
+    name: fit
+    from_schema: https://w3id.org/neat_schema
+    alias: fit
+    owner: ClassifierParams
+    range: ClassifierFitParams
 
 ```
 </details>

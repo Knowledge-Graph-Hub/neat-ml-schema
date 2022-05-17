@@ -55,11 +55,7 @@ linkml:Nodeidentifier NONLITERAL
           <edge_method> @<EdgeMethodEnum> ? ;
           <outfile> @linkml:String ? ;
           <history_filename> @linkml:String ? ;
-          <parameters> @<ClassifierParams> ? ;
-          <layers> @<LayerContainer> ? ;
-          <metrics> @<MetricContainer> ? ;
-          <optimizer> @<OptimizerEnum> ? ;
-          <fit> @<ClassifierFitParams> ?
+          <parameters> @<ClassifierParams> ?
        ) ;
        rdf:type [ <Classifier> ] ?
     )
@@ -100,7 +96,11 @@ linkml:Nodeidentifier NONLITERAL
 
 <ClassifierParams> CLOSED {
     (  $<ClassifierParams_tes> (  <random_state> @linkml:Integer ? ;
-          <max_iter> @linkml:Integer ?
+          <max_iter> @linkml:Integer ? ;
+          <layers> @<LayerContainer> ? ;
+          <metrics> @<MetricContainer> ? ;
+          <optimizer> @<OptimizerEnum> ? ;
+          <fit> @<ClassifierFitParams> ?
        ) ;
        rdf:type [ <ClassifierParams> ] ?
     )

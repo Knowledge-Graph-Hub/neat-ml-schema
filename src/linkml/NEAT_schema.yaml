@@ -85,14 +85,6 @@ classes:
       history_filename:
       parameters:
         range: ClassifierParams
-      layers:
-        range: LayerContainer
-      metrics:
-        range: MetricContainer
-      optimizer:
-        range: optimizer_enum
-      fit:
-        range: ClassifierFitParams
 
 
   ClassifierParams:
@@ -102,6 +94,14 @@ classes:
         range: integer
       max_iter:
         range: integer
+      layers:
+        range: LayerContainer
+      metrics:
+        range: MetricContainer
+      optimizer:
+        range: optimizer_enum
+      fit:
+        range: ClassifierFitParams
 
   LayerContainer:
     description: A container of neural network layers.

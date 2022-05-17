@@ -62,12 +62,12 @@ URI: https://w3id.org/neat_schema
 | [edge_method](edge_method.md) | None | 
 | [outfile](outfile.md) | None | 
 | [parameters](parameters.md) | None | 
+| [random_state](random_state.md) | None | 
+| [max_iter](max_iter.md) | None | 
 | [layers](layers.md) | None | 
 | [metrics](metrics.md) | None | 
 | [optimizer](optimizer.md) | None | 
 | [fit](fit.md) | None | 
-| [random_state](random_state.md) | None | 
-| [max_iter](max_iter.md) | None | 
 | [type](type.md) | None | 
 | [units](units.md) | None | 
 | [activation](activation.md) | None | 

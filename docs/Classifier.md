@@ -24,10 +24,6 @@ URI: [https://w3id.org/neat_schema/:Classifier](https://w3id.org/neat_schema/:Cl
 | [outfile](outfile.md) | [string](string.md) | 0..1 | None  | . |
 | [history_filename](history_filename.md) | [string](string.md) | 0..1 | None  | . |
 | [parameters](parameters.md) | [ClassifierParams](ClassifierParams.md) | 0..1 | None  | . |
-| [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
-| [metrics](metrics.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
-| [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | None  | . |
-| [fit](fit.md) | [ClassifierFitParams](ClassifierFitParams.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -84,22 +80,6 @@ attributes:
     name: parameters
     from_schema: https://w3id.org/neat_schema
     range: ClassifierParams
-  layers:
-    name: layers
-    from_schema: https://w3id.org/neat_schema
-    range: LayerContainer
-  metrics:
-    name: metrics
-    from_schema: https://w3id.org/neat_schema
-    range: MetricContainer
-  optimizer:
-    name: optimizer
-    from_schema: https://w3id.org/neat_schema
-    range: optimizer_enum
-  fit:
-    name: fit
-    from_schema: https://w3id.org/neat_schema
-    range: ClassifierFitParams
 
 ```
 </details>
@@ -154,30 +134,6 @@ attributes:
     alias: parameters
     owner: Classifier
     range: ClassifierParams
-  layers:
-    name: layers
-    from_schema: https://w3id.org/neat_schema
-    alias: layers
-    owner: Classifier
-    range: LayerContainer
-  metrics:
-    name: metrics
-    from_schema: https://w3id.org/neat_schema
-    alias: metrics
-    owner: Classifier
-    range: MetricContainer
-  optimizer:
-    name: optimizer
-    from_schema: https://w3id.org/neat_schema
-    alias: optimizer
-    owner: Classifier
-    range: optimizer_enum
-  fit:
-    name: fit
-    from_schema: https://w3id.org/neat_schema
-    alias: fit
-    owner: Classifier
-    range: ClassifierFitParams
 
 ```
 </details>
