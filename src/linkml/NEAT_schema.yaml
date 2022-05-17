@@ -94,13 +94,13 @@ classes:
         range: integer
       max_iter:
         range: integer
-      layers:
+      layers_config:
         range: LayerContainer
-      metrics:
+      metrics_config:
         range: MetricContainer
       optimizer:
         range: optimizer_enum
-      fit:
+      fit_config:
         range: ClassifierFitParams
 
   LayerContainer:
@@ -126,17 +126,21 @@ classes:
         range: integer
       activation:
         range: activation_enum
+      rate:
+        range: float
 
   MetricContainer:
     description: A container of metrics for a trained classifier.
     attributes:
       metrics:
+        multivalued: true
+        inlined_as_list: true
         range: Metric
   
   Metric:
     description: Metrics of a trained classifier (model).
     attributes:
-      metric_name:
+      name: {}
       type:
       curve:
   
@@ -147,13 +151,13 @@ classes:
         range: integer
       epochs:
         range: integer
-      callbacks:
+      callbacks_list:
         range: ClassifierCallbackContainer
   
   ClassifierCallbackContainer:
     description: A container of classifier callbacks.
     attributes:
-      classbacks:
+      callbacks:
         multivalued: true
         inlined_as_list: true
         range: ClassifierCallback
@@ -410,15 +414,15 @@ enums:
   optimizer_enum:
     description: Optimizers that can be implemented in the neural network.
     permissible_values:
-      Adagrad:
+      adagrad:
         description: Optimizer that implements the Adagrad algorithm.
-      Adam:
+      adam:
         description: Optimizer that implements the Adam algorithm.
-      Adamax:
+      adamax:
         description: Optimizer that implements the Adamax algorithm.
-      Nadam:
+      nadam:
         description: Optimizer that implements the NAdam algorithm.
-      SGD:
+      sgd:
         description: Stochastic gradient descent (with momentum) optimizer.
 
   classifier_callback_mode_enum:
