@@ -58,15 +58,43 @@ linkml:Nodeidentifier NONLITERAL
           <parameters> @<ClassifierParams> ? ;
           <layers> @<LayerContainer> ? ;
           <metrics> @<MetricContainer> ? ;
-          <optimizer> @<OptimizerEnum> ?
+          <optimizer> @<OptimizerEnum> ? ;
+          <fit> @<ClassifierFitParams> ?
        ) ;
        rdf:type [ <Classifier> ] ?
+    )
+}
+
+<ClassifierCallback> CLOSED {
+    (  $<ClassifierCallback_tes> (  <type> @linkml:String ? ;
+          <monitor> @linkml:String ? ;
+          <patience> @linkml:Integer ? ;
+          <min_delta> @linkml:Integer ? ;
+          <verbose> @linkml:Boolean ? ;
+          <mode> @<ClassifierCallbackModeEnum> ?
+       ) ;
+       rdf:type [ <ClassifierCallback> ] ?
+    )
+}
+
+<ClassifierCallbackContainer> CLOSED {
+    (  $<ClassifierCallbackContainer_tes> <classbacks> @<ClassifierCallback> * ;
+       rdf:type [ <ClassifierCallbackContainer> ] ?
     )
 }
 
 <ClassifierContainer> CLOSED {
     (  $<ClassifierContainer_tes> <classifiers> @<Classifier> * ;
        rdf:type [ <ClassifierContainer> ] ?
+    )
+}
+
+<ClassifierFitParams> CLOSED {
+    (  $<ClassifierFitParams_tes> (  <batch_size> @linkml:Integer ? ;
+          <epochs> @linkml:Integer ? ;
+          <callbacks> @<ClassifierCallbackContainer> ?
+       ) ;
+       rdf:type [ <ClassifierFitParams> ] ?
     )
 }
 
@@ -81,7 +109,7 @@ linkml:Nodeidentifier NONLITERAL
 <EmbeddingsConfig> CLOSED {
     (  $<EmbeddingsConfig_tes> (  <filename> @linkml:String ? ;
           <history_filename> @linkml:String ? ;
-          <node_embeddings_params> @<NodeEmbeddingsParamsConfig> ? ;
+          <node_embeddings_params> @<NodeEmbeddingsParams> ? ;
           <tsne_filename> @linkml:String ?
        ) ;
        rdf:type [ <EmbeddingsConfig> ] ?
@@ -229,8 +257,8 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<NodeEmbeddingsParamsConfig> CLOSED {
-    (  $<NodeEmbeddingsParamsConfig_tes> (  <method_name> @<NodeEmbedMethodEnum> ? ;
+<NodeEmbeddingsParams> CLOSED {
+    (  $<NodeEmbeddingsParams_tes> (  <method_name> @<NodeEmbedMethodEnum> ? ;
           <walk_length> @linkml:Integer ? ;
           <batch_size> @linkml:Integer ? ;
           <window_size> @linkml:Integer ? ;
@@ -238,7 +266,7 @@ linkml:Nodeidentifier NONLITERAL
           <explore_weight> @linkml:Float ? ;
           <iterations> @linkml:Integer ?
        ) ;
-       rdf:type [ <NodeEmbeddingsParamsConfig> ] ?
+       rdf:type [ <NodeEmbeddingsParams> ] ?
     )
 }
 

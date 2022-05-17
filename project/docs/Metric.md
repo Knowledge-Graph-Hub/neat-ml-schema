@@ -2,7 +2,7 @@
 # Class: Metric
 
 
-Metrics of a trained classifier.
+Metrics of a trained classifier (model).
 
 URI: [https://w3id.org/neat_schema/Metric](https://w3id.org/neat_schema/Metric)
 

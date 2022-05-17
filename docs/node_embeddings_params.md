@@ -9,7 +9,7 @@ URI: [https://w3id.org/neat_schema/:node_embeddings_params](https://w3id.org/nea
 
 ## Properties
 
- * Range: NodeEmbeddingsParamsConfig
+ * Range: NodeEmbeddingsParams
 
 
 

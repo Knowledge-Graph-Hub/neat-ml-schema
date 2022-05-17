@@ -24,11 +24,34 @@ message Classifier
   optional layers LayerContainer = 8
   optional metrics MetricContainer = 9
   optional optimizer OptimizerEnum = 10
+  optional fit ClassifierFitParams = 11
+ }
+// Callbacks for a classifier.
+message ClassifierCallback
+ {
+  optional type String = 1
+  optional monitor String = 2
+  optional patience Integer = 3
+  optional minDelta Integer = 4
+  optional verbose Boolean = 5
+  optional mode ClassifierCallbackModeEnum = 6
+ }
+// A container of classifier callbacks.
+message ClassifierCallbackContainer
+ {
+  repeated classbacks ClassifierCallback = 1
  }
 // A container with multiple classifiers in it.
 message ClassifierContainer
  {
   repeated classifiers Classifier = 1
+ }
+// Paramters for fitting a classifier.
+message ClassifierFitParams
+ {
+  optional batchSize Integer = 1
+  optional epochs Integer = 2
+  optional callbacks ClassifierCallbackContainer = 3
  }
 // Parameters needed to define a classifier.
 message ClassifierParams
@@ -40,7 +63,7 @@ message EmbeddingsConfig
  {
   optional filename String = 1
   optional historyFilename String = 2
-  optional nodeEmbeddingsParams NodeEmbeddingsParamsConfig = 3
+  optional nodeEmbeddingsParams NodeEmbeddingsParams = 3
   optional tsneFilename String = 4
  }
 // All params used by ensmallen's csv_reader
@@ -153,7 +176,7 @@ message LayerParams
   optional units Integer = 1
   optional activation ActivationEnum = 2
  }
-// Metrics of a trained classifier.
+// Metrics of a trained classifier (model).
 message Metric
  {
   optional metricName String = 1
@@ -169,7 +192,7 @@ message NeatConfiguration
  {
   optional graphData GraphDataConfiguration = 1
  }
-message NodeEmbeddingsParamsConfig
+message NodeEmbeddingsParams
  {
   optional methodName NodeEmbedMethodEnum = 1
   optional walkLength Integer = 2

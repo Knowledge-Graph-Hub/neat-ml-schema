@@ -23,11 +23,34 @@ type Classifier
     layers: LayerContainer
     metrics: MetricContainer
     optimizer: OptimizerEnum
+    fit: ClassifierFitParams
+  }
+
+type ClassifierCallback
+  {
+    type: String
+    monitor: String
+    patience: Integer
+    minDelta: Integer
+    verbose: Boolean
+    mode: ClassifierCallbackModeEnum
+  }
+
+type ClassifierCallbackContainer
+  {
+    classbacks: [ClassifierCallback]
   }
 
 type ClassifierContainer
   {
     classifiers: [Classifier]
+  }
+
+type ClassifierFitParams
+  {
+    batchSize: Integer
+    epochs: Integer
+    callbacks: ClassifierCallbackContainer
   }
 
 type ClassifierParams
@@ -40,7 +63,7 @@ type EmbeddingsConfig
   {
     filename: String
     historyFilename: String
-    nodeEmbeddingsParams: NodeEmbeddingsParamsConfig
+    nodeEmbeddingsParams: NodeEmbeddingsParams
     tsneFilename: String
   }
 
@@ -172,7 +195,7 @@ type NeatConfiguration
     graphData: GraphDataConfiguration
   }
 
-type NodeEmbeddingsParamsConfig
+type NodeEmbeddingsParams
   {
     methodName: NodeEmbedMethodEnum
     walkLength: Integer

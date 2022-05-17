@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T18:35:46
+# Generation date: 2022-05-16T19:07:44
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -137,7 +137,7 @@ class EmbeddingsConfig(YAMLRoot):
 
     filename: Optional[str] = None
     history_filename: Optional[str] = None
-    node_embeddings_params: Optional[Union[dict, "NodeEmbeddingsParamsConfig"]] = None
+    node_embeddings_params: Optional[Union[dict, "NodeEmbeddingsParams"]] = None
     tsne_filename: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -147,8 +147,8 @@ class EmbeddingsConfig(YAMLRoot):
         if self.history_filename is not None and not isinstance(self.history_filename, str):
             self.history_filename = str(self.history_filename)
 
-        if self.node_embeddings_params is not None and not isinstance(self.node_embeddings_params, NodeEmbeddingsParamsConfig):
-            self.node_embeddings_params = NodeEmbeddingsParamsConfig(**as_dict(self.node_embeddings_params))
+        if self.node_embeddings_params is not None and not isinstance(self.node_embeddings_params, NodeEmbeddingsParams):
+            self.node_embeddings_params = NodeEmbeddingsParams(**as_dict(self.node_embeddings_params))
 
         if self.tsne_filename is not None and not isinstance(self.tsne_filename, str):
             self.tsne_filename = str(self.tsne_filename)
@@ -157,13 +157,13 @@ class EmbeddingsConfig(YAMLRoot):
 
 
 @dataclass
-class NodeEmbeddingsParamsConfig(YAMLRoot):
+class NodeEmbeddingsParams(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig")
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParams")
     class_class_curie: ClassVar[str] = None
-    class_name: ClassVar[str] = "NodeEmbeddingsParamsConfig"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig")
+    class_name: ClassVar[str] = "NodeEmbeddingsParams"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParams")
 
     method_name: Optional[Union[str, "NodeEmbedMethodEnum"]] = None
     walk_length: Optional[int] = None
@@ -242,6 +242,7 @@ class Classifier(YAMLRoot):
     layers: Optional[Union[dict, "LayerContainer"]] = None
     metrics: Optional[Union[dict, "MetricContainer"]] = None
     optimizer: Optional[Union[str, "OptimizerEnum"]] = None
+    fit: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.classifier_id is not None and not isinstance(self.classifier_id, str):
@@ -273,6 +274,9 @@ class Classifier(YAMLRoot):
 
         if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
             self.optimizer = OptimizerEnum(self.optimizer)
+
+        if self.fit is not None and not isinstance(self.fit, ClassifierFitParams):
+            self.fit = ClassifierFitParams(**as_dict(self.fit))
 
         super().__post_init__(**kwargs)
 
@@ -398,7 +402,7 @@ class MetricContainer(YAMLRoot):
 @dataclass
 class Metric(YAMLRoot):
     """
-    Metrics of a trained classifier.
+    Metrics of a trained classifier (model).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -420,6 +424,98 @@ class Metric(YAMLRoot):
 
         if self.curve is not None and not isinstance(self.curve, str):
             self.curve = str(self.curve)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ClassifierFitParams(YAMLRoot):
+    """
+    Paramters for fitting a classifier.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierFitParams")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "ClassifierFitParams"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierFitParams")
+
+    batch_size: Optional[int] = None
+    epochs: Optional[int] = None
+    callbacks: Optional[Union[dict, "ClassifierCallbackContainer"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.batch_size is not None and not isinstance(self.batch_size, int):
+            self.batch_size = int(self.batch_size)
+
+        if self.epochs is not None and not isinstance(self.epochs, int):
+            self.epochs = int(self.epochs)
+
+        if self.callbacks is not None and not isinstance(self.callbacks, ClassifierCallbackContainer):
+            self.callbacks = ClassifierCallbackContainer(**as_dict(self.callbacks))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ClassifierCallbackContainer(YAMLRoot):
+    """
+    A container of classifier callbacks.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallbackContainer")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "ClassifierCallbackContainer"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallbackContainer")
+
+    classbacks: Optional[Union[Union[dict, "ClassifierCallback"], List[Union[dict, "ClassifierCallback"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.classbacks, list):
+            self.classbacks = [self.classbacks] if self.classbacks is not None else []
+        self.classbacks = [v if isinstance(v, ClassifierCallback) else ClassifierCallback(**as_dict(v)) for v in self.classbacks]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ClassifierCallback(YAMLRoot):
+    """
+    Callbacks for a classifier.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallback")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "ClassifierCallback"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallback")
+
+    type: Optional[str] = None
+    monitor: Optional[str] = None
+    patience: Optional[int] = None
+    min_delta: Optional[int] = None
+    verbose: Optional[Union[bool, Bool]] = None
+    mode: Optional[Union[str, "ClassifierCallbackModeEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
+
+        if self.monitor is not None and not isinstance(self.monitor, str):
+            self.monitor = str(self.monitor)
+
+        if self.patience is not None and not isinstance(self.patience, int):
+            self.patience = int(self.patience)
+
+        if self.min_delta is not None and not isinstance(self.min_delta, int):
+            self.min_delta = int(self.min_delta)
+
+        if self.verbose is not None and not isinstance(self.verbose, Bool):
+            self.verbose = Bool(self.verbose)
+
+        if self.mode is not None and not isinstance(self.mode, ClassifierCallbackModeEnum):
+            self.mode = ClassifierCallbackModeEnum(self.mode)
 
         super().__post_init__(**kwargs)
 
@@ -970,6 +1066,22 @@ class OptimizerEnum(EnumDefinitionImpl):
         description="Optimizers that can be implemented in the neural network.",
     )
 
+class ClassifierCallbackModeEnum(EnumDefinitionImpl):
+    """
+    Callback modes while fitting a classifier.
+    """
+    auto = PermissibleValue(text="auto",
+                               description="In 'auto' mode, the direction is automatically inferred from the name of the monitored quantity.")
+    min = PermissibleValue(text="min",
+                             description="In 'min' mode, the learning rate will be reduced when the quantity monitored has stopped decreasing.")
+    max = PermissibleValue(text="max",
+                             description="In 'max' mode, the learning rate will be reduced when the quantity monitored has stopped increasing")
+
+    _defn = EnumDefinition(
+        name="ClassifierCallbackModeEnum",
+        description="Callback modes while fitting a classifier.",
+    )
+
 # Slots
 class slots:
     pass
@@ -1002,31 +1114,31 @@ slots.embeddingsConfig__history_filename = Slot(uri=DEFAULT_.history_filename, n
                    model_uri=DEFAULT_.embeddingsConfig__history_filename, domain=None, range=Optional[str])
 
 slots.embeddingsConfig__node_embeddings_params = Slot(uri=DEFAULT_.node_embeddings_params, name="embeddingsConfig__node_embeddings_params", curie=DEFAULT_.curie('node_embeddings_params'),
-                   model_uri=DEFAULT_.embeddingsConfig__node_embeddings_params, domain=None, range=Optional[Union[dict, NodeEmbeddingsParamsConfig]])
+                   model_uri=DEFAULT_.embeddingsConfig__node_embeddings_params, domain=None, range=Optional[Union[dict, NodeEmbeddingsParams]])
 
 slots.embeddingsConfig__tsne_filename = Slot(uri=DEFAULT_.tsne_filename, name="embeddingsConfig__tsne_filename", curie=DEFAULT_.curie('tsne_filename'),
                    model_uri=DEFAULT_.embeddingsConfig__tsne_filename, domain=None, range=Optional[str])
 
-slots.nodeEmbeddingsParamsConfig__method_name = Slot(uri=DEFAULT_.method_name, name="nodeEmbeddingsParamsConfig__method_name", curie=DEFAULT_.curie('method_name'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__method_name, domain=None, range=Optional[Union[str, "NodeEmbedMethodEnum"]])
+slots.nodeEmbeddingsParams__method_name = Slot(uri=DEFAULT_.method_name, name="nodeEmbeddingsParams__method_name", curie=DEFAULT_.curie('method_name'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__method_name, domain=None, range=Optional[Union[str, "NodeEmbedMethodEnum"]])
 
-slots.nodeEmbeddingsParamsConfig__walk_length = Slot(uri=DEFAULT_.walk_length, name="nodeEmbeddingsParamsConfig__walk_length", curie=DEFAULT_.curie('walk_length'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__walk_length, domain=None, range=Optional[int])
+slots.nodeEmbeddingsParams__walk_length = Slot(uri=DEFAULT_.walk_length, name="nodeEmbeddingsParams__walk_length", curie=DEFAULT_.curie('walk_length'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__walk_length, domain=None, range=Optional[int])
 
-slots.nodeEmbeddingsParamsConfig__batch_size = Slot(uri=DEFAULT_.batch_size, name="nodeEmbeddingsParamsConfig__batch_size", curie=DEFAULT_.curie('batch_size'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__batch_size, domain=None, range=Optional[int])
+slots.nodeEmbeddingsParams__batch_size = Slot(uri=DEFAULT_.batch_size, name="nodeEmbeddingsParams__batch_size", curie=DEFAULT_.curie('batch_size'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__batch_size, domain=None, range=Optional[int])
 
-slots.nodeEmbeddingsParamsConfig__window_size = Slot(uri=DEFAULT_.window_size, name="nodeEmbeddingsParamsConfig__window_size", curie=DEFAULT_.curie('window_size'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__window_size, domain=None, range=Optional[int])
+slots.nodeEmbeddingsParams__window_size = Slot(uri=DEFAULT_.window_size, name="nodeEmbeddingsParams__window_size", curie=DEFAULT_.curie('window_size'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__window_size, domain=None, range=Optional[int])
 
-slots.nodeEmbeddingsParamsConfig__return_weight = Slot(uri=DEFAULT_.return_weight, name="nodeEmbeddingsParamsConfig__return_weight", curie=DEFAULT_.curie('return_weight'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__return_weight, domain=None, range=Optional[float])
+slots.nodeEmbeddingsParams__return_weight = Slot(uri=DEFAULT_.return_weight, name="nodeEmbeddingsParams__return_weight", curie=DEFAULT_.curie('return_weight'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__return_weight, domain=None, range=Optional[float])
 
-slots.nodeEmbeddingsParamsConfig__explore_weight = Slot(uri=DEFAULT_.explore_weight, name="nodeEmbeddingsParamsConfig__explore_weight", curie=DEFAULT_.curie('explore_weight'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__explore_weight, domain=None, range=Optional[float])
+slots.nodeEmbeddingsParams__explore_weight = Slot(uri=DEFAULT_.explore_weight, name="nodeEmbeddingsParams__explore_weight", curie=DEFAULT_.curie('explore_weight'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__explore_weight, domain=None, range=Optional[float])
 
-slots.nodeEmbeddingsParamsConfig__iterations = Slot(uri=DEFAULT_.iterations, name="nodeEmbeddingsParamsConfig__iterations", curie=DEFAULT_.curie('iterations'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParamsConfig__iterations, domain=None, range=Optional[int])
+slots.nodeEmbeddingsParams__iterations = Slot(uri=DEFAULT_.iterations, name="nodeEmbeddingsParams__iterations", curie=DEFAULT_.curie('iterations'),
+                   model_uri=DEFAULT_.nodeEmbeddingsParams__iterations, domain=None, range=Optional[int])
 
 slots.classifierContainer__classifiers = Slot(uri=DEFAULT_.classifiers, name="classifierContainer__classifiers", curie=DEFAULT_.curie('classifiers'),
                    model_uri=DEFAULT_.classifierContainer__classifiers, domain=None, range=Optional[Union[Union[dict, Classifier], List[Union[dict, Classifier]]]])
@@ -1061,6 +1173,9 @@ slots.classifier__metrics = Slot(uri=DEFAULT_.metrics, name="classifier__metrics
 slots.classifier__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifier__optimizer", curie=DEFAULT_.curie('optimizer'),
                    model_uri=DEFAULT_.classifier__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
 
+slots.classifier__fit = Slot(uri=DEFAULT_.fit, name="classifier__fit", curie=DEFAULT_.curie('fit'),
+                   model_uri=DEFAULT_.classifier__fit, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
+
 slots.classifierParams__random_state = Slot(uri=DEFAULT_.random_state, name="classifierParams__random_state", curie=DEFAULT_.curie('random_state'),
                    model_uri=DEFAULT_.classifierParams__random_state, domain=None, range=Optional[int])
 
@@ -1093,6 +1208,36 @@ slots.metric__type = Slot(uri=DEFAULT_.type, name="metric__type", curie=DEFAULT_
 
 slots.metric__curve = Slot(uri=DEFAULT_.curve, name="metric__curve", curie=DEFAULT_.curie('curve'),
                    model_uri=DEFAULT_.metric__curve, domain=None, range=Optional[str])
+
+slots.classifierFitParams__batch_size = Slot(uri=DEFAULT_.batch_size, name="classifierFitParams__batch_size", curie=DEFAULT_.curie('batch_size'),
+                   model_uri=DEFAULT_.classifierFitParams__batch_size, domain=None, range=Optional[int])
+
+slots.classifierFitParams__epochs = Slot(uri=DEFAULT_.epochs, name="classifierFitParams__epochs", curie=DEFAULT_.curie('epochs'),
+                   model_uri=DEFAULT_.classifierFitParams__epochs, domain=None, range=Optional[int])
+
+slots.classifierFitParams__callbacks = Slot(uri=DEFAULT_.callbacks, name="classifierFitParams__callbacks", curie=DEFAULT_.curie('callbacks'),
+                   model_uri=DEFAULT_.classifierFitParams__callbacks, domain=None, range=Optional[Union[dict, ClassifierCallbackContainer]])
+
+slots.classifierCallbackContainer__classbacks = Slot(uri=DEFAULT_.classbacks, name="classifierCallbackContainer__classbacks", curie=DEFAULT_.curie('classbacks'),
+                   model_uri=DEFAULT_.classifierCallbackContainer__classbacks, domain=None, range=Optional[Union[Union[dict, ClassifierCallback], List[Union[dict, ClassifierCallback]]]])
+
+slots.classifierCallback__type = Slot(uri=DEFAULT_.type, name="classifierCallback__type", curie=DEFAULT_.curie('type'),
+                   model_uri=DEFAULT_.classifierCallback__type, domain=None, range=Optional[str])
+
+slots.classifierCallback__monitor = Slot(uri=DEFAULT_.monitor, name="classifierCallback__monitor", curie=DEFAULT_.curie('monitor'),
+                   model_uri=DEFAULT_.classifierCallback__monitor, domain=None, range=Optional[str])
+
+slots.classifierCallback__patience = Slot(uri=DEFAULT_.patience, name="classifierCallback__patience", curie=DEFAULT_.curie('patience'),
+                   model_uri=DEFAULT_.classifierCallback__patience, domain=None, range=Optional[int])
+
+slots.classifierCallback__min_delta = Slot(uri=DEFAULT_.min_delta, name="classifierCallback__min_delta", curie=DEFAULT_.curie('min_delta'),
+                   model_uri=DEFAULT_.classifierCallback__min_delta, domain=None, range=Optional[int])
+
+slots.classifierCallback__verbose = Slot(uri=DEFAULT_.verbose, name="classifierCallback__verbose", curie=DEFAULT_.curie('verbose'),
+                   model_uri=DEFAULT_.classifierCallback__verbose, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.classifierCallback__mode = Slot(uri=DEFAULT_.mode, name="classifierCallback__mode", curie=DEFAULT_.curie('mode'),
+                   model_uri=DEFAULT_.classifierCallback__mode, domain=None, range=Optional[Union[str, "ClassifierCallbackModeEnum"]])
 
 slots.applyTrainedModelsContainer__models = Slot(uri=DEFAULT_.models, name="applyTrainedModelsContainer__models", curie=DEFAULT_.curie('models'),
                    model_uri=DEFAULT_.applyTrainedModelsContainer__models, domain=None, range=Optional[Union[Union[dict, ApplyTrainedModel], List[Union[dict, ApplyTrainedModel]]]])

@@ -27,6 +27,7 @@ URI: [https://w3id.org/neat_schema/:Classifier](https://w3id.org/neat_schema/:Cl
 | [layers](layers.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
 | [metrics](metrics.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
 | [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | None  | . |
+| [fit](fit.md) | [ClassifierFitParams](ClassifierFitParams.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -95,6 +96,10 @@ attributes:
     name: optimizer
     from_schema: https://w3id.org/neat_schema
     range: optimizer_enum
+  fit:
+    name: fit
+    from_schema: https://w3id.org/neat_schema
+    range: ClassifierFitParams
 
 ```
 </details>
@@ -167,6 +172,12 @@ attributes:
     alias: optimizer
     owner: Classifier
     range: optimizer_enum
+  fit:
+    name: fit
+    from_schema: https://w3id.org/neat_schema
+    alias: fit
+    owner: Classifier
+    range: ClassifierFitParams
 
 ```
 </details>

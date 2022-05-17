@@ -13,7 +13,7 @@ URI: https://w3id.org/neat_schema
 | [TrainValidData](TrainValidData.md) | None | 
 | [PosNegData](PosNegData.md) | None | 
 | [EmbeddingsConfig](EmbeddingsConfig.md) | None | 
-| [NodeEmbeddingsParamsConfig](NodeEmbeddingsParamsConfig.md) | None | 
+| [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | None | 
 | [ClassifierContainer](ClassifierContainer.md) | A container with multiple classifiers in it. | 
 | [Classifier](Classifier.md) | ML classifiers to be trained-tested-validated and applied for predictions. | 
 | [ClassifierParams](ClassifierParams.md) | Parameters needed to define a classifier. | 
@@ -21,7 +21,10 @@ URI: https://w3id.org/neat_schema
 | [Layer](Layer.md) | Layers for a neural network. | 
 | [LayerParams](LayerParams.md) | Parameters for each layer of a neural network. | 
 | [MetricContainer](MetricContainer.md) | A container of metrics for a trained classifier. | 
-| [Metric](Metric.md) | Metrics of a trained classifier. | 
+| [Metric](Metric.md) | Metrics of a trained classifier (model). | 
+| [ClassifierFitParams](ClassifierFitParams.md) | Paramters for fitting a classifier. | 
+| [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | A container of classifier callbacks. | 
+| [ClassifierCallback](ClassifierCallback.md) | Callbacks for a classifier. | 
 | [ApplyTrainedModelsContainer](ApplyTrainedModelsContainer.md) | A container with multiple classifiers in it. | 
 | [ApplyTrainedModel](ApplyTrainedModel.md) | Trained model used for prediction. | 
 | [NodeType](NodeType.md) | None | 
@@ -62,6 +65,7 @@ URI: https://w3id.org/neat_schema
 | [layers](layers.md) | None | 
 | [metrics](metrics.md) | None | 
 | [optimizer](optimizer.md) | None | 
+| [fit](fit.md) | None | 
 | [random_state](random_state.md) | None | 
 | [max_iter](max_iter.md) | None | 
 | [type](type.md) | None | 
@@ -69,6 +73,14 @@ URI: https://w3id.org/neat_schema
 | [activation](activation.md) | None | 
 | [metric_name](metric_name.md) | None | 
 | [curve](curve.md) | None | 
+| [epochs](epochs.md) | None | 
+| [callbacks](callbacks.md) | None | 
+| [classbacks](classbacks.md) | None | 
+| [monitor](monitor.md) | None | 
+| [patience](patience.md) | None | 
+| [min_delta](min_delta.md) | None | 
+| [verbose](verbose.md) | None | 
+| [mode](mode.md) | None | 
 | [models](models.md) | None | 
 | [model_id](model_id.md) | None | 
 | [node_types](node_types.md) | None | 
@@ -158,7 +170,6 @@ URI: https://w3id.org/neat_schema
 | [edge_list_comment_symbol](edge_list_comment_symbol.md) | None | 
 | [edges_number](edges_number.md) | None | 
 | [load_edge_list_in_parallel](load_edge_list_in_parallel.md) | None | 
-| [verbose](verbose.md) | None | 
 | [may_have_singletons](may_have_singletons.md) | None | 
 | [may_have_singleton_with_selfloops](may_have_singleton_with_selfloops.md) | None | 
 | [directed](directed.md) | None | 
@@ -173,4 +184,5 @@ URI: https://w3id.org/neat_schema
 | [EdgeMethodEnum](EdgeMethodEnum.md) | None | 
 | [ActivationEnum](ActivationEnum.md) | None | 
 | [OptimizerEnum](OptimizerEnum.md) | Optimizers that can be implemented in the neural network. | 
+| [ClassifierCallbackModeEnum](ClassifierCallbackModeEnum.md) | Callback modes while fitting a classifier. | 
 

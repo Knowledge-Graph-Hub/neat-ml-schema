@@ -24,12 +24,35 @@ CREATE TABLE "Classifier" (
 	layers TEXT, 
 	metrics TEXT, 
 	optimizer VARCHAR(7), 
-	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers, metrics, optimizer)
+	fit TEXT, 
+	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters, layers, metrics, optimizer, fit)
+);
+
+CREATE TABLE "ClassifierCallback" (
+	type TEXT, 
+	monitor TEXT, 
+	patience INTEGER, 
+	min_delta INTEGER, 
+	verbose BOOLEAN, 
+	mode VARCHAR(4), 
+	PRIMARY KEY (type, monitor, patience, min_delta, verbose, mode)
+);
+
+CREATE TABLE "ClassifierCallbackContainer" (
+	classbacks TEXT, 
+	PRIMARY KEY (classbacks)
 );
 
 CREATE TABLE "ClassifierContainer" (
 	classifiers TEXT, 
 	PRIMARY KEY (classifiers)
+);
+
+CREATE TABLE "ClassifierFitParams" (
+	batch_size INTEGER, 
+	epochs INTEGER, 
+	callbacks TEXT, 
+	PRIMARY KEY (batch_size, epochs, callbacks)
 );
 
 CREATE TABLE "ClassifierParams" (
@@ -174,7 +197,7 @@ CREATE TABLE "NeatConfiguration" (
 	PRIMARY KEY (graph_data)
 );
 
-CREATE TABLE "NodeEmbeddingsParamsConfig" (
+CREATE TABLE "NodeEmbeddingsParams" (
 	method_name VARCHAR(8), 
 	walk_length INTEGER, 
 	batch_size INTEGER, 

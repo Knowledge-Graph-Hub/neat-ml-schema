@@ -45,10 +45,10 @@ classes:
       filename:
       history_filename:
       node_embeddings_params:
-        range: NodeEmbeddingsParamsConfig
+        range: NodeEmbeddingsParams
       tsne_filename:
 
-  NodeEmbeddingsParamsConfig:
+  NodeEmbeddingsParams:
     attributes:
       method_name:
         range: node_embed_method_enum
@@ -91,6 +91,8 @@ classes:
         range: MetricContainer
       optimizer:
         range: optimizer_enum
+      fit:
+        range: ClassifierFitParams
 
 
   ClassifierParams:
@@ -132,11 +134,43 @@ classes:
         range: Metric
   
   Metric:
-    description: Metrics of a trained classifier.
+    description: Metrics of a trained classifier (model).
     attributes:
       metric_name:
       type:
       curve:
+  
+  ClassifierFitParams:
+    description: Paramters for fitting a classifier.
+    attributes:
+      batch_size:
+        range: integer
+      epochs:
+        range: integer
+      callbacks:
+        range: ClassifierCallbackContainer
+  
+  ClassifierCallbackContainer:
+    description: A container of classifier callbacks.
+    attributes:
+      classbacks:
+        multivalued: true
+        inlined_as_list: true
+        range: ClassifierCallback
+  
+  ClassifierCallback:
+    description: Callbacks for a classifier.
+    attributes:
+      type:
+      monitor:
+      patience:
+        range: integer
+      min_delta:
+        range: integer
+      verbose:
+        range: boolean
+      mode:
+        range: classifier_callback_mode_enum
 
   ApplyTrainedModelsContainer:
     description: A container with multiple classifiers in it.
@@ -386,6 +420,16 @@ enums:
         description: Optimizer that implements the NAdam algorithm.
       SGD:
         description: Stochastic gradient descent (with momentum) optimizer.
+
+  classifier_callback_mode_enum:
+    description: Callback modes while fitting a classifier.
+    permissible_values:
+      auto:
+        description: In 'auto' mode, the direction is automatically inferred from the name of the monitored quantity.
+      min:
+        description: In 'min' mode, the learning rate will be reduced when the quantity monitored has stopped decreasing.
+      max:
+        description: In 'max' mode, the learning rate will be reduced when the quantity monitored has stopped increasing
 
 
   

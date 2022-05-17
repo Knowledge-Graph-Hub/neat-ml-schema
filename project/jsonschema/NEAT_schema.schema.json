@@ -64,6 +64,9 @@
             "edge_method": {
                "$ref": "#/$defs/EdgeMethodEnum"
             },
+            "fit": {
+               "$ref": "#/$defs/ClassifierFitParams"
+            },
             "history_filename": {
                "type": "string"
             },
@@ -87,6 +90,58 @@
          "title": "Classifier",
          "type": "object"
       },
+      "ClassifierCallback": {
+         "additionalProperties": false,
+         "description": "Callbacks for a classifier.",
+         "properties": {
+            "min_delta": {
+               "type": "integer"
+            },
+            "mode": {
+               "$ref": "#/$defs/ClassifierCallbackModeEnum"
+            },
+            "monitor": {
+               "type": "string"
+            },
+            "patience": {
+               "type": "integer"
+            },
+            "type": {
+               "type": "string"
+            },
+            "verbose": {
+               "type": "boolean"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallback",
+         "type": "object"
+      },
+      "ClassifierCallbackContainer": {
+         "additionalProperties": false,
+         "description": "A container of classifier callbacks.",
+         "properties": {
+            "classbacks": {
+               "items": {
+                  "$ref": "#/$defs/ClassifierCallback"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallbackContainer",
+         "type": "object"
+      },
+      "ClassifierCallbackModeEnum": {
+         "description": "Callback modes while fitting a classifier.",
+         "enum": [
+            "auto",
+            "min",
+            "max"
+         ],
+         "title": "ClassifierCallbackModeEnum",
+         "type": "string"
+      },
       "ClassifierContainer": {
          "additionalProperties": false,
          "description": "A container with multiple classifiers in it.",
@@ -100,6 +155,24 @@
          },
          "required": [],
          "title": "ClassifierContainer",
+         "type": "object"
+      },
+      "ClassifierFitParams": {
+         "additionalProperties": false,
+         "description": "Paramters for fitting a classifier.",
+         "properties": {
+            "batch_size": {
+               "type": "integer"
+            },
+            "callbacks": {
+               "$ref": "#/$defs/ClassifierCallbackContainer"
+            },
+            "epochs": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ClassifierFitParams",
          "type": "object"
       },
       "ClassifierParams": {
@@ -141,7 +214,7 @@
                "type": "string"
             },
             "node_embeddings_params": {
-               "$ref": "#/$defs/NodeEmbeddingsParamsConfig"
+               "$ref": "#/$defs/NodeEmbeddingsParams"
             },
             "tsne_filename": {
                "type": "string"
@@ -474,7 +547,7 @@
       },
       "Metric": {
          "additionalProperties": false,
-         "description": "Metrics of a trained classifier.",
+         "description": "Metrics of a trained classifier (model).",
          "properties": {
             "curve": {
                "type": "string"
@@ -529,7 +602,7 @@
          "title": "NodeEmbedMethodEnum",
          "type": "string"
       },
-      "NodeEmbeddingsParamsConfig": {
+      "NodeEmbeddingsParams": {
          "additionalProperties": false,
          "description": "",
          "properties": {
@@ -556,7 +629,7 @@
             }
          },
          "required": [],
-         "title": "NodeEmbeddingsParamsConfig",
+         "title": "NodeEmbeddingsParams",
          "type": "object"
       },
       "NodeType": {

@@ -21,7 +21,10 @@ linkml:topValue a owl:DatatypeProperty ;
     IAO:0000700 <https://w3id.org/neat_schema/ApplyTrainedModel>,
         <https://w3id.org/neat_schema/ApplyTrainedModelsContainer>,
         <https://w3id.org/neat_schema/Classifier>,
+        <https://w3id.org/neat_schema/ClassifierCallback>,
+        <https://w3id.org/neat_schema/ClassifierCallbackContainer>,
         <https://w3id.org/neat_schema/ClassifierContainer>,
+        <https://w3id.org/neat_schema/ClassifierFitParams>,
         <https://w3id.org/neat_schema/ClassifierParams>,
         <https://w3id.org/neat_schema/EmbeddingsConfig>,
         <https://w3id.org/neat_schema/EnsmallenRunConfig>,
@@ -32,18 +35,18 @@ linkml:topValue a owl:DatatypeProperty ;
         <https://w3id.org/neat_schema/Metric>,
         <https://w3id.org/neat_schema/MetricContainer>,
         <https://w3id.org/neat_schema/NeatConfiguration>,
-        <https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig>,
+        <https://w3id.org/neat_schema/NodeEmbeddingsParams>,
         <https://w3id.org/neat_schema/NodeType>,
         <https://w3id.org/neat_schema/PosNegData>,
         <https://w3id.org/neat_schema/Target>,
         <https://w3id.org/neat_schema/TrainValidData>,
         <https://w3id.org/neat_schema/Upload> ;
     dcterms:license "https://fsf.org/" ;
-    linkml:generation_date "2022-05-16T18:35:42" ;
+    linkml:generation_date "2022-05-16T19:07:40" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "NEAT_schema.yaml" ;
-    linkml:source_file_date "2022-05-16T18:33:34" ;
-    linkml:source_file_size 9626 .
+    linkml:source_file_date "2022-05-16T19:06:47" ;
+    linkml:source_file_size 10913 .
 
 <https://w3id.org/neat_schema/ApplyTrainedModelsContainer> a owl:Class,
         linkml:ClassDefinition ;
@@ -66,20 +69,20 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "EmbeddingsConfig" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig> ;
-            owl:onProperty <https://w3id.org/neat_schema/node_embeddings_params> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/tsne_filename> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/history_filename> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/neat_schema/filename> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/tsne_filename> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/history_filename> ] .
+            owl:onClass <https://w3id.org/neat_schema/NodeEmbeddingsParams> ;
+            owl:onProperty <https://w3id.org/neat_schema/node_embeddings_params> ] .
 
 <https://w3id.org/neat_schema/NeatConfiguration> a owl:Class,
         linkml:ClassDefinition ;
@@ -102,26 +105,31 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:ClassDefinition ;
     rdfs:label "Upload" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/extra_args> ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/s3_bucket_dir> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/neat_schema/s3_bucket> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/s3_bucket_dir> ] .
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/extra_args> ] .
 
 <https://w3id.org/neat_schema/activation> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "activation" ;
     rdfs:range <https://w3id.org/neat_schema/ActivationEnum> .
 
-<https://w3id.org/neat_schema/batch_size> a owl:ObjectProperty,
+<https://w3id.org/neat_schema/callbacks> a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "batch_size" ;
-    rdfs:range linkml:Integer .
+    rdfs:label "callbacks" ;
+    rdfs:range <https://w3id.org/neat_schema/ClassifierCallbackContainer> .
+
+<https://w3id.org/neat_schema/classbacks> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "classbacks" ;
+    rdfs:range <https://w3id.org/neat_schema/ClassifierCallback> .
 
 <https://w3id.org/neat_schema/classifier_id> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -343,6 +351,11 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "edges_number" ;
     rdfs:range linkml:Integer .
 
+<https://w3id.org/neat_schema/epochs> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "epochs" ;
+    rdfs:range linkml:Integer .
+
 <https://w3id.org/neat_schema/explore_weight> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "explore_weight" ;
@@ -357,6 +370,11 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:SlotDefinition ;
     rdfs:label "filename" ;
     rdfs:range linkml:String .
+
+<https://w3id.org/neat_schema/fit> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "fit" ;
+    rdfs:range <https://w3id.org/neat_schema/ClassifierFitParams> .
 
 <https://w3id.org/neat_schema/graph> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -418,6 +436,11 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "metric_name" ;
     rdfs:range linkml:String .
 
+<https://w3id.org/neat_schema/min_delta> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "min_delta" ;
+    rdfs:range linkml:Integer .
+
 <https://w3id.org/neat_schema/minimum_edge_type_id> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "minimum_edge_type_id" ;
@@ -433,6 +456,11 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "minimum_node_type_id" ;
     rdfs:range linkml:Integer .
 
+<https://w3id.org/neat_schema/mode> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mode" ;
+    rdfs:range <https://w3id.org/neat_schema/ClassifierCallbackModeEnum> .
+
 <https://w3id.org/neat_schema/model_id> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "model_id" ;
@@ -442,6 +470,11 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:SlotDefinition ;
     rdfs:label "models" ;
     rdfs:range <https://w3id.org/neat_schema/ApplyTrainedModel> .
+
+<https://w3id.org/neat_schema/monitor> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "monitor" ;
+    rdfs:range linkml:String .
 
 <https://w3id.org/neat_schema/name> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -456,7 +489,7 @@ linkml:topValue a owl:DatatypeProperty ;
 <https://w3id.org/neat_schema/node_embeddings_params> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "node_embeddings_params" ;
-    rdfs:range <https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig> .
+    rdfs:range <https://w3id.org/neat_schema/NodeEmbeddingsParams> .
 
 <https://w3id.org/neat_schema/node_ids_column> a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -623,6 +656,11 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "optimizer" ;
     rdfs:range <https://w3id.org/neat_schema/OptimizerEnum> .
 
+<https://w3id.org/neat_schema/patience> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "patience" ;
+    rdfs:range linkml:Integer .
+
 <https://w3id.org/neat_schema/pos_edge_filepath> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "pos_edge_filepath" ;
@@ -703,11 +741,6 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "valid_data" ;
     rdfs:range <https://w3id.org/neat_schema/PosNegData> .
 
-<https://w3id.org/neat_schema/verbose> a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "verbose" ;
-    rdfs:range linkml:Boolean .
-
 <https://w3id.org/neat_schema/walk_length> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "walk_length" ;
@@ -748,17 +781,29 @@ linkml:topValue a owl:DatatypeProperty ;
         <https://w3id.org/neat_schema/ActivationEnum> ;
     rdfs:label "tanh" .
 
+<https://w3id.org/neat_schema/ClassifierCallbackModeEnum#auto> a owl:Class,
+        <https://w3id.org/neat_schema/ClassifierCallbackModeEnum> ;
+    rdfs:label "auto" .
+
+<https://w3id.org/neat_schema/ClassifierCallbackModeEnum#max> a owl:Class,
+        <https://w3id.org/neat_schema/ClassifierCallbackModeEnum> ;
+    rdfs:label "max" .
+
+<https://w3id.org/neat_schema/ClassifierCallbackModeEnum#min> a owl:Class,
+        <https://w3id.org/neat_schema/ClassifierCallbackModeEnum> ;
+    rdfs:label "min" .
+
 <https://w3id.org/neat_schema/ClassifierParams> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ClassifierParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/random_state> ],
+            owl:onProperty <https://w3id.org/neat_schema/max_iter> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/max_iter> ] ;
+            owl:onProperty <https://w3id.org/neat_schema/random_state> ] ;
     skos:definition "Parameters needed to define a classifier." .
 
 <https://w3id.org/neat_schema/EdgeMethodEnum#AbsoluteL1> a owl:Class,
@@ -790,12 +835,12 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "Layer" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/type> ],
+            owl:onClass <https://w3id.org/neat_schema/LayerParams> ;
+            owl:onProperty <https://w3id.org/neat_schema/parameters> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/LayerParams> ;
-            owl:onProperty <https://w3id.org/neat_schema/parameters> ] ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/type> ] ;
     skos:definition "Layers for a neural network." .
 
 <https://w3id.org/neat_schema/LayerContainer> a owl:Class,
@@ -811,12 +856,12 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "LayerParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/ActivationEnum> ;
-            owl:onProperty <https://w3id.org/neat_schema/activation> ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/units> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/units> ] ;
+            owl:onClass <https://w3id.org/neat_schema/ActivationEnum> ;
+            owl:onProperty <https://w3id.org/neat_schema/activation> ] ;
     skos:definition "Parameters for each layer of a neural network." .
 
 <https://w3id.org/neat_schema/Metric> a owl:Class,
@@ -834,7 +879,7 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/neat_schema/type> ] ;
-    skos:definition "Metrics of a trained classifier." .
+    skos:definition "Metrics of a trained classifier (model)." .
 
 <https://w3id.org/neat_schema/MetricContainer> a owl:Class,
         linkml:ClassDefinition ;
@@ -897,6 +942,9 @@ linkml:topValue a owl:DatatypeProperty ;
         <https://w3id.org/neat_schema/OptimizerEnum> ;
     rdfs:label "SGD" .
 
+<https://w3id.org/neat_schema/batch_size> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
 <https://w3id.org/neat_schema/history_filename> a owl:ObjectProperty,
         linkml:SlotDefinition .
 
@@ -912,7 +960,7 @@ linkml:topValue a owl:DatatypeProperty ;
 <https://w3id.org/neat_schema/parameters> a owl:ObjectProperty,
         linkml:SlotDefinition .
 
-<https://w3id.org/neat_schema/type> a owl:ObjectProperty,
+<https://w3id.org/neat_schema/verbose> a owl:ObjectProperty,
         linkml:SlotDefinition .
 
 <https://w3id.org/neat_schema/ApplyTrainedModel> a owl:Class,
@@ -920,8 +968,8 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "ApplyTrainedModel" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/NodeType> ;
-            owl:onProperty <https://w3id.org/neat_schema/node_types> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/cutoff> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -932,30 +980,14 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onProperty <https://w3id.org/neat_schema/model_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/cutoff> ] ;
+            owl:onClass <https://w3id.org/neat_schema/NodeType> ;
+            owl:onProperty <https://w3id.org/neat_schema/node_types> ] ;
     skos:definition "Trained model used for prediction." .
 
 <https://w3id.org/neat_schema/Classifier> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Classifier" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/history_filename> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/MetricContainer> ;
-            owl:onProperty <https://w3id.org/neat_schema/metrics> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/classifier_type> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/ClassifierParams> ;
-            owl:onProperty <https://w3id.org/neat_schema/parameters> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/neat_schema/OptimizerEnum> ;
             owl:onProperty <https://w3id.org/neat_schema/optimizer> ],
@@ -965,12 +997,16 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onProperty <https://w3id.org/neat_schema/outfile> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/ClassifierParams> ;
+            owl:onProperty <https://w3id.org/neat_schema/parameters> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/neat_schema/classifier_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/EdgeMethodEnum> ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_method> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/classifier_name> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/neat_schema/LayerContainer> ;
@@ -978,168 +1014,102 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/classifier_name> ] ;
+            owl:onProperty <https://w3id.org/neat_schema/history_filename> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/EdgeMethodEnum> ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_method> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/classifier_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/ClassifierFitParams> ;
+            owl:onProperty <https://w3id.org/neat_schema/fit> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/MetricContainer> ;
+            owl:onProperty <https://w3id.org/neat_schema/metrics> ] ;
     skos:definition "ML classifiers to be trained-tested-validated and applied for predictions." .
+
+<https://w3id.org/neat_schema/ClassifierCallback> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierCallback" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/min_delta> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/verbose> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/patience> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/monitor> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/ClassifierCallbackModeEnum> ;
+            owl:onProperty <https://w3id.org/neat_schema/mode> ] ;
+    skos:definition "Callbacks for a classifier." .
+
+<https://w3id.org/neat_schema/ClassifierCallbackContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierCallbackContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat_schema/ClassifierCallback> ;
+            owl:onProperty <https://w3id.org/neat_schema/classbacks> ] ;
+    skos:definition "A container of classifier callbacks." .
+
+<https://w3id.org/neat_schema/ClassifierFitParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierFitParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat_schema/ClassifierCallbackContainer> ;
+            owl:onProperty <https://w3id.org/neat_schema/callbacks> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/epochs> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/batch_size> ] ;
+    skos:definition "Paramters for fitting a classifier." .
 
 <https://w3id.org/neat_schema/EnsmallenRunConfig> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "EnsmallenRunConfig" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_path> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_ids_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/numeric_node_type_ids> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_numeric_edge_type_ids> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/may_have_singletons> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/weights_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_comment_symbol> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/numeric_edge_type_ids> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/load_edge_list_in_parallel> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_header> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_separator> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_rows_to_skip> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/destinations_column_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_header> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_node_types_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_comment_symbol> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_sorted> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/skip_node_types_if_unavailable> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/minimum_node_type_id> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_correct> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/directed> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/sources_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_may_contain_duplicates> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
             owl:onProperty <https://w3id.org/neat_schema/skip_edge_types_if_unavailable> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/load_node_list_in_parallel> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_is_correct> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/load_node_type_list_in_parallel> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_separator> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_types_ids_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_numeric_node_ids> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_comment_symbol> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_ids_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/nodes_number> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_list_rows_to_skip> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_comment_symbol> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_types_ids_column> ],
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/may_have_singleton_with_selfloops> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/neat_schema/edge_types_ids_column_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_edge_types_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_path> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/nodes_column_number> ],
+            owl:onProperty <https://w3id.org/neat_schema/minimum_node_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -1147,47 +1117,15 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_types_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_rows_to_skip> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edges_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_path> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_max_rows_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/skip_weights_if_unavailable> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/minimum_node_id> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_header> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_edge_types_column_number> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_separator> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/neat_schema/edge_types_column_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_node_types_column_number> ],
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/skip_node_types_if_unavailable> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
@@ -1195,19 +1133,83 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_types_number> ],
+            owl:onProperty <https://w3id.org/neat_schema/minimum_node_type_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_header> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/weights_column> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_ids_column_number> ],
+            owl:onProperty <https://w3id.org/neat_schema/edge_ids_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/numeric_node_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/node_list_numeric_node_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_edge_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_numeric_edge_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_rows_to_skip> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/neat_schema/sources_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_max_rows_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_numeric_node_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_types_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_may_contain_duplicates> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/default_node_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/load_edge_list_in_parallel> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
@@ -1218,8 +1220,16 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onProperty <https://w3id.org/neat_schema/node_list_max_rows_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/name> ],
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/skip_weights_if_unavailable> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_rows_to_skip> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_header> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -1227,75 +1237,95 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_types_column> ],
+            owl:onProperty <https://w3id.org/neat_schema/edge_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/node_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/directed> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/node_list_node_types_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_edge_types_column_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/neat_schema/node_types_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_max_rows_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_max_rows_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty <https://w3id.org/neat_schema/default_weight> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_is_correct> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/default_node_type> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_ids_column_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_types_column_number> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/destinations_column> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_numeric_node_type_ids> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/may_have_singleton_with_selfloops> ],
+            owl:onProperty <https://w3id.org/neat_schema/name> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
             owl:onProperty <https://w3id.org/neat_schema/verbose> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_types_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/load_node_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/nodes_column> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_list_node_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_sorted> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/load_node_type_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_rows_to_skip> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_separator> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_types_column> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/numeric_node_ids> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_list_comment_symbol> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_complete> ],
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_is_correct> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_is_correct> ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_max_rows_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
@@ -1303,23 +1333,99 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_path> ],
+            owl:onProperty <https://w3id.org/neat_schema/node_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/destinations_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/numeric_edge_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/sources_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/edges_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/node_type_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/node_ids_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/node_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/numeric_node_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/nodes_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty <https://w3id.org/neat_schema/default_weight> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/destinations_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_is_complete> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_types_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_type_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat_schema/may_have_singletons> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/nodes_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat_schema/nodes_column> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/neat_schema/minimum_edge_type_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_separator> ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/node_types_column_number> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_type_list_rows_to_skip> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/node_list_rows_to_skip> ] ;
+            owl:onProperty <https://w3id.org/neat_schema/edge_list_max_rows_number> ] ;
     skos:definition "All params used by ensmallen's csv_reader" .
 
 <https://w3id.org/neat_schema/GraphDataConfiguration> a owl:Class,
@@ -1327,17 +1433,29 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "GraphDataConfiguration" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/TrainValidData> ;
-            owl:onProperty <https://w3id.org/neat_schema/data> ],
+            owl:onClass <https://w3id.org/neat_schema/EnsmallenRunConfig> ;
+            owl:onProperty <https://w3id.org/neat_schema/graph> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/EnsmallenRunConfig> ;
-            owl:onProperty <https://w3id.org/neat_schema/graph> ] .
+            owl:onClass <https://w3id.org/neat_schema/TrainValidData> ;
+            owl:onProperty <https://w3id.org/neat_schema/data> ] .
 
-<https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig> a owl:Class,
+<https://w3id.org/neat_schema/NodeEmbeddingsParams> a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "NodeEmbeddingsParamsConfig" ;
+    rdfs:label "NodeEmbeddingsParams" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/batch_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/window_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat_schema/iterations> ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
             owl:onProperty <https://w3id.org/neat_schema/explore_weight> ],
@@ -1347,24 +1465,12 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onProperty <https://w3id.org/neat_schema/walk_length> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/neat_schema/NodeEmbedMethodEnum> ;
-            owl:onProperty <https://w3id.org/neat_schema/method_name> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/batch_size> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/iterations> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
             owl:onProperty <https://w3id.org/neat_schema/return_weight> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/neat_schema/window_size> ] .
+            owl:onClass <https://w3id.org/neat_schema/NodeEmbedMethodEnum> ;
+            owl:onProperty <https://w3id.org/neat_schema/method_name> ] .
 
 <https://w3id.org/neat_schema/NodeType> a owl:Class,
         linkml:ClassDefinition ;
@@ -1382,11 +1488,22 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/neat_schema/PosNegData> ;
-            owl:onProperty <https://w3id.org/neat_schema/valid_data> ],
+            owl:onProperty <https://w3id.org/neat_schema/train_data> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/neat_schema/PosNegData> ;
-            owl:onProperty <https://w3id.org/neat_schema/train_data> ] .
+            owl:onProperty <https://w3id.org/neat_schema/valid_data> ] .
+
+<https://w3id.org/neat_schema/type> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat_schema/ClassifierCallbackModeEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "classifier_callback_mode_enum" ;
+    owl:unionOf ( <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#auto> <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#min> <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#max> ) ;
+    linkml:permissible_values <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#auto>,
+        <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#max>,
+        <https://w3id.org/neat_schema/ClassifierCallbackModeEnum#min> .
 
 <https://w3id.org/neat_schema/PosNegData> a owl:Class,
         linkml:ClassDefinition ;
@@ -1394,11 +1511,11 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/neg_edge_filepath> ],
+            owl:onProperty <https://w3id.org/neat_schema/pos_edge_filepath> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/neat_schema/pos_edge_filepath> ] .
+            owl:onProperty <https://w3id.org/neat_schema/neg_edge_filepath> ] .
 
 <https://w3id.org/neat_schema/ActivationEnum> a owl:Class,
         linkml:EnumDefinition ;

@@ -9,8 +9,17 @@
    "Classifier": {
       "@id": "https://w3id.org/neat_schema/Classifier"
    },
+   "ClassifierCallback": {
+      "@id": "https://w3id.org/neat_schema/ClassifierCallback"
+   },
+   "ClassifierCallbackContainer": {
+      "@id": "https://w3id.org/neat_schema/ClassifierCallbackContainer"
+   },
    "ClassifierContainer": {
       "@id": "https://w3id.org/neat_schema/ClassifierContainer"
+   },
+   "ClassifierFitParams": {
+      "@id": "https://w3id.org/neat_schema/ClassifierFitParams"
    },
    "ClassifierParams": {
       "@id": "https://w3id.org/neat_schema/ClassifierParams"
@@ -42,8 +51,8 @@
    "NeatConfiguration": {
       "@id": "https://w3id.org/neat_schema/NeatConfiguration"
    },
-   "NodeEmbeddingsParamsConfig": {
-      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig"
+   "NodeEmbeddingsParams": {
+      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParams"
    },
    "NodeType": {
       "@id": "https://w3id.org/neat_schema/NodeType"

@@ -1,5 +1,5 @@
 # Class: Metric
-_Metrics of a trained classifier._
+_Metrics of a trained classifier (model)._
 
 
 
@@ -45,7 +45,7 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 <details>
 ```yaml
 name: Metric
-description: Metrics of a trained classifier.
+description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
   metric_name:
@@ -66,7 +66,7 @@ attributes:
 <details>
 ```yaml
 name: Metric
-description: Metrics of a trained classifier.
+description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
   metric_name:
