@@ -25,9 +25,7 @@ jobs:
     
     - name: Build documentation.
       run: |
-        mkdir docs
         touch docs/.nojekyll
-        cp -r src/docs/* docs/
         poetry run gen-doc -d docs src/linkml/NEAT_schema.yaml
         poetry run mkdocs gh-deploy
       # mkdir gh-pages
