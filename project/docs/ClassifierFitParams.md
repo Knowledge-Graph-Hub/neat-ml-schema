@@ -7,11 +7,11 @@ Paramters for fitting a classifier.
 URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_schema/ClassifierFitParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit_config%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[ClassifierParams]++-%20fit_config%200..1>[ClassifierFitParams],[ClassifierParams],[ClassifierCallbackContainer])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[TFKerasParams]++-%20fit_config%200..1>[ClassifierFitParams],[TFKerasParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[TFKerasParams]++-%20fit_config%200..1>[ClassifierFitParams],[TFKerasParams],[ClassifierCallbackContainer])
 
 ## Referenced by Class
 
- *  **None** *[➞fit_config](classifierParams__fit_config.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
+ *  **None** *[➞fit_config](tFKerasParams__fit_config.md)*  <sub>0..1</sub>  **[ClassifierFitParams](ClassifierFitParams.md)**
 
 ## Attributes
 

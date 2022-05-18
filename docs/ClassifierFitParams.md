@@ -27,7 +27,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierParams](ClassifierParams.md) | [fit_config](fit_config.md) | range | ClassifierFitParams |
+| [TFKerasParams](TFKerasParams.md) | [fit_config](fit_config.md) | range | ClassifierFitParams |
 
 
 

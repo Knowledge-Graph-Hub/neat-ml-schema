@@ -17,6 +17,8 @@ URI: https://w3id.org/neat_schema
 | [ClassifierContainer](ClassifierContainer.md) | A container with multiple classifiers in it. | 
 | [Classifier](Classifier.md) | ML classifiers to be trained-tested-validated and applied for predictions. | 
 | [ClassifierParams](ClassifierParams.md) | Parameters needed to define a classifier. | 
+| [SkLearnParams](SkLearnParams.md) | Parameters specific to the SKLearn library. | 
+| [TFKerasParams](TFKerasParams.md) | Parameters specific to the Tensorflow Keras library. | 
 | [LayerContainer](LayerContainer.md) | A container of neural network layers. | 
 | [Layer](Layer.md) | Layers for a neural network. | 
 | [LayerParams](LayerParams.md) | Parameters for each layer of a neural network. | 
@@ -62,9 +64,12 @@ URI: https://w3id.org/neat_schema
 | [edge_method](edge_method.md) | None | 
 | [outfile](outfile.md) | None | 
 | [parameters](parameters.md) | None | 
+| [sklearn_params](sklearn_params.md) | None | 
+| [tf_keras_params](tf_keras_params.md) | None | 
 | [random_state](random_state.md) | None | 
 | [max_iter](max_iter.md) | None | 
 | [layers_config](layers_config.md) | None | 
+| [loss](loss.md) | None | 
 | [metrics_config](metrics_config.md) | None | 
 | [optimizer](optimizer.md) | None | 
 | [fit_config](fit_config.md) | None | 

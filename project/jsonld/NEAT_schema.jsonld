@@ -631,75 +631,113 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__random_state",
+      "name": "classifierParams__sklearn_params",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/sklearn_params",
+      "alias": "sklearn_params",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "SkLearnParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifierParams__tf_keras_params",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/tf_keras_params",
+      "alias": "tf_keras_params",
+      "owner": "ClassifierParams",
+      "domain_of": [
+        "ClassifierParams"
+      ],
+      "range": "TFKerasParams",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "skLearnParams__random_state",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/random_state",
       "alias": "random_state",
-      "owner": "ClassifierParams",
+      "owner": "SkLearnParams",
       "domain_of": [
-        "ClassifierParams"
+        "SkLearnParams"
       ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__max_iter",
+      "name": "skLearnParams__max_iter",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/max_iter",
       "alias": "max_iter",
-      "owner": "ClassifierParams",
+      "owner": "SkLearnParams",
       "domain_of": [
-        "ClassifierParams"
+        "SkLearnParams"
       ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__layers_config",
+      "name": "tFKerasParams__layers_config",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/layers_config",
       "alias": "layers_config",
-      "owner": "ClassifierParams",
+      "owner": "TFKerasParams",
       "domain_of": [
-        "ClassifierParams"
+        "TFKerasParams"
       ],
       "range": "LayerContainer",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__metrics_config",
+      "name": "tFKerasParams__loss",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/loss",
+      "alias": "loss",
+      "owner": "TFKerasParams",
+      "domain_of": [
+        "TFKerasParams"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tFKerasParams__metrics_config",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/metrics_config",
       "alias": "metrics_config",
-      "owner": "ClassifierParams",
+      "owner": "TFKerasParams",
       "domain_of": [
-        "ClassifierParams"
+        "TFKerasParams"
       ],
       "range": "MetricContainer",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__optimizer",
+      "name": "tFKerasParams__optimizer",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/optimizer",
       "alias": "optimizer",
-      "owner": "ClassifierParams",
+      "owner": "TFKerasParams",
       "domain_of": [
-        "ClassifierParams"
+        "TFKerasParams"
       ],
       "range": "optimizer_enum",
       "@type": "SlotDefinition"
     },
     {
-      "name": "classifierParams__fit_config",
+      "name": "tFKerasParams__fit_config",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/fit_config",
       "alias": "fit_config",
-      "owner": "ClassifierParams",
+      "owner": "TFKerasParams",
       "domain_of": [
-        "ClassifierParams"
+        "TFKerasParams"
       ],
       "range": "ClassifierFitParams",
       "inlined": true,
@@ -797,10 +835,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "metric__name",
+      "name": "metric__type",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/name",
-      "alias": "name",
+      "slot_uri": "https://w3id.org/neat_schema/type",
+      "alias": "type",
       "owner": "Metric",
       "domain_of": [
         "Metric"
@@ -809,10 +847,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "metric__type",
+      "name": "metric__name",
       "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/type",
-      "alias": "type",
+      "slot_uri": "https://w3id.org/neat_schema/name",
+      "alias": "name",
       "owner": "Metric",
       "domain_of": [
         "Metric"
@@ -2360,12 +2398,33 @@
       "description": "Parameters needed to define a classifier.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
-        "classifierParams__random_state",
-        "classifierParams__max_iter",
-        "classifierParams__layers_config",
-        "classifierParams__metrics_config",
-        "classifierParams__optimizer",
-        "classifierParams__fit_config"
+        "classifierParams__sklearn_params",
+        "classifierParams__tf_keras_params"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sklearn_params",
+          "range": "SkLearnParams",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "tf_keras_params",
+          "range": "TFKerasParams",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/ClassifierParams",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SkLearnParams",
+      "definition_uri": "https://w3id.org/neat_schema/SkLearnParams",
+      "description": "Parameters specific to the SKLearn library.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "skLearnParams__random_state",
+        "skLearnParams__max_iter"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2378,10 +2437,32 @@
           "name": "max_iter",
           "range": "integer",
           "@type": "SlotDefinition"
-        },
+        }
+      ],
+      "class_uri": "https://w3id.org/neat_schema/SkLearnParams",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TFKerasParams",
+      "definition_uri": "https://w3id.org/neat_schema/TFKerasParams",
+      "description": "Parameters specific to the Tensorflow Keras library.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slots": [
+        "tFKerasParams__layers_config",
+        "tFKerasParams__loss",
+        "tFKerasParams__metrics_config",
+        "tFKerasParams__optimizer",
+        "tFKerasParams__fit_config"
+      ],
+      "slot_usage": {},
+      "attributes": [
         {
           "name": "layers_config",
           "range": "LayerContainer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "loss",
           "@type": "SlotDefinition"
         },
         {
@@ -2400,7 +2481,7 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/neat_schema/ClassifierParams",
+      "class_uri": "https://w3id.org/neat_schema/TFKerasParams",
       "@type": "ClassDefinition"
     },
     {
@@ -2506,18 +2587,18 @@
       "description": "Metrics of a trained classifier (model).",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
-        "metric__name",
         "metric__type",
+        "metric__name",
         "metric__curve"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "name",
+          "name": "type",
           "@type": "SlotDefinition"
         },
         {
-          "name": "type",
+          "name": "name",
           "@type": "SlotDefinition"
         },
         {
@@ -3246,9 +3327,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-16T20:32:27",
-  "source_file_size": 11023,
-  "generation_date": "2022-05-16T20:34:44",
+  "source_file_date": "2022-05-17T12:05:08",
+  "source_file_size": 11337,
+  "generation_date": "2022-05-18T08:28:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

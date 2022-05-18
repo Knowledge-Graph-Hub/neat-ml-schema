@@ -51,12 +51,8 @@ type ClassifierFitParams
 
 type ClassifierParams
   {
-    randomState: Integer
-    maxIter: Integer
-    layersConfig: LayerContainer
-    metricsConfig: MetricContainer
-    optimizer: OptimizerEnum
-    fitConfig: ClassifierFitParams
+    sklearnParams: SkLearnParams
+    tfKerasParams: TFKerasParams
   }
 
 type EmbeddingsConfig
@@ -181,8 +177,8 @@ type LayerParams
 
 type Metric
   {
-    name: String
     type: String
+    name: String
     curve: String
   }
 
@@ -219,9 +215,24 @@ type PosNegData
     negEdgeFilepath: String
   }
 
+type SkLearnParams
+  {
+    randomState: Integer
+    maxIter: Integer
+  }
+
 type Target
   {
     targetPath: String
+  }
+
+type TFKerasParams
+  {
+    layersConfig: LayerContainer
+    loss: String
+    metricsConfig: MetricContainer
+    optimizer: OptimizerEnum
+    fitConfig: ClassifierFitParams
   }
 
 type TrainValidData

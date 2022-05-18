@@ -52,12 +52,8 @@ message ClassifierFitParams
 // Parameters needed to define a classifier.
 message ClassifierParams
  {
-  optional randomState Integer = 1
-  optional maxIter Integer = 2
-  optional layersConfig LayerContainer = 3
-  optional metricsConfig MetricContainer = 4
-  optional optimizer OptimizerEnum = 5
-  optional fitConfig ClassifierFitParams = 6
+  optional sklearnParams SkLearnParams = 1
+  optional tfKerasParams TFKerasParams = 2
  }
 message EmbeddingsConfig
  {
@@ -180,8 +176,8 @@ message LayerParams
 // Metrics of a trained classifier (model).
 message Metric
  {
-  optional name String = 1
-  optional type String = 2
+  optional type String = 1
+  optional name String = 2
   optional curve String = 3
  }
 // A container of metrics for a trained classifier.
@@ -213,10 +209,25 @@ message PosNegData
   optional posEdgeFilepath String = 1
   optional negEdgeFilepath String = 2
  }
+// Parameters specific to the SKLearn library.
+message SkLearnParams
+ {
+  optional randomState Integer = 1
+  optional maxIter Integer = 2
+ }
 // Path for output to be saved.
 message Target
  {
   optional targetPath String = 1
+ }
+// Parameters specific to the Tensorflow Keras library.
+message TFKerasParams
+ {
+  optional layersConfig LayerContainer = 1
+  optional loss String = 2
+  optional metricsConfig MetricContainer = 3
+  optional optimizer OptimizerEnum = 4
+  optional fitConfig ClassifierFitParams = 5
  }
 message TrainValidData
  {

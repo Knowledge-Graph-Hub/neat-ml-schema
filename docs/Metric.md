@@ -17,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [name](name.md) | [string](string.md) | 0..1 | None  | . |
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [string](string.md) | 0..1 | None  | . |
 | [curve](curve.md) | [string](string.md) | 0..1 | None  | . |
 
 
@@ -53,11 +53,11 @@ name: Metric
 description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
-  name:
-    name: name
-    from_schema: https://w3id.org/neat_schema
   type:
     name: type
+    from_schema: https://w3id.org/neat_schema
+  name:
+    name: name
     from_schema: https://w3id.org/neat_schema
   curve:
     name: curve
@@ -74,16 +74,16 @@ name: Metric
 description: Metrics of a trained classifier (model).
 from_schema: https://w3id.org/neat_schema
 attributes:
-  name:
-    name: name
-    from_schema: https://w3id.org/neat_schema
-    alias: name
-    owner: Metric
-    range: string
   type:
     name: type
     from_schema: https://w3id.org/neat_schema
     alias: type
+    owner: Metric
+    range: string
+  name:
+    name: name
+    from_schema: https://w3id.org/neat_schema
+    alias: name
     owner: Metric
     range: string
   curve:

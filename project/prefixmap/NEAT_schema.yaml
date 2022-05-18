@@ -60,8 +60,14 @@
    "PosNegData": {
       "@id": "https://w3id.org/neat_schema/PosNegData"
    },
+   "SkLearnParams": {
+      "@id": "https://w3id.org/neat_schema/SkLearnParams"
+   },
    "Target": {
       "@id": "https://w3id.org/neat_schema/Target"
+   },
+   "TFKerasParams": {
+      "@id": "https://w3id.org/neat_schema/TFKerasParams"
    },
    "TrainValidData": {
       "@id": "https://w3id.org/neat_schema/TrainValidData"

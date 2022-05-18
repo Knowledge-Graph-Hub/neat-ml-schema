@@ -95,12 +95,8 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ClassifierParams> CLOSED {
-    (  $<ClassifierParams_tes> (  <random_state> @linkml:Integer ? ;
-          <max_iter> @linkml:Integer ? ;
-          <layers_config> @<LayerContainer> ? ;
-          <metrics_config> @<MetricContainer> ? ;
-          <optimizer> @<OptimizerEnum> ? ;
-          <fit_config> @<ClassifierFitParams> ?
+    (  $<ClassifierParams_tes> (  <sklearn_params> @<SkLearnParams> ? ;
+          <tf_keras_params> @<TFKerasParams> ?
        ) ;
        rdf:type [ <ClassifierParams> ] ?
     )
@@ -238,8 +234,8 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <Metric> CLOSED {
-    (  $<Metric_tes> (  <name> @linkml:String ? ;
-          <type> @linkml:String ? ;
+    (  $<Metric_tes> (  <type> @linkml:String ? ;
+          <name> @linkml:String ? ;
           <curve> @linkml:String ?
        ) ;
        rdf:type [ <Metric> ] ?
@@ -287,9 +283,28 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<SkLearnParams> CLOSED {
+    (  $<SkLearnParams_tes> (  <random_state> @linkml:Integer ? ;
+          <max_iter> @linkml:Integer ?
+       ) ;
+       rdf:type [ <SkLearnParams> ] ?
+    )
+}
+
 <Target> CLOSED {
     (  $<Target_tes> <target_path> @linkml:String ? ;
        rdf:type [ <Target> ] ?
+    )
+}
+
+<TFKerasParams> CLOSED {
+    (  $<TFKerasParams_tes> (  <layers_config> @<LayerContainer> ? ;
+          <loss> @linkml:String ? ;
+          <metrics_config> @<MetricContainer> ? ;
+          <optimizer> @<OptimizerEnum> ? ;
+          <fit_config> @<ClassifierFitParams> ?
+       ) ;
+       rdf:type [ <TFKerasParams> ] ?
     )
 }
 

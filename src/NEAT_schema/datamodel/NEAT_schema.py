@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T20:34:51
+# Generation date: 2022-05-18T08:29:00
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -375,12 +375,44 @@ class ClassifierParams(YAMLRoot):
         "https://w3id.org/neat_schema/ClassifierParams"
     )
 
+    sklearn_params: Optional[Union[dict, "SkLearnParams"]] = None
+    tf_keras_params: Optional[Union[dict, "TFKerasParams"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.sklearn_params is not None and not isinstance(
+            self.sklearn_params, SkLearnParams
+        ):
+            self.sklearn_params = SkLearnParams(**as_dict(self.sklearn_params))
+
+        if self.tf_keras_params is not None and not isinstance(
+            self.tf_keras_params, TFKerasParams
+        ):
+            self.tf_keras_params = TFKerasParams(
+                **as_dict(self.tf_keras_params)
+            )
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SkLearnParams(YAMLRoot):
+    """
+    Parameters specific to the SKLearn library.
+    """
+
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/SkLearnParams"
+    )
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "SkLearnParams"
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/SkLearnParams"
+    )
+
     random_state: Optional[int] = None
     max_iter: Optional[int] = None
-    layers_config: Optional[Union[dict, "LayerContainer"]] = None
-    metrics_config: Optional[Union[dict, "MetricContainer"]] = None
-    optimizer: Optional[Union[str, "OptimizerEnum"]] = None
-    fit_config: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.random_state is not None and not isinstance(
@@ -391,10 +423,40 @@ class ClassifierParams(YAMLRoot):
         if self.max_iter is not None and not isinstance(self.max_iter, int):
             self.max_iter = int(self.max_iter)
 
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class TFKerasParams(YAMLRoot):
+    """
+    Parameters specific to the Tensorflow Keras library.
+    """
+
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/TFKerasParams"
+    )
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "TFKerasParams"
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/TFKerasParams"
+    )
+
+    layers_config: Optional[Union[dict, "LayerContainer"]] = None
+    loss: Optional[str] = None
+    metrics_config: Optional[Union[dict, "MetricContainer"]] = None
+    optimizer: Optional[Union[str, "OptimizerEnum"]] = None
+    fit_config: Optional[Union[dict, "ClassifierFitParams"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.layers_config is not None and not isinstance(
             self.layers_config, LayerContainer
         ):
             self.layers_config = LayerContainer(**as_dict(self.layers_config))
+
+        if self.loss is not None and not isinstance(self.loss, str):
+            self.loss = str(self.loss)
 
         if self.metrics_config is not None and not isinstance(
             self.metrics_config, MetricContainer
@@ -565,16 +627,16 @@ class Metric(YAMLRoot):
         "https://w3id.org/neat_schema/Metric"
     )
 
-    name: Optional[str] = None
     type: Optional[str] = None
+    name: Optional[str] = None
     curve: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
 
         if self.curve is not None and not isinstance(self.curve, str):
             self.curve = str(self.curve)
@@ -1814,56 +1876,83 @@ slots.classifier__parameters = Slot(
     range=Optional[Union[dict, ClassifierParams]],
 )
 
-slots.classifierParams__random_state = Slot(
+slots.classifierParams__sklearn_params = Slot(
+    uri=DEFAULT_.sklearn_params,
+    name="classifierParams__sklearn_params",
+    curie=DEFAULT_.curie("sklearn_params"),
+    model_uri=DEFAULT_.classifierParams__sklearn_params,
+    domain=None,
+    range=Optional[Union[dict, SkLearnParams]],
+)
+
+slots.classifierParams__tf_keras_params = Slot(
+    uri=DEFAULT_.tf_keras_params,
+    name="classifierParams__tf_keras_params",
+    curie=DEFAULT_.curie("tf_keras_params"),
+    model_uri=DEFAULT_.classifierParams__tf_keras_params,
+    domain=None,
+    range=Optional[Union[dict, TFKerasParams]],
+)
+
+slots.skLearnParams__random_state = Slot(
     uri=DEFAULT_.random_state,
-    name="classifierParams__random_state",
+    name="skLearnParams__random_state",
     curie=DEFAULT_.curie("random_state"),
-    model_uri=DEFAULT_.classifierParams__random_state,
+    model_uri=DEFAULT_.skLearnParams__random_state,
     domain=None,
     range=Optional[int],
 )
 
-slots.classifierParams__max_iter = Slot(
+slots.skLearnParams__max_iter = Slot(
     uri=DEFAULT_.max_iter,
-    name="classifierParams__max_iter",
+    name="skLearnParams__max_iter",
     curie=DEFAULT_.curie("max_iter"),
-    model_uri=DEFAULT_.classifierParams__max_iter,
+    model_uri=DEFAULT_.skLearnParams__max_iter,
     domain=None,
     range=Optional[int],
 )
 
-slots.classifierParams__layers_config = Slot(
+slots.tFKerasParams__layers_config = Slot(
     uri=DEFAULT_.layers_config,
-    name="classifierParams__layers_config",
+    name="tFKerasParams__layers_config",
     curie=DEFAULT_.curie("layers_config"),
-    model_uri=DEFAULT_.classifierParams__layers_config,
+    model_uri=DEFAULT_.tFKerasParams__layers_config,
     domain=None,
     range=Optional[Union[dict, LayerContainer]],
 )
 
-slots.classifierParams__metrics_config = Slot(
+slots.tFKerasParams__loss = Slot(
+    uri=DEFAULT_.loss,
+    name="tFKerasParams__loss",
+    curie=DEFAULT_.curie("loss"),
+    model_uri=DEFAULT_.tFKerasParams__loss,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.tFKerasParams__metrics_config = Slot(
     uri=DEFAULT_.metrics_config,
-    name="classifierParams__metrics_config",
+    name="tFKerasParams__metrics_config",
     curie=DEFAULT_.curie("metrics_config"),
-    model_uri=DEFAULT_.classifierParams__metrics_config,
+    model_uri=DEFAULT_.tFKerasParams__metrics_config,
     domain=None,
     range=Optional[Union[dict, MetricContainer]],
 )
 
-slots.classifierParams__optimizer = Slot(
+slots.tFKerasParams__optimizer = Slot(
     uri=DEFAULT_.optimizer,
-    name="classifierParams__optimizer",
+    name="tFKerasParams__optimizer",
     curie=DEFAULT_.curie("optimizer"),
-    model_uri=DEFAULT_.classifierParams__optimizer,
+    model_uri=DEFAULT_.tFKerasParams__optimizer,
     domain=None,
     range=Optional[Union[str, "OptimizerEnum"]],
 )
 
-slots.classifierParams__fit_config = Slot(
+slots.tFKerasParams__fit_config = Slot(
     uri=DEFAULT_.fit_config,
-    name="classifierParams__fit_config",
+    name="tFKerasParams__fit_config",
     curie=DEFAULT_.curie("fit_config"),
-    model_uri=DEFAULT_.classifierParams__fit_config,
+    model_uri=DEFAULT_.tFKerasParams__fit_config,
     domain=None,
     range=Optional[Union[dict, ClassifierFitParams]],
 )
@@ -1931,20 +2020,20 @@ slots.metricContainer__metrics = Slot(
     range=Optional[Union[Union[dict, Metric], List[Union[dict, Metric]]]],
 )
 
-slots.metric__name = Slot(
-    uri=DEFAULT_.name,
-    name="metric__name",
-    curie=DEFAULT_.curie("name"),
-    model_uri=DEFAULT_.metric__name,
-    domain=None,
-    range=Optional[str],
-)
-
 slots.metric__type = Slot(
     uri=DEFAULT_.type,
     name="metric__type",
     curie=DEFAULT_.curie("type"),
     model_uri=DEFAULT_.metric__type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.metric__name = Slot(
+    uri=DEFAULT_.name,
+    name="metric__name",
+    curie=DEFAULT_.curie("name"),
+    model_uri=DEFAULT_.metric__name,
     domain=None,
     range=Optional[str],
 )

@@ -25,7 +25,7 @@ URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ClassifierParams](ClassifierParams.md) | [layers_config](layers_config.md) | range | LayerContainer |
+| [TFKerasParams](TFKerasParams.md) | [layers_config](layers_config.md) | range | LayerContainer |
 
 
 

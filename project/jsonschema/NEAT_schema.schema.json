@@ -167,23 +167,11 @@
          "additionalProperties": false,
          "description": "Parameters needed to define a classifier.",
          "properties": {
-            "fit_config": {
-               "$ref": "#/$defs/ClassifierFitParams"
+            "sklearn_params": {
+               "$ref": "#/$defs/SkLearnParams"
             },
-            "layers_config": {
-               "$ref": "#/$defs/LayerContainer"
-            },
-            "max_iter": {
-               "type": "integer"
-            },
-            "metrics_config": {
-               "$ref": "#/$defs/MetricContainer"
-            },
-            "optimizer": {
-               "$ref": "#/$defs/OptimizerEnum"
-            },
-            "random_state": {
-               "type": "integer"
+            "tf_keras_params": {
+               "$ref": "#/$defs/TFKerasParams"
             }
          },
          "required": [],
@@ -684,6 +672,45 @@
          },
          "required": [],
          "title": "PosNegData",
+         "type": "object"
+      },
+      "SkLearnParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the SKLearn library.",
+         "properties": {
+            "max_iter": {
+               "type": "integer"
+            },
+            "random_state": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "SkLearnParams",
+         "type": "object"
+      },
+      "TFKerasParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the Tensorflow Keras library.",
+         "properties": {
+            "fit_config": {
+               "$ref": "#/$defs/ClassifierFitParams"
+            },
+            "layers_config": {
+               "$ref": "#/$defs/LayerContainer"
+            },
+            "loss": {
+               "type": "string"
+            },
+            "metrics_config": {
+               "$ref": "#/$defs/MetricContainer"
+            },
+            "optimizer": {
+               "$ref": "#/$defs/OptimizerEnum"
+            }
+         },
+         "required": [],
+         "title": "TFKerasParams",
          "type": "object"
       },
       "Target": {

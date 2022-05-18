@@ -52,13 +52,9 @@ CREATE TABLE "ClassifierFitParams" (
 );
 
 CREATE TABLE "ClassifierParams" (
-	random_state INTEGER, 
-	max_iter INTEGER, 
-	layers_config TEXT, 
-	metrics_config TEXT, 
-	optimizer VARCHAR(7), 
-	fit_config TEXT, 
-	PRIMARY KEY (random_state, max_iter, layers_config, metrics_config, optimizer, fit_config)
+	sklearn_params TEXT, 
+	tf_keras_params TEXT, 
+	PRIMARY KEY (sklearn_params, tf_keras_params)
 );
 
 CREATE TABLE "EmbeddingsConfig" (
@@ -182,10 +178,10 @@ CREATE TABLE "LayerParams" (
 );
 
 CREATE TABLE "Metric" (
-	name TEXT, 
 	type TEXT, 
+	name TEXT, 
 	curve TEXT, 
-	PRIMARY KEY (name, type, curve)
+	PRIMARY KEY (type, name, curve)
 );
 
 CREATE TABLE "MetricContainer" (
@@ -221,9 +217,24 @@ CREATE TABLE "PosNegData" (
 	PRIMARY KEY (pos_edge_filepath, neg_edge_filepath)
 );
 
+CREATE TABLE "SkLearnParams" (
+	random_state INTEGER, 
+	max_iter INTEGER, 
+	PRIMARY KEY (random_state, max_iter)
+);
+
 CREATE TABLE "Target" (
 	target_path TEXT, 
 	PRIMARY KEY (target_path)
+);
+
+CREATE TABLE "TFKerasParams" (
+	layers_config TEXT, 
+	loss TEXT, 
+	metrics_config TEXT, 
+	optimizer VARCHAR(7), 
+	fit_config TEXT, 
+	PRIMARY KEY (layers_config, loss, metrics_config, optimizer, fit_config)
 );
 
 CREATE TABLE "TrainValidData" (
