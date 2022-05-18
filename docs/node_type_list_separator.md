@@ -2,7 +2,7 @@
 _The separator to use for the node types file._
 
 
-URI: [https://w3id.org/neat_schema/:node_type_list_separator](https://w3id.org/neat_schema/:node_type_list_separator)
+URI: [https://w3id.org/neat/:node_type_list_separator](https://w3id.org/neat/:node_type_list_separator)
 
 
 

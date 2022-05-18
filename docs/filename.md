@@ -2,7 +2,7 @@
 _Embeddings file name._
 
 
-URI: [https://w3id.org/neat_schema/:filename](https://w3id.org/neat_schema/:filename)
+URI: [https://w3id.org/neat/:filename](https://w3id.org/neat/:filename)
 
 
 

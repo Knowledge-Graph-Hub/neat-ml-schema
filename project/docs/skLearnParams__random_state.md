@@ -4,7 +4,7 @@
 
 Random seed.
 
-URI: [https://w3id.org/neat_schema/skLearnParams__random_state](https://w3id.org/neat_schema/skLearnParams__random_state)
+URI: [https://w3id.org/neat/skLearnParams__random_state](https://w3id.org/neat/skLearnParams__random_state)
 
 
 ## Domain and Range

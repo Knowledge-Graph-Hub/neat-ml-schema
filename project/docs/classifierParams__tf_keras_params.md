@@ -4,7 +4,7 @@
 
 Parameters specific to Tensorflow/Keras
 
-URI: [https://w3id.org/neat_schema/classifierParams__tf_keras_params](https://w3id.org/neat_schema/classifierParams__tf_keras_params)
+URI: [https://w3id.org/neat/classifierParams__tf_keras_params](https://w3id.org/neat/classifierParams__tf_keras_params)
 
 
 ## Domain and Range

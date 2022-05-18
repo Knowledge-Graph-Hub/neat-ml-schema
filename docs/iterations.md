@@ -2,7 +2,7 @@
 _Number of iterations._
 
 
-URI: [https://w3id.org/neat_schema/:iterations](https://w3id.org/neat_schema/:iterations)
+URI: [https://w3id.org/neat/:iterations](https://w3id.org/neat/:iterations)
 
 
 

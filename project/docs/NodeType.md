@@ -4,7 +4,7 @@
 
 Source node or Destination node.
 
-URI: [https://w3id.org/neat_schema/NodeType](https://w3id.org/neat_schema/NodeType)
+URI: [https://w3id.org/neat/NodeType](https://w3id.org/neat/NodeType)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]++-%20node_types%200..1>[NodeType&#124;source:string%20*;destination:string%20*],[ApplyTrainedModel])](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]++-%20node_types%200..1>[NodeType&#124;source:string%20*;destination:string%20*],[ApplyTrainedModel])

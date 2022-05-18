@@ -2,7 +2,7 @@
 _Type of layer._
 
 
-URI: [https://w3id.org/neat_schema/:type](https://w3id.org/neat_schema/:type)
+URI: [https://w3id.org/neat/:type](https://w3id.org/neat/:type)
 
 
 

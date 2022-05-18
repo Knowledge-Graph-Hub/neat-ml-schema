@@ -2,7 +2,7 @@
 _Graph configuration for pipeline_
 
 
-URI: [https://w3id.org/neat_schema/:graph](https://w3id.org/neat_schema/:graph)
+URI: [https://w3id.org/neat/:graph](https://w3id.org/neat/:graph)
 
 
 

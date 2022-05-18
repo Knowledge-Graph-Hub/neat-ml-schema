@@ -5,7 +5,7 @@ _Trained model used for prediction._
 
 
 
-URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_schema/:ApplyTrainedModel)
+URI: [https://w3id.org/neat/:ApplyTrainedModel](https://w3id.org/neat/:ApplyTrainedModel)
 
 
 
@@ -52,25 +52,25 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_sch
 ```yaml
 name: ApplyTrainedModel
 description: Trained model used for prediction.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   model_id:
     name: model_id
     description: Key of the model to be used.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   node_types:
     name: node_types
     description: Type of nodes.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: NodeType
   cutoff:
     name: cutoff
     description: Cutoff filter.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   outfile:
     name: outfile
     description: File path for saving results.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -81,33 +81,33 @@ attributes:
 ```yaml
 name: ApplyTrainedModel
 description: Trained model used for prediction.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   model_id:
     name: model_id
     description: Key of the model to be used.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: model_id
     owner: ApplyTrainedModel
     range: string
   node_types:
     name: node_types
     description: Type of nodes.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: node_types
     owner: ApplyTrainedModel
     range: NodeType
   cutoff:
     name: cutoff
     description: Cutoff filter.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: cutoff
     owner: ApplyTrainedModel
     range: string
   outfile:
     name: outfile
     description: File path for saving results.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: outfile
     owner: ApplyTrainedModel
     range: string

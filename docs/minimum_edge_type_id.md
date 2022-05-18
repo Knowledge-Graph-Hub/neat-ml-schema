@@ -2,7 +2,7 @@
 _The minimum edge type ID to be used when using numeric edge type IDs._
 
 
-URI: [https://w3id.org/neat_schema/:minimum_edge_type_id](https://w3id.org/neat_schema/:minimum_edge_type_id)
+URI: [https://w3id.org/neat/:minimum_edge_type_id](https://w3id.org/neat/:minimum_edge_type_id)
 
 
 

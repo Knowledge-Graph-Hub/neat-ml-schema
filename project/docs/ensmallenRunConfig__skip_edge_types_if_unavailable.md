@@ -4,7 +4,7 @@
 
 Whether to skip the edge types without raising an error if these are unavailable.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__skip_edge_types_if_unavailable](https://w3id.org/neat_schema/ensmallenRunConfig__skip_edge_types_if_unavailable)
+URI: [https://w3id.org/neat/ensmallenRunConfig__skip_edge_types_if_unavailable](https://w3id.org/neat/ensmallenRunConfig__skip_edge_types_if_unavailable)
 
 
 ## Domain and Range

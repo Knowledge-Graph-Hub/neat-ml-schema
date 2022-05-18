@@ -4,7 +4,7 @@
 
 Configuration for uploading to Amazon S3 bucket.
 
-URI: [https://w3id.org/neat_schema/Upload](https://w3id.org/neat_schema/Upload)
+URI: [https://w3id.org/neat/Upload](https://w3id.org/neat/Upload)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Upload&#124;s3_bucket:string%20%3F;s3_bucket_dir:string%20%3F;extra_args:string%20*])](https://yuml.me/diagram/nofunky;dir:TB/class/[Upload&#124;s3_bucket:string%20%3F;s3_bucket_dir:string%20%3F;extra_args:string%20*])

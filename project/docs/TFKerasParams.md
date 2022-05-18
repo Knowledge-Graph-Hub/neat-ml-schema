@@ -4,7 +4,7 @@
 
 Parameters specific to the Tensorflow Keras library.
 
-URI: [https://w3id.org/neat_schema/TFKerasParams](https://w3id.org/neat_schema/TFKerasParams)
+URI: [https://w3id.org/neat/TFKerasParams](https://w3id.org/neat/TFKerasParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierFitParams]<fit_config%200..1-++[TFKerasParams&#124;loss:string%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics_config%200..1-++[TFKerasParams],[LayerContainer]<layers_config%200..1-++[TFKerasParams],[ClassifierParams]++-%20tf_keras_params%200..1>[TFKerasParams],[MetricContainer],[LayerContainer],[ClassifierParams],[ClassifierFitParams])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierFitParams]<fit_config%200..1-++[TFKerasParams&#124;loss:string%20%3F;optimizer:optimizer_enum%20%3F],[MetricContainer]<metrics_config%200..1-++[TFKerasParams],[LayerContainer]<layers_config%200..1-++[TFKerasParams],[ClassifierParams]++-%20tf_keras_params%200..1>[TFKerasParams],[MetricContainer],[LayerContainer],[ClassifierParams],[ClassifierFitParams])

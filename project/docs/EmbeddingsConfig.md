@@ -4,7 +4,7 @@
 
 Embeddings configuration.
 
-URI: [https://w3id.org/neat_schema/EmbeddingsConfig](https://w3id.org/neat_schema/EmbeddingsConfig)
+URI: [https://w3id.org/neat/EmbeddingsConfig](https://w3id.org/neat/EmbeddingsConfig)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeEmbeddingsParams],[NodeEmbeddingsParams]<node_embeddings_params%200..1-++[EmbeddingsConfig&#124;filename:string%20%3F;history_filename:string%20%3F;tsne_filename:string%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeEmbeddingsParams],[NodeEmbeddingsParams]<node_embeddings_params%200..1-++[EmbeddingsConfig&#124;filename:string%20%3F;history_filename:string%20%3F;tsne_filename:string%20%3F])

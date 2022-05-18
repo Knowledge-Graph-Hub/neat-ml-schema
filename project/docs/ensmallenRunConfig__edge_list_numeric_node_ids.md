@@ -4,7 +4,7 @@
 
 Whether to load the edge node IDs as numeric from the edge list.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_numeric_node_ids](https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_numeric_node_ids)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_list_numeric_node_ids](https://w3id.org/neat/ensmallenRunConfig__edge_list_numeric_node_ids)
 
 
 ## Domain and Range

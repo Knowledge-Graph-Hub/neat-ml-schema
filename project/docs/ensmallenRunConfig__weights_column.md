@@ -4,7 +4,7 @@
 
 The name of the column of the edges file from where to load the edge weights.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__weights_column](https://w3id.org/neat_schema/ensmallenRunConfig__weights_column)
+URI: [https://w3id.org/neat/ensmallenRunConfig__weights_column](https://w3id.org/neat/ensmallenRunConfig__weights_column)
 
 
 ## Domain and Range

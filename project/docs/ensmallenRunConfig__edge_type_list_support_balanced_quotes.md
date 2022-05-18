@@ -4,7 +4,7 @@
 
 Whether to support balanced quotes while reading the edge type list.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_list_support_balanced_quotes](https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_list_support_balanced_quotes)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_type_list_support_balanced_quotes](https://w3id.org/neat/ensmallenRunConfig__edge_type_list_support_balanced_quotes)
 
 
 ## Domain and Range

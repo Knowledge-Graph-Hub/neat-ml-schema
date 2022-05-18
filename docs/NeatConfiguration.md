@@ -5,7 +5,7 @@ _Root class for the schema._
 
 
 
-URI: [https://w3id.org/neat_schema/:NeatConfiguration](https://w3id.org/neat_schema/:NeatConfiguration)
+URI: [https://w3id.org/neat/:NeatConfiguration](https://w3id.org/neat/:NeatConfiguration)
 
 
 
@@ -44,12 +44,12 @@ URI: [https://w3id.org/neat_schema/:NeatConfiguration](https://w3id.org/neat_sch
 ```yaml
 name: NeatConfiguration
 description: Root class for the schema.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   graph_data:
     name: graph_data
     description: Configuration for graph data.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: GraphDataConfiguration
 tree_root: true
 
@@ -62,12 +62,12 @@ tree_root: true
 ```yaml
 name: NeatConfiguration
 description: Root class for the schema.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   graph_data:
     name: graph_data
     description: Configuration for graph data.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: graph_data
     owner: NeatConfiguration
     range: GraphDataConfiguration

@@ -2,7 +2,7 @@
 _Whether to load the edge node IDs as numeric from the edge list._
 
 
-URI: [https://w3id.org/neat_schema/:edge_list_numeric_node_ids](https://w3id.org/neat_schema/:edge_list_numeric_node_ids)
+URI: [https://w3id.org/neat/:edge_list_numeric_node_ids](https://w3id.org/neat/:edge_list_numeric_node_ids)
 
 
 

@@ -2,7 +2,7 @@
 _Quantity to be monitored._
 
 
-URI: [https://w3id.org/neat_schema/:monitor](https://w3id.org/neat_schema/:monitor)
+URI: [https://w3id.org/neat/:monitor](https://w3id.org/neat/:monitor)
 
 
 

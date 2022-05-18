@@ -4,7 +4,7 @@
 
 Graph configuration for pipeline
 
-URI: [https://w3id.org/neat_schema/graphDataConfiguration__graph](https://w3id.org/neat_schema/graphDataConfiguration__graph)
+URI: [https://w3id.org/neat/graphDataConfiguration__graph](https://w3id.org/neat/graphDataConfiguration__graph)
 
 
 ## Domain and Range

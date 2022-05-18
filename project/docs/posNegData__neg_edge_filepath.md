@@ -4,7 +4,7 @@
 
 Negative edges file path.
 
-URI: [https://w3id.org/neat_schema/posNegData__neg_edge_filepath](https://w3id.org/neat_schema/posNegData__neg_edge_filepath)
+URI: [https://w3id.org/neat/posNegData__neg_edge_filepath](https://w3id.org/neat/posNegData__neg_edge_filepath)
 
 
 ## Domain and Range

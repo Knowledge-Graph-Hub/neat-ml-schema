@@ -2,7 +2,7 @@
 _Whether the node type file has an header._
 
 
-URI: [https://w3id.org/neat_schema/:node_type_list_header](https://w3id.org/neat_schema/:node_type_list_header)
+URI: [https://w3id.org/neat/:node_type_list_header](https://w3id.org/neat/:node_type_list_header)
 
 
 

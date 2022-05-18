@@ -2,7 +2,7 @@
 _File path for saving results._
 
 
-URI: [https://w3id.org/neat_schema/:target_path](https://w3id.org/neat_schema/:target_path)
+URI: [https://w3id.org/neat/:target_path](https://w3id.org/neat/:target_path)
 
 
 

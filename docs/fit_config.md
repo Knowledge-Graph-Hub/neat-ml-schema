@@ -2,7 +2,7 @@
 _Configuration for model fitting._
 
 
-URI: [https://w3id.org/neat_schema/:fit_config](https://w3id.org/neat_schema/:fit_config)
+URI: [https://w3id.org/neat/:fit_config](https://w3id.org/neat/:fit_config)
 
 
 

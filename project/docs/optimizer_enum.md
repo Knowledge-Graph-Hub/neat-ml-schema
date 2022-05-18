@@ -4,7 +4,7 @@
 
 Optimizers that can be implemented in the neural network.
 
-URI: [https://w3id.org/neat_schema/optimizer_enum](https://w3id.org/neat_schema/optimizer_enum)
+URI: [https://w3id.org/neat/optimizer_enum](https://w3id.org/neat/optimizer_enum)
 
 
 ## Other properties

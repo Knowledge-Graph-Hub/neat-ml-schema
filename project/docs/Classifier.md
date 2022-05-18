@@ -4,7 +4,7 @@
 
 ML classifiers to be trained-tested-validated and applied for predictions.
 
-URI: [https://w3id.org/neat_schema/Classifier](https://w3id.org/neat_schema/Classifier)
+URI: [https://w3id.org/neat/Classifier](https://w3id.org/neat/Classifier)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierParams],[ClassifierParams]<parameters%200..1-++[Classifier&#124;classifier_id:string%20%3F;classifier_name:string%20%3F;classifier_type:string%20%3F;edge_method:edge_method_enum%20%3F;outfile:string%20%3F;history_filename:string%20%3F],[ClassifierContainer]++-%20classifiers%200..*>[Classifier],[ClassifierContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierParams],[ClassifierParams]<parameters%200..1-++[Classifier&#124;classifier_id:string%20%3F;classifier_name:string%20%3F;classifier_type:string%20%3F;edge_method:edge_method_enum%20%3F;outfile:string%20%3F;history_filename:string%20%3F],[ClassifierContainer]++-%20classifiers%200..*>[Classifier],[ClassifierContainer])

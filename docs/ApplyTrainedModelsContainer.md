@@ -5,7 +5,7 @@ _A container with multiple classifiers in it._
 
 
 
-URI: [https://w3id.org/neat_schema/:ApplyTrainedModelsContainer](https://w3id.org/neat_schema/:ApplyTrainedModelsContainer)
+URI: [https://w3id.org/neat/:ApplyTrainedModelsContainer](https://w3id.org/neat/:ApplyTrainedModelsContainer)
 
 
 
@@ -44,12 +44,12 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModelsContainer](https://w3id.or
 ```yaml
 name: ApplyTrainedModelsContainer
 description: A container with multiple classifiers in it.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   models:
     name: models
     description: Models that need to be used for link prediction.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     range: ApplyTrainedModel
     inlined: true
@@ -64,12 +64,12 @@ attributes:
 ```yaml
 name: ApplyTrainedModelsContainer
 description: A container with multiple classifiers in it.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   models:
     name: models
     description: Models that need to be used for link prediction.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: models
     owner: ApplyTrainedModelsContainer

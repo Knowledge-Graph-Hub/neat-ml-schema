@@ -5,7 +5,7 @@ _Source node or Destination node._
 
 
 
-URI: [https://w3id.org/neat_schema/:NodeType](https://w3id.org/neat_schema/:NodeType)
+URI: [https://w3id.org/neat/:NodeType](https://w3id.org/neat/:NodeType)
 
 
 
@@ -50,19 +50,19 @@ URI: [https://w3id.org/neat_schema/:NodeType](https://w3id.org/neat_schema/:Node
 ```yaml
 name: NodeType
 description: Source node or Destination node.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   source:
     name: source
     description: Source node(s).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     inlined: true
     inlined_as_list: true
   destination:
     name: destination
     description: Destination node(s).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -76,12 +76,12 @@ attributes:
 ```yaml
 name: NodeType
 description: Source node or Destination node.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   source:
     name: source
     description: Source node(s).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: source
     owner: NodeType
@@ -91,7 +91,7 @@ attributes:
   destination:
     name: destination
     description: Destination node(s).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: destination
     owner: NodeType

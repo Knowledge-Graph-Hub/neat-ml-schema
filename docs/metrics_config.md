@@ -2,7 +2,7 @@
 _Metrics to be calculated after classifier training._
 
 
-URI: [https://w3id.org/neat_schema/:metrics_config](https://w3id.org/neat_schema/:metrics_config)
+URI: [https://w3id.org/neat/:metrics_config](https://w3id.org/neat/:metrics_config)
 
 
 

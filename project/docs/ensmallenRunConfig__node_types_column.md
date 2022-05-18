@@ -4,7 +4,7 @@
 
 Node type column name.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_types_column](https://w3id.org/neat_schema/ensmallenRunConfig__node_types_column)
+URI: [https://w3id.org/neat/ensmallenRunConfig__node_types_column](https://w3id.org/neat/ensmallenRunConfig__node_types_column)
 
 
 ## Domain and Range

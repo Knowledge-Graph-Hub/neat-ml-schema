@@ -2,7 +2,7 @@
 _Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation._
 
 
-URI: [https://w3id.org/neat_schema/:numeric_node_type_ids](https://w3id.org/neat_schema/:numeric_node_type_ids)
+URI: [https://w3id.org/neat/:numeric_node_type_ids](https://w3id.org/neat/:numeric_node_type_ids)
 
 
 

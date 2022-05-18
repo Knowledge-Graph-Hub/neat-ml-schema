@@ -2,7 +2,7 @@
 _Loss function._
 
 
-URI: [https://w3id.org/neat_schema/:loss](https://w3id.org/neat_schema/:loss)
+URI: [https://w3id.org/neat/:loss](https://w3id.org/neat/:loss)
 
 
 

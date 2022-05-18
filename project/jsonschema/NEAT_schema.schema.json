@@ -913,7 +913,7 @@
          "type": "object"
       }
    },
-   "$id": "https://w3id.org/neat_schema",
+   "$id": "https://w3id.org/neat",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",

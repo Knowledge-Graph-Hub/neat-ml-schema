@@ -4,7 +4,7 @@
 
 The number of the column of the edges file from where to load the edge IDs.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_ids_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__edge_ids_column_number)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_ids_column_number](https://w3id.org/neat/ensmallenRunConfig__edge_ids_column_number)
 
 
 ## Domain and Range

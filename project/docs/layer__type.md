@@ -4,7 +4,7 @@
 
 Type of layer.
 
-URI: [https://w3id.org/neat_schema/layer__type](https://w3id.org/neat_schema/layer__type)
+URI: [https://w3id.org/neat/layer__type](https://w3id.org/neat/layer__type)
 
 
 ## Domain and Range

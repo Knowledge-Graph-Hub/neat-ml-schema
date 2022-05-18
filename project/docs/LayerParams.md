@@ -4,7 +4,7 @@
 
 Parameters for each layer of a neural network.
 
-URI: [https://w3id.org/neat_schema/LayerParams](https://w3id.org/neat_schema/LayerParams)
+URI: [https://w3id.org/neat/LayerParams](https://w3id.org/neat/LayerParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Layer]++-%20parameters%200..1>[LayerParams&#124;units:integer%20%3F;activation:activation_enum%20%3F;rate:float%20%3F],[Layer])](https://yuml.me/diagram/nofunky;dir:TB/class/[Layer]++-%20parameters%200..1>[LayerParams&#124;units:integer%20%3F;activation:activation_enum%20%3F;rate:float%20%3F],[Layer])

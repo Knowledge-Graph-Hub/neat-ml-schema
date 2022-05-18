@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__name](https://w3id.org/neat_schema/ensmallenRunConfig__name)
+URI: [https://w3id.org/neat/ensmallenRunConfig__name](https://w3id.org/neat/ensmallenRunConfig__name)
 
 
 ## Domain and Range

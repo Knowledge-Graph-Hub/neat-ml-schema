@@ -5,7 +5,7 @@ _Paramters for fitting a classifier._
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_schema/:ClassifierFitParams)
+URI: [https://w3id.org/neat/:ClassifierFitParams](https://w3id.org/neat/:ClassifierFitParams)
 
 
 
@@ -51,21 +51,21 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 ```yaml
 name: ClassifierFitParams
 description: Paramters for fitting a classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   batch_size:
     name: batch_size
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   epochs:
     name: epochs
     description: Number of epochs to run for training.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   callbacks_list:
     name: callbacks_list
     description: List of callbacks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: ClassifierCallbackContainer
 
 ```
@@ -77,25 +77,25 @@ attributes:
 ```yaml
 name: ClassifierFitParams
 description: Paramters for fitting a classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   batch_size:
     name: batch_size
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: batch_size
     owner: ClassifierFitParams
     range: integer
   epochs:
     name: epochs
     description: Number of epochs to run for training.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: epochs
     owner: ClassifierFitParams
     range: integer
   callbacks_list:
     name: callbacks_list
     description: List of callbacks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: callbacks_list
     owner: ClassifierFitParams
     range: ClassifierCallbackContainer

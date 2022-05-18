@@ -4,7 +4,7 @@
 
 File paths for positive an negative edge data.
 
-URI: [https://w3id.org/neat_schema/PosNegData](https://w3id.org/neat_schema/PosNegData)
+URI: [https://w3id.org/neat/PosNegData](https://w3id.org/neat/PosNegData)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TrainValidData]++-%20train_data%200..1>[PosNegData&#124;pos_edge_filepath:string%20%3F;neg_edge_filepath:string%20%3F],[TrainValidData]++-%20valid_data%200..1>[PosNegData],[TrainValidData])](https://yuml.me/diagram/nofunky;dir:TB/class/[TrainValidData]++-%20train_data%200..1>[PosNegData&#124;pos_edge_filepath:string%20%3F;neg_edge_filepath:string%20%3F],[TrainValidData]++-%20valid_data%200..1>[PosNegData],[TrainValidData])

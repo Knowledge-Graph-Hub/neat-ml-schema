@@ -2,7 +2,7 @@
 _Extra keyword arguments (**kwargs)._
 
 
-URI: [https://w3id.org/neat_schema/:extra_args](https://w3id.org/neat_schema/:extra_args)
+URI: [https://w3id.org/neat/:extra_args](https://w3id.org/neat/:extra_args)
 
 
 

@@ -4,7 +4,7 @@
 
 Node embeddings parameters.
 
-URI: [https://w3id.org/neat_schema/NodeEmbeddingsParams](https://w3id.org/neat_schema/NodeEmbeddingsParams)
+URI: [https://w3id.org/neat/NodeEmbeddingsParams](https://w3id.org/neat/NodeEmbeddingsParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[EmbeddingsConfig]++-%20node_embeddings_params%200..1>[NodeEmbeddingsParams&#124;method_name:node_embed_method_enum%20%3F;walk_length:integer%20%3F;batch_size:integer%20%3F;window_size:integer%20%3F;return_weight:float%20%3F;explore_weight:float%20%3F;iterations:integer%20%3F],[EmbeddingsConfig])](https://yuml.me/diagram/nofunky;dir:TB/class/[EmbeddingsConfig]++-%20node_embeddings_params%200..1>[NodeEmbeddingsParams&#124;method_name:node_embed_method_enum%20%3F;walk_length:integer%20%3F;batch_size:integer%20%3F;window_size:integer%20%3F;return_weight:float%20%3F;explore_weight:float%20%3F;iterations:integer%20%3F],[EmbeddingsConfig])

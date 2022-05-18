@@ -5,7 +5,7 @@ _Utilities called at certain points during model training._
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_schema/:ClassifierCallback)
+URI: [https://w3id.org/neat/:ClassifierCallback](https://w3id.org/neat/:ClassifierCallback)
 
 
 
@@ -54,33 +54,33 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_sc
 ```yaml
 name: ClassifierCallback
 description: Utilities called at certain points during model training.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
     description: Type of callback.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   monitor:
     name: monitor
     description: Quantity to be monitored.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   patience:
     name: patience
     description: Number of epochs with no improvement after which training will be
       stopped.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   min_delta:
     name: min_delta
     description: Minimum change in the monitored quantity to qualify as an improvement,
       i.e. an absolute change of less than min_delta, will count as no improvement.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   verbose:
     name: verbose
     description: Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages
       when the callback takes an action.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: boolean
   mode:
     name: mode
@@ -88,7 +88,7 @@ attributes:
       the quantity monitored has stopped decreasing; in "max" mode it will stop when
       the quantity monitored has stopped increasing; in "auto" mode, the direction
       is automatically inferred from the name of the monitored quantity.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: classifier_callback_mode_enum
 
 ```
@@ -100,19 +100,19 @@ attributes:
 ```yaml
 name: ClassifierCallback
 description: Utilities called at certain points during model training.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
     description: Type of callback.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: type
     owner: ClassifierCallback
     range: string
   monitor:
     name: monitor
     description: Quantity to be monitored.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: monitor
     owner: ClassifierCallback
     range: string
@@ -120,7 +120,7 @@ attributes:
     name: patience
     description: Number of epochs with no improvement after which training will be
       stopped.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: patience
     owner: ClassifierCallback
     range: integer
@@ -128,7 +128,7 @@ attributes:
     name: min_delta
     description: Minimum change in the monitored quantity to qualify as an improvement,
       i.e. an absolute change of less than min_delta, will count as no improvement.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: min_delta
     owner: ClassifierCallback
     range: integer
@@ -136,7 +136,7 @@ attributes:
     name: verbose
     description: Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages
       when the callback takes an action.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: verbose
     owner: ClassifierCallback
     range: boolean
@@ -146,7 +146,7 @@ attributes:
       the quantity monitored has stopped decreasing; in "max" mode it will stop when
       the quantity monitored has stopped increasing; in "auto" mode, the direction
       is automatically inferred from the name of the monitored quantity.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: mode
     owner: ClassifierCallback
     range: classifier_callback_mode_enum

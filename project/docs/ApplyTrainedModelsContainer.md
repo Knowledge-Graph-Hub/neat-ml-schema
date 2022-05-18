@@ -4,7 +4,7 @@
 
 A container with multiple classifiers in it.
 
-URI: [https://w3id.org/neat_schema/ApplyTrainedModelsContainer](https://w3id.org/neat_schema/ApplyTrainedModelsContainer)
+URI: [https://w3id.org/neat/ApplyTrainedModelsContainer](https://w3id.org/neat/ApplyTrainedModelsContainer)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]<models%200..*-++[ApplyTrainedModelsContainer],[ApplyTrainedModel])](https://yuml.me/diagram/nofunky;dir:TB/class/[ApplyTrainedModel]<models%200..*-++[ApplyTrainedModelsContainer],[ApplyTrainedModel])

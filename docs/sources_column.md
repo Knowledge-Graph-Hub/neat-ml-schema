@@ -2,7 +2,7 @@
 _The name of the column of the edges file from where to load the source nodes._
 
 
-URI: [https://w3id.org/neat_schema/:sources_column](https://w3id.org/neat_schema/:sources_column)
+URI: [https://w3id.org/neat/:sources_column](https://w3id.org/neat/:sources_column)
 
 
 

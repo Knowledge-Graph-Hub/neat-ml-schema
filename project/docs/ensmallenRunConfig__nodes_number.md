@@ -4,7 +4,7 @@
 
 The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__nodes_number](https://w3id.org/neat_schema/ensmallenRunConfig__nodes_number)
+URI: [https://w3id.org/neat/ensmallenRunConfig__nodes_number](https://w3id.org/neat/ensmallenRunConfig__nodes_number)
 
 
 ## Domain and Range

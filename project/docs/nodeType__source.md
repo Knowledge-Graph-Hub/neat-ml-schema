@@ -4,7 +4,7 @@
 
 Source node(s).
 
-URI: [https://w3id.org/neat_schema/nodeType__source](https://w3id.org/neat_schema/nodeType__source)
+URI: [https://w3id.org/neat/nodeType__source](https://w3id.org/neat/nodeType__source)
 
 
 ## Domain and Range

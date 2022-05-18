@@ -5,7 +5,7 @@ _A container of classifier callbacks._
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierCallbackContainer](https://w3id.org/neat_schema/:ClassifierCallbackContainer)
+URI: [https://w3id.org/neat/:ClassifierCallbackContainer](https://w3id.org/neat/:ClassifierCallbackContainer)
 
 
 
@@ -49,12 +49,12 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallbackContainer](https://w3id.or
 ```yaml
 name: ClassifierCallbackContainer
 description: A container of classifier callbacks.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   callbacks:
     name: callbacks
     description: Callbacks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     range: ClassifierCallback
     inlined: true
@@ -69,12 +69,12 @@ attributes:
 ```yaml
 name: ClassifierCallbackContainer
 description: A container of classifier callbacks.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   callbacks:
     name: callbacks
     description: Callbacks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: callbacks
     owner: ClassifierCallbackContainer

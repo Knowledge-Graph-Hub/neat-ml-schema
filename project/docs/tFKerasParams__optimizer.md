@@ -4,7 +4,7 @@
 
 Optimizer function to be used during classifier training.
 
-URI: [https://w3id.org/neat_schema/tFKerasParams__optimizer](https://w3id.org/neat_schema/tFKerasParams__optimizer)
+URI: [https://w3id.org/neat/tFKerasParams__optimizer](https://w3id.org/neat/tFKerasParams__optimizer)
 
 
 ## Domain and Range

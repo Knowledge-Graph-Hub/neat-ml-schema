@@ -5,7 +5,7 @@ _A container of neural network layers._
 
 
 
-URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema/:LayerContainer)
+URI: [https://w3id.org/neat/:LayerContainer](https://w3id.org/neat/:LayerContainer)
 
 
 
@@ -49,12 +49,12 @@ URI: [https://w3id.org/neat_schema/:LayerContainer](https://w3id.org/neat_schema
 ```yaml
 name: LayerContainer
 description: A container of neural network layers.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   layers:
     name: layers
     description: List of layers to be used to build the neural network.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     range: Layer
     inlined: true
@@ -69,12 +69,12 @@ attributes:
 ```yaml
 name: LayerContainer
 description: A container of neural network layers.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   layers:
     name: layers
     description: List of layers to be used to build the neural network.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: layers
     owner: LayerContainer

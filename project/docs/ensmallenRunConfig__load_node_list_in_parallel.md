@@ -4,7 +4,7 @@
 
 Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__load_node_list_in_parallel](https://w3id.org/neat_schema/ensmallenRunConfig__load_node_list_in_parallel)
+URI: [https://w3id.org/neat/ensmallenRunConfig__load_node_list_in_parallel](https://w3id.org/neat/ensmallenRunConfig__load_node_list_in_parallel)
 
 
 ## Domain and Range

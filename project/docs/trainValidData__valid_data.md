@@ -4,7 +4,7 @@
 
 Positive and negative graph data for ML validation.
 
-URI: [https://w3id.org/neat_schema/trainValidData__valid_data](https://w3id.org/neat_schema/trainValidData__valid_data)
+URI: [https://w3id.org/neat/trainValidData__valid_data](https://w3id.org/neat/trainValidData__valid_data)
 
 
 ## Domain and Range

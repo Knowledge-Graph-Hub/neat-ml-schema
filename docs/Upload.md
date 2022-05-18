@@ -5,7 +5,7 @@ _Configuration for uploading to Amazon S3 bucket._
 
 
 
-URI: [https://w3id.org/neat_schema/:Upload](https://w3id.org/neat_schema/:Upload)
+URI: [https://w3id.org/neat/:Upload](https://w3id.org/neat/:Upload)
 
 
 
@@ -46,20 +46,20 @@ URI: [https://w3id.org/neat_schema/:Upload](https://w3id.org/neat_schema/:Upload
 ```yaml
 name: Upload
 description: Configuration for uploading to Amazon S3 bucket.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   s3_bucket:
     name: s3_bucket
     description: Bucket name.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   s3_bucket_dir:
     name: s3_bucket_dir
     description: Bucket path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   extra_args:
     name: extra_args
     description: Extra keyword arguments (**kwargs).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     inlined_as_list: false
 
@@ -72,26 +72,26 @@ attributes:
 ```yaml
 name: Upload
 description: Configuration for uploading to Amazon S3 bucket.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   s3_bucket:
     name: s3_bucket
     description: Bucket name.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: s3_bucket
     owner: Upload
     range: string
   s3_bucket_dir:
     name: s3_bucket_dir
     description: Bucket path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: s3_bucket_dir
     owner: Upload
     range: string
   extra_args:
     name: extra_args
     description: Extra keyword arguments (**kwargs).
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: extra_args
     owner: Upload

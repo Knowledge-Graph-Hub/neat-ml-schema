@@ -2,7 +2,7 @@
 _The path to the file with the unique node type names._
 
 
-URI: [https://w3id.org/neat_schema/:node_type_path](https://w3id.org/neat_schema/:node_type_path)
+URI: [https://w3id.org/neat/:node_type_path](https://w3id.org/neat/:node_type_path)
 
 
 

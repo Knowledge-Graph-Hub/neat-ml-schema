@@ -4,7 +4,7 @@
 
 Embeddings file name.
 
-URI: [https://w3id.org/neat_schema/embeddingsConfig__filename](https://w3id.org/neat_schema/embeddingsConfig__filename)
+URI: [https://w3id.org/neat/embeddingsConfig__filename](https://w3id.org/neat/embeddingsConfig__filename)
 
 
 ## Domain and Range

@@ -2,7 +2,7 @@
 _Positive edges file path._
 
 
-URI: [https://w3id.org/neat_schema/:pos_edge_filepath](https://w3id.org/neat_schema/:pos_edge_filepath)
+URI: [https://w3id.org/neat/:pos_edge_filepath](https://w3id.org/neat/:pos_edge_filepath)
 
 
 

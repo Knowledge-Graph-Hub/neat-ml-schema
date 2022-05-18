@@ -2,7 +2,7 @@
 _Parameters specific to sklearn._
 
 
-URI: [https://w3id.org/neat_schema/:sklearn_params](https://w3id.org/neat_schema/:sklearn_params)
+URI: [https://w3id.org/neat/:sklearn_params](https://w3id.org/neat/:sklearn_params)
 
 
 

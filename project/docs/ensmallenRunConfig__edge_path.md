@@ -4,7 +4,7 @@
 
 The path to the file with the edge list.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_path](https://w3id.org/neat_schema/ensmallenRunConfig__edge_path)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_path](https://w3id.org/neat/ensmallenRunConfig__edge_path)
 
 
 ## Domain and Range

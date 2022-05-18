@@ -2,7 +2,7 @@
 _Node embeddings parameters._
 
 
-URI: [https://w3id.org/neat_schema/:node_embeddings_params](https://w3id.org/neat_schema/:node_embeddings_params)
+URI: [https://w3id.org/neat/:node_embeddings_params](https://w3id.org/neat/:node_embeddings_params)
 
 
 

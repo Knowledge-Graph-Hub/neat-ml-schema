@@ -4,7 +4,7 @@
 
 Number of iterations.
 
-URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__iterations](https://w3id.org/neat_schema/nodeEmbeddingsParams__iterations)
+URI: [https://w3id.org/neat/nodeEmbeddingsParams__iterations](https://w3id.org/neat/nodeEmbeddingsParams__iterations)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 Name of the classifier.
 
-URI: [https://w3id.org/neat_schema/classifier__classifier_name](https://w3id.org/neat_schema/classifier__classifier_name)
+URI: [https://w3id.org/neat/classifier__classifier_name](https://w3id.org/neat/classifier__classifier_name)
 
 
 ## Domain and Range

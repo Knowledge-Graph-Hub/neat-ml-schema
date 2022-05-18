@@ -2,7 +2,7 @@
 _Node type ID column name._
 
 
-URI: [https://w3id.org/neat_schema/:node_types_ids_column](https://w3id.org/neat_schema/:node_types_ids_column)
+URI: [https://w3id.org/neat/:node_types_ids_column](https://w3id.org/neat/:node_types_ids_column)
 
 
 

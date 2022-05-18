@@ -4,7 +4,7 @@
 
 Size of the context and target nodes for node2vec.
 
-URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__window_size](https://w3id.org/neat_schema/nodeEmbeddingsParams__window_size)
+URI: [https://w3id.org/neat/nodeEmbeddingsParams__window_size](https://w3id.org/neat/nodeEmbeddingsParams__window_size)
 
 
 ## Domain and Range

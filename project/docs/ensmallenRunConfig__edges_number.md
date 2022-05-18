@@ -4,7 +4,7 @@
 
 The expected number of edges. Note that this must be the EXACT number of edges in the graph.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edges_number](https://w3id.org/neat_schema/ensmallenRunConfig__edges_number)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edges_number](https://w3id.org/neat/ensmallenRunConfig__edges_number)
 
 
 ## Domain and Range

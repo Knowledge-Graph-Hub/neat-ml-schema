@@ -4,7 +4,7 @@
 
 The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_number](https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_number)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_types_number](https://w3id.org/neat/ensmallenRunConfig__edge_types_number)
 
 
 ## Domain and Range

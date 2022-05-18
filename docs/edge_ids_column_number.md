@@ -2,7 +2,7 @@
 _The number of the column of the edges file from where to load the edge IDs._
 
 
-URI: [https://w3id.org/neat_schema/:edge_ids_column_number](https://w3id.org/neat_schema/:edge_ids_column_number)
+URI: [https://w3id.org/neat/:edge_ids_column_number](https://w3id.org/neat/:edge_ids_column_number)
 
 
 

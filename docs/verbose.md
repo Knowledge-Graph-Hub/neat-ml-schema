@@ -2,7 +2,7 @@
 _Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action._
 
 
-URI: [https://w3id.org/neat_schema/:verbose](https://w3id.org/neat_schema/:verbose)
+URI: [https://w3id.org/neat/:verbose](https://w3id.org/neat/:verbose)
 
 
 

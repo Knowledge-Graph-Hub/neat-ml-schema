@@ -4,7 +4,7 @@
 
 Utilities called at certain points during model training.
 
-URI: [https://w3id.org/neat_schema/ClassifierCallback](https://w3id.org/neat_schema/ClassifierCallback)
+URI: [https://w3id.org/neat/ClassifierCallback](https://w3id.org/neat/ClassifierCallback)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]++-%20callbacks%200..*>[ClassifierCallback&#124;type:string%20%3F;monitor:string%20%3F;patience:integer%20%3F;min_delta:integer%20%3F;verbose:boolean%20%3F;mode:classifier_callback_mode_enum%20%3F],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]++-%20callbacks%200..*>[ClassifierCallback&#124;type:string%20%3F;monitor:string%20%3F;patience:integer%20%3F;min_delta:integer%20%3F;verbose:boolean%20%3F;mode:classifier_callback_mode_enum%20%3F],[ClassifierCallbackContainer])

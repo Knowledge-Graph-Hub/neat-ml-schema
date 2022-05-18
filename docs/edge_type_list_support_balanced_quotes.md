@@ -2,7 +2,7 @@
 _Whether to support balanced quotes while reading the edge type list._
 
 
-URI: [https://w3id.org/neat_schema/:edge_type_list_support_balanced_quotes](https://w3id.org/neat_schema/:edge_type_list_support_balanced_quotes)
+URI: [https://w3id.org/neat/:edge_type_list_support_balanced_quotes](https://w3id.org/neat/:edge_type_list_support_balanced_quotes)
 
 
 

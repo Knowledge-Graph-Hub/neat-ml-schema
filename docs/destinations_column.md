@@ -2,7 +2,7 @@
 _The name of the column of the edges file from where to load the destinaton nodes._
 
 
-URI: [https://w3id.org/neat_schema/:destinations_column](https://w3id.org/neat_schema/:destinations_column)
+URI: [https://w3id.org/neat/:destinations_column](https://w3id.org/neat/:destinations_column)
 
 
 

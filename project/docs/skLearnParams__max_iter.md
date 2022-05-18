@@ -4,7 +4,7 @@
 
 Maximum iterations.
 
-URI: [https://w3id.org/neat_schema/skLearnParams__max_iter](https://w3id.org/neat_schema/skLearnParams__max_iter)
+URI: [https://w3id.org/neat/skLearnParams__max_iter](https://w3id.org/neat/skLearnParams__max_iter)
 
 
 ## Domain and Range

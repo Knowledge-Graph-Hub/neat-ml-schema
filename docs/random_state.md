@@ -2,7 +2,7 @@
 _Random seed._
 
 
-URI: [https://w3id.org/neat_schema/:random_state](https://w3id.org/neat_schema/:random_state)
+URI: [https://w3id.org/neat/:random_state](https://w3id.org/neat/:random_state)
 
 
 

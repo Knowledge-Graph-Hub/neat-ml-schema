@@ -5,7 +5,7 @@ _File paths for positive an negative edge data._
 
 
 
-URI: [https://w3id.org/neat_schema/:PosNegData](https://w3id.org/neat_schema/:PosNegData)
+URI: [https://w3id.org/neat/:PosNegData](https://w3id.org/neat/:PosNegData)
 
 
 
@@ -51,16 +51,16 @@ URI: [https://w3id.org/neat_schema/:PosNegData](https://w3id.org/neat_schema/:Po
 ```yaml
 name: PosNegData
 description: File paths for positive an negative edge data.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   pos_edge_filepath:
     name: pos_edge_filepath
     description: Positive edges file path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   neg_edge_filepath:
     name: neg_edge_filepath
     description: Negative edges file path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -71,19 +71,19 @@ attributes:
 ```yaml
 name: PosNegData
 description: File paths for positive an negative edge data.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   pos_edge_filepath:
     name: pos_edge_filepath
     description: Positive edges file path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: pos_edge_filepath
     owner: PosNegData
     range: string
   neg_edge_filepath:
     name: neg_edge_filepath
     description: Negative edges file path.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: neg_edge_filepath
     owner: PosNegData
     range: string

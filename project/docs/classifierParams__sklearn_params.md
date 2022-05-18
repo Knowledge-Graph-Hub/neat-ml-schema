@@ -4,7 +4,7 @@
 
 Parameters specific to sklearn.
 
-URI: [https://w3id.org/neat_schema/classifierParams__sklearn_params](https://w3id.org/neat_schema/classifierParams__sklearn_params)
+URI: [https://w3id.org/neat/classifierParams__sklearn_params](https://w3id.org/neat/classifierParams__sklearn_params)
 
 
 ## Domain and Range

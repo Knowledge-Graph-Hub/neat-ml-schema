@@ -4,7 +4,7 @@
 
 Trained model used for prediction.
 
-URI: [https://w3id.org/neat_schema/ApplyTrainedModel](https://w3id.org/neat_schema/ApplyTrainedModel)
+URI: [https://w3id.org/neat/ApplyTrainedModel](https://w3id.org/neat/ApplyTrainedModel)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeType],[NodeType]<node_types%200..1-++[ApplyTrainedModel&#124;model_id:string%20%3F;cutoff:string%20%3F;outfile:string%20%3F],[ApplyTrainedModelsContainer]++-%20models%200..*>[ApplyTrainedModel],[ApplyTrainedModelsContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeType],[NodeType]<node_types%200..1-++[ApplyTrainedModel&#124;model_id:string%20%3F;cutoff:string%20%3F;outfile:string%20%3F],[ApplyTrainedModelsContainer]++-%20models%200..*>[ApplyTrainedModel],[ApplyTrainedModelsContainer])

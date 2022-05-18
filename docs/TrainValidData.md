@@ -5,7 +5,7 @@ _Postive and negative training and validation graph data filepaths._
 
 
 
-URI: [https://w3id.org/neat_schema/:TrainValidData](https://w3id.org/neat_schema/:TrainValidData)
+URI: [https://w3id.org/neat/:TrainValidData](https://w3id.org/neat/:TrainValidData)
 
 
 
@@ -50,17 +50,17 @@ URI: [https://w3id.org/neat_schema/:TrainValidData](https://w3id.org/neat_schema
 ```yaml
 name: TrainValidData
 description: Postive and negative training and validation graph data filepaths.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   train_data:
     name: train_data
     description: Positive and negative graph data for ML training.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: PosNegData
   valid_data:
     name: valid_data
     description: Positive and negative graph data for ML validation.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: PosNegData
 
 ```
@@ -72,19 +72,19 @@ attributes:
 ```yaml
 name: TrainValidData
 description: Postive and negative training and validation graph data filepaths.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   train_data:
     name: train_data
     description: Positive and negative graph data for ML training.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: train_data
     owner: TrainValidData
     range: PosNegData
   valid_data:
     name: valid_data
     description: Positive and negative graph data for ML validation.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: valid_data
     owner: TrainValidData
     range: PosNegData

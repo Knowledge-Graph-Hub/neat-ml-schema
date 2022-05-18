@@ -4,7 +4,7 @@
 
 A container of metrics for a trained classifier.
 
-URI: [https://w3id.org/neat_schema/MetricContainer](https://w3id.org/neat_schema/MetricContainer)
+URI: [https://w3id.org/neat/MetricContainer](https://w3id.org/neat/MetricContainer)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Metric]<metrics%200..*-++[MetricContainer],[TFKerasParams]++-%20metrics_config%200..1>[MetricContainer],[TFKerasParams],[Metric])](https://yuml.me/diagram/nofunky;dir:TB/class/[Metric]<metrics%200..*-++[MetricContainer],[TFKerasParams]++-%20metrics_config%200..1>[MetricContainer],[TFKerasParams],[Metric])

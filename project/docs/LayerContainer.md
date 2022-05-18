@@ -4,7 +4,7 @@
 
 A container of neural network layers.
 
-URI: [https://w3id.org/neat_schema/LayerContainer](https://w3id.org/neat_schema/LayerContainer)
+URI: [https://w3id.org/neat/LayerContainer](https://w3id.org/neat/LayerContainer)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Layer]<layers%200..*-++[LayerContainer],[TFKerasParams]++-%20layers_config%200..1>[LayerContainer],[TFKerasParams],[Layer])](https://yuml.me/diagram/nofunky;dir:TB/class/[Layer]<layers%200..*-++[LayerContainer],[TFKerasParams]++-%20layers_config%200..1>[LayerContainer],[TFKerasParams],[Layer])

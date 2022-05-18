@@ -2,7 +2,7 @@
 _Area under curve (AUC) to be calculated._
 
 
-URI: [https://w3id.org/neat_schema/:curve](https://w3id.org/neat_schema/:curve)
+URI: [https://w3id.org/neat/:curve](https://w3id.org/neat/:curve)
 
 
 

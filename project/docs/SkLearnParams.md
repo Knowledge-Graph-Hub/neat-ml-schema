@@ -4,7 +4,7 @@
 
 Parameters specific to the SKLearn library.
 
-URI: [https://w3id.org/neat_schema/SkLearnParams](https://w3id.org/neat_schema/SkLearnParams)
+URI: [https://w3id.org/neat/SkLearnParams](https://w3id.org/neat/SkLearnParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierParams]++-%20sklearn_params%200..1>[SkLearnParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F],[ClassifierParams])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierParams]++-%20sklearn_params%200..1>[SkLearnParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F],[ClassifierParams])

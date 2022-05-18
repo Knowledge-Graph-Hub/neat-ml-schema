@@ -2,7 +2,7 @@
 _Type of classifier._
 
 
-URI: [https://w3id.org/neat_schema/:classifier_type](https://w3id.org/neat_schema/:classifier_type)
+URI: [https://w3id.org/neat/:classifier_type](https://w3id.org/neat/:classifier_type)
 
 
 

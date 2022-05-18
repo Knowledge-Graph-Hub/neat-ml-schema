@@ -5,7 +5,7 @@ _Node embeddings parameters._
 
 
 
-URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParams](https://w3id.org/neat_schema/:NodeEmbeddingsParams)
+URI: [https://w3id.org/neat/:NodeEmbeddingsParams](https://w3id.org/neat/:NodeEmbeddingsParams)
 
 
 
@@ -55,27 +55,27 @@ URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParams](https://w3id.org/neat_
 ```yaml
 name: NodeEmbeddingsParams
 description: Node embeddings parameters.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   method_name:
     name: method_name
     description: Name of the node embedding method.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: node_embed_method_enum
   walk_length:
     name: walk_length
     description: Maximal length of the walks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   batch_size:
     name: batch_size
     description: Number of nodes to include in a single batch.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   window_size:
     name: window_size
     description: Size of the context and target nodes for node2vec.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   return_weight:
     name: return_weight
@@ -83,7 +83,7 @@ attributes:
       just came from Having this higher tends the walks to be more like a Breadth-First
       Search. Having this very high  (> 2) makes search very local. Equal to the inverse
       of p in the Node2Vec paper.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: float
   explore_weight:
     name: explore_weight
@@ -92,12 +92,12 @@ attributes:
       more like a Depth-First Search. Having this very high makes search more outward.
       Having this very low makes search very local. Equal to the inverse of q in the
       Node2Vec paper.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: float
   iterations:
     name: iterations
     description: Number of iterations.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
 
 ```
@@ -109,33 +109,33 @@ attributes:
 ```yaml
 name: NodeEmbeddingsParams
 description: Node embeddings parameters.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   method_name:
     name: method_name
     description: Name of the node embedding method.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: method_name
     owner: NodeEmbeddingsParams
     range: node_embed_method_enum
   walk_length:
     name: walk_length
     description: Maximal length of the walks.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: walk_length
     owner: NodeEmbeddingsParams
     range: integer
   batch_size:
     name: batch_size
     description: Number of nodes to include in a single batch.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: batch_size
     owner: NodeEmbeddingsParams
     range: integer
   window_size:
     name: window_size
     description: Size of the context and target nodes for node2vec.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: window_size
     owner: NodeEmbeddingsParams
     range: integer
@@ -145,7 +145,7 @@ attributes:
       just came from Having this higher tends the walks to be more like a Breadth-First
       Search. Having this very high  (> 2) makes search very local. Equal to the inverse
       of p in the Node2Vec paper.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: return_weight
     owner: NodeEmbeddingsParams
     range: float
@@ -156,14 +156,14 @@ attributes:
       more like a Depth-First Search. Having this very high makes search more outward.
       Having this very low makes search very local. Equal to the inverse of q in the
       Node2Vec paper.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: explore_weight
     owner: NodeEmbeddingsParams
     range: float
   iterations:
     name: iterations
     description: Number of iterations.
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: iterations
     owner: NodeEmbeddingsParams
     range: integer

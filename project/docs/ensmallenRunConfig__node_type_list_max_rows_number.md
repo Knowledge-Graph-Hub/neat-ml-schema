@@ -4,7 +4,7 @@
 
 The maximum number of lines to be loaded from the node types file.
 
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_max_rows_number](https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_max_rows_number)
+URI: [https://w3id.org/neat/ensmallenRunConfig__node_type_list_max_rows_number](https://w3id.org/neat/ensmallenRunConfig__node_type_list_max_rows_number)
 
 
 ## Domain and Range

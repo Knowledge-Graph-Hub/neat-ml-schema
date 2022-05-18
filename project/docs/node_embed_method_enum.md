@@ -4,7 +4,7 @@
 
 Enums containing possible values for node embedding methods.
 
-URI: [https://w3id.org/neat_schema/node_embed_method_enum](https://w3id.org/neat_schema/node_embed_method_enum)
+URI: [https://w3id.org/neat/node_embed_method_enum](https://w3id.org/neat/node_embed_method_enum)
 
 
 ## Other properties

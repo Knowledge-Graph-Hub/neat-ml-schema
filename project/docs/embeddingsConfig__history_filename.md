@@ -4,7 +4,7 @@
 
 Embeddings history file name.
 
-URI: [https://w3id.org/neat_schema/embeddingsConfig__history_filename](https://w3id.org/neat_schema/embeddingsConfig__history_filename)
+URI: [https://w3id.org/neat/embeddingsConfig__history_filename](https://w3id.org/neat/embeddingsConfig__history_filename)
 
 
 ## Domain and Range

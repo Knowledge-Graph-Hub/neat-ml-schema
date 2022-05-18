@@ -2,7 +2,7 @@
 _Number of epochs with no improvement after which training will be stopped._
 
 
-URI: [https://w3id.org/neat_schema/:patience](https://w3id.org/neat_schema/:patience)
+URI: [https://w3id.org/neat/:patience](https://w3id.org/neat/:patience)
 
 
 

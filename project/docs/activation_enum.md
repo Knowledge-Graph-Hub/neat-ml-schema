@@ -4,7 +4,7 @@
 
 Enums containing possible values for activation functions.
 
-URI: [https://w3id.org/neat_schema/activation_enum](https://w3id.org/neat_schema/activation_enum)
+URI: [https://w3id.org/neat/activation_enum](https://w3id.org/neat/activation_enum)
 
 
 ## Other properties

@@ -2,7 +2,7 @@
 _Cutoff filter._
 
 
-URI: [https://w3id.org/neat_schema/:cutoff](https://w3id.org/neat_schema/:cutoff)
+URI: [https://w3id.org/neat/:cutoff](https://w3id.org/neat/:cutoff)
 
 
 
