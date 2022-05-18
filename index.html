@@ -719,323 +719,331 @@
 </tr>
 <tr>
 <td><a href="node_types_column_number/">node_types_column_number</a></td>
-<td>None</td>
+<td>Node type column number.</td>
 </tr>
 <tr>
 <td><a href="node_types_column/">node_types_column</a></td>
-<td>None</td>
+<td>Node type column name.</td>
 </tr>
 <tr>
 <td><a href="node_types_ids_column_number/">node_types_ids_column_number</a></td>
-<td>None</td>
+<td>Node type ID column number.</td>
 </tr>
 <tr>
 <td><a href="node_types_ids_column/">node_types_ids_column</a></td>
-<td>None</td>
+<td>Node type ID column name.</td>
 </tr>
 <tr>
 <td><a href="node_types_number/">node_types_number</a></td>
-<td>None</td>
+<td>The number of the unique node types. This will be used in order to allocate the correct size for the data structure.</td>
 </tr>
 <tr>
 <td><a href="numeric_node_type_ids/">numeric_node_type_ids</a></td>
-<td>None</td>
+<td>Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.</td>
 </tr>
 <tr>
 <td><a href="minimum_node_type_id/">minimum_node_type_id</a></td>
-<td>None</td>
+<td>The minimum node type ID to be used when using numeric node type IDs.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_header/">node_type_list_header</a></td>
-<td>None</td>
+<td>Whether the node type file has an header.</td>
+</tr>
+<tr>
+<td><a href="node_type_list_support_balanced_quotes/">node_type_list_support_balanced_quotes</a></td>
+<td>Whether to support balanced quotes.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_rows_to_skip/">node_type_list_rows_to_skip</a></td>
-<td>None</td>
+<td>The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_is_correct/">node_type_list_is_correct</a></td>
-<td>None</td>
+<td>Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_max_rows_number/">node_type_list_max_rows_number</a></td>
-<td>None</td>
+<td>The maximum number of lines to be loaded from the node types file.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_comment_symbol/">node_type_list_comment_symbol</a></td>
-<td>None</td>
+<td>The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.</td>
 </tr>
 <tr>
 <td><a href="load_node_type_list_in_parallel/">load_node_type_list_in_parallel</a></td>
-<td>None</td>
+<td>Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.</td>
 </tr>
 <tr>
 <td><a href="node_path/">node_path</a></td>
-<td>None</td>
+<td>The path to the file with the unique node names.</td>
 </tr>
 <tr>
 <td><a href="node_list_separator/">node_list_separator</a></td>
-<td>None</td>
+<td>The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.</td>
 </tr>
 <tr>
 <td><a href="node_list_header/">node_list_header</a></td>
-<td>None</td>
+<td>Whether the nodes file has an header.</td>
+</tr>
+<tr>
+<td><a href="node_list_support_balanced_quotes/">node_list_support_balanced_quotes</a></td>
+<td>Whether to support balanced quotes.</td>
 </tr>
 <tr>
 <td><a href="node_list_rows_to_skip/">node_list_rows_to_skip</a></td>
-<td>None</td>
+<td>Number of rows to skip in the node list file.</td>
 </tr>
 <tr>
 <td><a href="node_list_is_correct/">node_list_is_correct</a></td>
-<td>None</td>
+<td>Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.</td>
 </tr>
 <tr>
 <td><a href="node_list_max_rows_number/">node_list_max_rows_number</a></td>
-<td>None</td>
+<td>The maximum number of lines to be loaded from the nodes file.</td>
 </tr>
 <tr>
 <td><a href="node_list_comment_symbol/">node_list_comment_symbol</a></td>
-<td>None</td>
+<td>The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.</td>
 </tr>
 <tr>
 <td><a href="default_node_type/">default_node_type</a></td>
-<td>None</td>
+<td>The node type to be used when the node type for a given node in the node file is None.</td>
 </tr>
 <tr>
 <td><a href="nodes_column_number/">nodes_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the node file from where to load the node names.</td>
 </tr>
 <tr>
 <td><a href="nodes_column/">nodes_column</a></td>
-<td>None</td>
+<td>The name of the column of the node file from where to load the node names.</td>
 </tr>
 <tr>
 <td><a href="node_types_separator/">node_types_separator</a></td>
-<td>None</td>
+<td>The node types separator.</td>
 </tr>
 <tr>
 <td><a href="node_list_node_types_column_number/">node_list_node_types_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the node file from where to load the node types.</td>
 </tr>
 <tr>
 <td><a href="node_list_node_types_column/">node_list_node_types_column</a></td>
-<td>None</td>
+<td>The name of the column of the node file from where to load the node types.</td>
 </tr>
 <tr>
 <td><a href="node_ids_column/">node_ids_column</a></td>
-<td>None</td>
+<td>The name of the column of the node file from where to load the node IDs.</td>
 </tr>
 <tr>
 <td><a href="node_ids_column_number/">node_ids_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the node file from where to load the node IDs</td>
 </tr>
 <tr>
 <td><a href="nodes_number/">nodes_number</a></td>
-<td>JsonObj(range='integer')</td>
+<td>The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.</td>
 </tr>
 <tr>
 <td><a href="minimum_node_id/">minimum_node_id</a></td>
-<td>None</td>
+<td>The minimum node ID to be used, when loading the node IDs as numerical.</td>
 </tr>
 <tr>
 <td><a href="numeric_node_ids/">numeric_node_ids</a></td>
-<td>None</td>
+<td>Whether to load the numeric node IDs as numeric.</td>
 </tr>
 <tr>
 <td><a href="node_list_numeric_node_type_ids/">node_list_numeric_node_type_ids</a></td>
-<td>None</td>
+<td>Whether to load the node types IDs in the node file to be numeric.</td>
 </tr>
 <tr>
 <td><a href="skip_node_types_if_unavailable/">skip_node_types_if_unavailable</a></td>
-<td>None</td>
+<td>Whether to skip the node types without raising an error if these are unavailable.</td>
 </tr>
 <tr>
 <td><a href="load_node_list_in_parallel/">load_node_list_in_parallel</a></td>
-<td>None</td>
+<td>Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.</td>
 </tr>
 <tr>
 <td><a href="edge_type_path/">edge_type_path</a></td>
-<td>None</td>
+<td>The path to the file with the unique edge type names.</td>
 </tr>
 <tr>
 <td><a href="edge_types_column_number/">edge_types_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edge types file from where to load the edge types.</td>
 </tr>
 <tr>
 <td><a href="edge_types_column/">edge_types_column</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="edge_types_ids_column_number/">edge_types_ids_column_number</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="edge_types_ids_column/">edge_types_ids_column</a></td>
-<td>None</td>
+<td>The name of the column of the edge types file from where to load the edge types.</td>
 </tr>
 <tr>
 <td><a href="edge_types_number/">edge_types_number</a></td>
-<td>None</td>
+<td>The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.</td>
 </tr>
 <tr>
 <td><a href="numeric_edge_type_ids/">numeric_edge_type_ids</a></td>
-<td>None</td>
+<td>Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.</td>
 </tr>
 <tr>
 <td><a href="minimum_edge_type_id/">minimum_edge_type_id</a></td>
-<td>None</td>
+<td>The minimum edge type ID to be used when using numeric edge type IDs.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_separator/">edge_type_list_separator</a></td>
-<td>None</td>
+<td>The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_header/">edge_type_list_header</a></td>
-<td>None</td>
+<td>Whether the edge type file has an header.</td>
+</tr>
+<tr>
+<td><a href="edge_type_list_support_balanced_quotes/">edge_type_list_support_balanced_quotes</a></td>
+<td>Whether to support balanced quotes while reading the edge type list.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_rows_to_skip/">edge_type_list_rows_to_skip</a></td>
-<td>None</td>
+<td>Number of rows to skip in the edge type list file.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_is_correct/">edge_type_list_is_correct</a></td>
-<td>None</td>
+<td>Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_max_rows_number/">edge_type_list_max_rows_number</a></td>
-<td>None</td>
+<td>The maximum number of lines to be loaded from the edge types file.</td>
 </tr>
 <tr>
 <td><a href="edge_type_list_comment_symbol/">edge_type_list_comment_symbol</a></td>
-<td>None</td>
+<td>The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.</td>
 </tr>
 <tr>
 <td><a href="load_edge_type_list_in_parallel/">load_edge_type_list_in_parallel</a></td>
-<td>None</td>
+<td>Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.</td>
 </tr>
 <tr>
 <td><a href="edge_path/">edge_path</a></td>
-<td>None</td>
+<td>The path to the file with the edge list.</td>
 </tr>
 <tr>
 <td><a href="edge_list_separator/">edge_list_separator</a></td>
-<td>None</td>
+<td>The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.</td>
 </tr>
 <tr>
 <td><a href="edge_list_header/">edge_list_header</a></td>
-<td>None</td>
+<td>Whether the edges file has an header.</td>
+</tr>
+<tr>
+<td><a href="edge_list_support_balanced_quotes/">edge_list_support_balanced_quotes</a></td>
+<td>Whether to support balanced quotes while reading the edge list.</td>
 </tr>
 <tr>
 <td><a href="edge_list_rows_to_skip/">edge_list_rows_to_skip</a></td>
-<td>None</td>
+<td>Number of rows to skip in the edge list file.</td>
 </tr>
 <tr>
 <td><a href="sources_column_number/">sources_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edges file from where to load the source nodes.</td>
 </tr>
 <tr>
 <td><a href="sources_column/">sources_column</a></td>
-<td>None</td>
+<td>The name of the column of the edges file from where to load the source nodes.</td>
 </tr>
 <tr>
 <td><a href="destinations_column_number/">destinations_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edges file from where to load the destinaton nodes.</td>
 </tr>
 <tr>
 <td><a href="destinations_column/">destinations_column</a></td>
-<td>None</td>
+<td>The name of the column of the edges file from where to load the destinaton nodes.</td>
 </tr>
 <tr>
 <td><a href="edge_list_edge_types_column_number/">edge_list_edge_types_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edges file from where to load the edge types.</td>
 </tr>
 <tr>
 <td><a href="edge_list_edge_types_column/">edge_list_edge_types_column</a></td>
-<td>None</td>
+<td>The name of the column of the edges file from where to load the edge types.</td>
 </tr>
 <tr>
 <td><a href="default_edge_type/">default_edge_type</a></td>
-<td>None</td>
+<td>The edge type to be used when the edge type for a given edge in the edge file is None.</td>
 </tr>
 <tr>
 <td><a href="weights_column_number/">weights_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edges file from where to load the edge weights.</td>
 </tr>
 <tr>
 <td><a href="weights_column/">weights_column</a></td>
-<td>None</td>
+<td>The name of the column of the edges file from where to load the edge weights.</td>
 </tr>
 <tr>
 <td><a href="default_weight/">default_weight</a></td>
-<td>None</td>
+<td>The edge weight to be used when the edge weight for a given edge in the edge file is None.</td>
 </tr>
 <tr>
 <td><a href="edge_ids_column/">edge_ids_column</a></td>
-<td>None</td>
+<td>The name of the column of the edges file from where to load the edge IDs.</td>
 </tr>
 <tr>
 <td><a href="edge_ids_column_number/">edge_ids_column_number</a></td>
-<td>None</td>
+<td>The number of the column of the edges file from where to load the edge IDs.</td>
 </tr>
 <tr>
 <td><a href="edge_list_numeric_edge_type_ids/">edge_list_numeric_edge_type_ids</a></td>
-<td>None</td>
+<td>Whether to load the edge type IDs as numeric from the edge list.</td>
 </tr>
 <tr>
 <td><a href="edge_list_numeric_node_ids/">edge_list_numeric_node_ids</a></td>
-<td>None</td>
+<td>Whether to load the edge node IDs as numeric from the edge list.</td>
 </tr>
 <tr>
 <td><a href="skip_weights_if_unavailable/">skip_weights_if_unavailable</a></td>
-<td>None</td>
+<td>Whether to skip the weights without raising an error if these are unavailable.</td>
 </tr>
 <tr>
 <td><a href="skip_edge_types_if_unavailable/">skip_edge_types_if_unavailable</a></td>
-<td>None</td>
+<td>Whether to skip the edge types without raising an error if these are unavailable.</td>
 </tr>
 <tr>
 <td><a href="edge_list_is_complete/">edge_list_is_complete</a></td>
-<td>None</td>
+<td>Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.</td>
 </tr>
 <tr>
 <td><a href="edge_list_may_contain_duplicates/">edge_list_may_contain_duplicates</a></td>
-<td>None</td>
+<td>Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.</td>
 </tr>
 <tr>
 <td><a href="edge_list_is_sorted/">edge_list_is_sorted</a></td>
-<td>None</td>
+<td>Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.</td>
 </tr>
 <tr>
 <td><a href="edge_list_is_correct/">edge_list_is_correct</a></td>
-<td>None</td>
+<td>Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.</td>
 </tr>
 <tr>
 <td><a href="edge_list_max_rows_number/">edge_list_max_rows_number</a></td>
-<td>None</td>
+<td>The maximum number of lines to be loaded from the edges file.</td>
 </tr>
 <tr>
 <td><a href="edge_list_comment_symbol/">edge_list_comment_symbol</a></td>
-<td>None</td>
+<td>The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.</td>
 </tr>
 <tr>
 <td><a href="edges_number/">edges_number</a></td>
-<td>None</td>
+<td>The expected number of edges. Note that this must be the EXACT number of edges in the graph.</td>
 </tr>
 <tr>
 <td><a href="load_edge_list_in_parallel/">load_edge_list_in_parallel</a></td>
-<td>None</td>
+<td>Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.</td>
 </tr>
 <tr>
 <td><a href="may_have_singletons/">may_have_singletons</a></td>
-<td>None</td>
+<td>Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.</td>
 </tr>
 <tr>
 <td><a href="may_have_singleton_with_selfloops/">may_have_singleton_with_selfloops</a></td>
-<td>None</td>
+<td>Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.</td>
 </tr>
 <tr>
 <td><a href="directed/">directed</a></td>
-<td>None</td>
+<td>Whether to load the graph as directed or undirected.</td>
 </tr>
 </tbody>
 </table>

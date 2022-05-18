@@ -401,6 +401,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_support_balanced_quotes/</loc>
+         <lastmod>2022-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_method/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
@@ -441,6 +446,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_support_balanced_quotes/</loc>
+         <lastmod>2022-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_path/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
@@ -452,16 +462,6 @@
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_column_number/</loc>
-         <lastmod>2022-05-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_ids_column/</loc>
-         <lastmod>2022-05-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_ids_column_number/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -696,6 +696,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_support_balanced_quotes/</loc>
+         <lastmod>2022-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_path/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
@@ -727,6 +732,11 @@
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_separator/</loc>
+         <lastmod>2022-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_support_balanced_quotes/</loc>
          <lastmod>2022-05-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
