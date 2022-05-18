@@ -14,7 +14,7 @@ SRC = src
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
 DOCDIR = docs
-EXCEL_DIR = $(DEST)/excel
+EXCEL_DIR = $(DEST)/excel # Added by H2
 
 # basename of a YAML file in model/
 .PHONY: all clean
@@ -41,7 +41,7 @@ install:
 	poetry install
 .PHONY: install
 
-all: gen-project gendoc gen-excel
+all: gen-project gendoc gen-excel # gen-excel added by H2
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 
@@ -79,14 +79,14 @@ $(PYMODEL):
 $(DOCDIR):
 	mkdir -p $@
 
-$(EXCEL_DIR):
+$(EXCEL_DIR): # Added by H2
 	mkdir -p $@
 
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
 
-gen-excel: $(EXCEL_DIR)
+gen-excel: $(EXCEL_DIR) # Added by H2
 	$(RUN) gen-excel --output $(EXCEL_DIR)/NEAT_schema.xlsx $(SOURCE_SCHEMA_PATH)
 
 testdoc: gendoc serve
@@ -110,6 +110,7 @@ git-status:
 clean:
 	rm -rf $(DEST)
 	rm -rf tmp
-	rm -rf docs
+	rm -rf docs 
+# rm -rf docs added by H2
 
 include project.Makefile
