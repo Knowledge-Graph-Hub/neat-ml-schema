@@ -1,6 +1,6 @@
 name: Auto-deployment of Documentation
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -25,14 +25,17 @@ jobs:
     
     - name: Build documentation.
       run: |
-        mkdir gh-pages
-        poetry run gen-doc -d gh-pages src/linkml/NEAT_schema.yaml
+        touch docs/.nojekyll
+        poetry run gen-doc -d docs src/linkml/NEAT_schema.yaml
+        poetry run mkdocs gh-deploy
+      # mkdir gh-pages
+      # poetry run gen-doc -d gh-pages src/linkml/NEAT_schema.yaml
         
 
-    - name: Deploy documentation.
-      if: ${{ github.event_name == 'push' }}
-      uses: JamesIves/github-pages-deploy-action@v4.3.0
-      with:
-        branch: gh-pages
-        force: true
-        folder: gh-pages
+    # - name: Deploy documentation.
+    #   if: ${{ github.event_name == 'push' }}
+    #   uses: JamesIves/github-pages-deploy-action@v4.3.0
+    #   with:
+    #     branch: gh-pages
+    #     force: true
+    #     folder: gh-pages
