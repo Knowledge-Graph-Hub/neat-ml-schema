@@ -519,27 +519,27 @@
 </tr>
 <tr>
 <td><a href="walk_length/">walk_length</a></td>
-<td>None</td>
+<td>Maximal length of the walks.</td>
 </tr>
 <tr>
 <td><a href="batch_size/">batch_size</a></td>
-<td>None</td>
+<td>Number of nodes to include in a single batch.</td>
 </tr>
 <tr>
 <td><a href="window_size/">window_size</a></td>
-<td>None</td>
+<td>Size of the context and target nodes for node2vec.</td>
 </tr>
 <tr>
 <td><a href="return_weight/">return_weight</a></td>
-<td>None</td>
+<td>Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (&gt; 2) makes search very local. Equal to the inverse of p in the Node2Vec paper.</td>
 </tr>
 <tr>
 <td><a href="explore_weight/">explore_weight</a></td>
-<td>None</td>
+<td>Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper.</td>
 </tr>
 <tr>
 <td><a href="iterations/">iterations</a></td>
-<td>None</td>
+<td>Number of iterations.</td>
 </tr>
 <tr>
 <td><a href="classifiers/">classifiers</a></td>
@@ -711,11 +711,11 @@
 </tr>
 <tr>
 <td><a href="node_type_path/">node_type_path</a></td>
-<td>None</td>
+<td>The path to the file with the unique node type names.</td>
 </tr>
 <tr>
 <td><a href="node_type_list_separator/">node_type_list_separator</a></td>
-<td>None</td>
+<td>The separator to use for the node types file.</td>
 </tr>
 <tr>
 <td><a href="node_types_column_number/">node_types_column_number</a></td>
@@ -831,7 +831,7 @@
 </tr>
 <tr>
 <td><a href="nodes_number/">nodes_number</a></td>
-<td>None</td>
+<td>JsonObj(range='integer')</td>
 </tr>
 <tr>
 <td><a href="minimum_node_id/">minimum_node_id</a></td>
