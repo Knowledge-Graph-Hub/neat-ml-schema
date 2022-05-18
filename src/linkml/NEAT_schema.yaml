@@ -201,7 +201,9 @@ classes:
     description: Metrics of a trained classifier (model).
     attributes:
       type:
+        description: Metric type.
       name: {}
+        description: Metric name.
       curve:
         description: Area under curve (AUC) to be calculated.
   
