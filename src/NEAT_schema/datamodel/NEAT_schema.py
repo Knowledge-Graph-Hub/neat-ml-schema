@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-18T15:02:26
+# Generation date: 2022-05-18T15:19:24
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -1085,22 +1085,33 @@ class EnsmallenRunConfig(YAMLRoot):
 
 # Enumerations
 class NodeEmbedMethodEnum(EnumDefinitionImpl):
-
-    SkipGram = PermissibleValue(text="SkipGram")
-    CBOW = PermissibleValue(text="CBOW")
-    GloVe = PermissibleValue(text="GloVe")
-    Siamese = PermissibleValue(text="Siamese")
-    TransE = PermissibleValue(text="TransE")
+    """
+    Enums containing possible values for node embedding methods.
+    """
+    SkipGram = PermissibleValue(text="SkipGram",
+                                       description="Skip-gram is used to predict the context word for a given target word. It's reverse of CBOW algorithm.")
+    CBOW = PermissibleValue(text="CBOW",
+                               description="Continuous Bag of Words Model (CBOW). In the CBOW model, the distributed representations of context (or surrounding words) are combined to predict the word in the middle.")
+    GloVe = PermissibleValue(text="GloVe",
+                                 description="GloVe is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.")
+    Siamese = PermissibleValue(text="Siamese",
+                                     description="A Siamese neural network (sometimes called a twin neural network) is an artificial neural network that uses the same weights while working in tandem on two different input vectors to compute comparable output vectors.")
+    TransE = PermissibleValue(text="TransE",
+                                   description="TransE, or Translating Embeddings for Modeling Multi-relational Data, lets us embed the contents of a knowledge graph by assigning vectors to nodes and edge types (a.k.a. predicates) and, for each subject-predicate-object triple, minimizing the distance between the object vector and the translation of the subject vector along the predicate vector.")
     SimplE = PermissibleValue(text="SimplE")
-    TransH = PermissibleValue(text="TransH")
+    TransH = PermissibleValue(text="TransH",
+                                   description="TransH defines a hyperplane for each relationship r, and uses the translation vector r and normal vector w of the relationship r on the plane to represent it.")
     TransR = PermissibleValue(text="TransR")
 
     _defn = EnumDefinition(
         name="NodeEmbedMethodEnum",
+        description="Enums containing possible values for node embedding methods.",
     )
 
 class EdgeMethodEnum(EnumDefinitionImpl):
-
+    """
+    Enums containing possible values for node edge methods.
+    """
     Average = PermissibleValue(text="Average")
     Hadamard = PermissibleValue(text="Hadamard")
     Sum = PermissibleValue(text="Sum")
@@ -1110,10 +1121,13 @@ class EdgeMethodEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="EdgeMethodEnum",
+        description="Enums containing possible values for node edge methods.",
     )
 
 class ActivationEnum(EnumDefinitionImpl):
-
+    """
+    Enums containing possible values for activation functions.
+    """
     linear = PermissibleValue(text="linear",
                                    description="Linear function.")
     relu = PermissibleValue(text="relu",
@@ -1127,6 +1141,7 @@ class ActivationEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ActivationEnum",
+        description="Enums containing possible values for activation functions.",
     )
 
 class OptimizerEnum(EnumDefinitionImpl):

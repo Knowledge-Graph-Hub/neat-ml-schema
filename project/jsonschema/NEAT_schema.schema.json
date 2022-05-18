@@ -1,7 +1,7 @@
 {
    "$defs": {
       "ActivationEnum": {
-         "description": "",
+         "description": "Enums containing possible values for activation functions.",
          "enum": [
             "linear",
             "relu",
@@ -203,7 +203,7 @@
          "type": "object"
       },
       "EdgeMethodEnum": {
-         "description": "",
+         "description": "Enums containing possible values for node edge methods.",
          "enum": [
             "Average",
             "Hadamard",
@@ -709,7 +709,7 @@
          "type": "object"
       },
       "NodeEmbedMethodEnum": {
-         "description": "",
+         "description": "Enums containing possible values for node embedding methods.",
          "enum": [
             "SkipGram",
             "CBOW",

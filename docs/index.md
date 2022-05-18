@@ -189,9 +189,9 @@ URI: https://w3id.org/neat_schema
 
 | Enums | Description |
 | --- | --- |
-| [NodeEmbedMethodEnum](NodeEmbedMethodEnum.md) | None | 
-| [EdgeMethodEnum](EdgeMethodEnum.md) | None | 
-| [ActivationEnum](ActivationEnum.md) | None | 
+| [NodeEmbedMethodEnum](NodeEmbedMethodEnum.md) | Enums containing possible values for node embedding methods. | 
+| [EdgeMethodEnum](EdgeMethodEnum.md) | Enums containing possible values for node edge methods. | 
+| [ActivationEnum](ActivationEnum.md) | Enums containing possible values for activation functions. | 
 | [OptimizerEnum](OptimizerEnum.md) | Optimizers that can be implemented in the neural network. | 
 | [ClassifierCallbackModeEnum](ClassifierCallbackModeEnum.md) | Callback modes while fitting a classifier. | 
 

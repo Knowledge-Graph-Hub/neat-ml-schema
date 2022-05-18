@@ -1,6 +1,6 @@
 # ActivationEnum
 
-None
+Enums containing possible values for activation functions.
 
 URI: ActivationEnum
 
