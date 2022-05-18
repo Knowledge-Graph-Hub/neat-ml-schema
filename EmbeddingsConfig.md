@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:EmbeddingsConfig](https://w3id.org/neat_sche
 | ---  | --- | --- | --- | --- |
 | [filename](filename.md) | [string](string.md) | 0..1 | None  | . |
 | [history_filename](history_filename.md) | [string](string.md) | 0..1 | None  | . |
-| [node_embeddings_params](node_embeddings_params.md) | [NodeEmbeddingsParamsConfig](NodeEmbeddingsParamsConfig.md) | 0..1 | None  | . |
+| [node_embeddings_params](node_embeddings_params.md) | [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | 0..1 | None  | . |
 | [tsne_filename](tsne_filename.md) | [string](string.md) | 0..1 | None  | . |
 
 
@@ -55,7 +55,7 @@ attributes:
   node_embeddings_params:
     name: node_embeddings_params
     from_schema: https://w3id.org/neat_schema
-    range: NodeEmbeddingsParamsConfig
+    range: NodeEmbeddingsParams
   tsne_filename:
     name: tsne_filename
     from_schema: https://w3id.org/neat_schema
@@ -87,7 +87,7 @@ attributes:
     from_schema: https://w3id.org/neat_schema
     alias: node_embeddings_params
     owner: EmbeddingsConfig
-    range: NodeEmbeddingsParamsConfig
+    range: NodeEmbeddingsParams
   tsne_filename:
     name: tsne_filename
     from_schema: https://w3id.org/neat_schema
