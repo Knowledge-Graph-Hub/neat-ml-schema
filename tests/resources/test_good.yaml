@@ -161,8 +161,9 @@ ClassifierContainer:
       edge_method: Average
       outfile: "model_lr0_test_yaml.h5"
       parameters:
-        random_state: 42
-        max_iter: 100
+        sklearn_params:
+          random_state: 42
+          max_iter: 100
 
 
     - classifier_id: lr_1
@@ -171,8 +172,9 @@ ClassifierContainer:
       edge_method: Average
       outfile: "model_lr1_test_yaml.h5"
       parameters:
-        random_state: 24
-        max_iter: 100
+        sklearn_params:
+          random_state: 24
+          max_iter: 100
 
     - classifier_id: mlp_1
       classifier_name: neural network
@@ -181,59 +183,60 @@ ClassifierContainer:
       outfile: "model_mlp_test_yaml.h5"
       history_filename: "mlp_classifier_history.json"
       parameters:
-        layers_config:
-          layers:
-            - type: tensorflow.keras.layers.Input
-              parameters:
-                units: 128
-                activation: relu
-            - type: tensorflow.keras.layers.Dense
-              parameters:
-                units: 128
-                activation: relu
-            - type: tensorflow.keras.layers.Dense
-              parameters:
-                units: 32
-                activation: relu
-            - type: tensorflow.keras.layers.Dropout
-              parameters:
-                rate: 0.5
-            - type: tensorflow.keras.layers.Dense
-              parameters:
-                units: 16
-                activation: relu
-            - type: tensorflow.keras.layers.Dense
-              parameters:
-                units: 1
-                activation: sigmoid
+        tf_keras_params:
+          layers_config:
+            layers:
+              - type: tensorflow.keras.layers.Input
+                parameters:
+                  units: 128
+                  activation: relu
+              - type: tensorflow.keras.layers.Dense
+                parameters:
+                  units: 128
+                  activation: relu
+              - type: tensorflow.keras.layers.Dense
+                parameters:
+                  units: 32
+                  activation: relu
+              - type: tensorflow.keras.layers.Dropout
+                parameters:
+                  rate: 0.5
+              - type: tensorflow.keras.layers.Dense
+                parameters:
+                  units: 16
+                  activation: relu
+              - type: tensorflow.keras.layers.Dense
+                parameters:
+                  units: 1
+                  activation: sigmoid
 
-        optimizer: nadam
+          optimizer: nadam
+          loss: binary_crossentropy
+          
+          metrics_config:
+            metrics:
+              - name: auprc
+                type: tensorflow.keras.metrics.AUC
+                curve: PR
+              - name: auroc
+                type: tensorflow.keras.metrics.AUC
+                curve: ROC
+              - name: Recall
+                type: tensorflow.keras.metrics.Recall
+              - name: Precision
+                type: tensorflow.keras.metrics.Precision
+              - type: accuracy
 
-        metrics_config:
-          metrics:
-            - name: binary_crossentropy
-            - name: auprc
-              type: tensorflow.keras.metrics.AUC
-              curve: PR
-            - name: auroc
-              type: tensorflow.keras.metrics.AUC
-              curve: ROC
-            - name: Recall
-              type: tensorflow.keras.metrics.Recall
-            - name: Precision
-              type: tensorflow.keras.metrics.Precision
-            - type: accuracy
-
-        fit_config:
-          batch_size: 4096
-          epochs: 5
-          callbacks_list:
-            callbacks:
-              - type: tensorflow.keras.callbacks.EarlyStopping
-                monitor: val_loss
-                patience: 5
-                min_delta: 0.001
-              - type: tensorflow.keras.callbacks.ReduceLROnPlateau
+          fit_config:
+            batch_size: 4096
+            epochs: 5
+            callbacks_list:
+              callbacks:
+                - type: tensorflow.keras.callbacks.EarlyStopping
+                  monitor: val_loss
+                  patience: 5
+                  min_delta: 0.001
+                - type: tensorflow.keras.callbacks.ReduceLROnPlateau
 
 # apply_trained_classifier:
 #   -

@@ -90,12 +90,25 @@ classes:
   ClassifierParams:
     description: Parameters needed to define a classifier.
     attributes:
+      sklearn_params:
+        range: SkLearnParams
+      tf_keras_params:
+        range: TFKerasParams
+
+  SkLearnParams:
+    description: Parameters specific to the SKLearn library.
+    attributes:
       random_state:
         range: integer
       max_iter:
         range: integer
+
+  TFKerasParams:
+    description: Parameters specific to the Tensorflow Keras library.
+    attributes:
       layers_config:
         range: LayerContainer
+      loss:
       metrics_config:
         range: MetricContainer
       optimizer:
@@ -140,8 +153,8 @@ classes:
   Metric:
     description: Metrics of a trained classifier (model).
     attributes:
-      name: {}
       type:
+      name: {}
       curve:
   
   ClassifierFitParams:

@@ -7,23 +7,26 @@
 # license: https://fsf.org/
 
 import dataclasses
-import sys
 import re
-from jsonasobj2 import JsonObj, as_dict
-from typing import Optional, List, Union, Dict, ClassVar, Any
+import sys
 from dataclasses import dataclass
-from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+from typing import Any, ClassVar, Dict, List, Optional, Union
 
-from linkml_runtime.utils.slot import Slot
-from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
-from linkml_runtime.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
-from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
-from linkml_runtime.utils.enumerations import EnumDefinitionImpl
-from rdflib import Namespace, URIRef
-from linkml_runtime.utils.curienamespace import CurieNamespace
+from jsonasobj2 import JsonObj, as_dict
+from linkml_runtime.linkml_model.meta import (EnumDefinition, PermissibleValue,
+                                              PvFormulaOptions)
 from linkml_runtime.linkml_model.types import Boolean, Float, Integer, String
-from linkml_runtime.utils.metamodelcore import Bool
+from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.utils.dataclass_extensions_376 import \
+    dataclasses_init_fn_with_kwargs
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from linkml_runtime.utils.formatutils import camelcase, sfx, underscore
+from linkml_runtime.utils.metamodelcore import (Bool, bnode, empty_dict,
+                                                empty_list)
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.yamlutils import (YAMLRoot, extended_float,
+                                            extended_int, extended_str)
+from rdflib import Namespace, URIRef
 
 metamodel_version = "1.7.0"
 version = None
@@ -32,8 +35,8 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-DEFAULT_ = CurieNamespace('', 'https://w3id.org/neat_schema/')
+LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
+DEFAULT_ = CurieNamespace("", "https://w3id.org/neat_schema/")
 
 
 # Types
@@ -41,21 +44,28 @@ DEFAULT_ = CurieNamespace('', 'https://w3id.org/neat_schema/')
 # Class references
 
 
-
 @dataclass
 class NeatConfiguration(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NeatConfiguration")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NeatConfiguration"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "NeatConfiguration"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NeatConfiguration")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NeatConfiguration"
+    )
 
     graph_data: Optional[Union[dict, "GraphDataConfiguration"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.graph_data is not None and not isinstance(self.graph_data, GraphDataConfiguration):
-            self.graph_data = GraphDataConfiguration(**as_dict(self.graph_data))
+        if self.graph_data is not None and not isinstance(
+            self.graph_data, GraphDataConfiguration
+        ):
+            self.graph_data = GraphDataConfiguration(
+                **as_dict(self.graph_data)
+            )
 
         super().__post_init__(**kwargs)
 
@@ -64,16 +74,22 @@ class NeatConfiguration(YAMLRoot):
 class GraphDataConfiguration(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/GraphDataConfiguration")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/GraphDataConfiguration"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "GraphDataConfiguration"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/GraphDataConfiguration")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/GraphDataConfiguration"
+    )
 
     graph: Optional[Union[dict, "EnsmallenRunConfig"]] = None
     data: Optional[Union[dict, "TrainValidData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.graph is not None and not isinstance(self.graph, EnsmallenRunConfig):
+        if self.graph is not None and not isinstance(
+            self.graph, EnsmallenRunConfig
+        ):
             self.graph = EnsmallenRunConfig(**as_dict(self.graph))
 
         if self.data is not None and not isinstance(self.data, TrainValidData):
@@ -86,19 +102,27 @@ class GraphDataConfiguration(YAMLRoot):
 class TrainValidData(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/TrainValidData")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/TrainValidData"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "TrainValidData"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/TrainValidData")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/TrainValidData"
+    )
 
     train_data: Optional[Union[dict, "PosNegData"]] = None
     valid_data: Optional[Union[dict, "PosNegData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.train_data is not None and not isinstance(self.train_data, PosNegData):
+        if self.train_data is not None and not isinstance(
+            self.train_data, PosNegData
+        ):
             self.train_data = PosNegData(**as_dict(self.train_data))
 
-        if self.valid_data is not None and not isinstance(self.valid_data, PosNegData):
+        if self.valid_data is not None and not isinstance(
+            self.valid_data, PosNegData
+        ):
             self.valid_data = PosNegData(**as_dict(self.valid_data))
 
         super().__post_init__(**kwargs)
@@ -108,19 +132,27 @@ class TrainValidData(YAMLRoot):
 class PosNegData(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/PosNegData")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/PosNegData"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "PosNegData"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/PosNegData")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/PosNegData"
+    )
 
     pos_edge_filepath: Optional[str] = None
     neg_edge_filepath: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.pos_edge_filepath is not None and not isinstance(self.pos_edge_filepath, str):
+        if self.pos_edge_filepath is not None and not isinstance(
+            self.pos_edge_filepath, str
+        ):
             self.pos_edge_filepath = str(self.pos_edge_filepath)
 
-        if self.neg_edge_filepath is not None and not isinstance(self.neg_edge_filepath, str):
+        if self.neg_edge_filepath is not None and not isinstance(
+            self.neg_edge_filepath, str
+        ):
             self.neg_edge_filepath = str(self.neg_edge_filepath)
 
         super().__post_init__(**kwargs)
@@ -130,27 +162,41 @@ class PosNegData(YAMLRoot):
 class EmbeddingsConfig(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/EmbeddingsConfig")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/EmbeddingsConfig"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "EmbeddingsConfig"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/EmbeddingsConfig")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/EmbeddingsConfig"
+    )
 
     filename: Optional[str] = None
     history_filename: Optional[str] = None
-    node_embeddings_params: Optional[Union[dict, "NodeEmbeddingsParams"]] = None
+    node_embeddings_params: Optional[
+        Union[dict, "NodeEmbeddingsParams"]
+    ] = None
     tsne_filename: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.filename is not None and not isinstance(self.filename, str):
             self.filename = str(self.filename)
 
-        if self.history_filename is not None and not isinstance(self.history_filename, str):
+        if self.history_filename is not None and not isinstance(
+            self.history_filename, str
+        ):
             self.history_filename = str(self.history_filename)
 
-        if self.node_embeddings_params is not None and not isinstance(self.node_embeddings_params, NodeEmbeddingsParams):
-            self.node_embeddings_params = NodeEmbeddingsParams(**as_dict(self.node_embeddings_params))
+        if self.node_embeddings_params is not None and not isinstance(
+            self.node_embeddings_params, NodeEmbeddingsParams
+        ):
+            self.node_embeddings_params = NodeEmbeddingsParams(
+                **as_dict(self.node_embeddings_params)
+            )
 
-        if self.tsne_filename is not None and not isinstance(self.tsne_filename, str):
+        if self.tsne_filename is not None and not isinstance(
+            self.tsne_filename, str
+        ):
             self.tsne_filename = str(self.tsne_filename)
 
         super().__post_init__(**kwargs)
@@ -160,10 +206,14 @@ class EmbeddingsConfig(YAMLRoot):
 class NodeEmbeddingsParams(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParams")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NodeEmbeddingsParams"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "NodeEmbeddingsParams"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParams")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NodeEmbeddingsParams"
+    )
 
     method_name: Optional[Union[str, "NodeEmbedMethodEnum"]] = None
     walk_length: Optional[int] = None
@@ -174,25 +224,39 @@ class NodeEmbeddingsParams(YAMLRoot):
     iterations: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.method_name is not None and not isinstance(self.method_name, NodeEmbedMethodEnum):
+        if self.method_name is not None and not isinstance(
+            self.method_name, NodeEmbedMethodEnum
+        ):
             self.method_name = NodeEmbedMethodEnum(self.method_name)
 
-        if self.walk_length is not None and not isinstance(self.walk_length, int):
+        if self.walk_length is not None and not isinstance(
+            self.walk_length, int
+        ):
             self.walk_length = int(self.walk_length)
 
-        if self.batch_size is not None and not isinstance(self.batch_size, int):
+        if self.batch_size is not None and not isinstance(
+            self.batch_size, int
+        ):
             self.batch_size = int(self.batch_size)
 
-        if self.window_size is not None and not isinstance(self.window_size, int):
+        if self.window_size is not None and not isinstance(
+            self.window_size, int
+        ):
             self.window_size = int(self.window_size)
 
-        if self.return_weight is not None and not isinstance(self.return_weight, float):
+        if self.return_weight is not None and not isinstance(
+            self.return_weight, float
+        ):
             self.return_weight = float(self.return_weight)
 
-        if self.explore_weight is not None and not isinstance(self.explore_weight, float):
+        if self.explore_weight is not None and not isinstance(
+            self.explore_weight, float
+        ):
             self.explore_weight = float(self.explore_weight)
 
-        if self.iterations is not None and not isinstance(self.iterations, int):
+        if self.iterations is not None and not isinstance(
+            self.iterations, int
+        ):
             self.iterations = int(self.iterations)
 
         super().__post_init__(**kwargs)
@@ -203,19 +267,31 @@ class ClassifierContainer(YAMLRoot):
     """
     A container with multiple classifiers in it.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierContainer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierContainer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ClassifierContainer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierContainer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierContainer"
+    )
 
-    classifiers: Optional[Union[Union[dict, "Classifier"], List[Union[dict, "Classifier"]]]] = empty_list()
+    classifiers: Optional[
+        Union[Union[dict, "Classifier"], List[Union[dict, "Classifier"]]]
+    ] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.classifiers, list):
-            self.classifiers = [self.classifiers] if self.classifiers is not None else []
-        self.classifiers = [v if isinstance(v, Classifier) else Classifier(**as_dict(v)) for v in self.classifiers]
+            self.classifiers = (
+                [self.classifiers] if self.classifiers is not None else []
+            )
+        self.classifiers = [
+            v if isinstance(v, Classifier) else Classifier(**as_dict(v))
+            for v in self.classifiers
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -225,12 +301,17 @@ class Classifier(YAMLRoot):
     """
     ML classifiers to be trained-tested-validated and applied for predictions.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Classifier")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Classifier"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Classifier"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Classifier")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Classifier"
+    )
 
     classifier_id: Optional[str] = None
     classifier_name: Optional[str] = None
@@ -241,25 +322,37 @@ class Classifier(YAMLRoot):
     parameters: Optional[Union[dict, "ClassifierParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.classifier_id is not None and not isinstance(self.classifier_id, str):
+        if self.classifier_id is not None and not isinstance(
+            self.classifier_id, str
+        ):
             self.classifier_id = str(self.classifier_id)
 
-        if self.classifier_name is not None and not isinstance(self.classifier_name, str):
+        if self.classifier_name is not None and not isinstance(
+            self.classifier_name, str
+        ):
             self.classifier_name = str(self.classifier_name)
 
-        if self.classifier_type is not None and not isinstance(self.classifier_type, str):
+        if self.classifier_type is not None and not isinstance(
+            self.classifier_type, str
+        ):
             self.classifier_type = str(self.classifier_type)
 
-        if self.edge_method is not None and not isinstance(self.edge_method, EdgeMethodEnum):
+        if self.edge_method is not None and not isinstance(
+            self.edge_method, EdgeMethodEnum
+        ):
             self.edge_method = EdgeMethodEnum(self.edge_method)
 
         if self.outfile is not None and not isinstance(self.outfile, str):
             self.outfile = str(self.outfile)
 
-        if self.history_filename is not None and not isinstance(self.history_filename, str):
+        if self.history_filename is not None and not isinstance(
+            self.history_filename, str
+        ):
             self.history_filename = str(self.history_filename)
 
-        if self.parameters is not None and not isinstance(self.parameters, ClassifierParams):
+        if self.parameters is not None and not isinstance(
+            self.parameters, ClassifierParams
+        ):
             self.parameters = ClassifierParams(**as_dict(self.parameters))
 
         super().__post_init__(**kwargs)
@@ -270,12 +363,17 @@ class ClassifierParams(YAMLRoot):
     """
     Parameters needed to define a classifier.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierParams")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierParams"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ClassifierParams"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierParams")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierParams"
+    )
 
     random_state: Optional[int] = None
     max_iter: Optional[int] = None
@@ -285,22 +383,34 @@ class ClassifierParams(YAMLRoot):
     fit_config: Optional[Union[dict, "ClassifierFitParams"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.random_state is not None and not isinstance(self.random_state, int):
+        if self.random_state is not None and not isinstance(
+            self.random_state, int
+        ):
             self.random_state = int(self.random_state)
 
         if self.max_iter is not None and not isinstance(self.max_iter, int):
             self.max_iter = int(self.max_iter)
 
-        if self.layers_config is not None and not isinstance(self.layers_config, LayerContainer):
+        if self.layers_config is not None and not isinstance(
+            self.layers_config, LayerContainer
+        ):
             self.layers_config = LayerContainer(**as_dict(self.layers_config))
 
-        if self.metrics_config is not None and not isinstance(self.metrics_config, MetricContainer):
-            self.metrics_config = MetricContainer(**as_dict(self.metrics_config))
+        if self.metrics_config is not None and not isinstance(
+            self.metrics_config, MetricContainer
+        ):
+            self.metrics_config = MetricContainer(
+                **as_dict(self.metrics_config)
+            )
 
-        if self.optimizer is not None and not isinstance(self.optimizer, OptimizerEnum):
+        if self.optimizer is not None and not isinstance(
+            self.optimizer, OptimizerEnum
+        ):
             self.optimizer = OptimizerEnum(self.optimizer)
 
-        if self.fit_config is not None and not isinstance(self.fit_config, ClassifierFitParams):
+        if self.fit_config is not None and not isinstance(
+            self.fit_config, ClassifierFitParams
+        ):
             self.fit_config = ClassifierFitParams(**as_dict(self.fit_config))
 
         super().__post_init__(**kwargs)
@@ -311,19 +421,29 @@ class LayerContainer(YAMLRoot):
     """
     A container of neural network layers.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/LayerContainer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/LayerContainer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "LayerContainer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/LayerContainer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/LayerContainer"
+    )
 
-    layers: Optional[Union[Union[dict, "Layer"], List[Union[dict, "Layer"]]]] = empty_list()
+    layers: Optional[
+        Union[Union[dict, "Layer"], List[Union[dict, "Layer"]]]
+    ] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.layers, list):
             self.layers = [self.layers] if self.layers is not None else []
-        self.layers = [v if isinstance(v, Layer) else Layer(**as_dict(v)) for v in self.layers]
+        self.layers = [
+            v if isinstance(v, Layer) else Layer(**as_dict(v))
+            for v in self.layers
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -333,12 +453,17 @@ class Layer(YAMLRoot):
     """
     Layers for a neural network.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Layer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Layer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Layer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Layer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Layer"
+    )
 
     type: Optional[str] = None
     parameters: Optional[Union[dict, "LayerParams"]] = None
@@ -347,7 +472,9 @@ class Layer(YAMLRoot):
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
 
-        if self.parameters is not None and not isinstance(self.parameters, LayerParams):
+        if self.parameters is not None and not isinstance(
+            self.parameters, LayerParams
+        ):
             self.parameters = LayerParams(**as_dict(self.parameters))
 
         super().__post_init__(**kwargs)
@@ -358,12 +485,17 @@ class LayerParams(YAMLRoot):
     """
     Parameters for each layer of a neural network.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/LayerParams")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/LayerParams"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "LayerParams"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/LayerParams")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/LayerParams"
+    )
 
     units: Optional[int] = None
     activation: Optional[Union[str, "ActivationEnum"]] = None
@@ -373,7 +505,9 @@ class LayerParams(YAMLRoot):
         if self.units is not None and not isinstance(self.units, int):
             self.units = int(self.units)
 
-        if self.activation is not None and not isinstance(self.activation, ActivationEnum):
+        if self.activation is not None and not isinstance(
+            self.activation, ActivationEnum
+        ):
             self.activation = ActivationEnum(self.activation)
 
         if self.rate is not None and not isinstance(self.rate, float):
@@ -387,19 +521,29 @@ class MetricContainer(YAMLRoot):
     """
     A container of metrics for a trained classifier.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/MetricContainer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/MetricContainer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "MetricContainer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/MetricContainer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/MetricContainer"
+    )
 
-    metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
+    metrics: Optional[
+        Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]
+    ] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.metrics, list):
             self.metrics = [self.metrics] if self.metrics is not None else []
-        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
+        self.metrics = [
+            v if isinstance(v, Metric) else Metric(**as_dict(v))
+            for v in self.metrics
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -409,12 +553,17 @@ class Metric(YAMLRoot):
     """
     Metrics of a trained classifier (model).
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Metric")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Metric"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Metric"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Metric")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Metric"
+    )
 
     name: Optional[str] = None
     type: Optional[str] = None
@@ -438,26 +587,37 @@ class ClassifierFitParams(YAMLRoot):
     """
     Paramters for fitting a classifier.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierFitParams")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierFitParams"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ClassifierFitParams"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierFitParams")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierFitParams"
+    )
 
     batch_size: Optional[int] = None
     epochs: Optional[int] = None
     callbacks_list: Optional[Union[dict, "ClassifierCallbackContainer"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.batch_size is not None and not isinstance(self.batch_size, int):
+        if self.batch_size is not None and not isinstance(
+            self.batch_size, int
+        ):
             self.batch_size = int(self.batch_size)
 
         if self.epochs is not None and not isinstance(self.epochs, int):
             self.epochs = int(self.epochs)
 
-        if self.callbacks_list is not None and not isinstance(self.callbacks_list, ClassifierCallbackContainer):
-            self.callbacks_list = ClassifierCallbackContainer(**as_dict(self.callbacks_list))
+        if self.callbacks_list is not None and not isinstance(
+            self.callbacks_list, ClassifierCallbackContainer
+        ):
+            self.callbacks_list = ClassifierCallbackContainer(
+                **as_dict(self.callbacks_list)
+            )
 
         super().__post_init__(**kwargs)
 
@@ -467,19 +627,36 @@ class ClassifierCallbackContainer(YAMLRoot):
     """
     A container of classifier callbacks.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallbackContainer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierCallbackContainer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ClassifierCallbackContainer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallbackContainer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierCallbackContainer"
+    )
 
-    callbacks: Optional[Union[Union[dict, "ClassifierCallback"], List[Union[dict, "ClassifierCallback"]]]] = empty_list()
+    callbacks: Optional[
+        Union[
+            Union[dict, "ClassifierCallback"],
+            List[Union[dict, "ClassifierCallback"]],
+        ]
+    ] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.callbacks, list):
-            self.callbacks = [self.callbacks] if self.callbacks is not None else []
-        self.callbacks = [v if isinstance(v, ClassifierCallback) else ClassifierCallback(**as_dict(v)) for v in self.callbacks]
+            self.callbacks = (
+                [self.callbacks] if self.callbacks is not None else []
+            )
+        self.callbacks = [
+            v
+            if isinstance(v, ClassifierCallback)
+            else ClassifierCallback(**as_dict(v))
+            for v in self.callbacks
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -489,12 +666,17 @@ class ClassifierCallback(YAMLRoot):
     """
     Callbacks for a classifier.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallback")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierCallback"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ClassifierCallback"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ClassifierCallback")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ClassifierCallback"
+    )
 
     type: Optional[str] = None
     monitor: Optional[str] = None
@@ -519,7 +701,9 @@ class ClassifierCallback(YAMLRoot):
         if self.verbose is not None and not isinstance(self.verbose, Bool):
             self.verbose = Bool(self.verbose)
 
-        if self.mode is not None and not isinstance(self.mode, ClassifierCallbackModeEnum):
+        if self.mode is not None and not isinstance(
+            self.mode, ClassifierCallbackModeEnum
+        ):
             self.mode = ClassifierCallbackModeEnum(self.mode)
 
         super().__post_init__(**kwargs)
@@ -530,19 +714,34 @@ class ApplyTrainedModelsContainer(YAMLRoot):
     """
     A container with multiple classifiers in it.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ApplyTrainedModelsContainer")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ApplyTrainedModelsContainer"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ApplyTrainedModelsContainer"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ApplyTrainedModelsContainer")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ApplyTrainedModelsContainer"
+    )
 
-    models: Optional[Union[Union[dict, "ApplyTrainedModel"], List[Union[dict, "ApplyTrainedModel"]]]] = empty_list()
+    models: Optional[
+        Union[
+            Union[dict, "ApplyTrainedModel"],
+            List[Union[dict, "ApplyTrainedModel"]],
+        ]
+    ] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.models, list):
             self.models = [self.models] if self.models is not None else []
-        self.models = [v if isinstance(v, ApplyTrainedModel) else ApplyTrainedModel(**as_dict(v)) for v in self.models]
+        self.models = [
+            v
+            if isinstance(v, ApplyTrainedModel)
+            else ApplyTrainedModel(**as_dict(v))
+            for v in self.models
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -552,12 +751,17 @@ class ApplyTrainedModel(YAMLRoot):
     """
     Trained model used for prediction.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ApplyTrainedModel")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ApplyTrainedModel"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "ApplyTrainedModel"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/ApplyTrainedModel")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/ApplyTrainedModel"
+    )
 
     model_id: Optional[str] = None
     node_types: Optional[Union[dict, "NodeType"]] = None
@@ -568,7 +772,9 @@ class ApplyTrainedModel(YAMLRoot):
         if self.model_id is not None and not isinstance(self.model_id, str):
             self.model_id = str(self.model_id)
 
-        if self.node_types is not None and not isinstance(self.node_types, NodeType):
+        if self.node_types is not None and not isinstance(
+            self.node_types, NodeType
+        ):
             self.node_types = NodeType(**as_dict(self.node_types))
 
         if self.cutoff is not None and not isinstance(self.cutoff, str):
@@ -584,10 +790,14 @@ class ApplyTrainedModel(YAMLRoot):
 class NodeType(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeType")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NodeType"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "NodeType"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeType")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/NodeType"
+    )
 
     source: Optional[Union[str, List[str]]] = empty_list()
     destination: Optional[Union[str, List[str]]] = empty_list()
@@ -595,11 +805,17 @@ class NodeType(YAMLRoot):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.source, list):
             self.source = [self.source] if self.source is not None else []
-        self.source = [v if isinstance(v, str) else str(v) for v in self.source]
+        self.source = [
+            v if isinstance(v, str) else str(v) for v in self.source
+        ]
 
         if not isinstance(self.destination, list):
-            self.destination = [self.destination] if self.destination is not None else []
-        self.destination = [v if isinstance(v, str) else str(v) for v in self.destination]
+            self.destination = (
+                [self.destination] if self.destination is not None else []
+            )
+        self.destination = [
+            v if isinstance(v, str) else str(v) for v in self.destination
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -608,10 +824,14 @@ class NodeType(YAMLRoot):
 class Upload(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Upload")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Upload"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Upload"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Upload")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Upload"
+    )
 
     s3_bucket: Optional[str] = None
     s3_bucket_dir: Optional[str] = None
@@ -621,12 +841,18 @@ class Upload(YAMLRoot):
         if self.s3_bucket is not None and not isinstance(self.s3_bucket, str):
             self.s3_bucket = str(self.s3_bucket)
 
-        if self.s3_bucket_dir is not None and not isinstance(self.s3_bucket_dir, str):
+        if self.s3_bucket_dir is not None and not isinstance(
+            self.s3_bucket_dir, str
+        ):
             self.s3_bucket_dir = str(self.s3_bucket_dir)
 
         if not isinstance(self.extra_args, list):
-            self.extra_args = [self.extra_args] if self.extra_args is not None else []
-        self.extra_args = [v if isinstance(v, str) else str(v) for v in self.extra_args]
+            self.extra_args = (
+                [self.extra_args] if self.extra_args is not None else []
+            )
+        self.extra_args = [
+            v if isinstance(v, str) else str(v) for v in self.extra_args
+        ]
 
         super().__post_init__(**kwargs)
 
@@ -636,17 +862,24 @@ class Target(YAMLRoot):
     """
     Path for output to be saved.
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Target")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Target"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "Target"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Target")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/Target"
+    )
 
     target_path: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.target_path is not None and not isinstance(self.target_path, str):
+        if self.target_path is not None and not isinstance(
+            self.target_path, str
+        ):
             self.target_path = str(self.target_path)
 
         super().__post_init__(**kwargs)
@@ -657,12 +890,17 @@ class EnsmallenRunConfig(YAMLRoot):
     """
     All params used by ensmallen's csv_reader
     """
+
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/EnsmallenRunConfig")
+    class_class_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/EnsmallenRunConfig"
+    )
     class_class_curie: ClassVar[str] = None
     class_name: ClassVar[str] = "EnsmallenRunConfig"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/EnsmallenRunConfig")
+    class_model_uri: ClassVar[URIRef] = URIRef(
+        "https://w3id.org/neat_schema/EnsmallenRunConfig"
+    )
 
     node_type_path: Optional[str] = None
     node_type_list_separator: Optional[str] = None
@@ -750,251 +988,475 @@ class EnsmallenRunConfig(YAMLRoot):
     name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.node_type_path is not None and not isinstance(self.node_type_path, str):
+        if self.node_type_path is not None and not isinstance(
+            self.node_type_path, str
+        ):
             self.node_type_path = str(self.node_type_path)
 
-        if self.node_type_list_separator is not None and not isinstance(self.node_type_list_separator, str):
+        if self.node_type_list_separator is not None and not isinstance(
+            self.node_type_list_separator, str
+        ):
             self.node_type_list_separator = str(self.node_type_list_separator)
 
-        if self.node_types_column_number is not None and not isinstance(self.node_types_column_number, int):
+        if self.node_types_column_number is not None and not isinstance(
+            self.node_types_column_number, int
+        ):
             self.node_types_column_number = int(self.node_types_column_number)
 
-        if self.node_types_column is not None and not isinstance(self.node_types_column, str):
+        if self.node_types_column is not None and not isinstance(
+            self.node_types_column, str
+        ):
             self.node_types_column = str(self.node_types_column)
 
-        if self.node_types_ids_column_number is not None and not isinstance(self.node_types_ids_column_number, int):
-            self.node_types_ids_column_number = int(self.node_types_ids_column_number)
+        if self.node_types_ids_column_number is not None and not isinstance(
+            self.node_types_ids_column_number, int
+        ):
+            self.node_types_ids_column_number = int(
+                self.node_types_ids_column_number
+            )
 
-        if self.node_types_ids_column is not None and not isinstance(self.node_types_ids_column, str):
+        if self.node_types_ids_column is not None and not isinstance(
+            self.node_types_ids_column, str
+        ):
             self.node_types_ids_column = str(self.node_types_ids_column)
 
-        if self.node_types_number is not None and not isinstance(self.node_types_number, int):
+        if self.node_types_number is not None and not isinstance(
+            self.node_types_number, int
+        ):
             self.node_types_number = int(self.node_types_number)
 
-        if self.numeric_node_type_ids is not None and not isinstance(self.numeric_node_type_ids, Bool):
+        if self.numeric_node_type_ids is not None and not isinstance(
+            self.numeric_node_type_ids, Bool
+        ):
             self.numeric_node_type_ids = Bool(self.numeric_node_type_ids)
 
-        if self.minimum_node_type_id is not None and not isinstance(self.minimum_node_type_id, int):
+        if self.minimum_node_type_id is not None and not isinstance(
+            self.minimum_node_type_id, int
+        ):
             self.minimum_node_type_id = int(self.minimum_node_type_id)
 
-        if self.node_type_list_header is not None and not isinstance(self.node_type_list_header, Bool):
+        if self.node_type_list_header is not None and not isinstance(
+            self.node_type_list_header, Bool
+        ):
             self.node_type_list_header = Bool(self.node_type_list_header)
 
-        if self.node_type_list_rows_to_skip is not None and not isinstance(self.node_type_list_rows_to_skip, int):
-            self.node_type_list_rows_to_skip = int(self.node_type_list_rows_to_skip)
+        if self.node_type_list_rows_to_skip is not None and not isinstance(
+            self.node_type_list_rows_to_skip, int
+        ):
+            self.node_type_list_rows_to_skip = int(
+                self.node_type_list_rows_to_skip
+            )
 
-        if self.node_type_list_is_correct is not None and not isinstance(self.node_type_list_is_correct, Bool):
-            self.node_type_list_is_correct = Bool(self.node_type_list_is_correct)
+        if self.node_type_list_is_correct is not None and not isinstance(
+            self.node_type_list_is_correct, Bool
+        ):
+            self.node_type_list_is_correct = Bool(
+                self.node_type_list_is_correct
+            )
 
-        if self.node_type_list_max_rows_number is not None and not isinstance(self.node_type_list_max_rows_number, int):
-            self.node_type_list_max_rows_number = int(self.node_type_list_max_rows_number)
+        if self.node_type_list_max_rows_number is not None and not isinstance(
+            self.node_type_list_max_rows_number, int
+        ):
+            self.node_type_list_max_rows_number = int(
+                self.node_type_list_max_rows_number
+            )
 
-        if self.node_type_list_comment_symbol is not None and not isinstance(self.node_type_list_comment_symbol, str):
-            self.node_type_list_comment_symbol = str(self.node_type_list_comment_symbol)
+        if self.node_type_list_comment_symbol is not None and not isinstance(
+            self.node_type_list_comment_symbol, str
+        ):
+            self.node_type_list_comment_symbol = str(
+                self.node_type_list_comment_symbol
+            )
 
-        if self.load_node_type_list_in_parallel is not None and not isinstance(self.load_node_type_list_in_parallel, Bool):
-            self.load_node_type_list_in_parallel = Bool(self.load_node_type_list_in_parallel)
+        if (
+            self.load_node_type_list_in_parallel is not None
+            and not isinstance(self.load_node_type_list_in_parallel, Bool)
+        ):
+            self.load_node_type_list_in_parallel = Bool(
+                self.load_node_type_list_in_parallel
+            )
 
         if self.node_path is not None and not isinstance(self.node_path, str):
             self.node_path = str(self.node_path)
 
-        if self.node_list_separator is not None and not isinstance(self.node_list_separator, str):
+        if self.node_list_separator is not None and not isinstance(
+            self.node_list_separator, str
+        ):
             self.node_list_separator = str(self.node_list_separator)
 
-        if self.node_list_header is not None and not isinstance(self.node_list_header, Bool):
+        if self.node_list_header is not None and not isinstance(
+            self.node_list_header, Bool
+        ):
             self.node_list_header = Bool(self.node_list_header)
 
-        if self.node_list_rows_to_skip is not None and not isinstance(self.node_list_rows_to_skip, int):
+        if self.node_list_rows_to_skip is not None and not isinstance(
+            self.node_list_rows_to_skip, int
+        ):
             self.node_list_rows_to_skip = int(self.node_list_rows_to_skip)
 
-        if self.node_list_is_correct is not None and not isinstance(self.node_list_is_correct, Bool):
+        if self.node_list_is_correct is not None and not isinstance(
+            self.node_list_is_correct, Bool
+        ):
             self.node_list_is_correct = Bool(self.node_list_is_correct)
 
-        if self.node_list_max_rows_number is not None and not isinstance(self.node_list_max_rows_number, int):
-            self.node_list_max_rows_number = int(self.node_list_max_rows_number)
+        if self.node_list_max_rows_number is not None and not isinstance(
+            self.node_list_max_rows_number, int
+        ):
+            self.node_list_max_rows_number = int(
+                self.node_list_max_rows_number
+            )
 
-        if self.node_list_comment_symbol is not None and not isinstance(self.node_list_comment_symbol, str):
+        if self.node_list_comment_symbol is not None and not isinstance(
+            self.node_list_comment_symbol, str
+        ):
             self.node_list_comment_symbol = str(self.node_list_comment_symbol)
 
-        if self.default_node_type is not None and not isinstance(self.default_node_type, str):
+        if self.default_node_type is not None and not isinstance(
+            self.default_node_type, str
+        ):
             self.default_node_type = str(self.default_node_type)
 
-        if self.nodes_column_number is not None and not isinstance(self.nodes_column_number, int):
+        if self.nodes_column_number is not None and not isinstance(
+            self.nodes_column_number, int
+        ):
             self.nodes_column_number = int(self.nodes_column_number)
 
-        if self.nodes_column is not None and not isinstance(self.nodes_column, str):
+        if self.nodes_column is not None and not isinstance(
+            self.nodes_column, str
+        ):
             self.nodes_column = str(self.nodes_column)
 
-        if self.node_types_separator is not None and not isinstance(self.node_types_separator, str):
+        if self.node_types_separator is not None and not isinstance(
+            self.node_types_separator, str
+        ):
             self.node_types_separator = str(self.node_types_separator)
 
-        if self.node_list_node_types_column_number is not None and not isinstance(self.node_list_node_types_column_number, int):
-            self.node_list_node_types_column_number = int(self.node_list_node_types_column_number)
+        if (
+            self.node_list_node_types_column_number is not None
+            and not isinstance(self.node_list_node_types_column_number, int)
+        ):
+            self.node_list_node_types_column_number = int(
+                self.node_list_node_types_column_number
+            )
 
-        if self.node_list_node_types_column is not None and not isinstance(self.node_list_node_types_column, str):
-            self.node_list_node_types_column = str(self.node_list_node_types_column)
+        if self.node_list_node_types_column is not None and not isinstance(
+            self.node_list_node_types_column, str
+        ):
+            self.node_list_node_types_column = str(
+                self.node_list_node_types_column
+            )
 
-        if self.node_ids_column is not None and not isinstance(self.node_ids_column, str):
+        if self.node_ids_column is not None and not isinstance(
+            self.node_ids_column, str
+        ):
             self.node_ids_column = str(self.node_ids_column)
 
-        if self.node_ids_column_number is not None and not isinstance(self.node_ids_column_number, int):
+        if self.node_ids_column_number is not None and not isinstance(
+            self.node_ids_column_number, int
+        ):
             self.node_ids_column_number = int(self.node_ids_column_number)
 
-        if self.nodes_number is not None and not isinstance(self.nodes_number, int):
+        if self.nodes_number is not None and not isinstance(
+            self.nodes_number, int
+        ):
             self.nodes_number = int(self.nodes_number)
 
-        if self.minimum_node_id is not None and not isinstance(self.minimum_node_id, int):
+        if self.minimum_node_id is not None and not isinstance(
+            self.minimum_node_id, int
+        ):
             self.minimum_node_id = int(self.minimum_node_id)
 
-        if self.numeric_node_ids is not None and not isinstance(self.numeric_node_ids, Bool):
+        if self.numeric_node_ids is not None and not isinstance(
+            self.numeric_node_ids, Bool
+        ):
             self.numeric_node_ids = Bool(self.numeric_node_ids)
 
-        if self.node_list_numeric_node_type_ids is not None and not isinstance(self.node_list_numeric_node_type_ids, Bool):
-            self.node_list_numeric_node_type_ids = Bool(self.node_list_numeric_node_type_ids)
+        if (
+            self.node_list_numeric_node_type_ids is not None
+            and not isinstance(self.node_list_numeric_node_type_ids, Bool)
+        ):
+            self.node_list_numeric_node_type_ids = Bool(
+                self.node_list_numeric_node_type_ids
+            )
 
-        if self.skip_node_types_if_unavailable is not None and not isinstance(self.skip_node_types_if_unavailable, Bool):
-            self.skip_node_types_if_unavailable = Bool(self.skip_node_types_if_unavailable)
+        if self.skip_node_types_if_unavailable is not None and not isinstance(
+            self.skip_node_types_if_unavailable, Bool
+        ):
+            self.skip_node_types_if_unavailable = Bool(
+                self.skip_node_types_if_unavailable
+            )
 
-        if self.load_node_list_in_parallel is not None and not isinstance(self.load_node_list_in_parallel, Bool):
-            self.load_node_list_in_parallel = Bool(self.load_node_list_in_parallel)
+        if self.load_node_list_in_parallel is not None and not isinstance(
+            self.load_node_list_in_parallel, Bool
+        ):
+            self.load_node_list_in_parallel = Bool(
+                self.load_node_list_in_parallel
+            )
 
-        if self.edge_type_path is not None and not isinstance(self.edge_type_path, str):
+        if self.edge_type_path is not None and not isinstance(
+            self.edge_type_path, str
+        ):
             self.edge_type_path = str(self.edge_type_path)
 
-        if self.edge_types_column_number is not None and not isinstance(self.edge_types_column_number, int):
+        if self.edge_types_column_number is not None and not isinstance(
+            self.edge_types_column_number, int
+        ):
             self.edge_types_column_number = int(self.edge_types_column_number)
 
-        if self.edge_types_column is not None and not isinstance(self.edge_types_column, str):
+        if self.edge_types_column is not None and not isinstance(
+            self.edge_types_column, str
+        ):
             self.edge_types_column = str(self.edge_types_column)
 
-        if self.edge_types_ids_column_number is not None and not isinstance(self.edge_types_ids_column_number, int):
-            self.edge_types_ids_column_number = int(self.edge_types_ids_column_number)
+        if self.edge_types_ids_column_number is not None and not isinstance(
+            self.edge_types_ids_column_number, int
+        ):
+            self.edge_types_ids_column_number = int(
+                self.edge_types_ids_column_number
+            )
 
-        if self.edge_types_ids_column is not None and not isinstance(self.edge_types_ids_column, str):
+        if self.edge_types_ids_column is not None and not isinstance(
+            self.edge_types_ids_column, str
+        ):
             self.edge_types_ids_column = str(self.edge_types_ids_column)
 
-        if self.edge_types_number is not None and not isinstance(self.edge_types_number, int):
+        if self.edge_types_number is not None and not isinstance(
+            self.edge_types_number, int
+        ):
             self.edge_types_number = int(self.edge_types_number)
 
-        if self.numeric_edge_type_ids is not None and not isinstance(self.numeric_edge_type_ids, Bool):
+        if self.numeric_edge_type_ids is not None and not isinstance(
+            self.numeric_edge_type_ids, Bool
+        ):
             self.numeric_edge_type_ids = Bool(self.numeric_edge_type_ids)
 
-        if self.minimum_edge_type_id is not None and not isinstance(self.minimum_edge_type_id, int):
+        if self.minimum_edge_type_id is not None and not isinstance(
+            self.minimum_edge_type_id, int
+        ):
             self.minimum_edge_type_id = int(self.minimum_edge_type_id)
 
-        if self.edge_type_list_separator is not None and not isinstance(self.edge_type_list_separator, str):
+        if self.edge_type_list_separator is not None and not isinstance(
+            self.edge_type_list_separator, str
+        ):
             self.edge_type_list_separator = str(self.edge_type_list_separator)
 
-        if self.edge_type_list_header is not None and not isinstance(self.edge_type_list_header, Bool):
+        if self.edge_type_list_header is not None and not isinstance(
+            self.edge_type_list_header, Bool
+        ):
             self.edge_type_list_header = Bool(self.edge_type_list_header)
 
-        if self.edge_type_list_rows_to_skip is not None and not isinstance(self.edge_type_list_rows_to_skip, int):
-            self.edge_type_list_rows_to_skip = int(self.edge_type_list_rows_to_skip)
+        if self.edge_type_list_rows_to_skip is not None and not isinstance(
+            self.edge_type_list_rows_to_skip, int
+        ):
+            self.edge_type_list_rows_to_skip = int(
+                self.edge_type_list_rows_to_skip
+            )
 
-        if self.edge_type_list_is_correct is not None and not isinstance(self.edge_type_list_is_correct, Bool):
-            self.edge_type_list_is_correct = Bool(self.edge_type_list_is_correct)
+        if self.edge_type_list_is_correct is not None and not isinstance(
+            self.edge_type_list_is_correct, Bool
+        ):
+            self.edge_type_list_is_correct = Bool(
+                self.edge_type_list_is_correct
+            )
 
-        if self.edge_type_list_max_rows_number is not None and not isinstance(self.edge_type_list_max_rows_number, int):
-            self.edge_type_list_max_rows_number = int(self.edge_type_list_max_rows_number)
+        if self.edge_type_list_max_rows_number is not None and not isinstance(
+            self.edge_type_list_max_rows_number, int
+        ):
+            self.edge_type_list_max_rows_number = int(
+                self.edge_type_list_max_rows_number
+            )
 
-        if self.edge_type_list_comment_symbol is not None and not isinstance(self.edge_type_list_comment_symbol, str):
-            self.edge_type_list_comment_symbol = str(self.edge_type_list_comment_symbol)
+        if self.edge_type_list_comment_symbol is not None and not isinstance(
+            self.edge_type_list_comment_symbol, str
+        ):
+            self.edge_type_list_comment_symbol = str(
+                self.edge_type_list_comment_symbol
+            )
 
-        if self.load_edge_type_list_in_parallel is not None and not isinstance(self.load_edge_type_list_in_parallel, Bool):
-            self.load_edge_type_list_in_parallel = Bool(self.load_edge_type_list_in_parallel)
+        if (
+            self.load_edge_type_list_in_parallel is not None
+            and not isinstance(self.load_edge_type_list_in_parallel, Bool)
+        ):
+            self.load_edge_type_list_in_parallel = Bool(
+                self.load_edge_type_list_in_parallel
+            )
 
         if self.edge_path is not None and not isinstance(self.edge_path, str):
             self.edge_path = str(self.edge_path)
 
-        if self.edge_list_separator is not None and not isinstance(self.edge_list_separator, str):
+        if self.edge_list_separator is not None and not isinstance(
+            self.edge_list_separator, str
+        ):
             self.edge_list_separator = str(self.edge_list_separator)
 
-        if self.edge_list_header is not None and not isinstance(self.edge_list_header, Bool):
+        if self.edge_list_header is not None and not isinstance(
+            self.edge_list_header, Bool
+        ):
             self.edge_list_header = Bool(self.edge_list_header)
 
-        if self.edge_list_rows_to_skip is not None and not isinstance(self.edge_list_rows_to_skip, int):
+        if self.edge_list_rows_to_skip is not None and not isinstance(
+            self.edge_list_rows_to_skip, int
+        ):
             self.edge_list_rows_to_skip = int(self.edge_list_rows_to_skip)
 
-        if self.sources_column_number is not None and not isinstance(self.sources_column_number, int):
+        if self.sources_column_number is not None and not isinstance(
+            self.sources_column_number, int
+        ):
             self.sources_column_number = int(self.sources_column_number)
 
-        if self.sources_column is not None and not isinstance(self.sources_column, str):
+        if self.sources_column is not None and not isinstance(
+            self.sources_column, str
+        ):
             self.sources_column = str(self.sources_column)
 
-        if self.destinations_column_number is not None and not isinstance(self.destinations_column_number, int):
-            self.destinations_column_number = int(self.destinations_column_number)
+        if self.destinations_column_number is not None and not isinstance(
+            self.destinations_column_number, int
+        ):
+            self.destinations_column_number = int(
+                self.destinations_column_number
+            )
 
-        if self.destinations_column is not None and not isinstance(self.destinations_column, str):
+        if self.destinations_column is not None and not isinstance(
+            self.destinations_column, str
+        ):
             self.destinations_column = str(self.destinations_column)
 
-        if self.edge_list_edge_types_column_number is not None and not isinstance(self.edge_list_edge_types_column_number, int):
-            self.edge_list_edge_types_column_number = int(self.edge_list_edge_types_column_number)
+        if (
+            self.edge_list_edge_types_column_number is not None
+            and not isinstance(self.edge_list_edge_types_column_number, int)
+        ):
+            self.edge_list_edge_types_column_number = int(
+                self.edge_list_edge_types_column_number
+            )
 
-        if self.edge_list_edge_types_column is not None and not isinstance(self.edge_list_edge_types_column, str):
-            self.edge_list_edge_types_column = str(self.edge_list_edge_types_column)
+        if self.edge_list_edge_types_column is not None and not isinstance(
+            self.edge_list_edge_types_column, str
+        ):
+            self.edge_list_edge_types_column = str(
+                self.edge_list_edge_types_column
+            )
 
-        if self.default_edge_type is not None and not isinstance(self.default_edge_type, str):
+        if self.default_edge_type is not None and not isinstance(
+            self.default_edge_type, str
+        ):
             self.default_edge_type = str(self.default_edge_type)
 
-        if self.weights_column_number is not None and not isinstance(self.weights_column_number, int):
+        if self.weights_column_number is not None and not isinstance(
+            self.weights_column_number, int
+        ):
             self.weights_column_number = int(self.weights_column_number)
 
-        if self.weights_column is not None and not isinstance(self.weights_column, str):
+        if self.weights_column is not None and not isinstance(
+            self.weights_column, str
+        ):
             self.weights_column = str(self.weights_column)
 
-        if self.default_weight is not None and not isinstance(self.default_weight, float):
+        if self.default_weight is not None and not isinstance(
+            self.default_weight, float
+        ):
             self.default_weight = float(self.default_weight)
 
-        if self.edge_ids_column is not None and not isinstance(self.edge_ids_column, str):
+        if self.edge_ids_column is not None and not isinstance(
+            self.edge_ids_column, str
+        ):
             self.edge_ids_column = str(self.edge_ids_column)
 
-        if self.edge_ids_column_number is not None and not isinstance(self.edge_ids_column_number, int):
+        if self.edge_ids_column_number is not None and not isinstance(
+            self.edge_ids_column_number, int
+        ):
             self.edge_ids_column_number = int(self.edge_ids_column_number)
 
-        if self.edge_list_numeric_edge_type_ids is not None and not isinstance(self.edge_list_numeric_edge_type_ids, Bool):
-            self.edge_list_numeric_edge_type_ids = Bool(self.edge_list_numeric_edge_type_ids)
+        if (
+            self.edge_list_numeric_edge_type_ids is not None
+            and not isinstance(self.edge_list_numeric_edge_type_ids, Bool)
+        ):
+            self.edge_list_numeric_edge_type_ids = Bool(
+                self.edge_list_numeric_edge_type_ids
+            )
 
-        if self.edge_list_numeric_node_ids is not None and not isinstance(self.edge_list_numeric_node_ids, Bool):
-            self.edge_list_numeric_node_ids = Bool(self.edge_list_numeric_node_ids)
+        if self.edge_list_numeric_node_ids is not None and not isinstance(
+            self.edge_list_numeric_node_ids, Bool
+        ):
+            self.edge_list_numeric_node_ids = Bool(
+                self.edge_list_numeric_node_ids
+            )
 
-        if self.skip_weights_if_unavailable is not None and not isinstance(self.skip_weights_if_unavailable, Bool):
-            self.skip_weights_if_unavailable = Bool(self.skip_weights_if_unavailable)
+        if self.skip_weights_if_unavailable is not None and not isinstance(
+            self.skip_weights_if_unavailable, Bool
+        ):
+            self.skip_weights_if_unavailable = Bool(
+                self.skip_weights_if_unavailable
+            )
 
-        if self.skip_edge_types_if_unavailable is not None and not isinstance(self.skip_edge_types_if_unavailable, Bool):
-            self.skip_edge_types_if_unavailable = Bool(self.skip_edge_types_if_unavailable)
+        if self.skip_edge_types_if_unavailable is not None and not isinstance(
+            self.skip_edge_types_if_unavailable, Bool
+        ):
+            self.skip_edge_types_if_unavailable = Bool(
+                self.skip_edge_types_if_unavailable
+            )
 
-        if self.edge_list_is_complete is not None and not isinstance(self.edge_list_is_complete, Bool):
+        if self.edge_list_is_complete is not None and not isinstance(
+            self.edge_list_is_complete, Bool
+        ):
             self.edge_list_is_complete = Bool(self.edge_list_is_complete)
 
-        if self.edge_list_may_contain_duplicates is not None and not isinstance(self.edge_list_may_contain_duplicates, Bool):
-            self.edge_list_may_contain_duplicates = Bool(self.edge_list_may_contain_duplicates)
+        if (
+            self.edge_list_may_contain_duplicates is not None
+            and not isinstance(self.edge_list_may_contain_duplicates, Bool)
+        ):
+            self.edge_list_may_contain_duplicates = Bool(
+                self.edge_list_may_contain_duplicates
+            )
 
-        if self.edge_list_is_sorted is not None and not isinstance(self.edge_list_is_sorted, Bool):
+        if self.edge_list_is_sorted is not None and not isinstance(
+            self.edge_list_is_sorted, Bool
+        ):
             self.edge_list_is_sorted = Bool(self.edge_list_is_sorted)
 
-        if self.edge_list_is_correct is not None and not isinstance(self.edge_list_is_correct, Bool):
+        if self.edge_list_is_correct is not None and not isinstance(
+            self.edge_list_is_correct, Bool
+        ):
             self.edge_list_is_correct = Bool(self.edge_list_is_correct)
 
-        if self.edge_list_max_rows_number is not None and not isinstance(self.edge_list_max_rows_number, int):
-            self.edge_list_max_rows_number = int(self.edge_list_max_rows_number)
+        if self.edge_list_max_rows_number is not None and not isinstance(
+            self.edge_list_max_rows_number, int
+        ):
+            self.edge_list_max_rows_number = int(
+                self.edge_list_max_rows_number
+            )
 
-        if self.edge_list_comment_symbol is not None and not isinstance(self.edge_list_comment_symbol, str):
+        if self.edge_list_comment_symbol is not None and not isinstance(
+            self.edge_list_comment_symbol, str
+        ):
             self.edge_list_comment_symbol = str(self.edge_list_comment_symbol)
 
-        if self.edges_number is not None and not isinstance(self.edges_number, int):
+        if self.edges_number is not None and not isinstance(
+            self.edges_number, int
+        ):
             self.edges_number = int(self.edges_number)
 
-        if self.load_edge_list_in_parallel is not None and not isinstance(self.load_edge_list_in_parallel, Bool):
-            self.load_edge_list_in_parallel = Bool(self.load_edge_list_in_parallel)
+        if self.load_edge_list_in_parallel is not None and not isinstance(
+            self.load_edge_list_in_parallel, Bool
+        ):
+            self.load_edge_list_in_parallel = Bool(
+                self.load_edge_list_in_parallel
+            )
 
         if self.verbose is not None and not isinstance(self.verbose, Bool):
             self.verbose = Bool(self.verbose)
 
-        if self.may_have_singletons is not None and not isinstance(self.may_have_singletons, Bool):
+        if self.may_have_singletons is not None and not isinstance(
+            self.may_have_singletons, Bool
+        ):
             self.may_have_singletons = Bool(self.may_have_singletons)
 
-        if self.may_have_singleton_with_selfloops is not None and not isinstance(self.may_have_singleton_with_selfloops, Bool):
-            self.may_have_singleton_with_selfloops = Bool(self.may_have_singleton_with_selfloops)
+        if (
+            self.may_have_singleton_with_selfloops is not None
+            and not isinstance(self.may_have_singleton_with_selfloops, Bool)
+        ):
+            self.may_have_singleton_with_selfloops = Bool(
+                self.may_have_singleton_with_selfloops
+            )
 
         if self.directed is not None and not isinstance(self.directed, Bool):
             self.directed = Bool(self.directed)
@@ -1021,6 +1483,7 @@ class NodeEmbedMethodEnum(EnumDefinitionImpl):
         name="NodeEmbedMethodEnum",
     )
 
+
 class EdgeMethodEnum(EnumDefinitionImpl):
 
     Average = PermissibleValue(text="Average")
@@ -1034,500 +1497,1418 @@ class EdgeMethodEnum(EnumDefinitionImpl):
         name="EdgeMethodEnum",
     )
 
+
 class ActivationEnum(EnumDefinitionImpl):
 
-    linear = PermissibleValue(text="linear",
-                                   description="Linear function.")
-    relu = PermissibleValue(text="relu",
-                               description="Rectified Linear Unit (ReLU)")
-    sigmoid = PermissibleValue(text="sigmoid",
-                                     description="Sigmoid activation function.")
-    tanh = PermissibleValue(text="tanh",
-                               description="The tanh function.")
-    softmax = PermissibleValue(text="softmax",
-                                     description="Softmax (or softargmax) function.")
+    linear = PermissibleValue(text="linear", description="Linear function.")
+    relu = PermissibleValue(
+        text="relu", description="Rectified Linear Unit (ReLU)"
+    )
+    sigmoid = PermissibleValue(
+        text="sigmoid", description="Sigmoid activation function."
+    )
+    tanh = PermissibleValue(text="tanh", description="The tanh function.")
+    softmax = PermissibleValue(
+        text="softmax", description="Softmax (or softargmax) function."
+    )
 
     _defn = EnumDefinition(
         name="ActivationEnum",
     )
 
+
 class OptimizerEnum(EnumDefinitionImpl):
     """
     Optimizers that can be implemented in the neural network.
     """
-    adagrad = PermissibleValue(text="adagrad",
-                                     description="Optimizer that implements the Adagrad algorithm.")
-    adam = PermissibleValue(text="adam",
-                               description="Optimizer that implements the Adam algorithm.")
-    adamax = PermissibleValue(text="adamax",
-                                   description="Optimizer that implements the Adamax algorithm.")
-    nadam = PermissibleValue(text="nadam",
-                                 description="Optimizer that implements the NAdam algorithm.")
-    sgd = PermissibleValue(text="sgd",
-                             description="Stochastic gradient descent (with momentum) optimizer.")
+
+    adagrad = PermissibleValue(
+        text="adagrad",
+        description="Optimizer that implements the Adagrad algorithm.",
+    )
+    adam = PermissibleValue(
+        text="adam",
+        description="Optimizer that implements the Adam algorithm.",
+    )
+    adamax = PermissibleValue(
+        text="adamax",
+        description="Optimizer that implements the Adamax algorithm.",
+    )
+    nadam = PermissibleValue(
+        text="nadam",
+        description="Optimizer that implements the NAdam algorithm.",
+    )
+    sgd = PermissibleValue(
+        text="sgd",
+        description="Stochastic gradient descent (with momentum) optimizer.",
+    )
 
     _defn = EnumDefinition(
         name="OptimizerEnum",
         description="Optimizers that can be implemented in the neural network.",
     )
 
+
 class ClassifierCallbackModeEnum(EnumDefinitionImpl):
     """
     Callback modes while fitting a classifier.
     """
-    auto = PermissibleValue(text="auto",
-                               description="In 'auto' mode, the direction is automatically inferred from the name of the monitored quantity.")
-    min = PermissibleValue(text="min",
-                             description="In 'min' mode, the learning rate will be reduced when the quantity monitored has stopped decreasing.")
-    max = PermissibleValue(text="max",
-                             description="In 'max' mode, the learning rate will be reduced when the quantity monitored has stopped increasing")
+
+    auto = PermissibleValue(
+        text="auto",
+        description="In 'auto' mode, the direction is automatically inferred from the name of the monitored quantity.",
+    )
+    min = PermissibleValue(
+        text="min",
+        description="In 'min' mode, the learning rate will be reduced when the quantity monitored has stopped decreasing.",
+    )
+    max = PermissibleValue(
+        text="max",
+        description="In 'max' mode, the learning rate will be reduced when the quantity monitored has stopped increasing",
+    )
 
     _defn = EnumDefinition(
         name="ClassifierCallbackModeEnum",
         description="Callback modes while fitting a classifier.",
     )
 
+
 # Slots
 class slots:
     pass
 
-slots.neatConfiguration__graph_data = Slot(uri=DEFAULT_.graph_data, name="neatConfiguration__graph_data", curie=DEFAULT_.curie('graph_data'),
-                   model_uri=DEFAULT_.neatConfiguration__graph_data, domain=None, range=Optional[Union[dict, GraphDataConfiguration]])
 
-slots.graphDataConfiguration__graph = Slot(uri=DEFAULT_.graph, name="graphDataConfiguration__graph", curie=DEFAULT_.curie('graph'),
-                   model_uri=DEFAULT_.graphDataConfiguration__graph, domain=None, range=Optional[Union[dict, EnsmallenRunConfig]])
-
-slots.graphDataConfiguration__data = Slot(uri=DEFAULT_.data, name="graphDataConfiguration__data", curie=DEFAULT_.curie('data'),
-                   model_uri=DEFAULT_.graphDataConfiguration__data, domain=None, range=Optional[Union[dict, TrainValidData]])
-
-slots.trainValidData__train_data = Slot(uri=DEFAULT_.train_data, name="trainValidData__train_data", curie=DEFAULT_.curie('train_data'),
-                   model_uri=DEFAULT_.trainValidData__train_data, domain=None, range=Optional[Union[dict, PosNegData]])
-
-slots.trainValidData__valid_data = Slot(uri=DEFAULT_.valid_data, name="trainValidData__valid_data", curie=DEFAULT_.curie('valid_data'),
-                   model_uri=DEFAULT_.trainValidData__valid_data, domain=None, range=Optional[Union[dict, PosNegData]])
-
-slots.posNegData__pos_edge_filepath = Slot(uri=DEFAULT_.pos_edge_filepath, name="posNegData__pos_edge_filepath", curie=DEFAULT_.curie('pos_edge_filepath'),
-                   model_uri=DEFAULT_.posNegData__pos_edge_filepath, domain=None, range=Optional[str])
-
-slots.posNegData__neg_edge_filepath = Slot(uri=DEFAULT_.neg_edge_filepath, name="posNegData__neg_edge_filepath", curie=DEFAULT_.curie('neg_edge_filepath'),
-                   model_uri=DEFAULT_.posNegData__neg_edge_filepath, domain=None, range=Optional[str])
-
-slots.embeddingsConfig__filename = Slot(uri=DEFAULT_.filename, name="embeddingsConfig__filename", curie=DEFAULT_.curie('filename'),
-                   model_uri=DEFAULT_.embeddingsConfig__filename, domain=None, range=Optional[str])
-
-slots.embeddingsConfig__history_filename = Slot(uri=DEFAULT_.history_filename, name="embeddingsConfig__history_filename", curie=DEFAULT_.curie('history_filename'),
-                   model_uri=DEFAULT_.embeddingsConfig__history_filename, domain=None, range=Optional[str])
-
-slots.embeddingsConfig__node_embeddings_params = Slot(uri=DEFAULT_.node_embeddings_params, name="embeddingsConfig__node_embeddings_params", curie=DEFAULT_.curie('node_embeddings_params'),
-                   model_uri=DEFAULT_.embeddingsConfig__node_embeddings_params, domain=None, range=Optional[Union[dict, NodeEmbeddingsParams]])
-
-slots.embeddingsConfig__tsne_filename = Slot(uri=DEFAULT_.tsne_filename, name="embeddingsConfig__tsne_filename", curie=DEFAULT_.curie('tsne_filename'),
-                   model_uri=DEFAULT_.embeddingsConfig__tsne_filename, domain=None, range=Optional[str])
-
-slots.nodeEmbeddingsParams__method_name = Slot(uri=DEFAULT_.method_name, name="nodeEmbeddingsParams__method_name", curie=DEFAULT_.curie('method_name'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__method_name, domain=None, range=Optional[Union[str, "NodeEmbedMethodEnum"]])
-
-slots.nodeEmbeddingsParams__walk_length = Slot(uri=DEFAULT_.walk_length, name="nodeEmbeddingsParams__walk_length", curie=DEFAULT_.curie('walk_length'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__walk_length, domain=None, range=Optional[int])
-
-slots.nodeEmbeddingsParams__batch_size = Slot(uri=DEFAULT_.batch_size, name="nodeEmbeddingsParams__batch_size", curie=DEFAULT_.curie('batch_size'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__batch_size, domain=None, range=Optional[int])
-
-slots.nodeEmbeddingsParams__window_size = Slot(uri=DEFAULT_.window_size, name="nodeEmbeddingsParams__window_size", curie=DEFAULT_.curie('window_size'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__window_size, domain=None, range=Optional[int])
-
-slots.nodeEmbeddingsParams__return_weight = Slot(uri=DEFAULT_.return_weight, name="nodeEmbeddingsParams__return_weight", curie=DEFAULT_.curie('return_weight'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__return_weight, domain=None, range=Optional[float])
-
-slots.nodeEmbeddingsParams__explore_weight = Slot(uri=DEFAULT_.explore_weight, name="nodeEmbeddingsParams__explore_weight", curie=DEFAULT_.curie('explore_weight'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__explore_weight, domain=None, range=Optional[float])
-
-slots.nodeEmbeddingsParams__iterations = Slot(uri=DEFAULT_.iterations, name="nodeEmbeddingsParams__iterations", curie=DEFAULT_.curie('iterations'),
-                   model_uri=DEFAULT_.nodeEmbeddingsParams__iterations, domain=None, range=Optional[int])
-
-slots.classifierContainer__classifiers = Slot(uri=DEFAULT_.classifiers, name="classifierContainer__classifiers", curie=DEFAULT_.curie('classifiers'),
-                   model_uri=DEFAULT_.classifierContainer__classifiers, domain=None, range=Optional[Union[Union[dict, Classifier], List[Union[dict, Classifier]]]])
-
-slots.classifier__classifier_id = Slot(uri=DEFAULT_.classifier_id, name="classifier__classifier_id", curie=DEFAULT_.curie('classifier_id'),
-                   model_uri=DEFAULT_.classifier__classifier_id, domain=None, range=Optional[str])
-
-slots.classifier__classifier_name = Slot(uri=DEFAULT_.classifier_name, name="classifier__classifier_name", curie=DEFAULT_.curie('classifier_name'),
-                   model_uri=DEFAULT_.classifier__classifier_name, domain=None, range=Optional[str])
-
-slots.classifier__classifier_type = Slot(uri=DEFAULT_.classifier_type, name="classifier__classifier_type", curie=DEFAULT_.curie('classifier_type'),
-                   model_uri=DEFAULT_.classifier__classifier_type, domain=None, range=Optional[str])
-
-slots.classifier__edge_method = Slot(uri=DEFAULT_.edge_method, name="classifier__edge_method", curie=DEFAULT_.curie('edge_method'),
-                   model_uri=DEFAULT_.classifier__edge_method, domain=None, range=Optional[Union[str, "EdgeMethodEnum"]])
-
-slots.classifier__outfile = Slot(uri=DEFAULT_.outfile, name="classifier__outfile", curie=DEFAULT_.curie('outfile'),
-                   model_uri=DEFAULT_.classifier__outfile, domain=None, range=Optional[str])
-
-slots.classifier__history_filename = Slot(uri=DEFAULT_.history_filename, name="classifier__history_filename", curie=DEFAULT_.curie('history_filename'),
-                   model_uri=DEFAULT_.classifier__history_filename, domain=None, range=Optional[str])
-
-slots.classifier__parameters = Slot(uri=DEFAULT_.parameters, name="classifier__parameters", curie=DEFAULT_.curie('parameters'),
-                   model_uri=DEFAULT_.classifier__parameters, domain=None, range=Optional[Union[dict, ClassifierParams]])
-
-slots.classifierParams__random_state = Slot(uri=DEFAULT_.random_state, name="classifierParams__random_state", curie=DEFAULT_.curie('random_state'),
-                   model_uri=DEFAULT_.classifierParams__random_state, domain=None, range=Optional[int])
-
-slots.classifierParams__max_iter = Slot(uri=DEFAULT_.max_iter, name="classifierParams__max_iter", curie=DEFAULT_.curie('max_iter'),
-                   model_uri=DEFAULT_.classifierParams__max_iter, domain=None, range=Optional[int])
-
-slots.classifierParams__layers_config = Slot(uri=DEFAULT_.layers_config, name="classifierParams__layers_config", curie=DEFAULT_.curie('layers_config'),
-                   model_uri=DEFAULT_.classifierParams__layers_config, domain=None, range=Optional[Union[dict, LayerContainer]])
-
-slots.classifierParams__metrics_config = Slot(uri=DEFAULT_.metrics_config, name="classifierParams__metrics_config", curie=DEFAULT_.curie('metrics_config'),
-                   model_uri=DEFAULT_.classifierParams__metrics_config, domain=None, range=Optional[Union[dict, MetricContainer]])
-
-slots.classifierParams__optimizer = Slot(uri=DEFAULT_.optimizer, name="classifierParams__optimizer", curie=DEFAULT_.curie('optimizer'),
-                   model_uri=DEFAULT_.classifierParams__optimizer, domain=None, range=Optional[Union[str, "OptimizerEnum"]])
-
-slots.classifierParams__fit_config = Slot(uri=DEFAULT_.fit_config, name="classifierParams__fit_config", curie=DEFAULT_.curie('fit_config'),
-                   model_uri=DEFAULT_.classifierParams__fit_config, domain=None, range=Optional[Union[dict, ClassifierFitParams]])
-
-slots.layerContainer__layers = Slot(uri=DEFAULT_.layers, name="layerContainer__layers", curie=DEFAULT_.curie('layers'),
-                   model_uri=DEFAULT_.layerContainer__layers, domain=None, range=Optional[Union[Union[dict, Layer], List[Union[dict, Layer]]]])
-
-slots.layer__type = Slot(uri=DEFAULT_.type, name="layer__type", curie=DEFAULT_.curie('type'),
-                   model_uri=DEFAULT_.layer__type, domain=None, range=Optional[str])
-
-slots.layer__parameters = Slot(uri=DEFAULT_.parameters, name="layer__parameters", curie=DEFAULT_.curie('parameters'),
-                   model_uri=DEFAULT_.layer__parameters, domain=None, range=Optional[Union[dict, LayerParams]])
-
-slots.layerParams__units = Slot(uri=DEFAULT_.units, name="layerParams__units", curie=DEFAULT_.curie('units'),
-                   model_uri=DEFAULT_.layerParams__units, domain=None, range=Optional[int])
-
-slots.layerParams__activation = Slot(uri=DEFAULT_.activation, name="layerParams__activation", curie=DEFAULT_.curie('activation'),
-                   model_uri=DEFAULT_.layerParams__activation, domain=None, range=Optional[Union[str, "ActivationEnum"]])
-
-slots.layerParams__rate = Slot(uri=DEFAULT_.rate, name="layerParams__rate", curie=DEFAULT_.curie('rate'),
-                   model_uri=DEFAULT_.layerParams__rate, domain=None, range=Optional[float])
-
-slots.metricContainer__metrics = Slot(uri=DEFAULT_.metrics, name="metricContainer__metrics", curie=DEFAULT_.curie('metrics'),
-                   model_uri=DEFAULT_.metricContainer__metrics, domain=None, range=Optional[Union[Union[dict, Metric], List[Union[dict, Metric]]]])
-
-slots.metric__name = Slot(uri=DEFAULT_.name, name="metric__name", curie=DEFAULT_.curie('name'),
-                   model_uri=DEFAULT_.metric__name, domain=None, range=Optional[str])
-
-slots.metric__type = Slot(uri=DEFAULT_.type, name="metric__type", curie=DEFAULT_.curie('type'),
-                   model_uri=DEFAULT_.metric__type, domain=None, range=Optional[str])
-
-slots.metric__curve = Slot(uri=DEFAULT_.curve, name="metric__curve", curie=DEFAULT_.curie('curve'),
-                   model_uri=DEFAULT_.metric__curve, domain=None, range=Optional[str])
-
-slots.classifierFitParams__batch_size = Slot(uri=DEFAULT_.batch_size, name="classifierFitParams__batch_size", curie=DEFAULT_.curie('batch_size'),
-                   model_uri=DEFAULT_.classifierFitParams__batch_size, domain=None, range=Optional[int])
-
-slots.classifierFitParams__epochs = Slot(uri=DEFAULT_.epochs, name="classifierFitParams__epochs", curie=DEFAULT_.curie('epochs'),
-                   model_uri=DEFAULT_.classifierFitParams__epochs, domain=None, range=Optional[int])
-
-slots.classifierFitParams__callbacks_list = Slot(uri=DEFAULT_.callbacks_list, name="classifierFitParams__callbacks_list", curie=DEFAULT_.curie('callbacks_list'),
-                   model_uri=DEFAULT_.classifierFitParams__callbacks_list, domain=None, range=Optional[Union[dict, ClassifierCallbackContainer]])
-
-slots.classifierCallbackContainer__callbacks = Slot(uri=DEFAULT_.callbacks, name="classifierCallbackContainer__callbacks", curie=DEFAULT_.curie('callbacks'),
-                   model_uri=DEFAULT_.classifierCallbackContainer__callbacks, domain=None, range=Optional[Union[Union[dict, ClassifierCallback], List[Union[dict, ClassifierCallback]]]])
-
-slots.classifierCallback__type = Slot(uri=DEFAULT_.type, name="classifierCallback__type", curie=DEFAULT_.curie('type'),
-                   model_uri=DEFAULT_.classifierCallback__type, domain=None, range=Optional[str])
-
-slots.classifierCallback__monitor = Slot(uri=DEFAULT_.monitor, name="classifierCallback__monitor", curie=DEFAULT_.curie('monitor'),
-                   model_uri=DEFAULT_.classifierCallback__monitor, domain=None, range=Optional[str])
-
-slots.classifierCallback__patience = Slot(uri=DEFAULT_.patience, name="classifierCallback__patience", curie=DEFAULT_.curie('patience'),
-                   model_uri=DEFAULT_.classifierCallback__patience, domain=None, range=Optional[int])
-
-slots.classifierCallback__min_delta = Slot(uri=DEFAULT_.min_delta, name="classifierCallback__min_delta", curie=DEFAULT_.curie('min_delta'),
-                   model_uri=DEFAULT_.classifierCallback__min_delta, domain=None, range=Optional[int])
-
-slots.classifierCallback__verbose = Slot(uri=DEFAULT_.verbose, name="classifierCallback__verbose", curie=DEFAULT_.curie('verbose'),
-                   model_uri=DEFAULT_.classifierCallback__verbose, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.classifierCallback__mode = Slot(uri=DEFAULT_.mode, name="classifierCallback__mode", curie=DEFAULT_.curie('mode'),
-                   model_uri=DEFAULT_.classifierCallback__mode, domain=None, range=Optional[Union[str, "ClassifierCallbackModeEnum"]])
-
-slots.applyTrainedModelsContainer__models = Slot(uri=DEFAULT_.models, name="applyTrainedModelsContainer__models", curie=DEFAULT_.curie('models'),
-                   model_uri=DEFAULT_.applyTrainedModelsContainer__models, domain=None, range=Optional[Union[Union[dict, ApplyTrainedModel], List[Union[dict, ApplyTrainedModel]]]])
-
-slots.applyTrainedModel__model_id = Slot(uri=DEFAULT_.model_id, name="applyTrainedModel__model_id", curie=DEFAULT_.curie('model_id'),
-                   model_uri=DEFAULT_.applyTrainedModel__model_id, domain=None, range=Optional[str])
-
-slots.applyTrainedModel__node_types = Slot(uri=DEFAULT_.node_types, name="applyTrainedModel__node_types", curie=DEFAULT_.curie('node_types'),
-                   model_uri=DEFAULT_.applyTrainedModel__node_types, domain=None, range=Optional[Union[dict, NodeType]])
-
-slots.applyTrainedModel__cutoff = Slot(uri=DEFAULT_.cutoff, name="applyTrainedModel__cutoff", curie=DEFAULT_.curie('cutoff'),
-                   model_uri=DEFAULT_.applyTrainedModel__cutoff, domain=None, range=Optional[str])
-
-slots.applyTrainedModel__outfile = Slot(uri=DEFAULT_.outfile, name="applyTrainedModel__outfile", curie=DEFAULT_.curie('outfile'),
-                   model_uri=DEFAULT_.applyTrainedModel__outfile, domain=None, range=Optional[str])
-
-slots.nodeType__source = Slot(uri=DEFAULT_.source, name="nodeType__source", curie=DEFAULT_.curie('source'),
-                   model_uri=DEFAULT_.nodeType__source, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.nodeType__destination = Slot(uri=DEFAULT_.destination, name="nodeType__destination", curie=DEFAULT_.curie('destination'),
-                   model_uri=DEFAULT_.nodeType__destination, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.upload__s3_bucket = Slot(uri=DEFAULT_.s3_bucket, name="upload__s3_bucket", curie=DEFAULT_.curie('s3_bucket'),
-                   model_uri=DEFAULT_.upload__s3_bucket, domain=None, range=Optional[str])
-
-slots.upload__s3_bucket_dir = Slot(uri=DEFAULT_.s3_bucket_dir, name="upload__s3_bucket_dir", curie=DEFAULT_.curie('s3_bucket_dir'),
-                   model_uri=DEFAULT_.upload__s3_bucket_dir, domain=None, range=Optional[str])
-
-slots.upload__extra_args = Slot(uri=DEFAULT_.extra_args, name="upload__extra_args", curie=DEFAULT_.curie('extra_args'),
-                   model_uri=DEFAULT_.upload__extra_args, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.target__target_path = Slot(uri=DEFAULT_.target_path, name="target__target_path", curie=DEFAULT_.curie('target_path'),
-                   model_uri=DEFAULT_.target__target_path, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_type_path = Slot(uri=DEFAULT_.node_type_path, name="ensmallenRunConfig__node_type_path", curie=DEFAULT_.curie('node_type_path'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_path, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_type_list_separator = Slot(uri=DEFAULT_.node_type_list_separator, name="ensmallenRunConfig__node_type_list_separator", curie=DEFAULT_.curie('node_type_list_separator'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_separator, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_types_column_number = Slot(uri=DEFAULT_.node_types_column_number, name="ensmallenRunConfig__node_types_column_number", curie=DEFAULT_.curie('node_types_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_types_column = Slot(uri=DEFAULT_.node_types_column, name="ensmallenRunConfig__node_types_column", curie=DEFAULT_.curie('node_types_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_types_ids_column_number = Slot(uri=DEFAULT_.node_types_ids_column_number, name="ensmallenRunConfig__node_types_ids_column_number", curie=DEFAULT_.curie('node_types_ids_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_ids_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_types_ids_column = Slot(uri=DEFAULT_.node_types_ids_column, name="ensmallenRunConfig__node_types_ids_column", curie=DEFAULT_.curie('node_types_ids_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_ids_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_types_number = Slot(uri=DEFAULT_.node_types_number, name="ensmallenRunConfig__node_types_number", curie=DEFAULT_.curie('node_types_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__numeric_node_type_ids = Slot(uri=DEFAULT_.numeric_node_type_ids, name="ensmallenRunConfig__numeric_node_type_ids", curie=DEFAULT_.curie('numeric_node_type_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__numeric_node_type_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__minimum_node_type_id = Slot(uri=DEFAULT_.minimum_node_type_id, name="ensmallenRunConfig__minimum_node_type_id", curie=DEFAULT_.curie('minimum_node_type_id'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_type_id, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_type_list_header = Slot(uri=DEFAULT_.node_type_list_header, name="ensmallenRunConfig__node_type_list_header", curie=DEFAULT_.curie('node_type_list_header'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_header, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_type_list_rows_to_skip = Slot(uri=DEFAULT_.node_type_list_rows_to_skip, name="ensmallenRunConfig__node_type_list_rows_to_skip", curie=DEFAULT_.curie('node_type_list_rows_to_skip'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_rows_to_skip, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_type_list_is_correct = Slot(uri=DEFAULT_.node_type_list_is_correct, name="ensmallenRunConfig__node_type_list_is_correct", curie=DEFAULT_.curie('node_type_list_is_correct'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_is_correct, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_type_list_max_rows_number = Slot(uri=DEFAULT_.node_type_list_max_rows_number, name="ensmallenRunConfig__node_type_list_max_rows_number", curie=DEFAULT_.curie('node_type_list_max_rows_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_max_rows_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_type_list_comment_symbol = Slot(uri=DEFAULT_.node_type_list_comment_symbol, name="ensmallenRunConfig__node_type_list_comment_symbol", curie=DEFAULT_.curie('node_type_list_comment_symbol'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_comment_symbol, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__load_node_type_list_in_parallel = Slot(uri=DEFAULT_.load_node_type_list_in_parallel, name="ensmallenRunConfig__load_node_type_list_in_parallel", curie=DEFAULT_.curie('load_node_type_list_in_parallel'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__load_node_type_list_in_parallel, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_path = Slot(uri=DEFAULT_.node_path, name="ensmallenRunConfig__node_path", curie=DEFAULT_.curie('node_path'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_path, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_list_separator = Slot(uri=DEFAULT_.node_list_separator, name="ensmallenRunConfig__node_list_separator", curie=DEFAULT_.curie('node_list_separator'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_separator, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_list_header = Slot(uri=DEFAULT_.node_list_header, name="ensmallenRunConfig__node_list_header", curie=DEFAULT_.curie('node_list_header'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_header, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_list_rows_to_skip = Slot(uri=DEFAULT_.node_list_rows_to_skip, name="ensmallenRunConfig__node_list_rows_to_skip", curie=DEFAULT_.curie('node_list_rows_to_skip'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_rows_to_skip, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_list_is_correct = Slot(uri=DEFAULT_.node_list_is_correct, name="ensmallenRunConfig__node_list_is_correct", curie=DEFAULT_.curie('node_list_is_correct'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_is_correct, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_list_max_rows_number = Slot(uri=DEFAULT_.node_list_max_rows_number, name="ensmallenRunConfig__node_list_max_rows_number", curie=DEFAULT_.curie('node_list_max_rows_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_max_rows_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_list_comment_symbol = Slot(uri=DEFAULT_.node_list_comment_symbol, name="ensmallenRunConfig__node_list_comment_symbol", curie=DEFAULT_.curie('node_list_comment_symbol'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_comment_symbol, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__default_node_type = Slot(uri=DEFAULT_.default_node_type, name="ensmallenRunConfig__default_node_type", curie=DEFAULT_.curie('default_node_type'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__default_node_type, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__nodes_column_number = Slot(uri=DEFAULT_.nodes_column_number, name="ensmallenRunConfig__nodes_column_number", curie=DEFAULT_.curie('nodes_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__nodes_column = Slot(uri=DEFAULT_.nodes_column, name="ensmallenRunConfig__nodes_column", curie=DEFAULT_.curie('nodes_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_types_separator = Slot(uri=DEFAULT_.node_types_separator, name="ensmallenRunConfig__node_types_separator", curie=DEFAULT_.curie('node_types_separator'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_types_separator, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_list_node_types_column_number = Slot(uri=DEFAULT_.node_list_node_types_column_number, name="ensmallenRunConfig__node_list_node_types_column_number", curie=DEFAULT_.curie('node_list_node_types_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_node_types_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__node_list_node_types_column = Slot(uri=DEFAULT_.node_list_node_types_column, name="ensmallenRunConfig__node_list_node_types_column", curie=DEFAULT_.curie('node_list_node_types_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_node_types_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_ids_column = Slot(uri=DEFAULT_.node_ids_column, name="ensmallenRunConfig__node_ids_column", curie=DEFAULT_.curie('node_ids_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__node_ids_column_number = Slot(uri=DEFAULT_.node_ids_column_number, name="ensmallenRunConfig__node_ids_column_number", curie=DEFAULT_.curie('node_ids_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__nodes_number = Slot(uri=DEFAULT_.nodes_number, name="ensmallenRunConfig__nodes_number", curie=DEFAULT_.curie('nodes_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__minimum_node_id = Slot(uri=DEFAULT_.minimum_node_id, name="ensmallenRunConfig__minimum_node_id", curie=DEFAULT_.curie('minimum_node_id'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_id, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__numeric_node_ids = Slot(uri=DEFAULT_.numeric_node_ids, name="ensmallenRunConfig__numeric_node_ids", curie=DEFAULT_.curie('numeric_node_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__numeric_node_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__node_list_numeric_node_type_ids = Slot(uri=DEFAULT_.node_list_numeric_node_type_ids, name="ensmallenRunConfig__node_list_numeric_node_type_ids", curie=DEFAULT_.curie('node_list_numeric_node_type_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_numeric_node_type_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__skip_node_types_if_unavailable = Slot(uri=DEFAULT_.skip_node_types_if_unavailable, name="ensmallenRunConfig__skip_node_types_if_unavailable", curie=DEFAULT_.curie('skip_node_types_if_unavailable'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__skip_node_types_if_unavailable, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__load_node_list_in_parallel = Slot(uri=DEFAULT_.load_node_list_in_parallel, name="ensmallenRunConfig__load_node_list_in_parallel", curie=DEFAULT_.curie('load_node_list_in_parallel'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__load_node_list_in_parallel, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_type_path = Slot(uri=DEFAULT_.edge_type_path, name="ensmallenRunConfig__edge_type_path", curie=DEFAULT_.curie('edge_type_path'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_path, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_types_column_number = Slot(uri=DEFAULT_.edge_types_column_number, name="ensmallenRunConfig__edge_types_column_number", curie=DEFAULT_.curie('edge_types_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_types_column = Slot(uri=DEFAULT_.edge_types_column, name="ensmallenRunConfig__edge_types_column", curie=DEFAULT_.curie('edge_types_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_types_ids_column_number = Slot(uri=DEFAULT_.edge_types_ids_column_number, name="ensmallenRunConfig__edge_types_ids_column_number", curie=DEFAULT_.curie('edge_types_ids_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_types_ids_column = Slot(uri=DEFAULT_.edge_types_ids_column, name="ensmallenRunConfig__edge_types_ids_column", curie=DEFAULT_.curie('edge_types_ids_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_types_number = Slot(uri=DEFAULT_.edge_types_number, name="ensmallenRunConfig__edge_types_number", curie=DEFAULT_.curie('edge_types_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__numeric_edge_type_ids = Slot(uri=DEFAULT_.numeric_edge_type_ids, name="ensmallenRunConfig__numeric_edge_type_ids", curie=DEFAULT_.curie('numeric_edge_type_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__numeric_edge_type_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__minimum_edge_type_id = Slot(uri=DEFAULT_.minimum_edge_type_id, name="ensmallenRunConfig__minimum_edge_type_id", curie=DEFAULT_.curie('minimum_edge_type_id'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__minimum_edge_type_id, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_type_list_separator = Slot(uri=DEFAULT_.edge_type_list_separator, name="ensmallenRunConfig__edge_type_list_separator", curie=DEFAULT_.curie('edge_type_list_separator'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_separator, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_type_list_header = Slot(uri=DEFAULT_.edge_type_list_header, name="ensmallenRunConfig__edge_type_list_header", curie=DEFAULT_.curie('edge_type_list_header'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_header, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_type_list_rows_to_skip = Slot(uri=DEFAULT_.edge_type_list_rows_to_skip, name="ensmallenRunConfig__edge_type_list_rows_to_skip", curie=DEFAULT_.curie('edge_type_list_rows_to_skip'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_rows_to_skip, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_type_list_is_correct = Slot(uri=DEFAULT_.edge_type_list_is_correct, name="ensmallenRunConfig__edge_type_list_is_correct", curie=DEFAULT_.curie('edge_type_list_is_correct'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_is_correct, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_type_list_max_rows_number = Slot(uri=DEFAULT_.edge_type_list_max_rows_number, name="ensmallenRunConfig__edge_type_list_max_rows_number", curie=DEFAULT_.curie('edge_type_list_max_rows_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_max_rows_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_type_list_comment_symbol = Slot(uri=DEFAULT_.edge_type_list_comment_symbol, name="ensmallenRunConfig__edge_type_list_comment_symbol", curie=DEFAULT_.curie('edge_type_list_comment_symbol'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_comment_symbol, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__load_edge_type_list_in_parallel = Slot(uri=DEFAULT_.load_edge_type_list_in_parallel, name="ensmallenRunConfig__load_edge_type_list_in_parallel", curie=DEFAULT_.curie('load_edge_type_list_in_parallel'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__load_edge_type_list_in_parallel, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_path = Slot(uri=DEFAULT_.edge_path, name="ensmallenRunConfig__edge_path", curie=DEFAULT_.curie('edge_path'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_path, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_list_separator = Slot(uri=DEFAULT_.edge_list_separator, name="ensmallenRunConfig__edge_list_separator", curie=DEFAULT_.curie('edge_list_separator'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_separator, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_list_header = Slot(uri=DEFAULT_.edge_list_header, name="ensmallenRunConfig__edge_list_header", curie=DEFAULT_.curie('edge_list_header'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_header, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_rows_to_skip = Slot(uri=DEFAULT_.edge_list_rows_to_skip, name="ensmallenRunConfig__edge_list_rows_to_skip", curie=DEFAULT_.curie('edge_list_rows_to_skip'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_rows_to_skip, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__sources_column_number = Slot(uri=DEFAULT_.sources_column_number, name="ensmallenRunConfig__sources_column_number", curie=DEFAULT_.curie('sources_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__sources_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__sources_column = Slot(uri=DEFAULT_.sources_column, name="ensmallenRunConfig__sources_column", curie=DEFAULT_.curie('sources_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__sources_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__destinations_column_number = Slot(uri=DEFAULT_.destinations_column_number, name="ensmallenRunConfig__destinations_column_number", curie=DEFAULT_.curie('destinations_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__destinations_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__destinations_column = Slot(uri=DEFAULT_.destinations_column, name="ensmallenRunConfig__destinations_column", curie=DEFAULT_.curie('destinations_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__destinations_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_list_edge_types_column_number = Slot(uri=DEFAULT_.edge_list_edge_types_column_number, name="ensmallenRunConfig__edge_list_edge_types_column_number", curie=DEFAULT_.curie('edge_list_edge_types_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_edge_types_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_list_edge_types_column = Slot(uri=DEFAULT_.edge_list_edge_types_column, name="ensmallenRunConfig__edge_list_edge_types_column", curie=DEFAULT_.curie('edge_list_edge_types_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_edge_types_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__default_edge_type = Slot(uri=DEFAULT_.default_edge_type, name="ensmallenRunConfig__default_edge_type", curie=DEFAULT_.curie('default_edge_type'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__default_edge_type, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__weights_column_number = Slot(uri=DEFAULT_.weights_column_number, name="ensmallenRunConfig__weights_column_number", curie=DEFAULT_.curie('weights_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__weights_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__weights_column = Slot(uri=DEFAULT_.weights_column, name="ensmallenRunConfig__weights_column", curie=DEFAULT_.curie('weights_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__weights_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__default_weight = Slot(uri=DEFAULT_.default_weight, name="ensmallenRunConfig__default_weight", curie=DEFAULT_.curie('default_weight'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__default_weight, domain=None, range=Optional[float])
-
-slots.ensmallenRunConfig__edge_ids_column = Slot(uri=DEFAULT_.edge_ids_column, name="ensmallenRunConfig__edge_ids_column", curie=DEFAULT_.curie('edge_ids_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_ids_column, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edge_ids_column_number = Slot(uri=DEFAULT_.edge_ids_column_number, name="ensmallenRunConfig__edge_ids_column_number", curie=DEFAULT_.curie('edge_ids_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_ids_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_list_numeric_edge_type_ids = Slot(uri=DEFAULT_.edge_list_numeric_edge_type_ids, name="ensmallenRunConfig__edge_list_numeric_edge_type_ids", curie=DEFAULT_.curie('edge_list_numeric_edge_type_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_numeric_edge_type_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_numeric_node_ids = Slot(uri=DEFAULT_.edge_list_numeric_node_ids, name="ensmallenRunConfig__edge_list_numeric_node_ids", curie=DEFAULT_.curie('edge_list_numeric_node_ids'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_numeric_node_ids, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__skip_weights_if_unavailable = Slot(uri=DEFAULT_.skip_weights_if_unavailable, name="ensmallenRunConfig__skip_weights_if_unavailable", curie=DEFAULT_.curie('skip_weights_if_unavailable'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__skip_weights_if_unavailable, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__skip_edge_types_if_unavailable = Slot(uri=DEFAULT_.skip_edge_types_if_unavailable, name="ensmallenRunConfig__skip_edge_types_if_unavailable", curie=DEFAULT_.curie('skip_edge_types_if_unavailable'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__skip_edge_types_if_unavailable, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_is_complete = Slot(uri=DEFAULT_.edge_list_is_complete, name="ensmallenRunConfig__edge_list_is_complete", curie=DEFAULT_.curie('edge_list_is_complete'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_complete, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_may_contain_duplicates = Slot(uri=DEFAULT_.edge_list_may_contain_duplicates, name="ensmallenRunConfig__edge_list_may_contain_duplicates", curie=DEFAULT_.curie('edge_list_may_contain_duplicates'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_may_contain_duplicates, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_is_sorted = Slot(uri=DEFAULT_.edge_list_is_sorted, name="ensmallenRunConfig__edge_list_is_sorted", curie=DEFAULT_.curie('edge_list_is_sorted'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_sorted, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_is_correct = Slot(uri=DEFAULT_.edge_list_is_correct, name="ensmallenRunConfig__edge_list_is_correct", curie=DEFAULT_.curie('edge_list_is_correct'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_correct, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__edge_list_max_rows_number = Slot(uri=DEFAULT_.edge_list_max_rows_number, name="ensmallenRunConfig__edge_list_max_rows_number", curie=DEFAULT_.curie('edge_list_max_rows_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_max_rows_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_list_comment_symbol = Slot(uri=DEFAULT_.edge_list_comment_symbol, name="ensmallenRunConfig__edge_list_comment_symbol", curie=DEFAULT_.curie('edge_list_comment_symbol'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_comment_symbol, domain=None, range=Optional[str])
-
-slots.ensmallenRunConfig__edges_number = Slot(uri=DEFAULT_.edges_number, name="ensmallenRunConfig__edges_number", curie=DEFAULT_.curie('edges_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edges_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__load_edge_list_in_parallel = Slot(uri=DEFAULT_.load_edge_list_in_parallel, name="ensmallenRunConfig__load_edge_list_in_parallel", curie=DEFAULT_.curie('load_edge_list_in_parallel'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__load_edge_list_in_parallel, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__verbose = Slot(uri=DEFAULT_.verbose, name="ensmallenRunConfig__verbose", curie=DEFAULT_.curie('verbose'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__verbose, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__may_have_singletons = Slot(uri=DEFAULT_.may_have_singletons, name="ensmallenRunConfig__may_have_singletons", curie=DEFAULT_.curie('may_have_singletons'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__may_have_singletons, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__may_have_singleton_with_selfloops = Slot(uri=DEFAULT_.may_have_singleton_with_selfloops, name="ensmallenRunConfig__may_have_singleton_with_selfloops", curie=DEFAULT_.curie('may_have_singleton_with_selfloops'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__may_have_singleton_with_selfloops, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__directed = Slot(uri=DEFAULT_.directed, name="ensmallenRunConfig__directed", curie=DEFAULT_.curie('directed'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__directed, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.ensmallenRunConfig__name = Slot(uri=DEFAULT_.name, name="ensmallenRunConfig__name", curie=DEFAULT_.curie('name'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__name, domain=None, range=Optional[str])
+slots.neatConfiguration__graph_data = Slot(
+    uri=DEFAULT_.graph_data,
+    name="neatConfiguration__graph_data",
+    curie=DEFAULT_.curie("graph_data"),
+    model_uri=DEFAULT_.neatConfiguration__graph_data,
+    domain=None,
+    range=Optional[Union[dict, GraphDataConfiguration]],
+)
+
+slots.graphDataConfiguration__graph = Slot(
+    uri=DEFAULT_.graph,
+    name="graphDataConfiguration__graph",
+    curie=DEFAULT_.curie("graph"),
+    model_uri=DEFAULT_.graphDataConfiguration__graph,
+    domain=None,
+    range=Optional[Union[dict, EnsmallenRunConfig]],
+)
+
+slots.graphDataConfiguration__data = Slot(
+    uri=DEFAULT_.data,
+    name="graphDataConfiguration__data",
+    curie=DEFAULT_.curie("data"),
+    model_uri=DEFAULT_.graphDataConfiguration__data,
+    domain=None,
+    range=Optional[Union[dict, TrainValidData]],
+)
+
+slots.trainValidData__train_data = Slot(
+    uri=DEFAULT_.train_data,
+    name="trainValidData__train_data",
+    curie=DEFAULT_.curie("train_data"),
+    model_uri=DEFAULT_.trainValidData__train_data,
+    domain=None,
+    range=Optional[Union[dict, PosNegData]],
+)
+
+slots.trainValidData__valid_data = Slot(
+    uri=DEFAULT_.valid_data,
+    name="trainValidData__valid_data",
+    curie=DEFAULT_.curie("valid_data"),
+    model_uri=DEFAULT_.trainValidData__valid_data,
+    domain=None,
+    range=Optional[Union[dict, PosNegData]],
+)
+
+slots.posNegData__pos_edge_filepath = Slot(
+    uri=DEFAULT_.pos_edge_filepath,
+    name="posNegData__pos_edge_filepath",
+    curie=DEFAULT_.curie("pos_edge_filepath"),
+    model_uri=DEFAULT_.posNegData__pos_edge_filepath,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.posNegData__neg_edge_filepath = Slot(
+    uri=DEFAULT_.neg_edge_filepath,
+    name="posNegData__neg_edge_filepath",
+    curie=DEFAULT_.curie("neg_edge_filepath"),
+    model_uri=DEFAULT_.posNegData__neg_edge_filepath,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.embeddingsConfig__filename = Slot(
+    uri=DEFAULT_.filename,
+    name="embeddingsConfig__filename",
+    curie=DEFAULT_.curie("filename"),
+    model_uri=DEFAULT_.embeddingsConfig__filename,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.embeddingsConfig__history_filename = Slot(
+    uri=DEFAULT_.history_filename,
+    name="embeddingsConfig__history_filename",
+    curie=DEFAULT_.curie("history_filename"),
+    model_uri=DEFAULT_.embeddingsConfig__history_filename,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.embeddingsConfig__node_embeddings_params = Slot(
+    uri=DEFAULT_.node_embeddings_params,
+    name="embeddingsConfig__node_embeddings_params",
+    curie=DEFAULT_.curie("node_embeddings_params"),
+    model_uri=DEFAULT_.embeddingsConfig__node_embeddings_params,
+    domain=None,
+    range=Optional[Union[dict, NodeEmbeddingsParams]],
+)
+
+slots.embeddingsConfig__tsne_filename = Slot(
+    uri=DEFAULT_.tsne_filename,
+    name="embeddingsConfig__tsne_filename",
+    curie=DEFAULT_.curie("tsne_filename"),
+    model_uri=DEFAULT_.embeddingsConfig__tsne_filename,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.nodeEmbeddingsParams__method_name = Slot(
+    uri=DEFAULT_.method_name,
+    name="nodeEmbeddingsParams__method_name",
+    curie=DEFAULT_.curie("method_name"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__method_name,
+    domain=None,
+    range=Optional[Union[str, "NodeEmbedMethodEnum"]],
+)
+
+slots.nodeEmbeddingsParams__walk_length = Slot(
+    uri=DEFAULT_.walk_length,
+    name="nodeEmbeddingsParams__walk_length",
+    curie=DEFAULT_.curie("walk_length"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__walk_length,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.nodeEmbeddingsParams__batch_size = Slot(
+    uri=DEFAULT_.batch_size,
+    name="nodeEmbeddingsParams__batch_size",
+    curie=DEFAULT_.curie("batch_size"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__batch_size,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.nodeEmbeddingsParams__window_size = Slot(
+    uri=DEFAULT_.window_size,
+    name="nodeEmbeddingsParams__window_size",
+    curie=DEFAULT_.curie("window_size"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__window_size,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.nodeEmbeddingsParams__return_weight = Slot(
+    uri=DEFAULT_.return_weight,
+    name="nodeEmbeddingsParams__return_weight",
+    curie=DEFAULT_.curie("return_weight"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__return_weight,
+    domain=None,
+    range=Optional[float],
+)
+
+slots.nodeEmbeddingsParams__explore_weight = Slot(
+    uri=DEFAULT_.explore_weight,
+    name="nodeEmbeddingsParams__explore_weight",
+    curie=DEFAULT_.curie("explore_weight"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__explore_weight,
+    domain=None,
+    range=Optional[float],
+)
+
+slots.nodeEmbeddingsParams__iterations = Slot(
+    uri=DEFAULT_.iterations,
+    name="nodeEmbeddingsParams__iterations",
+    curie=DEFAULT_.curie("iterations"),
+    model_uri=DEFAULT_.nodeEmbeddingsParams__iterations,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierContainer__classifiers = Slot(
+    uri=DEFAULT_.classifiers,
+    name="classifierContainer__classifiers",
+    curie=DEFAULT_.curie("classifiers"),
+    model_uri=DEFAULT_.classifierContainer__classifiers,
+    domain=None,
+    range=Optional[
+        Union[Union[dict, Classifier], List[Union[dict, Classifier]]]
+    ],
+)
+
+slots.classifier__classifier_id = Slot(
+    uri=DEFAULT_.classifier_id,
+    name="classifier__classifier_id",
+    curie=DEFAULT_.curie("classifier_id"),
+    model_uri=DEFAULT_.classifier__classifier_id,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifier__classifier_name = Slot(
+    uri=DEFAULT_.classifier_name,
+    name="classifier__classifier_name",
+    curie=DEFAULT_.curie("classifier_name"),
+    model_uri=DEFAULT_.classifier__classifier_name,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifier__classifier_type = Slot(
+    uri=DEFAULT_.classifier_type,
+    name="classifier__classifier_type",
+    curie=DEFAULT_.curie("classifier_type"),
+    model_uri=DEFAULT_.classifier__classifier_type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifier__edge_method = Slot(
+    uri=DEFAULT_.edge_method,
+    name="classifier__edge_method",
+    curie=DEFAULT_.curie("edge_method"),
+    model_uri=DEFAULT_.classifier__edge_method,
+    domain=None,
+    range=Optional[Union[str, "EdgeMethodEnum"]],
+)
+
+slots.classifier__outfile = Slot(
+    uri=DEFAULT_.outfile,
+    name="classifier__outfile",
+    curie=DEFAULT_.curie("outfile"),
+    model_uri=DEFAULT_.classifier__outfile,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifier__history_filename = Slot(
+    uri=DEFAULT_.history_filename,
+    name="classifier__history_filename",
+    curie=DEFAULT_.curie("history_filename"),
+    model_uri=DEFAULT_.classifier__history_filename,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifier__parameters = Slot(
+    uri=DEFAULT_.parameters,
+    name="classifier__parameters",
+    curie=DEFAULT_.curie("parameters"),
+    model_uri=DEFAULT_.classifier__parameters,
+    domain=None,
+    range=Optional[Union[dict, ClassifierParams]],
+)
+
+slots.classifierParams__random_state = Slot(
+    uri=DEFAULT_.random_state,
+    name="classifierParams__random_state",
+    curie=DEFAULT_.curie("random_state"),
+    model_uri=DEFAULT_.classifierParams__random_state,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierParams__max_iter = Slot(
+    uri=DEFAULT_.max_iter,
+    name="classifierParams__max_iter",
+    curie=DEFAULT_.curie("max_iter"),
+    model_uri=DEFAULT_.classifierParams__max_iter,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierParams__layers_config = Slot(
+    uri=DEFAULT_.layers_config,
+    name="classifierParams__layers_config",
+    curie=DEFAULT_.curie("layers_config"),
+    model_uri=DEFAULT_.classifierParams__layers_config,
+    domain=None,
+    range=Optional[Union[dict, LayerContainer]],
+)
+
+slots.classifierParams__metrics_config = Slot(
+    uri=DEFAULT_.metrics_config,
+    name="classifierParams__metrics_config",
+    curie=DEFAULT_.curie("metrics_config"),
+    model_uri=DEFAULT_.classifierParams__metrics_config,
+    domain=None,
+    range=Optional[Union[dict, MetricContainer]],
+)
+
+slots.classifierParams__optimizer = Slot(
+    uri=DEFAULT_.optimizer,
+    name="classifierParams__optimizer",
+    curie=DEFAULT_.curie("optimizer"),
+    model_uri=DEFAULT_.classifierParams__optimizer,
+    domain=None,
+    range=Optional[Union[str, "OptimizerEnum"]],
+)
+
+slots.classifierParams__fit_config = Slot(
+    uri=DEFAULT_.fit_config,
+    name="classifierParams__fit_config",
+    curie=DEFAULT_.curie("fit_config"),
+    model_uri=DEFAULT_.classifierParams__fit_config,
+    domain=None,
+    range=Optional[Union[dict, ClassifierFitParams]],
+)
+
+slots.layerContainer__layers = Slot(
+    uri=DEFAULT_.layers,
+    name="layerContainer__layers",
+    curie=DEFAULT_.curie("layers"),
+    model_uri=DEFAULT_.layerContainer__layers,
+    domain=None,
+    range=Optional[Union[Union[dict, Layer], List[Union[dict, Layer]]]],
+)
+
+slots.layer__type = Slot(
+    uri=DEFAULT_.type,
+    name="layer__type",
+    curie=DEFAULT_.curie("type"),
+    model_uri=DEFAULT_.layer__type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.layer__parameters = Slot(
+    uri=DEFAULT_.parameters,
+    name="layer__parameters",
+    curie=DEFAULT_.curie("parameters"),
+    model_uri=DEFAULT_.layer__parameters,
+    domain=None,
+    range=Optional[Union[dict, LayerParams]],
+)
+
+slots.layerParams__units = Slot(
+    uri=DEFAULT_.units,
+    name="layerParams__units",
+    curie=DEFAULT_.curie("units"),
+    model_uri=DEFAULT_.layerParams__units,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.layerParams__activation = Slot(
+    uri=DEFAULT_.activation,
+    name="layerParams__activation",
+    curie=DEFAULT_.curie("activation"),
+    model_uri=DEFAULT_.layerParams__activation,
+    domain=None,
+    range=Optional[Union[str, "ActivationEnum"]],
+)
+
+slots.layerParams__rate = Slot(
+    uri=DEFAULT_.rate,
+    name="layerParams__rate",
+    curie=DEFAULT_.curie("rate"),
+    model_uri=DEFAULT_.layerParams__rate,
+    domain=None,
+    range=Optional[float],
+)
+
+slots.metricContainer__metrics = Slot(
+    uri=DEFAULT_.metrics,
+    name="metricContainer__metrics",
+    curie=DEFAULT_.curie("metrics"),
+    model_uri=DEFAULT_.metricContainer__metrics,
+    domain=None,
+    range=Optional[Union[Union[dict, Metric], List[Union[dict, Metric]]]],
+)
+
+slots.metric__name = Slot(
+    uri=DEFAULT_.name,
+    name="metric__name",
+    curie=DEFAULT_.curie("name"),
+    model_uri=DEFAULT_.metric__name,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.metric__type = Slot(
+    uri=DEFAULT_.type,
+    name="metric__type",
+    curie=DEFAULT_.curie("type"),
+    model_uri=DEFAULT_.metric__type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.metric__curve = Slot(
+    uri=DEFAULT_.curve,
+    name="metric__curve",
+    curie=DEFAULT_.curie("curve"),
+    model_uri=DEFAULT_.metric__curve,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifierFitParams__batch_size = Slot(
+    uri=DEFAULT_.batch_size,
+    name="classifierFitParams__batch_size",
+    curie=DEFAULT_.curie("batch_size"),
+    model_uri=DEFAULT_.classifierFitParams__batch_size,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierFitParams__epochs = Slot(
+    uri=DEFAULT_.epochs,
+    name="classifierFitParams__epochs",
+    curie=DEFAULT_.curie("epochs"),
+    model_uri=DEFAULT_.classifierFitParams__epochs,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierFitParams__callbacks_list = Slot(
+    uri=DEFAULT_.callbacks_list,
+    name="classifierFitParams__callbacks_list",
+    curie=DEFAULT_.curie("callbacks_list"),
+    model_uri=DEFAULT_.classifierFitParams__callbacks_list,
+    domain=None,
+    range=Optional[Union[dict, ClassifierCallbackContainer]],
+)
+
+slots.classifierCallbackContainer__callbacks = Slot(
+    uri=DEFAULT_.callbacks,
+    name="classifierCallbackContainer__callbacks",
+    curie=DEFAULT_.curie("callbacks"),
+    model_uri=DEFAULT_.classifierCallbackContainer__callbacks,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ClassifierCallback],
+            List[Union[dict, ClassifierCallback]],
+        ]
+    ],
+)
+
+slots.classifierCallback__type = Slot(
+    uri=DEFAULT_.type,
+    name="classifierCallback__type",
+    curie=DEFAULT_.curie("type"),
+    model_uri=DEFAULT_.classifierCallback__type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifierCallback__monitor = Slot(
+    uri=DEFAULT_.monitor,
+    name="classifierCallback__monitor",
+    curie=DEFAULT_.curie("monitor"),
+    model_uri=DEFAULT_.classifierCallback__monitor,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.classifierCallback__patience = Slot(
+    uri=DEFAULT_.patience,
+    name="classifierCallback__patience",
+    curie=DEFAULT_.curie("patience"),
+    model_uri=DEFAULT_.classifierCallback__patience,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierCallback__min_delta = Slot(
+    uri=DEFAULT_.min_delta,
+    name="classifierCallback__min_delta",
+    curie=DEFAULT_.curie("min_delta"),
+    model_uri=DEFAULT_.classifierCallback__min_delta,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.classifierCallback__verbose = Slot(
+    uri=DEFAULT_.verbose,
+    name="classifierCallback__verbose",
+    curie=DEFAULT_.curie("verbose"),
+    model_uri=DEFAULT_.classifierCallback__verbose,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.classifierCallback__mode = Slot(
+    uri=DEFAULT_.mode,
+    name="classifierCallback__mode",
+    curie=DEFAULT_.curie("mode"),
+    model_uri=DEFAULT_.classifierCallback__mode,
+    domain=None,
+    range=Optional[Union[str, "ClassifierCallbackModeEnum"]],
+)
+
+slots.applyTrainedModelsContainer__models = Slot(
+    uri=DEFAULT_.models,
+    name="applyTrainedModelsContainer__models",
+    curie=DEFAULT_.curie("models"),
+    model_uri=DEFAULT_.applyTrainedModelsContainer__models,
+    domain=None,
+    range=Optional[
+        Union[
+            Union[dict, ApplyTrainedModel],
+            List[Union[dict, ApplyTrainedModel]],
+        ]
+    ],
+)
+
+slots.applyTrainedModel__model_id = Slot(
+    uri=DEFAULT_.model_id,
+    name="applyTrainedModel__model_id",
+    curie=DEFAULT_.curie("model_id"),
+    model_uri=DEFAULT_.applyTrainedModel__model_id,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.applyTrainedModel__node_types = Slot(
+    uri=DEFAULT_.node_types,
+    name="applyTrainedModel__node_types",
+    curie=DEFAULT_.curie("node_types"),
+    model_uri=DEFAULT_.applyTrainedModel__node_types,
+    domain=None,
+    range=Optional[Union[dict, NodeType]],
+)
+
+slots.applyTrainedModel__cutoff = Slot(
+    uri=DEFAULT_.cutoff,
+    name="applyTrainedModel__cutoff",
+    curie=DEFAULT_.curie("cutoff"),
+    model_uri=DEFAULT_.applyTrainedModel__cutoff,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.applyTrainedModel__outfile = Slot(
+    uri=DEFAULT_.outfile,
+    name="applyTrainedModel__outfile",
+    curie=DEFAULT_.curie("outfile"),
+    model_uri=DEFAULT_.applyTrainedModel__outfile,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.nodeType__source = Slot(
+    uri=DEFAULT_.source,
+    name="nodeType__source",
+    curie=DEFAULT_.curie("source"),
+    model_uri=DEFAULT_.nodeType__source,
+    domain=None,
+    range=Optional[Union[str, List[str]]],
+)
+
+slots.nodeType__destination = Slot(
+    uri=DEFAULT_.destination,
+    name="nodeType__destination",
+    curie=DEFAULT_.curie("destination"),
+    model_uri=DEFAULT_.nodeType__destination,
+    domain=None,
+    range=Optional[Union[str, List[str]]],
+)
+
+slots.upload__s3_bucket = Slot(
+    uri=DEFAULT_.s3_bucket,
+    name="upload__s3_bucket",
+    curie=DEFAULT_.curie("s3_bucket"),
+    model_uri=DEFAULT_.upload__s3_bucket,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.upload__s3_bucket_dir = Slot(
+    uri=DEFAULT_.s3_bucket_dir,
+    name="upload__s3_bucket_dir",
+    curie=DEFAULT_.curie("s3_bucket_dir"),
+    model_uri=DEFAULT_.upload__s3_bucket_dir,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.upload__extra_args = Slot(
+    uri=DEFAULT_.extra_args,
+    name="upload__extra_args",
+    curie=DEFAULT_.curie("extra_args"),
+    model_uri=DEFAULT_.upload__extra_args,
+    domain=None,
+    range=Optional[Union[str, List[str]]],
+)
+
+slots.target__target_path = Slot(
+    uri=DEFAULT_.target_path,
+    name="target__target_path",
+    curie=DEFAULT_.curie("target_path"),
+    model_uri=DEFAULT_.target__target_path,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_type_path = Slot(
+    uri=DEFAULT_.node_type_path,
+    name="ensmallenRunConfig__node_type_path",
+    curie=DEFAULT_.curie("node_type_path"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_path,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_type_list_separator = Slot(
+    uri=DEFAULT_.node_type_list_separator,
+    name="ensmallenRunConfig__node_type_list_separator",
+    curie=DEFAULT_.curie("node_type_list_separator"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_separator,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_types_column_number = Slot(
+    uri=DEFAULT_.node_types_column_number,
+    name="ensmallenRunConfig__node_types_column_number",
+    curie=DEFAULT_.curie("node_types_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_types_column = Slot(
+    uri=DEFAULT_.node_types_column,
+    name="ensmallenRunConfig__node_types_column",
+    curie=DEFAULT_.curie("node_types_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_types_ids_column_number = Slot(
+    uri=DEFAULT_.node_types_ids_column_number,
+    name="ensmallenRunConfig__node_types_ids_column_number",
+    curie=DEFAULT_.curie("node_types_ids_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_ids_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_types_ids_column = Slot(
+    uri=DEFAULT_.node_types_ids_column,
+    name="ensmallenRunConfig__node_types_ids_column",
+    curie=DEFAULT_.curie("node_types_ids_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_ids_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_types_number = Slot(
+    uri=DEFAULT_.node_types_number,
+    name="ensmallenRunConfig__node_types_number",
+    curie=DEFAULT_.curie("node_types_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__numeric_node_type_ids = Slot(
+    uri=DEFAULT_.numeric_node_type_ids,
+    name="ensmallenRunConfig__numeric_node_type_ids",
+    curie=DEFAULT_.curie("numeric_node_type_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__numeric_node_type_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__minimum_node_type_id = Slot(
+    uri=DEFAULT_.minimum_node_type_id,
+    name="ensmallenRunConfig__minimum_node_type_id",
+    curie=DEFAULT_.curie("minimum_node_type_id"),
+    model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_type_id,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_type_list_header = Slot(
+    uri=DEFAULT_.node_type_list_header,
+    name="ensmallenRunConfig__node_type_list_header",
+    curie=DEFAULT_.curie("node_type_list_header"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_header,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_type_list_rows_to_skip = Slot(
+    uri=DEFAULT_.node_type_list_rows_to_skip,
+    name="ensmallenRunConfig__node_type_list_rows_to_skip",
+    curie=DEFAULT_.curie("node_type_list_rows_to_skip"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_rows_to_skip,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_type_list_is_correct = Slot(
+    uri=DEFAULT_.node_type_list_is_correct,
+    name="ensmallenRunConfig__node_type_list_is_correct",
+    curie=DEFAULT_.curie("node_type_list_is_correct"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_is_correct,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_type_list_max_rows_number = Slot(
+    uri=DEFAULT_.node_type_list_max_rows_number,
+    name="ensmallenRunConfig__node_type_list_max_rows_number",
+    curie=DEFAULT_.curie("node_type_list_max_rows_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_max_rows_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_type_list_comment_symbol = Slot(
+    uri=DEFAULT_.node_type_list_comment_symbol,
+    name="ensmallenRunConfig__node_type_list_comment_symbol",
+    curie=DEFAULT_.curie("node_type_list_comment_symbol"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_comment_symbol,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__load_node_type_list_in_parallel = Slot(
+    uri=DEFAULT_.load_node_type_list_in_parallel,
+    name="ensmallenRunConfig__load_node_type_list_in_parallel",
+    curie=DEFAULT_.curie("load_node_type_list_in_parallel"),
+    model_uri=DEFAULT_.ensmallenRunConfig__load_node_type_list_in_parallel,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_path = Slot(
+    uri=DEFAULT_.node_path,
+    name="ensmallenRunConfig__node_path",
+    curie=DEFAULT_.curie("node_path"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_path,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_list_separator = Slot(
+    uri=DEFAULT_.node_list_separator,
+    name="ensmallenRunConfig__node_list_separator",
+    curie=DEFAULT_.curie("node_list_separator"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_separator,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_list_header = Slot(
+    uri=DEFAULT_.node_list_header,
+    name="ensmallenRunConfig__node_list_header",
+    curie=DEFAULT_.curie("node_list_header"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_header,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_list_rows_to_skip = Slot(
+    uri=DEFAULT_.node_list_rows_to_skip,
+    name="ensmallenRunConfig__node_list_rows_to_skip",
+    curie=DEFAULT_.curie("node_list_rows_to_skip"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_rows_to_skip,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_list_is_correct = Slot(
+    uri=DEFAULT_.node_list_is_correct,
+    name="ensmallenRunConfig__node_list_is_correct",
+    curie=DEFAULT_.curie("node_list_is_correct"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_is_correct,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_list_max_rows_number = Slot(
+    uri=DEFAULT_.node_list_max_rows_number,
+    name="ensmallenRunConfig__node_list_max_rows_number",
+    curie=DEFAULT_.curie("node_list_max_rows_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_max_rows_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_list_comment_symbol = Slot(
+    uri=DEFAULT_.node_list_comment_symbol,
+    name="ensmallenRunConfig__node_list_comment_symbol",
+    curie=DEFAULT_.curie("node_list_comment_symbol"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_comment_symbol,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__default_node_type = Slot(
+    uri=DEFAULT_.default_node_type,
+    name="ensmallenRunConfig__default_node_type",
+    curie=DEFAULT_.curie("default_node_type"),
+    model_uri=DEFAULT_.ensmallenRunConfig__default_node_type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__nodes_column_number = Slot(
+    uri=DEFAULT_.nodes_column_number,
+    name="ensmallenRunConfig__nodes_column_number",
+    curie=DEFAULT_.curie("nodes_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__nodes_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__nodes_column = Slot(
+    uri=DEFAULT_.nodes_column,
+    name="ensmallenRunConfig__nodes_column",
+    curie=DEFAULT_.curie("nodes_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__nodes_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_types_separator = Slot(
+    uri=DEFAULT_.node_types_separator,
+    name="ensmallenRunConfig__node_types_separator",
+    curie=DEFAULT_.curie("node_types_separator"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_types_separator,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_list_node_types_column_number = Slot(
+    uri=DEFAULT_.node_list_node_types_column_number,
+    name="ensmallenRunConfig__node_list_node_types_column_number",
+    curie=DEFAULT_.curie("node_list_node_types_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_node_types_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__node_list_node_types_column = Slot(
+    uri=DEFAULT_.node_list_node_types_column,
+    name="ensmallenRunConfig__node_list_node_types_column",
+    curie=DEFAULT_.curie("node_list_node_types_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_node_types_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_ids_column = Slot(
+    uri=DEFAULT_.node_ids_column,
+    name="ensmallenRunConfig__node_ids_column",
+    curie=DEFAULT_.curie("node_ids_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__node_ids_column_number = Slot(
+    uri=DEFAULT_.node_ids_column_number,
+    name="ensmallenRunConfig__node_ids_column_number",
+    curie=DEFAULT_.curie("node_ids_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__nodes_number = Slot(
+    uri=DEFAULT_.nodes_number,
+    name="ensmallenRunConfig__nodes_number",
+    curie=DEFAULT_.curie("nodes_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__nodes_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__minimum_node_id = Slot(
+    uri=DEFAULT_.minimum_node_id,
+    name="ensmallenRunConfig__minimum_node_id",
+    curie=DEFAULT_.curie("minimum_node_id"),
+    model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_id,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__numeric_node_ids = Slot(
+    uri=DEFAULT_.numeric_node_ids,
+    name="ensmallenRunConfig__numeric_node_ids",
+    curie=DEFAULT_.curie("numeric_node_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__numeric_node_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__node_list_numeric_node_type_ids = Slot(
+    uri=DEFAULT_.node_list_numeric_node_type_ids,
+    name="ensmallenRunConfig__node_list_numeric_node_type_ids",
+    curie=DEFAULT_.curie("node_list_numeric_node_type_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__node_list_numeric_node_type_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__skip_node_types_if_unavailable = Slot(
+    uri=DEFAULT_.skip_node_types_if_unavailable,
+    name="ensmallenRunConfig__skip_node_types_if_unavailable",
+    curie=DEFAULT_.curie("skip_node_types_if_unavailable"),
+    model_uri=DEFAULT_.ensmallenRunConfig__skip_node_types_if_unavailable,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__load_node_list_in_parallel = Slot(
+    uri=DEFAULT_.load_node_list_in_parallel,
+    name="ensmallenRunConfig__load_node_list_in_parallel",
+    curie=DEFAULT_.curie("load_node_list_in_parallel"),
+    model_uri=DEFAULT_.ensmallenRunConfig__load_node_list_in_parallel,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_type_path = Slot(
+    uri=DEFAULT_.edge_type_path,
+    name="ensmallenRunConfig__edge_type_path",
+    curie=DEFAULT_.curie("edge_type_path"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_path,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_types_column_number = Slot(
+    uri=DEFAULT_.edge_types_column_number,
+    name="ensmallenRunConfig__edge_types_column_number",
+    curie=DEFAULT_.curie("edge_types_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_types_column = Slot(
+    uri=DEFAULT_.edge_types_column,
+    name="ensmallenRunConfig__edge_types_column",
+    curie=DEFAULT_.curie("edge_types_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_types_ids_column_number = Slot(
+    uri=DEFAULT_.edge_types_ids_column_number,
+    name="ensmallenRunConfig__edge_types_ids_column_number",
+    curie=DEFAULT_.curie("edge_types_ids_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_types_ids_column = Slot(
+    uri=DEFAULT_.edge_types_ids_column,
+    name="ensmallenRunConfig__edge_types_ids_column",
+    curie=DEFAULT_.curie("edge_types_ids_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_types_number = Slot(
+    uri=DEFAULT_.edge_types_number,
+    name="ensmallenRunConfig__edge_types_number",
+    curie=DEFAULT_.curie("edge_types_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__numeric_edge_type_ids = Slot(
+    uri=DEFAULT_.numeric_edge_type_ids,
+    name="ensmallenRunConfig__numeric_edge_type_ids",
+    curie=DEFAULT_.curie("numeric_edge_type_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__numeric_edge_type_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__minimum_edge_type_id = Slot(
+    uri=DEFAULT_.minimum_edge_type_id,
+    name="ensmallenRunConfig__minimum_edge_type_id",
+    curie=DEFAULT_.curie("minimum_edge_type_id"),
+    model_uri=DEFAULT_.ensmallenRunConfig__minimum_edge_type_id,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_type_list_separator = Slot(
+    uri=DEFAULT_.edge_type_list_separator,
+    name="ensmallenRunConfig__edge_type_list_separator",
+    curie=DEFAULT_.curie("edge_type_list_separator"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_separator,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_type_list_header = Slot(
+    uri=DEFAULT_.edge_type_list_header,
+    name="ensmallenRunConfig__edge_type_list_header",
+    curie=DEFAULT_.curie("edge_type_list_header"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_header,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_type_list_rows_to_skip = Slot(
+    uri=DEFAULT_.edge_type_list_rows_to_skip,
+    name="ensmallenRunConfig__edge_type_list_rows_to_skip",
+    curie=DEFAULT_.curie("edge_type_list_rows_to_skip"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_rows_to_skip,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_type_list_is_correct = Slot(
+    uri=DEFAULT_.edge_type_list_is_correct,
+    name="ensmallenRunConfig__edge_type_list_is_correct",
+    curie=DEFAULT_.curie("edge_type_list_is_correct"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_is_correct,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_type_list_max_rows_number = Slot(
+    uri=DEFAULT_.edge_type_list_max_rows_number,
+    name="ensmallenRunConfig__edge_type_list_max_rows_number",
+    curie=DEFAULT_.curie("edge_type_list_max_rows_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_max_rows_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_type_list_comment_symbol = Slot(
+    uri=DEFAULT_.edge_type_list_comment_symbol,
+    name="ensmallenRunConfig__edge_type_list_comment_symbol",
+    curie=DEFAULT_.curie("edge_type_list_comment_symbol"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_comment_symbol,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__load_edge_type_list_in_parallel = Slot(
+    uri=DEFAULT_.load_edge_type_list_in_parallel,
+    name="ensmallenRunConfig__load_edge_type_list_in_parallel",
+    curie=DEFAULT_.curie("load_edge_type_list_in_parallel"),
+    model_uri=DEFAULT_.ensmallenRunConfig__load_edge_type_list_in_parallel,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_path = Slot(
+    uri=DEFAULT_.edge_path,
+    name="ensmallenRunConfig__edge_path",
+    curie=DEFAULT_.curie("edge_path"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_path,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_list_separator = Slot(
+    uri=DEFAULT_.edge_list_separator,
+    name="ensmallenRunConfig__edge_list_separator",
+    curie=DEFAULT_.curie("edge_list_separator"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_separator,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_list_header = Slot(
+    uri=DEFAULT_.edge_list_header,
+    name="ensmallenRunConfig__edge_list_header",
+    curie=DEFAULT_.curie("edge_list_header"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_header,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_rows_to_skip = Slot(
+    uri=DEFAULT_.edge_list_rows_to_skip,
+    name="ensmallenRunConfig__edge_list_rows_to_skip",
+    curie=DEFAULT_.curie("edge_list_rows_to_skip"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_rows_to_skip,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__sources_column_number = Slot(
+    uri=DEFAULT_.sources_column_number,
+    name="ensmallenRunConfig__sources_column_number",
+    curie=DEFAULT_.curie("sources_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__sources_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__sources_column = Slot(
+    uri=DEFAULT_.sources_column,
+    name="ensmallenRunConfig__sources_column",
+    curie=DEFAULT_.curie("sources_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__sources_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__destinations_column_number = Slot(
+    uri=DEFAULT_.destinations_column_number,
+    name="ensmallenRunConfig__destinations_column_number",
+    curie=DEFAULT_.curie("destinations_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__destinations_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__destinations_column = Slot(
+    uri=DEFAULT_.destinations_column,
+    name="ensmallenRunConfig__destinations_column",
+    curie=DEFAULT_.curie("destinations_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__destinations_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_list_edge_types_column_number = Slot(
+    uri=DEFAULT_.edge_list_edge_types_column_number,
+    name="ensmallenRunConfig__edge_list_edge_types_column_number",
+    curie=DEFAULT_.curie("edge_list_edge_types_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_edge_types_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_list_edge_types_column = Slot(
+    uri=DEFAULT_.edge_list_edge_types_column,
+    name="ensmallenRunConfig__edge_list_edge_types_column",
+    curie=DEFAULT_.curie("edge_list_edge_types_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_edge_types_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__default_edge_type = Slot(
+    uri=DEFAULT_.default_edge_type,
+    name="ensmallenRunConfig__default_edge_type",
+    curie=DEFAULT_.curie("default_edge_type"),
+    model_uri=DEFAULT_.ensmallenRunConfig__default_edge_type,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__weights_column_number = Slot(
+    uri=DEFAULT_.weights_column_number,
+    name="ensmallenRunConfig__weights_column_number",
+    curie=DEFAULT_.curie("weights_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__weights_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__weights_column = Slot(
+    uri=DEFAULT_.weights_column,
+    name="ensmallenRunConfig__weights_column",
+    curie=DEFAULT_.curie("weights_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__weights_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__default_weight = Slot(
+    uri=DEFAULT_.default_weight,
+    name="ensmallenRunConfig__default_weight",
+    curie=DEFAULT_.curie("default_weight"),
+    model_uri=DEFAULT_.ensmallenRunConfig__default_weight,
+    domain=None,
+    range=Optional[float],
+)
+
+slots.ensmallenRunConfig__edge_ids_column = Slot(
+    uri=DEFAULT_.edge_ids_column,
+    name="ensmallenRunConfig__edge_ids_column",
+    curie=DEFAULT_.curie("edge_ids_column"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_ids_column,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edge_ids_column_number = Slot(
+    uri=DEFAULT_.edge_ids_column_number,
+    name="ensmallenRunConfig__edge_ids_column_number",
+    curie=DEFAULT_.curie("edge_ids_column_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_ids_column_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_list_numeric_edge_type_ids = Slot(
+    uri=DEFAULT_.edge_list_numeric_edge_type_ids,
+    name="ensmallenRunConfig__edge_list_numeric_edge_type_ids",
+    curie=DEFAULT_.curie("edge_list_numeric_edge_type_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_numeric_edge_type_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_numeric_node_ids = Slot(
+    uri=DEFAULT_.edge_list_numeric_node_ids,
+    name="ensmallenRunConfig__edge_list_numeric_node_ids",
+    curie=DEFAULT_.curie("edge_list_numeric_node_ids"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_numeric_node_ids,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__skip_weights_if_unavailable = Slot(
+    uri=DEFAULT_.skip_weights_if_unavailable,
+    name="ensmallenRunConfig__skip_weights_if_unavailable",
+    curie=DEFAULT_.curie("skip_weights_if_unavailable"),
+    model_uri=DEFAULT_.ensmallenRunConfig__skip_weights_if_unavailable,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__skip_edge_types_if_unavailable = Slot(
+    uri=DEFAULT_.skip_edge_types_if_unavailable,
+    name="ensmallenRunConfig__skip_edge_types_if_unavailable",
+    curie=DEFAULT_.curie("skip_edge_types_if_unavailable"),
+    model_uri=DEFAULT_.ensmallenRunConfig__skip_edge_types_if_unavailable,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_is_complete = Slot(
+    uri=DEFAULT_.edge_list_is_complete,
+    name="ensmallenRunConfig__edge_list_is_complete",
+    curie=DEFAULT_.curie("edge_list_is_complete"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_complete,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_may_contain_duplicates = Slot(
+    uri=DEFAULT_.edge_list_may_contain_duplicates,
+    name="ensmallenRunConfig__edge_list_may_contain_duplicates",
+    curie=DEFAULT_.curie("edge_list_may_contain_duplicates"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_may_contain_duplicates,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_is_sorted = Slot(
+    uri=DEFAULT_.edge_list_is_sorted,
+    name="ensmallenRunConfig__edge_list_is_sorted",
+    curie=DEFAULT_.curie("edge_list_is_sorted"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_sorted,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_is_correct = Slot(
+    uri=DEFAULT_.edge_list_is_correct,
+    name="ensmallenRunConfig__edge_list_is_correct",
+    curie=DEFAULT_.curie("edge_list_is_correct"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_is_correct,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__edge_list_max_rows_number = Slot(
+    uri=DEFAULT_.edge_list_max_rows_number,
+    name="ensmallenRunConfig__edge_list_max_rows_number",
+    curie=DEFAULT_.curie("edge_list_max_rows_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_max_rows_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__edge_list_comment_symbol = Slot(
+    uri=DEFAULT_.edge_list_comment_symbol,
+    name="ensmallenRunConfig__edge_list_comment_symbol",
+    curie=DEFAULT_.curie("edge_list_comment_symbol"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_comment_symbol,
+    domain=None,
+    range=Optional[str],
+)
+
+slots.ensmallenRunConfig__edges_number = Slot(
+    uri=DEFAULT_.edges_number,
+    name="ensmallenRunConfig__edges_number",
+    curie=DEFAULT_.curie("edges_number"),
+    model_uri=DEFAULT_.ensmallenRunConfig__edges_number,
+    domain=None,
+    range=Optional[int],
+)
+
+slots.ensmallenRunConfig__load_edge_list_in_parallel = Slot(
+    uri=DEFAULT_.load_edge_list_in_parallel,
+    name="ensmallenRunConfig__load_edge_list_in_parallel",
+    curie=DEFAULT_.curie("load_edge_list_in_parallel"),
+    model_uri=DEFAULT_.ensmallenRunConfig__load_edge_list_in_parallel,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__verbose = Slot(
+    uri=DEFAULT_.verbose,
+    name="ensmallenRunConfig__verbose",
+    curie=DEFAULT_.curie("verbose"),
+    model_uri=DEFAULT_.ensmallenRunConfig__verbose,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__may_have_singletons = Slot(
+    uri=DEFAULT_.may_have_singletons,
+    name="ensmallenRunConfig__may_have_singletons",
+    curie=DEFAULT_.curie("may_have_singletons"),
+    model_uri=DEFAULT_.ensmallenRunConfig__may_have_singletons,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__may_have_singleton_with_selfloops = Slot(
+    uri=DEFAULT_.may_have_singleton_with_selfloops,
+    name="ensmallenRunConfig__may_have_singleton_with_selfloops",
+    curie=DEFAULT_.curie("may_have_singleton_with_selfloops"),
+    model_uri=DEFAULT_.ensmallenRunConfig__may_have_singleton_with_selfloops,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__directed = Slot(
+    uri=DEFAULT_.directed,
+    name="ensmallenRunConfig__directed",
+    curie=DEFAULT_.curie("directed"),
+    model_uri=DEFAULT_.ensmallenRunConfig__directed,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
+slots.ensmallenRunConfig__name = Slot(
+    uri=DEFAULT_.name,
+    name="ensmallenRunConfig__name",
+    curie=DEFAULT_.curie("name"),
+    model_uri=DEFAULT_.ensmallenRunConfig__name,
+    domain=None,
+    range=Optional[str],
+)
