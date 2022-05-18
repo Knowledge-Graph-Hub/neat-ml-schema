@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-18T09:37:31
+# Generation date: 2022-05-18T10:56:02
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -44,6 +44,9 @@ DEFAULT_ = CurieNamespace('', 'https://w3id.org/neat_schema/')
 
 @dataclass
 class NeatConfiguration(YAMLRoot):
+    """
+    Root class for the schema.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NeatConfiguration")
@@ -62,6 +65,9 @@ class NeatConfiguration(YAMLRoot):
 
 @dataclass
 class GraphDataConfiguration(YAMLRoot):
+    """
+    Configuration for the graph training and validation data for ML pipeline.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/GraphDataConfiguration")
@@ -84,6 +90,9 @@ class GraphDataConfiguration(YAMLRoot):
 
 @dataclass
 class TrainValidData(YAMLRoot):
+    """
+    Postive and negative training and validation graph data filepaths.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/TrainValidData")
@@ -106,6 +115,9 @@ class TrainValidData(YAMLRoot):
 
 @dataclass
 class PosNegData(YAMLRoot):
+    """
+    File paths for positive an negative edge data.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/PosNegData")
@@ -128,6 +140,9 @@ class PosNegData(YAMLRoot):
 
 @dataclass
 class EmbeddingsConfig(YAMLRoot):
+    """
+    Embeddings configuration.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/EmbeddingsConfig")
@@ -158,6 +173,9 @@ class EmbeddingsConfig(YAMLRoot):
 
 @dataclass
 class NodeEmbeddingsParams(YAMLRoot):
+    """
+    Node embeddings parameters.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeEmbeddingsParams")
@@ -533,7 +551,7 @@ class ClassifierCallbackContainer(YAMLRoot):
 @dataclass
 class ClassifierCallback(YAMLRoot):
     """
-    Callbacks for a classifier.
+    Utilities called at certain points during model training.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -628,6 +646,9 @@ class ApplyTrainedModel(YAMLRoot):
 
 @dataclass
 class NodeType(YAMLRoot):
+    """
+    Source node or Destination node.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/NodeType")
@@ -652,6 +673,9 @@ class NodeType(YAMLRoot):
 
 @dataclass
 class Upload(YAMLRoot):
+    """
+    Configuration for uploading to Amazon S3 bucket.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/neat_schema/Upload")

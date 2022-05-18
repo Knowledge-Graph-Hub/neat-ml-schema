@@ -2,7 +2,7 @@
 # Slot: type
 
 
-
+Type of callback.
 
 URI: [https://w3id.org/neat_schema/classifierCallback__type](https://w3id.org/neat_schema/classifierCallback__type)
 

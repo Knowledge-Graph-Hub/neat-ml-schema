@@ -2,7 +2,7 @@
 # Slot: history_filename
 
 
-
+File name for saving history.
 
 URI: [https://w3id.org/neat_schema/classifier__history_filename](https://w3id.org/neat_schema/classifier__history_filename)
 

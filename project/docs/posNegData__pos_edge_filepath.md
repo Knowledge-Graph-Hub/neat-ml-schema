@@ -2,7 +2,7 @@
 # Slot: pos_edge_filepath
 
 
-
+Positive edges file path.
 
 URI: [https://w3id.org/neat_schema/posNegData__pos_edge_filepath](https://w3id.org/neat_schema/posNegData__pos_edge_filepath)
 

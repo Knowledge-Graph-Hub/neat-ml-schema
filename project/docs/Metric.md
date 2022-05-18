@@ -23,4 +23,5 @@ URI: [https://w3id.org/neat_schema/Metric](https://w3id.org/neat_schema/Metric)
  * [➞name](metric__name.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [➞curve](metric__curve.md)  <sub>0..1</sub>
+     * Description: Area under curve (AUC) to be calculated.
      * Range: [String](types/String.md)

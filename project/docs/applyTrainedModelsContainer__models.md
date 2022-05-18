@@ -2,7 +2,7 @@
 # Slot: models
 
 
-
+Models that need to be used for link prediction.
 
 URI: [https://w3id.org/neat_schema/applyTrainedModelsContainer__models](https://w3id.org/neat_schema/applyTrainedModelsContainer__models)
 

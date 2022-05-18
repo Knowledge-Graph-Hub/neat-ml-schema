@@ -21,6 +21,8 @@ URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_sc
  * [➞batch_size](classifierFitParams__batch_size.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
  * [➞epochs](classifierFitParams__epochs.md)  <sub>0..1</sub>
+     * Description: Number of epochs to run for training.
      * Range: [Integer](types/Integer.md)
  * [➞callbacks_list](classifierFitParams__callbacks_list.md)  <sub>0..1</sub>
+     * Description: List of callbacks.
      * Range: [ClassifierCallbackContainer](ClassifierCallbackContainer.md)

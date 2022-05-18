@@ -22,7 +22,7 @@ message Classifier
   optional historyFilename String = 6
   optional parameters ClassifierParams = 7
  }
-// Callbacks for a classifier.
+// Utilities called at certain points during model training.
 message ClassifierCallback
  {
   optional type String = 1
@@ -55,6 +55,7 @@ message ClassifierParams
   optional sklearnParams SkLearnParams = 1
   optional tfKerasParams TFKerasParams = 2
  }
+// Embeddings configuration.
 message EmbeddingsConfig
  {
   optional filename String = 1
@@ -150,6 +151,7 @@ message EnsmallenRunConfig
   optional directed Boolean = 83
   optional name String = 84
  }
+// Configuration for the graph training and validation data for ML pipeline.
 message GraphDataConfiguration
  {
   optional graph EnsmallenRunConfig = 1
@@ -185,10 +187,12 @@ message MetricContainer
  {
   repeated metrics Metric = 1
  }
+// Root class for the schema.
 message NeatConfiguration
  {
   optional graphData GraphDataConfiguration = 1
  }
+// Node embeddings parameters.
 message NodeEmbeddingsParams
  {
   optional methodName NodeEmbedMethodEnum = 1
@@ -199,11 +203,13 @@ message NodeEmbeddingsParams
   optional exploreWeight Float = 6
   optional iterations Integer = 7
  }
+// Source node or Destination node.
 message NodeType
  {
   repeated source String = 1
   repeated destination String = 2
  }
+// File paths for positive an negative edge data.
 message PosNegData
  {
   optional posEdgeFilepath String = 1
@@ -229,11 +235,13 @@ message TFKerasParams
   optional optimizer OptimizerEnum = 4
   optional fitConfig ClassifierFitParams = 5
  }
+// Postive and negative training and validation graph data filepaths.
 message TrainValidData
  {
   optional trainData PosNegData = 1
   optional validData PosNegData = 2
  }
+// Configuration for uploading to Amazon S3 bucket.
 message Upload
  {
   optional s3Bucket String = 1

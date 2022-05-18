@@ -1,4 +1,6 @@
 # Slot: parameters
+_Parameters to be passed for building classifier._
+
 
 URI: [https://w3id.org/neat_schema/:parameters](https://w3id.org/neat_schema/:parameters)
 

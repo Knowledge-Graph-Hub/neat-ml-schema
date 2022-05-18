@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierContainer](https://w3id.org/neat_s
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [classifiers](classifiers.md) | [Classifier](Classifier.md) | 0..* | None  | . |
+| [classifiers](classifiers.md) | [Classifier](Classifier.md) | 0..* | Classifier details.  | . |
 
 
 ## Usages
@@ -48,6 +48,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   classifiers:
     name: classifiers
+    description: Classifier details.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     range: Classifier
@@ -67,6 +68,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   classifiers:
     name: classifiers
+    description: Classifier details.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     alias: classifiers

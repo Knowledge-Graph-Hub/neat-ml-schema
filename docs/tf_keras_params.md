@@ -1,4 +1,6 @@
 # Slot: tf_keras_params
+_Parameters specific to Tensorflow/Keras_
+
 
 URI: [https://w3id.org/neat_schema/:tf_keras_params](https://w3id.org/neat_schema/:tf_keras_params)
 

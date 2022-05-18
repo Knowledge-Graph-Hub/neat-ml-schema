@@ -19,4 +19,5 @@ URI: [https://w3id.org/neat_schema/MetricContainer](https://w3id.org/neat_schema
 ### Own
 
  * [➞metrics](metricContainer__metrics.md)  <sub>0..\*</sub>
+     * Description: A list of metrics need to train a classifier.
      * Range: [Metric](Metric.md)

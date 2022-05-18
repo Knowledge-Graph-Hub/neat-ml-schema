@@ -2,7 +2,7 @@
 # Class: NeatConfiguration
 
 
-
+Root class for the schema.
 
 URI: [https://w3id.org/neat_schema/NeatConfiguration](https://w3id.org/neat_schema/NeatConfiguration)
 
@@ -15,4 +15,5 @@ URI: [https://w3id.org/neat_schema/NeatConfiguration](https://w3id.org/neat_sche
 ### Own
 
  * [➞graph_data](neatConfiguration__graph_data.md)  <sub>0..1</sub>
+     * Description: Configuration for graph data.
      * Range: [GraphDataConfiguration](GraphDataConfiguration.md)

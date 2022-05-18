@@ -2,7 +2,7 @@
 # Slot: max_iter
 
 
-
+Maximum iterations.
 
 URI: [https://w3id.org/neat_schema/skLearnParams__max_iter](https://w3id.org/neat_schema/skLearnParams__max_iter)
 

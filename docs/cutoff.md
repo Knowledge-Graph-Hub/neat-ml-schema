@@ -1,4 +1,6 @@
 # Slot: cutoff
+_Cutoff filter._
+
 
 URI: [https://w3id.org/neat_schema/:cutoff](https://w3id.org/neat_schema/:cutoff)
 

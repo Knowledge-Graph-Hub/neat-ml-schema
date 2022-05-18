@@ -17,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:SkLearnParams](https://w3id.org/neat_schema/
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [random_state](random_state.md) | [integer](integer.md) | 0..1 | None  | . |
-| [max_iter](max_iter.md) | [integer](integer.md) | 0..1 | None  | . |
+| [random_state](random_state.md) | [integer](integer.md) | 0..1 | Random seed.  | . |
+| [max_iter](max_iter.md) | [integer](integer.md) | 0..1 | Maximum iterations.  | . |
 
 
 ## Usages
@@ -54,10 +54,12 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   random_state:
     name: random_state
+    description: Random seed.
     from_schema: https://w3id.org/neat_schema
     range: integer
   max_iter:
     name: max_iter
+    description: Maximum iterations.
     from_schema: https://w3id.org/neat_schema
     range: integer
 
@@ -74,12 +76,14 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   random_state:
     name: random_state
+    description: Random seed.
     from_schema: https://w3id.org/neat_schema
     alias: random_state
     owner: SkLearnParams
     range: integer
   max_iter:
     name: max_iter
+    description: Maximum iterations.
     from_schema: https://w3id.org/neat_schema
     alias: max_iter
     owner: SkLearnParams

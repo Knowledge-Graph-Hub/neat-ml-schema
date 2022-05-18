@@ -1,4 +1,6 @@
 # Class: NodeEmbeddingsParams
+_Node embeddings parameters._
+
 
 
 
@@ -15,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParams](https://w3id.org/neat_
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [method_name](method_name.md) | [NodeEmbedMethodEnum](NodeEmbedMethodEnum.md) | 0..1 | None  | . |
+| [method_name](method_name.md) | [NodeEmbedMethodEnum](NodeEmbedMethodEnum.md) | 0..1 | Name of the node embedding method.  | . |
 | [walk_length](walk_length.md) | [integer](integer.md) | 0..1 | None  | . |
 | [batch_size](batch_size.md) | [integer](integer.md) | 0..1 | None  | . |
 | [window_size](window_size.md) | [integer](integer.md) | 0..1 | None  | . |
@@ -52,10 +54,12 @@ URI: [https://w3id.org/neat_schema/:NodeEmbeddingsParams](https://w3id.org/neat_
 <details>
 ```yaml
 name: NodeEmbeddingsParams
+description: Node embeddings parameters.
 from_schema: https://w3id.org/neat_schema
 attributes:
   method_name:
     name: method_name
+    description: Name of the node embedding method.
     from_schema: https://w3id.org/neat_schema
     range: node_embed_method_enum
   walk_length:
@@ -91,10 +95,12 @@ attributes:
 <details>
 ```yaml
 name: NodeEmbeddingsParams
+description: Node embeddings parameters.
 from_schema: https://w3id.org/neat_schema
 attributes:
   method_name:
     name: method_name
+    description: Name of the node embedding method.
     from_schema: https://w3id.org/neat_schema
     alias: method_name
     owner: NodeEmbeddingsParams

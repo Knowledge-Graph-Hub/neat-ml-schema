@@ -1,4 +1,6 @@
 # Slot: edge_method
+_Edge method._
+
 
 URI: [https://w3id.org/neat_schema/:edge_method](https://w3id.org/neat_schema/:edge_method)
 

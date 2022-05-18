@@ -2,7 +2,7 @@
 # Slot: destination
 
 
-
+Destination node(s).
 
 URI: [https://w3id.org/neat_schema/nodeType__destination](https://w3id.org/neat_schema/nodeType__destination)
 

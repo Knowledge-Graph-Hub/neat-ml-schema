@@ -2,7 +2,7 @@
 # Slot: edge_method
 
 
-
+Edge method.
 
 URI: [https://w3id.org/neat_schema/classifier__edge_method](https://w3id.org/neat_schema/classifier__edge_method)
 

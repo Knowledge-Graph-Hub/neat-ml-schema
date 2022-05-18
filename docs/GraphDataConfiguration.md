@@ -1,4 +1,6 @@
 # Class: GraphDataConfiguration
+_Configuration for the graph training and validation data for ML pipeline._
+
 
 
 
@@ -15,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:GraphDataConfiguration](https://w3id.org/nea
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [graph](graph.md) | [EnsmallenRunConfig](EnsmallenRunConfig.md) | 0..1 | None  | . |
-| [data](data.md) | [TrainValidData](TrainValidData.md) | 0..1 | None  | . |
+| [graph](graph.md) | [EnsmallenRunConfig](EnsmallenRunConfig.md) | 0..1 | Graph configuration for pipeline  | . |
+| [data](data.md) | [TrainValidData](TrainValidData.md) | 0..1 | Input data for pipeline.  | . |
 
 
 ## Usages
@@ -47,14 +49,17 @@ URI: [https://w3id.org/neat_schema/:GraphDataConfiguration](https://w3id.org/nea
 <details>
 ```yaml
 name: GraphDataConfiguration
+description: Configuration for the graph training and validation data for ML pipeline.
 from_schema: https://w3id.org/neat_schema
 attributes:
   graph:
     name: graph
+    description: Graph configuration for pipeline
     from_schema: https://w3id.org/neat_schema
     range: EnsmallenRunConfig
   data:
     name: data
+    description: Input data for pipeline.
     from_schema: https://w3id.org/neat_schema
     range: TrainValidData
 
@@ -66,16 +71,19 @@ attributes:
 <details>
 ```yaml
 name: GraphDataConfiguration
+description: Configuration for the graph training and validation data for ML pipeline.
 from_schema: https://w3id.org/neat_schema
 attributes:
   graph:
     name: graph
+    description: Graph configuration for pipeline
     from_schema: https://w3id.org/neat_schema
     alias: graph
     owner: GraphDataConfiguration
     range: EnsmallenRunConfig
   data:
     name: data
+    description: Input data for pipeline.
     from_schema: https://w3id.org/neat_schema
     alias: data
     owner: GraphDataConfiguration

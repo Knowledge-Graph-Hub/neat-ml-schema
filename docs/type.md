@@ -1,4 +1,6 @@
 # Slot: type
+_Type of layer._
+
 
 URI: [https://w3id.org/neat_schema/:type](https://w3id.org/neat_schema/:type)
 

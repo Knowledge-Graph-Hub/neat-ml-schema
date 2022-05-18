@@ -2,7 +2,7 @@
 # Slot: outfile
 
 
-
+Fie path for saving output.
 
 URI: [https://w3id.org/neat_schema/classifier__outfile](https://w3id.org/neat_schema/classifier__outfile)
 

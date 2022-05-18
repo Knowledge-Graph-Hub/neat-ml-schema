@@ -2,7 +2,7 @@
 # Slot: outfile
 
 
-
+File path for saving results.
 
 URI: [https://w3id.org/neat_schema/applyTrainedModel__outfile](https://w3id.org/neat_schema/applyTrainedModel__outfile)
 

@@ -2,7 +2,7 @@
 # Slot: epochs
 
 
-
+Number of epochs to run for training.
 
 URI: [https://w3id.org/neat_schema/classifierFitParams__epochs](https://w3id.org/neat_schema/classifierFitParams__epochs)
 

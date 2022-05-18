@@ -15,4 +15,5 @@ URI: [https://w3id.org/neat_schema/Target](https://w3id.org/neat_schema/Target)
 ### Own
 
  * [➞target_path](target__target_path.md)  <sub>0..1</sub>
+     * Description: File path for saving results.
      * Range: [String](types/String.md)

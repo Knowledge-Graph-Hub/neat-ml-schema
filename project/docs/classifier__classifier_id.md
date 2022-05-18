@@ -2,7 +2,7 @@
 # Slot: classifier_id
 
 
-
+Key to identify the classifier and associated parameters.
 
 URI: [https://w3id.org/neat_schema/classifier__classifier_id](https://w3id.org/neat_schema/classifier__classifier_id)
 

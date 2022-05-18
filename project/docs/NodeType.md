@@ -2,7 +2,7 @@
 # Class: NodeType
 
 
-
+Source node or Destination node.
 
 URI: [https://w3id.org/neat_schema/NodeType](https://w3id.org/neat_schema/NodeType)
 
@@ -19,6 +19,8 @@ URI: [https://w3id.org/neat_schema/NodeType](https://w3id.org/neat_schema/NodeTy
 ### Own
 
  * [➞source](nodeType__source.md)  <sub>0..\*</sub>
+     * Description: Source node(s).
      * Range: [String](types/String.md)
  * [➞destination](nodeType__destination.md)  <sub>0..\*</sub>
+     * Description: Destination node(s).
      * Range: [String](types/String.md)

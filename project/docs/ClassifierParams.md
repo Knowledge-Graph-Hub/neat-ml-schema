@@ -19,6 +19,8 @@ URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schem
 ### Own
 
  * [➞sklearn_params](classifierParams__sklearn_params.md)  <sub>0..1</sub>
+     * Description: Parameters specific to sklearn.
      * Range: [SkLearnParams](SkLearnParams.md)
  * [➞tf_keras_params](classifierParams__tf_keras_params.md)  <sub>0..1</sub>
+     * Description: Parameters specific to Tensorflow/Keras
      * Range: [TFKerasParams](TFKerasParams.md)

@@ -8,12 +8,12 @@ URI: https://w3id.org/neat_schema
 
 | Class | Description |
 | --- | --- |
-| [NeatConfiguration](NeatConfiguration.md) | None | 
-| [GraphDataConfiguration](GraphDataConfiguration.md) | None | 
-| [TrainValidData](TrainValidData.md) | None | 
-| [PosNegData](PosNegData.md) | None | 
-| [EmbeddingsConfig](EmbeddingsConfig.md) | None | 
-| [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | None | 
+| [NeatConfiguration](NeatConfiguration.md) | Root class for the schema. | 
+| [GraphDataConfiguration](GraphDataConfiguration.md) | Configuration for the graph training and validation data for ML pipeline. | 
+| [TrainValidData](TrainValidData.md) | Postive and negative training and validation graph data filepaths. | 
+| [PosNegData](PosNegData.md) | File paths for positive an negative edge data. | 
+| [EmbeddingsConfig](EmbeddingsConfig.md) | Embeddings configuration. | 
+| [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | Node embeddings parameters. | 
 | [ClassifierContainer](ClassifierContainer.md) | A container with multiple classifiers in it. | 
 | [Classifier](Classifier.md) | ML classifiers to be trained-tested-validated and applied for predictions. | 
 | [ClassifierParams](ClassifierParams.md) | Parameters needed to define a classifier. | 
@@ -26,11 +26,11 @@ URI: https://w3id.org/neat_schema
 | [Metric](Metric.md) | Metrics of a trained classifier (model). | 
 | [ClassifierFitParams](ClassifierFitParams.md) | Paramters for fitting a classifier. | 
 | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | A container of classifier callbacks. | 
-| [ClassifierCallback](ClassifierCallback.md) | Callbacks for a classifier. | 
+| [ClassifierCallback](ClassifierCallback.md) | Utilities called at certain points during model training. | 
 | [ApplyTrainedModelsContainer](ApplyTrainedModelsContainer.md) | A container with multiple classifiers in it. | 
 | [ApplyTrainedModel](ApplyTrainedModel.md) | Trained model used for prediction. | 
-| [NodeType](NodeType.md) | None | 
-| [Upload](Upload.md) | None | 
+| [NodeType](NodeType.md) | Source node or Destination node. | 
+| [Upload](Upload.md) | Configuration for uploading to Amazon S3 bucket. | 
 | [Target](Target.md) | Path for output to be saved. | 
 | [EnsmallenRunConfig](EnsmallenRunConfig.md) | All params used by ensmallen's csv_reader | 
 
@@ -39,66 +39,66 @@ URI: https://w3id.org/neat_schema
 
 | Slot | Description |
 | --- | --- |
-| [graph_data](graph_data.md) | None | 
-| [graph](graph.md) | None | 
-| [data](data.md) | None | 
-| [train_data](train_data.md) | None | 
-| [valid_data](valid_data.md) | None | 
-| [pos_edge_filepath](pos_edge_filepath.md) | None | 
-| [neg_edge_filepath](neg_edge_filepath.md) | None | 
-| [filename](filename.md) | None | 
-| [history_filename](history_filename.md) | None | 
-| [node_embeddings_params](node_embeddings_params.md) | None | 
-| [tsne_filename](tsne_filename.md) | None | 
-| [method_name](method_name.md) | None | 
+| [graph_data](graph_data.md) | Configuration for graph data. | 
+| [graph](graph.md) | Graph configuration for pipeline | 
+| [data](data.md) | Input data for pipeline. | 
+| [train_data](train_data.md) | Positive and negative graph data for ML training. | 
+| [valid_data](valid_data.md) | Positive and negative graph data for ML validation. | 
+| [pos_edge_filepath](pos_edge_filepath.md) | Positive edges file path. | 
+| [neg_edge_filepath](neg_edge_filepath.md) | Negative edges file path. | 
+| [filename](filename.md) | Embeddings file name. | 
+| [history_filename](history_filename.md) | Embeddings history file name. | 
+| [node_embeddings_params](node_embeddings_params.md) | Node embeddings parameters. | 
+| [tsne_filename](tsne_filename.md) | File name for the TSNE plot. | 
+| [method_name](method_name.md) | Name of the node embedding method. | 
 | [walk_length](walk_length.md) | None | 
 | [batch_size](batch_size.md) | None | 
 | [window_size](window_size.md) | None | 
 | [return_weight](return_weight.md) | None | 
 | [explore_weight](explore_weight.md) | None | 
 | [iterations](iterations.md) | None | 
-| [classifiers](classifiers.md) | None | 
-| [classifier_id](classifier_id.md) | None | 
-| [classifier_name](classifier_name.md) | None | 
-| [classifier_type](classifier_type.md) | None | 
-| [edge_method](edge_method.md) | None | 
-| [outfile](outfile.md) | None | 
-| [parameters](parameters.md) | None | 
-| [sklearn_params](sklearn_params.md) | None | 
-| [tf_keras_params](tf_keras_params.md) | None | 
-| [random_state](random_state.md) | None | 
-| [max_iter](max_iter.md) | None | 
-| [layers_config](layers_config.md) | None | 
-| [loss](loss.md) | None | 
-| [metrics_config](metrics_config.md) | None | 
-| [optimizer](optimizer.md) | None | 
-| [fit_config](fit_config.md) | None | 
-| [layers](layers.md) | None | 
-| [type](type.md) | None | 
+| [classifiers](classifiers.md) | Classifier details. | 
+| [classifier_id](classifier_id.md) | Key to identify the classifier and associated parameters. | 
+| [classifier_name](classifier_name.md) | Name of the classifier. | 
+| [classifier_type](classifier_type.md) | Type of classifier. | 
+| [edge_method](edge_method.md) | Edge method. | 
+| [outfile](outfile.md) | Fie path for saving output. | 
+| [parameters](parameters.md) | Parameters to be passed for building classifier. | 
+| [sklearn_params](sklearn_params.md) | Parameters specific to sklearn. | 
+| [tf_keras_params](tf_keras_params.md) | Parameters specific to Tensorflow/Keras | 
+| [random_state](random_state.md) | Random seed. | 
+| [max_iter](max_iter.md) | Maximum iterations. | 
+| [layers_config](layers_config.md) | Configuration for instantiating layers for neural networks. | 
+| [loss](loss.md) | Loss function. | 
+| [metrics_config](metrics_config.md) | Metrics to be calculated after classifier training. | 
+| [optimizer](optimizer.md) | Optimizer function to be used during classifier training. | 
+| [fit_config](fit_config.md) | Configuration for model fitting. | 
+| [layers](layers.md) | List of layers to be used to build the neural network. | 
+| [type](type.md) | Type of layer. | 
 | [units](units.md) | None | 
-| [activation](activation.md) | None | 
+| [activation](activation.md) | Activation layer type | 
 | [rate](rate.md) | None | 
-| [metrics](metrics.md) | None | 
+| [metrics](metrics.md) | A list of metrics need to train a classifier. | 
 | [name](name.md) | None | 
-| [curve](curve.md) | None | 
-| [epochs](epochs.md) | None | 
-| [callbacks_list](callbacks_list.md) | None | 
-| [callbacks](callbacks.md) | None | 
-| [monitor](monitor.md) | None | 
-| [patience](patience.md) | None | 
-| [min_delta](min_delta.md) | None | 
-| [verbose](verbose.md) | None | 
-| [mode](mode.md) | None | 
-| [models](models.md) | None | 
-| [model_id](model_id.md) | None | 
-| [node_types](node_types.md) | None | 
-| [cutoff](cutoff.md) | None | 
-| [source](source.md) | None | 
-| [destination](destination.md) | None | 
-| [s3_bucket](s3_bucket.md) | None | 
-| [s3_bucket_dir](s3_bucket_dir.md) | None | 
-| [extra_args](extra_args.md) | None | 
-| [target_path](target_path.md) | None | 
+| [curve](curve.md) | Area under curve (AUC) to be calculated. | 
+| [epochs](epochs.md) | Number of epochs to run for training. | 
+| [callbacks_list](callbacks_list.md) | List of callbacks. | 
+| [callbacks](callbacks.md) | Callbacks. | 
+| [monitor](monitor.md) | Quantity to be monitored. | 
+| [patience](patience.md) | Number of epochs with no improvement after which training will be stopped. | 
+| [min_delta](min_delta.md) | Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement. | 
+| [verbose](verbose.md) | Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action. | 
+| [mode](mode.md) | One of {"auto", "min", "max"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in "max" mode it will stop when the quantity monitored has stopped increasing; in "auto" mode, the direction is automatically inferred from the name of the monitored quantity. | 
+| [models](models.md) | Models that need to be used for link prediction. | 
+| [model_id](model_id.md) | Key of the model to be used. | 
+| [node_types](node_types.md) | Type of nodes. | 
+| [cutoff](cutoff.md) | Cutoff filter. | 
+| [source](source.md) | Source node(s). | 
+| [destination](destination.md) | Destination node(s). | 
+| [s3_bucket](s3_bucket.md) | Bucket name. | 
+| [s3_bucket_dir](s3_bucket_dir.md) | Bucket path. | 
+| [extra_args](extra_args.md) | Extra keyword arguments (**kwargs). | 
+| [target_path](target_path.md) | File path for saving results. | 
 | [node_type_path](node_type_path.md) | None | 
 | [node_type_list_separator](node_type_list_separator.md) | None | 
 | [node_types_column_number](node_types_column_number.md) | None | 

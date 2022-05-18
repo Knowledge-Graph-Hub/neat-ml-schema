@@ -2,7 +2,7 @@
 # Slot: activation
 
 
-
+Activation layer type
 
 URI: [https://w3id.org/neat_schema/layerParams__activation](https://w3id.org/neat_schema/layerParams__activation)
 

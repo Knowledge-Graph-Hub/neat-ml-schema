@@ -2,7 +2,7 @@
 # Slot: source
 
 
-
+Source node(s).
 
 URI: [https://w3id.org/neat_schema/nodeType__source](https://w3id.org/neat_schema/nodeType__source)
 

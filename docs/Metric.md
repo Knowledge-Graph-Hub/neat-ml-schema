@@ -19,7 +19,7 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 | ---  | --- | --- | --- | --- |
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [name](name.md) | [string](string.md) | 0..1 | None  | . |
-| [curve](curve.md) | [string](string.md) | 0..1 | None  | . |
+| [curve](curve.md) | [string](string.md) | 0..1 | Area under curve (AUC) to be calculated.  | . |
 
 
 ## Usages
@@ -61,6 +61,7 @@ attributes:
     from_schema: https://w3id.org/neat_schema
   curve:
     name: curve
+    description: Area under curve (AUC) to be calculated.
     from_schema: https://w3id.org/neat_schema
 
 ```
@@ -88,6 +89,7 @@ attributes:
     range: string
   curve:
     name: curve
+    description: Area under curve (AUC) to be calculated.
     from_schema: https://w3id.org/neat_schema
     alias: curve
     owner: Metric

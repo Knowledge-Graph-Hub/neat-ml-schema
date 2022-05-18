@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:Layer](https://w3id.org/neat_schema/:Layer)
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [type](type.md) | [string](string.md) | 0..1 | Type of layer.  | . |
 | [parameters](parameters.md) | [ClassifierParams](ClassifierParams.md) | 0..1 | None  | . |
 
 
@@ -54,6 +54,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   type:
     name: type
+    description: Type of layer.
     from_schema: https://w3id.org/neat_schema
   parameters:
     name: parameters
@@ -73,6 +74,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   type:
     name: type
+    description: Type of layer.
     from_schema: https://w3id.org/neat_schema
     alias: type
     owner: Layer

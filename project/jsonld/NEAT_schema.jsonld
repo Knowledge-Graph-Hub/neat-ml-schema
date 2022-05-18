@@ -310,6 +310,7 @@
   "slots": [
     {
       "name": "neatConfiguration__graph_data",
+      "description": "Configuration for graph data.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/graph_data",
       "alias": "graph_data",
@@ -323,6 +324,7 @@
     },
     {
       "name": "graphDataConfiguration__graph",
+      "description": "Graph configuration for pipeline",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/graph",
       "alias": "graph",
@@ -336,6 +338,7 @@
     },
     {
       "name": "graphDataConfiguration__data",
+      "description": "Input data for pipeline.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/data",
       "alias": "data",
@@ -349,6 +352,7 @@
     },
     {
       "name": "trainValidData__train_data",
+      "description": "Positive and negative graph data for ML training.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/train_data",
       "alias": "train_data",
@@ -362,6 +366,7 @@
     },
     {
       "name": "trainValidData__valid_data",
+      "description": "Positive and negative graph data for ML validation.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/valid_data",
       "alias": "valid_data",
@@ -375,6 +380,7 @@
     },
     {
       "name": "posNegData__pos_edge_filepath",
+      "description": "Positive edges file path.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/pos_edge_filepath",
       "alias": "pos_edge_filepath",
@@ -387,6 +393,7 @@
     },
     {
       "name": "posNegData__neg_edge_filepath",
+      "description": "Negative edges file path.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/neg_edge_filepath",
       "alias": "neg_edge_filepath",
@@ -399,6 +406,7 @@
     },
     {
       "name": "embeddingsConfig__filename",
+      "description": "Embeddings file name.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/filename",
       "alias": "filename",
@@ -411,6 +419,7 @@
     },
     {
       "name": "embeddingsConfig__history_filename",
+      "description": "Embeddings history file name.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/history_filename",
       "alias": "history_filename",
@@ -423,6 +432,7 @@
     },
     {
       "name": "embeddingsConfig__node_embeddings_params",
+      "description": "Node embeddings parameters.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_embeddings_params",
       "alias": "node_embeddings_params",
@@ -436,6 +446,7 @@
     },
     {
       "name": "embeddingsConfig__tsne_filename",
+      "description": "File name for the TSNE plot.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/tsne_filename",
       "alias": "tsne_filename",
@@ -448,6 +459,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__method_name",
+      "description": "Name of the node embedding method.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/method_name",
       "alias": "method_name",
@@ -532,6 +544,7 @@
     },
     {
       "name": "classifierContainer__classifiers",
+      "description": "Classifier details.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/classifiers",
       "multivalued": true,
@@ -547,6 +560,7 @@
     },
     {
       "name": "classifier__classifier_id",
+      "description": "Key to identify the classifier and associated parameters.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/classifier_id",
       "alias": "classifier_id",
@@ -559,6 +573,7 @@
     },
     {
       "name": "classifier__classifier_name",
+      "description": "Name of the classifier.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/classifier_name",
       "alias": "classifier_name",
@@ -571,6 +586,7 @@
     },
     {
       "name": "classifier__classifier_type",
+      "description": "Type of classifier.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/classifier_type",
       "alias": "classifier_type",
@@ -583,6 +599,7 @@
     },
     {
       "name": "classifier__edge_method",
+      "description": "Edge method.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_method",
       "alias": "edge_method",
@@ -595,6 +612,7 @@
     },
     {
       "name": "classifier__outfile",
+      "description": "Fie path for saving output.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/outfile",
       "alias": "outfile",
@@ -607,6 +625,7 @@
     },
     {
       "name": "classifier__history_filename",
+      "description": "File name for saving history.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/history_filename",
       "alias": "history_filename",
@@ -619,6 +638,7 @@
     },
     {
       "name": "classifier__parameters",
+      "description": "Parameters to be passed for building classifier.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/parameters",
       "alias": "parameters",
@@ -632,6 +652,7 @@
     },
     {
       "name": "classifierParams__sklearn_params",
+      "description": "Parameters specific to sklearn.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/sklearn_params",
       "alias": "sklearn_params",
@@ -645,6 +666,7 @@
     },
     {
       "name": "classifierParams__tf_keras_params",
+      "description": "Parameters specific to Tensorflow/Keras",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/tf_keras_params",
       "alias": "tf_keras_params",
@@ -658,6 +680,7 @@
     },
     {
       "name": "skLearnParams__random_state",
+      "description": "Random seed.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/random_state",
       "alias": "random_state",
@@ -670,6 +693,7 @@
     },
     {
       "name": "skLearnParams__max_iter",
+      "description": "Maximum iterations.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/max_iter",
       "alias": "max_iter",
@@ -682,6 +706,7 @@
     },
     {
       "name": "tFKerasParams__layers_config",
+      "description": "Configuration for instantiating layers for neural networks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/layers_config",
       "alias": "layers_config",
@@ -695,6 +720,7 @@
     },
     {
       "name": "tFKerasParams__loss",
+      "description": "Loss function.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/loss",
       "alias": "loss",
@@ -707,6 +733,7 @@
     },
     {
       "name": "tFKerasParams__metrics_config",
+      "description": "Metrics to be calculated after classifier training.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/metrics_config",
       "alias": "metrics_config",
@@ -720,6 +747,7 @@
     },
     {
       "name": "tFKerasParams__optimizer",
+      "description": "Optimizer function to be used during classifier training.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/optimizer",
       "alias": "optimizer",
@@ -732,6 +760,7 @@
     },
     {
       "name": "tFKerasParams__fit_config",
+      "description": "Configuration for model fitting.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/fit_config",
       "alias": "fit_config",
@@ -745,6 +774,7 @@
     },
     {
       "name": "layerContainer__layers",
+      "description": "List of layers to be used to build the neural network.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/layers",
       "multivalued": true,
@@ -760,6 +790,7 @@
     },
     {
       "name": "layer__type",
+      "description": "Type of layer.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/type",
       "alias": "type",
@@ -797,6 +828,7 @@
     },
     {
       "name": "layerParams__activation",
+      "description": "Activation layer type",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/activation",
       "alias": "activation",
@@ -821,6 +853,7 @@
     },
     {
       "name": "metricContainer__metrics",
+      "description": "A list of metrics need to train a classifier.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/metrics",
       "multivalued": true,
@@ -860,6 +893,7 @@
     },
     {
       "name": "metric__curve",
+      "description": "Area under curve (AUC) to be calculated.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/curve",
       "alias": "curve",
@@ -884,6 +918,7 @@
     },
     {
       "name": "classifierFitParams__epochs",
+      "description": "Number of epochs to run for training.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/epochs",
       "alias": "epochs",
@@ -896,6 +931,7 @@
     },
     {
       "name": "classifierFitParams__callbacks_list",
+      "description": "List of callbacks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/callbacks_list",
       "alias": "callbacks_list",
@@ -909,6 +945,7 @@
     },
     {
       "name": "classifierCallbackContainer__callbacks",
+      "description": "Callbacks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/callbacks",
       "multivalued": true,
@@ -924,6 +961,7 @@
     },
     {
       "name": "classifierCallback__type",
+      "description": "Type of callback.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/type",
       "alias": "type",
@@ -936,6 +974,7 @@
     },
     {
       "name": "classifierCallback__monitor",
+      "description": "Quantity to be monitored.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/monitor",
       "alias": "monitor",
@@ -948,6 +987,7 @@
     },
     {
       "name": "classifierCallback__patience",
+      "description": "Number of epochs with no improvement after which training will be stopped.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/patience",
       "alias": "patience",
@@ -960,6 +1000,7 @@
     },
     {
       "name": "classifierCallback__min_delta",
+      "description": "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/min_delta",
       "alias": "min_delta",
@@ -972,6 +1013,7 @@
     },
     {
       "name": "classifierCallback__verbose",
+      "description": "Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/verbose",
       "alias": "verbose",
@@ -984,6 +1026,7 @@
     },
     {
       "name": "classifierCallback__mode",
+      "description": "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/mode",
       "alias": "mode",
@@ -996,6 +1039,7 @@
     },
     {
       "name": "applyTrainedModelsContainer__models",
+      "description": "Models that need to be used for link prediction.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/models",
       "multivalued": true,
@@ -1011,6 +1055,7 @@
     },
     {
       "name": "applyTrainedModel__model_id",
+      "description": "Key of the model to be used.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/model_id",
       "alias": "model_id",
@@ -1023,6 +1068,7 @@
     },
     {
       "name": "applyTrainedModel__node_types",
+      "description": "Type of nodes.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types",
       "alias": "node_types",
@@ -1036,6 +1082,7 @@
     },
     {
       "name": "applyTrainedModel__cutoff",
+      "description": "Cutoff filter.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/cutoff",
       "alias": "cutoff",
@@ -1048,6 +1095,7 @@
     },
     {
       "name": "applyTrainedModel__outfile",
+      "description": "File path for saving results.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/outfile",
       "alias": "outfile",
@@ -1060,6 +1108,7 @@
     },
     {
       "name": "nodeType__source",
+      "description": "Source node(s).",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/source",
       "multivalued": true,
@@ -1074,6 +1123,7 @@
     },
     {
       "name": "nodeType__destination",
+      "description": "Destination node(s).",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/destination",
       "multivalued": true,
@@ -1088,6 +1138,7 @@
     },
     {
       "name": "upload__s3_bucket",
+      "description": "Bucket name.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/s3_bucket",
       "alias": "s3_bucket",
@@ -1100,6 +1151,7 @@
     },
     {
       "name": "upload__s3_bucket_dir",
+      "description": "Bucket path.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/s3_bucket_dir",
       "alias": "s3_bucket_dir",
@@ -1112,6 +1164,7 @@
     },
     {
       "name": "upload__extra_args",
+      "description": "Extra keyword arguments (**kwargs).",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/extra_args",
       "multivalued": true,
@@ -1125,6 +1178,7 @@
     },
     {
       "name": "target__target_path",
+      "description": "File path for saving results.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/target_path",
       "alias": "target_path",
@@ -2148,6 +2202,7 @@
     {
       "name": "NeatConfiguration",
       "definition_uri": "https://w3id.org/neat_schema/NeatConfiguration",
+      "description": "Root class for the schema.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "neatConfiguration__graph_data"
@@ -2156,6 +2211,7 @@
       "attributes": [
         {
           "name": "graph_data",
+          "description": "Configuration for graph data.",
           "range": "GraphDataConfiguration",
           "@type": "SlotDefinition"
         }
@@ -2167,6 +2223,7 @@
     {
       "name": "GraphDataConfiguration",
       "definition_uri": "https://w3id.org/neat_schema/GraphDataConfiguration",
+      "description": "Configuration for the graph training and validation data for ML pipeline.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "graphDataConfiguration__graph",
@@ -2176,11 +2233,13 @@
       "attributes": [
         {
           "name": "graph",
+          "description": "Graph configuration for pipeline",
           "range": "EnsmallenRunConfig",
           "@type": "SlotDefinition"
         },
         {
           "name": "data",
+          "description": "Input data for pipeline.",
           "range": "TrainValidData",
           "@type": "SlotDefinition"
         }
@@ -2191,6 +2250,7 @@
     {
       "name": "TrainValidData",
       "definition_uri": "https://w3id.org/neat_schema/TrainValidData",
+      "description": "Postive and negative training and validation graph data filepaths.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "trainValidData__train_data",
@@ -2200,11 +2260,13 @@
       "attributes": [
         {
           "name": "train_data",
+          "description": "Positive and negative graph data for ML training.",
           "range": "PosNegData",
           "@type": "SlotDefinition"
         },
         {
           "name": "valid_data",
+          "description": "Positive and negative graph data for ML validation.",
           "range": "PosNegData",
           "@type": "SlotDefinition"
         }
@@ -2215,6 +2277,7 @@
     {
       "name": "PosNegData",
       "definition_uri": "https://w3id.org/neat_schema/PosNegData",
+      "description": "File paths for positive an negative edge data.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "posNegData__pos_edge_filepath",
@@ -2224,10 +2287,12 @@
       "attributes": [
         {
           "name": "pos_edge_filepath",
+          "description": "Positive edges file path.",
           "@type": "SlotDefinition"
         },
         {
           "name": "neg_edge_filepath",
+          "description": "Negative edges file path.",
           "@type": "SlotDefinition"
         }
       ],
@@ -2237,6 +2302,7 @@
     {
       "name": "EmbeddingsConfig",
       "definition_uri": "https://w3id.org/neat_schema/EmbeddingsConfig",
+      "description": "Embeddings configuration.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "embeddingsConfig__filename",
@@ -2248,19 +2314,23 @@
       "attributes": [
         {
           "name": "filename",
+          "description": "Embeddings file name.",
           "@type": "SlotDefinition"
         },
         {
           "name": "history_filename",
+          "description": "Embeddings history file name.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_embeddings_params",
+          "description": "Node embeddings parameters.",
           "range": "NodeEmbeddingsParams",
           "@type": "SlotDefinition"
         },
         {
           "name": "tsne_filename",
+          "description": "File name for the TSNE plot.",
           "@type": "SlotDefinition"
         }
       ],
@@ -2270,6 +2340,7 @@
     {
       "name": "NodeEmbeddingsParams",
       "definition_uri": "https://w3id.org/neat_schema/NodeEmbeddingsParams",
+      "description": "Node embeddings parameters.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "nodeEmbeddingsParams__method_name",
@@ -2284,6 +2355,7 @@
       "attributes": [
         {
           "name": "method_name",
+          "description": "Name of the node embedding method.",
           "range": "node_embed_method_enum",
           "@type": "SlotDefinition"
         },
@@ -2333,6 +2405,7 @@
       "attributes": [
         {
           "name": "classifiers",
+          "description": "Classifier details.",
           "multivalued": true,
           "range": "Classifier",
           "inlined_as_list": true,
@@ -2360,31 +2433,38 @@
       "attributes": [
         {
           "name": "classifier_id",
+          "description": "Key to identify the classifier and associated parameters.",
           "@type": "SlotDefinition"
         },
         {
           "name": "classifier_name",
+          "description": "Name of the classifier.",
           "@type": "SlotDefinition"
         },
         {
           "name": "classifier_type",
+          "description": "Type of classifier.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_method",
+          "description": "Edge method.",
           "range": "edge_method_enum",
           "@type": "SlotDefinition"
         },
         {
           "name": "outfile",
+          "description": "Fie path for saving output.",
           "@type": "SlotDefinition"
         },
         {
           "name": "history_filename",
+          "description": "File name for saving history.",
           "@type": "SlotDefinition"
         },
         {
           "name": "parameters",
+          "description": "Parameters to be passed for building classifier.",
           "range": "ClassifierParams",
           "@type": "SlotDefinition"
         }
@@ -2405,11 +2485,13 @@
       "attributes": [
         {
           "name": "sklearn_params",
+          "description": "Parameters specific to sklearn.",
           "range": "SkLearnParams",
           "@type": "SlotDefinition"
         },
         {
           "name": "tf_keras_params",
+          "description": "Parameters specific to Tensorflow/Keras",
           "range": "TFKerasParams",
           "@type": "SlotDefinition"
         }
@@ -2430,11 +2512,13 @@
       "attributes": [
         {
           "name": "random_state",
+          "description": "Random seed.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "max_iter",
+          "description": "Maximum iterations.",
           "range": "integer",
           "@type": "SlotDefinition"
         }
@@ -2458,25 +2542,30 @@
       "attributes": [
         {
           "name": "layers_config",
+          "description": "Configuration for instantiating layers for neural networks.",
           "range": "LayerContainer",
           "@type": "SlotDefinition"
         },
         {
           "name": "loss",
+          "description": "Loss function.",
           "@type": "SlotDefinition"
         },
         {
           "name": "metrics_config",
+          "description": "Metrics to be calculated after classifier training.",
           "range": "MetricContainer",
           "@type": "SlotDefinition"
         },
         {
           "name": "optimizer",
+          "description": "Optimizer function to be used during classifier training.",
           "range": "optimizer_enum",
           "@type": "SlotDefinition"
         },
         {
           "name": "fit_config",
+          "description": "Configuration for model fitting.",
           "range": "ClassifierFitParams",
           "@type": "SlotDefinition"
         }
@@ -2496,6 +2585,7 @@
       "attributes": [
         {
           "name": "layers",
+          "description": "List of layers to be used to build the neural network.",
           "multivalued": true,
           "range": "Layer",
           "inlined_as_list": true,
@@ -2518,6 +2608,7 @@
       "attributes": [
         {
           "name": "type",
+          "description": "Type of layer.",
           "@type": "SlotDefinition"
         },
         {
@@ -2548,6 +2639,7 @@
         },
         {
           "name": "activation",
+          "description": "Activation layer type",
           "range": "activation_enum",
           "@type": "SlotDefinition"
         },
@@ -2572,6 +2664,7 @@
       "attributes": [
         {
           "name": "metrics",
+          "description": "A list of metrics need to train a classifier.",
           "multivalued": true,
           "range": "Metric",
           "inlined_as_list": true,
@@ -2603,6 +2696,7 @@
         },
         {
           "name": "curve",
+          "description": "Area under curve (AUC) to be calculated.",
           "@type": "SlotDefinition"
         }
       ],
@@ -2628,11 +2722,13 @@
         },
         {
           "name": "epochs",
+          "description": "Number of epochs to run for training.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "callbacks_list",
+          "description": "List of callbacks.",
           "range": "ClassifierCallbackContainer",
           "@type": "SlotDefinition"
         }
@@ -2652,6 +2748,7 @@
       "attributes": [
         {
           "name": "callbacks",
+          "description": "Callbacks.",
           "multivalued": true,
           "range": "ClassifierCallback",
           "inlined_as_list": true,
@@ -2664,7 +2761,7 @@
     {
       "name": "ClassifierCallback",
       "definition_uri": "https://w3id.org/neat_schema/ClassifierCallback",
-      "description": "Callbacks for a classifier.",
+      "description": "Utilities called at certain points during model training.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "classifierCallback__type",
@@ -2678,29 +2775,35 @@
       "attributes": [
         {
           "name": "type",
+          "description": "Type of callback.",
           "@type": "SlotDefinition"
         },
         {
           "name": "monitor",
+          "description": "Quantity to be monitored.",
           "@type": "SlotDefinition"
         },
         {
           "name": "patience",
+          "description": "Number of epochs with no improvement after which training will be stopped.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "min_delta",
+          "description": "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "verbose",
+          "description": "Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "mode",
+          "description": "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity.",
           "range": "classifier_callback_mode_enum",
           "@type": "SlotDefinition"
         }
@@ -2720,6 +2823,7 @@
       "attributes": [
         {
           "name": "models",
+          "description": "Models that need to be used for link prediction.",
           "multivalued": true,
           "range": "ApplyTrainedModel",
           "inlined_as_list": true,
@@ -2744,19 +2848,23 @@
       "attributes": [
         {
           "name": "model_id",
+          "description": "Key of the model to be used.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types",
+          "description": "Type of nodes.",
           "range": "NodeType",
           "@type": "SlotDefinition"
         },
         {
           "name": "cutoff",
+          "description": "Cutoff filter.",
           "@type": "SlotDefinition"
         },
         {
           "name": "outfile",
+          "description": "File path for saving results.",
           "@type": "SlotDefinition"
         }
       ],
@@ -2766,6 +2874,7 @@
     {
       "name": "NodeType",
       "definition_uri": "https://w3id.org/neat_schema/NodeType",
+      "description": "Source node or Destination node.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "nodeType__source",
@@ -2775,12 +2884,14 @@
       "attributes": [
         {
           "name": "source",
+          "description": "Source node(s).",
           "multivalued": true,
           "inlined_as_list": true,
           "@type": "SlotDefinition"
         },
         {
           "name": "destination",
+          "description": "Destination node(s).",
           "multivalued": true,
           "inlined_as_list": true,
           "@type": "SlotDefinition"
@@ -2792,6 +2903,7 @@
     {
       "name": "Upload",
       "definition_uri": "https://w3id.org/neat_schema/Upload",
+      "description": "Configuration for uploading to Amazon S3 bucket.",
       "from_schema": "https://w3id.org/neat_schema",
       "slots": [
         "upload__s3_bucket",
@@ -2802,14 +2914,17 @@
       "attributes": [
         {
           "name": "s3_bucket",
+          "description": "Bucket name.",
           "@type": "SlotDefinition"
         },
         {
           "name": "s3_bucket_dir",
+          "description": "Bucket path.",
           "@type": "SlotDefinition"
         },
         {
           "name": "extra_args",
+          "description": "Extra keyword arguments (**kwargs).",
           "multivalued": true,
           "@type": "SlotDefinition"
         }
@@ -2829,6 +2944,7 @@
       "attributes": [
         {
           "name": "target_path",
+          "description": "File path for saving results.",
           "@type": "SlotDefinition"
         }
       ],
@@ -3327,9 +3443,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-18T08:54:17",
-  "source_file_size": 11337,
-  "generation_date": "2022-05-18T09:37:25",
+  "source_file_date": "2022-05-18T10:55:27",
+  "source_file_size": 15407,
+  "generation_date": "2022-05-18T10:55:57",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

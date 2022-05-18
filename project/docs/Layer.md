@@ -19,6 +19,7 @@ URI: [https://w3id.org/neat_schema/Layer](https://w3id.org/neat_schema/Layer)
 ### Own
 
  * [➞type](layer__type.md)  <sub>0..1</sub>
+     * Description: Type of layer.
      * Range: [String](types/String.md)
  * [➞parameters](layer__parameters.md)  <sub>0..1</sub>
      * Range: [LayerParams](LayerParams.md)

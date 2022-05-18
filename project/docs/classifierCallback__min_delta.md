@@ -2,7 +2,7 @@
 # Slot: min_delta
 
 
-
+Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.
 
 URI: [https://w3id.org/neat_schema/classifierCallback__min_delta](https://w3id.org/neat_schema/classifierCallback__min_delta)
 

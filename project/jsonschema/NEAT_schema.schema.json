@@ -17,15 +17,19 @@
          "description": "Trained model used for prediction.",
          "properties": {
             "cutoff": {
+               "description": "Cutoff filter.",
                "type": "string"
             },
             "model_id": {
+               "description": "Key of the model to be used.",
                "type": "string"
             },
             "node_types": {
-               "$ref": "#/$defs/NodeType"
+               "$ref": "#/$defs/NodeType",
+               "description": "Type of nodes."
             },
             "outfile": {
+               "description": "File path for saving results.",
                "type": "string"
             }
          },
@@ -38,6 +42,7 @@
          "description": "A container with multiple classifiers in it.",
          "properties": {
             "models": {
+               "description": "Models that need to be used for link prediction.",
                "items": {
                   "$ref": "#/$defs/ApplyTrainedModel"
                },
@@ -53,25 +58,32 @@
          "description": "ML classifiers to be trained-tested-validated and applied for predictions.",
          "properties": {
             "classifier_id": {
+               "description": "Key to identify the classifier and associated parameters.",
                "type": "string"
             },
             "classifier_name": {
+               "description": "Name of the classifier.",
                "type": "string"
             },
             "classifier_type": {
+               "description": "Type of classifier.",
                "type": "string"
             },
             "edge_method": {
-               "$ref": "#/$defs/EdgeMethodEnum"
+               "$ref": "#/$defs/EdgeMethodEnum",
+               "description": "Edge method."
             },
             "history_filename": {
+               "description": "File name for saving history.",
                "type": "string"
             },
             "outfile": {
+               "description": "Fie path for saving output.",
                "type": "string"
             },
             "parameters": {
-               "$ref": "#/$defs/ClassifierParams"
+               "$ref": "#/$defs/ClassifierParams",
+               "description": "Parameters to be passed for building classifier."
             }
          },
          "required": [],
@@ -80,24 +92,30 @@
       },
       "ClassifierCallback": {
          "additionalProperties": false,
-         "description": "Callbacks for a classifier.",
+         "description": "Utilities called at certain points during model training.",
          "properties": {
             "min_delta": {
+               "description": "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.",
                "type": "integer"
             },
             "mode": {
-               "$ref": "#/$defs/ClassifierCallbackModeEnum"
+               "$ref": "#/$defs/ClassifierCallbackModeEnum",
+               "description": "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity."
             },
             "monitor": {
+               "description": "Quantity to be monitored.",
                "type": "string"
             },
             "patience": {
+               "description": "Number of epochs with no improvement after which training will be stopped.",
                "type": "integer"
             },
             "type": {
+               "description": "Type of callback.",
                "type": "string"
             },
             "verbose": {
+               "description": "Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.",
                "type": "boolean"
             }
          },
@@ -110,6 +128,7 @@
          "description": "A container of classifier callbacks.",
          "properties": {
             "callbacks": {
+               "description": "Callbacks.",
                "items": {
                   "$ref": "#/$defs/ClassifierCallback"
                },
@@ -135,6 +154,7 @@
          "description": "A container with multiple classifiers in it.",
          "properties": {
             "classifiers": {
+               "description": "Classifier details.",
                "items": {
                   "$ref": "#/$defs/Classifier"
                },
@@ -153,9 +173,11 @@
                "type": "integer"
             },
             "callbacks_list": {
-               "$ref": "#/$defs/ClassifierCallbackContainer"
+               "$ref": "#/$defs/ClassifierCallbackContainer",
+               "description": "List of callbacks."
             },
             "epochs": {
+               "description": "Number of epochs to run for training.",
                "type": "integer"
             }
          },
@@ -168,10 +190,12 @@
          "description": "Parameters needed to define a classifier.",
          "properties": {
             "sklearn_params": {
-               "$ref": "#/$defs/SkLearnParams"
+               "$ref": "#/$defs/SkLearnParams",
+               "description": "Parameters specific to sklearn."
             },
             "tf_keras_params": {
-               "$ref": "#/$defs/TFKerasParams"
+               "$ref": "#/$defs/TFKerasParams",
+               "description": "Parameters specific to Tensorflow/Keras"
             }
          },
          "required": [],
@@ -193,18 +217,22 @@
       },
       "EmbeddingsConfig": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Embeddings configuration.",
          "properties": {
             "filename": {
+               "description": "Embeddings file name.",
                "type": "string"
             },
             "history_filename": {
+               "description": "Embeddings history file name.",
                "type": "string"
             },
             "node_embeddings_params": {
-               "$ref": "#/$defs/NodeEmbeddingsParams"
+               "$ref": "#/$defs/NodeEmbeddingsParams",
+               "description": "Node embeddings parameters."
             },
             "tsne_filename": {
+               "description": "File name for the TSNE plot.",
                "type": "string"
             }
          },
@@ -475,13 +503,15 @@
       },
       "GraphDataConfiguration": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Configuration for the graph training and validation data for ML pipeline.",
          "properties": {
             "data": {
-               "$ref": "#/$defs/TrainValidData"
+               "$ref": "#/$defs/TrainValidData",
+               "description": "Input data for pipeline."
             },
             "graph": {
-               "$ref": "#/$defs/EnsmallenRunConfig"
+               "$ref": "#/$defs/EnsmallenRunConfig",
+               "description": "Graph configuration for pipeline"
             }
          },
          "required": [],
@@ -496,6 +526,7 @@
                "$ref": "#/$defs/LayerParams"
             },
             "type": {
+               "description": "Type of layer.",
                "type": "string"
             }
          },
@@ -508,6 +539,7 @@
          "description": "A container of neural network layers.",
          "properties": {
             "layers": {
+               "description": "List of layers to be used to build the neural network.",
                "items": {
                   "$ref": "#/$defs/Layer"
                },
@@ -523,7 +555,8 @@
          "description": "Parameters for each layer of a neural network.",
          "properties": {
             "activation": {
-               "$ref": "#/$defs/ActivationEnum"
+               "$ref": "#/$defs/ActivationEnum",
+               "description": "Activation layer type"
             },
             "rate": {
                "type": "number"
@@ -541,6 +574,7 @@
          "description": "Metrics of a trained classifier (model).",
          "properties": {
             "curve": {
+               "description": "Area under curve (AUC) to be calculated.",
                "type": "string"
             },
             "name": {
@@ -559,6 +593,7 @@
          "description": "A container of metrics for a trained classifier.",
          "properties": {
             "metrics": {
+               "description": "A list of metrics need to train a classifier.",
                "items": {
                   "$ref": "#/$defs/Metric"
                },
@@ -571,10 +606,11 @@
       },
       "NeatConfiguration": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Root class for the schema.",
          "properties": {
             "graph_data": {
-               "$ref": "#/$defs/GraphDataConfiguration"
+               "$ref": "#/$defs/GraphDataConfiguration",
+               "description": "Configuration for graph data."
             }
          },
          "required": [],
@@ -598,7 +634,7 @@
       },
       "NodeEmbeddingsParams": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Node embeddings parameters.",
          "properties": {
             "batch_size": {
                "type": "integer"
@@ -610,7 +646,8 @@
                "type": "integer"
             },
             "method_name": {
-               "$ref": "#/$defs/NodeEmbedMethodEnum"
+               "$ref": "#/$defs/NodeEmbedMethodEnum",
+               "description": "Name of the node embedding method."
             },
             "return_weight": {
                "type": "number"
@@ -628,15 +665,17 @@
       },
       "NodeType": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Source node or Destination node.",
          "properties": {
             "destination": {
+               "description": "Destination node(s).",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
             "source": {
+               "description": "Source node(s).",
                "items": {
                   "type": "string"
                },
@@ -661,12 +700,14 @@
       },
       "PosNegData": {
          "additionalProperties": false,
-         "description": "",
+         "description": "File paths for positive an negative edge data.",
          "properties": {
             "neg_edge_filepath": {
+               "description": "Negative edges file path.",
                "type": "string"
             },
             "pos_edge_filepath": {
+               "description": "Positive edges file path.",
                "type": "string"
             }
          },
@@ -679,9 +720,11 @@
          "description": "Parameters specific to the SKLearn library.",
          "properties": {
             "max_iter": {
+               "description": "Maximum iterations.",
                "type": "integer"
             },
             "random_state": {
+               "description": "Random seed.",
                "type": "integer"
             }
          },
@@ -694,19 +737,24 @@
          "description": "Parameters specific to the Tensorflow Keras library.",
          "properties": {
             "fit_config": {
-               "$ref": "#/$defs/ClassifierFitParams"
+               "$ref": "#/$defs/ClassifierFitParams",
+               "description": "Configuration for model fitting."
             },
             "layers_config": {
-               "$ref": "#/$defs/LayerContainer"
+               "$ref": "#/$defs/LayerContainer",
+               "description": "Configuration for instantiating layers for neural networks."
             },
             "loss": {
+               "description": "Loss function.",
                "type": "string"
             },
             "metrics_config": {
-               "$ref": "#/$defs/MetricContainer"
+               "$ref": "#/$defs/MetricContainer",
+               "description": "Metrics to be calculated after classifier training."
             },
             "optimizer": {
-               "$ref": "#/$defs/OptimizerEnum"
+               "$ref": "#/$defs/OptimizerEnum",
+               "description": "Optimizer function to be used during classifier training."
             }
          },
          "required": [],
@@ -718,6 +766,7 @@
          "description": "Path for output to be saved.",
          "properties": {
             "target_path": {
+               "description": "File path for saving results.",
                "type": "string"
             }
          },
@@ -727,13 +776,15 @@
       },
       "TrainValidData": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Postive and negative training and validation graph data filepaths.",
          "properties": {
             "train_data": {
-               "$ref": "#/$defs/PosNegData"
+               "$ref": "#/$defs/PosNegData",
+               "description": "Positive and negative graph data for ML training."
             },
             "valid_data": {
-               "$ref": "#/$defs/PosNegData"
+               "$ref": "#/$defs/PosNegData",
+               "description": "Positive and negative graph data for ML validation."
             }
          },
          "required": [],
@@ -742,18 +793,21 @@
       },
       "Upload": {
          "additionalProperties": false,
-         "description": "",
+         "description": "Configuration for uploading to Amazon S3 bucket.",
          "properties": {
             "extra_args": {
+               "description": "Extra keyword arguments (**kwargs).",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
             "s3_bucket": {
+               "description": "Bucket name.",
                "type": "string"
             },
             "s3_bucket_dir": {
+               "description": "Bucket path.",
                "type": "string"
             }
          },
@@ -768,7 +822,8 @@
    "metamodel_version": "1.7.0",
    "properties": {
       "graph_data": {
-         "$ref": "#/$defs/GraphDataConfiguration"
+         "$ref": "#/$defs/GraphDataConfiguration",
+         "description": "Configuration for graph data."
       }
    },
    "required": [],

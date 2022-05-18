@@ -2,7 +2,7 @@
 # Slot: method_name
 
 
-
+Name of the node embedding method.
 
 URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__method_name](https://w3id.org/neat_schema/nodeEmbeddingsParams__method_name)
 

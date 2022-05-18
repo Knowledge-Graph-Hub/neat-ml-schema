@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModelsContainer](https://w3id.or
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [models](models.md) | [ApplyTrainedModel](ApplyTrainedModel.md) | 0..* | None  | . |
+| [models](models.md) | [ApplyTrainedModel](ApplyTrainedModel.md) | 0..* | Models that need to be used for link prediction.  | . |
 
 
 ## Usages
@@ -48,6 +48,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   models:
     name: models
+    description: Models that need to be used for link prediction.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     range: ApplyTrainedModel
@@ -67,6 +68,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   models:
     name: models
+    description: Models that need to be used for link prediction.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     alias: models

@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | None  | . |
+| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | A list of metrics need to train a classifier.  | . |
 
 
 ## Usages
@@ -53,6 +53,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   metrics:
     name: metrics
+    description: A list of metrics need to train a classifier.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     range: Metric
@@ -72,6 +73,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   metrics:
     name: metrics
+    description: A list of metrics need to train a classifier.
     from_schema: https://w3id.org/neat_schema
     multivalued: true
     alias: metrics

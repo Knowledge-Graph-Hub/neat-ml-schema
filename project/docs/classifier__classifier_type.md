@@ -2,7 +2,7 @@
 # Slot: classifier_type
 
 
-
+Type of classifier.
 
 URI: [https://w3id.org/neat_schema/classifier__classifier_type](https://w3id.org/neat_schema/classifier__classifier_type)
 

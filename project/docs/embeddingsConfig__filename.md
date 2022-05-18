@@ -2,7 +2,7 @@
 # Slot: filename
 
 
-
+Embeddings file name.
 
 URI: [https://w3id.org/neat_schema/embeddingsConfig__filename](https://w3id.org/neat_schema/embeddingsConfig__filename)
 

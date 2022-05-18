@@ -1,4 +1,6 @@
 # Slot: monitor
+_Quantity to be monitored._
+
 
 URI: [https://w3id.org/neat_schema/:monitor](https://w3id.org/neat_schema/:monitor)
 

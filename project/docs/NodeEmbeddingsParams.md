@@ -2,7 +2,7 @@
 # Class: NodeEmbeddingsParams
 
 
-
+Node embeddings parameters.
 
 URI: [https://w3id.org/neat_schema/NodeEmbeddingsParams](https://w3id.org/neat_schema/NodeEmbeddingsParams)
 
@@ -19,6 +19,7 @@ URI: [https://w3id.org/neat_schema/NodeEmbeddingsParams](https://w3id.org/neat_s
 ### Own
 
  * [➞method_name](nodeEmbeddingsParams__method_name.md)  <sub>0..1</sub>
+     * Description: Name of the node embedding method.
      * Range: [node_embed_method_enum](node_embed_method_enum.md)
  * [➞walk_length](nodeEmbeddingsParams__walk_length.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)

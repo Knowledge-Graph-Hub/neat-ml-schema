@@ -2,7 +2,7 @@
 # Slot: sklearn_params
 
 
-
+Parameters specific to sklearn.
 
 URI: [https://w3id.org/neat_schema/classifierParams__sklearn_params](https://w3id.org/neat_schema/classifierParams__sklearn_params)
 

@@ -18,8 +18,8 @@ URI: [https://w3id.org/neat_schema/:ClassifierFitParams](https://w3id.org/neat_s
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
 | [batch_size](batch_size.md) | [integer](integer.md) | 0..1 | None  | . |
-| [epochs](epochs.md) | [integer](integer.md) | 0..1 | None  | . |
-| [callbacks_list](callbacks_list.md) | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | 0..1 | None  | . |
+| [epochs](epochs.md) | [integer](integer.md) | 0..1 | Number of epochs to run for training.  | . |
+| [callbacks_list](callbacks_list.md) | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | 0..1 | List of callbacks.  | . |
 
 
 ## Usages
@@ -59,10 +59,12 @@ attributes:
     range: integer
   epochs:
     name: epochs
+    description: Number of epochs to run for training.
     from_schema: https://w3id.org/neat_schema
     range: integer
   callbacks_list:
     name: callbacks_list
+    description: List of callbacks.
     from_schema: https://w3id.org/neat_schema
     range: ClassifierCallbackContainer
 
@@ -85,12 +87,14 @@ attributes:
     range: integer
   epochs:
     name: epochs
+    description: Number of epochs to run for training.
     from_schema: https://w3id.org/neat_schema
     alias: epochs
     owner: ClassifierFitParams
     range: integer
   callbacks_list:
     name: callbacks_list
+    description: List of callbacks.
     from_schema: https://w3id.org/neat_schema
     alias: callbacks_list
     owner: ClassifierFitParams

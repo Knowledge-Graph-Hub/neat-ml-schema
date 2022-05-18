@@ -2,7 +2,7 @@
 # Slot: cutoff
 
 
-
+Cutoff filter.
 
 URI: [https://w3id.org/neat_schema/applyTrainedModel__cutoff](https://w3id.org/neat_schema/applyTrainedModel__cutoff)
 

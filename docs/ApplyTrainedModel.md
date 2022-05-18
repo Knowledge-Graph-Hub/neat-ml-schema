@@ -17,10 +17,10 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_sch
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [model_id](model_id.md) | [string](string.md) | 0..1 | None  | . |
-| [node_types](node_types.md) | [NodeType](NodeType.md) | 0..1 | None  | . |
-| [cutoff](cutoff.md) | [string](string.md) | 0..1 | None  | . |
-| [outfile](outfile.md) | [string](string.md) | 0..1 | None  | . |
+| [model_id](model_id.md) | [string](string.md) | 0..1 | Key of the model to be used.  | . |
+| [node_types](node_types.md) | [NodeType](NodeType.md) | 0..1 | Type of nodes.  | . |
+| [cutoff](cutoff.md) | [string](string.md) | 0..1 | Cutoff filter.  | . |
+| [outfile](outfile.md) | [string](string.md) | 0..1 | File path for saving results.  | . |
 
 
 ## Usages
@@ -56,16 +56,20 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   model_id:
     name: model_id
+    description: Key of the model to be used.
     from_schema: https://w3id.org/neat_schema
   node_types:
     name: node_types
+    description: Type of nodes.
     from_schema: https://w3id.org/neat_schema
     range: NodeType
   cutoff:
     name: cutoff
+    description: Cutoff filter.
     from_schema: https://w3id.org/neat_schema
   outfile:
     name: outfile
+    description: File path for saving results.
     from_schema: https://w3id.org/neat_schema
 
 ```
@@ -81,24 +85,28 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   model_id:
     name: model_id
+    description: Key of the model to be used.
     from_schema: https://w3id.org/neat_schema
     alias: model_id
     owner: ApplyTrainedModel
     range: string
   node_types:
     name: node_types
+    description: Type of nodes.
     from_schema: https://w3id.org/neat_schema
     alias: node_types
     owner: ApplyTrainedModel
     range: NodeType
   cutoff:
     name: cutoff
+    description: Cutoff filter.
     from_schema: https://w3id.org/neat_schema
     alias: cutoff
     owner: ApplyTrainedModel
     range: string
   outfile:
     name: outfile
+    description: File path for saving results.
     from_schema: https://w3id.org/neat_schema
     alias: outfile
     owner: ApplyTrainedModel

@@ -21,6 +21,7 @@ URI: [https://w3id.org/neat_schema/LayerParams](https://w3id.org/neat_schema/Lay
  * [➞units](layerParams__units.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
  * [➞activation](layerParams__activation.md)  <sub>0..1</sub>
+     * Description: Activation layer type
      * Range: [activation_enum](activation_enum.md)
  * [➞rate](layerParams__rate.md)  <sub>0..1</sub>
      * Range: [Float](types/Float.md)

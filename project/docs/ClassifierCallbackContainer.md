@@ -19,4 +19,5 @@ URI: [https://w3id.org/neat_schema/ClassifierCallbackContainer](https://w3id.org
 ### Own
 
  * [➞callbacks](classifierCallbackContainer__callbacks.md)  <sub>0..\*</sub>
+     * Description: Callbacks.
      * Range: [ClassifierCallback](ClassifierCallback.md)

@@ -19,6 +19,8 @@ URI: [https://w3id.org/neat_schema/SkLearnParams](https://w3id.org/neat_schema/S
 ### Own
 
  * [➞random_state](skLearnParams__random_state.md)  <sub>0..1</sub>
+     * Description: Random seed.
      * Range: [Integer](types/Integer.md)
  * [➞max_iter](skLearnParams__max_iter.md)  <sub>0..1</sub>
+     * Description: Maximum iterations.
      * Range: [Integer](types/Integer.md)

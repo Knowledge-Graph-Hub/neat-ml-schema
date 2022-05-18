@@ -15,60 +15,85 @@ default_range: string
 # # but leaving them to be the default (str) for now.
 classes:
   NeatConfiguration:
+    description: Root class for the schema.
     tree_root: true
     attributes:
       graph_data:
+        description: Configuration for graph data.
         range: GraphDataConfiguration
 
   GraphDataConfiguration:
+    description: Configuration for the graph training and validation data for ML pipeline.
     attributes:
       graph:
+        description: Graph configuration for pipeline
         range: EnsmallenRunConfig
       data:
+        description: Input data for pipeline.
         range: TrainValidData
 
   TrainValidData:
+    description: Postive and negative training and validation graph data filepaths.
     attributes:
       train_data:
+        description: Positive and negative graph data for ML training.
         range: PosNegData
       valid_data:
+        description: Positive and negative graph data for ML validation. 
         range: PosNegData
 
   PosNegData:
+    description: File paths for positive an negative edge data.
   # Strings for now. These are actually paths/urls(maybe?)
     attributes:
       pos_edge_filepath:
+        description: Positive edges file path.
       neg_edge_filepath:
+        description: Negative edges file path.
 
   EmbeddingsConfig:
+    description: Embeddings configuration.
     attributes:
       filename:
+        description: Embeddings file name.
       history_filename:
+        description: Embeddings history file name.
       node_embeddings_params:
+        description: Node embeddings parameters.
         range: NodeEmbeddingsParams
       tsne_filename:
+        description: File name for the TSNE plot.
 
   NodeEmbeddingsParams:
+    description: Node embeddings parameters.
     attributes:
       method_name:
+        description: Name of the node embedding method.
         range: node_embed_method_enum
       walk_length:
+        description: #NEED DESC
         range: integer
       batch_size:
+        description: #NEED DESC
         range: integer
       window_size:
+        description: #NEED DESC
         range: integer
       return_weight:
+        description: #NEED DESC
         range: float
       explore_weight:
+        description: #NEED DESC
         range: float
       iterations:
+        description: #NEED DESC
         range: integer
 
   ClassifierContainer:
     description: A container with multiple classifiers in it.
     attributes:
       classifiers:
+        description: Classifier details.
         multivalued: true
         inlined_as_list: true
         range: Classifier
@@ -77,13 +102,20 @@ classes:
     description: ML classifiers to be trained-tested-validated and applied for predictions.
     attributes:
       classifier_id:
+        description: Key to identify the classifier and associated parameters.
       classifier_name:
+        description: Name of the classifier.
       classifier_type:
+        description: Type of classifier.
       edge_method:
+        description: Edge method.
         range: edge_method_enum
       outfile:
+        description: Fie path for saving output.
       history_filename:
+        description: File name for saving history.
       parameters:
+        description: Parameters to be passed for building classifier.
         range: ClassifierParams
 
 
@@ -91,35 +123,45 @@ classes:
     description: Parameters needed to define a classifier.
     attributes:
       sklearn_params:
+        description: Parameters specific to sklearn.
         range: SkLearnParams
       tf_keras_params:
+        description: Parameters specific to Tensorflow/Keras
         range: TFKerasParams
 
   SkLearnParams:
     description: Parameters specific to the SKLearn library.
     attributes:
       random_state:
+        description: Random seed.
         range: integer
       max_iter:
+        description: Maximum iterations.
         range: integer
 
   TFKerasParams:
     description: Parameters specific to the Tensorflow Keras library.
     attributes:
       layers_config:
+        description: Configuration for instantiating layers for neural networks.
         range: LayerContainer
       loss:
+        description: Loss function.
       metrics_config:
+        description: Metrics to be calculated after classifier training.
         range: MetricContainer
       optimizer:
+        description: Optimizer function to be used during classifier training.
         range: optimizer_enum
       fit_config:
+        description: Configuration for model fitting.
         range: ClassifierFitParams
 
   LayerContainer:
     description: A container of neural network layers.
     attributes:
       layers:
+        description: List of layers to be used to build the neural network.
         multivalued: true
         inlined_as_list: true
         range: Layer
@@ -129,6 +171,7 @@ classes:
     description: Layers for a neural network.
     attributes:
       type:
+        description: Type of layer.
       parameters:
         range: LayerParams
 
@@ -136,16 +179,20 @@ classes:
     description: Parameters for each layer of a neural network.
     attributes:
       units:
+        description: #NEED DESC
         range: integer
       activation:
+        description: Activation layer type
         range: activation_enum
       rate:
+        description: #NEED DESC
         range: float
 
   MetricContainer:
     description: A container of metrics for a trained classifier.
     attributes:
       metrics:
+        description: A list of metrics need to train a classifier.
         multivalued: true
         inlined_as_list: true
         range: Metric
@@ -156,43 +203,55 @@ classes:
       type:
       name: {}
       curve:
+        description: Area under curve (AUC) to be calculated.
   
   ClassifierFitParams:
     description: Paramters for fitting a classifier.
     attributes:
       batch_size:
+        description: #NEED DESC
         range: integer
       epochs:
+        description: Number of epochs to run for training.
         range: integer
       callbacks_list:
+        description: List of callbacks.
         range: ClassifierCallbackContainer
   
   ClassifierCallbackContainer:
     description: A container of classifier callbacks.
     attributes:
       callbacks:
+        description: Callbacks.
         multivalued: true
         inlined_as_list: true
         range: ClassifierCallback
   
   ClassifierCallback:
-    description: Callbacks for a classifier.
+    description: Utilities called at certain points during model training.
     attributes:
       type:
+        description: Type of callback.
       monitor:
+        description: Quantity to be monitored.
       patience:
+        description: Number of epochs with no improvement after which training will be stopped.
         range: integer
       min_delta:
+        description: Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.
         range: integer
       verbose:
+        description: Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.
         range: boolean
       mode:
+        description: One of {"auto", "min", "max"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in "max" mode it will stop when the quantity monitored has stopped increasing; in "auto" mode, the direction is automatically inferred from the name of the monitored quantity.
         range: classifier_callback_mode_enum
 
   ApplyTrainedModelsContainer:
     description: A container with multiple classifiers in it.
     attributes:
       models:
+        description: Models that need to be used for link prediction.
         multivalued: true
         inlined_as_list: true
         range: ApplyTrainedModel
@@ -201,25 +260,36 @@ classes:
     description: Trained model used for prediction.
     attributes:
       model_id:
+        description: Key of the model to be used.
       node_types:
+        description: Type of nodes.
         range: NodeType
       cutoff:
+        description: Cutoff filter.
       outfile:
+        description: File path for saving results.
 
   NodeType:
+    description: Source node or Destination node.
     attributes:
       source:
+        description: Source node(s).
         multivalued: true
         inlined_as_list: true
       destination:
+        description: Destination node(s).
         multivalued: true
         inlined_as_list: true
 
   Upload:
+    description: Configuration for uploading to Amazon S3 bucket.
     attributes:
       s3_bucket:
+        description: Bucket name.
       s3_bucket_dir:
+        description: Bucket path.
       extra_args:
+        description: Extra keyword arguments (**kwargs).
         multivalued: true
         inlined_as_list: false
 
@@ -227,6 +297,7 @@ classes:
     description: Path for output to be saved.
     attributes:
       target_path:
+        description: File path for saving results.
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader

@@ -2,7 +2,7 @@
 # Slot: graph_data
 
 
-
+Configuration for graph data.
 
 URI: [https://w3id.org/neat_schema/neatConfiguration__graph_data](https://w3id.org/neat_schema/neatConfiguration__graph_data)
 

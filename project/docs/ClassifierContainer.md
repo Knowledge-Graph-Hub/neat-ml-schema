@@ -15,4 +15,5 @@ URI: [https://w3id.org/neat_schema/ClassifierContainer](https://w3id.org/neat_sc
 ### Own
 
  * [➞classifiers](classifierContainer__classifiers.md)  <sub>0..\*</sub>
+     * Description: Classifier details.
      * Range: [Classifier](Classifier.md)

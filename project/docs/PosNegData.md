@@ -2,7 +2,7 @@
 # Class: PosNegData
 
 
-
+File paths for positive an negative edge data.
 
 URI: [https://w3id.org/neat_schema/PosNegData](https://w3id.org/neat_schema/PosNegData)
 
@@ -20,6 +20,8 @@ URI: [https://w3id.org/neat_schema/PosNegData](https://w3id.org/neat_schema/PosN
 ### Own
 
  * [➞pos_edge_filepath](posNegData__pos_edge_filepath.md)  <sub>0..1</sub>
+     * Description: Positive edges file path.
      * Range: [String](types/String.md)
  * [➞neg_edge_filepath](posNegData__neg_edge_filepath.md)  <sub>0..1</sub>
+     * Description: Negative edges file path.
      * Range: [String](types/String.md)

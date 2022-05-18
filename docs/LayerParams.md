@@ -18,7 +18,7 @@ URI: [https://w3id.org/neat_schema/:LayerParams](https://w3id.org/neat_schema/:L
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
 | [units](units.md) | [integer](integer.md) | 0..1 | None  | . |
-| [activation](activation.md) | [ActivationEnum](ActivationEnum.md) | 0..1 | None  | . |
+| [activation](activation.md) | [ActivationEnum](ActivationEnum.md) | 0..1 | Activation layer type  | . |
 | [rate](rate.md) | [float](float.md) | 0..1 | None  | . |
 
 
@@ -54,6 +54,7 @@ attributes:
     range: integer
   activation:
     name: activation
+    description: Activation layer type
     from_schema: https://w3id.org/neat_schema
     range: activation_enum
   rate:
@@ -80,6 +81,7 @@ attributes:
     range: integer
   activation:
     name: activation
+    description: Activation layer type
     from_schema: https://w3id.org/neat_schema
     alias: activation
     owner: LayerParams

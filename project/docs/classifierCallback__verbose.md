@@ -2,7 +2,7 @@
 # Slot: verbose
 
 
-
+Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.
 
 URI: [https://w3id.org/neat_schema/classifierCallback__verbose](https://w3id.org/neat_schema/classifierCallback__verbose)
 

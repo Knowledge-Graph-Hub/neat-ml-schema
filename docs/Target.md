@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:Target](https://w3id.org/neat_schema/:Target
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [target_path](target_path.md) | [string](string.md) | 0..1 | None  | . |
+| [target_path](target_path.md) | [string](string.md) | 0..1 | File path for saving results.  | . |
 
 
 ## Usages
@@ -48,6 +48,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   target_path:
     name: target_path
+    description: File path for saving results.
     from_schema: https://w3id.org/neat_schema
 
 ```
@@ -63,6 +64,7 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   target_path:
     name: target_path
+    description: File path for saving results.
     from_schema: https://w3id.org/neat_schema
     alias: target_path
     owner: Target
