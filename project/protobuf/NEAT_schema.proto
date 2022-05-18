@@ -96,7 +96,7 @@ message EnsmallenRunConfig
   optional nodeListNodeTypesColumn String = 28
   optional nodeIdsColumn String = 29
   optional nodeIdsColumnNumber Integer = 30
-  optional nodesNumber Integer = 31
+  optional nodesNumber String = 31
   optional minimumNodeId Integer = 32
   optional numericNodeIds Boolean = 33
   optional nodeListNumericNodeTypeIds Boolean = 34

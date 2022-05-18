@@ -2,7 +2,7 @@
 # Slot: node_type_path
 
 
-
+The path to the file with the unique node type names.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_type_path](https://w3id.org/neat_schema/ensmallenRunConfig__node_type_path)
 

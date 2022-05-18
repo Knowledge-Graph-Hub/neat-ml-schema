@@ -51,12 +51,12 @@ URI: https://w3id.org/neat_schema
 | [node_embeddings_params](node_embeddings_params.md) | Node embeddings parameters. | 
 | [tsne_filename](tsne_filename.md) | File name for the TSNE plot. | 
 | [method_name](method_name.md) | Name of the node embedding method. | 
-| [walk_length](walk_length.md) | None | 
-| [batch_size](batch_size.md) | None | 
-| [window_size](window_size.md) | None | 
-| [return_weight](return_weight.md) | None | 
-| [explore_weight](explore_weight.md) | None | 
-| [iterations](iterations.md) | None | 
+| [walk_length](walk_length.md) | Maximal length of the walks. | 
+| [batch_size](batch_size.md) | Number of nodes to include in a single batch. | 
+| [window_size](window_size.md) | Size of the context and target nodes for node2vec. | 
+| [return_weight](return_weight.md) | Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper. | 
+| [explore_weight](explore_weight.md) | Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper. | 
+| [iterations](iterations.md) | Number of iterations. | 
 | [classifiers](classifiers.md) | Classifier details. | 
 | [classifier_id](classifier_id.md) | Key to identify the classifier and associated parameters. | 
 | [classifier_name](classifier_name.md) | Name of the classifier. | 
@@ -99,8 +99,8 @@ URI: https://w3id.org/neat_schema
 | [s3_bucket_dir](s3_bucket_dir.md) | Bucket path. | 
 | [extra_args](extra_args.md) | Extra keyword arguments (**kwargs). | 
 | [target_path](target_path.md) | File path for saving results. | 
-| [node_type_path](node_type_path.md) | None | 
-| [node_type_list_separator](node_type_list_separator.md) | None | 
+| [node_type_path](node_type_path.md) | The path to the file with the unique node type names. | 
+| [node_type_list_separator](node_type_list_separator.md) | The separator to use for the node types file. | 
 | [node_types_column_number](node_types_column_number.md) | None | 
 | [node_types_column](node_types_column.md) | None | 
 | [node_types_ids_column_number](node_types_ids_column_number.md) | None | 
@@ -129,7 +129,7 @@ URI: https://w3id.org/neat_schema
 | [node_list_node_types_column](node_list_node_types_column.md) | None | 
 | [node_ids_column](node_ids_column.md) | None | 
 | [node_ids_column_number](node_ids_column_number.md) | None | 
-| [nodes_number](nodes_number.md) | None | 
+| [nodes_number](nodes_number.md) | JsonObj(range='integer') | 
 | [minimum_node_id](minimum_node_id.md) | None | 
 | [numeric_node_ids](numeric_node_ids.md) | None | 
 | [node_list_numeric_node_type_ids](node_list_numeric_node_type_ids.md) | None | 

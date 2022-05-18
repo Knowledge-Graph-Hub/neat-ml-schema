@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-18T10:56:02
+# Generation date: 2022-05-18T11:27:53
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -764,7 +764,7 @@ class EnsmallenRunConfig(YAMLRoot):
     node_list_node_types_column: Optional[str] = None
     node_ids_column: Optional[str] = None
     node_ids_column_number: Optional[int] = None
-    nodes_number: Optional[int] = None
+    nodes_number: Optional[str] = None
     minimum_node_id: Optional[int] = None
     numeric_node_ids: Optional[Union[bool, Bool]] = None
     node_list_numeric_node_type_ids: Optional[Union[bool, Bool]] = None
@@ -910,8 +910,8 @@ class EnsmallenRunConfig(YAMLRoot):
         if self.node_ids_column_number is not None and not isinstance(self.node_ids_column_number, int):
             self.node_ids_column_number = int(self.node_ids_column_number)
 
-        if self.nodes_number is not None and not isinstance(self.nodes_number, int):
-            self.nodes_number = int(self.nodes_number)
+        if self.nodes_number is not None and not isinstance(self.nodes_number, str):
+            self.nodes_number = str(self.nodes_number)
 
         if self.minimum_node_id is not None and not isinstance(self.minimum_node_id, int):
             self.minimum_node_id = int(self.minimum_node_id)
@@ -1450,7 +1450,7 @@ slots.ensmallenRunConfig__node_ids_column_number = Slot(uri=DEFAULT_.node_ids_co
                    model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column_number, domain=None, range=Optional[int])
 
 slots.ensmallenRunConfig__nodes_number = Slot(uri=DEFAULT_.nodes_number, name="ensmallenRunConfig__nodes_number", curie=DEFAULT_.curie('nodes_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_number, domain=None, range=Optional[int])
+                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_number, domain=None, range=Optional[str])
 
 slots.ensmallenRunConfig__minimum_node_id = Slot(uri=DEFAULT_.minimum_node_id, name="ensmallenRunConfig__minimum_node_id", curie=DEFAULT_.curie('minimum_node_id'),
                    model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_id, domain=None, range=Optional[int])

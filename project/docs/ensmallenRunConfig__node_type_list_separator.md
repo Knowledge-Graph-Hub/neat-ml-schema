@@ -2,7 +2,7 @@
 # Slot: node_type_list_separator
 
 
-
+The separator to use for the node types file.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_separator](https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_separator)
 

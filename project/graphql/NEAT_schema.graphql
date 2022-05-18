@@ -95,7 +95,7 @@ type EnsmallenRunConfig
     nodeListNodeTypesColumn: String
     nodeIdsColumn: String
     nodeIdsColumnNumber: Integer
-    nodesNumber: Integer
+    nodesNumber: String
     minimumNodeId: Integer
     numericNodeIds: Boolean
     nodeListNumericNodeTypeIds: Boolean

@@ -96,7 +96,7 @@ CREATE TABLE "EnsmallenRunConfig" (
 	node_list_node_types_column TEXT, 
 	node_ids_column TEXT, 
 	node_ids_column_number INTEGER, 
-	nodes_number INTEGER, 
+	nodes_number TEXT, 
 	minimum_node_id INTEGER, 
 	numeric_node_ids BOOLEAN, 
 	node_list_numeric_node_type_ids BOOLEAN, 

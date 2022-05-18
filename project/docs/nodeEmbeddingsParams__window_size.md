@@ -2,7 +2,7 @@
 # Slot: window_size
 
 
-
+Size of the context and target nodes for node2vec.
 
 URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__window_size](https://w3id.org/neat_schema/nodeEmbeddingsParams__window_size)
 

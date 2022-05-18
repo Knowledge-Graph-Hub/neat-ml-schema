@@ -17,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:EnsmallenRunConfig](https://w3id.org/neat_sc
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [node_type_path](node_type_path.md) | [string](string.md) | 0..1 | None  | . |
-| [node_type_list_separator](node_type_list_separator.md) | [string](string.md) | 0..1 | None  | . |
+| [node_type_path](node_type_path.md) | [string](string.md) | 0..1 | The path to the file with the unique node type names.  | . |
+| [node_type_list_separator](node_type_list_separator.md) | [string](string.md) | 0..1 | The separator to use for the node types file.  | . |
 | [node_types_column_number](node_types_column_number.md) | [integer](integer.md) | 0..1 | None  | . |
 | [node_types_column](node_types_column.md) | [string](string.md) | 0..1 | None  | . |
 | [node_types_ids_column_number](node_types_ids_column_number.md) | [integer](integer.md) | 0..1 | None  | . |
@@ -47,7 +47,7 @@ URI: [https://w3id.org/neat_schema/:EnsmallenRunConfig](https://w3id.org/neat_sc
 | [node_list_node_types_column](node_list_node_types_column.md) | [string](string.md) | 0..1 | None  | . |
 | [node_ids_column](node_ids_column.md) | [string](string.md) | 0..1 | None  | . |
 | [node_ids_column_number](node_ids_column_number.md) | [integer](integer.md) | 0..1 | None  | . |
-| [nodes_number](nodes_number.md) | [integer](integer.md) | 0..1 | None  | . |
+| [nodes_number](nodes_number.md) | [string](string.md) | 0..1 | JsonObj(range='integer')  | . |
 | [minimum_node_id](minimum_node_id.md) | [integer](integer.md) | 0..1 | None  | . |
 | [numeric_node_ids](numeric_node_ids.md) | [boolean](boolean.md) | 0..1 | None  | . |
 | [node_list_numeric_node_type_ids](node_list_numeric_node_type_ids.md) | [boolean](boolean.md) | 0..1 | None  | . |
@@ -136,9 +136,11 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   node_type_path:
     name: node_type_path
+    description: The path to the file with the unique node type names.
     from_schema: https://w3id.org/neat_schema
   node_type_list_separator:
     name: node_type_list_separator
+    description: The separator to use for the node types file.
     from_schema: https://w3id.org/neat_schema
   node_types_column_number:
     name: node_types_column_number
@@ -243,8 +245,8 @@ attributes:
     range: integer
   nodes_number:
     name: nodes_number
+    description: JsonObj(range='integer')
     from_schema: https://w3id.org/neat_schema
-    range: integer
   minimum_node_id:
     name: minimum_node_id
     from_schema: https://w3id.org/neat_schema
@@ -456,12 +458,14 @@ from_schema: https://w3id.org/neat_schema
 attributes:
   node_type_path:
     name: node_type_path
+    description: The path to the file with the unique node type names.
     from_schema: https://w3id.org/neat_schema
     alias: node_type_path
     owner: EnsmallenRunConfig
     range: string
   node_type_list_separator:
     name: node_type_list_separator
+    description: The separator to use for the node types file.
     from_schema: https://w3id.org/neat_schema
     alias: node_type_list_separator
     owner: EnsmallenRunConfig
@@ -636,10 +640,11 @@ attributes:
     range: integer
   nodes_number:
     name: nodes_number
+    description: JsonObj(range='integer')
     from_schema: https://w3id.org/neat_schema
     alias: nodes_number
     owner: EnsmallenRunConfig
-    range: integer
+    range: string
   minimum_node_id:
     name: minimum_node_id
     from_schema: https://w3id.org/neat_schema

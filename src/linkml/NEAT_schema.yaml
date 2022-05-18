@@ -71,22 +71,32 @@ classes:
         description: Name of the node embedding method.
         range: node_embed_method_enum
       walk_length:
-        description: #NEED DESC
+        description: Maximal length of the walks.
         range: integer
       batch_size:
-        description: #NEED DESC
+        description: Number of nodes to include in a single batch.
         range: integer
       window_size:
-        description: #NEED DESC
+        description: Size of the context and target nodes for node2vec.
         range: integer
       return_weight:
-        description: #NEED DESC
+        description: Weight on the probability of returning to the same node the walk just came from
+            Having this higher tends the walks to be
+            more like a Breadth-First Search.
+            Having this very high  (> 2) makes search very local.
+            Equal to the inverse of p in the Node2Vec paper.
         range: float
       explore_weight:
-        description: #NEED DESC
+        description: Weight on the probability of visiting a neighbor node
+            to the one we're coming from in the random walk
+            Having this higher tends the walks to be
+            more like a Depth-First Search.
+            Having this very high makes search more outward.
+            Having this very low makes search very local.
+            Equal to the inverse of q in the Node2Vec paper.
         range: float
       iterations:
-        description: #NEED DESC
+        description: Number of iterations.
         range: integer
 
   ClassifierContainer:
@@ -303,143 +313,226 @@ classes:
     description: All params used by ensmallen's csv_reader
     attributes:
       node_type_path:
+        description: The path to the file with the unique node type names.
       node_type_list_separator:
+        description: The separator to use for the node types file.
       node_types_column_number:
+        description: 
         range: integer
       node_types_column:
+        description: 
       node_types_ids_column_number:
+        description: 
         range: integer
       node_types_ids_column:
+        description: 
       node_types_number:
+        description: 
         range: integer
       numeric_node_type_ids:
+        description: 
         range: boolean
       minimum_node_type_id:
+        description: 
         range: integer
       node_type_list_header:
+        description: 
         range: boolean
       node_type_list_rows_to_skip:
+        description: 
         range: integer
       node_type_list_is_correct:
+        description: 
         range: boolean
       node_type_list_max_rows_number:
+        description: 
         range: integer
       node_type_list_comment_symbol:
+        description: 
       load_node_type_list_in_parallel:
+        description: 
         range: boolean
       node_path:
+        description: 
       node_list_separator:
+        description: 
       node_list_header:
+        description: 
         range: boolean
       node_list_rows_to_skip:
+        description: 
         range: integer
       node_list_is_correct:
+        description: 
         range: boolean
       node_list_max_rows_number:
+        description: 
         range: integer
       node_list_comment_symbol:
+        description: 
       default_node_type:
+        description: 
       nodes_column_number:
+        description: 
         range: integer
       nodes_column:
+        description: 
       node_types_separator:
+        description: 
       node_list_node_types_column_number:
+        description: 
         range: integer
       node_list_node_types_column:
+        description: 
       node_ids_column:
+        description: 
       node_ids_column_number:
+        description: 
         range: integer
       nodes_number:
+        description: 
           range: integer
       minimum_node_id:
+        description: 
         range: integer
       numeric_node_ids:
+        description: 
         range: boolean
       node_list_numeric_node_type_ids:
+        description: 
         range: boolean
       skip_node_types_if_unavailable:
+        description: 
         range: boolean
       load_node_list_in_parallel:
+        description: 
         range: boolean
       edge_type_path:
+        description: 
       edge_types_column_number:
+        description: 
         range: integer
       edge_types_column:
+        description: 
       edge_types_ids_column_number:
+        description: 
         range: integer
       edge_types_ids_column:
+        description: 
       edge_types_number:
+        description: 
         range: integer
       numeric_edge_type_ids:
+        description: 
         range: boolean
       minimum_edge_type_id:
+        description: 
         range: integer
       edge_type_list_separator:
+        description: 
       edge_type_list_header:
+        description: 
         range: boolean
       edge_type_list_rows_to_skip:
+        description: 
         range: integer
       edge_type_list_is_correct:
+        description: 
         range: boolean
       edge_type_list_max_rows_number:
+        description: 
         range: integer
       edge_type_list_comment_symbol:
+        description: 
       load_edge_type_list_in_parallel:
+        description: 
         range: boolean
       edge_path:
+        description: 
       edge_list_separator:
+        description: 
       edge_list_header:
+        description: 
         range: boolean
       edge_list_rows_to_skip:
+        description: 
         range: integer
       sources_column_number:
+        description: 
         range: integer
       sources_column:
+        description: 
       destinations_column_number:
+        description: 
         range: integer
       destinations_column:
+        description: 
       edge_list_edge_types_column_number:
+        description: 
         range: integer
       edge_list_edge_types_column:
+        description: 
       default_edge_type:
+        description: 
       weights_column_number:
+        description: 
         range: integer
       weights_column:
+        description: 
       default_weight:
+        description: 
         range: float
       edge_ids_column:
+        description: 
       edge_ids_column_number:
+        description: 
         range: integer
       edge_list_numeric_edge_type_ids:
+        description: 
         range: boolean
       edge_list_numeric_node_ids:
+        description: 
         range: boolean
       skip_weights_if_unavailable:
+        description: 
         range: boolean
       skip_edge_types_if_unavailable:
+        description: 
         range: boolean
       edge_list_is_complete:
+        description: 
         range: boolean
       edge_list_may_contain_duplicates:
+        description: 
         range: boolean
       edge_list_is_sorted:
+        description: 
         range: boolean
       edge_list_is_correct:
+        description: 
         range: boolean
       edge_list_max_rows_number:
+        description: 
         range: integer
       edge_list_comment_symbol:
+        description: 
       edges_number:
+        description: 
         range: integer
       load_edge_list_in_parallel:
+        description: 
         range: boolean
       verbose:
+        description: 
         range: boolean
       may_have_singletons:
+        description: 
         range: boolean
       may_have_singleton_with_selfloops:
+        description: 
         range: boolean
       directed:
+        description: 
         range: boolean
       name: {}
 

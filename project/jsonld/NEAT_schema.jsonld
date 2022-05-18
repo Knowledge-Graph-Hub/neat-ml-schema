@@ -472,6 +472,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__walk_length",
+      "description": "Maximal length of the walks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/walk_length",
       "alias": "walk_length",
@@ -484,6 +485,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__batch_size",
+      "description": "Number of nodes to include in a single batch.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/batch_size",
       "alias": "batch_size",
@@ -496,6 +498,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__window_size",
+      "description": "Size of the context and target nodes for node2vec.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/window_size",
       "alias": "window_size",
@@ -508,6 +511,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__return_weight",
+      "description": "Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/return_weight",
       "alias": "return_weight",
@@ -520,6 +524,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__explore_weight",
+      "description": "Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/explore_weight",
       "alias": "explore_weight",
@@ -532,6 +537,7 @@
     },
     {
       "name": "nodeEmbeddingsParams__iterations",
+      "description": "Number of iterations.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/iterations",
       "alias": "iterations",
@@ -1191,6 +1197,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_path",
+      "description": "The path to the file with the unique node type names.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_path",
       "alias": "node_type_path",
@@ -1203,6 +1210,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_list_separator",
+      "description": "The separator to use for the node types file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_separator",
       "alias": "node_type_list_separator",
@@ -1551,6 +1559,7 @@
     },
     {
       "name": "ensmallenRunConfig__nodes_number",
+      "description": "JsonObj(range='integer')",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/nodes_number",
       "alias": "nodes_number",
@@ -1558,7 +1567,7 @@
       "domain_of": [
         "EnsmallenRunConfig"
       ],
-      "range": "integer",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -2361,31 +2370,37 @@
         },
         {
           "name": "walk_length",
+          "description": "Maximal length of the walks.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "batch_size",
+          "description": "Number of nodes to include in a single batch.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "window_size",
+          "description": "Size of the context and target nodes for node2vec.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "return_weight",
+          "description": "Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper.",
           "range": "float",
           "@type": "SlotDefinition"
         },
         {
           "name": "explore_weight",
+          "description": "Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper.",
           "range": "float",
           "@type": "SlotDefinition"
         },
         {
           "name": "iterations",
+          "description": "Number of iterations.",
           "range": "integer",
           "@type": "SlotDefinition"
         }
@@ -3046,10 +3061,12 @@
       "attributes": [
         {
           "name": "node_type_path",
+          "description": "The path to the file with the unique node type names.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_separator",
+          "description": "The separator to use for the node types file.",
           "@type": "SlotDefinition"
         },
         {
@@ -3183,7 +3200,7 @@
         },
         {
           "name": "nodes_number",
-          "range": "integer",
+          "description": "JsonObj(range='integer')",
           "@type": "SlotDefinition"
         },
         {
@@ -3443,9 +3460,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-18T10:55:27",
-  "source_file_size": 15407,
-  "generation_date": "2022-05-18T10:55:57",
+  "source_file_date": "2022-05-18T11:27:33",
+  "source_file_size": 18110,
+  "generation_date": "2022-05-18T11:27:48",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

@@ -143,7 +143,7 @@ linkml:Nodeidentifier NONLITERAL
           <node_list_node_types_column> @linkml:String ? ;
           <node_ids_column> @linkml:String ? ;
           <node_ids_column_number> @linkml:Integer ? ;
-          <nodes_number> @linkml:Integer ? ;
+          <nodes_number> @linkml:String ? ;
           <minimum_node_id> @linkml:Integer ? ;
           <numeric_node_ids> @linkml:Boolean ? ;
           <node_list_numeric_node_type_ids> @linkml:Boolean ? ;

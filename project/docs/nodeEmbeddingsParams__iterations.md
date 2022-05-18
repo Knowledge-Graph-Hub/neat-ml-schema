@@ -2,7 +2,7 @@
 # Slot: iterations
 
 
-
+Number of iterations.
 
 URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__iterations](https://w3id.org/neat_schema/nodeEmbeddingsParams__iterations)
 
