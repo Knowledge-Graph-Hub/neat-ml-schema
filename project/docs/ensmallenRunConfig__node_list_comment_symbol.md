@@ -2,7 +2,7 @@
 # Slot: node_list_comment_symbol
 
 
-
+The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_list_comment_symbol](https://w3id.org/neat_schema/ensmallenRunConfig__node_list_comment_symbol)
 

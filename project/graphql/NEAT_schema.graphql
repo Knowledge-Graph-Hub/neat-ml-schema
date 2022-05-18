@@ -75,6 +75,7 @@ type EnsmallenRunConfig
     numericNodeTypeIds: Boolean
     minimumNodeTypeId: Integer
     nodeTypeListHeader: Boolean
+    nodeTypeListSupportBalancedQuotes: Boolean
     nodeTypeListRowsToSkip: Integer
     nodeTypeListIsCorrect: Boolean
     nodeTypeListMaxRowsNumber: Integer
@@ -83,6 +84,7 @@ type EnsmallenRunConfig
     nodePath: String
     nodeListSeparator: String
     nodeListHeader: Boolean
+    nodeListSupportBalancedQuotes: Boolean
     nodeListRowsToSkip: Integer
     nodeListIsCorrect: Boolean
     nodeListMaxRowsNumber: Integer
@@ -95,7 +97,7 @@ type EnsmallenRunConfig
     nodeListNodeTypesColumn: String
     nodeIdsColumn: String
     nodeIdsColumnNumber: Integer
-    nodesNumber: String
+    nodesNumber: Integer
     minimumNodeId: Integer
     numericNodeIds: Boolean
     nodeListNumericNodeTypeIds: Boolean
@@ -104,13 +106,12 @@ type EnsmallenRunConfig
     edgeTypePath: String
     edgeTypesColumnNumber: Integer
     edgeTypesColumn: String
-    edgeTypesIdsColumnNumber: Integer
-    edgeTypesIdsColumn: String
     edgeTypesNumber: Integer
     numericEdgeTypeIds: Boolean
     minimumEdgeTypeId: Integer
     edgeTypeListSeparator: String
     edgeTypeListHeader: Boolean
+    edgeTypeListSupportBalancedQuotes: Boolean
     edgeTypeListRowsToSkip: Integer
     edgeTypeListIsCorrect: Boolean
     edgeTypeListMaxRowsNumber: Integer
@@ -119,6 +120,7 @@ type EnsmallenRunConfig
     edgePath: String
     edgeListSeparator: String
     edgeListHeader: Boolean
+    edgeListSupportBalancedQuotes: Boolean
     edgeListRowsToSkip: Integer
     sourcesColumnNumber: Integer
     sourcesColumn: String

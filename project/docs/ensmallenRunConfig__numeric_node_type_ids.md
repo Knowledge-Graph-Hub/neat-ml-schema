@@ -2,7 +2,7 @@
 # Slot: numeric_node_type_ids
 
 
-
+Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__numeric_node_type_ids](https://w3id.org/neat_schema/ensmallenRunConfig__numeric_node_type_ids)
 

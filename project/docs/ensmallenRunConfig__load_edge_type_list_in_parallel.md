@@ -2,7 +2,7 @@
 # Slot: load_edge_type_list_in_parallel
 
 
-
+Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__load_edge_type_list_in_parallel](https://w3id.org/neat_schema/ensmallenRunConfig__load_edge_type_list_in_parallel)
 

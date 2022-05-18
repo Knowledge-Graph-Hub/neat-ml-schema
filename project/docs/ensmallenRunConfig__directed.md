@@ -2,7 +2,7 @@
 # Slot: directed
 
 
-
+Whether to load the graph as directed or undirected.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__directed](https://w3id.org/neat_schema/ensmallenRunConfig__directed)
 

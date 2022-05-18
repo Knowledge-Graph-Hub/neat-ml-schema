@@ -2,7 +2,7 @@
 # Slot: default_weight
 
 
-
+The edge weight to be used when the edge weight for a given edge in the edge file is None.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__default_weight](https://w3id.org/neat_schema/ensmallenRunConfig__default_weight)
 

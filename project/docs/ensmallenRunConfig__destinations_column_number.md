@@ -2,7 +2,7 @@
 # Slot: destinations_column_number
 
 
-
+The number of the column of the edges file from where to load the destinaton nodes.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__destinations_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__destinations_column_number)
 

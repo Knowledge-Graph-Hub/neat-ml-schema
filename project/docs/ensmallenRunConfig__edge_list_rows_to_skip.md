@@ -2,7 +2,7 @@
 # Slot: edge_list_rows_to_skip
 
 
-
+Number of rows to skip in the edge list file.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_rows_to_skip](https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_rows_to_skip)
 

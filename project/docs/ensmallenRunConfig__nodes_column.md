@@ -2,7 +2,7 @@
 # Slot: nodes_column
 
 
-
+The name of the column of the node file from where to load the node names.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__nodes_column](https://w3id.org/neat_schema/ensmallenRunConfig__nodes_column)
 

@@ -1,5 +1,5 @@
 # Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-18T11:27:53
+# Generation date: 2022-05-18T15:02:26
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat_schema
@@ -744,6 +744,7 @@ class EnsmallenRunConfig(YAMLRoot):
     numeric_node_type_ids: Optional[Union[bool, Bool]] = None
     minimum_node_type_id: Optional[int] = None
     node_type_list_header: Optional[Union[bool, Bool]] = None
+    node_type_list_support_balanced_quotes: Optional[Union[bool, Bool]] = None
     node_type_list_rows_to_skip: Optional[int] = None
     node_type_list_is_correct: Optional[Union[bool, Bool]] = None
     node_type_list_max_rows_number: Optional[int] = None
@@ -752,6 +753,7 @@ class EnsmallenRunConfig(YAMLRoot):
     node_path: Optional[str] = None
     node_list_separator: Optional[str] = None
     node_list_header: Optional[Union[bool, Bool]] = None
+    node_list_support_balanced_quotes: Optional[Union[bool, Bool]] = None
     node_list_rows_to_skip: Optional[int] = None
     node_list_is_correct: Optional[Union[bool, Bool]] = None
     node_list_max_rows_number: Optional[int] = None
@@ -764,7 +766,7 @@ class EnsmallenRunConfig(YAMLRoot):
     node_list_node_types_column: Optional[str] = None
     node_ids_column: Optional[str] = None
     node_ids_column_number: Optional[int] = None
-    nodes_number: Optional[str] = None
+    nodes_number: Optional[int] = None
     minimum_node_id: Optional[int] = None
     numeric_node_ids: Optional[Union[bool, Bool]] = None
     node_list_numeric_node_type_ids: Optional[Union[bool, Bool]] = None
@@ -773,13 +775,12 @@ class EnsmallenRunConfig(YAMLRoot):
     edge_type_path: Optional[str] = None
     edge_types_column_number: Optional[int] = None
     edge_types_column: Optional[str] = None
-    edge_types_ids_column_number: Optional[int] = None
-    edge_types_ids_column: Optional[str] = None
     edge_types_number: Optional[int] = None
     numeric_edge_type_ids: Optional[Union[bool, Bool]] = None
     minimum_edge_type_id: Optional[int] = None
     edge_type_list_separator: Optional[str] = None
     edge_type_list_header: Optional[Union[bool, Bool]] = None
+    edge_type_list_support_balanced_quotes: Optional[Union[bool, Bool]] = None
     edge_type_list_rows_to_skip: Optional[int] = None
     edge_type_list_is_correct: Optional[Union[bool, Bool]] = None
     edge_type_list_max_rows_number: Optional[int] = None
@@ -788,6 +789,7 @@ class EnsmallenRunConfig(YAMLRoot):
     edge_path: Optional[str] = None
     edge_list_separator: Optional[str] = None
     edge_list_header: Optional[Union[bool, Bool]] = None
+    edge_list_support_balanced_quotes: Optional[Union[bool, Bool]] = None
     edge_list_rows_to_skip: Optional[int] = None
     sources_column_number: Optional[int] = None
     sources_column: Optional[str] = None
@@ -850,6 +852,9 @@ class EnsmallenRunConfig(YAMLRoot):
         if self.node_type_list_header is not None and not isinstance(self.node_type_list_header, Bool):
             self.node_type_list_header = Bool(self.node_type_list_header)
 
+        if self.node_type_list_support_balanced_quotes is not None and not isinstance(self.node_type_list_support_balanced_quotes, Bool):
+            self.node_type_list_support_balanced_quotes = Bool(self.node_type_list_support_balanced_quotes)
+
         if self.node_type_list_rows_to_skip is not None and not isinstance(self.node_type_list_rows_to_skip, int):
             self.node_type_list_rows_to_skip = int(self.node_type_list_rows_to_skip)
 
@@ -873,6 +878,9 @@ class EnsmallenRunConfig(YAMLRoot):
 
         if self.node_list_header is not None and not isinstance(self.node_list_header, Bool):
             self.node_list_header = Bool(self.node_list_header)
+
+        if self.node_list_support_balanced_quotes is not None and not isinstance(self.node_list_support_balanced_quotes, Bool):
+            self.node_list_support_balanced_quotes = Bool(self.node_list_support_balanced_quotes)
 
         if self.node_list_rows_to_skip is not None and not isinstance(self.node_list_rows_to_skip, int):
             self.node_list_rows_to_skip = int(self.node_list_rows_to_skip)
@@ -910,8 +918,8 @@ class EnsmallenRunConfig(YAMLRoot):
         if self.node_ids_column_number is not None and not isinstance(self.node_ids_column_number, int):
             self.node_ids_column_number = int(self.node_ids_column_number)
 
-        if self.nodes_number is not None and not isinstance(self.nodes_number, str):
-            self.nodes_number = str(self.nodes_number)
+        if self.nodes_number is not None and not isinstance(self.nodes_number, int):
+            self.nodes_number = int(self.nodes_number)
 
         if self.minimum_node_id is not None and not isinstance(self.minimum_node_id, int):
             self.minimum_node_id = int(self.minimum_node_id)
@@ -937,12 +945,6 @@ class EnsmallenRunConfig(YAMLRoot):
         if self.edge_types_column is not None and not isinstance(self.edge_types_column, str):
             self.edge_types_column = str(self.edge_types_column)
 
-        if self.edge_types_ids_column_number is not None and not isinstance(self.edge_types_ids_column_number, int):
-            self.edge_types_ids_column_number = int(self.edge_types_ids_column_number)
-
-        if self.edge_types_ids_column is not None and not isinstance(self.edge_types_ids_column, str):
-            self.edge_types_ids_column = str(self.edge_types_ids_column)
-
         if self.edge_types_number is not None and not isinstance(self.edge_types_number, int):
             self.edge_types_number = int(self.edge_types_number)
 
@@ -957,6 +959,9 @@ class EnsmallenRunConfig(YAMLRoot):
 
         if self.edge_type_list_header is not None and not isinstance(self.edge_type_list_header, Bool):
             self.edge_type_list_header = Bool(self.edge_type_list_header)
+
+        if self.edge_type_list_support_balanced_quotes is not None and not isinstance(self.edge_type_list_support_balanced_quotes, Bool):
+            self.edge_type_list_support_balanced_quotes = Bool(self.edge_type_list_support_balanced_quotes)
 
         if self.edge_type_list_rows_to_skip is not None and not isinstance(self.edge_type_list_rows_to_skip, int):
             self.edge_type_list_rows_to_skip = int(self.edge_type_list_rows_to_skip)
@@ -981,6 +986,9 @@ class EnsmallenRunConfig(YAMLRoot):
 
         if self.edge_list_header is not None and not isinstance(self.edge_list_header, Bool):
             self.edge_list_header = Bool(self.edge_list_header)
+
+        if self.edge_list_support_balanced_quotes is not None and not isinstance(self.edge_list_support_balanced_quotes, Bool):
+            self.edge_list_support_balanced_quotes = Bool(self.edge_list_support_balanced_quotes)
 
         if self.edge_list_rows_to_skip is not None and not isinstance(self.edge_list_rows_to_skip, int):
             self.edge_list_rows_to_skip = int(self.edge_list_rows_to_skip)
@@ -1389,6 +1397,9 @@ slots.ensmallenRunConfig__minimum_node_type_id = Slot(uri=DEFAULT_.minimum_node_
 slots.ensmallenRunConfig__node_type_list_header = Slot(uri=DEFAULT_.node_type_list_header, name="ensmallenRunConfig__node_type_list_header", curie=DEFAULT_.curie('node_type_list_header'),
                    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_header, domain=None, range=Optional[Union[bool, Bool]])
 
+slots.ensmallenRunConfig__node_type_list_support_balanced_quotes = Slot(uri=DEFAULT_.node_type_list_support_balanced_quotes, name="ensmallenRunConfig__node_type_list_support_balanced_quotes", curie=DEFAULT_.curie('node_type_list_support_balanced_quotes'),
+                   model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_support_balanced_quotes, domain=None, range=Optional[Union[bool, Bool]])
+
 slots.ensmallenRunConfig__node_type_list_rows_to_skip = Slot(uri=DEFAULT_.node_type_list_rows_to_skip, name="ensmallenRunConfig__node_type_list_rows_to_skip", curie=DEFAULT_.curie('node_type_list_rows_to_skip'),
                    model_uri=DEFAULT_.ensmallenRunConfig__node_type_list_rows_to_skip, domain=None, range=Optional[int])
 
@@ -1412,6 +1423,9 @@ slots.ensmallenRunConfig__node_list_separator = Slot(uri=DEFAULT_.node_list_sepa
 
 slots.ensmallenRunConfig__node_list_header = Slot(uri=DEFAULT_.node_list_header, name="ensmallenRunConfig__node_list_header", curie=DEFAULT_.curie('node_list_header'),
                    model_uri=DEFAULT_.ensmallenRunConfig__node_list_header, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.ensmallenRunConfig__node_list_support_balanced_quotes = Slot(uri=DEFAULT_.node_list_support_balanced_quotes, name="ensmallenRunConfig__node_list_support_balanced_quotes", curie=DEFAULT_.curie('node_list_support_balanced_quotes'),
+                   model_uri=DEFAULT_.ensmallenRunConfig__node_list_support_balanced_quotes, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.ensmallenRunConfig__node_list_rows_to_skip = Slot(uri=DEFAULT_.node_list_rows_to_skip, name="ensmallenRunConfig__node_list_rows_to_skip", curie=DEFAULT_.curie('node_list_rows_to_skip'),
                    model_uri=DEFAULT_.ensmallenRunConfig__node_list_rows_to_skip, domain=None, range=Optional[int])
@@ -1450,7 +1464,7 @@ slots.ensmallenRunConfig__node_ids_column_number = Slot(uri=DEFAULT_.node_ids_co
                    model_uri=DEFAULT_.ensmallenRunConfig__node_ids_column_number, domain=None, range=Optional[int])
 
 slots.ensmallenRunConfig__nodes_number = Slot(uri=DEFAULT_.nodes_number, name="ensmallenRunConfig__nodes_number", curie=DEFAULT_.curie('nodes_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_number, domain=None, range=Optional[str])
+                   model_uri=DEFAULT_.ensmallenRunConfig__nodes_number, domain=None, range=Optional[int])
 
 slots.ensmallenRunConfig__minimum_node_id = Slot(uri=DEFAULT_.minimum_node_id, name="ensmallenRunConfig__minimum_node_id", curie=DEFAULT_.curie('minimum_node_id'),
                    model_uri=DEFAULT_.ensmallenRunConfig__minimum_node_id, domain=None, range=Optional[int])
@@ -1476,12 +1490,6 @@ slots.ensmallenRunConfig__edge_types_column_number = Slot(uri=DEFAULT_.edge_type
 slots.ensmallenRunConfig__edge_types_column = Slot(uri=DEFAULT_.edge_types_column, name="ensmallenRunConfig__edge_types_column", curie=DEFAULT_.curie('edge_types_column'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_column, domain=None, range=Optional[str])
 
-slots.ensmallenRunConfig__edge_types_ids_column_number = Slot(uri=DEFAULT_.edge_types_ids_column_number, name="ensmallenRunConfig__edge_types_ids_column_number", curie=DEFAULT_.curie('edge_types_ids_column_number'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column_number, domain=None, range=Optional[int])
-
-slots.ensmallenRunConfig__edge_types_ids_column = Slot(uri=DEFAULT_.edge_types_ids_column, name="ensmallenRunConfig__edge_types_ids_column", curie=DEFAULT_.curie('edge_types_ids_column'),
-                   model_uri=DEFAULT_.ensmallenRunConfig__edge_types_ids_column, domain=None, range=Optional[str])
-
 slots.ensmallenRunConfig__edge_types_number = Slot(uri=DEFAULT_.edge_types_number, name="ensmallenRunConfig__edge_types_number", curie=DEFAULT_.curie('edge_types_number'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_types_number, domain=None, range=Optional[int])
 
@@ -1496,6 +1504,9 @@ slots.ensmallenRunConfig__edge_type_list_separator = Slot(uri=DEFAULT_.edge_type
 
 slots.ensmallenRunConfig__edge_type_list_header = Slot(uri=DEFAULT_.edge_type_list_header, name="ensmallenRunConfig__edge_type_list_header", curie=DEFAULT_.curie('edge_type_list_header'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_header, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.ensmallenRunConfig__edge_type_list_support_balanced_quotes = Slot(uri=DEFAULT_.edge_type_list_support_balanced_quotes, name="ensmallenRunConfig__edge_type_list_support_balanced_quotes", curie=DEFAULT_.curie('edge_type_list_support_balanced_quotes'),
+                   model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_support_balanced_quotes, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.ensmallenRunConfig__edge_type_list_rows_to_skip = Slot(uri=DEFAULT_.edge_type_list_rows_to_skip, name="ensmallenRunConfig__edge_type_list_rows_to_skip", curie=DEFAULT_.curie('edge_type_list_rows_to_skip'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_type_list_rows_to_skip, domain=None, range=Optional[int])
@@ -1520,6 +1531,9 @@ slots.ensmallenRunConfig__edge_list_separator = Slot(uri=DEFAULT_.edge_list_sepa
 
 slots.ensmallenRunConfig__edge_list_header = Slot(uri=DEFAULT_.edge_list_header, name="ensmallenRunConfig__edge_list_header", curie=DEFAULT_.curie('edge_list_header'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_header, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.ensmallenRunConfig__edge_list_support_balanced_quotes = Slot(uri=DEFAULT_.edge_list_support_balanced_quotes, name="ensmallenRunConfig__edge_list_support_balanced_quotes", curie=DEFAULT_.curie('edge_list_support_balanced_quotes'),
+                   model_uri=DEFAULT_.ensmallenRunConfig__edge_list_support_balanced_quotes, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.ensmallenRunConfig__edge_list_rows_to_skip = Slot(uri=DEFAULT_.edge_list_rows_to_skip, name="ensmallenRunConfig__edge_list_rows_to_skip", curie=DEFAULT_.curie('edge_list_rows_to_skip'),
                    model_uri=DEFAULT_.ensmallenRunConfig__edge_list_rows_to_skip, domain=None, range=Optional[int])

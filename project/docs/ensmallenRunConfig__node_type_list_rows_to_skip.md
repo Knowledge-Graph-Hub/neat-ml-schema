@@ -2,7 +2,7 @@
 # Slot: node_type_list_rows_to_skip
 
 
-
+The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_rows_to_skip](https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_rows_to_skip)
 

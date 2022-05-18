@@ -123,6 +123,7 @@ linkml:Nodeidentifier NONLITERAL
           <numeric_node_type_ids> @linkml:Boolean ? ;
           <minimum_node_type_id> @linkml:Integer ? ;
           <node_type_list_header> @linkml:Boolean ? ;
+          <node_type_list_support_balanced_quotes> @linkml:Boolean ? ;
           <node_type_list_rows_to_skip> @linkml:Integer ? ;
           <node_type_list_is_correct> @linkml:Boolean ? ;
           <node_type_list_max_rows_number> @linkml:Integer ? ;
@@ -131,6 +132,7 @@ linkml:Nodeidentifier NONLITERAL
           <node_path> @linkml:String ? ;
           <node_list_separator> @linkml:String ? ;
           <node_list_header> @linkml:Boolean ? ;
+          <node_list_support_balanced_quotes> @linkml:Boolean ? ;
           <node_list_rows_to_skip> @linkml:Integer ? ;
           <node_list_is_correct> @linkml:Boolean ? ;
           <node_list_max_rows_number> @linkml:Integer ? ;
@@ -143,7 +145,7 @@ linkml:Nodeidentifier NONLITERAL
           <node_list_node_types_column> @linkml:String ? ;
           <node_ids_column> @linkml:String ? ;
           <node_ids_column_number> @linkml:Integer ? ;
-          <nodes_number> @linkml:String ? ;
+          <nodes_number> @linkml:Integer ? ;
           <minimum_node_id> @linkml:Integer ? ;
           <numeric_node_ids> @linkml:Boolean ? ;
           <node_list_numeric_node_type_ids> @linkml:Boolean ? ;
@@ -152,13 +154,12 @@ linkml:Nodeidentifier NONLITERAL
           <edge_type_path> @linkml:String ? ;
           <edge_types_column_number> @linkml:Integer ? ;
           <edge_types_column> @linkml:String ? ;
-          <edge_types_ids_column_number> @linkml:Integer ? ;
-          <edge_types_ids_column> @linkml:String ? ;
           <edge_types_number> @linkml:Integer ? ;
           <numeric_edge_type_ids> @linkml:Boolean ? ;
           <minimum_edge_type_id> @linkml:Integer ? ;
           <edge_type_list_separator> @linkml:String ? ;
           <edge_type_list_header> @linkml:Boolean ? ;
+          <edge_type_list_support_balanced_quotes> @linkml:Boolean ? ;
           <edge_type_list_rows_to_skip> @linkml:Integer ? ;
           <edge_type_list_is_correct> @linkml:Boolean ? ;
           <edge_type_list_max_rows_number> @linkml:Integer ? ;
@@ -167,6 +168,7 @@ linkml:Nodeidentifier NONLITERAL
           <edge_path> @linkml:String ? ;
           <edge_list_separator> @linkml:String ? ;
           <edge_list_header> @linkml:Boolean ? ;
+          <edge_list_support_balanced_quotes> @linkml:Boolean ? ;
           <edge_list_rows_to_skip> @linkml:Integer ? ;
           <sources_column_number> @linkml:Integer ? ;
           <sources_column> @linkml:String ? ;

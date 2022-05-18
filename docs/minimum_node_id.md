@@ -1,4 +1,6 @@
 # Slot: minimum_node_id
+_The minimum node ID to be used, when loading the node IDs as numerical._
+
 
 URI: [https://w3id.org/neat_schema/:minimum_node_id](https://w3id.org/neat_schema/:minimum_node_id)
 

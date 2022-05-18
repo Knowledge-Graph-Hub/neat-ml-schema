@@ -2,7 +2,7 @@
 # Slot: edge_type_list_max_rows_number
 
 
-
+The maximum number of lines to be loaded from the edge types file.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_list_max_rows_number](https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_list_max_rows_number)
 

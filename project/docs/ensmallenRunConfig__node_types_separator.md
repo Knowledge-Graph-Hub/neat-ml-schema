@@ -2,7 +2,7 @@
 # Slot: node_types_separator
 
 
-
+The node types separator.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_types_separator](https://w3id.org/neat_schema/ensmallenRunConfig__node_types_separator)
 

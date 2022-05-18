@@ -317,222 +317,285 @@ classes:
       node_type_list_separator:
         description: The separator to use for the node types file.
       node_types_column_number:
-        description: 
+        description: Node type column number.
         range: integer
       node_types_column:
-        description: 
+        description: Node type column name.
       node_types_ids_column_number:
-        description: 
+        description: Node type ID column number.
         range: integer
       node_types_ids_column:
-        description: 
+        description: Node type ID column name.
       node_types_number:
-        description: 
+        description: The number of the unique node types. 
+          This will be used in order to allocate the correct size for the data structure.
         range: integer
       numeric_node_type_ids:
-        description: 
+        description: Whether the node type names should be loaded as numeric 
+          values, i.e. casted from string to a numeric representation.
         range: boolean
       minimum_node_type_id:
-        description: 
+        description: The minimum node type ID to be used when using numeric node type IDs.
         range: integer
       node_type_list_header:
-        description: 
+        description: Whether the node type file has an header.
+        range: boolean
+      node_type_list_support_balanced_quotes:
+        description: Whether to support balanced quotes.
         range: boolean
       node_type_list_rows_to_skip:
-        description: 
+        description: The number of lines to skip in the node types file.
+          The header is already skipped if it has been specified that the file has an header.
         range: integer
       node_type_list_is_correct:
-        description: 
+        description: Whether the node types file can be assumed to be correct, 
+          i.e. does not have something wrong in it. If this parameter is passed as 
+          true on a malformed file, the constructor will crash.
         range: boolean
       node_type_list_max_rows_number:
-        description: 
+        description: The maximum number of lines to be loaded from the node types file.
         range: integer
       node_type_list_comment_symbol:
-        description: 
+        description: The comment symbol to skip lines in the node types file. 
+          Lines starting with this symbol will be skipped.
       load_node_type_list_in_parallel:
-        description: 
+        description: Whether to load the node type list in parallel. Note that when 
+          loading in parallel, the internal order of the node type IDs may result 
+          changed across different iterations. We are working to get this to be stable.
         range: boolean
       node_path:
-        description: 
+        description: The path to the file with the unique node names.
       node_list_separator:
-        description: 
+        description: The separator to use for the nodes file. 
+          Note that if this is not provided, one will be automatically 
+          detected among the following - comma, semi-column, tab and space.
       node_list_header:
-        description: 
+        description: Whether the nodes file has an header.
+        range: boolean
+      node_list_support_balanced_quotes:
+        description: Whether to support balanced quotes.
         range: boolean
       node_list_rows_to_skip:
-        description: 
+        description: Number of rows to skip in the node list file.
         range: integer
       node_list_is_correct:
-        description: 
+        description: Whether the nodes file can be assumed to be correct, 
+          i.e. does not have something wrong in it. If this parameter is passed 
+          as true on a malformed file, the constructor will crash.
         range: boolean
       node_list_max_rows_number:
-        description: 
+        description: The maximum number of lines to be loaded from the nodes file.
         range: integer
       node_list_comment_symbol:
-        description: 
+        description: The comment symbol to skip lines in the nodes file. 
+          Lines starting with this symbol will be skipped.
       default_node_type:
-        description: 
+        description: The node type to be used when the node type for a given 
+          node in the node file is None.
       nodes_column_number:
-        description: 
+        description: The number of the column of the node 
+          file from where to load the node names.
         range: integer
       nodes_column:
-        description: 
+        description: The name of the column of the node file 
+          from where to load the node names.
       node_types_separator:
-        description: 
+        description: The node types separator.
       node_list_node_types_column_number:
-        description: 
+        description: The number of the column of the node file from 
+          where to load the node types.
         range: integer
       node_list_node_types_column:
-        description: 
+        description: The name of the column of the node file from where to load the node types.
       node_ids_column:
-        description: 
+        description: The name of the column of the node file from where to load the node IDs.
       node_ids_column_number:
-        description: 
+        description: The number of the column of the node file from where to load the node IDs
         range: integer
       nodes_number:
-        description: 
-          range: integer
+        description: The expected number of nodes. 
+          Note that this must be the EXACT number of nodes in the graph.
+        range: integer
       minimum_node_id:
-        description: 
+        description: The minimum node ID to be used, when loading the node IDs as numerical.
         range: integer
       numeric_node_ids:
-        description: 
+        description: Whether to load the numeric node IDs as numeric.
         range: boolean
       node_list_numeric_node_type_ids:
-        description: 
+        description: Whether to load the node types IDs in the node file to be numeric.
         range: boolean
       skip_node_types_if_unavailable:
-        description: 
+        description: Whether to skip the node types without raising an error if these are unavailable.
         range: boolean
       load_node_list_in_parallel:
-        description: 
+        description: Whether to load the node list in parallel. When loading in parallel, 
+          without node IDs, the nodes may not be loaded in a deterministic order.
         range: boolean
       edge_type_path:
-        description: 
+        description: The path to the file with the unique edge type names.
       edge_types_column_number:
-        description: 
+        description: The number of the column of the edge types file from 
+          where to load the edge types.
         range: integer
       edge_types_column:
-        description: 
-      edge_types_ids_column_number:
-        description: 
-        range: integer
-      edge_types_ids_column:
-        description: 
+        description: The name of the column of the edge 
+          types file from where to load the edge types.
+      # edge_types_ids_column_number:
+      #   description: 
+      #   range: integer
+      # edge_types_ids_column:
+      #   description: 
       edge_types_number:
-        description: 
+        description: The number of the unique edge types. 
+          This will be used in order to allocate the correct size for the data structure.
         range: integer
       numeric_edge_type_ids:
-        description: 
+        description: Whether the edge type names should be loaded as numeric values, 
+          i.e. casted from string to a numeric representation.
         range: boolean
       minimum_edge_type_id:
-        description: 
+        description: The minimum edge type ID to be used when using numeric edge type IDs.
         range: integer
       edge_type_list_separator:
-        description: 
+        description: The separator to use for the edge type list. 
+          Note that, if None is provided, one will be attempted to be detected 
+          automatically between ';', ',', tab or space.
       edge_type_list_header:
-        description: 
+        description: Whether the edge type file has an header.
+        range: boolean
+      edge_type_list_support_balanced_quotes:
+        description: Whether to support balanced quotes while reading the edge type list.
         range: boolean
       edge_type_list_rows_to_skip:
-        description: 
+        description: Number of rows to skip in the edge type list file.
         range: integer
       edge_type_list_is_correct:
-        description: 
+        description: Whether the edge types file can be assumed to be correct, 
+          i.e. does not have something wrong in it. If this parameter is passed 
+          as true on a malformed file, the constructor will crash.
         range: boolean
       edge_type_list_max_rows_number:
-        description: 
+        description: The maximum number of lines to be loaded from the edge types file.
         range: integer
       edge_type_list_comment_symbol:
-        description: 
+        description: The comment symbol to skip lines in 
+          the edge types file. Lines starting with this symbol will be skipped.
       load_edge_type_list_in_parallel:
-        description: 
+        description: Whether to load the edge type list in parallel. 
+          When loading in parallel, without edge type IDs, the edge types may 
+          not be loaded in a deterministic order.
         range: boolean
       edge_path:
-        description: 
+        description: The path to the file with the edge list.
       edge_list_separator:
-        description: 
+        description: The separator to use for the edge list. 
+          Note that, if None is provided, one will be attempted to be 
+          detected automatically between ';', ',', tab or space.
       edge_list_header:
-        description: 
+        description: Whether the edges file has an header.
+        range: boolean
+      edge_list_support_balanced_quotes:
+        description: Whether to support balanced quotes while reading the edge list.
         range: boolean
       edge_list_rows_to_skip:
-        description: 
+        description: Number of rows to skip in the edge list file.
         range: integer
       sources_column_number:
-        description: 
+        description: The number of the column of the edges file from where to load the source nodes.
         range: integer
       sources_column:
-        description: 
+        description: The name of the column of the edges file from where to load the source nodes.
       destinations_column_number:
-        description: 
+        description: The number of the column of the edges file from where to load the destinaton nodes.
         range: integer
       destinations_column:
-        description: 
+        description: The name of the column of the edges file from where to load the destinaton nodes.
       edge_list_edge_types_column_number:
-        description: 
+        description: The number of the column of the edges file from where to load the edge types.
         range: integer
       edge_list_edge_types_column:
-        description: 
+        description: The name of the column of the edges file from where to load the edge types.
       default_edge_type:
-        description: 
+        description: The edge type to be used when the edge type for a given edge in the edge file is None.
       weights_column_number:
-        description: 
+        description: The number of the column of the edges file from where to load the edge weights.
         range: integer
       weights_column:
-        description: 
+        description: The name of the column of the edges file from where to load the edge weights.
       default_weight:
-        description: 
+        description: The edge weight to be used when the edge weight for a given edge in the edge file is None.
         range: float
       edge_ids_column:
-        description: 
+        description: The name of the column of the edges file from where to load the edge IDs.
       edge_ids_column_number:
-        description: 
+        description: The number of the column of the edges file from where to load the edge IDs.
         range: integer
       edge_list_numeric_edge_type_ids:
-        description: 
+        description: Whether to load the edge type IDs as numeric from the edge list.
         range: boolean
       edge_list_numeric_node_ids:
-        description: 
+        description: Whether to load the edge node IDs as numeric from the edge list.
         range: boolean
       skip_weights_if_unavailable:
-        description: 
+        description: Whether to skip the weights without raising an error if these are unavailable.
         range: boolean
       skip_edge_types_if_unavailable:
-        description: 
+        description: Whether to skip the edge types without raising an error if these are unavailable.
         range: boolean
       edge_list_is_complete:
-        description: 
+        description: Whether to consider the edge list as complete, 
+          i.e. the edges are presented in both directions when loading an undirected graph.
         range: boolean
       edge_list_may_contain_duplicates:
-        description: 
+        description: Whether the edge list may contain duplicates. 
+          If the edge list surely DOES NOT contain duplicates, 
+          a validation step may be skipped. By default, 
+          it is assumed that the edge list may contain duplicates.
         range: boolean
       edge_list_is_sorted:
-        description: 
+        description: Whether the edge list is sorted. Note that a sorted edge 
+          list has the minimal memory peak, but requires the nodes number and the edges number.
         range: boolean
       edge_list_is_correct:
-        description: 
+        description: Whether the edges file can be assumed to be correct, 
+          i.e. does not have something wrong in it. If this parameter is passed 
+          as true on a malformed file, the constructor will crash.
         range: boolean
       edge_list_max_rows_number:
-        description: 
+        description: The maximum number of lines to be loaded from the edges file.
         range: integer
       edge_list_comment_symbol:
-        description: 
+        description: The comment symbol to skip lines in the edges file. 
+          Lines starting with this symbol will be skipped.
       edges_number:
-        description: 
+        description: The expected number of edges. Note that this must 
+          be the EXACT number of edges in the graph.
         range: integer
       load_edge_list_in_parallel:
-        description: 
+        description: Whether to load the edge list in parallel. 
+          Note that, if the edge IDs indices are not given, it is 
+          NOT possible to load a sorted edge list. Similarly, when 
+          loading in parallel, without edge IDs, the edges may not be 
+          loaded in a deterministic order.
         range: boolean
       verbose:
-        description: 
+        description: Whether to show a loading bar while reading the files. 
+          Note that, if parallel loading is enabled, loading bars will not 
+          be showed because they are a synchronization bottleneck.
         range: boolean
       may_have_singletons:
-        description: 
+        description: Whether the graph may be expected to have singleton nodes. 
+          If it is said that it surely DOES NOT have any, it will allow for some 
+          speedups and lower mempry peaks.
         range: boolean
       may_have_singleton_with_selfloops:
-        description: 
+        description: Whether the graph may be expected to have singleton 
+          nodes with selfloops. If it is said that it surely DOES NOT have any, 
+          it will allow for some speedups and lower mempry peaks.
         range: boolean
       directed:
-        description: 
+        description: Whether to load the graph as directed or undirected.
         range: boolean
       name: {}
 

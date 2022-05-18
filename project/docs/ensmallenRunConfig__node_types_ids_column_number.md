@@ -2,7 +2,7 @@
 # Slot: node_types_ids_column_number
 
 
-
+Node type ID column number.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_types_ids_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__node_types_ids_column_number)
 

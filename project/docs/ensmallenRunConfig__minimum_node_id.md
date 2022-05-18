@@ -2,7 +2,7 @@
 # Slot: minimum_node_id
 
 
-
+The minimum node ID to be used, when loading the node IDs as numerical.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__minimum_node_id](https://w3id.org/neat_schema/ensmallenRunConfig__minimum_node_id)
 

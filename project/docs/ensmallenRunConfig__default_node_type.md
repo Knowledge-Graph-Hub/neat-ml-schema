@@ -2,7 +2,7 @@
 # Slot: default_node_type
 
 
-
+The node type to be used when the node type for a given node in the node file is None.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__default_node_type](https://w3id.org/neat_schema/ensmallenRunConfig__default_node_type)
 

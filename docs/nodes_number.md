@@ -1,5 +1,5 @@
 # Slot: nodes_number
-_JsonObj(range='integer')_
+_The expected number of nodes. Note that this must be the EXACT number of nodes in the graph._
 
 
 URI: [https://w3id.org/neat_schema/:nodes_number](https://w3id.org/neat_schema/:nodes_number)
@@ -11,7 +11,7 @@ URI: [https://w3id.org/neat_schema/:nodes_number](https://w3id.org/neat_schema/:
 
 ## Properties
 
- * Range: None
+ * Range: integer
 
 
 

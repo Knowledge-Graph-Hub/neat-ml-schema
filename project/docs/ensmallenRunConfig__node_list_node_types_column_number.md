@@ -2,7 +2,7 @@
 # Slot: node_list_node_types_column_number
 
 
-
+The number of the column of the node file from where to load the node types.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_list_node_types_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__node_list_node_types_column_number)
 

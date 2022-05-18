@@ -2,7 +2,7 @@
 # Slot: node_list_separator
 
 
-
+The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_list_separator](https://w3id.org/neat_schema/ensmallenRunConfig__node_list_separator)
 

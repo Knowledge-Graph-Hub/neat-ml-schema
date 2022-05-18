@@ -1,4 +1,6 @@
 # Slot: node_ids_column_number
+_The number of the column of the node file from where to load the node IDs_
+
 
 URI: [https://w3id.org/neat_schema/:node_ids_column_number](https://w3id.org/neat_schema/:node_ids_column_number)
 

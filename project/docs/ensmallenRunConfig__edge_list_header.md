@@ -2,7 +2,7 @@
 # Slot: edge_list_header
 
 
-
+Whether the edges file has an header.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_header](https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_header)
 

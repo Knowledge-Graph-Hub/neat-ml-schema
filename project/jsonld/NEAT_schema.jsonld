@@ -1223,6 +1223,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_column_number",
+      "description": "Node type column number.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_column_number",
       "alias": "node_types_column_number",
@@ -1235,6 +1236,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_column",
+      "description": "Node type column name.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_column",
       "alias": "node_types_column",
@@ -1247,6 +1249,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_ids_column_number",
+      "description": "Node type ID column number.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_ids_column_number",
       "alias": "node_types_ids_column_number",
@@ -1259,6 +1262,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_ids_column",
+      "description": "Node type ID column name.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_ids_column",
       "alias": "node_types_ids_column",
@@ -1271,6 +1275,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_number",
+      "description": "The number of the unique node types. This will be used in order to allocate the correct size for the data structure.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_number",
       "alias": "node_types_number",
@@ -1283,6 +1288,7 @@
     },
     {
       "name": "ensmallenRunConfig__numeric_node_type_ids",
+      "description": "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/numeric_node_type_ids",
       "alias": "numeric_node_type_ids",
@@ -1295,6 +1301,7 @@
     },
     {
       "name": "ensmallenRunConfig__minimum_node_type_id",
+      "description": "The minimum node type ID to be used when using numeric node type IDs.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/minimum_node_type_id",
       "alias": "minimum_node_type_id",
@@ -1307,6 +1314,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_list_header",
+      "description": "Whether the node type file has an header.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_header",
       "alias": "node_type_list_header",
@@ -1318,7 +1326,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ensmallenRunConfig__node_type_list_support_balanced_quotes",
+      "description": "Whether to support balanced quotes.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/node_type_list_support_balanced_quotes",
+      "alias": "node_type_list_support_balanced_quotes",
+      "owner": "EnsmallenRunConfig",
+      "domain_of": [
+        "EnsmallenRunConfig"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ensmallenRunConfig__node_type_list_rows_to_skip",
+      "description": "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_rows_to_skip",
       "alias": "node_type_list_rows_to_skip",
@@ -1331,6 +1353,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_list_is_correct",
+      "description": "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_is_correct",
       "alias": "node_type_list_is_correct",
@@ -1343,6 +1366,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_list_max_rows_number",
+      "description": "The maximum number of lines to be loaded from the node types file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_max_rows_number",
       "alias": "node_type_list_max_rows_number",
@@ -1355,6 +1379,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_type_list_comment_symbol",
+      "description": "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_type_list_comment_symbol",
       "alias": "node_type_list_comment_symbol",
@@ -1367,6 +1392,7 @@
     },
     {
       "name": "ensmallenRunConfig__load_node_type_list_in_parallel",
+      "description": "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/load_node_type_list_in_parallel",
       "alias": "load_node_type_list_in_parallel",
@@ -1379,6 +1405,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_path",
+      "description": "The path to the file with the unique node names.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_path",
       "alias": "node_path",
@@ -1391,6 +1418,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_separator",
+      "description": "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_separator",
       "alias": "node_list_separator",
@@ -1403,6 +1431,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_header",
+      "description": "Whether the nodes file has an header.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_header",
       "alias": "node_list_header",
@@ -1414,7 +1443,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ensmallenRunConfig__node_list_support_balanced_quotes",
+      "description": "Whether to support balanced quotes.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/node_list_support_balanced_quotes",
+      "alias": "node_list_support_balanced_quotes",
+      "owner": "EnsmallenRunConfig",
+      "domain_of": [
+        "EnsmallenRunConfig"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ensmallenRunConfig__node_list_rows_to_skip",
+      "description": "Number of rows to skip in the node list file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_rows_to_skip",
       "alias": "node_list_rows_to_skip",
@@ -1427,6 +1470,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_is_correct",
+      "description": "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_is_correct",
       "alias": "node_list_is_correct",
@@ -1439,6 +1483,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_max_rows_number",
+      "description": "The maximum number of lines to be loaded from the nodes file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_max_rows_number",
       "alias": "node_list_max_rows_number",
@@ -1451,6 +1496,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_comment_symbol",
+      "description": "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_comment_symbol",
       "alias": "node_list_comment_symbol",
@@ -1463,6 +1509,7 @@
     },
     {
       "name": "ensmallenRunConfig__default_node_type",
+      "description": "The node type to be used when the node type for a given node in the node file is None.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/default_node_type",
       "alias": "default_node_type",
@@ -1475,6 +1522,7 @@
     },
     {
       "name": "ensmallenRunConfig__nodes_column_number",
+      "description": "The number of the column of the node file from where to load the node names.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/nodes_column_number",
       "alias": "nodes_column_number",
@@ -1487,6 +1535,7 @@
     },
     {
       "name": "ensmallenRunConfig__nodes_column",
+      "description": "The name of the column of the node file from where to load the node names.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/nodes_column",
       "alias": "nodes_column",
@@ -1499,6 +1548,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_types_separator",
+      "description": "The node types separator.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_types_separator",
       "alias": "node_types_separator",
@@ -1511,6 +1561,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_node_types_column_number",
+      "description": "The number of the column of the node file from where to load the node types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_node_types_column_number",
       "alias": "node_list_node_types_column_number",
@@ -1523,6 +1574,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_node_types_column",
+      "description": "The name of the column of the node file from where to load the node types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_node_types_column",
       "alias": "node_list_node_types_column",
@@ -1535,6 +1587,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_ids_column",
+      "description": "The name of the column of the node file from where to load the node IDs.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_ids_column",
       "alias": "node_ids_column",
@@ -1547,6 +1600,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_ids_column_number",
+      "description": "The number of the column of the node file from where to load the node IDs",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_ids_column_number",
       "alias": "node_ids_column_number",
@@ -1559,7 +1613,7 @@
     },
     {
       "name": "ensmallenRunConfig__nodes_number",
-      "description": "JsonObj(range='integer')",
+      "description": "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/nodes_number",
       "alias": "nodes_number",
@@ -1567,11 +1621,12 @@
       "domain_of": [
         "EnsmallenRunConfig"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
       "name": "ensmallenRunConfig__minimum_node_id",
+      "description": "The minimum node ID to be used, when loading the node IDs as numerical.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/minimum_node_id",
       "alias": "minimum_node_id",
@@ -1584,6 +1639,7 @@
     },
     {
       "name": "ensmallenRunConfig__numeric_node_ids",
+      "description": "Whether to load the numeric node IDs as numeric.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/numeric_node_ids",
       "alias": "numeric_node_ids",
@@ -1596,6 +1652,7 @@
     },
     {
       "name": "ensmallenRunConfig__node_list_numeric_node_type_ids",
+      "description": "Whether to load the node types IDs in the node file to be numeric.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/node_list_numeric_node_type_ids",
       "alias": "node_list_numeric_node_type_ids",
@@ -1608,6 +1665,7 @@
     },
     {
       "name": "ensmallenRunConfig__skip_node_types_if_unavailable",
+      "description": "Whether to skip the node types without raising an error if these are unavailable.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/skip_node_types_if_unavailable",
       "alias": "skip_node_types_if_unavailable",
@@ -1620,6 +1678,7 @@
     },
     {
       "name": "ensmallenRunConfig__load_node_list_in_parallel",
+      "description": "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/load_node_list_in_parallel",
       "alias": "load_node_list_in_parallel",
@@ -1632,6 +1691,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_path",
+      "description": "The path to the file with the unique edge type names.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_path",
       "alias": "edge_type_path",
@@ -1644,6 +1704,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_types_column_number",
+      "description": "The number of the column of the edge types file from where to load the edge types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_types_column_number",
       "alias": "edge_types_column_number",
@@ -1656,6 +1717,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_types_column",
+      "description": "The name of the column of the edge types file from where to load the edge types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_types_column",
       "alias": "edge_types_column",
@@ -1667,31 +1729,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ensmallenRunConfig__edge_types_ids_column_number",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/edge_types_ids_column_number",
-      "alias": "edge_types_ids_column_number",
-      "owner": "EnsmallenRunConfig",
-      "domain_of": [
-        "EnsmallenRunConfig"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ensmallenRunConfig__edge_types_ids_column",
-      "from_schema": "https://w3id.org/neat_schema",
-      "slot_uri": "https://w3id.org/neat_schema/edge_types_ids_column",
-      "alias": "edge_types_ids_column",
-      "owner": "EnsmallenRunConfig",
-      "domain_of": [
-        "EnsmallenRunConfig"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "ensmallenRunConfig__edge_types_number",
+      "description": "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_types_number",
       "alias": "edge_types_number",
@@ -1704,6 +1743,7 @@
     },
     {
       "name": "ensmallenRunConfig__numeric_edge_type_ids",
+      "description": "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/numeric_edge_type_ids",
       "alias": "numeric_edge_type_ids",
@@ -1716,6 +1756,7 @@
     },
     {
       "name": "ensmallenRunConfig__minimum_edge_type_id",
+      "description": "The minimum edge type ID to be used when using numeric edge type IDs.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/minimum_edge_type_id",
       "alias": "minimum_edge_type_id",
@@ -1728,6 +1769,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_list_separator",
+      "description": "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_separator",
       "alias": "edge_type_list_separator",
@@ -1740,6 +1782,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_list_header",
+      "description": "Whether the edge type file has an header.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_header",
       "alias": "edge_type_list_header",
@@ -1751,7 +1794,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ensmallenRunConfig__edge_type_list_support_balanced_quotes",
+      "description": "Whether to support balanced quotes while reading the edge type list.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/edge_type_list_support_balanced_quotes",
+      "alias": "edge_type_list_support_balanced_quotes",
+      "owner": "EnsmallenRunConfig",
+      "domain_of": [
+        "EnsmallenRunConfig"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ensmallenRunConfig__edge_type_list_rows_to_skip",
+      "description": "Number of rows to skip in the edge type list file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_rows_to_skip",
       "alias": "edge_type_list_rows_to_skip",
@@ -1764,6 +1821,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_list_is_correct",
+      "description": "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_is_correct",
       "alias": "edge_type_list_is_correct",
@@ -1776,6 +1834,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_list_max_rows_number",
+      "description": "The maximum number of lines to be loaded from the edge types file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_max_rows_number",
       "alias": "edge_type_list_max_rows_number",
@@ -1788,6 +1847,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_type_list_comment_symbol",
+      "description": "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_type_list_comment_symbol",
       "alias": "edge_type_list_comment_symbol",
@@ -1800,6 +1860,7 @@
     },
     {
       "name": "ensmallenRunConfig__load_edge_type_list_in_parallel",
+      "description": "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/load_edge_type_list_in_parallel",
       "alias": "load_edge_type_list_in_parallel",
@@ -1812,6 +1873,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_path",
+      "description": "The path to the file with the edge list.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_path",
       "alias": "edge_path",
@@ -1824,6 +1886,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_separator",
+      "description": "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_separator",
       "alias": "edge_list_separator",
@@ -1836,6 +1899,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_header",
+      "description": "Whether the edges file has an header.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_header",
       "alias": "edge_list_header",
@@ -1847,7 +1911,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ensmallenRunConfig__edge_list_support_balanced_quotes",
+      "description": "Whether to support balanced quotes while reading the edge list.",
+      "from_schema": "https://w3id.org/neat_schema",
+      "slot_uri": "https://w3id.org/neat_schema/edge_list_support_balanced_quotes",
+      "alias": "edge_list_support_balanced_quotes",
+      "owner": "EnsmallenRunConfig",
+      "domain_of": [
+        "EnsmallenRunConfig"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ensmallenRunConfig__edge_list_rows_to_skip",
+      "description": "Number of rows to skip in the edge list file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_rows_to_skip",
       "alias": "edge_list_rows_to_skip",
@@ -1860,6 +1938,7 @@
     },
     {
       "name": "ensmallenRunConfig__sources_column_number",
+      "description": "The number of the column of the edges file from where to load the source nodes.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/sources_column_number",
       "alias": "sources_column_number",
@@ -1872,6 +1951,7 @@
     },
     {
       "name": "ensmallenRunConfig__sources_column",
+      "description": "The name of the column of the edges file from where to load the source nodes.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/sources_column",
       "alias": "sources_column",
@@ -1884,6 +1964,7 @@
     },
     {
       "name": "ensmallenRunConfig__destinations_column_number",
+      "description": "The number of the column of the edges file from where to load the destinaton nodes.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/destinations_column_number",
       "alias": "destinations_column_number",
@@ -1896,6 +1977,7 @@
     },
     {
       "name": "ensmallenRunConfig__destinations_column",
+      "description": "The name of the column of the edges file from where to load the destinaton nodes.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/destinations_column",
       "alias": "destinations_column",
@@ -1908,6 +1990,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_edge_types_column_number",
+      "description": "The number of the column of the edges file from where to load the edge types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_edge_types_column_number",
       "alias": "edge_list_edge_types_column_number",
@@ -1920,6 +2003,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_edge_types_column",
+      "description": "The name of the column of the edges file from where to load the edge types.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_edge_types_column",
       "alias": "edge_list_edge_types_column",
@@ -1932,6 +2016,7 @@
     },
     {
       "name": "ensmallenRunConfig__default_edge_type",
+      "description": "The edge type to be used when the edge type for a given edge in the edge file is None.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/default_edge_type",
       "alias": "default_edge_type",
@@ -1944,6 +2029,7 @@
     },
     {
       "name": "ensmallenRunConfig__weights_column_number",
+      "description": "The number of the column of the edges file from where to load the edge weights.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/weights_column_number",
       "alias": "weights_column_number",
@@ -1956,6 +2042,7 @@
     },
     {
       "name": "ensmallenRunConfig__weights_column",
+      "description": "The name of the column of the edges file from where to load the edge weights.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/weights_column",
       "alias": "weights_column",
@@ -1968,6 +2055,7 @@
     },
     {
       "name": "ensmallenRunConfig__default_weight",
+      "description": "The edge weight to be used when the edge weight for a given edge in the edge file is None.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/default_weight",
       "alias": "default_weight",
@@ -1980,6 +2068,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_ids_column",
+      "description": "The name of the column of the edges file from where to load the edge IDs.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_ids_column",
       "alias": "edge_ids_column",
@@ -1992,6 +2081,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_ids_column_number",
+      "description": "The number of the column of the edges file from where to load the edge IDs.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_ids_column_number",
       "alias": "edge_ids_column_number",
@@ -2004,6 +2094,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_numeric_edge_type_ids",
+      "description": "Whether to load the edge type IDs as numeric from the edge list.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_numeric_edge_type_ids",
       "alias": "edge_list_numeric_edge_type_ids",
@@ -2016,6 +2107,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_numeric_node_ids",
+      "description": "Whether to load the edge node IDs as numeric from the edge list.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_numeric_node_ids",
       "alias": "edge_list_numeric_node_ids",
@@ -2028,6 +2120,7 @@
     },
     {
       "name": "ensmallenRunConfig__skip_weights_if_unavailable",
+      "description": "Whether to skip the weights without raising an error if these are unavailable.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/skip_weights_if_unavailable",
       "alias": "skip_weights_if_unavailable",
@@ -2040,6 +2133,7 @@
     },
     {
       "name": "ensmallenRunConfig__skip_edge_types_if_unavailable",
+      "description": "Whether to skip the edge types without raising an error if these are unavailable.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/skip_edge_types_if_unavailable",
       "alias": "skip_edge_types_if_unavailable",
@@ -2052,6 +2146,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_is_complete",
+      "description": "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_is_complete",
       "alias": "edge_list_is_complete",
@@ -2064,6 +2159,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_may_contain_duplicates",
+      "description": "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_may_contain_duplicates",
       "alias": "edge_list_may_contain_duplicates",
@@ -2076,6 +2172,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_is_sorted",
+      "description": "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_is_sorted",
       "alias": "edge_list_is_sorted",
@@ -2088,6 +2185,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_is_correct",
+      "description": "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_is_correct",
       "alias": "edge_list_is_correct",
@@ -2100,6 +2198,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_max_rows_number",
+      "description": "The maximum number of lines to be loaded from the edges file.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_max_rows_number",
       "alias": "edge_list_max_rows_number",
@@ -2112,6 +2211,7 @@
     },
     {
       "name": "ensmallenRunConfig__edge_list_comment_symbol",
+      "description": "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edge_list_comment_symbol",
       "alias": "edge_list_comment_symbol",
@@ -2124,6 +2224,7 @@
     },
     {
       "name": "ensmallenRunConfig__edges_number",
+      "description": "The expected number of edges. Note that this must be the EXACT number of edges in the graph.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/edges_number",
       "alias": "edges_number",
@@ -2136,6 +2237,7 @@
     },
     {
       "name": "ensmallenRunConfig__load_edge_list_in_parallel",
+      "description": "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/load_edge_list_in_parallel",
       "alias": "load_edge_list_in_parallel",
@@ -2148,6 +2250,7 @@
     },
     {
       "name": "ensmallenRunConfig__verbose",
+      "description": "Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/verbose",
       "alias": "verbose",
@@ -2160,6 +2263,7 @@
     },
     {
       "name": "ensmallenRunConfig__may_have_singletons",
+      "description": "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/may_have_singletons",
       "alias": "may_have_singletons",
@@ -2172,6 +2276,7 @@
     },
     {
       "name": "ensmallenRunConfig__may_have_singleton_with_selfloops",
+      "description": "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/may_have_singleton_with_selfloops",
       "alias": "may_have_singleton_with_selfloops",
@@ -2184,6 +2289,7 @@
     },
     {
       "name": "ensmallenRunConfig__directed",
+      "description": "Whether to load the graph as directed or undirected.",
       "from_schema": "https://w3id.org/neat_schema",
       "slot_uri": "https://w3id.org/neat_schema/directed",
       "alias": "directed",
@@ -2982,6 +3088,7 @@
         "ensmallenRunConfig__numeric_node_type_ids",
         "ensmallenRunConfig__minimum_node_type_id",
         "ensmallenRunConfig__node_type_list_header",
+        "ensmallenRunConfig__node_type_list_support_balanced_quotes",
         "ensmallenRunConfig__node_type_list_rows_to_skip",
         "ensmallenRunConfig__node_type_list_is_correct",
         "ensmallenRunConfig__node_type_list_max_rows_number",
@@ -2990,6 +3097,7 @@
         "ensmallenRunConfig__node_path",
         "ensmallenRunConfig__node_list_separator",
         "ensmallenRunConfig__node_list_header",
+        "ensmallenRunConfig__node_list_support_balanced_quotes",
         "ensmallenRunConfig__node_list_rows_to_skip",
         "ensmallenRunConfig__node_list_is_correct",
         "ensmallenRunConfig__node_list_max_rows_number",
@@ -3011,13 +3119,12 @@
         "ensmallenRunConfig__edge_type_path",
         "ensmallenRunConfig__edge_types_column_number",
         "ensmallenRunConfig__edge_types_column",
-        "ensmallenRunConfig__edge_types_ids_column_number",
-        "ensmallenRunConfig__edge_types_ids_column",
         "ensmallenRunConfig__edge_types_number",
         "ensmallenRunConfig__numeric_edge_type_ids",
         "ensmallenRunConfig__minimum_edge_type_id",
         "ensmallenRunConfig__edge_type_list_separator",
         "ensmallenRunConfig__edge_type_list_header",
+        "ensmallenRunConfig__edge_type_list_support_balanced_quotes",
         "ensmallenRunConfig__edge_type_list_rows_to_skip",
         "ensmallenRunConfig__edge_type_list_is_correct",
         "ensmallenRunConfig__edge_type_list_max_rows_number",
@@ -3026,6 +3133,7 @@
         "ensmallenRunConfig__edge_path",
         "ensmallenRunConfig__edge_list_separator",
         "ensmallenRunConfig__edge_list_header",
+        "ensmallenRunConfig__edge_list_support_balanced_quotes",
         "ensmallenRunConfig__edge_list_rows_to_skip",
         "ensmallenRunConfig__sources_column_number",
         "ensmallenRunConfig__sources_column",
@@ -3071,381 +3179,475 @@
         },
         {
           "name": "node_types_column_number",
+          "description": "Node type column number.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types_column",
+          "description": "Node type column name.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types_ids_column_number",
+          "description": "Node type ID column number.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types_ids_column",
+          "description": "Node type ID column name.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types_number",
+          "description": "The number of the unique node types. This will be used in order to allocate the correct size for the data structure.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "numeric_node_type_ids",
+          "description": "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "minimum_node_type_id",
+          "description": "The minimum node type ID to be used when using numeric node type IDs.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_header",
+          "description": "Whether the node type file has an header.",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "node_type_list_support_balanced_quotes",
+          "description": "Whether to support balanced quotes.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_rows_to_skip",
+          "description": "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_is_correct",
+          "description": "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_max_rows_number",
+          "description": "The maximum number of lines to be loaded from the node types file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_type_list_comment_symbol",
+          "description": "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.",
           "@type": "SlotDefinition"
         },
         {
           "name": "load_node_type_list_in_parallel",
+          "description": "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_path",
+          "description": "The path to the file with the unique node names.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_separator",
+          "description": "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_header",
+          "description": "Whether the nodes file has an header.",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "node_list_support_balanced_quotes",
+          "description": "Whether to support balanced quotes.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_rows_to_skip",
+          "description": "Number of rows to skip in the node list file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_is_correct",
+          "description": "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_max_rows_number",
+          "description": "The maximum number of lines to be loaded from the nodes file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_comment_symbol",
+          "description": "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.",
           "@type": "SlotDefinition"
         },
         {
           "name": "default_node_type",
+          "description": "The node type to be used when the node type for a given node in the node file is None.",
           "@type": "SlotDefinition"
         },
         {
           "name": "nodes_column_number",
+          "description": "The number of the column of the node file from where to load the node names.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "nodes_column",
+          "description": "The name of the column of the node file from where to load the node names.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_types_separator",
+          "description": "The node types separator.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_node_types_column_number",
+          "description": "The number of the column of the node file from where to load the node types.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_node_types_column",
+          "description": "The name of the column of the node file from where to load the node types.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_ids_column",
+          "description": "The name of the column of the node file from where to load the node IDs.",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_ids_column_number",
+          "description": "The number of the column of the node file from where to load the node IDs",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "nodes_number",
-          "description": "JsonObj(range='integer')",
+          "description": "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.",
+          "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "minimum_node_id",
+          "description": "The minimum node ID to be used, when loading the node IDs as numerical.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "numeric_node_ids",
+          "description": "Whether to load the numeric node IDs as numeric.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "node_list_numeric_node_type_ids",
+          "description": "Whether to load the node types IDs in the node file to be numeric.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "skip_node_types_if_unavailable",
+          "description": "Whether to skip the node types without raising an error if these are unavailable.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "load_node_list_in_parallel",
+          "description": "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_path",
+          "description": "The path to the file with the unique edge type names.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_types_column_number",
+          "description": "The number of the column of the edge types file from where to load the edge types.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_types_column",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "edge_types_ids_column_number",
-          "range": "integer",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "edge_types_ids_column",
+          "description": "The name of the column of the edge types file from where to load the edge types.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_types_number",
+          "description": "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "numeric_edge_type_ids",
+          "description": "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "minimum_edge_type_id",
+          "description": "The minimum edge type ID to be used when using numeric edge type IDs.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_separator",
+          "description": "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_header",
+          "description": "Whether the edge type file has an header.",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "edge_type_list_support_balanced_quotes",
+          "description": "Whether to support balanced quotes while reading the edge type list.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_rows_to_skip",
+          "description": "Number of rows to skip in the edge type list file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_is_correct",
+          "description": "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_max_rows_number",
+          "description": "The maximum number of lines to be loaded from the edge types file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_type_list_comment_symbol",
+          "description": "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.",
           "@type": "SlotDefinition"
         },
         {
           "name": "load_edge_type_list_in_parallel",
+          "description": "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_path",
+          "description": "The path to the file with the edge list.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_separator",
+          "description": "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_header",
+          "description": "Whether the edges file has an header.",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "edge_list_support_balanced_quotes",
+          "description": "Whether to support balanced quotes while reading the edge list.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_rows_to_skip",
+          "description": "Number of rows to skip in the edge list file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "sources_column_number",
+          "description": "The number of the column of the edges file from where to load the source nodes.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "sources_column",
+          "description": "The name of the column of the edges file from where to load the source nodes.",
           "@type": "SlotDefinition"
         },
         {
           "name": "destinations_column_number",
+          "description": "The number of the column of the edges file from where to load the destinaton nodes.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "destinations_column",
+          "description": "The name of the column of the edges file from where to load the destinaton nodes.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_edge_types_column_number",
+          "description": "The number of the column of the edges file from where to load the edge types.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_edge_types_column",
+          "description": "The name of the column of the edges file from where to load the edge types.",
           "@type": "SlotDefinition"
         },
         {
           "name": "default_edge_type",
+          "description": "The edge type to be used when the edge type for a given edge in the edge file is None.",
           "@type": "SlotDefinition"
         },
         {
           "name": "weights_column_number",
+          "description": "The number of the column of the edges file from where to load the edge weights.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "weights_column",
+          "description": "The name of the column of the edges file from where to load the edge weights.",
           "@type": "SlotDefinition"
         },
         {
           "name": "default_weight",
+          "description": "The edge weight to be used when the edge weight for a given edge in the edge file is None.",
           "range": "float",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_ids_column",
+          "description": "The name of the column of the edges file from where to load the edge IDs.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_ids_column_number",
+          "description": "The number of the column of the edges file from where to load the edge IDs.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_numeric_edge_type_ids",
+          "description": "Whether to load the edge type IDs as numeric from the edge list.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_numeric_node_ids",
+          "description": "Whether to load the edge node IDs as numeric from the edge list.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "skip_weights_if_unavailable",
+          "description": "Whether to skip the weights without raising an error if these are unavailable.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "skip_edge_types_if_unavailable",
+          "description": "Whether to skip the edge types without raising an error if these are unavailable.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_is_complete",
+          "description": "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_may_contain_duplicates",
+          "description": "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_is_sorted",
+          "description": "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_is_correct",
+          "description": "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_max_rows_number",
+          "description": "The maximum number of lines to be loaded from the edges file.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "edge_list_comment_symbol",
+          "description": "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.",
           "@type": "SlotDefinition"
         },
         {
           "name": "edges_number",
+          "description": "The expected number of edges. Note that this must be the EXACT number of edges in the graph.",
           "range": "integer",
           "@type": "SlotDefinition"
         },
         {
           "name": "load_edge_list_in_parallel",
+          "description": "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "verbose",
+          "description": "Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "may_have_singletons",
+          "description": "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "may_have_singleton_with_selfloops",
+          "description": "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
         {
           "name": "directed",
+          "description": "Whether to load the graph as directed or undirected.",
           "range": "boolean",
           "@type": "SlotDefinition"
         },
@@ -3460,9 +3662,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-18T11:27:33",
-  "source_file_size": 18110,
-  "generation_date": "2022-05-18T11:27:48",
+  "source_file_date": "2022-05-18T15:02:15",
+  "source_file_size": 26575,
+  "generation_date": "2022-05-18T15:02:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",

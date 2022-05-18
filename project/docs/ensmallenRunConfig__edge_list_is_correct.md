@@ -2,7 +2,7 @@
 # Slot: edge_list_is_correct
 
 
-
+Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_is_correct](https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_is_correct)
 

@@ -2,7 +2,7 @@
 # Slot: verbose
 
 
-
+Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__verbose](https://w3id.org/neat_schema/ensmallenRunConfig__verbose)
 

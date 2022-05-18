@@ -2,7 +2,7 @@
 # Slot: minimum_node_type_id
 
 
-
+The minimum node type ID to be used when using numeric node type IDs.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__minimum_node_type_id](https://w3id.org/neat_schema/ensmallenRunConfig__minimum_node_type_id)
 

@@ -1,4 +1,6 @@
 # Slot: destinations_column_number
+_The number of the column of the edges file from where to load the destinaton nodes._
+
 
 URI: [https://w3id.org/neat_schema/:destinations_column_number](https://w3id.org/neat_schema/:destinations_column_number)
 

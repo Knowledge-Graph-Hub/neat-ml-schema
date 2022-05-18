@@ -2,7 +2,7 @@
 # Slot: sources_column_number
 
 
-
+The number of the column of the edges file from where to load the source nodes.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__sources_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__sources_column_number)
 

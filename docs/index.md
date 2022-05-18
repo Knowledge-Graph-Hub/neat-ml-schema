@@ -101,86 +101,88 @@ URI: https://w3id.org/neat_schema
 | [target_path](target_path.md) | File path for saving results. | 
 | [node_type_path](node_type_path.md) | The path to the file with the unique node type names. | 
 | [node_type_list_separator](node_type_list_separator.md) | The separator to use for the node types file. | 
-| [node_types_column_number](node_types_column_number.md) | None | 
-| [node_types_column](node_types_column.md) | None | 
-| [node_types_ids_column_number](node_types_ids_column_number.md) | None | 
-| [node_types_ids_column](node_types_ids_column.md) | None | 
-| [node_types_number](node_types_number.md) | None | 
-| [numeric_node_type_ids](numeric_node_type_ids.md) | None | 
-| [minimum_node_type_id](minimum_node_type_id.md) | None | 
-| [node_type_list_header](node_type_list_header.md) | None | 
-| [node_type_list_rows_to_skip](node_type_list_rows_to_skip.md) | None | 
-| [node_type_list_is_correct](node_type_list_is_correct.md) | None | 
-| [node_type_list_max_rows_number](node_type_list_max_rows_number.md) | None | 
-| [node_type_list_comment_symbol](node_type_list_comment_symbol.md) | None | 
-| [load_node_type_list_in_parallel](load_node_type_list_in_parallel.md) | None | 
-| [node_path](node_path.md) | None | 
-| [node_list_separator](node_list_separator.md) | None | 
-| [node_list_header](node_list_header.md) | None | 
-| [node_list_rows_to_skip](node_list_rows_to_skip.md) | None | 
-| [node_list_is_correct](node_list_is_correct.md) | None | 
-| [node_list_max_rows_number](node_list_max_rows_number.md) | None | 
-| [node_list_comment_symbol](node_list_comment_symbol.md) | None | 
-| [default_node_type](default_node_type.md) | None | 
-| [nodes_column_number](nodes_column_number.md) | None | 
-| [nodes_column](nodes_column.md) | None | 
-| [node_types_separator](node_types_separator.md) | None | 
-| [node_list_node_types_column_number](node_list_node_types_column_number.md) | None | 
-| [node_list_node_types_column](node_list_node_types_column.md) | None | 
-| [node_ids_column](node_ids_column.md) | None | 
-| [node_ids_column_number](node_ids_column_number.md) | None | 
-| [nodes_number](nodes_number.md) | JsonObj(range='integer') | 
-| [minimum_node_id](minimum_node_id.md) | None | 
-| [numeric_node_ids](numeric_node_ids.md) | None | 
-| [node_list_numeric_node_type_ids](node_list_numeric_node_type_ids.md) | None | 
-| [skip_node_types_if_unavailable](skip_node_types_if_unavailable.md) | None | 
-| [load_node_list_in_parallel](load_node_list_in_parallel.md) | None | 
-| [edge_type_path](edge_type_path.md) | None | 
-| [edge_types_column_number](edge_types_column_number.md) | None | 
-| [edge_types_column](edge_types_column.md) | None | 
-| [edge_types_ids_column_number](edge_types_ids_column_number.md) | None | 
-| [edge_types_ids_column](edge_types_ids_column.md) | None | 
-| [edge_types_number](edge_types_number.md) | None | 
-| [numeric_edge_type_ids](numeric_edge_type_ids.md) | None | 
-| [minimum_edge_type_id](minimum_edge_type_id.md) | None | 
-| [edge_type_list_separator](edge_type_list_separator.md) | None | 
-| [edge_type_list_header](edge_type_list_header.md) | None | 
-| [edge_type_list_rows_to_skip](edge_type_list_rows_to_skip.md) | None | 
-| [edge_type_list_is_correct](edge_type_list_is_correct.md) | None | 
-| [edge_type_list_max_rows_number](edge_type_list_max_rows_number.md) | None | 
-| [edge_type_list_comment_symbol](edge_type_list_comment_symbol.md) | None | 
-| [load_edge_type_list_in_parallel](load_edge_type_list_in_parallel.md) | None | 
-| [edge_path](edge_path.md) | None | 
-| [edge_list_separator](edge_list_separator.md) | None | 
-| [edge_list_header](edge_list_header.md) | None | 
-| [edge_list_rows_to_skip](edge_list_rows_to_skip.md) | None | 
-| [sources_column_number](sources_column_number.md) | None | 
-| [sources_column](sources_column.md) | None | 
-| [destinations_column_number](destinations_column_number.md) | None | 
-| [destinations_column](destinations_column.md) | None | 
-| [edge_list_edge_types_column_number](edge_list_edge_types_column_number.md) | None | 
-| [edge_list_edge_types_column](edge_list_edge_types_column.md) | None | 
-| [default_edge_type](default_edge_type.md) | None | 
-| [weights_column_number](weights_column_number.md) | None | 
-| [weights_column](weights_column.md) | None | 
-| [default_weight](default_weight.md) | None | 
-| [edge_ids_column](edge_ids_column.md) | None | 
-| [edge_ids_column_number](edge_ids_column_number.md) | None | 
-| [edge_list_numeric_edge_type_ids](edge_list_numeric_edge_type_ids.md) | None | 
-| [edge_list_numeric_node_ids](edge_list_numeric_node_ids.md) | None | 
-| [skip_weights_if_unavailable](skip_weights_if_unavailable.md) | None | 
-| [skip_edge_types_if_unavailable](skip_edge_types_if_unavailable.md) | None | 
-| [edge_list_is_complete](edge_list_is_complete.md) | None | 
-| [edge_list_may_contain_duplicates](edge_list_may_contain_duplicates.md) | None | 
-| [edge_list_is_sorted](edge_list_is_sorted.md) | None | 
-| [edge_list_is_correct](edge_list_is_correct.md) | None | 
-| [edge_list_max_rows_number](edge_list_max_rows_number.md) | None | 
-| [edge_list_comment_symbol](edge_list_comment_symbol.md) | None | 
-| [edges_number](edges_number.md) | None | 
-| [load_edge_list_in_parallel](load_edge_list_in_parallel.md) | None | 
-| [may_have_singletons](may_have_singletons.md) | None | 
-| [may_have_singleton_with_selfloops](may_have_singleton_with_selfloops.md) | None | 
-| [directed](directed.md) | None | 
+| [node_types_column_number](node_types_column_number.md) | Node type column number. | 
+| [node_types_column](node_types_column.md) | Node type column name. | 
+| [node_types_ids_column_number](node_types_ids_column_number.md) | Node type ID column number. | 
+| [node_types_ids_column](node_types_ids_column.md) | Node type ID column name. | 
+| [node_types_number](node_types_number.md) | The number of the unique node types. This will be used in order to allocate the correct size for the data structure. | 
+| [numeric_node_type_ids](numeric_node_type_ids.md) | Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation. | 
+| [minimum_node_type_id](minimum_node_type_id.md) | The minimum node type ID to be used when using numeric node type IDs. | 
+| [node_type_list_header](node_type_list_header.md) | Whether the node type file has an header. | 
+| [node_type_list_support_balanced_quotes](node_type_list_support_balanced_quotes.md) | Whether to support balanced quotes. | 
+| [node_type_list_rows_to_skip](node_type_list_rows_to_skip.md) | The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header. | 
+| [node_type_list_is_correct](node_type_list_is_correct.md) | Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash. | 
+| [node_type_list_max_rows_number](node_type_list_max_rows_number.md) | The maximum number of lines to be loaded from the node types file. | 
+| [node_type_list_comment_symbol](node_type_list_comment_symbol.md) | The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped. | 
+| [load_node_type_list_in_parallel](load_node_type_list_in_parallel.md) | Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable. | 
+| [node_path](node_path.md) | The path to the file with the unique node names. | 
+| [node_list_separator](node_list_separator.md) | The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space. | 
+| [node_list_header](node_list_header.md) | Whether the nodes file has an header. | 
+| [node_list_support_balanced_quotes](node_list_support_balanced_quotes.md) | Whether to support balanced quotes. | 
+| [node_list_rows_to_skip](node_list_rows_to_skip.md) | Number of rows to skip in the node list file. | 
+| [node_list_is_correct](node_list_is_correct.md) | Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash. | 
+| [node_list_max_rows_number](node_list_max_rows_number.md) | The maximum number of lines to be loaded from the nodes file. | 
+| [node_list_comment_symbol](node_list_comment_symbol.md) | The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped. | 
+| [default_node_type](default_node_type.md) | The node type to be used when the node type for a given node in the node file is None. | 
+| [nodes_column_number](nodes_column_number.md) | The number of the column of the node file from where to load the node names. | 
+| [nodes_column](nodes_column.md) | The name of the column of the node file from where to load the node names. | 
+| [node_types_separator](node_types_separator.md) | The node types separator. | 
+| [node_list_node_types_column_number](node_list_node_types_column_number.md) | The number of the column of the node file from where to load the node types. | 
+| [node_list_node_types_column](node_list_node_types_column.md) | The name of the column of the node file from where to load the node types. | 
+| [node_ids_column](node_ids_column.md) | The name of the column of the node file from where to load the node IDs. | 
+| [node_ids_column_number](node_ids_column_number.md) | The number of the column of the node file from where to load the node IDs | 
+| [nodes_number](nodes_number.md) | The expected number of nodes. Note that this must be the EXACT number of nodes in the graph. | 
+| [minimum_node_id](minimum_node_id.md) | The minimum node ID to be used, when loading the node IDs as numerical. | 
+| [numeric_node_ids](numeric_node_ids.md) | Whether to load the numeric node IDs as numeric. | 
+| [node_list_numeric_node_type_ids](node_list_numeric_node_type_ids.md) | Whether to load the node types IDs in the node file to be numeric. | 
+| [skip_node_types_if_unavailable](skip_node_types_if_unavailable.md) | Whether to skip the node types without raising an error if these are unavailable. | 
+| [load_node_list_in_parallel](load_node_list_in_parallel.md) | Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order. | 
+| [edge_type_path](edge_type_path.md) | The path to the file with the unique edge type names. | 
+| [edge_types_column_number](edge_types_column_number.md) | The number of the column of the edge types file from where to load the edge types. | 
+| [edge_types_column](edge_types_column.md) | The name of the column of the edge types file from where to load the edge types. | 
+| [edge_types_number](edge_types_number.md) | The number of the unique edge types. This will be used in order to allocate the correct size for the data structure. | 
+| [numeric_edge_type_ids](numeric_edge_type_ids.md) | Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation. | 
+| [minimum_edge_type_id](minimum_edge_type_id.md) | The minimum edge type ID to be used when using numeric edge type IDs. | 
+| [edge_type_list_separator](edge_type_list_separator.md) | The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space. | 
+| [edge_type_list_header](edge_type_list_header.md) | Whether the edge type file has an header. | 
+| [edge_type_list_support_balanced_quotes](edge_type_list_support_balanced_quotes.md) | Whether to support balanced quotes while reading the edge type list. | 
+| [edge_type_list_rows_to_skip](edge_type_list_rows_to_skip.md) | Number of rows to skip in the edge type list file. | 
+| [edge_type_list_is_correct](edge_type_list_is_correct.md) | Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash. | 
+| [edge_type_list_max_rows_number](edge_type_list_max_rows_number.md) | The maximum number of lines to be loaded from the edge types file. | 
+| [edge_type_list_comment_symbol](edge_type_list_comment_symbol.md) | The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped. | 
+| [load_edge_type_list_in_parallel](load_edge_type_list_in_parallel.md) | Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order. | 
+| [edge_path](edge_path.md) | The path to the file with the edge list. | 
+| [edge_list_separator](edge_list_separator.md) | The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space. | 
+| [edge_list_header](edge_list_header.md) | Whether the edges file has an header. | 
+| [edge_list_support_balanced_quotes](edge_list_support_balanced_quotes.md) | Whether to support balanced quotes while reading the edge list. | 
+| [edge_list_rows_to_skip](edge_list_rows_to_skip.md) | Number of rows to skip in the edge list file. | 
+| [sources_column_number](sources_column_number.md) | The number of the column of the edges file from where to load the source nodes. | 
+| [sources_column](sources_column.md) | The name of the column of the edges file from where to load the source nodes. | 
+| [destinations_column_number](destinations_column_number.md) | The number of the column of the edges file from where to load the destinaton nodes. | 
+| [destinations_column](destinations_column.md) | The name of the column of the edges file from where to load the destinaton nodes. | 
+| [edge_list_edge_types_column_number](edge_list_edge_types_column_number.md) | The number of the column of the edges file from where to load the edge types. | 
+| [edge_list_edge_types_column](edge_list_edge_types_column.md) | The name of the column of the edges file from where to load the edge types. | 
+| [default_edge_type](default_edge_type.md) | The edge type to be used when the edge type for a given edge in the edge file is None. | 
+| [weights_column_number](weights_column_number.md) | The number of the column of the edges file from where to load the edge weights. | 
+| [weights_column](weights_column.md) | The name of the column of the edges file from where to load the edge weights. | 
+| [default_weight](default_weight.md) | The edge weight to be used when the edge weight for a given edge in the edge file is None. | 
+| [edge_ids_column](edge_ids_column.md) | The name of the column of the edges file from where to load the edge IDs. | 
+| [edge_ids_column_number](edge_ids_column_number.md) | The number of the column of the edges file from where to load the edge IDs. | 
+| [edge_list_numeric_edge_type_ids](edge_list_numeric_edge_type_ids.md) | Whether to load the edge type IDs as numeric from the edge list. | 
+| [edge_list_numeric_node_ids](edge_list_numeric_node_ids.md) | Whether to load the edge node IDs as numeric from the edge list. | 
+| [skip_weights_if_unavailable](skip_weights_if_unavailable.md) | Whether to skip the weights without raising an error if these are unavailable. | 
+| [skip_edge_types_if_unavailable](skip_edge_types_if_unavailable.md) | Whether to skip the edge types without raising an error if these are unavailable. | 
+| [edge_list_is_complete](edge_list_is_complete.md) | Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph. | 
+| [edge_list_may_contain_duplicates](edge_list_may_contain_duplicates.md) | Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates. | 
+| [edge_list_is_sorted](edge_list_is_sorted.md) | Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number. | 
+| [edge_list_is_correct](edge_list_is_correct.md) | Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash. | 
+| [edge_list_max_rows_number](edge_list_max_rows_number.md) | The maximum number of lines to be loaded from the edges file. | 
+| [edge_list_comment_symbol](edge_list_comment_symbol.md) | The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped. | 
+| [edges_number](edges_number.md) | The expected number of edges. Note that this must be the EXACT number of edges in the graph. | 
+| [load_edge_list_in_parallel](load_edge_list_in_parallel.md) | Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order. | 
+| [may_have_singletons](may_have_singletons.md) | Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks. | 
+| [may_have_singleton_with_selfloops](may_have_singleton_with_selfloops.md) | Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks. | 
+| [directed](directed.md) | Whether to load the graph as directed or undirected. | 
 
 
 ## Enums

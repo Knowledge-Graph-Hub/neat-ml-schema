@@ -1,4 +1,6 @@
 # Slot: node_list_comment_symbol
+_The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped._
+
 
 URI: [https://w3id.org/neat_schema/:node_list_comment_symbol](https://w3id.org/neat_schema/:node_list_comment_symbol)
 

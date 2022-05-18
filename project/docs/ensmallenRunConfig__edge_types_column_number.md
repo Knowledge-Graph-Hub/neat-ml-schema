@@ -2,7 +2,7 @@
 # Slot: edge_types_column_number
 
 
-
+The number of the column of the edge types file from where to load the edge types.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_column_number](https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_column_number)
 

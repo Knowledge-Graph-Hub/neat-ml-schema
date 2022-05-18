@@ -2,7 +2,7 @@
 # Slot: numeric_node_ids
 
 
-
+Whether to load the numeric node IDs as numeric.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__numeric_node_ids](https://w3id.org/neat_schema/ensmallenRunConfig__numeric_node_ids)
 

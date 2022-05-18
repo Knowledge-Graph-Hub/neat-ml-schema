@@ -2,7 +2,7 @@
 # Slot: node_list_rows_to_skip
 
 
-
+Number of rows to skip in the node list file.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_list_rows_to_skip](https://w3id.org/neat_schema/ensmallenRunConfig__node_list_rows_to_skip)
 

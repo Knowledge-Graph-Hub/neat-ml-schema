@@ -2,7 +2,7 @@
 # Slot: node_types_number
 
 
-
+The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
 
 URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_types_number](https://w3id.org/neat_schema/ensmallenRunConfig__node_types_number)
 

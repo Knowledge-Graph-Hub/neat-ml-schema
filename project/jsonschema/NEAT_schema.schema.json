@@ -245,258 +245,346 @@
          "description": "All params used by ensmallen's csv_reader",
          "properties": {
             "default_edge_type": {
+               "description": "The edge type to be used when the edge type for a given edge in the edge file is None.",
                "type": "string"
             },
             "default_node_type": {
+               "description": "The node type to be used when the node type for a given node in the node file is None.",
                "type": "string"
             },
             "default_weight": {
+               "description": "The edge weight to be used when the edge weight for a given edge in the edge file is None.",
                "type": "number"
             },
             "destinations_column": {
+               "description": "The name of the column of the edges file from where to load the destinaton nodes.",
                "type": "string"
             },
             "destinations_column_number": {
+               "description": "The number of the column of the edges file from where to load the destinaton nodes.",
                "type": "integer"
             },
             "directed": {
+               "description": "Whether to load the graph as directed or undirected.",
                "type": "boolean"
             },
             "edge_ids_column": {
+               "description": "The name of the column of the edges file from where to load the edge IDs.",
                "type": "string"
             },
             "edge_ids_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge IDs.",
                "type": "integer"
             },
             "edge_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.",
                "type": "string"
             },
             "edge_list_edge_types_column": {
+               "description": "The name of the column of the edges file from where to load the edge types.",
                "type": "string"
             },
             "edge_list_edge_types_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge types.",
                "type": "integer"
             },
             "edge_list_header": {
+               "description": "Whether the edges file has an header.",
                "type": "boolean"
             },
             "edge_list_is_complete": {
+               "description": "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.",
                "type": "boolean"
             },
             "edge_list_is_correct": {
+               "description": "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
                "type": "boolean"
             },
             "edge_list_is_sorted": {
+               "description": "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.",
                "type": "boolean"
             },
             "edge_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the edges file.",
                "type": "integer"
             },
             "edge_list_may_contain_duplicates": {
+               "description": "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.",
                "type": "boolean"
             },
             "edge_list_numeric_edge_type_ids": {
+               "description": "Whether to load the edge type IDs as numeric from the edge list.",
                "type": "boolean"
             },
             "edge_list_numeric_node_ids": {
+               "description": "Whether to load the edge node IDs as numeric from the edge list.",
                "type": "boolean"
             },
             "edge_list_rows_to_skip": {
+               "description": "Number of rows to skip in the edge list file.",
                "type": "integer"
             },
             "edge_list_separator": {
+               "description": "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
                "type": "string"
             },
+            "edge_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes while reading the edge list.",
+               "type": "boolean"
+            },
             "edge_path": {
+               "description": "The path to the file with the edge list.",
                "type": "string"
             },
             "edge_type_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.",
                "type": "string"
             },
             "edge_type_list_header": {
+               "description": "Whether the edge type file has an header.",
                "type": "boolean"
             },
             "edge_type_list_is_correct": {
+               "description": "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
                "type": "boolean"
             },
             "edge_type_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the edge types file.",
                "type": "integer"
             },
             "edge_type_list_rows_to_skip": {
+               "description": "Number of rows to skip in the edge type list file.",
                "type": "integer"
             },
             "edge_type_list_separator": {
+               "description": "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
                "type": "string"
             },
+            "edge_type_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes while reading the edge type list.",
+               "type": "boolean"
+            },
             "edge_type_path": {
+               "description": "The path to the file with the unique edge type names.",
                "type": "string"
             },
             "edge_types_column": {
+               "description": "The name of the column of the edge types file from where to load the edge types.",
                "type": "string"
             },
             "edge_types_column_number": {
-               "type": "integer"
-            },
-            "edge_types_ids_column": {
-               "type": "string"
-            },
-            "edge_types_ids_column_number": {
+               "description": "The number of the column of the edge types file from where to load the edge types.",
                "type": "integer"
             },
             "edge_types_number": {
+               "description": "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.",
                "type": "integer"
             },
             "edges_number": {
+               "description": "The expected number of edges. Note that this must be the EXACT number of edges in the graph.",
                "type": "integer"
             },
             "load_edge_list_in_parallel": {
+               "description": "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.",
                "type": "boolean"
             },
             "load_edge_type_list_in_parallel": {
+               "description": "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.",
                "type": "boolean"
             },
             "load_node_list_in_parallel": {
+               "description": "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.",
                "type": "boolean"
             },
             "load_node_type_list_in_parallel": {
+               "description": "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.",
                "type": "boolean"
             },
             "may_have_singleton_with_selfloops": {
+               "description": "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
                "type": "boolean"
             },
             "may_have_singletons": {
+               "description": "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
                "type": "boolean"
             },
             "minimum_edge_type_id": {
+               "description": "The minimum edge type ID to be used when using numeric edge type IDs.",
                "type": "integer"
             },
             "minimum_node_id": {
+               "description": "The minimum node ID to be used, when loading the node IDs as numerical.",
                "type": "integer"
             },
             "minimum_node_type_id": {
+               "description": "The minimum node type ID to be used when using numeric node type IDs.",
                "type": "integer"
             },
             "name": {
                "type": "string"
             },
             "node_ids_column": {
+               "description": "The name of the column of the node file from where to load the node IDs.",
                "type": "string"
             },
             "node_ids_column_number": {
+               "description": "The number of the column of the node file from where to load the node IDs",
                "type": "integer"
             },
             "node_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.",
                "type": "string"
             },
             "node_list_header": {
+               "description": "Whether the nodes file has an header.",
                "type": "boolean"
             },
             "node_list_is_correct": {
+               "description": "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
                "type": "boolean"
             },
             "node_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the nodes file.",
                "type": "integer"
             },
             "node_list_node_types_column": {
+               "description": "The name of the column of the node file from where to load the node types.",
                "type": "string"
             },
             "node_list_node_types_column_number": {
+               "description": "The number of the column of the node file from where to load the node types.",
                "type": "integer"
             },
             "node_list_numeric_node_type_ids": {
+               "description": "Whether to load the node types IDs in the node file to be numeric.",
                "type": "boolean"
             },
             "node_list_rows_to_skip": {
+               "description": "Number of rows to skip in the node list file.",
                "type": "integer"
             },
             "node_list_separator": {
+               "description": "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.",
                "type": "string"
             },
+            "node_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes.",
+               "type": "boolean"
+            },
             "node_path": {
+               "description": "The path to the file with the unique node names.",
                "type": "string"
             },
             "node_type_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.",
                "type": "string"
             },
             "node_type_list_header": {
+               "description": "Whether the node type file has an header.",
                "type": "boolean"
             },
             "node_type_list_is_correct": {
+               "description": "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
                "type": "boolean"
             },
             "node_type_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the node types file.",
                "type": "integer"
             },
             "node_type_list_rows_to_skip": {
+               "description": "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.",
                "type": "integer"
             },
             "node_type_list_separator": {
                "description": "The separator to use for the node types file.",
                "type": "string"
             },
+            "node_type_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes.",
+               "type": "boolean"
+            },
             "node_type_path": {
                "description": "The path to the file with the unique node type names.",
                "type": "string"
             },
             "node_types_column": {
+               "description": "Node type column name.",
                "type": "string"
             },
             "node_types_column_number": {
+               "description": "Node type column number.",
                "type": "integer"
             },
             "node_types_ids_column": {
+               "description": "Node type ID column name.",
                "type": "string"
             },
             "node_types_ids_column_number": {
+               "description": "Node type ID column number.",
                "type": "integer"
             },
             "node_types_number": {
+               "description": "The number of the unique node types. This will be used in order to allocate the correct size for the data structure.",
                "type": "integer"
             },
             "node_types_separator": {
+               "description": "The node types separator.",
                "type": "string"
             },
             "nodes_column": {
+               "description": "The name of the column of the node file from where to load the node names.",
                "type": "string"
             },
             "nodes_column_number": {
+               "description": "The number of the column of the node file from where to load the node names.",
                "type": "integer"
             },
             "nodes_number": {
-               "description": "JsonObj(range='integer')",
-               "type": "string"
+               "description": "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.",
+               "type": "integer"
             },
             "numeric_edge_type_ids": {
+               "description": "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
                "type": "boolean"
             },
             "numeric_node_ids": {
+               "description": "Whether to load the numeric node IDs as numeric.",
                "type": "boolean"
             },
             "numeric_node_type_ids": {
+               "description": "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
                "type": "boolean"
             },
             "skip_edge_types_if_unavailable": {
+               "description": "Whether to skip the edge types without raising an error if these are unavailable.",
                "type": "boolean"
             },
             "skip_node_types_if_unavailable": {
+               "description": "Whether to skip the node types without raising an error if these are unavailable.",
                "type": "boolean"
             },
             "skip_weights_if_unavailable": {
+               "description": "Whether to skip the weights without raising an error if these are unavailable.",
                "type": "boolean"
             },
             "sources_column": {
+               "description": "The name of the column of the edges file from where to load the source nodes.",
                "type": "string"
             },
             "sources_column_number": {
+               "description": "The number of the column of the edges file from where to load the source nodes.",
                "type": "integer"
             },
             "verbose": {
+               "description": "Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.",
                "type": "boolean"
             },
             "weights_column": {
+               "description": "The name of the column of the edges file from where to load the edge weights.",
                "type": "string"
             },
             "weights_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge weights.",
                "type": "integer"
             }
          },

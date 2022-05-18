@@ -1,4 +1,6 @@
 # Slot: directed
+_Whether to load the graph as directed or undirected._
+
 
 URI: [https://w3id.org/neat_schema/:directed](https://w3id.org/neat_schema/:directed)
 
