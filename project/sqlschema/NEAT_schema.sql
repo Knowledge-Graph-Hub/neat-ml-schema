@@ -19,8 +19,24 @@ CREATE TABLE "Classifier" (
 	classifier_type TEXT, 
 	edge_method VARCHAR(10), 
 	outfile TEXT, 
+	history_filename TEXT, 
 	parameters TEXT, 
-	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, parameters)
+	PRIMARY KEY (classifier_id, classifier_name, classifier_type, edge_method, outfile, history_filename, parameters)
+);
+
+CREATE TABLE "ClassifierCallback" (
+	type TEXT, 
+	monitor TEXT, 
+	patience INTEGER, 
+	min_delta INTEGER, 
+	verbose BOOLEAN, 
+	mode VARCHAR(4), 
+	PRIMARY KEY (type, monitor, patience, min_delta, verbose, mode)
+);
+
+CREATE TABLE "ClassifierCallbackContainer" (
+	callbacks TEXT, 
+	PRIMARY KEY (callbacks)
 );
 
 CREATE TABLE "ClassifierContainer" (
@@ -28,10 +44,17 @@ CREATE TABLE "ClassifierContainer" (
 	PRIMARY KEY (classifiers)
 );
 
+CREATE TABLE "ClassifierFitParams" (
+	batch_size INTEGER, 
+	epochs INTEGER, 
+	callbacks_list TEXT, 
+	PRIMARY KEY (batch_size, epochs, callbacks_list)
+);
+
 CREATE TABLE "ClassifierParams" (
-	random_state INTEGER, 
-	max_iter INTEGER, 
-	PRIMARY KEY (random_state, max_iter)
+	sklearn_params TEXT, 
+	tf_keras_params TEXT, 
+	PRIMARY KEY (sklearn_params, tf_keras_params)
 );
 
 CREATE TABLE "EmbeddingsConfig" (
@@ -136,12 +159,42 @@ CREATE TABLE "GraphDataConfiguration" (
 	PRIMARY KEY (graph, data)
 );
 
+CREATE TABLE "Layer" (
+	type TEXT, 
+	parameters TEXT, 
+	PRIMARY KEY (type, parameters)
+);
+
+CREATE TABLE "LayerContainer" (
+	layers TEXT, 
+	PRIMARY KEY (layers)
+);
+
+CREATE TABLE "LayerParams" (
+	units INTEGER, 
+	activation VARCHAR(7), 
+	rate FLOAT, 
+	PRIMARY KEY (units, activation, rate)
+);
+
+CREATE TABLE "Metric" (
+	type TEXT, 
+	name TEXT, 
+	curve TEXT, 
+	PRIMARY KEY (type, name, curve)
+);
+
+CREATE TABLE "MetricContainer" (
+	metrics TEXT, 
+	PRIMARY KEY (metrics)
+);
+
 CREATE TABLE "NeatConfiguration" (
 	graph_data TEXT, 
 	PRIMARY KEY (graph_data)
 );
 
-CREATE TABLE "NodeEmbeddingsParamsConfig" (
+CREATE TABLE "NodeEmbeddingsParams" (
 	method_name VARCHAR(8), 
 	walk_length INTEGER, 
 	batch_size INTEGER, 
@@ -164,9 +217,24 @@ CREATE TABLE "PosNegData" (
 	PRIMARY KEY (pos_edge_filepath, neg_edge_filepath)
 );
 
+CREATE TABLE "SkLearnParams" (
+	random_state INTEGER, 
+	max_iter INTEGER, 
+	PRIMARY KEY (random_state, max_iter)
+);
+
 CREATE TABLE "Target" (
 	target_path TEXT, 
 	PRIMARY KEY (target_path)
+);
+
+CREATE TABLE "TFKerasParams" (
+	layers_config TEXT, 
+	loss TEXT, 
+	metrics_config TEXT, 
+	optimizer VARCHAR(7), 
+	fit_config TEXT, 
+	PRIMARY KEY (layers_config, loss, metrics_config, optimizer, fit_config)
 );
 
 CREATE TABLE "TrainValidData" (

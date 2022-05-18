@@ -18,7 +18,23 @@ type Classifier
     classifierType: String
     edgeMethod: EdgeMethodEnum
     outfile: String
+    historyFilename: String
     parameters: ClassifierParams
+  }
+
+type ClassifierCallback
+  {
+    type: String
+    monitor: String
+    patience: Integer
+    minDelta: Integer
+    verbose: Boolean
+    mode: ClassifierCallbackModeEnum
+  }
+
+type ClassifierCallbackContainer
+  {
+    callbacks: [ClassifierCallback]
   }
 
 type ClassifierContainer
@@ -26,17 +42,24 @@ type ClassifierContainer
     classifiers: [Classifier]
   }
 
+type ClassifierFitParams
+  {
+    batchSize: Integer
+    epochs: Integer
+    callbacksList: ClassifierCallbackContainer
+  }
+
 type ClassifierParams
   {
-    randomState: Integer
-    maxIter: Integer
+    sklearnParams: SkLearnParams
+    tfKerasParams: TFKerasParams
   }
 
 type EmbeddingsConfig
   {
     filename: String
     historyFilename: String
-    nodeEmbeddingsParams: NodeEmbeddingsParamsConfig
+    nodeEmbeddingsParams: NodeEmbeddingsParams
     tsneFilename: String
   }
 
@@ -134,12 +157,42 @@ type GraphDataConfiguration
     data: TrainValidData
   }
 
+type Layer
+  {
+    type: String
+    parameters: LayerParams
+  }
+
+type LayerContainer
+  {
+    layers: [Layer]
+  }
+
+type LayerParams
+  {
+    units: Integer
+    activation: ActivationEnum
+    rate: Float
+  }
+
+type Metric
+  {
+    type: String
+    name: String
+    curve: String
+  }
+
+type MetricContainer
+  {
+    metrics: [Metric]
+  }
+
 type NeatConfiguration
   {
     graphData: GraphDataConfiguration
   }
 
-type NodeEmbeddingsParamsConfig
+type NodeEmbeddingsParams
   {
     methodName: NodeEmbedMethodEnum
     walkLength: Integer
@@ -162,9 +215,24 @@ type PosNegData
     negEdgeFilepath: String
   }
 
+type SkLearnParams
+  {
+    randomState: Integer
+    maxIter: Integer
+  }
+
 type Target
   {
     targetPath: String
+  }
+
+type TFKerasParams
+  {
+    layersConfig: LayerContainer
+    loss: String
+    metricsConfig: MetricContainer
+    optimizer: OptimizerEnum
+    fitConfig: ClassifierFitParams
   }
 
 type TrainValidData

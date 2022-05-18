@@ -45,10 +45,10 @@ classes:
       filename:
       history_filename:
       node_embeddings_params:
-        range: NodeEmbeddingsParamsConfig
+        range: NodeEmbeddingsParams
       tsne_filename:
 
-  NodeEmbeddingsParamsConfig:
+  NodeEmbeddingsParams:
     attributes:
       method_name:
         range: node_embed_method_enum
@@ -82,16 +82,112 @@ classes:
       edge_method:
         range: edge_method_enum
       outfile:
+      history_filename:
       parameters:
         range: ClassifierParams
 
+
   ClassifierParams:
     description: Parameters needed to define a classifier.
+    attributes:
+      sklearn_params:
+        range: SkLearnParams
+      tf_keras_params:
+        range: TFKerasParams
+
+  SkLearnParams:
+    description: Parameters specific to the SKLearn library.
     attributes:
       random_state:
         range: integer
       max_iter:
         range: integer
+
+  TFKerasParams:
+    description: Parameters specific to the Tensorflow Keras library.
+    attributes:
+      layers_config:
+        range: LayerContainer
+      loss:
+      metrics_config:
+        range: MetricContainer
+      optimizer:
+        range: optimizer_enum
+      fit_config:
+        range: ClassifierFitParams
+
+  LayerContainer:
+    description: A container of neural network layers.
+    attributes:
+      layers:
+        multivalued: true
+        inlined_as_list: true
+        range: Layer
+
+
+  Layer:
+    description: Layers for a neural network.
+    attributes:
+      type:
+      parameters:
+        range: LayerParams
+
+  LayerParams:
+    description: Parameters for each layer of a neural network.
+    attributes:
+      units:
+        range: integer
+      activation:
+        range: activation_enum
+      rate:
+        range: float
+
+  MetricContainer:
+    description: A container of metrics for a trained classifier.
+    attributes:
+      metrics:
+        multivalued: true
+        inlined_as_list: true
+        range: Metric
+  
+  Metric:
+    description: Metrics of a trained classifier (model).
+    attributes:
+      type:
+      name: {}
+      curve:
+  
+  ClassifierFitParams:
+    description: Paramters for fitting a classifier.
+    attributes:
+      batch_size:
+        range: integer
+      epochs:
+        range: integer
+      callbacks_list:
+        range: ClassifierCallbackContainer
+  
+  ClassifierCallbackContainer:
+    description: A container of classifier callbacks.
+    attributes:
+      callbacks:
+        multivalued: true
+        inlined_as_list: true
+        range: ClassifierCallback
+  
+  ClassifierCallback:
+    description: Callbacks for a classifier.
+    attributes:
+      type:
+      monitor:
+      patience:
+        range: integer
+      min_delta:
+        range: integer
+      verbose:
+        range: boolean
+      mode:
+        range: classifier_callback_mode_enum
 
   ApplyTrainedModelsContainer:
     description: A container with multiple classifiers in it.
@@ -314,5 +410,43 @@ enums:
         description: ##NEED DESCRIPTION
       AbsoluteL1:
         description: ##NEED DESCRIPTION
+
+  activation_enum:
+    permissible_values:
+      linear:
+        description: Linear function.
+      relu:
+        description: Rectified Linear Unit (ReLU)
+      sigmoid:
+        description: Sigmoid activation function.
+      tanh:
+        description: The tanh function.
+      softmax:
+        description: Softmax (or softargmax) function.
+
+  optimizer_enum:
+    description: Optimizers that can be implemented in the neural network.
+    permissible_values:
+      adagrad:
+        description: Optimizer that implements the Adagrad algorithm.
+      adam:
+        description: Optimizer that implements the Adam algorithm.
+      adamax:
+        description: Optimizer that implements the Adamax algorithm.
+      nadam:
+        description: Optimizer that implements the NAdam algorithm.
+      sgd:
+        description: Stochastic gradient descent (with momentum) optimizer.
+
+  classifier_callback_mode_enum:
+    description: Callback modes while fitting a classifier.
+    permissible_values:
+      auto:
+        description: In 'auto' mode, the direction is automatically inferred from the name of the monitored quantity.
+      min:
+        description: In 'min' mode, the learning rate will be reduced when the quantity monitored has stopped decreasing.
+      max:
+        description: In 'max' mode, the learning rate will be reduced when the quantity monitored has stopped increasing
+
 
   

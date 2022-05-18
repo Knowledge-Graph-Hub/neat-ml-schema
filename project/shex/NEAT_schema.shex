@@ -54,9 +54,28 @@ linkml:Nodeidentifier NONLITERAL
           <classifier_type> @linkml:String ? ;
           <edge_method> @<EdgeMethodEnum> ? ;
           <outfile> @linkml:String ? ;
+          <history_filename> @linkml:String ? ;
           <parameters> @<ClassifierParams> ?
        ) ;
        rdf:type [ <Classifier> ] ?
+    )
+}
+
+<ClassifierCallback> CLOSED {
+    (  $<ClassifierCallback_tes> (  <type> @linkml:String ? ;
+          <monitor> @linkml:String ? ;
+          <patience> @linkml:Integer ? ;
+          <min_delta> @linkml:Integer ? ;
+          <verbose> @linkml:Boolean ? ;
+          <mode> @<ClassifierCallbackModeEnum> ?
+       ) ;
+       rdf:type [ <ClassifierCallback> ] ?
+    )
+}
+
+<ClassifierCallbackContainer> CLOSED {
+    (  $<ClassifierCallbackContainer_tes> <callbacks> @<ClassifierCallback> * ;
+       rdf:type [ <ClassifierCallbackContainer> ] ?
     )
 }
 
@@ -66,9 +85,18 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<ClassifierFitParams> CLOSED {
+    (  $<ClassifierFitParams_tes> (  <batch_size> @linkml:Integer ? ;
+          <epochs> @linkml:Integer ? ;
+          <callbacks_list> @<ClassifierCallbackContainer> ?
+       ) ;
+       rdf:type [ <ClassifierFitParams> ] ?
+    )
+}
+
 <ClassifierParams> CLOSED {
-    (  $<ClassifierParams_tes> (  <random_state> @linkml:Integer ? ;
-          <max_iter> @linkml:Integer ?
+    (  $<ClassifierParams_tes> (  <sklearn_params> @<SkLearnParams> ? ;
+          <tf_keras_params> @<TFKerasParams> ?
        ) ;
        rdf:type [ <ClassifierParams> ] ?
     )
@@ -77,7 +105,7 @@ linkml:Nodeidentifier NONLITERAL
 <EmbeddingsConfig> CLOSED {
     (  $<EmbeddingsConfig_tes> (  <filename> @linkml:String ? ;
           <history_filename> @linkml:String ? ;
-          <node_embeddings_params> @<NodeEmbeddingsParamsConfig> ? ;
+          <node_embeddings_params> @<NodeEmbeddingsParams> ? ;
           <tsne_filename> @linkml:String ?
        ) ;
        rdf:type [ <EmbeddingsConfig> ] ?
@@ -182,14 +210,52 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<Layer> CLOSED {
+    (  $<Layer_tes> (  <type> @linkml:String ? ;
+          <parameters> @<LayerParams> ?
+       ) ;
+       rdf:type [ <Layer> ] ?
+    )
+}
+
+<LayerContainer> CLOSED {
+    (  $<LayerContainer_tes> <layers> @<Layer> * ;
+       rdf:type [ <LayerContainer> ] ?
+    )
+}
+
+<LayerParams> CLOSED {
+    (  $<LayerParams_tes> (  <units> @linkml:Integer ? ;
+          <activation> @<ActivationEnum> ? ;
+          <rate> @linkml:Float ?
+       ) ;
+       rdf:type [ <LayerParams> ] ?
+    )
+}
+
+<Metric> CLOSED {
+    (  $<Metric_tes> (  <type> @linkml:String ? ;
+          <name> @linkml:String ? ;
+          <curve> @linkml:String ?
+       ) ;
+       rdf:type [ <Metric> ] ?
+    )
+}
+
+<MetricContainer> CLOSED {
+    (  $<MetricContainer_tes> <metrics> @<Metric> * ;
+       rdf:type [ <MetricContainer> ] ?
+    )
+}
+
 <NeatConfiguration> CLOSED {
     (  $<NeatConfiguration_tes> <graph_data> @<GraphDataConfiguration> ? ;
        rdf:type [ <NeatConfiguration> ] ?
     )
 }
 
-<NodeEmbeddingsParamsConfig> CLOSED {
-    (  $<NodeEmbeddingsParamsConfig_tes> (  <method_name> @<NodeEmbedMethodEnum> ? ;
+<NodeEmbeddingsParams> CLOSED {
+    (  $<NodeEmbeddingsParams_tes> (  <method_name> @<NodeEmbedMethodEnum> ? ;
           <walk_length> @linkml:Integer ? ;
           <batch_size> @linkml:Integer ? ;
           <window_size> @linkml:Integer ? ;
@@ -197,7 +263,7 @@ linkml:Nodeidentifier NONLITERAL
           <explore_weight> @linkml:Float ? ;
           <iterations> @linkml:Integer ?
        ) ;
-       rdf:type [ <NodeEmbeddingsParamsConfig> ] ?
+       rdf:type [ <NodeEmbeddingsParams> ] ?
     )
 }
 
@@ -217,9 +283,28 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<SkLearnParams> CLOSED {
+    (  $<SkLearnParams_tes> (  <random_state> @linkml:Integer ? ;
+          <max_iter> @linkml:Integer ?
+       ) ;
+       rdf:type [ <SkLearnParams> ] ?
+    )
+}
+
 <Target> CLOSED {
     (  $<Target_tes> <target_path> @linkml:String ? ;
        rdf:type [ <Target> ] ?
+    )
+}
+
+<TFKerasParams> CLOSED {
+    (  $<TFKerasParams_tes> (  <layers_config> @<LayerContainer> ? ;
+          <loss> @linkml:String ? ;
+          <metrics_config> @<MetricContainer> ? ;
+          <optimizer> @<OptimizerEnum> ? ;
+          <fit_config> @<ClassifierFitParams> ?
+       ) ;
+       rdf:type [ <TFKerasParams> ] ?
     )
 }
 

@@ -1,0 +1,22 @@
+
+# Slot: type
+
+
+
+
+URI: [https://w3id.org/neat_schema/layer__type](https://w3id.org/neat_schema/layer__type)
+
+
+## Domain and Range
+
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+
+## Children
+
+
+## Used by
+
+ * [Layer](Layer.md)

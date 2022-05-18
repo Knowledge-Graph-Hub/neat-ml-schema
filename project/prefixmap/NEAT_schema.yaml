@@ -9,8 +9,17 @@
    "Classifier": {
       "@id": "https://w3id.org/neat_schema/Classifier"
    },
+   "ClassifierCallback": {
+      "@id": "https://w3id.org/neat_schema/ClassifierCallback"
+   },
+   "ClassifierCallbackContainer": {
+      "@id": "https://w3id.org/neat_schema/ClassifierCallbackContainer"
+   },
    "ClassifierContainer": {
       "@id": "https://w3id.org/neat_schema/ClassifierContainer"
+   },
+   "ClassifierFitParams": {
+      "@id": "https://w3id.org/neat_schema/ClassifierFitParams"
    },
    "ClassifierParams": {
       "@id": "https://w3id.org/neat_schema/ClassifierParams"
@@ -24,11 +33,26 @@
    "GraphDataConfiguration": {
       "@id": "https://w3id.org/neat_schema/GraphDataConfiguration"
    },
+   "Layer": {
+      "@id": "https://w3id.org/neat_schema/Layer"
+   },
+   "LayerContainer": {
+      "@id": "https://w3id.org/neat_schema/LayerContainer"
+   },
+   "LayerParams": {
+      "@id": "https://w3id.org/neat_schema/LayerParams"
+   },
+   "Metric": {
+      "@id": "https://w3id.org/neat_schema/Metric"
+   },
+   "MetricContainer": {
+      "@id": "https://w3id.org/neat_schema/MetricContainer"
+   },
    "NeatConfiguration": {
       "@id": "https://w3id.org/neat_schema/NeatConfiguration"
    },
-   "NodeEmbeddingsParamsConfig": {
-      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParamsConfig"
+   "NodeEmbeddingsParams": {
+      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParams"
    },
    "NodeType": {
       "@id": "https://w3id.org/neat_schema/NodeType"
@@ -36,8 +60,14 @@
    "PosNegData": {
       "@id": "https://w3id.org/neat_schema/PosNegData"
    },
+   "SkLearnParams": {
+      "@id": "https://w3id.org/neat_schema/SkLearnParams"
+   },
    "Target": {
       "@id": "https://w3id.org/neat_schema/Target"
+   },
+   "TFKerasParams": {
+      "@id": "https://w3id.org/neat_schema/TFKerasParams"
    },
    "TrainValidData": {
       "@id": "https://w3id.org/neat_schema/TrainValidData"

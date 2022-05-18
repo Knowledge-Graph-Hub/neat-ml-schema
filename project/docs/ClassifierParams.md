@@ -7,7 +7,7 @@ Parameters needed to define a classifier.
 URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schema/ClassifierParams)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Classifier]++-%20parameters%200..1>[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[Classifier]++-%20parameters%200..1>[ClassifierParams&#124;random_state:integer%20%3F;max_iter:integer%20%3F],[Classifier])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TFKerasParams],[SkLearnParams],[TFKerasParams]<tf_keras_params%200..1-++[ClassifierParams],[SkLearnParams]<sklearn_params%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[TFKerasParams],[SkLearnParams],[TFKerasParams]<tf_keras_params%200..1-++[ClassifierParams],[SkLearnParams]<sklearn_params%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[Classifier])
 
 ## Referenced by Class
 
@@ -18,7 +18,7 @@ URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schem
 
 ### Own
 
- * [➞random_state](classifierParams__random_state.md)  <sub>0..1</sub>
-     * Range: [Integer](types/Integer.md)
- * [➞max_iter](classifierParams__max_iter.md)  <sub>0..1</sub>
-     * Range: [Integer](types/Integer.md)
+ * [➞sklearn_params](classifierParams__sklearn_params.md)  <sub>0..1</sub>
+     * Range: [SkLearnParams](SkLearnParams.md)
+ * [➞tf_keras_params](classifierParams__tf_keras_params.md)  <sub>0..1</sub>
+     * Range: [TFKerasParams](TFKerasParams.md)

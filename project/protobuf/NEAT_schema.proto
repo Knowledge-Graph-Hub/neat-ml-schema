@@ -19,24 +19,47 @@ message Classifier
   optional classifierType String = 3
   optional edgeMethod EdgeMethodEnum = 4
   optional outfile String = 5
-  optional parameters ClassifierParams = 6
+  optional historyFilename String = 6
+  optional parameters ClassifierParams = 7
+ }
+// Callbacks for a classifier.
+message ClassifierCallback
+ {
+  optional type String = 1
+  optional monitor String = 2
+  optional patience Integer = 3
+  optional minDelta Integer = 4
+  optional verbose Boolean = 5
+  optional mode ClassifierCallbackModeEnum = 6
+ }
+// A container of classifier callbacks.
+message ClassifierCallbackContainer
+ {
+  repeated callbacks ClassifierCallback = 1
  }
 // A container with multiple classifiers in it.
 message ClassifierContainer
  {
   repeated classifiers Classifier = 1
  }
+// Paramters for fitting a classifier.
+message ClassifierFitParams
+ {
+  optional batchSize Integer = 1
+  optional epochs Integer = 2
+  optional callbacksList ClassifierCallbackContainer = 3
+ }
 // Parameters needed to define a classifier.
 message ClassifierParams
  {
-  optional randomState Integer = 1
-  optional maxIter Integer = 2
+  optional sklearnParams SkLearnParams = 1
+  optional tfKerasParams TFKerasParams = 2
  }
 message EmbeddingsConfig
  {
   optional filename String = 1
   optional historyFilename String = 2
-  optional nodeEmbeddingsParams NodeEmbeddingsParamsConfig = 3
+  optional nodeEmbeddingsParams NodeEmbeddingsParams = 3
   optional tsneFilename String = 4
  }
 // All params used by ensmallen's csv_reader
@@ -132,11 +155,41 @@ message GraphDataConfiguration
   optional graph EnsmallenRunConfig = 1
   optional data TrainValidData = 2
  }
+// Layers for a neural network.
+message Layer
+ {
+  optional type String = 1
+  optional parameters LayerParams = 2
+ }
+// A container of neural network layers.
+message LayerContainer
+ {
+  repeated layers Layer = 1
+ }
+// Parameters for each layer of a neural network.
+message LayerParams
+ {
+  optional units Integer = 1
+  optional activation ActivationEnum = 2
+  optional rate Float = 3
+ }
+// Metrics of a trained classifier (model).
+message Metric
+ {
+  optional type String = 1
+  optional name String = 2
+  optional curve String = 3
+ }
+// A container of metrics for a trained classifier.
+message MetricContainer
+ {
+  repeated metrics Metric = 1
+ }
 message NeatConfiguration
  {
   optional graphData GraphDataConfiguration = 1
  }
-message NodeEmbeddingsParamsConfig
+message NodeEmbeddingsParams
  {
   optional methodName NodeEmbedMethodEnum = 1
   optional walkLength Integer = 2
@@ -156,10 +209,25 @@ message PosNegData
   optional posEdgeFilepath String = 1
   optional negEdgeFilepath String = 2
  }
+// Parameters specific to the SKLearn library.
+message SkLearnParams
+ {
+  optional randomState Integer = 1
+  optional maxIter Integer = 2
+ }
 // Path for output to be saved.
 message Target
  {
   optional targetPath String = 1
+ }
+// Parameters specific to the Tensorflow Keras library.
+message TFKerasParams
+ {
+  optional layersConfig LayerContainer = 1
+  optional loss String = 2
+  optional metricsConfig MetricContainer = 3
+  optional optimizer OptimizerEnum = 4
+  optional fitConfig ClassifierFitParams = 5
  }
 message TrainValidData
  {

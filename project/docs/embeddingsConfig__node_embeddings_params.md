@@ -9,7 +9,7 @@ URI: [https://w3id.org/neat_schema/embeddingsConfig__node_embeddings_params](htt
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [NodeEmbeddingsParamsConfig](NodeEmbeddingsParamsConfig.md)
+None &#8594;  <sub>0..1</sub> [NodeEmbeddingsParams](NodeEmbeddingsParams.md)
 
 ## Parents
 

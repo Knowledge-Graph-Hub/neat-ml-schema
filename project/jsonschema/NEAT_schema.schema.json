@@ -1,5 +1,17 @@
 {
    "$defs": {
+      "ActivationEnum": {
+         "description": "",
+         "enum": [
+            "linear",
+            "relu",
+            "sigmoid",
+            "tanh",
+            "softmax"
+         ],
+         "title": "ActivationEnum",
+         "type": "string"
+      },
       "ApplyTrainedModel": {
          "additionalProperties": false,
          "description": "Trained model used for prediction.",
@@ -52,6 +64,9 @@
             "edge_method": {
                "$ref": "#/$defs/EdgeMethodEnum"
             },
+            "history_filename": {
+               "type": "string"
+            },
             "outfile": {
                "type": "string"
             },
@@ -62,6 +77,58 @@
          "required": [],
          "title": "Classifier",
          "type": "object"
+      },
+      "ClassifierCallback": {
+         "additionalProperties": false,
+         "description": "Callbacks for a classifier.",
+         "properties": {
+            "min_delta": {
+               "type": "integer"
+            },
+            "mode": {
+               "$ref": "#/$defs/ClassifierCallbackModeEnum"
+            },
+            "monitor": {
+               "type": "string"
+            },
+            "patience": {
+               "type": "integer"
+            },
+            "type": {
+               "type": "string"
+            },
+            "verbose": {
+               "type": "boolean"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallback",
+         "type": "object"
+      },
+      "ClassifierCallbackContainer": {
+         "additionalProperties": false,
+         "description": "A container of classifier callbacks.",
+         "properties": {
+            "callbacks": {
+               "items": {
+                  "$ref": "#/$defs/ClassifierCallback"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallbackContainer",
+         "type": "object"
+      },
+      "ClassifierCallbackModeEnum": {
+         "description": "Callback modes while fitting a classifier.",
+         "enum": [
+            "auto",
+            "min",
+            "max"
+         ],
+         "title": "ClassifierCallbackModeEnum",
+         "type": "string"
       },
       "ClassifierContainer": {
          "additionalProperties": false,
@@ -78,15 +145,33 @@
          "title": "ClassifierContainer",
          "type": "object"
       },
+      "ClassifierFitParams": {
+         "additionalProperties": false,
+         "description": "Paramters for fitting a classifier.",
+         "properties": {
+            "batch_size": {
+               "type": "integer"
+            },
+            "callbacks_list": {
+               "$ref": "#/$defs/ClassifierCallbackContainer"
+            },
+            "epochs": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ClassifierFitParams",
+         "type": "object"
+      },
       "ClassifierParams": {
          "additionalProperties": false,
          "description": "Parameters needed to define a classifier.",
          "properties": {
-            "max_iter": {
-               "type": "integer"
+            "sklearn_params": {
+               "$ref": "#/$defs/SkLearnParams"
             },
-            "random_state": {
-               "type": "integer"
+            "tf_keras_params": {
+               "$ref": "#/$defs/TFKerasParams"
             }
          },
          "required": [],
@@ -117,7 +202,7 @@
                "type": "string"
             },
             "node_embeddings_params": {
-               "$ref": "#/$defs/NodeEmbeddingsParamsConfig"
+               "$ref": "#/$defs/NodeEmbeddingsParams"
             },
             "tsne_filename": {
                "type": "string"
@@ -403,6 +488,87 @@
          "title": "GraphDataConfiguration",
          "type": "object"
       },
+      "Layer": {
+         "additionalProperties": false,
+         "description": "Layers for a neural network.",
+         "properties": {
+            "parameters": {
+               "$ref": "#/$defs/LayerParams"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Layer",
+         "type": "object"
+      },
+      "LayerContainer": {
+         "additionalProperties": false,
+         "description": "A container of neural network layers.",
+         "properties": {
+            "layers": {
+               "items": {
+                  "$ref": "#/$defs/Layer"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "LayerContainer",
+         "type": "object"
+      },
+      "LayerParams": {
+         "additionalProperties": false,
+         "description": "Parameters for each layer of a neural network.",
+         "properties": {
+            "activation": {
+               "$ref": "#/$defs/ActivationEnum"
+            },
+            "rate": {
+               "type": "number"
+            },
+            "units": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "LayerParams",
+         "type": "object"
+      },
+      "Metric": {
+         "additionalProperties": false,
+         "description": "Metrics of a trained classifier (model).",
+         "properties": {
+            "curve": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Metric",
+         "type": "object"
+      },
+      "MetricContainer": {
+         "additionalProperties": false,
+         "description": "A container of metrics for a trained classifier.",
+         "properties": {
+            "metrics": {
+               "items": {
+                  "$ref": "#/$defs/Metric"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "MetricContainer",
+         "type": "object"
+      },
       "NeatConfiguration": {
          "additionalProperties": false,
          "description": "",
@@ -430,7 +596,7 @@
          "title": "NodeEmbedMethodEnum",
          "type": "string"
       },
-      "NodeEmbeddingsParamsConfig": {
+      "NodeEmbeddingsParams": {
          "additionalProperties": false,
          "description": "",
          "properties": {
@@ -457,7 +623,7 @@
             }
          },
          "required": [],
-         "title": "NodeEmbeddingsParamsConfig",
+         "title": "NodeEmbeddingsParams",
          "type": "object"
       },
       "NodeType": {
@@ -481,6 +647,18 @@
          "title": "NodeType",
          "type": "object"
       },
+      "OptimizerEnum": {
+         "description": "Optimizers that can be implemented in the neural network.",
+         "enum": [
+            "adagrad",
+            "adam",
+            "adamax",
+            "nadam",
+            "sgd"
+         ],
+         "title": "OptimizerEnum",
+         "type": "string"
+      },
       "PosNegData": {
          "additionalProperties": false,
          "description": "",
@@ -494,6 +672,45 @@
          },
          "required": [],
          "title": "PosNegData",
+         "type": "object"
+      },
+      "SkLearnParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the SKLearn library.",
+         "properties": {
+            "max_iter": {
+               "type": "integer"
+            },
+            "random_state": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "SkLearnParams",
+         "type": "object"
+      },
+      "TFKerasParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the Tensorflow Keras library.",
+         "properties": {
+            "fit_config": {
+               "$ref": "#/$defs/ClassifierFitParams"
+            },
+            "layers_config": {
+               "$ref": "#/$defs/LayerContainer"
+            },
+            "loss": {
+               "type": "string"
+            },
+            "metrics_config": {
+               "$ref": "#/$defs/MetricContainer"
+            },
+            "optimizer": {
+               "$ref": "#/$defs/OptimizerEnum"
+            }
+         },
+         "required": [],
+         "title": "TFKerasParams",
          "type": "object"
       },
       "Target": {
