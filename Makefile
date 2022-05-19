@@ -91,7 +91,7 @@ gendoc: $(DOCDIR)
 
 # Added by H2
 gen-excel: $(EXCEL_DIR)
-	$(RUN) gen-excel --output $(EXCEL_DIR)/NEAT_schema.xlsx $(SOURCE_SCHEMA_PATH)
+	$(RUN) gen-excel --output $(EXCEL_DIR)/neat_schema.xlsx $(SOURCE_SCHEMA_PATH)
 
 testdoc: gendoc serve
 

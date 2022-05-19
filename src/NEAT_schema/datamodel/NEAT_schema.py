@@ -1,5 +1,5 @@
-# Auto generated from NEAT_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-19T09:15:39
+# Auto generated from neat_schema.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-05-19T13:29:40
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat

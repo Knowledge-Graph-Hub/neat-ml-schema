@@ -3670,13 +3670,13 @@
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "NEAT_schema.yaml",
-  "source_file_date": "2022-05-18T15:38:06",
+  "source_file": "neat_schema.yaml",
+  "source_file_date": "2022-05-19T09:23:39",
   "source_file_size": 28124,
-  "generation_date": "2022-05-19T09:15:33",
+  "generation_date": "2022-05-19T13:29:35",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/NEAT_schema.context.jsonld",
+    "project/jsonld/neat_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://w3id.org/neat/"
