@@ -1,6 +1,8 @@
 # Slot: node_types_ids_column_number
+_Node type ID column number._
 
-URI: [https://w3id.org/neat_schema/:node_types_ids_column_number](https://w3id.org/neat_schema/:node_types_ids_column_number)
+
+URI: [https://w3id.org/neat/:node_types_ids_column_number](https://w3id.org/neat/:node_types_ids_column_number)
 
 
 

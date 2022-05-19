@@ -4,7 +4,7 @@
 
 Paramters for fitting a classifier.
 
-URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_schema/ClassifierFitParams)
+URI: [https://w3id.org/neat/ClassifierFitParams](https://w3id.org/neat/ClassifierFitParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[TFKerasParams]++-%20fit_config%200..1>[ClassifierFitParams],[TFKerasParams],[ClassifierCallbackContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallbackContainer]<callbacks_list%200..1-++[ClassifierFitParams&#124;batch_size:integer%20%3F;epochs:integer%20%3F],[TFKerasParams]++-%20fit_config%200..1>[ClassifierFitParams],[TFKerasParams],[ClassifierCallbackContainer])
@@ -21,6 +21,8 @@ URI: [https://w3id.org/neat_schema/ClassifierFitParams](https://w3id.org/neat_sc
  * [➞batch_size](classifierFitParams__batch_size.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
  * [➞epochs](classifierFitParams__epochs.md)  <sub>0..1</sub>
+     * Description: Number of epochs to run for training.
      * Range: [Integer](types/Integer.md)
  * [➞callbacks_list](classifierFitParams__callbacks_list.md)  <sub>0..1</sub>
+     * Description: List of callbacks.
      * Range: [ClassifierCallbackContainer](ClassifierCallbackContainer.md)

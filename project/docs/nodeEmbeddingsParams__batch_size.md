@@ -2,9 +2,9 @@
 # Slot: batch_size
 
 
+Number of nodes to include in a single batch.
 
-
-URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__batch_size](https://w3id.org/neat_schema/nodeEmbeddingsParams__batch_size)
+URI: [https://w3id.org/neat/nodeEmbeddingsParams__batch_size](https://w3id.org/neat/nodeEmbeddingsParams__batch_size)
 
 
 ## Domain and Range

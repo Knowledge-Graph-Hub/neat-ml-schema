@@ -2,9 +2,9 @@
 # Slot: edge_method
 
 
+Edge method.
 
-
-URI: [https://w3id.org/neat_schema/classifier__edge_method](https://w3id.org/neat_schema/classifier__edge_method)
+URI: [https://w3id.org/neat/classifier__edge_method](https://w3id.org/neat/classifier__edge_method)
 
 
 ## Domain and Range

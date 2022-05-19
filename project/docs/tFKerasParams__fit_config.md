@@ -2,9 +2,9 @@
 # Slot: fit_config
 
 
+Configuration for model fitting.
 
-
-URI: [https://w3id.org/neat_schema/tFKerasParams__fit_config](https://w3id.org/neat_schema/tFKerasParams__fit_config)
+URI: [https://w3id.org/neat/tFKerasParams__fit_config](https://w3id.org/neat/tFKerasParams__fit_config)
 
 
 ## Domain and Range

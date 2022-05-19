@@ -2,9 +2,9 @@
 # Slot: walk_length
 
 
+Maximal length of the walks.
 
-
-URI: [https://w3id.org/neat_schema/nodeEmbeddingsParams__walk_length](https://w3id.org/neat_schema/nodeEmbeddingsParams__walk_length)
+URI: [https://w3id.org/neat/nodeEmbeddingsParams__walk_length](https://w3id.org/neat/nodeEmbeddingsParams__walk_length)
 
 
 ## Domain and Range

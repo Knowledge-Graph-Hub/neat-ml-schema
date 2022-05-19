@@ -2,9 +2,9 @@
 # Slot: destination
 
 
+Destination node(s).
 
-
-URI: [https://w3id.org/neat_schema/nodeType__destination](https://w3id.org/neat_schema/nodeType__destination)
+URI: [https://w3id.org/neat/nodeType__destination](https://w3id.org/neat/nodeType__destination)
 
 
 ## Domain and Range

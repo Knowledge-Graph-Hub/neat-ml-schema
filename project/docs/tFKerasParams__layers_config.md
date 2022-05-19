@@ -2,9 +2,9 @@
 # Slot: layers_config
 
 
+Configuration for instantiating layers for neural networks.
 
-
-URI: [https://w3id.org/neat_schema/tFKerasParams__layers_config](https://w3id.org/neat_schema/tFKerasParams__layers_config)
+URI: [https://w3id.org/neat/tFKerasParams__layers_config](https://w3id.org/neat/tFKerasParams__layers_config)
 
 
 ## Domain and Range

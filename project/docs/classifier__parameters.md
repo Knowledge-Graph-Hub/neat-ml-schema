@@ -2,9 +2,9 @@
 # Slot: parameters
 
 
+Parameters to be passed for building classifier.
 
-
-URI: [https://w3id.org/neat_schema/classifier__parameters](https://w3id.org/neat_schema/classifier__parameters)
+URI: [https://w3id.org/neat/classifier__parameters](https://w3id.org/neat/classifier__parameters)
 
 
 ## Domain and Range

@@ -5,7 +5,7 @@ _Layers for a neural network._
 
 
 
-URI: [https://w3id.org/neat_schema/:Layer](https://w3id.org/neat_schema/:Layer)
+URI: [https://w3id.org/neat/:Layer](https://w3id.org/neat/:Layer)
 
 
 
@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:Layer](https://w3id.org/neat_schema/:Layer)
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [type](type.md) | [string](string.md) | 0..1 | Type of layer.  | . |
 | [parameters](parameters.md) | [ClassifierParams](ClassifierParams.md) | 0..1 | None  | . |
 
 
@@ -50,14 +50,15 @@ URI: [https://w3id.org/neat_schema/:Layer](https://w3id.org/neat_schema/:Layer)
 ```yaml
 name: Layer
 description: Layers for a neural network.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    description: Type of layer.
+    from_schema: https://w3id.org/neat
   parameters:
     name: parameters
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: LayerParams
 
 ```
@@ -69,17 +70,18 @@ attributes:
 ```yaml
 name: Layer
 description: Layers for a neural network.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    description: Type of layer.
+    from_schema: https://w3id.org/neat
     alias: type
     owner: Layer
     range: string
   parameters:
     name: parameters
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: parameters
     owner: Layer
     range: ClassifierParams

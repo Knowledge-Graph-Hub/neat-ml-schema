@@ -2,9 +2,9 @@
 # Slot: graph_data
 
 
+Configuration for graph data.
 
-
-URI: [https://w3id.org/neat_schema/neatConfiguration__graph_data](https://w3id.org/neat_schema/neatConfiguration__graph_data)
+URI: [https://w3id.org/neat/neatConfiguration__graph_data](https://w3id.org/neat/neatConfiguration__graph_data)
 
 
 ## Domain and Range

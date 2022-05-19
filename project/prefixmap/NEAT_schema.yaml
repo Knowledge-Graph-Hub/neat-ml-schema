@@ -1,78 +1,78 @@
 {
    "linkml": "https://w3id.org/linkml/",
    "ApplyTrainedModel": {
-      "@id": "https://w3id.org/neat_schema/ApplyTrainedModel"
+      "@id": "https://w3id.org/neat/ApplyTrainedModel"
    },
    "ApplyTrainedModelsContainer": {
-      "@id": "https://w3id.org/neat_schema/ApplyTrainedModelsContainer"
+      "@id": "https://w3id.org/neat/ApplyTrainedModelsContainer"
    },
    "Classifier": {
-      "@id": "https://w3id.org/neat_schema/Classifier"
+      "@id": "https://w3id.org/neat/Classifier"
    },
    "ClassifierCallback": {
-      "@id": "https://w3id.org/neat_schema/ClassifierCallback"
+      "@id": "https://w3id.org/neat/ClassifierCallback"
    },
    "ClassifierCallbackContainer": {
-      "@id": "https://w3id.org/neat_schema/ClassifierCallbackContainer"
+      "@id": "https://w3id.org/neat/ClassifierCallbackContainer"
    },
    "ClassifierContainer": {
-      "@id": "https://w3id.org/neat_schema/ClassifierContainer"
+      "@id": "https://w3id.org/neat/ClassifierContainer"
    },
    "ClassifierFitParams": {
-      "@id": "https://w3id.org/neat_schema/ClassifierFitParams"
+      "@id": "https://w3id.org/neat/ClassifierFitParams"
    },
    "ClassifierParams": {
-      "@id": "https://w3id.org/neat_schema/ClassifierParams"
+      "@id": "https://w3id.org/neat/ClassifierParams"
    },
    "EmbeddingsConfig": {
-      "@id": "https://w3id.org/neat_schema/EmbeddingsConfig"
+      "@id": "https://w3id.org/neat/EmbeddingsConfig"
    },
    "EnsmallenRunConfig": {
-      "@id": "https://w3id.org/neat_schema/EnsmallenRunConfig"
+      "@id": "https://w3id.org/neat/EnsmallenRunConfig"
    },
    "GraphDataConfiguration": {
-      "@id": "https://w3id.org/neat_schema/GraphDataConfiguration"
+      "@id": "https://w3id.org/neat/GraphDataConfiguration"
    },
    "Layer": {
-      "@id": "https://w3id.org/neat_schema/Layer"
+      "@id": "https://w3id.org/neat/Layer"
    },
    "LayerContainer": {
-      "@id": "https://w3id.org/neat_schema/LayerContainer"
+      "@id": "https://w3id.org/neat/LayerContainer"
    },
    "LayerParams": {
-      "@id": "https://w3id.org/neat_schema/LayerParams"
+      "@id": "https://w3id.org/neat/LayerParams"
    },
    "Metric": {
-      "@id": "https://w3id.org/neat_schema/Metric"
+      "@id": "https://w3id.org/neat/Metric"
    },
    "MetricContainer": {
-      "@id": "https://w3id.org/neat_schema/MetricContainer"
+      "@id": "https://w3id.org/neat/MetricContainer"
    },
    "NeatConfiguration": {
-      "@id": "https://w3id.org/neat_schema/NeatConfiguration"
+      "@id": "https://w3id.org/neat/NeatConfiguration"
    },
    "NodeEmbeddingsParams": {
-      "@id": "https://w3id.org/neat_schema/NodeEmbeddingsParams"
+      "@id": "https://w3id.org/neat/NodeEmbeddingsParams"
    },
    "NodeType": {
-      "@id": "https://w3id.org/neat_schema/NodeType"
+      "@id": "https://w3id.org/neat/NodeType"
    },
    "PosNegData": {
-      "@id": "https://w3id.org/neat_schema/PosNegData"
+      "@id": "https://w3id.org/neat/PosNegData"
    },
    "SkLearnParams": {
-      "@id": "https://w3id.org/neat_schema/SkLearnParams"
+      "@id": "https://w3id.org/neat/SkLearnParams"
    },
    "Target": {
-      "@id": "https://w3id.org/neat_schema/Target"
+      "@id": "https://w3id.org/neat/Target"
    },
    "TFKerasParams": {
-      "@id": "https://w3id.org/neat_schema/TFKerasParams"
+      "@id": "https://w3id.org/neat/TFKerasParams"
    },
    "TrainValidData": {
-      "@id": "https://w3id.org/neat_schema/TrainValidData"
+      "@id": "https://w3id.org/neat/TrainValidData"
    },
    "Upload": {
-      "@id": "https://w3id.org/neat_schema/Upload"
+      "@id": "https://w3id.org/neat/Upload"
    }
 }

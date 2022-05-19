@@ -5,7 +5,7 @@ _Parameters for each layer of a neural network._
 
 
 
-URI: [https://w3id.org/neat_schema/:LayerParams](https://w3id.org/neat_schema/:LayerParams)
+URI: [https://w3id.org/neat/:LayerParams](https://w3id.org/neat/:LayerParams)
 
 
 
@@ -18,7 +18,7 @@ URI: [https://w3id.org/neat_schema/:LayerParams](https://w3id.org/neat_schema/:L
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
 | [units](units.md) | [integer](integer.md) | 0..1 | None  | . |
-| [activation](activation.md) | [ActivationEnum](ActivationEnum.md) | 0..1 | None  | . |
+| [activation](activation.md) | [ActivationEnum](ActivationEnum.md) | 0..1 | Activation layer type  | . |
 | [rate](rate.md) | [float](float.md) | 0..1 | None  | . |
 
 
@@ -46,19 +46,20 @@ URI: [https://w3id.org/neat_schema/:LayerParams](https://w3id.org/neat_schema/:L
 ```yaml
 name: LayerParams
 description: Parameters for each layer of a neural network.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   units:
     name: units
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: integer
   activation:
     name: activation
-    from_schema: https://w3id.org/neat_schema
+    description: Activation layer type
+    from_schema: https://w3id.org/neat
     range: activation_enum
   rate:
     name: rate
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     range: float
 
 ```
@@ -70,23 +71,24 @@ attributes:
 ```yaml
 name: LayerParams
 description: Parameters for each layer of a neural network.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   units:
     name: units
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: units
     owner: LayerParams
     range: integer
   activation:
     name: activation
-    from_schema: https://w3id.org/neat_schema
+    description: Activation layer type
+    from_schema: https://w3id.org/neat
     alias: activation
     owner: LayerParams
     range: activation_enum
   rate:
     name: rate
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: rate
     owner: LayerParams
     range: float

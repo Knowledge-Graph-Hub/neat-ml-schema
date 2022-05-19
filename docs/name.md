@@ -1,6 +1,6 @@
 # Slot: name
 
-URI: [https://w3id.org/neat_schema/:name](https://w3id.org/neat_schema/:name)
+URI: [https://w3id.org/neat/:name](https://w3id.org/neat/:name)
 
 
 

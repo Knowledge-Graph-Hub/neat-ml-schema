@@ -2,9 +2,9 @@
 # Slot: classifiers
 
 
+Classifier details.
 
-
-URI: [https://w3id.org/neat_schema/classifierContainer__classifiers](https://w3id.org/neat_schema/classifierContainer__classifiers)
+URI: [https://w3id.org/neat/classifierContainer__classifiers](https://w3id.org/neat/classifierContainer__classifiers)
 
 
 ## Domain and Range

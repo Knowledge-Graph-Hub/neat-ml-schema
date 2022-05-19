@@ -1,6 +1,8 @@
 # Slot: edge_type_path
+_The path to the file with the unique edge type names._
 
-URI: [https://w3id.org/neat_schema/:edge_type_path](https://w3id.org/neat_schema/:edge_type_path)
+
+URI: [https://w3id.org/neat/:edge_type_path](https://w3id.org/neat/:edge_type_path)
 
 
 

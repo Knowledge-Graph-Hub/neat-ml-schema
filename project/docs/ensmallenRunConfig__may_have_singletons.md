@@ -2,9 +2,9 @@
 # Slot: may_have_singletons
 
 
+Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__may_have_singletons](https://w3id.org/neat_schema/ensmallenRunConfig__may_have_singletons)
+URI: [https://w3id.org/neat/ensmallenRunConfig__may_have_singletons](https://w3id.org/neat/ensmallenRunConfig__may_have_singletons)
 
 
 ## Domain and Range

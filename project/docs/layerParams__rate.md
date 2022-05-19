@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/layerParams__rate](https://w3id.org/neat_schema/layerParams__rate)
+URI: [https://w3id.org/neat/layerParams__rate](https://w3id.org/neat/layerParams__rate)
 
 
 ## Domain and Range

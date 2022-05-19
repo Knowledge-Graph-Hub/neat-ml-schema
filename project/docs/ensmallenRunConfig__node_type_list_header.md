@@ -2,9 +2,9 @@
 # Slot: node_type_list_header
 
 
+Whether the node type file has an header.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_header](https://w3id.org/neat_schema/ensmallenRunConfig__node_type_list_header)
+URI: [https://w3id.org/neat/ensmallenRunConfig__node_type_list_header](https://w3id.org/neat/ensmallenRunConfig__node_type_list_header)
 
 
 ## Domain and Range

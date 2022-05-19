@@ -2,9 +2,9 @@
 # Slot: monitor
 
 
+Quantity to be monitored.
 
-
-URI: [https://w3id.org/neat_schema/classifierCallback__monitor](https://w3id.org/neat_schema/classifierCallback__monitor)
+URI: [https://w3id.org/neat/classifierCallback__monitor](https://w3id.org/neat/classifierCallback__monitor)
 
 
 ## Domain and Range

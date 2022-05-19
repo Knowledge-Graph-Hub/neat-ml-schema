@@ -4,7 +4,7 @@
 
 A container of classifier callbacks.
 
-URI: [https://w3id.org/neat_schema/ClassifierCallbackContainer](https://w3id.org/neat_schema/ClassifierCallbackContainer)
+URI: [https://w3id.org/neat/ClassifierCallbackContainer](https://w3id.org/neat/ClassifierCallbackContainer)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallback]<callbacks%200..*-++[ClassifierCallbackContainer],[ClassifierFitParams]++-%20callbacks_list%200..1>[ClassifierCallbackContainer],[ClassifierFitParams],[ClassifierCallback])](https://yuml.me/diagram/nofunky;dir:TB/class/[ClassifierCallback]<callbacks%200..*-++[ClassifierCallbackContainer],[ClassifierFitParams]++-%20callbacks_list%200..1>[ClassifierCallbackContainer],[ClassifierFitParams],[ClassifierCallback])
@@ -19,4 +19,5 @@ URI: [https://w3id.org/neat_schema/ClassifierCallbackContainer](https://w3id.org
 ### Own
 
  * [➞callbacks](classifierCallbackContainer__callbacks.md)  <sub>0..\*</sub>
+     * Description: Callbacks.
      * Range: [ClassifierCallback](ClassifierCallback.md)

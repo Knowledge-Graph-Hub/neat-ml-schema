@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/layerParams__units](https://w3id.org/neat_schema/layerParams__units)
+URI: [https://w3id.org/neat/layerParams__units](https://w3id.org/neat/layerParams__units)
 
 
 ## Domain and Range

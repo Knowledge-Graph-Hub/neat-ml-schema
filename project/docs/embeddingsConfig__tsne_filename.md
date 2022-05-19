@@ -2,9 +2,9 @@
 # Slot: tsne_filename
 
 
+File name for the TSNE plot.
 
-
-URI: [https://w3id.org/neat_schema/embeddingsConfig__tsne_filename](https://w3id.org/neat_schema/embeddingsConfig__tsne_filename)
+URI: [https://w3id.org/neat/embeddingsConfig__tsne_filename](https://w3id.org/neat/embeddingsConfig__tsne_filename)
 
 
 ## Domain and Range

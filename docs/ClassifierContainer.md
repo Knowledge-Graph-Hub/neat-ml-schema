@@ -5,7 +5,7 @@ _A container with multiple classifiers in it._
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierContainer](https://w3id.org/neat_schema/:ClassifierContainer)
+URI: [https://w3id.org/neat/:ClassifierContainer](https://w3id.org/neat/:ClassifierContainer)
 
 
 
@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:ClassifierContainer](https://w3id.org/neat_s
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [classifiers](classifiers.md) | [Classifier](Classifier.md) | 0..* | None  | . |
+| [classifiers](classifiers.md) | [Classifier](Classifier.md) | 0..* | Classifier details.  | . |
 
 
 ## Usages
@@ -44,11 +44,12 @@ URI: [https://w3id.org/neat_schema/:ClassifierContainer](https://w3id.org/neat_s
 ```yaml
 name: ClassifierContainer
 description: A container with multiple classifiers in it.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   classifiers:
     name: classifiers
-    from_schema: https://w3id.org/neat_schema
+    description: Classifier details.
+    from_schema: https://w3id.org/neat
     multivalued: true
     range: Classifier
     inlined: true
@@ -63,11 +64,12 @@ attributes:
 ```yaml
 name: ClassifierContainer
 description: A container with multiple classifiers in it.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   classifiers:
     name: classifiers
-    from_schema: https://w3id.org/neat_schema
+    description: Classifier details.
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: classifiers
     owner: ClassifierContainer

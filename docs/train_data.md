@@ -1,6 +1,8 @@
 # Slot: train_data
+_Positive and negative graph data for ML training._
 
-URI: [https://w3id.org/neat_schema/:train_data](https://w3id.org/neat_schema/:train_data)
+
+URI: [https://w3id.org/neat/:train_data](https://w3id.org/neat/:train_data)
 
 
 

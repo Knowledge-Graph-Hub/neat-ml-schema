@@ -2,9 +2,9 @@
 # Slot: node_list_numeric_node_type_ids
 
 
+Whether to load the node types IDs in the node file to be numeric.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_list_numeric_node_type_ids](https://w3id.org/neat_schema/ensmallenRunConfig__node_list_numeric_node_type_ids)
+URI: [https://w3id.org/neat/ensmallenRunConfig__node_list_numeric_node_type_ids](https://w3id.org/neat/ensmallenRunConfig__node_list_numeric_node_type_ids)
 
 
 ## Domain and Range

@@ -2,9 +2,9 @@
 # Slot: data
 
 
+Input data for pipeline.
 
-
-URI: [https://w3id.org/neat_schema/graphDataConfiguration__data](https://w3id.org/neat_schema/graphDataConfiguration__data)
+URI: [https://w3id.org/neat/graphDataConfiguration__data](https://w3id.org/neat/graphDataConfiguration__data)
 
 
 ## Domain and Range

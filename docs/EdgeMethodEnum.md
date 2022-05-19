@@ -1,6 +1,6 @@
 # EdgeMethodEnum
 
-None
+Enums containing possible values for node edge methods.
 
 URI: EdgeMethodEnum
 

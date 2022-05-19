@@ -2,9 +2,9 @@
 # Slot: target_path
 
 
+File path for saving results.
 
-
-URI: [https://w3id.org/neat_schema/target__target_path](https://w3id.org/neat_schema/target__target_path)
+URI: [https://w3id.org/neat/target__target_path](https://w3id.org/neat/target__target_path)
 
 
 ## Domain and Range

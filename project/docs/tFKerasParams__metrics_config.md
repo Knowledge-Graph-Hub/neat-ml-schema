@@ -2,9 +2,9 @@
 # Slot: metrics_config
 
 
+Metrics to be calculated after classifier training.
 
-
-URI: [https://w3id.org/neat_schema/tFKerasParams__metrics_config](https://w3id.org/neat_schema/tFKerasParams__metrics_config)
+URI: [https://w3id.org/neat/tFKerasParams__metrics_config](https://w3id.org/neat/tFKerasParams__metrics_config)
 
 
 ## Domain and Range

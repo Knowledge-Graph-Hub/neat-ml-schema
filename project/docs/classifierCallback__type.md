@@ -2,9 +2,9 @@
 # Slot: type
 
 
+Type of callback.
 
-
-URI: [https://w3id.org/neat_schema/classifierCallback__type](https://w3id.org/neat_schema/classifierCallback__type)
+URI: [https://w3id.org/neat/classifierCallback__type](https://w3id.org/neat/classifierCallback__type)
 
 
 ## Domain and Range

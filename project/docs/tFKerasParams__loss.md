@@ -2,9 +2,9 @@
 # Slot: loss
 
 
+Loss function.
 
-
-URI: [https://w3id.org/neat_schema/tFKerasParams__loss](https://w3id.org/neat_schema/tFKerasParams__loss)
+URI: [https://w3id.org/neat/tFKerasParams__loss](https://w3id.org/neat/tFKerasParams__loss)
 
 
 ## Domain and Range

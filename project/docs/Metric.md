@@ -4,7 +4,7 @@
 
 Metrics of a trained classifier (model).
 
-URI: [https://w3id.org/neat_schema/Metric](https://w3id.org/neat_schema/Metric)
+URI: [https://w3id.org/neat/Metric](https://w3id.org/neat/Metric)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer]++-%20metrics%200..*>[Metric&#124;type:string%20%3F;name:string%20%3F;curve:string%20%3F],[MetricContainer])](https://yuml.me/diagram/nofunky;dir:TB/class/[MetricContainer]++-%20metrics%200..*>[Metric&#124;type:string%20%3F;name:string%20%3F;curve:string%20%3F],[MetricContainer])
@@ -23,4 +23,5 @@ URI: [https://w3id.org/neat_schema/Metric](https://w3id.org/neat_schema/Metric)
  * [➞name](metric__name.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [➞curve](metric__curve.md)  <sub>0..1</sub>
+     * Description: Area under curve (AUC) to be calculated.
      * Range: [String](types/String.md)

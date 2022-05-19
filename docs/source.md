@@ -1,6 +1,8 @@
 # Slot: source
+_Source node(s)._
 
-URI: [https://w3id.org/neat_schema/:source](https://w3id.org/neat_schema/:source)
+
+URI: [https://w3id.org/neat/:source](https://w3id.org/neat/:source)
 
 
 

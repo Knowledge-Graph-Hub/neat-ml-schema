@@ -5,7 +5,7 @@ _Path for output to be saved._
 
 
 
-URI: [https://w3id.org/neat_schema/:Target](https://w3id.org/neat_schema/:Target)
+URI: [https://w3id.org/neat/:Target](https://w3id.org/neat/:Target)
 
 
 
@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:Target](https://w3id.org/neat_schema/:Target
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [target_path](target_path.md) | [string](string.md) | 0..1 | None  | . |
+| [target_path](target_path.md) | [string](string.md) | 0..1 | File path for saving results.  | . |
 
 
 ## Usages
@@ -44,11 +44,12 @@ URI: [https://w3id.org/neat_schema/:Target](https://w3id.org/neat_schema/:Target
 ```yaml
 name: Target
 description: Path for output to be saved.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   target_path:
     name: target_path
-    from_schema: https://w3id.org/neat_schema
+    description: File path for saving results.
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -59,11 +60,12 @@ attributes:
 ```yaml
 name: Target
 description: Path for output to be saved.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   target_path:
     name: target_path
-    from_schema: https://w3id.org/neat_schema
+    description: File path for saving results.
+    from_schema: https://w3id.org/neat
     alias: target_path
     owner: Target
     range: string

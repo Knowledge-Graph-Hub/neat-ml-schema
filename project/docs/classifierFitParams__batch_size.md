@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/classifierFitParams__batch_size](https://w3id.org/neat_schema/classifierFitParams__batch_size)
+URI: [https://w3id.org/neat/classifierFitParams__batch_size](https://w3id.org/neat/classifierFitParams__batch_size)
 
 
 ## Domain and Range

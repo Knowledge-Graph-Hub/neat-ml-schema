@@ -2,9 +2,9 @@
 # Slot: curve
 
 
+Area under curve (AUC) to be calculated.
 
-
-URI: [https://w3id.org/neat_schema/metric__curve](https://w3id.org/neat_schema/metric__curve)
+URI: [https://w3id.org/neat/metric__curve](https://w3id.org/neat/metric__curve)
 
 
 ## Domain and Range

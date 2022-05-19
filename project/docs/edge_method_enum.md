@@ -2,9 +2,9 @@
 # Enum: edge_method_enum
 
 
+Enums containing possible values for node edge methods.
 
-
-URI: [https://w3id.org/neat_schema/edge_method_enum](https://w3id.org/neat_schema/edge_method_enum)
+URI: [https://w3id.org/neat/edge_method_enum](https://w3id.org/neat/edge_method_enum)
 
 
 ## Other properties

@@ -1,6 +1,6 @@
 # Slot: rate
 
-URI: [https://w3id.org/neat_schema/:rate](https://w3id.org/neat_schema/:rate)
+URI: [https://w3id.org/neat/:rate](https://w3id.org/neat/:rate)
 
 
 

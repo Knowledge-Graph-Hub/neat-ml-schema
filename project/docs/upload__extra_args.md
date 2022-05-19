@@ -2,9 +2,9 @@
 # Slot: extra_args
 
 
+Extra keyword arguments (**kwargs).
 
-
-URI: [https://w3id.org/neat_schema/upload__extra_args](https://w3id.org/neat_schema/upload__extra_args)
+URI: [https://w3id.org/neat/upload__extra_args](https://w3id.org/neat/upload__extra_args)
 
 
 ## Domain and Range

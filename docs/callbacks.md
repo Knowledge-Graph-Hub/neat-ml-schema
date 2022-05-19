@@ -1,6 +1,8 @@
 # Slot: callbacks
+_Callbacks._
 
-URI: [https://w3id.org/neat_schema/:callbacks](https://w3id.org/neat_schema/:callbacks)
+
+URI: [https://w3id.org/neat/:callbacks](https://w3id.org/neat/:callbacks)
 
 
 

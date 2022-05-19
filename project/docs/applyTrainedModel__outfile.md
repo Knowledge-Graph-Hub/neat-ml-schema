@@ -2,9 +2,9 @@
 # Slot: outfile
 
 
+File path for saving results.
 
-
-URI: [https://w3id.org/neat_schema/applyTrainedModel__outfile](https://w3id.org/neat_schema/applyTrainedModel__outfile)
+URI: [https://w3id.org/neat/applyTrainedModel__outfile](https://w3id.org/neat/applyTrainedModel__outfile)
 
 
 ## Domain and Range

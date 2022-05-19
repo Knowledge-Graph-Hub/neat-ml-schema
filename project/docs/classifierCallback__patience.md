@@ -2,9 +2,9 @@
 # Slot: patience
 
 
+Number of epochs with no improvement after which training will be stopped.
 
-
-URI: [https://w3id.org/neat_schema/classifierCallback__patience](https://w3id.org/neat_schema/classifierCallback__patience)
+URI: [https://w3id.org/neat/classifierCallback__patience](https://w3id.org/neat/classifierCallback__patience)
 
 
 ## Domain and Range

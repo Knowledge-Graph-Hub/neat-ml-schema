@@ -2,9 +2,9 @@
 # Slot: edge_types_column
 
 
+The name of the column of the edge types file from where to load the edge types.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_column](https://w3id.org/neat_schema/ensmallenRunConfig__edge_types_column)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_types_column](https://w3id.org/neat/ensmallenRunConfig__edge_types_column)
 
 
 ## Domain and Range

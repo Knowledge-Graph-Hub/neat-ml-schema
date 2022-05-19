@@ -1,6 +1,8 @@
 # Slot: model_id
+_Key of the model to be used._
 
-URI: [https://w3id.org/neat_schema/:model_id](https://w3id.org/neat_schema/:model_id)
+
+URI: [https://w3id.org/neat/:model_id](https://w3id.org/neat/:model_id)
 
 
 

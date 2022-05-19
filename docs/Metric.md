@@ -5,7 +5,7 @@ _Metrics of a trained classifier (model)._
 
 
 
-URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric)
+URI: [https://w3id.org/neat/:Metric](https://w3id.org/neat/:Metric)
 
 
 
@@ -19,7 +19,7 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 | ---  | --- | --- | --- | --- |
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [name](name.md) | [string](string.md) | 0..1 | None  | . |
-| [curve](curve.md) | [string](string.md) | 0..1 | None  | . |
+| [curve](curve.md) | [string](string.md) | 0..1 | Area under curve (AUC) to be calculated.  | . |
 
 
 ## Usages
@@ -51,17 +51,18 @@ URI: [https://w3id.org/neat_schema/:Metric](https://w3id.org/neat_schema/:Metric
 ```yaml
 name: Metric
 description: Metrics of a trained classifier (model).
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   name:
     name: name
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
   curve:
     name: curve
-    from_schema: https://w3id.org/neat_schema
+    description: Area under curve (AUC) to be calculated.
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -72,23 +73,24 @@ attributes:
 ```yaml
 name: Metric
 description: Metrics of a trained classifier (model).
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: type
     owner: Metric
     range: string
   name:
     name: name
-    from_schema: https://w3id.org/neat_schema
+    from_schema: https://w3id.org/neat
     alias: name
     owner: Metric
     range: string
   curve:
     name: curve
-    from_schema: https://w3id.org/neat_schema
+    description: Area under curve (AUC) to be calculated.
+    from_schema: https://w3id.org/neat
     alias: curve
     owner: Metric
     range: string

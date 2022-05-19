@@ -1,11 +1,11 @@
 # Class: ClassifierCallback
-_Callbacks for a classifier._
+_Utilities called at certain points during model training._
 
 
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_schema/:ClassifierCallback)
+URI: [https://w3id.org/neat/:ClassifierCallback](https://w3id.org/neat/:ClassifierCallback)
 
 
 
@@ -17,12 +17,12 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_sc
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [type](type.md) | [string](string.md) | 0..1 | None  | . |
-| [monitor](monitor.md) | [string](string.md) | 0..1 | None  | . |
-| [patience](patience.md) | [integer](integer.md) | 0..1 | None  | . |
-| [min_delta](min_delta.md) | [integer](integer.md) | 0..1 | None  | . |
-| [verbose](verbose.md) | [boolean](boolean.md) | 0..1 | None  | . |
-| [mode](mode.md) | [ClassifierCallbackModeEnum](ClassifierCallbackModeEnum.md) | 0..1 | None  | . |
+| [type](type.md) | [string](string.md) | 0..1 | Type of callback.  | . |
+| [monitor](monitor.md) | [string](string.md) | 0..1 | Quantity to be monitored.  | . |
+| [patience](patience.md) | [integer](integer.md) | 0..1 | Number of epochs with no improvement after which training will be stopped.  | . |
+| [min_delta](min_delta.md) | [integer](integer.md) | 0..1 | Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.  | . |
+| [verbose](verbose.md) | [boolean](boolean.md) | 0..1 | Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.  | . |
+| [mode](mode.md) | [ClassifierCallbackModeEnum](ClassifierCallbackModeEnum.md) | 0..1 | One of {"auto", "min", "max"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in "max" mode it will stop when the quantity monitored has stopped increasing; in "auto" mode, the direction is automatically inferred from the name of the monitored quantity.  | . |
 
 
 ## Usages
@@ -53,30 +53,42 @@ URI: [https://w3id.org/neat_schema/:ClassifierCallback](https://w3id.org/neat_sc
 <details>
 ```yaml
 name: ClassifierCallback
-description: Callbacks for a classifier.
-from_schema: https://w3id.org/neat_schema
+description: Utilities called at certain points during model training.
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    description: Type of callback.
+    from_schema: https://w3id.org/neat
   monitor:
     name: monitor
-    from_schema: https://w3id.org/neat_schema
+    description: Quantity to be monitored.
+    from_schema: https://w3id.org/neat
   patience:
     name: patience
-    from_schema: https://w3id.org/neat_schema
+    description: Number of epochs with no improvement after which training will be
+      stopped.
+    from_schema: https://w3id.org/neat
     range: integer
   min_delta:
     name: min_delta
-    from_schema: https://w3id.org/neat_schema
+    description: Minimum change in the monitored quantity to qualify as an improvement,
+      i.e. an absolute change of less than min_delta, will count as no improvement.
+    from_schema: https://w3id.org/neat
     range: integer
   verbose:
     name: verbose
-    from_schema: https://w3id.org/neat_schema
+    description: Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages
+      when the callback takes an action.
+    from_schema: https://w3id.org/neat
     range: boolean
   mode:
     name: mode
-    from_schema: https://w3id.org/neat_schema
+    description: One of {"auto", "min", "max"}. In min mode, training will stop when
+      the quantity monitored has stopped decreasing; in "max" mode it will stop when
+      the quantity monitored has stopped increasing; in "auto" mode, the direction
+      is automatically inferred from the name of the monitored quantity.
+    from_schema: https://w3id.org/neat
     range: classifier_callback_mode_enum
 
 ```
@@ -87,42 +99,54 @@ attributes:
 <details>
 ```yaml
 name: ClassifierCallback
-description: Callbacks for a classifier.
-from_schema: https://w3id.org/neat_schema
+description: Utilities called at certain points during model training.
+from_schema: https://w3id.org/neat
 attributes:
   type:
     name: type
-    from_schema: https://w3id.org/neat_schema
+    description: Type of callback.
+    from_schema: https://w3id.org/neat
     alias: type
     owner: ClassifierCallback
     range: string
   monitor:
     name: monitor
-    from_schema: https://w3id.org/neat_schema
+    description: Quantity to be monitored.
+    from_schema: https://w3id.org/neat
     alias: monitor
     owner: ClassifierCallback
     range: string
   patience:
     name: patience
-    from_schema: https://w3id.org/neat_schema
+    description: Number of epochs with no improvement after which training will be
+      stopped.
+    from_schema: https://w3id.org/neat
     alias: patience
     owner: ClassifierCallback
     range: integer
   min_delta:
     name: min_delta
-    from_schema: https://w3id.org/neat_schema
+    description: Minimum change in the monitored quantity to qualify as an improvement,
+      i.e. an absolute change of less than min_delta, will count as no improvement.
+    from_schema: https://w3id.org/neat
     alias: min_delta
     owner: ClassifierCallback
     range: integer
   verbose:
     name: verbose
-    from_schema: https://w3id.org/neat_schema
+    description: Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages
+      when the callback takes an action.
+    from_schema: https://w3id.org/neat
     alias: verbose
     owner: ClassifierCallback
     range: boolean
   mode:
     name: mode
-    from_schema: https://w3id.org/neat_schema
+    description: One of {"auto", "min", "max"}. In min mode, training will stop when
+      the quantity monitored has stopped decreasing; in "max" mode it will stop when
+      the quantity monitored has stopped increasing; in "auto" mode, the direction
+      is automatically inferred from the name of the monitored quantity.
+    from_schema: https://w3id.org/neat
     alias: mode
     owner: ClassifierCallback
     range: classifier_callback_mode_enum

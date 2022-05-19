@@ -5,7 +5,7 @@ _Parameters needed to define a classifier._
 
 
 
-URI: [https://w3id.org/neat_schema/:ClassifierParams](https://w3id.org/neat_schema/:ClassifierParams)
+URI: [https://w3id.org/neat/:ClassifierParams](https://w3id.org/neat/:ClassifierParams)
 
 
 
@@ -17,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:ClassifierParams](https://w3id.org/neat_sche
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [sklearn_params](sklearn_params.md) | [SkLearnParams](SkLearnParams.md) | 0..1 | None  | . |
-| [tf_keras_params](tf_keras_params.md) | [TFKerasParams](TFKerasParams.md) | 0..1 | None  | . |
+| [sklearn_params](sklearn_params.md) | [SkLearnParams](SkLearnParams.md) | 0..1 | Parameters specific to sklearn.  | . |
+| [tf_keras_params](tf_keras_params.md) | [TFKerasParams](TFKerasParams.md) | 0..1 | Parameters specific to Tensorflow/Keras  | . |
 
 
 ## Usages
@@ -51,15 +51,17 @@ URI: [https://w3id.org/neat_schema/:ClassifierParams](https://w3id.org/neat_sche
 ```yaml
 name: ClassifierParams
 description: Parameters needed to define a classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   sklearn_params:
     name: sklearn_params
-    from_schema: https://w3id.org/neat_schema
+    description: Parameters specific to sklearn.
+    from_schema: https://w3id.org/neat
     range: SkLearnParams
   tf_keras_params:
     name: tf_keras_params
-    from_schema: https://w3id.org/neat_schema
+    description: Parameters specific to Tensorflow/Keras
+    from_schema: https://w3id.org/neat
     range: TFKerasParams
 
 ```
@@ -71,17 +73,19 @@ attributes:
 ```yaml
 name: ClassifierParams
 description: Parameters needed to define a classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   sklearn_params:
     name: sklearn_params
-    from_schema: https://w3id.org/neat_schema
+    description: Parameters specific to sklearn.
+    from_schema: https://w3id.org/neat
     alias: sklearn_params
     owner: ClassifierParams
     range: SkLearnParams
   tf_keras_params:
     name: tf_keras_params
-    from_schema: https://w3id.org/neat_schema
+    description: Parameters specific to Tensorflow/Keras
+    from_schema: https://w3id.org/neat
     alias: tf_keras_params
     owner: ClassifierParams
     range: TFKerasParams

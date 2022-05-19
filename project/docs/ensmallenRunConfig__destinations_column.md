@@ -2,9 +2,9 @@
 # Slot: destinations_column
 
 
+The name of the column of the edges file from where to load the destinaton nodes.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__destinations_column](https://w3id.org/neat_schema/ensmallenRunConfig__destinations_column)
+URI: [https://w3id.org/neat/ensmallenRunConfig__destinations_column](https://w3id.org/neat/ensmallenRunConfig__destinations_column)
 
 
 ## Domain and Range

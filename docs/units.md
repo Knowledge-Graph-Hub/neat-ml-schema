@@ -1,6 +1,6 @@
 # Slot: units
 
-URI: [https://w3id.org/neat_schema/:units](https://w3id.org/neat_schema/:units)
+URI: [https://w3id.org/neat/:units](https://w3id.org/neat/:units)
 
 
 

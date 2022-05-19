@@ -1,6 +1,8 @@
 # Slot: max_iter
+_Maximum iterations._
 
-URI: [https://w3id.org/neat_schema/:max_iter](https://w3id.org/neat_schema/:max_iter)
+
+URI: [https://w3id.org/neat/:max_iter](https://w3id.org/neat/:max_iter)
 
 
 

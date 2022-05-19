@@ -2,9 +2,9 @@
 # Slot: callbacks
 
 
+Callbacks.
 
-
-URI: [https://w3id.org/neat_schema/classifierCallbackContainer__callbacks](https://w3id.org/neat_schema/classifierCallbackContainer__callbacks)
+URI: [https://w3id.org/neat/classifierCallbackContainer__callbacks](https://w3id.org/neat/classifierCallbackContainer__callbacks)
 
 
 ## Domain and Range

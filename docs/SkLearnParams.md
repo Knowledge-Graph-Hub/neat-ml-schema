@@ -5,7 +5,7 @@ _Parameters specific to the SKLearn library._
 
 
 
-URI: [https://w3id.org/neat_schema/:SkLearnParams](https://w3id.org/neat_schema/:SkLearnParams)
+URI: [https://w3id.org/neat/:SkLearnParams](https://w3id.org/neat/:SkLearnParams)
 
 
 
@@ -17,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:SkLearnParams](https://w3id.org/neat_schema/
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [random_state](random_state.md) | [integer](integer.md) | 0..1 | None  | . |
-| [max_iter](max_iter.md) | [integer](integer.md) | 0..1 | None  | . |
+| [random_state](random_state.md) | [integer](integer.md) | 0..1 | Random seed.  | . |
+| [max_iter](max_iter.md) | [integer](integer.md) | 0..1 | Maximum iterations.  | . |
 
 
 ## Usages
@@ -50,15 +50,17 @@ URI: [https://w3id.org/neat_schema/:SkLearnParams](https://w3id.org/neat_schema/
 ```yaml
 name: SkLearnParams
 description: Parameters specific to the SKLearn library.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   random_state:
     name: random_state
-    from_schema: https://w3id.org/neat_schema
+    description: Random seed.
+    from_schema: https://w3id.org/neat
     range: integer
   max_iter:
     name: max_iter
-    from_schema: https://w3id.org/neat_schema
+    description: Maximum iterations.
+    from_schema: https://w3id.org/neat
     range: integer
 
 ```
@@ -70,17 +72,19 @@ attributes:
 ```yaml
 name: SkLearnParams
 description: Parameters specific to the SKLearn library.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   random_state:
     name: random_state
-    from_schema: https://w3id.org/neat_schema
+    description: Random seed.
+    from_schema: https://w3id.org/neat
     alias: random_state
     owner: SkLearnParams
     range: integer
   max_iter:
     name: max_iter
-    from_schema: https://w3id.org/neat_schema
+    description: Maximum iterations.
+    from_schema: https://w3id.org/neat
     alias: max_iter
     owner: SkLearnParams
     range: integer

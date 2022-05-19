@@ -2,9 +2,9 @@
 # Slot: model_id
 
 
+Key of the model to be used.
 
-
-URI: [https://w3id.org/neat_schema/applyTrainedModel__model_id](https://w3id.org/neat_schema/applyTrainedModel__model_id)
+URI: [https://w3id.org/neat/applyTrainedModel__model_id](https://w3id.org/neat/applyTrainedModel__model_id)
 
 
 ## Domain and Range

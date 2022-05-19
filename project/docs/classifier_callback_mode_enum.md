@@ -4,7 +4,7 @@
 
 Callback modes while fitting a classifier.
 
-URI: [https://w3id.org/neat_schema/classifier_callback_mode_enum](https://w3id.org/neat_schema/classifier_callback_mode_enum)
+URI: [https://w3id.org/neat/classifier_callback_mode_enum](https://w3id.org/neat/classifier_callback_mode_enum)
 
 
 ## Other properties

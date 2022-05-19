@@ -5,7 +5,7 @@ _A container of metrics for a trained classifier._
 
 
 
-URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schema/:MetricContainer)
+URI: [https://w3id.org/neat/:MetricContainer](https://w3id.org/neat/:MetricContainer)
 
 
 
@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | None  | . |
+| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | A list of metrics need to train a classifier.  | . |
 
 
 ## Usages
@@ -49,11 +49,12 @@ URI: [https://w3id.org/neat_schema/:MetricContainer](https://w3id.org/neat_schem
 ```yaml
 name: MetricContainer
 description: A container of metrics for a trained classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   metrics:
     name: metrics
-    from_schema: https://w3id.org/neat_schema
+    description: A list of metrics need to train a classifier.
+    from_schema: https://w3id.org/neat
     multivalued: true
     range: Metric
     inlined: true
@@ -68,11 +69,12 @@ attributes:
 ```yaml
 name: MetricContainer
 description: A container of metrics for a trained classifier.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   metrics:
     name: metrics
-    from_schema: https://w3id.org/neat_schema
+    description: A list of metrics need to train a classifier.
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: metrics
     owner: MetricContainer

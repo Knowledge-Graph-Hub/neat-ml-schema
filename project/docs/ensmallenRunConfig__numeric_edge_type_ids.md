@@ -2,9 +2,9 @@
 # Slot: numeric_edge_type_ids
 
 
+Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__numeric_edge_type_ids](https://w3id.org/neat_schema/ensmallenRunConfig__numeric_edge_type_ids)
+URI: [https://w3id.org/neat/ensmallenRunConfig__numeric_edge_type_ids](https://w3id.org/neat/ensmallenRunConfig__numeric_edge_type_ids)
 
 
 ## Domain and Range

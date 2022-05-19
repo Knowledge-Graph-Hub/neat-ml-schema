@@ -1,9 +1,11 @@
 # Class: EmbeddingsConfig
+_Embeddings configuration._
 
 
 
 
-URI: [https://w3id.org/neat_schema/:EmbeddingsConfig](https://w3id.org/neat_schema/:EmbeddingsConfig)
+
+URI: [https://w3id.org/neat/:EmbeddingsConfig](https://w3id.org/neat/:EmbeddingsConfig)
 
 
 
@@ -15,10 +17,10 @@ URI: [https://w3id.org/neat_schema/:EmbeddingsConfig](https://w3id.org/neat_sche
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [filename](filename.md) | [string](string.md) | 0..1 | None  | . |
-| [history_filename](history_filename.md) | [string](string.md) | 0..1 | None  | . |
-| [node_embeddings_params](node_embeddings_params.md) | [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | 0..1 | None  | . |
-| [tsne_filename](tsne_filename.md) | [string](string.md) | 0..1 | None  | . |
+| [filename](filename.md) | [string](string.md) | 0..1 | Embeddings file name.  | . |
+| [history_filename](history_filename.md) | [string](string.md) | 0..1 | Embeddings history file name.  | . |
+| [node_embeddings_params](node_embeddings_params.md) | [NodeEmbeddingsParams](NodeEmbeddingsParams.md) | 0..1 | Node embeddings parameters.  | . |
+| [tsne_filename](tsne_filename.md) | [string](string.md) | 0..1 | File name for the TSNE plot.  | . |
 
 
 ## Usages
@@ -44,21 +46,26 @@ URI: [https://w3id.org/neat_schema/:EmbeddingsConfig](https://w3id.org/neat_sche
 <details>
 ```yaml
 name: EmbeddingsConfig
-from_schema: https://w3id.org/neat_schema
+description: Embeddings configuration.
+from_schema: https://w3id.org/neat
 attributes:
   filename:
     name: filename
-    from_schema: https://w3id.org/neat_schema
+    description: Embeddings file name.
+    from_schema: https://w3id.org/neat
   history_filename:
     name: history_filename
-    from_schema: https://w3id.org/neat_schema
+    description: Embeddings history file name.
+    from_schema: https://w3id.org/neat
   node_embeddings_params:
     name: node_embeddings_params
-    from_schema: https://w3id.org/neat_schema
+    description: Node embeddings parameters.
+    from_schema: https://w3id.org/neat
     range: NodeEmbeddingsParams
   tsne_filename:
     name: tsne_filename
-    from_schema: https://w3id.org/neat_schema
+    description: File name for the TSNE plot.
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -68,29 +75,34 @@ attributes:
 <details>
 ```yaml
 name: EmbeddingsConfig
-from_schema: https://w3id.org/neat_schema
+description: Embeddings configuration.
+from_schema: https://w3id.org/neat
 attributes:
   filename:
     name: filename
-    from_schema: https://w3id.org/neat_schema
+    description: Embeddings file name.
+    from_schema: https://w3id.org/neat
     alias: filename
     owner: EmbeddingsConfig
     range: string
   history_filename:
     name: history_filename
-    from_schema: https://w3id.org/neat_schema
+    description: Embeddings history file name.
+    from_schema: https://w3id.org/neat
     alias: history_filename
     owner: EmbeddingsConfig
     range: string
   node_embeddings_params:
     name: node_embeddings_params
-    from_schema: https://w3id.org/neat_schema
+    description: Node embeddings parameters.
+    from_schema: https://w3id.org/neat
     alias: node_embeddings_params
     owner: EmbeddingsConfig
     range: NodeEmbeddingsParams
   tsne_filename:
     name: tsne_filename
-    from_schema: https://w3id.org/neat_schema
+    description: File name for the TSNE plot.
+    from_schema: https://w3id.org/neat
     alias: tsne_filename
     owner: EmbeddingsConfig
     range: string

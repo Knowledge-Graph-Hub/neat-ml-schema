@@ -2,9 +2,9 @@
 # Slot: node_embeddings_params
 
 
+Node embeddings parameters.
 
-
-URI: [https://w3id.org/neat_schema/embeddingsConfig__node_embeddings_params](https://w3id.org/neat_schema/embeddingsConfig__node_embeddings_params)
+URI: [https://w3id.org/neat/embeddingsConfig__node_embeddings_params](https://w3id.org/neat/embeddingsConfig__node_embeddings_params)
 
 
 ## Domain and Range

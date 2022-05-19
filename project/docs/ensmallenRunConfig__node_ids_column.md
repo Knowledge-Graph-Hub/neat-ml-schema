@@ -2,9 +2,9 @@
 # Slot: node_ids_column
 
 
+The name of the column of the node file from where to load the node IDs.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__node_ids_column](https://w3id.org/neat_schema/ensmallenRunConfig__node_ids_column)
+URI: [https://w3id.org/neat/ensmallenRunConfig__node_ids_column](https://w3id.org/neat/ensmallenRunConfig__node_ids_column)
 
 
 ## Domain and Range

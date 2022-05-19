@@ -1,9 +1,11 @@
 # Class: GraphDataConfiguration
+_Configuration for the graph training and validation data for ML pipeline._
 
 
 
 
-URI: [https://w3id.org/neat_schema/:GraphDataConfiguration](https://w3id.org/neat_schema/:GraphDataConfiguration)
+
+URI: [https://w3id.org/neat/:GraphDataConfiguration](https://w3id.org/neat/:GraphDataConfiguration)
 
 
 
@@ -15,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:GraphDataConfiguration](https://w3id.org/nea
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [graph](graph.md) | [EnsmallenRunConfig](EnsmallenRunConfig.md) | 0..1 | None  | . |
-| [data](data.md) | [TrainValidData](TrainValidData.md) | 0..1 | None  | . |
+| [graph](graph.md) | [EnsmallenRunConfig](EnsmallenRunConfig.md) | 0..1 | Graph configuration for pipeline  | . |
+| [data](data.md) | [TrainValidData](TrainValidData.md) | 0..1 | Input data for pipeline.  | . |
 
 
 ## Usages
@@ -47,15 +49,18 @@ URI: [https://w3id.org/neat_schema/:GraphDataConfiguration](https://w3id.org/nea
 <details>
 ```yaml
 name: GraphDataConfiguration
-from_schema: https://w3id.org/neat_schema
+description: Configuration for the graph training and validation data for ML pipeline.
+from_schema: https://w3id.org/neat
 attributes:
   graph:
     name: graph
-    from_schema: https://w3id.org/neat_schema
+    description: Graph configuration for pipeline
+    from_schema: https://w3id.org/neat
     range: EnsmallenRunConfig
   data:
     name: data
-    from_schema: https://w3id.org/neat_schema
+    description: Input data for pipeline.
+    from_schema: https://w3id.org/neat
     range: TrainValidData
 
 ```
@@ -66,17 +71,20 @@ attributes:
 <details>
 ```yaml
 name: GraphDataConfiguration
-from_schema: https://w3id.org/neat_schema
+description: Configuration for the graph training and validation data for ML pipeline.
+from_schema: https://w3id.org/neat
 attributes:
   graph:
     name: graph
-    from_schema: https://w3id.org/neat_schema
+    description: Graph configuration for pipeline
+    from_schema: https://w3id.org/neat
     alias: graph
     owner: GraphDataConfiguration
     range: EnsmallenRunConfig
   data:
     name: data
-    from_schema: https://w3id.org/neat_schema
+    description: Input data for pipeline.
+    from_schema: https://w3id.org/neat
     alias: data
     owner: GraphDataConfiguration
     range: TrainValidData

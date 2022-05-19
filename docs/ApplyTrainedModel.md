@@ -5,7 +5,7 @@ _Trained model used for prediction._
 
 
 
-URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_schema/:ApplyTrainedModel)
+URI: [https://w3id.org/neat/:ApplyTrainedModel](https://w3id.org/neat/:ApplyTrainedModel)
 
 
 
@@ -17,10 +17,10 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_sch
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [model_id](model_id.md) | [string](string.md) | 0..1 | None  | . |
-| [node_types](node_types.md) | [NodeType](NodeType.md) | 0..1 | None  | . |
-| [cutoff](cutoff.md) | [string](string.md) | 0..1 | None  | . |
-| [outfile](outfile.md) | [string](string.md) | 0..1 | None  | . |
+| [model_id](model_id.md) | [string](string.md) | 0..1 | Key of the model to be used.  | . |
+| [node_types](node_types.md) | [NodeType](NodeType.md) | 0..1 | Type of nodes.  | . |
+| [cutoff](cutoff.md) | [string](string.md) | 0..1 | Cutoff filter.  | . |
+| [outfile](outfile.md) | [string](string.md) | 0..1 | File path for saving results.  | . |
 
 
 ## Usages
@@ -52,21 +52,25 @@ URI: [https://w3id.org/neat_schema/:ApplyTrainedModel](https://w3id.org/neat_sch
 ```yaml
 name: ApplyTrainedModel
 description: Trained model used for prediction.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   model_id:
     name: model_id
-    from_schema: https://w3id.org/neat_schema
+    description: Key of the model to be used.
+    from_schema: https://w3id.org/neat
   node_types:
     name: node_types
-    from_schema: https://w3id.org/neat_schema
+    description: Type of nodes.
+    from_schema: https://w3id.org/neat
     range: NodeType
   cutoff:
     name: cutoff
-    from_schema: https://w3id.org/neat_schema
+    description: Cutoff filter.
+    from_schema: https://w3id.org/neat
   outfile:
     name: outfile
-    from_schema: https://w3id.org/neat_schema
+    description: File path for saving results.
+    from_schema: https://w3id.org/neat
 
 ```
 </details>
@@ -77,29 +81,33 @@ attributes:
 ```yaml
 name: ApplyTrainedModel
 description: Trained model used for prediction.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   model_id:
     name: model_id
-    from_schema: https://w3id.org/neat_schema
+    description: Key of the model to be used.
+    from_schema: https://w3id.org/neat
     alias: model_id
     owner: ApplyTrainedModel
     range: string
   node_types:
     name: node_types
-    from_schema: https://w3id.org/neat_schema
+    description: Type of nodes.
+    from_schema: https://w3id.org/neat
     alias: node_types
     owner: ApplyTrainedModel
     range: NodeType
   cutoff:
     name: cutoff
-    from_schema: https://w3id.org/neat_schema
+    description: Cutoff filter.
+    from_schema: https://w3id.org/neat
     alias: cutoff
     owner: ApplyTrainedModel
     range: string
   outfile:
     name: outfile
-    from_schema: https://w3id.org/neat_schema
+    description: File path for saving results.
+    from_schema: https://w3id.org/neat
     alias: outfile
     owner: ApplyTrainedModel
     range: string

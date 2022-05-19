@@ -1,6 +1,8 @@
 # Slot: tsne_filename
+_File name for the TSNE plot._
 
-URI: [https://w3id.org/neat_schema/:tsne_filename](https://w3id.org/neat_schema/:tsne_filename)
+
+URI: [https://w3id.org/neat/:tsne_filename](https://w3id.org/neat/:tsne_filename)
 
 
 

@@ -4,7 +4,7 @@
 
 Parameters needed to define a classifier.
 
-URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schema/ClassifierParams)
+URI: [https://w3id.org/neat/ClassifierParams](https://w3id.org/neat/ClassifierParams)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TFKerasParams],[SkLearnParams],[TFKerasParams]<tf_keras_params%200..1-++[ClassifierParams],[SkLearnParams]<sklearn_params%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[Classifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[TFKerasParams],[SkLearnParams],[TFKerasParams]<tf_keras_params%200..1-++[ClassifierParams],[SkLearnParams]<sklearn_params%200..1-++[ClassifierParams],[Classifier]++-%20parameters%200..1>[ClassifierParams],[Classifier])
@@ -19,6 +19,8 @@ URI: [https://w3id.org/neat_schema/ClassifierParams](https://w3id.org/neat_schem
 ### Own
 
  * [➞sklearn_params](classifierParams__sklearn_params.md)  <sub>0..1</sub>
+     * Description: Parameters specific to sklearn.
      * Range: [SkLearnParams](SkLearnParams.md)
  * [➞tf_keras_params](classifierParams__tf_keras_params.md)  <sub>0..1</sub>
+     * Description: Parameters specific to Tensorflow/Keras
      * Range: [TFKerasParams](TFKerasParams.md)

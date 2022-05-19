@@ -2,9 +2,9 @@
 # Slot: edge_type_path
 
 
+The path to the file with the unique edge type names.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_path](https://w3id.org/neat_schema/ensmallenRunConfig__edge_type_path)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_type_path](https://w3id.org/neat/ensmallenRunConfig__edge_type_path)
 
 
 ## Domain and Range

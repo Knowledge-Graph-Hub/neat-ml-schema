@@ -2,9 +2,9 @@
 # Slot: metrics
 
 
+A list of metrics need to train a classifier.
 
-
-URI: [https://w3id.org/neat_schema/metricContainer__metrics](https://w3id.org/neat_schema/metricContainer__metrics)
+URI: [https://w3id.org/neat/metricContainer__metrics](https://w3id.org/neat/metricContainer__metrics)
 
 
 ## Domain and Range

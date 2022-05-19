@@ -1,9 +1,11 @@
 # Class: NodeType
+_Source node or Destination node._
 
 
 
 
-URI: [https://w3id.org/neat_schema/:NodeType](https://w3id.org/neat_schema/:NodeType)
+
+URI: [https://w3id.org/neat/:NodeType](https://w3id.org/neat/:NodeType)
 
 
 
@@ -15,8 +17,8 @@ URI: [https://w3id.org/neat_schema/:NodeType](https://w3id.org/neat_schema/:Node
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [source](source.md) | [string](string.md) | 0..* | None  | . |
-| [destination](destination.md) | [string](string.md) | 0..* | None  | . |
+| [source](source.md) | [string](string.md) | 0..* | Source node(s).  | . |
+| [destination](destination.md) | [string](string.md) | 0..* | Destination node(s).  | . |
 
 
 ## Usages
@@ -47,17 +49,20 @@ URI: [https://w3id.org/neat_schema/:NodeType](https://w3id.org/neat_schema/:Node
 <details>
 ```yaml
 name: NodeType
-from_schema: https://w3id.org/neat_schema
+description: Source node or Destination node.
+from_schema: https://w3id.org/neat
 attributes:
   source:
     name: source
-    from_schema: https://w3id.org/neat_schema
+    description: Source node(s).
+    from_schema: https://w3id.org/neat
     multivalued: true
     inlined: true
     inlined_as_list: true
   destination:
     name: destination
-    from_schema: https://w3id.org/neat_schema
+    description: Destination node(s).
+    from_schema: https://w3id.org/neat
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -70,11 +75,13 @@ attributes:
 <details>
 ```yaml
 name: NodeType
-from_schema: https://w3id.org/neat_schema
+description: Source node or Destination node.
+from_schema: https://w3id.org/neat
 attributes:
   source:
     name: source
-    from_schema: https://w3id.org/neat_schema
+    description: Source node(s).
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: source
     owner: NodeType
@@ -83,7 +90,8 @@ attributes:
     inlined_as_list: true
   destination:
     name: destination
-    from_schema: https://w3id.org/neat_schema
+    description: Destination node(s).
+    from_schema: https://w3id.org/neat
     multivalued: true
     alias: destination
     owner: NodeType

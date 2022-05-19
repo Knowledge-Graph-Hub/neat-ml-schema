@@ -1,6 +1,8 @@
 # Slot: graph_data
+_Configuration for graph data._
 
-URI: [https://w3id.org/neat_schema/:graph_data](https://w3id.org/neat_schema/:graph_data)
+
+URI: [https://w3id.org/neat/:graph_data](https://w3id.org/neat/:graph_data)
 
 
 

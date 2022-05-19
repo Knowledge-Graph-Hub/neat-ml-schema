@@ -5,7 +5,7 @@ _Parameters specific to the Tensorflow Keras library._
 
 
 
-URI: [https://w3id.org/neat_schema/:TFKerasParams](https://w3id.org/neat_schema/:TFKerasParams)
+URI: [https://w3id.org/neat/:TFKerasParams](https://w3id.org/neat/:TFKerasParams)
 
 
 
@@ -17,11 +17,11 @@ URI: [https://w3id.org/neat_schema/:TFKerasParams](https://w3id.org/neat_schema/
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [layers_config](layers_config.md) | [LayerContainer](LayerContainer.md) | 0..1 | None  | . |
-| [loss](loss.md) | [string](string.md) | 0..1 | None  | . |
-| [metrics_config](metrics_config.md) | [MetricContainer](MetricContainer.md) | 0..1 | None  | . |
-| [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | None  | . |
-| [fit_config](fit_config.md) | [ClassifierFitParams](ClassifierFitParams.md) | 0..1 | None  | . |
+| [layers_config](layers_config.md) | [LayerContainer](LayerContainer.md) | 0..1 | Configuration for instantiating layers for neural networks.  | . |
+| [loss](loss.md) | [string](string.md) | 0..1 | Loss function.  | . |
+| [metrics_config](metrics_config.md) | [MetricContainer](MetricContainer.md) | 0..1 | Metrics to be calculated after classifier training.  | . |
+| [optimizer](optimizer.md) | [OptimizerEnum](OptimizerEnum.md) | 0..1 | Optimizer function to be used during classifier training.  | . |
+| [fit_config](fit_config.md) | [ClassifierFitParams](ClassifierFitParams.md) | 0..1 | Configuration for model fitting.  | . |
 
 
 ## Usages
@@ -53,26 +53,31 @@ URI: [https://w3id.org/neat_schema/:TFKerasParams](https://w3id.org/neat_schema/
 ```yaml
 name: TFKerasParams
 description: Parameters specific to the Tensorflow Keras library.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   layers_config:
     name: layers_config
-    from_schema: https://w3id.org/neat_schema
+    description: Configuration for instantiating layers for neural networks.
+    from_schema: https://w3id.org/neat
     range: LayerContainer
   loss:
     name: loss
-    from_schema: https://w3id.org/neat_schema
+    description: Loss function.
+    from_schema: https://w3id.org/neat
   metrics_config:
     name: metrics_config
-    from_schema: https://w3id.org/neat_schema
+    description: Metrics to be calculated after classifier training.
+    from_schema: https://w3id.org/neat
     range: MetricContainer
   optimizer:
     name: optimizer
-    from_schema: https://w3id.org/neat_schema
+    description: Optimizer function to be used during classifier training.
+    from_schema: https://w3id.org/neat
     range: optimizer_enum
   fit_config:
     name: fit_config
-    from_schema: https://w3id.org/neat_schema
+    description: Configuration for model fitting.
+    from_schema: https://w3id.org/neat
     range: ClassifierFitParams
 
 ```
@@ -84,35 +89,40 @@ attributes:
 ```yaml
 name: TFKerasParams
 description: Parameters specific to the Tensorflow Keras library.
-from_schema: https://w3id.org/neat_schema
+from_schema: https://w3id.org/neat
 attributes:
   layers_config:
     name: layers_config
-    from_schema: https://w3id.org/neat_schema
+    description: Configuration for instantiating layers for neural networks.
+    from_schema: https://w3id.org/neat
     alias: layers_config
     owner: TFKerasParams
     range: LayerContainer
   loss:
     name: loss
-    from_schema: https://w3id.org/neat_schema
+    description: Loss function.
+    from_schema: https://w3id.org/neat
     alias: loss
     owner: TFKerasParams
     range: string
   metrics_config:
     name: metrics_config
-    from_schema: https://w3id.org/neat_schema
+    description: Metrics to be calculated after classifier training.
+    from_schema: https://w3id.org/neat
     alias: metrics_config
     owner: TFKerasParams
     range: MetricContainer
   optimizer:
     name: optimizer
-    from_schema: https://w3id.org/neat_schema
+    description: Optimizer function to be used during classifier training.
+    from_schema: https://w3id.org/neat
     alias: optimizer
     owner: TFKerasParams
     range: optimizer_enum
   fit_config:
     name: fit_config
-    from_schema: https://w3id.org/neat_schema
+    description: Configuration for model fitting.
+    from_schema: https://w3id.org/neat
     alias: fit_config
     owner: TFKerasParams
     range: ClassifierFitParams

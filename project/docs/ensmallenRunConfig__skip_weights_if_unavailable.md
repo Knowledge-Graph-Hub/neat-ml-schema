@@ -2,9 +2,9 @@
 # Slot: skip_weights_if_unavailable
 
 
+Whether to skip the weights without raising an error if these are unavailable.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__skip_weights_if_unavailable](https://w3id.org/neat_schema/ensmallenRunConfig__skip_weights_if_unavailable)
+URI: [https://w3id.org/neat/ensmallenRunConfig__skip_weights_if_unavailable](https://w3id.org/neat/ensmallenRunConfig__skip_weights_if_unavailable)
 
 
 ## Domain and Range

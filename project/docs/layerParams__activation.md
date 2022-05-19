@@ -2,9 +2,9 @@
 # Slot: activation
 
 
+Activation layer type
 
-
-URI: [https://w3id.org/neat_schema/layerParams__activation](https://w3id.org/neat_schema/layerParams__activation)
+URI: [https://w3id.org/neat/layerParams__activation](https://w3id.org/neat/layerParams__activation)
 
 
 ## Domain and Range

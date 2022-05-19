@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/neat_schema/metric__type](https://w3id.org/neat_schema/metric__type)
+URI: [https://w3id.org/neat/metric__type](https://w3id.org/neat/metric__type)
 
 
 ## Domain and Range

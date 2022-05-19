@@ -2,9 +2,9 @@
 # Slot: edge_list_numeric_edge_type_ids
 
 
+Whether to load the edge type IDs as numeric from the edge list.
 
-
-URI: [https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_numeric_edge_type_ids](https://w3id.org/neat_schema/ensmallenRunConfig__edge_list_numeric_edge_type_ids)
+URI: [https://w3id.org/neat/ensmallenRunConfig__edge_list_numeric_edge_type_ids](https://w3id.org/neat/ensmallenRunConfig__edge_list_numeric_edge_type_ids)
 
 
 ## Domain and Range
