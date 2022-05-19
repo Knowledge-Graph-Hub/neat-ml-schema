@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "NEAT_schema"
+name = "neat-schema"
 version = "0.1.0"
 description = "Enter description of your project here"
 authors = ["Harshad Hegde <hhegde@lbl.gov>"]

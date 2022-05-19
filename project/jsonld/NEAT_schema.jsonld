@@ -3673,7 +3673,7 @@
   "source_file": "NEAT_schema.yaml",
   "source_file_date": "2022-05-18T15:38:06",
   "source_file_size": 28124,
-  "generation_date": "2022-05-18T15:38:15",
+  "generation_date": "2022-05-19T09:15:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/NEAT_schema.context.jsonld",
