@@ -171,7 +171,7 @@ classes:
     description: A container of neural network layers.
     attributes:
       layers:
-        description: List of layers to be used to build the neural network.
+        description: Container of layers to be used to build the neural network.
         multivalued: true
         inlined_as_list: true
         range: Layer
@@ -199,10 +199,10 @@ classes:
         range: float
 
   MetricContainer:
-    description: A container of metrics for a trained classifier.
+    description: Container of metrics for a trained classifier.
     attributes:
       metrics:
-        description: A list of metrics need to train a classifier.
+        description: Metrics need to train a classifier.
         multivalued: true
         inlined_as_list: true
         range: Metric
@@ -225,7 +225,7 @@ classes:
         description: Number of epochs to run for training.
         range: integer
       callbacks_list:
-        description: List of callbacks.
+        description: Container of callbacks.
         range: ClassifierCallbackContainer
   
   ClassifierCallbackContainer:
