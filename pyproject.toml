@@ -6,7 +6,7 @@ authors = ["Harshad Hegde <hhegde@lbl.gov>"]
 license = "MIT"
 homepage = "https://knowledge-graph-hub.github.io/NEAT_schema/"
 repository = "https://github.com/Knowledge-Graph-Hub/NEAT_schema"
-include = ["README.md", "src/linkml/*.yaml", "project", "LICENSE"]
+include = ["README.md", "src/linkml/*", "project", "LICENSE"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
