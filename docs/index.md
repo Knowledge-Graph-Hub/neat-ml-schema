@@ -22,7 +22,7 @@ URI: https://w3id.org/neat
 | [LayerContainer](LayerContainer.md) | A container of neural network layers. | 
 | [Layer](Layer.md) | Layers for a neural network. | 
 | [LayerParams](LayerParams.md) | Parameters for each layer of a neural network. | 
-| [MetricContainer](MetricContainer.md) | A container of metrics for a trained classifier. | 
+| [MetricContainer](MetricContainer.md) | Container of metrics for a trained classifier. | 
 | [Metric](Metric.md) | Metrics of a trained classifier (model). | 
 | [ClassifierFitParams](ClassifierFitParams.md) | Paramters for fitting a classifier. | 
 | [ClassifierCallbackContainer](ClassifierCallbackContainer.md) | A container of classifier callbacks. | 
@@ -73,16 +73,16 @@ URI: https://w3id.org/neat
 | [metrics_config](metrics_config.md) | Metrics to be calculated after classifier training. | 
 | [optimizer](optimizer.md) | Optimizer function to be used during classifier training. | 
 | [fit_config](fit_config.md) | Configuration for model fitting. | 
-| [layers](layers.md) | List of layers to be used to build the neural network. | 
+| [layers](layers.md) | Container of layers to be used to build the neural network. | 
 | [type](type.md) | Type of layer. | 
 | [units](units.md) | None | 
 | [activation](activation.md) | Activation layer type | 
 | [rate](rate.md) | None | 
-| [metrics](metrics.md) | A list of metrics need to train a classifier. | 
+| [metrics](metrics.md) | Metrics need to train a classifier. | 
 | [name](name.md) | None | 
 | [curve](curve.md) | Area under curve (AUC) to be calculated. | 
 | [epochs](epochs.md) | Number of epochs to run for training. | 
-| [callbacks_list](callbacks_list.md) | List of callbacks. | 
+| [callbacks_list](callbacks_list.md) | Container of callbacks. | 
 | [callbacks](callbacks.md) | Callbacks. | 
 | [monitor](monitor.md) | Quantity to be monitored. | 
 | [patience](patience.md) | Number of epochs with no improvement after which training will be stopped. | 

@@ -24,5 +24,5 @@ URI: [https://w3id.org/neat/ClassifierFitParams](https://w3id.org/neat/Classifie
      * Description: Number of epochs to run for training.
      * Range: [Integer](types/Integer.md)
  * [➞callbacks_list](classifierFitParams__callbacks_list.md)  <sub>0..1</sub>
-     * Description: List of callbacks.
+     * Description: Container of callbacks.
      * Range: [ClassifierCallbackContainer](ClassifierCallbackContainer.md)

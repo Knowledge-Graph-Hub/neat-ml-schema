@@ -2,7 +2,7 @@
 # Slot: callbacks_list
 
 
-List of callbacks.
+Container of callbacks.
 
 URI: [https://w3id.org/neat/classifierFitParams__callbacks_list](https://w3id.org/neat/classifierFitParams__callbacks_list)
 

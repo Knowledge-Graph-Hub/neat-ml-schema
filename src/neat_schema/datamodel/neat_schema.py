@@ -1,5 +1,5 @@
 # Auto generated from neat_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-19T15:40:11
+# Generation date: 2022-05-20T09:42:09
 # Schema: NEAT_schema
 #
 # id: https://w3id.org/neat
@@ -449,7 +449,7 @@ class LayerParams(YAMLRoot):
 @dataclass
 class MetricContainer(YAMLRoot):
     """
-    A container of metrics for a trained classifier.
+    Container of metrics for a trained classifier.
     """
     _inherited_slots: ClassVar[List[str]] = []
 

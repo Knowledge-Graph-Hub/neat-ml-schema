@@ -184,7 +184,7 @@ message Metric
   optional name String = 2
   optional curve String = 3
  }
-// A container of metrics for a trained classifier.
+// Container of metrics for a trained classifier.
 message MetricContainer
  {
   repeated metrics Metric = 1

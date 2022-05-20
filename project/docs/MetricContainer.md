@@ -2,7 +2,7 @@
 # Class: MetricContainer
 
 
-A container of metrics for a trained classifier.
+Container of metrics for a trained classifier.
 
 URI: [https://w3id.org/neat/MetricContainer](https://w3id.org/neat/MetricContainer)
 
@@ -19,5 +19,5 @@ URI: [https://w3id.org/neat/MetricContainer](https://w3id.org/neat/MetricContain
 ### Own
 
  * [➞metrics](metricContainer__metrics.md)  <sub>0..\*</sub>
-     * Description: A list of metrics need to train a classifier.
+     * Description: Metrics need to train a classifier.
      * Range: [Metric](Metric.md)

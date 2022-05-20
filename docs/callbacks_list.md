@@ -1,5 +1,5 @@
 # Slot: callbacks_list
-_List of callbacks._
+_Container of callbacks._
 
 
 URI: [https://w3id.org/neat/:callbacks_list](https://w3id.org/neat/:callbacks_list)

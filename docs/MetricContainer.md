@@ -1,5 +1,5 @@
 # Class: MetricContainer
-_A container of metrics for a trained classifier._
+_Container of metrics for a trained classifier._
 
 
 
@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat/:MetricContainer](https://w3id.org/neat/:MetricConta
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | A list of metrics need to train a classifier.  | . |
+| [metrics](metrics.md) | [Metric](Metric.md) | 0..* | Metrics need to train a classifier.  | . |
 
 
 ## Usages
@@ -48,12 +48,12 @@ URI: [https://w3id.org/neat/:MetricContainer](https://w3id.org/neat/:MetricConta
 <details>
 ```yaml
 name: MetricContainer
-description: A container of metrics for a trained classifier.
+description: Container of metrics for a trained classifier.
 from_schema: https://w3id.org/neat
 attributes:
   metrics:
     name: metrics
-    description: A list of metrics need to train a classifier.
+    description: Metrics need to train a classifier.
     from_schema: https://w3id.org/neat
     multivalued: true
     range: Metric
@@ -68,12 +68,12 @@ attributes:
 <details>
 ```yaml
 name: MetricContainer
-description: A container of metrics for a trained classifier.
+description: Container of metrics for a trained classifier.
 from_schema: https://w3id.org/neat
 attributes:
   metrics:
     name: metrics
-    description: A list of metrics need to train a classifier.
+    description: Metrics need to train a classifier.
     from_schema: https://w3id.org/neat
     multivalued: true
     alias: metrics

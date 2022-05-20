@@ -1,5 +1,5 @@
 # Slot: layers
-_List of layers to be used to build the neural network._
+_Container of layers to be used to build the neural network._
 
 
 URI: [https://w3id.org/neat/:layers](https://w3id.org/neat/:layers)

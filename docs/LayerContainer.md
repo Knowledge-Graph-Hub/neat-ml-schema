@@ -17,7 +17,7 @@ URI: [https://w3id.org/neat/:LayerContainer](https://w3id.org/neat/:LayerContain
 
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
-| [layers](layers.md) | [Layer](Layer.md) | 0..* | List of layers to be used to build the neural network.  | . |
+| [layers](layers.md) | [Layer](Layer.md) | 0..* | Container of layers to be used to build the neural network.  | . |
 
 
 ## Usages
@@ -53,7 +53,7 @@ from_schema: https://w3id.org/neat
 attributes:
   layers:
     name: layers
-    description: List of layers to be used to build the neural network.
+    description: Container of layers to be used to build the neural network.
     from_schema: https://w3id.org/neat
     multivalued: true
     range: Layer
@@ -73,7 +73,7 @@ from_schema: https://w3id.org/neat
 attributes:
   layers:
     name: layers
-    description: List of layers to be used to build the neural network.
+    description: Container of layers to be used to build the neural network.
     from_schema: https://w3id.org/neat
     multivalued: true
     alias: layers

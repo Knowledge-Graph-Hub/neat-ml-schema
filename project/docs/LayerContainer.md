@@ -19,5 +19,5 @@ URI: [https://w3id.org/neat/LayerContainer](https://w3id.org/neat/LayerContainer
 ### Own
 
  * [➞layers](layerContainer__layers.md)  <sub>0..\*</sub>
-     * Description: List of layers to be used to build the neural network.
+     * Description: Container of layers to be used to build the neural network.
      * Range: [Layer](Layer.md)

@@ -2,7 +2,7 @@
 # Slot: metrics
 
 
-A list of metrics need to train a classifier.
+Metrics need to train a classifier.
 
 URI: [https://w3id.org/neat/metricContainer__metrics](https://w3id.org/neat/metricContainer__metrics)
 
