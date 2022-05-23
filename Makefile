@@ -9,7 +9,7 @@ SHELL := bash
 RUN = poetry run
 # get values from about.yaml file
 SCHEMA_NAME = $(shell sh ./utils/get-value.sh name)
-SOURCE_SCHEMA_PATH = neat_schema/$(shell sh ./utils/get-value.sh source_schema_path)
+SOURCE_SCHEMA_PATH = $(shell sh ./utils/get-value.sh source_schema_path)
 SRC = neat_schema/src
 DEST = neat_schema/project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
