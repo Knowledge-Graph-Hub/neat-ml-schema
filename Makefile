@@ -14,8 +14,6 @@ SRC = neat_schema/src
 DEST = neat_schema/project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
 DOCDIR = docs
-# Added by H2
-EXCEL_DIR = $(DEST)/excel
 
 # basename of a YAML file in model/
 .PHONY: all clean
@@ -81,17 +79,9 @@ $(PYMODEL):
 $(DOCDIR):
 	mkdir -p $@
 
-# Added by H2
-$(EXCEL_DIR):
-	mkdir -p $@
-
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
-
-# Added by H2
-gen-excel: $(EXCEL_DIR)
-	$(RUN) gen-excel --output $(EXCEL_DIR)/neat_schema.xlsx $(SOURCE_SCHEMA_PATH)
 
 testdoc: gendoc serve
 
