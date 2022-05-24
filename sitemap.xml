@@ -2,962 +2,962 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ActivationEnum/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ApplyTrainedModel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ApplyTrainedModelsContainer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Boolean/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Classifier/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierCallback/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierCallbackContainer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierCallbackModeEnum/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierContainer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierFitParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/ClassifierParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Date/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Datetime/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Decimal/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Double/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/EdgeMethodEnum/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/EmbeddingsConfig/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/EnsmallenRunConfig/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Float/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/GraphDataConfiguration/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Integer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Layer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/LayerContainer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/LayerParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Metric/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/MetricContainer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/NEAT_schema/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Ncname/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/NeatConfiguration/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/NodeEmbedMethodEnum/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/NodeEmbeddingsParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/NodeType/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Nodeidentifier/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Objectidentifier/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/OptimizerEnum/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/PosNegData/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/SkLearnParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/String/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/TFKerasParams/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Target/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Time/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/TrainValidData/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Upload/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Uri/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Uriorcurie/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/about/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/activation/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/batch_size/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/callbacks/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/callbacks_list/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/classifier_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/classifier_name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/classifier_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/classifiers/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/curve/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/cutoff/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/data/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/default_edge_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/default_node_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/default_weight/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/destination/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/destinations_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/destinations_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/directed/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_ids_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_ids_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_comment_symbol/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_edge_types_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_edge_types_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_header/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_is_complete/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_is_correct/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_is_sorted/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_max_rows_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_may_contain_duplicates/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_numeric_edge_type_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_numeric_node_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_rows_to_skip/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_separator/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_list_support_balanced_quotes/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_method/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_path/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_comment_symbol/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_header/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_is_correct/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_max_rows_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_rows_to_skip/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_separator/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_list_support_balanced_quotes/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_type_path/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edge_types_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/edges_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/epochs/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/explore_weight/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/extra_args/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/filename/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/fit_config/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/graph/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/graph_data/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/history_filename/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/iterations/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/layers/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/layers_config/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/load_edge_list_in_parallel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/load_edge_type_list_in_parallel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/load_node_list_in_parallel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/load_node_type_list_in_parallel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/loss/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/max_iter/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/may_have_singleton_with_selfloops/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/may_have_singletons/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/method_name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/metrics/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/metrics_config/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/min_delta/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/minimum_edge_type_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/minimum_node_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/minimum_node_type_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/mode/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/model_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/models/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/monitor/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/neg_edge_filepath/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_embeddings_params/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_ids_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_ids_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_comment_symbol/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_header/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_is_correct/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_max_rows_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_node_types_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_node_types_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_numeric_node_type_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_rows_to_skip/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_separator/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_list_support_balanced_quotes/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_path/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_comment_symbol/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_header/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_is_correct/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_max_rows_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_rows_to_skip/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_separator/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_list_support_balanced_quotes/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_type_path/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_ids_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_ids_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/node_types_separator/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/nodes_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/nodes_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/nodes_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/numeric_edge_type_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/numeric_node_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/numeric_node_type_ids/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/optimizer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/outfile/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/parameters/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/patience/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/pos_edge_filepath/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/random_state/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/rate/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/return_weight/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/s3_bucket/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/s3_bucket_dir/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/skip_edge_types_if_unavailable/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/skip_node_types_if_unavailable/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/skip_weights_if_unavailable/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/sklearn_params/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/source/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/sources_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/sources_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/target_path/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/tf_keras_params/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/train_data/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/tsne_filename/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/types/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/units/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/valid_data/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/verbose/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/walk_length/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/weights_column/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/weights_column_number/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/window_size/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <lastmod>2022-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
