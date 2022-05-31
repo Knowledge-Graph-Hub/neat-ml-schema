@@ -281,3 +281,13 @@ Upload:
   extra_args:
     "ACL": "public-read"
     "BCL": "private-read"
+
+Source:
+  source_paths:
+    - source1: https://someremoteurl.com/graph.tar.gz
+    - source2: https://someremoteurl.com/graph2.tar.gz
+    - source3: https://someremoteurl.com/graph3.tar.gz
+  source_descs: 
+    - source1: "This file contains the necessary graph files."
+    - source2: "This file may be necessary."
+    - source3: "This file may not be necessary."
