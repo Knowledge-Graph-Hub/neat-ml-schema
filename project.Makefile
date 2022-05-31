@@ -9,3 +9,7 @@ $(EXCEL_DIR):
 
 gen-excel: $(EXCEL_DIR)
 	$(RUN) gen-excel --output $(EXCEL_DIR)/neat_schema.xlsx $(SOURCE_SCHEMA_PATH)
+
+pypi: |
+	poetry build
+	poetry publish
