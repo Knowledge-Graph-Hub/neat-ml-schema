@@ -31,6 +31,9 @@ classes:
       data:
         description: Input data for pipeline.
         range: TrainValidData
+      compressed_data:
+        description: Compressed input data for pipeline (tar.gz).
+        range: Source
 
   TrainValidData:
     description: Postive and negative training and validation graph data filepaths.
