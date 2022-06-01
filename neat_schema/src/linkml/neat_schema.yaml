@@ -318,11 +318,11 @@ classes:
       source_paths:
         description: Source file names and paths as a dictionary.
         multivalued: true
-        inlined_as_list: false
+        inlined: false
       source_descs:
         description: Source file names and descriptions as a dictionary.
         multivalued: true
-        inlined_as_list: false
+        inlined: false
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
