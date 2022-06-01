@@ -41,14 +41,15 @@ GraphDataConfiguration:
       neg_edge_filepath: tests/resources/test_graphs/neg_train_edges.tsv
 
   compressed_data:
-    path: https://someremoteurl.com/graph.tar.gz
-    desc: "This file contains the necessary graph files."
+    files:
+      - path: https://someremoteurl.com/graph.tar.gz
+        desc: "This file contains the necessary graph files."
 
-    path: https://someremoteurl.com/graph2.tar.gz
-    desc: "This file may be necessary."
-  
-    path: https://someremoteurl.com/graph3.tar.gz
-    desc: "This file may not be necessary."
+      - path: https://someremoteurl.com/graph2.tar.gz
+        desc: "This file may be necessary."
+    
+      - path: https://someremoteurl.com/graph3.tar.gz
+        desc: "This file may not be necessary."
 
   # embeddings:
   #   embedding_file_name: test_embeddings_test_yaml.csv

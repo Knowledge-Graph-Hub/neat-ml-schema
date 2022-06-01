@@ -33,7 +33,26 @@ classes:
         range: TrainValidData
       compressed_data:
         description: Compressed input data for pipeline (tar.gz).
-        range: Source
+        range: FilePathDescContainer
+  
+  FilePathDescContainer:
+    description: A container of paths and descriptions
+    attributes:
+      files:
+        multivalued: true
+        inlined_as_list: true
+        range: FilePathDesc
+
+  FilePathDesc:
+    description: Path (or url) and description of source files (tar.gz).
+    attributes:
+      path:
+        description: File path or url.
+      desc:
+        description: File description.
+  
+  
+
 
   TrainValidData:
     description: Postive and negative training and validation graph data filepaths.
@@ -311,14 +330,6 @@ classes:
     attributes:
       target_path:
         description: File path for saving results.
-  
-  Source:
-    description: Path (or url) and description of source files (tar.gz).
-    attributes:
-      path:
-        description: File path or url.
-      desc:
-        description: File description.
 
       # source_paths:
       #   description: Source file names and paths as a dictionary.
