@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "neat-schema"
 version = "0.1.5"
-description = "A linkml based schema for rhe NEAT project."
+description = "A linkml based schema for the NEAT project."
+readme = "README.md"
 authors = ["Harshad Hegde <hhegde@lbl.gov>"]
 license = "MIT"
 homepage = "https://knowledge-graph-hub.github.io/NEAT_schema/"
