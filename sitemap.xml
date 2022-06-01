@@ -96,6 +96,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/FileResource/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/FileResourceContainer/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Float/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
@@ -191,11 +201,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/Source/</loc>
-         <lastmod>2022-06-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/String/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
@@ -281,11 +286,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/compressed_data/</loc>
-         <lastmod>2022-06-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/curve/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
@@ -312,6 +312,11 @@
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/default_weight/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/desc/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -491,6 +496,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/evaluation_data/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/explore_weight/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
@@ -502,6 +512,11 @@
     </url>
     <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/filename/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/files/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -836,6 +851,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/path/</loc>
+         <lastmod>2022-06-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://knowledge-graph-hub.github.io/NEAT_schema/patience/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
@@ -896,12 +916,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/source_descs/</loc>
-         <lastmod>2022-06-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/source_paths/</loc>
+         <loc>https://knowledge-graph-hub.github.io/NEAT_schema/source_data/</loc>
          <lastmod>2022-06-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
