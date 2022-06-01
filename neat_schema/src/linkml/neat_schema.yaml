@@ -313,16 +313,23 @@ classes:
         description: File path for saving results.
   
   Source:
-    description: Paths (or urls) to source files (tar.gz).
+    description: Path (or url) and description of source files (tar.gz).
     attributes:
-      source_paths:
-        description: Source file names and paths as a dictionary.
-        multivalued: true
-        inlined: false
-      source_descs:
-        description: Source file names and descriptions as a dictionary.
-        multivalued: true
-        inlined: false
+      path:
+        description: File path or url.
+      desc:
+        description: File description.
+
+      # source_paths:
+      #   description: Source file names and paths as a dictionary.
+      #   multivalued: true
+      #   inlined: false
+      # source_descs:
+      #   description: Source file names and descriptions as a dictionary.
+      #   multivalued: true
+      #   inlined: false
+
+    
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
