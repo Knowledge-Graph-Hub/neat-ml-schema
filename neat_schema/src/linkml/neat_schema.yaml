@@ -28,31 +28,28 @@ classes:
       graph:
         description: Graph configuration for pipeline
         range: EnsmallenRunConfig
-      data:
+      evaluation_data:
         description: Input data for pipeline.
         range: TrainValidData
-      compressed_data:
+      source_data:
         description: Compressed input data for pipeline (tar.gz).
-        range: FilePathDescContainer
+        range: FileResourceContainer
   
-  FilePathDescContainer:
+  FileResourceContainer:
     description: A container of paths and descriptions
     attributes:
       files:
         multivalued: true
         inlined_as_list: true
-        range: FilePathDesc
+        range: FileResource
 
-  FilePathDesc:
+  FileResource:
     description: Path (or url) and description of source files (tar.gz).
     attributes:
       path:
         description: File path or url.
       desc:
         description: File description.
-  
-  
-
 
   TrainValidData:
     description: Postive and negative training and validation graph data filepaths.

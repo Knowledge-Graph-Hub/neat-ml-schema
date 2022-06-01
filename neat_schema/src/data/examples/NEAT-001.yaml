@@ -15,14 +15,14 @@ GraphDataConfiguration:
     destinations_column: "object"
     default_edge_type: "biolink:related_to"
 
-  data:
+  evaluation_data:
     valid_data:
       pos_edge_filepath: tests/resources/test_graphs/pos_valid_edges.tsv
       neg_edge_filepath: tests/resources/test_graphs/neg_valid_edges.tsv
     train_data:
       neg_edge_filepath: tests/resources/test_graphs/neg_train_edges.tsv
   
-  compressed_data:
+  source_data:
     files:
       - path: https://someremoteurl.com/graph.tar.gz
         desc: "This file contains the necessary graph files."
