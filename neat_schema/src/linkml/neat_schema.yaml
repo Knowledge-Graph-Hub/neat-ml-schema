@@ -28,12 +28,28 @@ classes:
       graph:
         description: Graph configuration for pipeline
         range: EnsmallenRunConfig
-      data:
+      evaluation_data:
         description: Input data for pipeline.
         range: TrainValidData
-      compressed_data:
+      source_data:
         description: Compressed input data for pipeline (tar.gz).
-        range: Source
+        range: FileResourceContainer
+  
+  FileResourceContainer:
+    description: A container of paths and descriptions
+    attributes:
+      files:
+        multivalued: true
+        inlined_as_list: true
+        range: FileResource
+
+  FileResource:
+    description: Path (or url) and description of source files (tar.gz).
+    attributes:
+      path:
+        description: File path or url.
+      desc:
+        description: File description.
 
   TrainValidData:
     description: Postive and negative training and validation graph data filepaths.
@@ -311,18 +327,17 @@ classes:
     attributes:
       target_path:
         description: File path for saving results.
-  
-  Source:
-    description: Paths (or urls) to source files (tar.gz).
-    attributes:
-      source_paths:
-        description: Source file names and paths as a dictionary.
-        multivalued: true
-        inlined: false
-      source_descs:
-        description: Source file names and descriptions as a dictionary.
-        multivalued: true
-        inlined: false
+
+      # source_paths:
+      #   description: Source file names and paths as a dictionary.
+      #   multivalued: true
+      #   inlined: false
+      # source_descs:
+      #   description: Source file names and descriptions as a dictionary.
+      #   multivalued: true
+      #   inlined: false
+
+    
 
   EnsmallenRunConfig:
     description: All params used by ensmallen's csv_reader
