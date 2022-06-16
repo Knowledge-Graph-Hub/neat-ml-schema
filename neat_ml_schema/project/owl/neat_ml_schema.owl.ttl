@@ -1,0 +1,1835 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+<https://w3id.org/neat> a owl:Ontology ;
+    rdfs:label "neat_ml_schema" ;
+    IAO:0000700 <https://w3id.org/neat/ApplyTrainedModel>,
+        <https://w3id.org/neat/ApplyTrainedModelsContainer>,
+        <https://w3id.org/neat/Classifier>,
+        <https://w3id.org/neat/ClassifierCallback>,
+        <https://w3id.org/neat/ClassifierCallbackContainer>,
+        <https://w3id.org/neat/ClassifierContainer>,
+        <https://w3id.org/neat/ClassifierFitParams>,
+        <https://w3id.org/neat/ClassifierParams>,
+        <https://w3id.org/neat/EmbeddingsConfig>,
+        <https://w3id.org/neat/EnsmallenRunConfig>,
+        <https://w3id.org/neat/FileResource>,
+        <https://w3id.org/neat/FileResourceContainer>,
+        <https://w3id.org/neat/GraphDataConfiguration>,
+        <https://w3id.org/neat/Layer>,
+        <https://w3id.org/neat/LayerContainer>,
+        <https://w3id.org/neat/LayerParams>,
+        <https://w3id.org/neat/Metric>,
+        <https://w3id.org/neat/MetricContainer>,
+        <https://w3id.org/neat/NeatConfiguration>,
+        <https://w3id.org/neat/NodeEmbeddingsParams>,
+        <https://w3id.org/neat/NodeType>,
+        <https://w3id.org/neat/PosNegData>,
+        <https://w3id.org/neat/SkLearnParams>,
+        <https://w3id.org/neat/TFKerasParams>,
+        <https://w3id.org/neat/Target>,
+        <https://w3id.org/neat/TrainValidData>,
+        <https://w3id.org/neat/Upload> ;
+    dcterms:license "https://fsf.org/" ;
+    linkml:generation_date "2022-06-16T12:10:11" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "neat_ml_schema.yaml" ;
+    linkml:source_file_date "2022-06-16T12:05:28" ;
+    linkml:source_file_size 28962 .
+
+<https://w3id.org/neat/ApplyTrainedModelsContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ApplyTrainedModelsContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/ApplyTrainedModel> ;
+            owl:onProperty <https://w3id.org/neat/models> ] ;
+    skos:definition "A container with multiple classifiers in it." .
+
+<https://w3id.org/neat/ClassifierContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/Classifier> ;
+            owl:onProperty <https://w3id.org/neat/classifiers> ] ;
+    skos:definition "A container with multiple classifiers in it." .
+
+<https://w3id.org/neat/EmbeddingsConfig> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "EmbeddingsConfig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/filename> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/history_filename> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/NodeEmbeddingsParams> ;
+            owl:onProperty <https://w3id.org/neat/node_embeddings_params> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/tsne_filename> ] ;
+    skos:definition "Embeddings configuration." .
+
+<https://w3id.org/neat/NeatConfiguration> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NeatConfiguration" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/GraphDataConfiguration> ;
+            owl:onProperty <https://w3id.org/neat/graph_data> ] ;
+    skos:definition "Root class for the schema." .
+
+<https://w3id.org/neat/Target> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Target" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/target_path> ] ;
+    skos:definition "Path for output to be saved." .
+
+<https://w3id.org/neat/Upload> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Upload" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/s3_bucket_dir> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/s3_bucket> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/neat/extra_args> ] ;
+    skos:definition "Configuration for uploading to Amazon S3 bucket." .
+
+<https://w3id.org/neat/activation> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "activation" ;
+    rdfs:range <https://w3id.org/neat/ActivationEnum> ;
+    skos:definition "Activation layer type" .
+
+<https://w3id.org/neat/callbacks> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "callbacks" ;
+    rdfs:range <https://w3id.org/neat/ClassifierCallback> ;
+    skos:definition "Callbacks." .
+
+<https://w3id.org/neat/callbacks_list> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "callbacks_list" ;
+    rdfs:range <https://w3id.org/neat/ClassifierCallbackContainer> ;
+    skos:definition "Container of callbacks." .
+
+<https://w3id.org/neat/classifier_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "classifier_id" ;
+    rdfs:range linkml:String ;
+    skos:definition "Key to identify the classifier and associated parameters." .
+
+<https://w3id.org/neat/classifier_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "classifier_name" ;
+    rdfs:range linkml:String ;
+    skos:definition "Name of the classifier." .
+
+<https://w3id.org/neat/classifier_type> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "classifier_type" ;
+    rdfs:range linkml:String ;
+    skos:definition "Type of classifier." .
+
+<https://w3id.org/neat/classifiers> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "classifiers" ;
+    rdfs:range <https://w3id.org/neat/Classifier> ;
+    skos:definition "Classifier details." .
+
+<https://w3id.org/neat/curve> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "curve" ;
+    rdfs:range linkml:String ;
+    skos:definition "Area under curve (AUC) to be calculated." .
+
+<https://w3id.org/neat/cutoff> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cutoff" ;
+    rdfs:range linkml:String ;
+    skos:definition "Cutoff filter." .
+
+<https://w3id.org/neat/default_edge_type> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "default_edge_type" ;
+    rdfs:range linkml:String ;
+    skos:definition "The edge type to be used when the edge type for a given edge in the edge file is None." .
+
+<https://w3id.org/neat/default_node_type> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "default_node_type" ;
+    rdfs:range linkml:String ;
+    skos:definition "The node type to be used when the node type for a given node in the node file is None." .
+
+<https://w3id.org/neat/default_weight> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "default_weight" ;
+    rdfs:range linkml:Float ;
+    skos:definition "The edge weight to be used when the edge weight for a given edge in the edge file is None." .
+
+<https://w3id.org/neat/desc> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "desc" ;
+    rdfs:range linkml:String ;
+    skos:definition "File description." .
+
+<https://w3id.org/neat/destination> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "destination" ;
+    rdfs:range linkml:String ;
+    skos:definition "Destination node(s)." .
+
+<https://w3id.org/neat/destinations_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "destinations_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edges file from where to load the destinaton nodes." .
+
+<https://w3id.org/neat/destinations_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "destinations_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edges file from where to load the destinaton nodes." .
+
+<https://w3id.org/neat/directed> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "directed" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the graph as directed or undirected." .
+
+<https://w3id.org/neat/edge_ids_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_ids_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edges file from where to load the edge IDs." .
+
+<https://w3id.org/neat/edge_ids_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_ids_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edges file from where to load the edge IDs." .
+
+<https://w3id.org/neat/edge_list_comment_symbol> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_comment_symbol" ;
+    rdfs:range linkml:String ;
+    skos:definition "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped." .
+
+<https://w3id.org/neat/edge_list_edge_types_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_edge_types_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edges file from where to load the edge types." .
+
+<https://w3id.org/neat/edge_list_edge_types_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_edge_types_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edges file from where to load the edge types." .
+
+<https://w3id.org/neat/edge_list_header> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_header" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edges file has an header." .
+
+<https://w3id.org/neat/edge_list_is_complete> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_is_complete" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph." .
+
+<https://w3id.org/neat/edge_list_is_correct> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_is_correct" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." .
+
+<https://w3id.org/neat/edge_list_is_sorted> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_is_sorted" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number." .
+
+<https://w3id.org/neat/edge_list_max_rows_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_max_rows_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The maximum number of lines to be loaded from the edges file." .
+
+<https://w3id.org/neat/edge_list_may_contain_duplicates> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_may_contain_duplicates" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates." .
+
+<https://w3id.org/neat/edge_list_numeric_edge_type_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_numeric_edge_type_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the edge type IDs as numeric from the edge list." .
+
+<https://w3id.org/neat/edge_list_numeric_node_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_numeric_node_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the edge node IDs as numeric from the edge list." .
+
+<https://w3id.org/neat/edge_list_rows_to_skip> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_rows_to_skip" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of rows to skip in the edge list file." .
+
+<https://w3id.org/neat/edge_list_separator> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_separator" ;
+    rdfs:range linkml:String ;
+    skos:definition "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space." .
+
+<https://w3id.org/neat/edge_list_support_balanced_quotes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_list_support_balanced_quotes" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to support balanced quotes while reading the edge list." .
+
+<https://w3id.org/neat/edge_method> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_method" ;
+    rdfs:range <https://w3id.org/neat/EdgeMethodEnum> ;
+    skos:definition "Edge method." .
+
+<https://w3id.org/neat/edge_path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_path" ;
+    rdfs:range linkml:String ;
+    skos:definition "The path to the file with the edge list." .
+
+<https://w3id.org/neat/edge_type_list_comment_symbol> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_comment_symbol" ;
+    rdfs:range linkml:String ;
+    skos:definition "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped." .
+
+<https://w3id.org/neat/edge_type_list_header> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_header" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edge type file has an header." .
+
+<https://w3id.org/neat/edge_type_list_is_correct> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_is_correct" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." .
+
+<https://w3id.org/neat/edge_type_list_max_rows_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_max_rows_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The maximum number of lines to be loaded from the edge types file." .
+
+<https://w3id.org/neat/edge_type_list_rows_to_skip> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_rows_to_skip" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of rows to skip in the edge type list file." .
+
+<https://w3id.org/neat/edge_type_list_separator> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_separator" ;
+    rdfs:range linkml:String ;
+    skos:definition "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space." .
+
+<https://w3id.org/neat/edge_type_list_support_balanced_quotes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_list_support_balanced_quotes" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to support balanced quotes while reading the edge type list." .
+
+<https://w3id.org/neat/edge_type_path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_type_path" ;
+    rdfs:range linkml:String ;
+    skos:definition "The path to the file with the unique edge type names." .
+
+<https://w3id.org/neat/edge_types_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_types_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edge types file from where to load the edge types." .
+
+<https://w3id.org/neat/edge_types_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_types_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edge types file from where to load the edge types." .
+
+<https://w3id.org/neat/edge_types_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edge_types_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure." .
+
+<https://w3id.org/neat/edges_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "edges_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The expected number of edges. Note that this must be the EXACT number of edges in the graph." .
+
+<https://w3id.org/neat/epochs> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "epochs" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of epochs to run for training." .
+
+<https://w3id.org/neat/evaluation_data> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "evaluation_data" ;
+    rdfs:range <https://w3id.org/neat/TrainValidData> ;
+    skos:definition "Input data for pipeline." .
+
+<https://w3id.org/neat/explore_weight> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "explore_weight" ;
+    rdfs:range linkml:Float ;
+    skos:definition "Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper." .
+
+<https://w3id.org/neat/extra_args> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extra_args" ;
+    rdfs:range linkml:String ;
+    skos:definition "Extra keyword arguments (**kwargs)." .
+
+<https://w3id.org/neat/filename> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "filename" ;
+    rdfs:range linkml:String ;
+    skos:definition "Embeddings file name." .
+
+<https://w3id.org/neat/files> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "files" ;
+    rdfs:range <https://w3id.org/neat/FileResource> .
+
+<https://w3id.org/neat/fit_config> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "fit_config" ;
+    rdfs:range <https://w3id.org/neat/ClassifierFitParams> ;
+    skos:definition "Configuration for model fitting." .
+
+<https://w3id.org/neat/graph> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "graph" ;
+    rdfs:range <https://w3id.org/neat/EnsmallenRunConfig> ;
+    skos:definition "Graph configuration for pipeline" .
+
+<https://w3id.org/neat/graph_data> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "graph_data" ;
+    rdfs:range <https://w3id.org/neat/GraphDataConfiguration> ;
+    skos:definition "Configuration for graph data." .
+
+<https://w3id.org/neat/iterations> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "iterations" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of iterations." .
+
+<https://w3id.org/neat/layers> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "layers" ;
+    rdfs:range <https://w3id.org/neat/Layer> ;
+    skos:definition "Container of layers to be used to build the neural network." .
+
+<https://w3id.org/neat/layers_config> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "layers_config" ;
+    rdfs:range <https://w3id.org/neat/LayerContainer> ;
+    skos:definition "Configuration for instantiating layers for neural networks." .
+
+<https://w3id.org/neat/load_edge_list_in_parallel> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "load_edge_list_in_parallel" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order." .
+
+<https://w3id.org/neat/load_edge_type_list_in_parallel> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "load_edge_type_list_in_parallel" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order." .
+
+<https://w3id.org/neat/load_node_list_in_parallel> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "load_node_list_in_parallel" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order." .
+
+<https://w3id.org/neat/load_node_type_list_in_parallel> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "load_node_type_list_in_parallel" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable." .
+
+<https://w3id.org/neat/loss> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "loss" ;
+    rdfs:range linkml:String ;
+    skos:definition "Loss function." .
+
+<https://w3id.org/neat/max_iter> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "max_iter" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Maximum iterations." .
+
+<https://w3id.org/neat/may_have_singleton_with_selfloops> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "may_have_singleton_with_selfloops" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks." .
+
+<https://w3id.org/neat/may_have_singletons> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "may_have_singletons" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks." .
+
+<https://w3id.org/neat/method_name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "method_name" ;
+    rdfs:range <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    skos:definition "Name of the node embedding method." .
+
+<https://w3id.org/neat/metrics> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "metrics" ;
+    rdfs:range <https://w3id.org/neat/Metric> ;
+    skos:definition "Metrics need to train a classifier." .
+
+<https://w3id.org/neat/metrics_config> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "metrics_config" ;
+    rdfs:range <https://w3id.org/neat/MetricContainer> ;
+    skos:definition "Metrics to be calculated after classifier training." .
+
+<https://w3id.org/neat/min_delta> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "min_delta" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement." .
+
+<https://w3id.org/neat/minimum_edge_type_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "minimum_edge_type_id" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The minimum edge type ID to be used when using numeric edge type IDs." .
+
+<https://w3id.org/neat/minimum_node_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "minimum_node_id" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The minimum node ID to be used, when loading the node IDs as numerical." .
+
+<https://w3id.org/neat/minimum_node_type_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "minimum_node_type_id" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The minimum node type ID to be used when using numeric node type IDs." .
+
+<https://w3id.org/neat/mode> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mode" ;
+    rdfs:range <https://w3id.org/neat/ClassifierCallbackModeEnum> ;
+    skos:definition "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity." .
+
+<https://w3id.org/neat/model_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "model_id" ;
+    rdfs:range linkml:String ;
+    skos:definition "Key of the model to be used." .
+
+<https://w3id.org/neat/models> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "models" ;
+    rdfs:range <https://w3id.org/neat/ApplyTrainedModel> ;
+    skos:definition "Models that need to be used for link prediction." .
+
+<https://w3id.org/neat/monitor> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "monitor" ;
+    rdfs:range linkml:String ;
+    skos:definition "Quantity to be monitored." .
+
+<https://w3id.org/neat/neg_edge_filepath> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "neg_edge_filepath" ;
+    rdfs:range linkml:String ;
+    skos:definition "Negative edges file path." .
+
+<https://w3id.org/neat/node_embeddings_params> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_embeddings_params" ;
+    rdfs:range <https://w3id.org/neat/NodeEmbeddingsParams> ;
+    skos:definition "Node embeddings parameters." .
+
+<https://w3id.org/neat/node_ids_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_ids_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the node file from where to load the node IDs." .
+
+<https://w3id.org/neat/node_ids_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_ids_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the node file from where to load the node IDs" .
+
+<https://w3id.org/neat/node_list_comment_symbol> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_comment_symbol" ;
+    rdfs:range linkml:String ;
+    skos:definition "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped." .
+
+<https://w3id.org/neat/node_list_header> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_header" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the nodes file has an header." .
+
+<https://w3id.org/neat/node_list_is_correct> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_is_correct" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." .
+
+<https://w3id.org/neat/node_list_max_rows_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_max_rows_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The maximum number of lines to be loaded from the nodes file." .
+
+<https://w3id.org/neat/node_list_node_types_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_node_types_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the node file from where to load the node types." .
+
+<https://w3id.org/neat/node_list_node_types_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_node_types_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the node file from where to load the node types." .
+
+<https://w3id.org/neat/node_list_numeric_node_type_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_numeric_node_type_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the node types IDs in the node file to be numeric." .
+
+<https://w3id.org/neat/node_list_rows_to_skip> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_rows_to_skip" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of rows to skip in the node list file." .
+
+<https://w3id.org/neat/node_list_separator> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_separator" ;
+    rdfs:range linkml:String ;
+    skos:definition "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space." .
+
+<https://w3id.org/neat/node_list_support_balanced_quotes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_list_support_balanced_quotes" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to support balanced quotes." .
+
+<https://w3id.org/neat/node_path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_path" ;
+    rdfs:range linkml:String ;
+    skos:definition "The path to the file with the unique node names." .
+
+<https://w3id.org/neat/node_type_list_comment_symbol> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_comment_symbol" ;
+    rdfs:range linkml:String ;
+    skos:definition "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped." .
+
+<https://w3id.org/neat/node_type_list_header> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_header" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the node type file has an header." .
+
+<https://w3id.org/neat/node_type_list_is_correct> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_is_correct" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." .
+
+<https://w3id.org/neat/node_type_list_max_rows_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_max_rows_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The maximum number of lines to be loaded from the node types file." .
+
+<https://w3id.org/neat/node_type_list_rows_to_skip> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_rows_to_skip" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header." .
+
+<https://w3id.org/neat/node_type_list_separator> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_separator" ;
+    rdfs:range linkml:String ;
+    skos:definition "The separator to use for the node types file." .
+
+<https://w3id.org/neat/node_type_list_support_balanced_quotes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_list_support_balanced_quotes" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to support balanced quotes." .
+
+<https://w3id.org/neat/node_type_path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_type_path" ;
+    rdfs:range linkml:String ;
+    skos:definition "The path to the file with the unique node type names." .
+
+<https://w3id.org/neat/node_types> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types" ;
+    rdfs:range <https://w3id.org/neat/NodeType> ;
+    skos:definition "Type of nodes." .
+
+<https://w3id.org/neat/node_types_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "Node type column name." .
+
+<https://w3id.org/neat/node_types_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Node type column number." .
+
+<https://w3id.org/neat/node_types_ids_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_ids_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "Node type ID column name." .
+
+<https://w3id.org/neat/node_types_ids_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_ids_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Node type ID column number." .
+
+<https://w3id.org/neat/node_types_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the unique node types. This will be used in order to allocate the correct size for the data structure." .
+
+<https://w3id.org/neat/node_types_separator> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "node_types_separator" ;
+    rdfs:range linkml:String ;
+    skos:definition "The node types separator." .
+
+<https://w3id.org/neat/nodes_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nodes_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the node file from where to load the node names." .
+
+<https://w3id.org/neat/nodes_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nodes_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the node file from where to load the node names." .
+
+<https://w3id.org/neat/nodes_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "nodes_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph." .
+
+<https://w3id.org/neat/numeric_edge_type_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "numeric_edge_type_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation." .
+
+<https://w3id.org/neat/numeric_node_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "numeric_node_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to load the numeric node IDs as numeric." .
+
+<https://w3id.org/neat/numeric_node_type_ids> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "numeric_node_type_ids" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation." .
+
+<https://w3id.org/neat/optimizer> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "optimizer" ;
+    rdfs:range <https://w3id.org/neat/OptimizerEnum> ;
+    skos:definition "Optimizer function to be used during classifier training." .
+
+<https://w3id.org/neat/path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "path" ;
+    rdfs:range linkml:String ;
+    skos:definition "File path or url." .
+
+<https://w3id.org/neat/patience> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "patience" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of epochs with no improvement after which training will be stopped." .
+
+<https://w3id.org/neat/pos_edge_filepath> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pos_edge_filepath" ;
+    rdfs:range linkml:String ;
+    skos:definition "Positive edges file path." .
+
+<https://w3id.org/neat/random_state> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "random_state" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Random seed." .
+
+<https://w3id.org/neat/rate> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rate" ;
+    rdfs:range linkml:Float .
+
+<https://w3id.org/neat/return_weight> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "return_weight" ;
+    rdfs:range linkml:Float ;
+    skos:definition "Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper." .
+
+<https://w3id.org/neat/s3_bucket> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "s3_bucket" ;
+    rdfs:range linkml:String ;
+    skos:definition "Bucket name." .
+
+<https://w3id.org/neat/s3_bucket_dir> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "s3_bucket_dir" ;
+    rdfs:range linkml:String ;
+    skos:definition "Bucket path." .
+
+<https://w3id.org/neat/skip_edge_types_if_unavailable> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "skip_edge_types_if_unavailable" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to skip the edge types without raising an error if these are unavailable." .
+
+<https://w3id.org/neat/skip_node_types_if_unavailable> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "skip_node_types_if_unavailable" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to skip the node types without raising an error if these are unavailable." .
+
+<https://w3id.org/neat/skip_weights_if_unavailable> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "skip_weights_if_unavailable" ;
+    rdfs:range linkml:Boolean ;
+    skos:definition "Whether to skip the weights without raising an error if these are unavailable." .
+
+<https://w3id.org/neat/sklearn_params> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sklearn_params" ;
+    rdfs:range <https://w3id.org/neat/SkLearnParams> ;
+    skos:definition "Parameters specific to sklearn." .
+
+<https://w3id.org/neat/source> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source" ;
+    rdfs:range linkml:String ;
+    skos:definition "Source node(s)." .
+
+<https://w3id.org/neat/source_data> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source_data" ;
+    rdfs:range <https://w3id.org/neat/FileResourceContainer> ;
+    skos:definition "Compressed input data for pipeline (tar.gz)." .
+
+<https://w3id.org/neat/sources_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sources_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edges file from where to load the source nodes." .
+
+<https://w3id.org/neat/sources_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sources_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edges file from where to load the source nodes." .
+
+<https://w3id.org/neat/target_path> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_path" ;
+    rdfs:range linkml:String ;
+    skos:definition "File path for saving results." .
+
+<https://w3id.org/neat/tf_keras_params> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tf_keras_params" ;
+    rdfs:range <https://w3id.org/neat/TFKerasParams> ;
+    skos:definition "Parameters specific to Tensorflow/Keras" .
+
+<https://w3id.org/neat/train_data> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "train_data" ;
+    rdfs:range <https://w3id.org/neat/PosNegData> ;
+    skos:definition "Positive and negative graph data for ML training." .
+
+<https://w3id.org/neat/tsne_filename> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tsne_filename" ;
+    rdfs:range linkml:String ;
+    skos:definition "File name for the TSNE plot." .
+
+<https://w3id.org/neat/units> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "units" ;
+    rdfs:range linkml:Integer .
+
+<https://w3id.org/neat/valid_data> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "valid_data" ;
+    rdfs:range <https://w3id.org/neat/PosNegData> ;
+    skos:definition "Positive and negative graph data for ML validation." .
+
+<https://w3id.org/neat/walk_length> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "walk_length" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Maximal length of the walks." .
+
+<https://w3id.org/neat/weights_column> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "weights_column" ;
+    rdfs:range linkml:String ;
+    skos:definition "The name of the column of the edges file from where to load the edge weights." .
+
+<https://w3id.org/neat/weights_column_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "weights_column_number" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The number of the column of the edges file from where to load the edge weights." .
+
+<https://w3id.org/neat/window_size> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "window_size" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Size of the context and target nodes for node2vec." .
+
+<https://w3id.org/neat/ActivationEnum#linear> a owl:Class,
+        <https://w3id.org/neat/ActivationEnum> ;
+    rdfs:label "linear" .
+
+<https://w3id.org/neat/ActivationEnum#relu> a owl:Class,
+        <https://w3id.org/neat/ActivationEnum> ;
+    rdfs:label "relu" .
+
+<https://w3id.org/neat/ActivationEnum#sigmoid> a owl:Class,
+        <https://w3id.org/neat/ActivationEnum> ;
+    rdfs:label "sigmoid" .
+
+<https://w3id.org/neat/ActivationEnum#softmax> a owl:Class,
+        <https://w3id.org/neat/ActivationEnum> ;
+    rdfs:label "softmax" .
+
+<https://w3id.org/neat/ActivationEnum#tanh> a owl:Class,
+        <https://w3id.org/neat/ActivationEnum> ;
+    rdfs:label "tanh" .
+
+<https://w3id.org/neat/ClassifierCallbackModeEnum#auto> a owl:Class,
+        <https://w3id.org/neat/ClassifierCallbackModeEnum> ;
+    rdfs:label "auto" .
+
+<https://w3id.org/neat/ClassifierCallbackModeEnum#max> a owl:Class,
+        <https://w3id.org/neat/ClassifierCallbackModeEnum> ;
+    rdfs:label "max" .
+
+<https://w3id.org/neat/ClassifierCallbackModeEnum#min> a owl:Class,
+        <https://w3id.org/neat/ClassifierCallbackModeEnum> ;
+    rdfs:label "min" .
+
+<https://w3id.org/neat/ClassifierParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/TFKerasParams> ;
+            owl:onProperty <https://w3id.org/neat/tf_keras_params> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/SkLearnParams> ;
+            owl:onProperty <https://w3id.org/neat/sklearn_params> ] ;
+    skos:definition "Parameters needed to define a classifier." .
+
+<https://w3id.org/neat/EdgeMethodEnum#AbsoluteL1> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "AbsoluteL1" .
+
+<https://w3id.org/neat/EdgeMethodEnum#Average> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "Average" .
+
+<https://w3id.org/neat/EdgeMethodEnum#Hadamard> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "Hadamard" .
+
+<https://w3id.org/neat/EdgeMethodEnum#L1> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "L1" .
+
+<https://w3id.org/neat/EdgeMethodEnum#L2> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "L2" .
+
+<https://w3id.org/neat/EdgeMethodEnum#Sum> a owl:Class,
+        <https://w3id.org/neat/EdgeMethodEnum> ;
+    rdfs:label "Sum" .
+
+<https://w3id.org/neat/LayerParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "LayerParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/ActivationEnum> ;
+            owl:onProperty <https://w3id.org/neat/activation> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/units> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty <https://w3id.org/neat/rate> ] ;
+    skos:definition "Parameters for each layer of a neural network." .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#CBOW> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "CBOW" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#GloVe> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "GloVe" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#Siamese> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "Siamese" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#SimplE> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "SimplE" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#SkipGram> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "SkipGram" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#TransE> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "TransE" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#TransH> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "TransH" .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum#TransR> a owl:Class,
+        <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+    rdfs:label "TransR" .
+
+<https://w3id.org/neat/OptimizerEnum#adagrad> a owl:Class,
+        <https://w3id.org/neat/OptimizerEnum> ;
+    rdfs:label "adagrad" .
+
+<https://w3id.org/neat/OptimizerEnum#adam> a owl:Class,
+        <https://w3id.org/neat/OptimizerEnum> ;
+    rdfs:label "adam" .
+
+<https://w3id.org/neat/OptimizerEnum#adamax> a owl:Class,
+        <https://w3id.org/neat/OptimizerEnum> ;
+    rdfs:label "adamax" .
+
+<https://w3id.org/neat/OptimizerEnum#nadam> a owl:Class,
+        <https://w3id.org/neat/OptimizerEnum> ;
+    rdfs:label "nadam" .
+
+<https://w3id.org/neat/OptimizerEnum#sgd> a owl:Class,
+        <https://w3id.org/neat/OptimizerEnum> ;
+    rdfs:label "sgd" .
+
+<https://w3id.org/neat/batch_size> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/history_filename> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/name> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/outfile> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/parameters> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/verbose> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/ApplyTrainedModel> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ApplyTrainedModel" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/cutoff> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/outfile> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/model_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/NodeType> ;
+            owl:onProperty <https://w3id.org/neat/node_types> ] ;
+    skos:definition "Trained model used for prediction." .
+
+<https://w3id.org/neat/Classifier> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Classifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/history_filename> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/classifier_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/classifier_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/outfile> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/ClassifierParams> ;
+            owl:onProperty <https://w3id.org/neat/parameters> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/classifier_name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/EdgeMethodEnum> ;
+            owl:onProperty <https://w3id.org/neat/edge_method> ] ;
+    skos:definition "ML classifiers to be trained-tested-validated and applied for predictions." .
+
+<https://w3id.org/neat/ClassifierCallback> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierCallback" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/verbose> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/monitor> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/min_delta> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/patience> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/ClassifierCallbackModeEnum> ;
+            owl:onProperty <https://w3id.org/neat/mode> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/type> ] ;
+    skos:definition "Utilities called at certain points during model training." .
+
+<https://w3id.org/neat/ClassifierCallbackContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierCallbackContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/ClassifierCallback> ;
+            owl:onProperty <https://w3id.org/neat/callbacks> ] ;
+    skos:definition "A container of classifier callbacks." .
+
+<https://w3id.org/neat/ClassifierFitParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ClassifierFitParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/epochs> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/ClassifierCallbackContainer> ;
+            owl:onProperty <https://w3id.org/neat/callbacks_list> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/batch_size> ] ;
+    skos:definition "Paramters for fitting a classifier." .
+
+<https://w3id.org/neat/EnsmallenRunConfig> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "EnsmallenRunConfig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/nodes_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_support_balanced_quotes> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_support_balanced_quotes> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty <https://w3id.org/neat/default_weight> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_max_rows_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/may_have_singleton_with_selfloops> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/numeric_node_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_type_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_is_complete> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/load_edge_type_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/destinations_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_types_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/minimum_node_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_list_edge_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_types_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_list_max_rows_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_list_edge_types_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_list_node_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_list_rows_to_skip> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/nodes_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_rows_to_skip> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_types_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_types_ids_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_ids_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_list_node_types_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_type_path> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_types_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_numeric_node_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_list_support_balanced_quotes> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/default_node_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_max_rows_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_types_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_list_rows_to_skip> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/numeric_edge_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_types_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/weights_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/minimum_node_type_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/load_node_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/nodes_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/default_edge_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/load_node_type_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/verbose> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_list_is_correct> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_list_max_rows_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/minimum_edge_type_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/destinations_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_support_balanced_quotes> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/directed> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_comment_symbol> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/may_have_singletons> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_rows_to_skip> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_ids_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_is_sorted> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/skip_edge_types_if_unavailable> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/sources_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/load_edge_list_in_parallel> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_list_numeric_node_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_may_contain_duplicates> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/edge_list_numeric_edge_type_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/node_type_list_header> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/node_ids_column_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/edge_type_list_separator> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/numeric_node_ids> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/sources_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/skip_node_types_if_unavailable> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/edges_number> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_types_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty <https://w3id.org/neat/skip_weights_if_unavailable> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/weights_column> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/node_list_comment_symbol> ] ;
+    skos:definition "All params used by ensmallen's csv_reader" .
+
+<https://w3id.org/neat/FileResource> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FileResource" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/desc> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/path> ] ;
+    skos:definition "Path (or url) and description of source files (tar.gz)." .
+
+<https://w3id.org/neat/FileResourceContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "FileResourceContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/FileResource> ;
+            owl:onProperty <https://w3id.org/neat/files> ] ;
+    skos:definition "A container of paths and descriptions" .
+
+<https://w3id.org/neat/GraphDataConfiguration> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GraphDataConfiguration" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/EnsmallenRunConfig> ;
+            owl:onProperty <https://w3id.org/neat/graph> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/FileResourceContainer> ;
+            owl:onProperty <https://w3id.org/neat/source_data> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/TrainValidData> ;
+            owl:onProperty <https://w3id.org/neat/evaluation_data> ] ;
+    skos:definition "Configuration for the graph training and validation data for ML pipeline." .
+
+<https://w3id.org/neat/Layer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Layer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/LayerParams> ;
+            owl:onProperty <https://w3id.org/neat/parameters> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/type> ] ;
+    skos:definition "Layers for a neural network." .
+
+<https://w3id.org/neat/LayerContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "LayerContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/Layer> ;
+            owl:onProperty <https://w3id.org/neat/layers> ] ;
+    skos:definition "A container of neural network layers." .
+
+<https://w3id.org/neat/Metric> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Metric" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/curve> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/type> ] ;
+    skos:definition "Metrics of a trained classifier (model)." .
+
+<https://w3id.org/neat/MetricContainer> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MetricContainer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/neat/Metric> ;
+            owl:onProperty <https://w3id.org/neat/metrics> ] ;
+    skos:definition "Container of metrics for a trained classifier." .
+
+<https://w3id.org/neat/NodeEmbeddingsParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NodeEmbeddingsParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/batch_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/iterations> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/window_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/walk_length> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty <https://w3id.org/neat/return_weight> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/NodeEmbedMethodEnum> ;
+            owl:onProperty <https://w3id.org/neat/method_name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty <https://w3id.org/neat/explore_weight> ] ;
+    skos:definition "Node embeddings parameters." .
+
+<https://w3id.org/neat/NodeType> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NodeType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/neat/destination> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/neat/source> ] ;
+    skos:definition "Source node or Destination node." .
+
+<https://w3id.org/neat/SkLearnParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SkLearnParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/max_iter> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/neat/random_state> ] ;
+    skos:definition "Parameters specific to the SKLearn library." .
+
+<https://w3id.org/neat/TFKerasParams> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "TFKerasParams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/loss> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/MetricContainer> ;
+            owl:onProperty <https://w3id.org/neat/metrics_config> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/OptimizerEnum> ;
+            owl:onProperty <https://w3id.org/neat/optimizer> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/ClassifierFitParams> ;
+            owl:onProperty <https://w3id.org/neat/fit_config> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/LayerContainer> ;
+            owl:onProperty <https://w3id.org/neat/layers_config> ] ;
+    skos:definition "Parameters specific to the Tensorflow Keras library." .
+
+<https://w3id.org/neat/TrainValidData> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "TrainValidData" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/PosNegData> ;
+            owl:onProperty <https://w3id.org/neat/train_data> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/neat/PosNegData> ;
+            owl:onProperty <https://w3id.org/neat/valid_data> ] ;
+    skos:definition "Postive and negative training and validation graph data filepaths." .
+
+<https://w3id.org/neat/type> a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+<https://w3id.org/neat/ClassifierCallbackModeEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "classifier_callback_mode_enum" ;
+    owl:unionOf ( <https://w3id.org/neat/ClassifierCallbackModeEnum#auto> <https://w3id.org/neat/ClassifierCallbackModeEnum#min> <https://w3id.org/neat/ClassifierCallbackModeEnum#max> ) ;
+    linkml:permissible_values <https://w3id.org/neat/ClassifierCallbackModeEnum#auto>,
+        <https://w3id.org/neat/ClassifierCallbackModeEnum#max>,
+        <https://w3id.org/neat/ClassifierCallbackModeEnum#min> .
+
+<https://w3id.org/neat/PosNegData> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PosNegData" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/neg_edge_filepath> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/neat/pos_edge_filepath> ] ;
+    skos:definition "File paths for positive an negative edge data." .
+
+<https://w3id.org/neat/ActivationEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "activation_enum" ;
+    owl:unionOf ( <https://w3id.org/neat/ActivationEnum#linear> <https://w3id.org/neat/ActivationEnum#relu> <https://w3id.org/neat/ActivationEnum#sigmoid> <https://w3id.org/neat/ActivationEnum#tanh> <https://w3id.org/neat/ActivationEnum#softmax> ) ;
+    linkml:permissible_values <https://w3id.org/neat/ActivationEnum#linear>,
+        <https://w3id.org/neat/ActivationEnum#relu>,
+        <https://w3id.org/neat/ActivationEnum#sigmoid>,
+        <https://w3id.org/neat/ActivationEnum#softmax>,
+        <https://w3id.org/neat/ActivationEnum#tanh> .
+
+<https://w3id.org/neat/OptimizerEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "optimizer_enum" ;
+    owl:unionOf ( <https://w3id.org/neat/OptimizerEnum#adagrad> <https://w3id.org/neat/OptimizerEnum#adam> <https://w3id.org/neat/OptimizerEnum#adamax> <https://w3id.org/neat/OptimizerEnum#nadam> <https://w3id.org/neat/OptimizerEnum#sgd> ) ;
+    linkml:permissible_values <https://w3id.org/neat/OptimizerEnum#adagrad>,
+        <https://w3id.org/neat/OptimizerEnum#adam>,
+        <https://w3id.org/neat/OptimizerEnum#adamax>,
+        <https://w3id.org/neat/OptimizerEnum#nadam>,
+        <https://w3id.org/neat/OptimizerEnum#sgd> .
+
+<https://w3id.org/neat/EdgeMethodEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "edge_method_enum" ;
+    owl:unionOf ( <https://w3id.org/neat/EdgeMethodEnum#Average> <https://w3id.org/neat/EdgeMethodEnum#Hadamard> <https://w3id.org/neat/EdgeMethodEnum#Sum> <https://w3id.org/neat/EdgeMethodEnum#L1> <https://w3id.org/neat/EdgeMethodEnum#L2> <https://w3id.org/neat/EdgeMethodEnum#AbsoluteL1> ) ;
+    linkml:permissible_values <https://w3id.org/neat/EdgeMethodEnum#AbsoluteL1>,
+        <https://w3id.org/neat/EdgeMethodEnum#Average>,
+        <https://w3id.org/neat/EdgeMethodEnum#Hadamard>,
+        <https://w3id.org/neat/EdgeMethodEnum#L1>,
+        <https://w3id.org/neat/EdgeMethodEnum#L2>,
+        <https://w3id.org/neat/EdgeMethodEnum#Sum> .
+
+<https://w3id.org/neat/NodeEmbedMethodEnum> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "node_embed_method_enum" ;
+    owl:unionOf ( <https://w3id.org/neat/NodeEmbedMethodEnum#SkipGram> <https://w3id.org/neat/NodeEmbedMethodEnum#CBOW> <https://w3id.org/neat/NodeEmbedMethodEnum#GloVe> <https://w3id.org/neat/NodeEmbedMethodEnum#Siamese> <https://w3id.org/neat/NodeEmbedMethodEnum#TransE> <https://w3id.org/neat/NodeEmbedMethodEnum#SimplE> <https://w3id.org/neat/NodeEmbedMethodEnum#TransH> <https://w3id.org/neat/NodeEmbedMethodEnum#TransR> ) ;
+    linkml:permissible_values <https://w3id.org/neat/NodeEmbedMethodEnum#CBOW>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#GloVe>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#Siamese>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#SimplE>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#SkipGram>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#TransE>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#TransH>,
+        <https://w3id.org/neat/NodeEmbedMethodEnum#TransR> .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+

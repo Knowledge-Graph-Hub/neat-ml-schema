@@ -4,4 +4,4 @@
 
 ## Create a Pull Request (PR)
 
-Thank you for contributing to NEAT_schema
+Thank you for contributing to neat_ml_schema

@@ -26,7 +26,7 @@ URI: [https://w3id.org/neat/:TrainValidData](https://w3id.org/neat/:TrainValidDa
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [GraphDataConfiguration](GraphDataConfiguration.md) | [data](data.md) | range | TrainValidData |
+| [GraphDataConfiguration](GraphDataConfiguration.md) | [evaluation_data](evaluation_data.md) | range | TrainValidData |
 
 
 

@@ -1,0 +1,966 @@
+{
+   "$defs": {
+      "ActivationEnum": {
+         "description": "Enums containing possible values for activation functions.",
+         "enum": [
+            "linear",
+            "relu",
+            "sigmoid",
+            "tanh",
+            "softmax"
+         ],
+         "title": "ActivationEnum",
+         "type": "string"
+      },
+      "ApplyTrainedModel": {
+         "additionalProperties": false,
+         "description": "Trained model used for prediction.",
+         "properties": {
+            "cutoff": {
+               "description": "Cutoff filter.",
+               "type": "string"
+            },
+            "model_id": {
+               "description": "Key of the model to be used.",
+               "type": "string"
+            },
+            "node_types": {
+               "$ref": "#/$defs/NodeType",
+               "description": "Type of nodes."
+            },
+            "outfile": {
+               "description": "File path for saving results.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ApplyTrainedModel",
+         "type": "object"
+      },
+      "ApplyTrainedModelsContainer": {
+         "additionalProperties": false,
+         "description": "A container with multiple classifiers in it.",
+         "properties": {
+            "models": {
+               "description": "Models that need to be used for link prediction.",
+               "items": {
+                  "$ref": "#/$defs/ApplyTrainedModel"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ApplyTrainedModelsContainer",
+         "type": "object"
+      },
+      "Classifier": {
+         "additionalProperties": false,
+         "description": "ML classifiers to be trained-tested-validated and applied for predictions.",
+         "properties": {
+            "classifier_id": {
+               "description": "Key to identify the classifier and associated parameters.",
+               "type": "string"
+            },
+            "classifier_name": {
+               "description": "Name of the classifier.",
+               "type": "string"
+            },
+            "classifier_type": {
+               "description": "Type of classifier.",
+               "type": "string"
+            },
+            "edge_method": {
+               "$ref": "#/$defs/EdgeMethodEnum",
+               "description": "Edge method."
+            },
+            "history_filename": {
+               "description": "File name for saving history.",
+               "type": "string"
+            },
+            "outfile": {
+               "description": "Fie path for saving output.",
+               "type": "string"
+            },
+            "parameters": {
+               "$ref": "#/$defs/ClassifierParams",
+               "description": "Parameters to be passed for building classifier."
+            }
+         },
+         "required": [],
+         "title": "Classifier",
+         "type": "object"
+      },
+      "ClassifierCallback": {
+         "additionalProperties": false,
+         "description": "Utilities called at certain points during model training.",
+         "properties": {
+            "min_delta": {
+               "description": "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.",
+               "type": "integer"
+            },
+            "mode": {
+               "$ref": "#/$defs/ClassifierCallbackModeEnum",
+               "description": "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity."
+            },
+            "monitor": {
+               "description": "Quantity to be monitored.",
+               "type": "string"
+            },
+            "patience": {
+               "description": "Number of epochs with no improvement after which training will be stopped.",
+               "type": "integer"
+            },
+            "type": {
+               "description": "Type of callback.",
+               "type": "string"
+            },
+            "verbose": {
+               "description": "Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action.",
+               "type": "boolean"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallback",
+         "type": "object"
+      },
+      "ClassifierCallbackContainer": {
+         "additionalProperties": false,
+         "description": "A container of classifier callbacks.",
+         "properties": {
+            "callbacks": {
+               "description": "Callbacks.",
+               "items": {
+                  "$ref": "#/$defs/ClassifierCallback"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassifierCallbackContainer",
+         "type": "object"
+      },
+      "ClassifierCallbackModeEnum": {
+         "description": "Callback modes while fitting a classifier.",
+         "enum": [
+            "auto",
+            "min",
+            "max"
+         ],
+         "title": "ClassifierCallbackModeEnum",
+         "type": "string"
+      },
+      "ClassifierContainer": {
+         "additionalProperties": false,
+         "description": "A container with multiple classifiers in it.",
+         "properties": {
+            "classifiers": {
+               "description": "Classifier details.",
+               "items": {
+                  "$ref": "#/$defs/Classifier"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassifierContainer",
+         "type": "object"
+      },
+      "ClassifierFitParams": {
+         "additionalProperties": false,
+         "description": "Paramters for fitting a classifier.",
+         "properties": {
+            "batch_size": {
+               "type": "integer"
+            },
+            "callbacks_list": {
+               "$ref": "#/$defs/ClassifierCallbackContainer",
+               "description": "Container of callbacks."
+            },
+            "epochs": {
+               "description": "Number of epochs to run for training.",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ClassifierFitParams",
+         "type": "object"
+      },
+      "ClassifierParams": {
+         "additionalProperties": false,
+         "description": "Parameters needed to define a classifier.",
+         "properties": {
+            "sklearn_params": {
+               "$ref": "#/$defs/SkLearnParams",
+               "description": "Parameters specific to sklearn."
+            },
+            "tf_keras_params": {
+               "$ref": "#/$defs/TFKerasParams",
+               "description": "Parameters specific to Tensorflow/Keras"
+            }
+         },
+         "required": [],
+         "title": "ClassifierParams",
+         "type": "object"
+      },
+      "EdgeMethodEnum": {
+         "description": "Enums containing possible values for node edge methods.",
+         "enum": [
+            "Average",
+            "Hadamard",
+            "Sum",
+            "L1",
+            "L2",
+            "AbsoluteL1"
+         ],
+         "title": "EdgeMethodEnum",
+         "type": "string"
+      },
+      "EmbeddingsConfig": {
+         "additionalProperties": false,
+         "description": "Embeddings configuration.",
+         "properties": {
+            "filename": {
+               "description": "Embeddings file name.",
+               "type": "string"
+            },
+            "history_filename": {
+               "description": "Embeddings history file name.",
+               "type": "string"
+            },
+            "node_embeddings_params": {
+               "$ref": "#/$defs/NodeEmbeddingsParams",
+               "description": "Node embeddings parameters."
+            },
+            "tsne_filename": {
+               "description": "File name for the TSNE plot.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "EmbeddingsConfig",
+         "type": "object"
+      },
+      "EnsmallenRunConfig": {
+         "additionalProperties": false,
+         "description": "All params used by ensmallen's csv_reader",
+         "properties": {
+            "default_edge_type": {
+               "description": "The edge type to be used when the edge type for a given edge in the edge file is None.",
+               "type": "string"
+            },
+            "default_node_type": {
+               "description": "The node type to be used when the node type for a given node in the node file is None.",
+               "type": "string"
+            },
+            "default_weight": {
+               "description": "The edge weight to be used when the edge weight for a given edge in the edge file is None.",
+               "type": "number"
+            },
+            "destinations_column": {
+               "description": "The name of the column of the edges file from where to load the destinaton nodes.",
+               "type": "string"
+            },
+            "destinations_column_number": {
+               "description": "The number of the column of the edges file from where to load the destinaton nodes.",
+               "type": "integer"
+            },
+            "directed": {
+               "description": "Whether to load the graph as directed or undirected.",
+               "type": "boolean"
+            },
+            "edge_ids_column": {
+               "description": "The name of the column of the edges file from where to load the edge IDs.",
+               "type": "string"
+            },
+            "edge_ids_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge IDs.",
+               "type": "integer"
+            },
+            "edge_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.",
+               "type": "string"
+            },
+            "edge_list_edge_types_column": {
+               "description": "The name of the column of the edges file from where to load the edge types.",
+               "type": "string"
+            },
+            "edge_list_edge_types_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge types.",
+               "type": "integer"
+            },
+            "edge_list_header": {
+               "description": "Whether the edges file has an header.",
+               "type": "boolean"
+            },
+            "edge_list_is_complete": {
+               "description": "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.",
+               "type": "boolean"
+            },
+            "edge_list_is_correct": {
+               "description": "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
+               "type": "boolean"
+            },
+            "edge_list_is_sorted": {
+               "description": "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.",
+               "type": "boolean"
+            },
+            "edge_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the edges file.",
+               "type": "integer"
+            },
+            "edge_list_may_contain_duplicates": {
+               "description": "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.",
+               "type": "boolean"
+            },
+            "edge_list_numeric_edge_type_ids": {
+               "description": "Whether to load the edge type IDs as numeric from the edge list.",
+               "type": "boolean"
+            },
+            "edge_list_numeric_node_ids": {
+               "description": "Whether to load the edge node IDs as numeric from the edge list.",
+               "type": "boolean"
+            },
+            "edge_list_rows_to_skip": {
+               "description": "Number of rows to skip in the edge list file.",
+               "type": "integer"
+            },
+            "edge_list_separator": {
+               "description": "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
+               "type": "string"
+            },
+            "edge_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes while reading the edge list.",
+               "type": "boolean"
+            },
+            "edge_path": {
+               "description": "The path to the file with the edge list.",
+               "type": "string"
+            },
+            "edge_type_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.",
+               "type": "string"
+            },
+            "edge_type_list_header": {
+               "description": "Whether the edge type file has an header.",
+               "type": "boolean"
+            },
+            "edge_type_list_is_correct": {
+               "description": "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
+               "type": "boolean"
+            },
+            "edge_type_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the edge types file.",
+               "type": "integer"
+            },
+            "edge_type_list_rows_to_skip": {
+               "description": "Number of rows to skip in the edge type list file.",
+               "type": "integer"
+            },
+            "edge_type_list_separator": {
+               "description": "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.",
+               "type": "string"
+            },
+            "edge_type_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes while reading the edge type list.",
+               "type": "boolean"
+            },
+            "edge_type_path": {
+               "description": "The path to the file with the unique edge type names.",
+               "type": "string"
+            },
+            "edge_types_column": {
+               "description": "The name of the column of the edge types file from where to load the edge types.",
+               "type": "string"
+            },
+            "edge_types_column_number": {
+               "description": "The number of the column of the edge types file from where to load the edge types.",
+               "type": "integer"
+            },
+            "edge_types_number": {
+               "description": "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.",
+               "type": "integer"
+            },
+            "edges_number": {
+               "description": "The expected number of edges. Note that this must be the EXACT number of edges in the graph.",
+               "type": "integer"
+            },
+            "load_edge_list_in_parallel": {
+               "description": "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.",
+               "type": "boolean"
+            },
+            "load_edge_type_list_in_parallel": {
+               "description": "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.",
+               "type": "boolean"
+            },
+            "load_node_list_in_parallel": {
+               "description": "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.",
+               "type": "boolean"
+            },
+            "load_node_type_list_in_parallel": {
+               "description": "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.",
+               "type": "boolean"
+            },
+            "may_have_singleton_with_selfloops": {
+               "description": "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
+               "type": "boolean"
+            },
+            "may_have_singletons": {
+               "description": "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.",
+               "type": "boolean"
+            },
+            "minimum_edge_type_id": {
+               "description": "The minimum edge type ID to be used when using numeric edge type IDs.",
+               "type": "integer"
+            },
+            "minimum_node_id": {
+               "description": "The minimum node ID to be used, when loading the node IDs as numerical.",
+               "type": "integer"
+            },
+            "minimum_node_type_id": {
+               "description": "The minimum node type ID to be used when using numeric node type IDs.",
+               "type": "integer"
+            },
+            "name": {
+               "type": "string"
+            },
+            "node_ids_column": {
+               "description": "The name of the column of the node file from where to load the node IDs.",
+               "type": "string"
+            },
+            "node_ids_column_number": {
+               "description": "The number of the column of the node file from where to load the node IDs",
+               "type": "integer"
+            },
+            "node_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.",
+               "type": "string"
+            },
+            "node_list_header": {
+               "description": "Whether the nodes file has an header.",
+               "type": "boolean"
+            },
+            "node_list_is_correct": {
+               "description": "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
+               "type": "boolean"
+            },
+            "node_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the nodes file.",
+               "type": "integer"
+            },
+            "node_list_node_types_column": {
+               "description": "The name of the column of the node file from where to load the node types.",
+               "type": "string"
+            },
+            "node_list_node_types_column_number": {
+               "description": "The number of the column of the node file from where to load the node types.",
+               "type": "integer"
+            },
+            "node_list_numeric_node_type_ids": {
+               "description": "Whether to load the node types IDs in the node file to be numeric.",
+               "type": "boolean"
+            },
+            "node_list_rows_to_skip": {
+               "description": "Number of rows to skip in the node list file.",
+               "type": "integer"
+            },
+            "node_list_separator": {
+               "description": "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space.",
+               "type": "string"
+            },
+            "node_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes.",
+               "type": "boolean"
+            },
+            "node_path": {
+               "description": "The path to the file with the unique node names.",
+               "type": "string"
+            },
+            "node_type_list_comment_symbol": {
+               "description": "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.",
+               "type": "string"
+            },
+            "node_type_list_header": {
+               "description": "Whether the node type file has an header.",
+               "type": "boolean"
+            },
+            "node_type_list_is_correct": {
+               "description": "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.",
+               "type": "boolean"
+            },
+            "node_type_list_max_rows_number": {
+               "description": "The maximum number of lines to be loaded from the node types file.",
+               "type": "integer"
+            },
+            "node_type_list_rows_to_skip": {
+               "description": "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header.",
+               "type": "integer"
+            },
+            "node_type_list_separator": {
+               "description": "The separator to use for the node types file.",
+               "type": "string"
+            },
+            "node_type_list_support_balanced_quotes": {
+               "description": "Whether to support balanced quotes.",
+               "type": "boolean"
+            },
+            "node_type_path": {
+               "description": "The path to the file with the unique node type names.",
+               "type": "string"
+            },
+            "node_types_column": {
+               "description": "Node type column name.",
+               "type": "string"
+            },
+            "node_types_column_number": {
+               "description": "Node type column number.",
+               "type": "integer"
+            },
+            "node_types_ids_column": {
+               "description": "Node type ID column name.",
+               "type": "string"
+            },
+            "node_types_ids_column_number": {
+               "description": "Node type ID column number.",
+               "type": "integer"
+            },
+            "node_types_number": {
+               "description": "The number of the unique node types. This will be used in order to allocate the correct size for the data structure.",
+               "type": "integer"
+            },
+            "node_types_separator": {
+               "description": "The node types separator.",
+               "type": "string"
+            },
+            "nodes_column": {
+               "description": "The name of the column of the node file from where to load the node names.",
+               "type": "string"
+            },
+            "nodes_column_number": {
+               "description": "The number of the column of the node file from where to load the node names.",
+               "type": "integer"
+            },
+            "nodes_number": {
+               "description": "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.",
+               "type": "integer"
+            },
+            "numeric_edge_type_ids": {
+               "description": "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
+               "type": "boolean"
+            },
+            "numeric_node_ids": {
+               "description": "Whether to load the numeric node IDs as numeric.",
+               "type": "boolean"
+            },
+            "numeric_node_type_ids": {
+               "description": "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.",
+               "type": "boolean"
+            },
+            "skip_edge_types_if_unavailable": {
+               "description": "Whether to skip the edge types without raising an error if these are unavailable.",
+               "type": "boolean"
+            },
+            "skip_node_types_if_unavailable": {
+               "description": "Whether to skip the node types without raising an error if these are unavailable.",
+               "type": "boolean"
+            },
+            "skip_weights_if_unavailable": {
+               "description": "Whether to skip the weights without raising an error if these are unavailable.",
+               "type": "boolean"
+            },
+            "sources_column": {
+               "description": "The name of the column of the edges file from where to load the source nodes.",
+               "type": "string"
+            },
+            "sources_column_number": {
+               "description": "The number of the column of the edges file from where to load the source nodes.",
+               "type": "integer"
+            },
+            "verbose": {
+               "description": "Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.",
+               "type": "boolean"
+            },
+            "weights_column": {
+               "description": "The name of the column of the edges file from where to load the edge weights.",
+               "type": "string"
+            },
+            "weights_column_number": {
+               "description": "The number of the column of the edges file from where to load the edge weights.",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "EnsmallenRunConfig",
+         "type": "object"
+      },
+      "FileResource": {
+         "additionalProperties": false,
+         "description": "Path (or url) and description of source files (tar.gz).",
+         "properties": {
+            "desc": {
+               "description": "File description.",
+               "type": "string"
+            },
+            "path": {
+               "description": "File path or url.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "FileResource",
+         "type": "object"
+      },
+      "FileResourceContainer": {
+         "additionalProperties": false,
+         "description": "A container of paths and descriptions",
+         "properties": {
+            "files": {
+               "items": {
+                  "$ref": "#/$defs/FileResource"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "FileResourceContainer",
+         "type": "object"
+      },
+      "GraphDataConfiguration": {
+         "additionalProperties": false,
+         "description": "Configuration for the graph training and validation data for ML pipeline.",
+         "properties": {
+            "evaluation_data": {
+               "$ref": "#/$defs/TrainValidData",
+               "description": "Input data for pipeline."
+            },
+            "graph": {
+               "$ref": "#/$defs/EnsmallenRunConfig",
+               "description": "Graph configuration for pipeline"
+            },
+            "source_data": {
+               "$ref": "#/$defs/FileResourceContainer",
+               "description": "Compressed input data for pipeline (tar.gz)."
+            }
+         },
+         "required": [],
+         "title": "GraphDataConfiguration",
+         "type": "object"
+      },
+      "Layer": {
+         "additionalProperties": false,
+         "description": "Layers for a neural network.",
+         "properties": {
+            "parameters": {
+               "$ref": "#/$defs/LayerParams"
+            },
+            "type": {
+               "description": "Type of layer.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Layer",
+         "type": "object"
+      },
+      "LayerContainer": {
+         "additionalProperties": false,
+         "description": "A container of neural network layers.",
+         "properties": {
+            "layers": {
+               "description": "Container of layers to be used to build the neural network.",
+               "items": {
+                  "$ref": "#/$defs/Layer"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "LayerContainer",
+         "type": "object"
+      },
+      "LayerParams": {
+         "additionalProperties": false,
+         "description": "Parameters for each layer of a neural network.",
+         "properties": {
+            "activation": {
+               "$ref": "#/$defs/ActivationEnum",
+               "description": "Activation layer type"
+            },
+            "rate": {
+               "type": "number"
+            },
+            "units": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "LayerParams",
+         "type": "object"
+      },
+      "Metric": {
+         "additionalProperties": false,
+         "description": "Metrics of a trained classifier (model).",
+         "properties": {
+            "curve": {
+               "description": "Area under curve (AUC) to be calculated.",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Metric",
+         "type": "object"
+      },
+      "MetricContainer": {
+         "additionalProperties": false,
+         "description": "Container of metrics for a trained classifier.",
+         "properties": {
+            "metrics": {
+               "description": "Metrics need to train a classifier.",
+               "items": {
+                  "$ref": "#/$defs/Metric"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "MetricContainer",
+         "type": "object"
+      },
+      "NeatConfiguration": {
+         "additionalProperties": false,
+         "description": "Root class for the schema.",
+         "properties": {
+            "graph_data": {
+               "$ref": "#/$defs/GraphDataConfiguration",
+               "description": "Configuration for graph data."
+            }
+         },
+         "required": [],
+         "title": "NeatConfiguration",
+         "type": "object"
+      },
+      "NodeEmbedMethodEnum": {
+         "description": "Enums containing possible values for node embedding methods.",
+         "enum": [
+            "SkipGram",
+            "CBOW",
+            "GloVe",
+            "Siamese",
+            "TransE",
+            "SimplE",
+            "TransH",
+            "TransR"
+         ],
+         "title": "NodeEmbedMethodEnum",
+         "type": "string"
+      },
+      "NodeEmbeddingsParams": {
+         "additionalProperties": false,
+         "description": "Node embeddings parameters.",
+         "properties": {
+            "batch_size": {
+               "description": "Number of nodes to include in a single batch.",
+               "type": "integer"
+            },
+            "explore_weight": {
+               "description": "Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper.",
+               "type": "number"
+            },
+            "iterations": {
+               "description": "Number of iterations.",
+               "type": "integer"
+            },
+            "method_name": {
+               "$ref": "#/$defs/NodeEmbedMethodEnum",
+               "description": "Name of the node embedding method."
+            },
+            "return_weight": {
+               "description": "Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper.",
+               "type": "number"
+            },
+            "walk_length": {
+               "description": "Maximal length of the walks.",
+               "type": "integer"
+            },
+            "window_size": {
+               "description": "Size of the context and target nodes for node2vec.",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "NodeEmbeddingsParams",
+         "type": "object"
+      },
+      "NodeType": {
+         "additionalProperties": false,
+         "description": "Source node or Destination node.",
+         "properties": {
+            "destination": {
+               "description": "Destination node(s).",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "description": "Source node(s).",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "NodeType",
+         "type": "object"
+      },
+      "OptimizerEnum": {
+         "description": "Optimizers that can be implemented in the neural network.",
+         "enum": [
+            "adagrad",
+            "adam",
+            "adamax",
+            "nadam",
+            "sgd"
+         ],
+         "title": "OptimizerEnum",
+         "type": "string"
+      },
+      "PosNegData": {
+         "additionalProperties": false,
+         "description": "File paths for positive an negative edge data.",
+         "properties": {
+            "neg_edge_filepath": {
+               "description": "Negative edges file path.",
+               "type": "string"
+            },
+            "pos_edge_filepath": {
+               "description": "Positive edges file path.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PosNegData",
+         "type": "object"
+      },
+      "SkLearnParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the SKLearn library.",
+         "properties": {
+            "max_iter": {
+               "description": "Maximum iterations.",
+               "type": "integer"
+            },
+            "random_state": {
+               "description": "Random seed.",
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "SkLearnParams",
+         "type": "object"
+      },
+      "TFKerasParams": {
+         "additionalProperties": false,
+         "description": "Parameters specific to the Tensorflow Keras library.",
+         "properties": {
+            "fit_config": {
+               "$ref": "#/$defs/ClassifierFitParams",
+               "description": "Configuration for model fitting."
+            },
+            "layers_config": {
+               "$ref": "#/$defs/LayerContainer",
+               "description": "Configuration for instantiating layers for neural networks."
+            },
+            "loss": {
+               "description": "Loss function.",
+               "type": "string"
+            },
+            "metrics_config": {
+               "$ref": "#/$defs/MetricContainer",
+               "description": "Metrics to be calculated after classifier training."
+            },
+            "optimizer": {
+               "$ref": "#/$defs/OptimizerEnum",
+               "description": "Optimizer function to be used during classifier training."
+            }
+         },
+         "required": [],
+         "title": "TFKerasParams",
+         "type": "object"
+      },
+      "Target": {
+         "additionalProperties": false,
+         "description": "Path for output to be saved.",
+         "properties": {
+            "target_path": {
+               "description": "File path for saving results.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Target",
+         "type": "object"
+      },
+      "TrainValidData": {
+         "additionalProperties": false,
+         "description": "Postive and negative training and validation graph data filepaths.",
+         "properties": {
+            "train_data": {
+               "$ref": "#/$defs/PosNegData",
+               "description": "Positive and negative graph data for ML training."
+            },
+            "valid_data": {
+               "$ref": "#/$defs/PosNegData",
+               "description": "Positive and negative graph data for ML validation."
+            }
+         },
+         "required": [],
+         "title": "TrainValidData",
+         "type": "object"
+      },
+      "Upload": {
+         "additionalProperties": false,
+         "description": "Configuration for uploading to Amazon S3 bucket.",
+         "properties": {
+            "extra_args": {
+               "description": "Extra keyword arguments (**kwargs).",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "s3_bucket": {
+               "description": "Bucket name.",
+               "type": "string"
+            },
+            "s3_bucket_dir": {
+               "description": "Bucket path.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Upload",
+         "type": "object"
+      }
+   },
+   "$id": "https://w3id.org/neat",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {
+      "graph_data": {
+         "$ref": "#/$defs/GraphDataConfiguration",
+         "description": "Configuration for graph data."
+      }
+   },
+   "required": [],
+   "title": "neat_ml_schema",
+   "type": "object",
+   "version": null
+}

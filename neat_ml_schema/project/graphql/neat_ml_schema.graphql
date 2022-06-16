@@ -1,0 +1,264 @@
+type ApplyTrainedModel
+  {
+    modelId: String
+    nodeTypes: NodeType
+    cutoff: String
+    outfile: String
+  }
+
+type ApplyTrainedModelsContainer
+  {
+    models: [ApplyTrainedModel]
+  }
+
+type Classifier
+  {
+    classifierId: String
+    classifierName: String
+    classifierType: String
+    edgeMethod: EdgeMethodEnum
+    outfile: String
+    historyFilename: String
+    parameters: ClassifierParams
+  }
+
+type ClassifierCallback
+  {
+    type: String
+    monitor: String
+    patience: Integer
+    minDelta: Integer
+    verbose: Boolean
+    mode: ClassifierCallbackModeEnum
+  }
+
+type ClassifierCallbackContainer
+  {
+    callbacks: [ClassifierCallback]
+  }
+
+type ClassifierContainer
+  {
+    classifiers: [Classifier]
+  }
+
+type ClassifierFitParams
+  {
+    batchSize: Integer
+    epochs: Integer
+    callbacksList: ClassifierCallbackContainer
+  }
+
+type ClassifierParams
+  {
+    sklearnParams: SkLearnParams
+    tfKerasParams: TFKerasParams
+  }
+
+type EmbeddingsConfig
+  {
+    filename: String
+    historyFilename: String
+    nodeEmbeddingsParams: NodeEmbeddingsParams
+    tsneFilename: String
+  }
+
+type EnsmallenRunConfig
+  {
+    nodeTypePath: String
+    nodeTypeListSeparator: String
+    nodeTypesColumnNumber: Integer
+    nodeTypesColumn: String
+    nodeTypesIdsColumnNumber: Integer
+    nodeTypesIdsColumn: String
+    nodeTypesNumber: Integer
+    numericNodeTypeIds: Boolean
+    minimumNodeTypeId: Integer
+    nodeTypeListHeader: Boolean
+    nodeTypeListSupportBalancedQuotes: Boolean
+    nodeTypeListRowsToSkip: Integer
+    nodeTypeListIsCorrect: Boolean
+    nodeTypeListMaxRowsNumber: Integer
+    nodeTypeListCommentSymbol: String
+    loadNodeTypeListInParallel: Boolean
+    nodePath: String
+    nodeListSeparator: String
+    nodeListHeader: Boolean
+    nodeListSupportBalancedQuotes: Boolean
+    nodeListRowsToSkip: Integer
+    nodeListIsCorrect: Boolean
+    nodeListMaxRowsNumber: Integer
+    nodeListCommentSymbol: String
+    defaultNodeType: String
+    nodesColumnNumber: Integer
+    nodesColumn: String
+    nodeTypesSeparator: String
+    nodeListNodeTypesColumnNumber: Integer
+    nodeListNodeTypesColumn: String
+    nodeIdsColumn: String
+    nodeIdsColumnNumber: Integer
+    nodesNumber: Integer
+    minimumNodeId: Integer
+    numericNodeIds: Boolean
+    nodeListNumericNodeTypeIds: Boolean
+    skipNodeTypesIfUnavailable: Boolean
+    loadNodeListInParallel: Boolean
+    edgeTypePath: String
+    edgeTypesColumnNumber: Integer
+    edgeTypesColumn: String
+    edgeTypesNumber: Integer
+    numericEdgeTypeIds: Boolean
+    minimumEdgeTypeId: Integer
+    edgeTypeListSeparator: String
+    edgeTypeListHeader: Boolean
+    edgeTypeListSupportBalancedQuotes: Boolean
+    edgeTypeListRowsToSkip: Integer
+    edgeTypeListIsCorrect: Boolean
+    edgeTypeListMaxRowsNumber: Integer
+    edgeTypeListCommentSymbol: String
+    loadEdgeTypeListInParallel: Boolean
+    edgePath: String
+    edgeListSeparator: String
+    edgeListHeader: Boolean
+    edgeListSupportBalancedQuotes: Boolean
+    edgeListRowsToSkip: Integer
+    sourcesColumnNumber: Integer
+    sourcesColumn: String
+    destinationsColumnNumber: Integer
+    destinationsColumn: String
+    edgeListEdgeTypesColumnNumber: Integer
+    edgeListEdgeTypesColumn: String
+    defaultEdgeType: String
+    weightsColumnNumber: Integer
+    weightsColumn: String
+    defaultWeight: Float
+    edgeIdsColumn: String
+    edgeIdsColumnNumber: Integer
+    edgeListNumericEdgeTypeIds: Boolean
+    edgeListNumericNodeIds: Boolean
+    skipWeightsIfUnavailable: Boolean
+    skipEdgeTypesIfUnavailable: Boolean
+    edgeListIsComplete: Boolean
+    edgeListMayContainDuplicates: Boolean
+    edgeListIsSorted: Boolean
+    edgeListIsCorrect: Boolean
+    edgeListMaxRowsNumber: Integer
+    edgeListCommentSymbol: String
+    edgesNumber: Integer
+    loadEdgeListInParallel: Boolean
+    verbose: Boolean
+    mayHaveSingletons: Boolean
+    mayHaveSingletonWithSelfloops: Boolean
+    directed: Boolean
+    name: String
+  }
+
+type FileResource
+  {
+    path: String
+    desc: String
+  }
+
+type FileResourceContainer
+  {
+    files: [FileResource]
+  }
+
+type GraphDataConfiguration
+  {
+    graph: EnsmallenRunConfig
+    evaluationData: TrainValidData
+    sourceData: FileResourceContainer
+  }
+
+type Layer
+  {
+    type: String
+    parameters: LayerParams
+  }
+
+type LayerContainer
+  {
+    layers: [Layer]
+  }
+
+type LayerParams
+  {
+    units: Integer
+    activation: ActivationEnum
+    rate: Float
+  }
+
+type Metric
+  {
+    type: String
+    name: String
+    curve: String
+  }
+
+type MetricContainer
+  {
+    metrics: [Metric]
+  }
+
+type NeatConfiguration
+  {
+    graphData: GraphDataConfiguration
+  }
+
+type NodeEmbeddingsParams
+  {
+    methodName: NodeEmbedMethodEnum
+    walkLength: Integer
+    batchSize: Integer
+    windowSize: Integer
+    returnWeight: Float
+    exploreWeight: Float
+    iterations: Integer
+  }
+
+type NodeType
+  {
+    source: [String]
+    destination: [String]
+  }
+
+type PosNegData
+  {
+    posEdgeFilepath: String
+    negEdgeFilepath: String
+  }
+
+type SkLearnParams
+  {
+    randomState: Integer
+    maxIter: Integer
+  }
+
+type Target
+  {
+    targetPath: String
+  }
+
+type TFKerasParams
+  {
+    layersConfig: LayerContainer
+    loss: String
+    metricsConfig: MetricContainer
+    optimizer: OptimizerEnum
+    fitConfig: ClassifierFitParams
+  }
+
+type TrainValidData
+  {
+    trainData: PosNegData
+    validData: PosNegData
+  }
+
+type Upload
+  {
+    s3Bucket: String
+    s3BucketDir: String
+    extraArgs: [String]
+  }
+

@@ -18,7 +18,8 @@ URI: [https://w3id.org/neat/:GraphDataConfiguration](https://w3id.org/neat/:Grap
 | Name | Range | Cardinality | Description  | Info |
 | ---  | --- | --- | --- | --- |
 | [graph](graph.md) | [EnsmallenRunConfig](EnsmallenRunConfig.md) | 0..1 | Graph configuration for pipeline  | . |
-| [data](data.md) | [TrainValidData](TrainValidData.md) | 0..1 | Input data for pipeline.  | . |
+| [evaluation_data](evaluation_data.md) | [TrainValidData](TrainValidData.md) | 0..1 | Input data for pipeline.  | . |
+| [source_data](source_data.md) | [FileResourceContainer](FileResourceContainer.md) | 0..1 | Compressed input data for pipeline (tar.gz).  | . |
 
 
 ## Usages
@@ -57,11 +58,16 @@ attributes:
     description: Graph configuration for pipeline
     from_schema: https://w3id.org/neat
     range: EnsmallenRunConfig
-  data:
-    name: data
+  evaluation_data:
+    name: evaluation_data
     description: Input data for pipeline.
     from_schema: https://w3id.org/neat
     range: TrainValidData
+  source_data:
+    name: source_data
+    description: Compressed input data for pipeline (tar.gz).
+    from_schema: https://w3id.org/neat
+    range: FileResourceContainer
 
 ```
 </details>
@@ -81,13 +87,20 @@ attributes:
     alias: graph
     owner: GraphDataConfiguration
     range: EnsmallenRunConfig
-  data:
-    name: data
+  evaluation_data:
+    name: evaluation_data
     description: Input data for pipeline.
     from_schema: https://w3id.org/neat
-    alias: data
+    alias: evaluation_data
     owner: GraphDataConfiguration
     range: TrainValidData
+  source_data:
+    name: source_data
+    description: Compressed input data for pipeline (tar.gz).
+    from_schema: https://w3id.org/neat
+    alias: source_data
+    owner: GraphDataConfiguration
+    range: FileResourceContainer
 
 ```
 </details>

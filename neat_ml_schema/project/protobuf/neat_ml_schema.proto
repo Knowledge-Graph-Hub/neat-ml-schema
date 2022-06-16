@@ -1,0 +1,264 @@
+// Trained model used for prediction.
+message ApplyTrainedModel
+ {
+  optional modelId String = 1
+  optional nodeTypes NodeType = 2
+  optional cutoff String = 3
+  optional outfile String = 4
+ }
+// A container with multiple classifiers in it.
+message ApplyTrainedModelsContainer
+ {
+  repeated models ApplyTrainedModel = 1
+ }
+// ML classifiers to be trained-tested-validated and applied for predictions.
+message Classifier
+ {
+  optional classifierId String = 1
+  optional classifierName String = 2
+  optional classifierType String = 3
+  optional edgeMethod EdgeMethodEnum = 4
+  optional outfile String = 5
+  optional historyFilename String = 6
+  optional parameters ClassifierParams = 7
+ }
+// Utilities called at certain points during model training.
+message ClassifierCallback
+ {
+  optional type String = 1
+  optional monitor String = 2
+  optional patience Integer = 3
+  optional minDelta Integer = 4
+  optional verbose Boolean = 5
+  optional mode ClassifierCallbackModeEnum = 6
+ }
+// A container of classifier callbacks.
+message ClassifierCallbackContainer
+ {
+  repeated callbacks ClassifierCallback = 1
+ }
+// A container with multiple classifiers in it.
+message ClassifierContainer
+ {
+  repeated classifiers Classifier = 1
+ }
+// Paramters for fitting a classifier.
+message ClassifierFitParams
+ {
+  optional batchSize Integer = 1
+  optional epochs Integer = 2
+  optional callbacksList ClassifierCallbackContainer = 3
+ }
+// Parameters needed to define a classifier.
+message ClassifierParams
+ {
+  optional sklearnParams SkLearnParams = 1
+  optional tfKerasParams TFKerasParams = 2
+ }
+// Embeddings configuration.
+message EmbeddingsConfig
+ {
+  optional filename String = 1
+  optional historyFilename String = 2
+  optional nodeEmbeddingsParams NodeEmbeddingsParams = 3
+  optional tsneFilename String = 4
+ }
+// All params used by ensmallen's csv_reader
+message EnsmallenRunConfig
+ {
+  optional nodeTypePath String = 1
+  optional nodeTypeListSeparator String = 2
+  optional nodeTypesColumnNumber Integer = 3
+  optional nodeTypesColumn String = 4
+  optional nodeTypesIdsColumnNumber Integer = 5
+  optional nodeTypesIdsColumn String = 6
+  optional nodeTypesNumber Integer = 7
+  optional numericNodeTypeIds Boolean = 8
+  optional minimumNodeTypeId Integer = 9
+  optional nodeTypeListHeader Boolean = 10
+  optional nodeTypeListSupportBalancedQuotes Boolean = 11
+  optional nodeTypeListRowsToSkip Integer = 12
+  optional nodeTypeListIsCorrect Boolean = 13
+  optional nodeTypeListMaxRowsNumber Integer = 14
+  optional nodeTypeListCommentSymbol String = 15
+  optional loadNodeTypeListInParallel Boolean = 16
+  optional nodePath String = 17
+  optional nodeListSeparator String = 18
+  optional nodeListHeader Boolean = 19
+  optional nodeListSupportBalancedQuotes Boolean = 20
+  optional nodeListRowsToSkip Integer = 21
+  optional nodeListIsCorrect Boolean = 22
+  optional nodeListMaxRowsNumber Integer = 23
+  optional nodeListCommentSymbol String = 24
+  optional defaultNodeType String = 25
+  optional nodesColumnNumber Integer = 26
+  optional nodesColumn String = 27
+  optional nodeTypesSeparator String = 28
+  optional nodeListNodeTypesColumnNumber Integer = 29
+  optional nodeListNodeTypesColumn String = 30
+  optional nodeIdsColumn String = 31
+  optional nodeIdsColumnNumber Integer = 32
+  optional nodesNumber Integer = 33
+  optional minimumNodeId Integer = 34
+  optional numericNodeIds Boolean = 35
+  optional nodeListNumericNodeTypeIds Boolean = 36
+  optional skipNodeTypesIfUnavailable Boolean = 37
+  optional loadNodeListInParallel Boolean = 38
+  optional edgeTypePath String = 39
+  optional edgeTypesColumnNumber Integer = 40
+  optional edgeTypesColumn String = 41
+  optional edgeTypesNumber Integer = 42
+  optional numericEdgeTypeIds Boolean = 43
+  optional minimumEdgeTypeId Integer = 44
+  optional edgeTypeListSeparator String = 45
+  optional edgeTypeListHeader Boolean = 46
+  optional edgeTypeListSupportBalancedQuotes Boolean = 47
+  optional edgeTypeListRowsToSkip Integer = 48
+  optional edgeTypeListIsCorrect Boolean = 49
+  optional edgeTypeListMaxRowsNumber Integer = 50
+  optional edgeTypeListCommentSymbol String = 51
+  optional loadEdgeTypeListInParallel Boolean = 52
+  optional edgePath String = 53
+  optional edgeListSeparator String = 54
+  optional edgeListHeader Boolean = 55
+  optional edgeListSupportBalancedQuotes Boolean = 56
+  optional edgeListRowsToSkip Integer = 57
+  optional sourcesColumnNumber Integer = 58
+  optional sourcesColumn String = 59
+  optional destinationsColumnNumber Integer = 60
+  optional destinationsColumn String = 61
+  optional edgeListEdgeTypesColumnNumber Integer = 62
+  optional edgeListEdgeTypesColumn String = 63
+  optional defaultEdgeType String = 64
+  optional weightsColumnNumber Integer = 65
+  optional weightsColumn String = 66
+  optional defaultWeight Float = 67
+  optional edgeIdsColumn String = 68
+  optional edgeIdsColumnNumber Integer = 69
+  optional edgeListNumericEdgeTypeIds Boolean = 70
+  optional edgeListNumericNodeIds Boolean = 71
+  optional skipWeightsIfUnavailable Boolean = 72
+  optional skipEdgeTypesIfUnavailable Boolean = 73
+  optional edgeListIsComplete Boolean = 74
+  optional edgeListMayContainDuplicates Boolean = 75
+  optional edgeListIsSorted Boolean = 76
+  optional edgeListIsCorrect Boolean = 77
+  optional edgeListMaxRowsNumber Integer = 78
+  optional edgeListCommentSymbol String = 79
+  optional edgesNumber Integer = 80
+  optional loadEdgeListInParallel Boolean = 81
+  optional verbose Boolean = 82
+  optional mayHaveSingletons Boolean = 83
+  optional mayHaveSingletonWithSelfloops Boolean = 84
+  optional directed Boolean = 85
+  optional name String = 86
+ }
+// Path (or url) and description of source files (tar.gz).
+message FileResource
+ {
+  optional path String = 1
+  optional desc String = 2
+ }
+// A container of paths and descriptions
+message FileResourceContainer
+ {
+  repeated files FileResource = 1
+ }
+// Configuration for the graph training and validation data for ML pipeline.
+message GraphDataConfiguration
+ {
+  optional graph EnsmallenRunConfig = 1
+  optional evaluationData TrainValidData = 2
+  optional sourceData FileResourceContainer = 3
+ }
+// Layers for a neural network.
+message Layer
+ {
+  optional type String = 1
+  optional parameters LayerParams = 2
+ }
+// A container of neural network layers.
+message LayerContainer
+ {
+  repeated layers Layer = 1
+ }
+// Parameters for each layer of a neural network.
+message LayerParams
+ {
+  optional units Integer = 1
+  optional activation ActivationEnum = 2
+  optional rate Float = 3
+ }
+// Metrics of a trained classifier (model).
+message Metric
+ {
+  optional type String = 1
+  optional name String = 2
+  optional curve String = 3
+ }
+// Container of metrics for a trained classifier.
+message MetricContainer
+ {
+  repeated metrics Metric = 1
+ }
+// Root class for the schema.
+message NeatConfiguration
+ {
+  optional graphData GraphDataConfiguration = 1
+ }
+// Node embeddings parameters.
+message NodeEmbeddingsParams
+ {
+  optional methodName NodeEmbedMethodEnum = 1
+  optional walkLength Integer = 2
+  optional batchSize Integer = 3
+  optional windowSize Integer = 4
+  optional returnWeight Float = 5
+  optional exploreWeight Float = 6
+  optional iterations Integer = 7
+ }
+// Source node or Destination node.
+message NodeType
+ {
+  repeated source String = 1
+  repeated destination String = 2
+ }
+// File paths for positive an negative edge data.
+message PosNegData
+ {
+  optional posEdgeFilepath String = 1
+  optional negEdgeFilepath String = 2
+ }
+// Parameters specific to the SKLearn library.
+message SkLearnParams
+ {
+  optional randomState Integer = 1
+  optional maxIter Integer = 2
+ }
+// Path for output to be saved.
+message Target
+ {
+  optional targetPath String = 1
+ }
+// Parameters specific to the Tensorflow Keras library.
+message TFKerasParams
+ {
+  optional layersConfig LayerContainer = 1
+  optional loss String = 2
+  optional metricsConfig MetricContainer = 3
+  optional optimizer OptimizerEnum = 4
+  optional fitConfig ClassifierFitParams = 5
+ }
+// Postive and negative training and validation graph data filepaths.
+message TrainValidData
+ {
+  optional trainData PosNegData = 1
+  optional validData PosNegData = 2
+ }
+// Configuration for uploading to Amazon S3 bucket.
+message Upload
+ {
+  optional s3Bucket String = 1
+  optional s3BucketDir String = 2
+  repeated extraArgs String = 3
+ }

@@ -1,0 +1,345 @@
+BASE <https://w3id.org/neat/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<ApplyTrainedModel> CLOSED {
+    (  $<ApplyTrainedModel_tes> (  <model_id> @linkml:String ? ;
+          <node_types> @<NodeType> ? ;
+          <cutoff> @linkml:String ? ;
+          <outfile> @linkml:String ?
+       ) ;
+       rdf:type [ <ApplyTrainedModel> ] ?
+    )
+}
+
+<ApplyTrainedModelsContainer> CLOSED {
+    (  $<ApplyTrainedModelsContainer_tes> <models> @<ApplyTrainedModel> * ;
+       rdf:type [ <ApplyTrainedModelsContainer> ] ?
+    )
+}
+
+<Classifier> CLOSED {
+    (  $<Classifier_tes> (  <classifier_id> @linkml:String ? ;
+          <classifier_name> @linkml:String ? ;
+          <classifier_type> @linkml:String ? ;
+          <edge_method> @<EdgeMethodEnum> ? ;
+          <outfile> @linkml:String ? ;
+          <history_filename> @linkml:String ? ;
+          <parameters> @<ClassifierParams> ?
+       ) ;
+       rdf:type [ <Classifier> ] ?
+    )
+}
+
+<ClassifierCallback> CLOSED {
+    (  $<ClassifierCallback_tes> (  <type> @linkml:String ? ;
+          <monitor> @linkml:String ? ;
+          <patience> @linkml:Integer ? ;
+          <min_delta> @linkml:Integer ? ;
+          <verbose> @linkml:Boolean ? ;
+          <mode> @<ClassifierCallbackModeEnum> ?
+       ) ;
+       rdf:type [ <ClassifierCallback> ] ?
+    )
+}
+
+<ClassifierCallbackContainer> CLOSED {
+    (  $<ClassifierCallbackContainer_tes> <callbacks> @<ClassifierCallback> * ;
+       rdf:type [ <ClassifierCallbackContainer> ] ?
+    )
+}
+
+<ClassifierContainer> CLOSED {
+    (  $<ClassifierContainer_tes> <classifiers> @<Classifier> * ;
+       rdf:type [ <ClassifierContainer> ] ?
+    )
+}
+
+<ClassifierFitParams> CLOSED {
+    (  $<ClassifierFitParams_tes> (  <batch_size> @linkml:Integer ? ;
+          <epochs> @linkml:Integer ? ;
+          <callbacks_list> @<ClassifierCallbackContainer> ?
+       ) ;
+       rdf:type [ <ClassifierFitParams> ] ?
+    )
+}
+
+<ClassifierParams> CLOSED {
+    (  $<ClassifierParams_tes> (  <sklearn_params> @<SkLearnParams> ? ;
+          <tf_keras_params> @<TFKerasParams> ?
+       ) ;
+       rdf:type [ <ClassifierParams> ] ?
+    )
+}
+
+<EmbeddingsConfig> CLOSED {
+    (  $<EmbeddingsConfig_tes> (  <filename> @linkml:String ? ;
+          <history_filename> @linkml:String ? ;
+          <node_embeddings_params> @<NodeEmbeddingsParams> ? ;
+          <tsne_filename> @linkml:String ?
+       ) ;
+       rdf:type [ <EmbeddingsConfig> ] ?
+    )
+}
+
+<EnsmallenRunConfig> CLOSED {
+    (  $<EnsmallenRunConfig_tes> (  <node_type_path> @linkml:String ? ;
+          <node_type_list_separator> @linkml:String ? ;
+          <node_types_column_number> @linkml:Integer ? ;
+          <node_types_column> @linkml:String ? ;
+          <node_types_ids_column_number> @linkml:Integer ? ;
+          <node_types_ids_column> @linkml:String ? ;
+          <node_types_number> @linkml:Integer ? ;
+          <numeric_node_type_ids> @linkml:Boolean ? ;
+          <minimum_node_type_id> @linkml:Integer ? ;
+          <node_type_list_header> @linkml:Boolean ? ;
+          <node_type_list_support_balanced_quotes> @linkml:Boolean ? ;
+          <node_type_list_rows_to_skip> @linkml:Integer ? ;
+          <node_type_list_is_correct> @linkml:Boolean ? ;
+          <node_type_list_max_rows_number> @linkml:Integer ? ;
+          <node_type_list_comment_symbol> @linkml:String ? ;
+          <load_node_type_list_in_parallel> @linkml:Boolean ? ;
+          <node_path> @linkml:String ? ;
+          <node_list_separator> @linkml:String ? ;
+          <node_list_header> @linkml:Boolean ? ;
+          <node_list_support_balanced_quotes> @linkml:Boolean ? ;
+          <node_list_rows_to_skip> @linkml:Integer ? ;
+          <node_list_is_correct> @linkml:Boolean ? ;
+          <node_list_max_rows_number> @linkml:Integer ? ;
+          <node_list_comment_symbol> @linkml:String ? ;
+          <default_node_type> @linkml:String ? ;
+          <nodes_column_number> @linkml:Integer ? ;
+          <nodes_column> @linkml:String ? ;
+          <node_types_separator> @linkml:String ? ;
+          <node_list_node_types_column_number> @linkml:Integer ? ;
+          <node_list_node_types_column> @linkml:String ? ;
+          <node_ids_column> @linkml:String ? ;
+          <node_ids_column_number> @linkml:Integer ? ;
+          <nodes_number> @linkml:Integer ? ;
+          <minimum_node_id> @linkml:Integer ? ;
+          <numeric_node_ids> @linkml:Boolean ? ;
+          <node_list_numeric_node_type_ids> @linkml:Boolean ? ;
+          <skip_node_types_if_unavailable> @linkml:Boolean ? ;
+          <load_node_list_in_parallel> @linkml:Boolean ? ;
+          <edge_type_path> @linkml:String ? ;
+          <edge_types_column_number> @linkml:Integer ? ;
+          <edge_types_column> @linkml:String ? ;
+          <edge_types_number> @linkml:Integer ? ;
+          <numeric_edge_type_ids> @linkml:Boolean ? ;
+          <minimum_edge_type_id> @linkml:Integer ? ;
+          <edge_type_list_separator> @linkml:String ? ;
+          <edge_type_list_header> @linkml:Boolean ? ;
+          <edge_type_list_support_balanced_quotes> @linkml:Boolean ? ;
+          <edge_type_list_rows_to_skip> @linkml:Integer ? ;
+          <edge_type_list_is_correct> @linkml:Boolean ? ;
+          <edge_type_list_max_rows_number> @linkml:Integer ? ;
+          <edge_type_list_comment_symbol> @linkml:String ? ;
+          <load_edge_type_list_in_parallel> @linkml:Boolean ? ;
+          <edge_path> @linkml:String ? ;
+          <edge_list_separator> @linkml:String ? ;
+          <edge_list_header> @linkml:Boolean ? ;
+          <edge_list_support_balanced_quotes> @linkml:Boolean ? ;
+          <edge_list_rows_to_skip> @linkml:Integer ? ;
+          <sources_column_number> @linkml:Integer ? ;
+          <sources_column> @linkml:String ? ;
+          <destinations_column_number> @linkml:Integer ? ;
+          <destinations_column> @linkml:String ? ;
+          <edge_list_edge_types_column_number> @linkml:Integer ? ;
+          <edge_list_edge_types_column> @linkml:String ? ;
+          <default_edge_type> @linkml:String ? ;
+          <weights_column_number> @linkml:Integer ? ;
+          <weights_column> @linkml:String ? ;
+          <default_weight> @linkml:Float ? ;
+          <edge_ids_column> @linkml:String ? ;
+          <edge_ids_column_number> @linkml:Integer ? ;
+          <edge_list_numeric_edge_type_ids> @linkml:Boolean ? ;
+          <edge_list_numeric_node_ids> @linkml:Boolean ? ;
+          <skip_weights_if_unavailable> @linkml:Boolean ? ;
+          <skip_edge_types_if_unavailable> @linkml:Boolean ? ;
+          <edge_list_is_complete> @linkml:Boolean ? ;
+          <edge_list_may_contain_duplicates> @linkml:Boolean ? ;
+          <edge_list_is_sorted> @linkml:Boolean ? ;
+          <edge_list_is_correct> @linkml:Boolean ? ;
+          <edge_list_max_rows_number> @linkml:Integer ? ;
+          <edge_list_comment_symbol> @linkml:String ? ;
+          <edges_number> @linkml:Integer ? ;
+          <load_edge_list_in_parallel> @linkml:Boolean ? ;
+          <verbose> @linkml:Boolean ? ;
+          <may_have_singletons> @linkml:Boolean ? ;
+          <may_have_singleton_with_selfloops> @linkml:Boolean ? ;
+          <directed> @linkml:Boolean ? ;
+          <name> @linkml:String ?
+       ) ;
+       rdf:type [ <EnsmallenRunConfig> ] ?
+    )
+}
+
+<FileResource> CLOSED {
+    (  $<FileResource_tes> (  <path> @linkml:String ? ;
+          <desc> @linkml:String ?
+       ) ;
+       rdf:type [ <FileResource> ] ?
+    )
+}
+
+<FileResourceContainer> CLOSED {
+    (  $<FileResourceContainer_tes> <files> @<FileResource> * ;
+       rdf:type [ <FileResourceContainer> ] ?
+    )
+}
+
+<GraphDataConfiguration> CLOSED {
+    (  $<GraphDataConfiguration_tes> (  <graph> @<EnsmallenRunConfig> ? ;
+          <evaluation_data> @<TrainValidData> ? ;
+          <source_data> @<FileResourceContainer> ?
+       ) ;
+       rdf:type [ <GraphDataConfiguration> ] ?
+    )
+}
+
+<Layer> CLOSED {
+    (  $<Layer_tes> (  <type> @linkml:String ? ;
+          <parameters> @<LayerParams> ?
+       ) ;
+       rdf:type [ <Layer> ] ?
+    )
+}
+
+<LayerContainer> CLOSED {
+    (  $<LayerContainer_tes> <layers> @<Layer> * ;
+       rdf:type [ <LayerContainer> ] ?
+    )
+}
+
+<LayerParams> CLOSED {
+    (  $<LayerParams_tes> (  <units> @linkml:Integer ? ;
+          <activation> @<ActivationEnum> ? ;
+          <rate> @linkml:Float ?
+       ) ;
+       rdf:type [ <LayerParams> ] ?
+    )
+}
+
+<Metric> CLOSED {
+    (  $<Metric_tes> (  <type> @linkml:String ? ;
+          <name> @linkml:String ? ;
+          <curve> @linkml:String ?
+       ) ;
+       rdf:type [ <Metric> ] ?
+    )
+}
+
+<MetricContainer> CLOSED {
+    (  $<MetricContainer_tes> <metrics> @<Metric> * ;
+       rdf:type [ <MetricContainer> ] ?
+    )
+}
+
+<NeatConfiguration> CLOSED {
+    (  $<NeatConfiguration_tes> <graph_data> @<GraphDataConfiguration> ? ;
+       rdf:type [ <NeatConfiguration> ] ?
+    )
+}
+
+<NodeEmbeddingsParams> CLOSED {
+    (  $<NodeEmbeddingsParams_tes> (  <method_name> @<NodeEmbedMethodEnum> ? ;
+          <walk_length> @linkml:Integer ? ;
+          <batch_size> @linkml:Integer ? ;
+          <window_size> @linkml:Integer ? ;
+          <return_weight> @linkml:Float ? ;
+          <explore_weight> @linkml:Float ? ;
+          <iterations> @linkml:Integer ?
+       ) ;
+       rdf:type [ <NodeEmbeddingsParams> ] ?
+    )
+}
+
+<NodeType> CLOSED {
+    (  $<NodeType_tes> (  <source> @linkml:String * ;
+          <destination> @linkml:String *
+       ) ;
+       rdf:type [ <NodeType> ] ?
+    )
+}
+
+<PosNegData> CLOSED {
+    (  $<PosNegData_tes> (  <pos_edge_filepath> @linkml:String ? ;
+          <neg_edge_filepath> @linkml:String ?
+       ) ;
+       rdf:type [ <PosNegData> ] ?
+    )
+}
+
+<SkLearnParams> CLOSED {
+    (  $<SkLearnParams_tes> (  <random_state> @linkml:Integer ? ;
+          <max_iter> @linkml:Integer ?
+       ) ;
+       rdf:type [ <SkLearnParams> ] ?
+    )
+}
+
+<Target> CLOSED {
+    (  $<Target_tes> <target_path> @linkml:String ? ;
+       rdf:type [ <Target> ] ?
+    )
+}
+
+<TFKerasParams> CLOSED {
+    (  $<TFKerasParams_tes> (  <layers_config> @<LayerContainer> ? ;
+          <loss> @linkml:String ? ;
+          <metrics_config> @<MetricContainer> ? ;
+          <optimizer> @<OptimizerEnum> ? ;
+          <fit_config> @<ClassifierFitParams> ?
+       ) ;
+       rdf:type [ <TFKerasParams> ] ?
+    )
+}
+
+<TrainValidData> CLOSED {
+    (  $<TrainValidData_tes> (  <train_data> @<PosNegData> ? ;
+          <valid_data> @<PosNegData> ?
+       ) ;
+       rdf:type [ <TrainValidData> ] ?
+    )
+}
+
+<Upload> CLOSED {
+    (  $<Upload_tes> (  <s3_bucket> @linkml:String ? ;
+          <s3_bucket_dir> @linkml:String ? ;
+          <extra_args> @linkml:String *
+       ) ;
+       rdf:type [ <Upload> ] ?
+    )
+}
+
+
