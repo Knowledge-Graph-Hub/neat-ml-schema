@@ -153,11 +153,23 @@ message EnsmallenRunConfig
   optional directed Boolean = 85
   optional name String = 86
  }
+// Path (or url) and description of source files (tar.gz).
+message FileResource
+ {
+  optional path String = 1
+  optional desc String = 2
+ }
+// A container of paths and descriptions
+message FileResourceContainer
+ {
+  repeated files FileResource = 1
+ }
 // Configuration for the graph training and validation data for ML pipeline.
 message GraphDataConfiguration
  {
   optional graph EnsmallenRunConfig = 1
-  optional data TrainValidData = 2
+  optional evaluationData TrainValidData = 2
+  optional sourceData FileResourceContainer = 3
  }
 // Layers for a neural network.
 message Layer

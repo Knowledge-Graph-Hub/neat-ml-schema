@@ -592,17 +592,53 @@
          "title": "EnsmallenRunConfig",
          "type": "object"
       },
+      "FileResource": {
+         "additionalProperties": false,
+         "description": "Path (or url) and description of source files (tar.gz).",
+         "properties": {
+            "desc": {
+               "description": "File description.",
+               "type": "string"
+            },
+            "path": {
+               "description": "File path or url.",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "FileResource",
+         "type": "object"
+      },
+      "FileResourceContainer": {
+         "additionalProperties": false,
+         "description": "A container of paths and descriptions",
+         "properties": {
+            "files": {
+               "items": {
+                  "$ref": "#/$defs/FileResource"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "FileResourceContainer",
+         "type": "object"
+      },
       "GraphDataConfiguration": {
          "additionalProperties": false,
          "description": "Configuration for the graph training and validation data for ML pipeline.",
          "properties": {
-            "data": {
+            "evaluation_data": {
                "$ref": "#/$defs/TrainValidData",
                "description": "Input data for pipeline."
             },
             "graph": {
                "$ref": "#/$defs/EnsmallenRunConfig",
                "description": "Graph configuration for pipeline"
+            },
+            "source_data": {
+               "$ref": "#/$defs/FileResourceContainer",
+               "description": "Compressed input data for pipeline (tar.gz)."
             }
          },
          "required": [],
@@ -924,7 +960,7 @@
       }
    },
    "required": [],
-   "title": "NEAT_schema",
+   "title": "neat_ml_schema",
    "type": "object",
    "version": null
 }

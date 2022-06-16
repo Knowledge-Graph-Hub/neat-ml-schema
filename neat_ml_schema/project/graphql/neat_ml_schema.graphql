@@ -153,10 +153,22 @@ type EnsmallenRunConfig
     name: String
   }
 
+type FileResource
+  {
+    path: String
+    desc: String
+  }
+
+type FileResourceContainer
+  {
+    files: [FileResource]
+  }
+
 type GraphDataConfiguration
   {
     graph: EnsmallenRunConfig
-    data: TrainValidData
+    evaluationData: TrainValidData
+    sourceData: FileResourceContainer
   }
 
 type Layer

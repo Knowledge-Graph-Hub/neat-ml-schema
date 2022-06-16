@@ -204,9 +204,24 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<FileResource> CLOSED {
+    (  $<FileResource_tes> (  <path> @linkml:String ? ;
+          <desc> @linkml:String ?
+       ) ;
+       rdf:type [ <FileResource> ] ?
+    )
+}
+
+<FileResourceContainer> CLOSED {
+    (  $<FileResourceContainer_tes> <files> @<FileResource> * ;
+       rdf:type [ <FileResourceContainer> ] ?
+    )
+}
+
 <GraphDataConfiguration> CLOSED {
     (  $<GraphDataConfiguration_tes> (  <graph> @<EnsmallenRunConfig> ? ;
-          <data> @<TrainValidData> ?
+          <evaluation_data> @<TrainValidData> ? ;
+          <source_data> @<FileResourceContainer> ?
        ) ;
        rdf:type [ <GraphDataConfiguration> ] ?
     )

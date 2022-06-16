@@ -30,6 +30,12 @@
    "EnsmallenRunConfig": {
       "@id": "https://w3id.org/neat/EnsmallenRunConfig"
    },
+   "FileResource": {
+      "@id": "https://w3id.org/neat/FileResource"
+   },
+   "FileResourceContainer": {
+      "@id": "https://w3id.org/neat/FileResourceContainer"
+   },
    "GraphDataConfiguration": {
       "@id": "https://w3id.org/neat/GraphDataConfiguration"
    },

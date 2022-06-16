@@ -1,0 +1,822 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/neat/:ApplyTrainedModelsContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container with multiple classifiers in it." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:ApplyTrainedModel> ;
+            sh:description "Models that need to be used for link prediction." ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:models> ] ;
+    sh:targetClass <https://w3id.org/neat/:ApplyTrainedModelsContainer> .
+
+<https://w3id.org/neat/:ClassifierContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container with multiple classifiers in it." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:Classifier> ;
+            sh:description "Classifier details." ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:classifiers> ] ;
+    sh:targetClass <https://w3id.org/neat/:ClassifierContainer> .
+
+<https://w3id.org/neat/:EmbeddingsConfig> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Embeddings configuration." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Embeddings history file name." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:history_filename> ],
+        [ sh:description "Embeddings file name." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:filename> ],
+        [ sh:class <https://w3id.org/neat/:NodeEmbeddingsParams> ;
+            sh:description "Node embeddings parameters." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:node_embeddings_params> ],
+        [ sh:description "File name for the TSNE plot." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:tsne_filename> ] ;
+    sh:targetClass <https://w3id.org/neat/:EmbeddingsConfig> .
+
+<https://w3id.org/neat/:LayerParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters for each layer of a neural network." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Activation layer type" ;
+            sh:in ( "linear" "relu" "sigmoid" "tanh" "softmax" ) ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:activation> ],
+        [ sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:rate> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:units> ] ;
+    sh:targetClass <https://w3id.org/neat/:LayerParams> .
+
+<https://w3id.org/neat/:NeatConfiguration> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Root class for the schema." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:GraphDataConfiguration> ;
+            sh:description "Configuration for graph data." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:graph_data> ] ;
+    sh:targetClass <https://w3id.org/neat/:NeatConfiguration> .
+
+<https://w3id.org/neat/:Target> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Path for output to be saved." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "File path for saving results." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:target_path> ] ;
+    sh:targetClass <https://w3id.org/neat/:Target> .
+
+<https://w3id.org/neat/:Upload> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Configuration for uploading to Amazon S3 bucket." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Extra keyword arguments (**kwargs)." ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:extra_args> ],
+        [ sh:description "Bucket path." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:s3_bucket_dir> ],
+        [ sh:description "Bucket name." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:s3_bucket> ] ;
+    sh:targetClass <https://w3id.org/neat/:Upload> .
+
+<https://w3id.org/neat/:ApplyTrainedModel> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Trained model used for prediction." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Key of the model to be used." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:model_id> ],
+        [ sh:description "File path for saving results." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:outfile> ],
+        [ sh:class <https://w3id.org/neat/:NodeType> ;
+            sh:description "Type of nodes." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:node_types> ],
+        [ sh:description "Cutoff filter." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:cutoff> ] ;
+    sh:targetClass <https://w3id.org/neat/:ApplyTrainedModel> .
+
+<https://w3id.org/neat/:Classifier> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "ML classifiers to be trained-tested-validated and applied for predictions." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Key to identify the classifier and associated parameters." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:classifier_id> ],
+        [ sh:description "Type of classifier." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:classifier_type> ],
+        [ sh:class <https://w3id.org/neat/:ClassifierParams> ;
+            sh:description "Parameters to be passed for building classifier." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/neat/:parameters> ],
+        [ sh:description "Edge method." ;
+            sh:in ( "Average" "Hadamard" "Sum" "L1" "L2" "AbsoluteL1" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:edge_method> ],
+        [ sh:description "File name for saving history." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat/:history_filename> ],
+        [ sh:description "Name of the classifier." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:classifier_name> ],
+        [ sh:description "Fie path for saving output." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat/:outfile> ] ;
+    sh:targetClass <https://w3id.org/neat/:Classifier> .
+
+<https://w3id.org/neat/:ClassifierCallback> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Utilities called at certain points during model training." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Quantity to be monitored." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:monitor> ],
+        [ sh:description "Type of callback." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:type> ],
+        [ sh:description "One of {\"auto\", \"min\", \"max\"}. In min mode, training will stop when the quantity monitored has stopped decreasing; in \"max\" mode it will stop when the quantity monitored has stopped increasing; in \"auto\" mode, the direction is automatically inferred from the name of the monitored quantity." ;
+            sh:in ( "auto" "min" "max" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat/:mode> ],
+        [ sh:description "Number of epochs with no improvement after which training will be stopped." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:patience> ],
+        [ sh:description "Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:min_delta> ],
+        [ sh:description "Verbosity mode, 0 or 1. Mode 0 is silent, and mode 1 displays messages when the callback takes an action." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat/:verbose> ] ;
+    sh:targetClass <https://w3id.org/neat/:ClassifierCallback> .
+
+<https://w3id.org/neat/:ClassifierCallbackContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container of classifier callbacks." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:ClassifierCallback> ;
+            sh:description "Callbacks." ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:callbacks> ] ;
+    sh:targetClass <https://w3id.org/neat/:ClassifierCallbackContainer> .
+
+<https://w3id.org/neat/:ClassifierFitParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Paramters for fitting a classifier." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:ClassifierCallbackContainer> ;
+            sh:description "Container of callbacks." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:callbacks_list> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:batch_size> ],
+        [ sh:description "Number of epochs to run for training." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:epochs> ] ;
+    sh:targetClass <https://w3id.org/neat/:ClassifierFitParams> .
+
+<https://w3id.org/neat/:EnsmallenRunConfig> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "All params used by ensmallen's csv_reader" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Whether to support balanced quotes while reading the edge list." ;
+            sh:maxCount 1 ;
+            sh:order 55 ;
+            sh:path <https://w3id.org/neat/:edge_list_support_balanced_quotes> ],
+        [ sh:description "The edge weight to be used when the edge weight for a given edge in the edge file is None." ;
+            sh:maxCount 1 ;
+            sh:order 66 ;
+            sh:path <https://w3id.org/neat/:default_weight> ],
+        [ sh:description "Whether to support balanced quotes." ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/neat/:node_type_list_support_balanced_quotes> ],
+        [ sh:description "The path to the file with the unique node type names." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:node_type_path> ],
+        [ sh:description "Whether to load the node types IDs in the node file to be numeric." ;
+            sh:maxCount 1 ;
+            sh:order 35 ;
+            sh:path <https://w3id.org/neat/:node_list_numeric_node_type_ids> ],
+        [ sh:description "Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order." ;
+            sh:maxCount 1 ;
+            sh:order 80 ;
+            sh:path <https://w3id.org/neat/:load_edge_list_in_parallel> ],
+        [ sh:description "The number of lines to skip in the node types file. The header is already skipped if it has been specified that the file has an header." ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path <https://w3id.org/neat/:node_type_list_rows_to_skip> ],
+        [ sh:description "The name of the column of the edges file from where to load the edge IDs." ;
+            sh:maxCount 1 ;
+            sh:order 67 ;
+            sh:path <https://w3id.org/neat/:edge_ids_column> ],
+        [ sh:description "The name of the column of the edges file from where to load the edge weights." ;
+            sh:maxCount 1 ;
+            sh:order 65 ;
+            sh:path <https://w3id.org/neat/:weights_column> ],
+        [ sh:description "Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." ;
+            sh:maxCount 1 ;
+            sh:order 48 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_is_correct> ],
+        [ sh:description "The name of the column of the edges file from where to load the destinaton nodes." ;
+            sh:maxCount 1 ;
+            sh:order 60 ;
+            sh:path <https://w3id.org/neat/:destinations_column> ],
+        [ sh:description "The maximum number of lines to be loaded from the nodes file." ;
+            sh:maxCount 1 ;
+            sh:order 22 ;
+            sh:path <https://w3id.org/neat/:node_list_max_rows_number> ],
+        [ sh:description "Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation." ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/neat/:numeric_node_type_ids> ],
+        [ sh:description "Whether to load the edge node IDs as numeric from the edge list." ;
+            sh:maxCount 1 ;
+            sh:order 70 ;
+            sh:path <https://w3id.org/neat/:edge_list_numeric_node_ids> ],
+        [ sh:description "The number of the column of the edges file from where to load the edge types." ;
+            sh:maxCount 1 ;
+            sh:order 61 ;
+            sh:path <https://w3id.org/neat/:edge_list_edge_types_column_number> ],
+        [ sh:description "The number of the column of the node file from where to load the node types." ;
+            sh:maxCount 1 ;
+            sh:order 28 ;
+            sh:path <https://w3id.org/neat/:node_list_node_types_column_number> ],
+        [ sh:description "Node type column name." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:node_types_column> ],
+        [ sh:description "Whether the edges file has an header." ;
+            sh:maxCount 1 ;
+            sh:order 54 ;
+            sh:path <https://w3id.org/neat/:edge_list_header> ],
+        [ sh:description "The name of the column of the edges file from where to load the edge types." ;
+            sh:maxCount 1 ;
+            sh:order 62 ;
+            sh:path <https://w3id.org/neat/:edge_list_edge_types_column> ],
+        [ sh:description "Whether the edge type file has an header." ;
+            sh:maxCount 1 ;
+            sh:order 45 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_header> ],
+        [ sh:description "Whether to load the graph as directed or undirected." ;
+            sh:maxCount 1 ;
+            sh:order 84 ;
+            sh:path <https://w3id.org/neat/:directed> ],
+        [ sh:description "The name of the column of the node file from where to load the node IDs." ;
+            sh:maxCount 1 ;
+            sh:order 30 ;
+            sh:path <https://w3id.org/neat/:node_ids_column> ],
+        [ sh:description "The number of the column of the edges file from where to load the edge IDs." ;
+            sh:maxCount 1 ;
+            sh:order 68 ;
+            sh:path <https://w3id.org/neat/:edge_ids_column_number> ],
+        [ sh:description "Whether to load the edge type IDs as numeric from the edge list." ;
+            sh:maxCount 1 ;
+            sh:order 69 ;
+            sh:path <https://w3id.org/neat/:edge_list_numeric_edge_type_ids> ],
+        [ sh:description "Node type ID column number." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat/:node_types_ids_column_number> ],
+        [ sh:description "Whether to support balanced quotes." ;
+            sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path <https://w3id.org/neat/:node_list_support_balanced_quotes> ],
+        [ sh:description "Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation." ;
+            sh:maxCount 1 ;
+            sh:order 42 ;
+            sh:path <https://w3id.org/neat/:numeric_edge_type_ids> ],
+        [ sh:description "The path to the file with the edge list." ;
+            sh:maxCount 1 ;
+            sh:order 52 ;
+            sh:path <https://w3id.org/neat/:edge_path> ],
+        [ sh:description "The number of the column of the edge types file from where to load the edge types." ;
+            sh:maxCount 1 ;
+            sh:order 39 ;
+            sh:path <https://w3id.org/neat/:edge_types_column_number> ],
+        [ sh:description "Node type ID column name." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat/:node_types_ids_column> ],
+        [ sh:description "Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates." ;
+            sh:maxCount 1 ;
+            sh:order 74 ;
+            sh:path <https://w3id.org/neat/:edge_list_may_contain_duplicates> ],
+        [ sh:description "The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped." ;
+            sh:maxCount 1 ;
+            sh:order 78 ;
+            sh:path <https://w3id.org/neat/:edge_list_comment_symbol> ],
+        [ sh:description "Whether to support balanced quotes while reading the edge type list." ;
+            sh:maxCount 1 ;
+            sh:order 46 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_support_balanced_quotes> ],
+        [ sh:description "Whether the nodes file has an header." ;
+            sh:maxCount 1 ;
+            sh:order 18 ;
+            sh:path <https://w3id.org/neat/:node_list_header> ],
+        [ sh:description "Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order." ;
+            sh:maxCount 1 ;
+            sh:order 51 ;
+            sh:path <https://w3id.org/neat/:load_edge_type_list_in_parallel> ],
+        [ sh:description "Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order." ;
+            sh:maxCount 1 ;
+            sh:order 37 ;
+            sh:path <https://w3id.org/neat/:load_node_list_in_parallel> ],
+        [ sh:description "Whether to load the numeric node IDs as numeric." ;
+            sh:maxCount 1 ;
+            sh:order 34 ;
+            sh:path <https://w3id.org/neat/:numeric_node_ids> ],
+        [ sh:description "Number of rows to skip in the edge type list file." ;
+            sh:maxCount 1 ;
+            sh:order 47 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_rows_to_skip> ],
+        [ sh:description "Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck." ;
+            sh:maxCount 1 ;
+            sh:order 81 ;
+            sh:path <https://w3id.org/neat/:verbose> ],
+        [ sh:description "Whether to skip the node types without raising an error if these are unavailable." ;
+            sh:maxCount 1 ;
+            sh:order 36 ;
+            sh:path <https://w3id.org/neat/:skip_node_types_if_unavailable> ],
+        [ sh:description "The path to the file with the unique node names." ;
+            sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path <https://w3id.org/neat/:node_path> ],
+        [ sh:description "The maximum number of lines to be loaded from the node types file." ;
+            sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path <https://w3id.org/neat/:node_type_list_max_rows_number> ],
+        [ sh:description "The edge type to be used when the edge type for a given edge in the edge file is None." ;
+            sh:maxCount 1 ;
+            sh:order 63 ;
+            sh:path <https://w3id.org/neat/:default_edge_type> ],
+        [ sh:description "The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space." ;
+            sh:maxCount 1 ;
+            sh:order 53 ;
+            sh:path <https://w3id.org/neat/:edge_list_separator> ],
+        [ sh:description "The maximum number of lines to be loaded from the edges file." ;
+            sh:maxCount 1 ;
+            sh:order 77 ;
+            sh:path <https://w3id.org/neat/:edge_list_max_rows_number> ],
+        [ sh:description "Node type column number." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:node_types_column_number> ],
+        [ sh:description "The node type to be used when the node type for a given node in the node file is None." ;
+            sh:maxCount 1 ;
+            sh:order 24 ;
+            sh:path <https://w3id.org/neat/:default_node_type> ],
+        [ sh:description "The node types separator." ;
+            sh:maxCount 1 ;
+            sh:order 27 ;
+            sh:path <https://w3id.org/neat/:node_types_separator> ],
+        [ sh:description "Number of rows to skip in the node list file." ;
+            sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path <https://w3id.org/neat/:node_list_rows_to_skip> ],
+        [ sh:description "The number of the column of the edges file from where to load the source nodes." ;
+            sh:maxCount 1 ;
+            sh:order 57 ;
+            sh:path <https://w3id.org/neat/:sources_column_number> ],
+        [ sh:description "Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph." ;
+            sh:maxCount 1 ;
+            sh:order 73 ;
+            sh:path <https://w3id.org/neat/:edge_list_is_complete> ],
+        [ sh:description "The minimum node type ID to be used when using numeric node type IDs." ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/neat/:minimum_node_type_id> ],
+        [ sh:description "Number of rows to skip in the edge list file." ;
+            sh:maxCount 1 ;
+            sh:order 56 ;
+            sh:path <https://w3id.org/neat/:edge_list_rows_to_skip> ],
+        [ sh:description "Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks." ;
+            sh:maxCount 1 ;
+            sh:order 83 ;
+            sh:path <https://w3id.org/neat/:may_have_singleton_with_selfloops> ],
+        [ sh:description "The name of the column of the node file from where to load the node types." ;
+            sh:maxCount 1 ;
+            sh:order 29 ;
+            sh:path <https://w3id.org/neat/:node_list_node_types_column> ],
+        [ sh:description "Whether the node type file has an header." ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path <https://w3id.org/neat/:node_type_list_header> ],
+        [ sh:description "The number of the column of the node file from where to load the node names." ;
+            sh:maxCount 1 ;
+            sh:order 25 ;
+            sh:path <https://w3id.org/neat/:nodes_column_number> ],
+        [ sh:description "Whether to skip the weights without raising an error if these are unavailable." ;
+            sh:maxCount 1 ;
+            sh:order 71 ;
+            sh:path <https://w3id.org/neat/:skip_weights_if_unavailable> ],
+        [ sh:description "Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks." ;
+            sh:maxCount 1 ;
+            sh:order 82 ;
+            sh:path <https://w3id.org/neat/:may_have_singletons> ],
+        [ sh:description "The path to the file with the unique edge type names." ;
+            sh:maxCount 1 ;
+            sh:order 38 ;
+            sh:path <https://w3id.org/neat/:edge_type_path> ],
+        [ sh:description "The separator to use for the node types file." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:node_type_list_separator> ],
+        [ sh:description "The maximum number of lines to be loaded from the edge types file." ;
+            sh:maxCount 1 ;
+            sh:order 49 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_max_rows_number> ],
+        [ sh:description "The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following - comma, semi-column, tab and space." ;
+            sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path <https://w3id.org/neat/:node_list_separator> ],
+        [ sh:description "Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." ;
+            sh:maxCount 1 ;
+            sh:order 21 ;
+            sh:path <https://w3id.org/neat/:node_list_is_correct> ],
+        [ sh:description "The expected number of nodes. Note that this must be the EXACT number of nodes in the graph." ;
+            sh:maxCount 1 ;
+            sh:order 32 ;
+            sh:path <https://w3id.org/neat/:nodes_number> ],
+        [ sh:description "The number of the unique node types. This will be used in order to allocate the correct size for the data structure." ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/neat/:node_types_number> ],
+        [ sh:description "The number of the column of the edges file from where to load the edge weights." ;
+            sh:maxCount 1 ;
+            sh:order 64 ;
+            sh:path <https://w3id.org/neat/:weights_column_number> ],
+        [ sh:description "The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped." ;
+            sh:maxCount 1 ;
+            sh:order 50 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_comment_symbol> ],
+        [ sh:description "The number of the column of the edges file from where to load the destinaton nodes." ;
+            sh:maxCount 1 ;
+            sh:order 59 ;
+            sh:path <https://w3id.org/neat/:destinations_column_number> ],
+        [ sh:description "Whether to skip the edge types without raising an error if these are unavailable." ;
+            sh:maxCount 1 ;
+            sh:order 72 ;
+            sh:path <https://w3id.org/neat/:skip_edge_types_if_unavailable> ],
+        [ sh:description "Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." ;
+            sh:maxCount 1 ;
+            sh:order 76 ;
+            sh:path <https://w3id.org/neat/:edge_list_is_correct> ],
+        [ sh:description "The expected number of edges. Note that this must be the EXACT number of edges in the graph." ;
+            sh:maxCount 1 ;
+            sh:order 79 ;
+            sh:path <https://w3id.org/neat/:edges_number> ],
+        [ sh:description "The number of the column of the node file from where to load the node IDs" ;
+            sh:maxCount 1 ;
+            sh:order 31 ;
+            sh:path <https://w3id.org/neat/:node_ids_column_number> ],
+        [ sh:description "The number of the unique edge types. This will be used in order to allocate the correct size for the data structure." ;
+            sh:maxCount 1 ;
+            sh:order 41 ;
+            sh:path <https://w3id.org/neat/:edge_types_number> ],
+        [ sh:description "The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped." ;
+            sh:maxCount 1 ;
+            sh:order 23 ;
+            sh:path <https://w3id.org/neat/:node_list_comment_symbol> ],
+        [ sh:description "The name of the column of the node file from where to load the node names." ;
+            sh:maxCount 1 ;
+            sh:order 26 ;
+            sh:path <https://w3id.org/neat/:nodes_column> ],
+        [ sh:description "The minimum node ID to be used, when loading the node IDs as numerical." ;
+            sh:maxCount 1 ;
+            sh:order 33 ;
+            sh:path <https://w3id.org/neat/:minimum_node_id> ],
+        [ sh:maxCount 1 ;
+            sh:order 85 ;
+            sh:path <https://w3id.org/neat/:name> ],
+        [ sh:description "The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space." ;
+            sh:maxCount 1 ;
+            sh:order 44 ;
+            sh:path <https://w3id.org/neat/:edge_type_list_separator> ],
+        [ sh:description "Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable." ;
+            sh:maxCount 1 ;
+            sh:order 15 ;
+            sh:path <https://w3id.org/neat/:load_node_type_list_in_parallel> ],
+        [ sh:description "The minimum edge type ID to be used when using numeric edge type IDs." ;
+            sh:maxCount 1 ;
+            sh:order 43 ;
+            sh:path <https://w3id.org/neat/:minimum_edge_type_id> ],
+        [ sh:description "The name of the column of the edge types file from where to load the edge types." ;
+            sh:maxCount 1 ;
+            sh:order 40 ;
+            sh:path <https://w3id.org/neat/:edge_types_column> ],
+        [ sh:description "Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number." ;
+            sh:maxCount 1 ;
+            sh:order 75 ;
+            sh:path <https://w3id.org/neat/:edge_list_is_sorted> ],
+        [ sh:description "The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped." ;
+            sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:path <https://w3id.org/neat/:node_type_list_comment_symbol> ],
+        [ sh:description "The name of the column of the edges file from where to load the source nodes." ;
+            sh:maxCount 1 ;
+            sh:order 58 ;
+            sh:path <https://w3id.org/neat/:sources_column> ],
+        [ sh:description "Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash." ;
+            sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path <https://w3id.org/neat/:node_type_list_is_correct> ] ;
+    sh:targetClass <https://w3id.org/neat/:EnsmallenRunConfig> .
+
+<https://w3id.org/neat/:FileResource> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Path (or url) and description of source files (tar.gz)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "File path or url." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:path> ],
+        [ sh:description "File description." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:desc> ] ;
+    sh:targetClass <https://w3id.org/neat/:FileResource> .
+
+<https://w3id.org/neat/:FileResourceContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container of paths and descriptions" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:FileResource> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:files> ] ;
+    sh:targetClass <https://w3id.org/neat/:FileResourceContainer> .
+
+<https://w3id.org/neat/:GraphDataConfiguration> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Configuration for the graph training and validation data for ML pipeline." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:EnsmallenRunConfig> ;
+            sh:description "Graph configuration for pipeline" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:graph> ],
+        [ sh:class <https://w3id.org/neat/:TrainValidData> ;
+            sh:description "Input data for pipeline." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:evaluation_data> ],
+        [ sh:class <https://w3id.org/neat/:FileResourceContainer> ;
+            sh:description "Compressed input data for pipeline (tar.gz)." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:source_data> ] ;
+    sh:targetClass <https://w3id.org/neat/:GraphDataConfiguration> .
+
+<https://w3id.org/neat/:Layer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Layers for a neural network." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Type of layer." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:type> ],
+        [ sh:class <https://w3id.org/neat/:ClassifierParams> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:parameters> ] ;
+    sh:targetClass <https://w3id.org/neat/:Layer> .
+
+<https://w3id.org/neat/:LayerContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A container of neural network layers." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:Layer> ;
+            sh:description "Container of layers to be used to build the neural network." ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:layers> ] ;
+    sh:targetClass <https://w3id.org/neat/:LayerContainer> .
+
+<https://w3id.org/neat/:Metric> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Metrics of a trained classifier (model)." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:name> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:type> ],
+        [ sh:description "Area under curve (AUC) to be calculated." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:curve> ] ;
+    sh:targetClass <https://w3id.org/neat/:Metric> .
+
+<https://w3id.org/neat/:MetricContainer> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Container of metrics for a trained classifier." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:Metric> ;
+            sh:description "Metrics need to train a classifier." ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:metrics> ] ;
+    sh:targetClass <https://w3id.org/neat/:MetricContainer> .
+
+<https://w3id.org/neat/:NodeEmbeddingsParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Node embeddings parameters." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Weight on the probability of returning to the same node the walk just came from Having this higher tends the walks to be more like a Breadth-First Search. Having this very high  (> 2) makes search very local. Equal to the inverse of p in the Node2Vec paper." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat/:return_weight> ],
+        [ sh:description "Number of nodes to include in a single batch." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:batch_size> ],
+        [ sh:description "Maximal length of the walks." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:walk_length> ],
+        [ sh:description "Size of the context and target nodes for node2vec." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:window_size> ],
+        [ sh:description "Number of iterations." ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/neat/:iterations> ],
+        [ sh:description "Name of the node embedding method." ;
+            sh:in ( "SkipGram" "CBOW" "GloVe" "Siamese" "TransE" "SimplE" "TransH" "TransR" ) ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:method_name> ],
+        [ sh:description "Weight on the probability of visiting a neighbor node to the one we're coming from in the random walk Having this higher tends the walks to be more like a Depth-First Search. Having this very high makes search more outward. Having this very low makes search very local. Equal to the inverse of q in the Node2Vec paper." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/neat/:explore_weight> ] ;
+    sh:targetClass <https://w3id.org/neat/:NodeEmbeddingsParams> .
+
+<https://w3id.org/neat/:NodeType> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Source node or Destination node." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Destination node(s)." ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:destination> ],
+        [ sh:description "Source node(s)." ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:source> ] ;
+    sh:targetClass <https://w3id.org/neat/:NodeType> .
+
+<https://w3id.org/neat/:SkLearnParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters specific to the SKLearn library." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Random seed." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:random_state> ],
+        [ sh:description "Maximum iterations." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:max_iter> ] ;
+    sh:targetClass <https://w3id.org/neat/:SkLearnParams> .
+
+<https://w3id.org/neat/:TFKerasParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters specific to the Tensorflow Keras library." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Optimizer function to be used during classifier training." ;
+            sh:in ( "adagrad" "adam" "adamax" "nadam" "sgd" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/neat/:optimizer> ],
+        [ sh:class <https://w3id.org/neat/:MetricContainer> ;
+            sh:description "Metrics to be calculated after classifier training." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/neat/:metrics_config> ],
+        [ sh:class <https://w3id.org/neat/:ClassifierFitParams> ;
+            sh:description "Configuration for model fitting." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/neat/:fit_config> ],
+        [ sh:description "Loss function." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:loss> ],
+        [ sh:class <https://w3id.org/neat/:LayerContainer> ;
+            sh:description "Configuration for instantiating layers for neural networks." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:layers_config> ] ;
+    sh:targetClass <https://w3id.org/neat/:TFKerasParams> .
+
+<https://w3id.org/neat/:TrainValidData> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Postive and negative training and validation graph data filepaths." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:PosNegData> ;
+            sh:description "Positive and negative graph data for ML validation." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:valid_data> ],
+        [ sh:class <https://w3id.org/neat/:PosNegData> ;
+            sh:description "Positive and negative graph data for ML training." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:train_data> ] ;
+    sh:targetClass <https://w3id.org/neat/:TrainValidData> .
+
+<https://w3id.org/neat/:ClassifierParams> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Parameters needed to define a classifier." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://w3id.org/neat/:TFKerasParams> ;
+            sh:description "Parameters specific to Tensorflow/Keras" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:tf_keras_params> ],
+        [ sh:class <https://w3id.org/neat/:SkLearnParams> ;
+            sh:description "Parameters specific to sklearn." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:sklearn_params> ] ;
+    sh:targetClass <https://w3id.org/neat/:ClassifierParams> .
+
+<https://w3id.org/neat/:PosNegData> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "File paths for positive an negative edge data." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Negative edges file path." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/neat/:neg_edge_filepath> ],
+        [ sh:description "Positive edges file path." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/neat/:pos_edge_filepath> ] ;
+    sh:targetClass <https://w3id.org/neat/:PosNegData> .
+
