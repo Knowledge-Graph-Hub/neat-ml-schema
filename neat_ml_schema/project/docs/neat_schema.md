@@ -1,5 +1,5 @@
 
-# NEAT_schema
+# Neat_ml_schema
 
 
 **metamodel version:** 1.7.0
