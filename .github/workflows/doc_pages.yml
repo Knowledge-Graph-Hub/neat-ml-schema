@@ -26,5 +26,5 @@ jobs:
     - name: Build documentation.
       run: |
         touch docs/.nojekyll
-        poetry run gen-doc -d docs neat_ml_schema/src/schema/neat_ml_schema.yaml
+        poetry run gen-doc -d docs src/schema/neat_ml_schema.yaml
         poetry run mkdocs gh-deploy
