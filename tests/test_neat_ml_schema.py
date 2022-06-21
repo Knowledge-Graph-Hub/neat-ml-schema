@@ -20,7 +20,9 @@ class TestSchema(TestCase):
     def setUp(self) -> None:
         """More setup."""
         cwd = os.path.dirname(__file__)
-        self.project_dir = os.path.join(os.getcwd(), "src/schema/")
+        self.project_dir = os.path.join(
+            os.getcwd(), "src/neat_ml_schema/schema/"
+        )
         self.resource_dir = os.path.join(cwd, "resources")
         self.GOOD_YAML_FILENAME = "test_good.yaml"
         self.BAD_YAML_FILENAME = "test_bad.yaml"
